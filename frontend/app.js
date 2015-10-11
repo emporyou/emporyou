@@ -5,7 +5,7 @@ var builder = require('xmlbuilder');
 //APP-INIT + DATABASE CONNECTION
 var Gdb=null;
 var merchant=null;
-
+var endOfLine = require('os').EOL;
 
 
 DBreconnnect=function(){
@@ -92,6 +92,7 @@ app.get('/get_product14', function (req, res) {
   var pgnum=req.query.pgnum||-1;
   var results={m1:null,m2:null,m3:null,m4:null,m5:null};
   var P;var p;var xml='<?xml version="1.0" encoding="UTF-8"><response>';
+  res.set('Content-Type', 'text/xml');
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
@@ -112,12 +113,12 @@ prodstoxml=function(docs){
 	var xml='';
 	for(var p=0;p<docs.length;p++){
 		xml+='<product>';
-		xml+=xnl('description',docs[p].description);
-		xml+='</product>\n';
+		xml+=xnl('description',docs[p].description,true);
+		xml+='</product>'+endOfLine;
 	}
 	return xml;
 };
-xnl=function(n,d){return '<'+n+'>'+d+'</'+n+'>';};
+xnl=function(n,d,cd){if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}};
 
 app.use(express.static('.'));
 var server = app.listen(3000, function () {
