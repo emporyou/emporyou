@@ -135,12 +135,12 @@ o2xml=function(n,o){
 	else if(typeof(o)=='object'){return _o2xml(n,o);}
 	else{return v2xml(n,o);}
 };
-_o2xml=function(n,o){var xml='<'+n+'>';var pr;
+_o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
 	for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}
 		if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}
 		else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}
 		else{xml+=v2xml(pr,o[prop]);}
-	}return xml+'</'+n+'>';
+	}return xml+'</'+n+'>';}else{return ''}
 };
 a2xml=function(n,a){var xml='';
 	for(var i=0;i<a.length;i++){
