@@ -1,4 +1,4 @@
-echo to START this script use curl https://raw.githubusercontent.com/officinetesla/recommerce/master/install.txt | /bin/sh
+echo use : curl https://raw.githubusercontent.com/officinetesla/recommerce/master/install.txt | /bin/sh
 echo INSTALLING PREREQUISITES
 yum install -y nodejs
 yum install -y npm
