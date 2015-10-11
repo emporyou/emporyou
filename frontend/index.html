@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
-<head><title>COSATO</title>
+<head>
+<title></title>
 <!-- //////////////////////////BOOTSTRAP -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
 <!-- //////////////////////////FONT AWESOME -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 <!-- //////////////////////////ANGULAR -->
@@ -16,140 +17,40 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script> -->
 <!-- //////////////////////////THREEJS -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
-
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic' rel='stylesheet' type='text/css'>
 <script src="js/main.js"></script>
-<script src="js/oriDomi-master/oridomi.js"></script>
-<script src="http://tipozerozero.com/ooox/ooox.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg0kxvRQEm4yG50ch_tVXB5Ih-9RAjj9A&signed_in=true&callback=initMap" async defer></script>
-<script src="js/buffer-loader.js"></script>
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-<script>var context;var bufferLoader;
-function ainit() {
-  window.AudioContext = window.AudioContext || window.webkitAudioContext;
-  context = new AudioContext();
-  bufferLoader = new BufferLoader(context,
-    [ '../audio/basketdrop.wav', '../audio/basketrope.wav', '../audio/knot.wav', ], finishedLoading);
-    bufferLoader.load();}
-function finishedLoading(bufferList) {
-  // Create two sources and play them both together.
-  window.source1 = context.createBufferSource();  source1.buffer = bufferList[0]; 
-  window.source2 = context.createBufferSource();  source2.buffer = bufferList[1];
-  window.source3 = context.createBufferSource();  source3.buffer = bufferList[2];
-}</script>
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-<script>
-function playSound(buffer, time) {
-  var source = context.createBufferSource();
-  source.buffer = buffer;
-  source.connect(context.destination);
-  source.start(time);
-}
-togglebasket=function(){
-  var elm= document.getElementById('basket');
-  if(elm.style.top=='0px'){elm.style.top='-327px'; playSound(source1.buffer,0);}
-  else{elm.style.top='0px';   playSound(source2.buffer,0);}
-};
-window.mapfolded=false;
-togglemap=function(){
-  if(mapfolded){mapfolded=false;folded.unfold();setTimeout('folded.freeze();initGMap('+lastcenter.H+','+lastcenter.L+');',2000)}
-  else{window.lastcenter=map.getCenter();mapfolded=true;
-window.folded = new OriDomi(document.getElementById('map'),{hPanels:5,
-  speed:         1200,  // folding duration in ms
-  ripple:          2,     // backwards ripple effect when animating
-  shadingIntesity: .1,    // lessen the shading effect
-  perspective:     800,   // smaller values exaggerate 3D distortion
-  shading:         'soft'
- });folded.accordion(100,'top')}
-};
-</script>
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-<script>
-function initApp() {
-   initGMap(45.487567,9.127396);
-   //LOAD OTHER THINGS
-   ooo.render('thumb-wrap','templateprodotti.xml','products.xml');
-   //audioinit
-   ainit();
-}
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-function initGMap(clat,clng){
- var customMapType = new google.maps.StyledMapType([
-  {"featureType": "road","elementType": "geometry","stylers": [
-      { "visibility": "on" },{ "lightness": 1 },{ "gamma": 1.92 },{ "hue": "#3bff00" },{ "saturation": 22 },{ "color": "#D3FF8D" }]
-  },{"featureType": "poi.place_of_worship",
-    "elementType": "geometry.stroke",
-    "stylers": [{ "color": "#808080" },{ "visibility": "simplified" },{ "weight": 0.1 },{ "saturation": 7 }]
-  },{"featureType": "poi.business", "elementType": "labels.text.fill","stylers": [{ "color": "#f72a4b" }]
-  },{"featureType": "landscape.man_made","stylers": [{ "color": "#136296" },{ "gamma": 1.8 },{ "lightness": 60 }]
-  }],{name: 'Custom Style'
-  });
-  var customMapTypeId = 'custom_style';
-
-window.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: {lat:clat, lng:  clng},  // Montestella.,
-    mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
-    }
-  });
-
-  map.mapTypes.set(customMapTypeId, customMapType);
-  map.setMapTypeId(customMapTypeId);
-}
-    </script>
 </head>
-<body onload="initApp()"><!-- //////////////////////////BOOTSTRAP --> 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" /> 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet" /> <!-- //////////////////////////FONT AWESOME --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> --> <!-- //////////////////////////ANGULAR --> <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> --> <!-- //////////////////////////JQUERY --> <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> --> <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> --> <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> --> <!-- //////////////////////////PROTOTYPE --> <!-- <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script> --> <!-- //////////////////////////THREEJS --> <!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> --> 
-  <link href="css/main.css" type="text/css" rel="stylesheet" />   
-  <meta content="width=device-width, initial-scale=1" name="viewport" /> 
-  <meta name="description" /> 
-  <meta name="keywords" />  
-  <div class="googlemap"> 
-    <div id="map"></div><!--AIzaSyBg0kxvRQEm4yG50ch_tVXB5Ih-9RAjj9A--> 
-  </div> 
-  <div class="header"><img src="img/map.png" class="map" onclick="togglemap()" /></div> <img src="img/Tip-Logo-Test01.png" class="logo" /> 
-  <div class="cart"><img src="img/basket-icon.png" class="hamburger" id="basket"/></div> 
-  <div class="target"> 
-    <div class="side"> 
-      <div id="side-wrap"> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #ffe413;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #8ca4a5;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #f9ded6;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #f9ded6;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #f9ded6;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #f9ded6;" class="side-element"></div> 
-        </div> 
-        <div id="side-container"> 
-          <div class="side-dummy"></div> 
-          <div style="background-color: #f9ded6;" class="side-element"></div> 
-        </div> 
-      </div>
-    </div> 
-    <div id="thumb-wrap">  </div> 
-  </div></body></html>
+<body>
+<!-- SVG syntax --> 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">
+<linearGradient id="g485" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop stop-color="#0000FF" offset="0"/><stop stop-color="#FF5270" offset="0.74">
+</stop>
+</linearGradient>
+<rect x="0" y="0" width="1" height="1" fill="url(#g485)" />
+</svg>
+<div class="logo-bar">
+   <div class="logo-container">
+    <img class="logo" src="img/logo-white.png"/>
+   </div>
+</div>
+<div class="emporyoum-bar">
+   <div class="emporyoum-container">
+    <img class="emporyoum" src="img/emporyoum-landing.png"/>
+   </div>
+</div>
+<div class="subtitle-bar">
+   <div class="subtitle-container">
+    <i>the hint marketplace</i>
+   </div>
+</div>
+<div class="continue-bar">
+   <div class="continue-container">
+    <button class="continue" onclick="location.href='home/index.html';">continue</button>
+   </div>
+</div>
+</body></html>
