@@ -91,7 +91,7 @@ app.get('/get_product14', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
   var results={m1:null,m2:null,m3:null,m4:null,m5:null};
-  var P;var p;var xml='';
+  var P;var p;var xml='<?xml version="1.0" encoding="UTF-8"><response>';
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
@@ -101,10 +101,10 @@ app.get('/get_product14', function (req, res) {
 				P=db.collection('Products');
 				P.find({}).toArray(function(err, docs) {
 				xml+=prodstoxml(docs);
-				res.send(JSON.stringify(xml));
+				res.send(xml+'</response>');
 			});
 			});
-		}catch(ex){res.send(JSON.stringify(xml));}
+		}catch(ex){res.send(xml+'</response>');}
     });
   });
 });
