@@ -1,0 +1,79 @@
+.admin-container{
+    width:60%;
+    margin:0 auto;
+}
+.vendor-manage{
+    width:100%;
+    margin-top:25px;
+    background-color:transparent;
+    height:50px;
+    max-height:50px;
+    min-width:500px;
+}
+.vendor-name{
+    height:50px;
+    width:80%;
+    background-color:#0c2d4d;
+    display:inline-block;
+    min-width:340px;
+}
+.modify-vendor{
+    height:50px;
+    width:50px;
+    background-color:#2c4d6d;
+    display:inline-block;
+    line-height: 50px;
+}
+.go-to-vendor{
+    height:50px;
+    width:50px;
+    background-color:#6c6d8d;
+    display:inline-block;
+    line-height: 50px;
+}
+.vendor-name-cont{
+    position:absolute;
+    height:50px;
+    width:50%;
+    background-color:transparent;
+    line-height:42px;
+    color:#f7f7f7;
+    padding:4px;
+    font-family:'Open sans'
+}
+.manage-button-cont{
+    height:50px;
+    width:50px;
+    background-color:transparent;
+    line-height:42px;
+    color:#f7f7f7;
+    padding:11px;
+    font-family:'Open sans';
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.manage-go-cont{
+    height:50px;
+    width:50px;
+    background-color:transparent;
+    line-height:42px;
+    color:#f7f7f7;
+    padding:11px;
+    font-family:'Open sans';
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.gear{
+    position:absolute;
+    height:30px;
+    width:30px;
+}
+.pencil{
+    position:absolute;
+    height:30px;
+    width:30px;
+}
+.pencil:hover{cursor:pointer;opacity:0.7}
+.gear:hover{cursor:pointer;opacity:0.7}
