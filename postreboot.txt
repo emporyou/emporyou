@@ -1,4 +1,4 @@
-curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postreboot.txt | /bin/sh
+echo use : curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postreboot.txt | /bin/sh
 cd react001/reaction
 meteor run --port 3010 &
 cd ../..
