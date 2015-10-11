@@ -91,7 +91,7 @@ app.get('/get_product14', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
   var results={m1:null,m2:null,m3:null,m4:null,m5:null};
-  var P;var p;var xml='<?xml version="1.0" encoding="UTF-8"><response>';
+  var P;var p;var xml='<?xml version="1.0" encoding="UTF-8"?><response>';
   res.set('Content-Type', 'text/xml');
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
