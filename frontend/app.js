@@ -96,12 +96,16 @@ app.get('/get_product14', function (req, res) {
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
+	xml+="<merchant_products><name>Merchant 1</name><id>1</id><lat>1</lat><lon>1</lon><city>Milano</city>";
 	xml+=o2xml('product',docs);
+	xml+="</merchant_products>";
 		try{
 			MongoClient.connect('mongodb://localhost:3021/meteor', function(err, db) {
 				P=db.collection('Products');
 				P.find({}).toArray(function(err, docs) {
+				xml+="<merchant_products><name>Merchant 2</name><id>2</id><lat>2</lat><lon>2</lon><city>Milano</city>";
 				xml+=o2xml('product',docs);
+				xml+="</merchant_products>";
 				res.send(xml+'</response>');
 			});
 			});
