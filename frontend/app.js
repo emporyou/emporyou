@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient, format=require('util').format;
-
+var builder = require('xmlbuilder');
 //APP-INIT + DATABASE CONNECTION
 var Gdb=null;
 var merchant=null;
@@ -95,7 +95,8 @@ app.get('/get_product14', function (req, res) {
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
-		res.send(JSON.stringify(docs));
+		var xml=builder.create({root:{docs}});
+		res.send(JSON.stringify(xml));
     });
   });
 });
