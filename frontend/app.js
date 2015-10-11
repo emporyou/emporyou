@@ -92,7 +92,7 @@ app.get('/get_product14', function (req, res) {
   var pgnum=req.query.pgnum||-1;
   var results={m1:null,m2:null,m3:null,m4:null,m5:null};
   var P;
-  MongoClient.connect('mongodb://localhost:'+(3010)+'/meteor', function(err, db) {
+  MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
 		res.send(JSON.stringify(docs));
