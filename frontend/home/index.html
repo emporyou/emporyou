@@ -19,11 +19,13 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
+<link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <script src="js/main.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<meta charset="utf-8"/>
 </head>
 <body onload="checkMobile()" onresize="checkMobile()">
 <div id="basket-container">
@@ -53,21 +55,31 @@
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
-              <div class="product-bar-2"></div>
+              <div class="product-bar-2">
+                  <div class="add-2"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share-2"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description-2"><b>Massaggi</b><br/>In un accogliente centro nella città di Milano</div>
+                  <div class="price-2">€300 da €<span style="color:orange">200</span></div>
+              </div>
               <div class="product-header">
                  <div class="city">Milano</div>
                   <div class="product-discount" style="width:33%;">33%</div>
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container" onclick="addProduct('Bike')"> 
+        <div id="thumb-container" onclick="addProduct('Bicicletta')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/bici.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description"><b>Bicicletta</b><br/>Una elegante bicicletta da città</div>
+                  <div class="price">€300 da €<span style="color:orange">200</span></div>
+              </div>
               <div class="product-header">
                  <div class="city">Brescia</div>
-                  <div class="product-discount"></div>
+                  <div class="product-discount" style="width:33%">33%</div>
               </div>
           </div></div> 
         </div> 
@@ -75,21 +87,31 @@
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/products/autista.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                <div class="description"><b>Autista</b><br/>Servizio auto nella città di Milano</div>
+                  <div class="price">€150 da €<span style="color:orange">50</span></div>
+              </div>
               <div class="product-header">
                  <div class="city">Milano</div>
-                  <div class="product-discount"></div>
+                  <div class="product-discount" style="width:66%">66%</div>
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container" onclick="addProduct('Curtain')"> 
+        <div id="thumb-container" onclick="addProduct('Tende')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/tende.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description"><b>Tende</b><br/>Raffinate tende da casa in diversi colori</div>
+                  <div class="price">€200 da €<span style="color:orange">180</span></div>
+              </div>
               <div class="product-header">
                  <div class="city">Bergamo</div>
-                  <div class="product-discount"></div>
+                  <div class="product-discount" style="width:10%;min-width:50px">10%</div>
               </div>
           </div></div> 
         </div> 

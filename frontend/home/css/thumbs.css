@@ -99,7 +99,8 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     line-height:20px;
     color:#fbe268;
     font-family:arial;
-    font-size:1em;
+    font-size:2vh;
+    border-left: 2px solid #e87c7c;
 }
 .city{
     background-color:transparent;
@@ -111,5 +112,5 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     line-height:20px;
     color:#666;
     font-family:arial;
-    font-size:1em;
+    font-size:2vh;
 }

@@ -73,6 +73,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     height:100%;
     top:35%;
     background-color:transparent;
+    z-index:0
     
 }
 .products-container{
@@ -82,6 +83,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     margin:0 auto;
 }
 #basket-container{
+    z-index:100;
     position:fixed;
     right:10%;
     top:0;
@@ -128,8 +130,10 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     height:30px;
     left:10px;
     display:none;
+} 
+#else:hover{
+    cursor:pointer
 }
-#else:hover{cursor:pointer}
 .flag-text{
     top:-10px;
     left:3px;
