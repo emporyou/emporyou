@@ -96,12 +96,12 @@ app.get('/get_product14', function (req, res) {
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
-	xml+=o2xml(docs);
+	xml+=o2xml('product',docs);
 		try{
 			MongoClient.connect('mongodb://localhost:3021/meteor', function(err, db) {
 				P=db.collection('Products');
 				P.find({}).toArray(function(err, docs) {
-				xml+=o2xml(docs);
+				xml+=o2xml('product',docs);
 				res.send(xml+'</response>');
 			});
 			});
@@ -130,17 +130,22 @@ xnl=function(n,o,cd,_props){
 	else{if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}}
 };
 
-o2xml=function(n,o){var xml='<'+n+'>';
+o2xml=function(n,o){
+	if(Array.prototype.isPrototypeOf(o[prop])){return a2xml(n,o);}
+	else if(typeof(o)=='object'){return _o2xml(n,o);}
+	else{return v2xml(n,o);}
+};
+_o2xml=function(n,o){var xml='<'+n+'>';
 	for(var prop in o){
 		if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(prop,o[prop]);}
-		else if(typeof(o[prop])=='object'){xml+=o2xml(prop,o[prop]);}
+		else if(typeof(o[prop])=='object'){xml+=_o2xml(prop,o[prop]);}
 		else{xml+=v2xml(prop,o[prop]);}
 	}return xml+'</'+n+'>';
 };
 a2xml=function(n,a){var xml='';
 	for(var i=0;i<a.length;i++){
 		if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}
-		else if(typeof(a[i]=='object')){xml+=o2xml(n,a[i]);}
+		else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}
 		else{xml+=v2xml(n,a[i]);}
 	}return xml;	
 };
