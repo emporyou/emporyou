@@ -1,0 +1,11 @@
+
+-install git 
+-install node
+mkdir recommerce
+cd recommerce
+clone repo recommerce
+-install express -save
+
+-check for mongod - message
+-check for meteor - message
+-check for reaction - message
