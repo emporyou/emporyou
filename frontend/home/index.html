@@ -26,7 +26,10 @@
 <meta name="keywords" content="" />
 </head>
 <body>
-<div class="basket-container"><img class="basket" src="../img/basket.png"/></div>
+<div id="basket-container">
+<div id="bought-container"></div>
+<img id="basket" src="../img/basket.png"/>
+</div>
 <div class="header">
    <div class="ham-square">
        <div class="ham-container">
@@ -45,7 +48,7 @@
 <div class="products-main">
     <div class="products-container">
         <div id="thumb-wrap"> 
-        <div id="thumb-container-2"> 
+        <div id="thumb-container-2" onclick="addProduct('Muffin')">
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/muffin.jpg');" class="thumb-element">
@@ -56,7 +59,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container"> 
+        <div id="thumb-container" onclick="addProduct('Bike')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/bici.jpg');" class="thumb-element">
@@ -67,7 +70,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container"> 
+        <div id="thumb-container" onclick="addProduct('Blanket')"> 
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/coperta.jpg');" class="thumb-element">
@@ -78,7 +81,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container"> 
+        <div id="thumb-container" onclick="addProduct('Curtain')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/tende.jpg');" class="thumb-element">
@@ -89,7 +92,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container"> 
+        <div id="thumb-container" onclick="addProduct('Shirt')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/maglia.jpg');" class="thumb-element">
@@ -100,7 +103,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container"> 
+        <div id="thumb-container" onclick="addProduct('Phone Cable')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/cavo.jpg');" class="thumb-element">
@@ -111,7 +114,7 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container-2"> 
+        <div id="thumb-container-2" onclick="addProduct('Iron Pen')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/penne.jpg');" class="thumb-element">
