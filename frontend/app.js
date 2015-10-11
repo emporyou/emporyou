@@ -136,7 +136,7 @@ o2xml=function(n,o){
 	else{return v2xml(n,o);}
 };
 _o2xml=function(n,o){var xml='<'+n+'>';var pr;
-	for(var prop in o){pr=prop;if(parseInt(prop)!='NaN'){pr='x'+pr}
+	for(var prop in o){pr=prop;if(parseInt(prop)!=parseInt('a')){pr='x'+pr}
 		if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}
 		else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}
 		else{xml+=v2xml(pr,o[prop]);}
