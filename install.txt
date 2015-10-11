@@ -7,7 +7,7 @@ clone repo recommerce
 -install express -save
 
 git config --global user.name "officinetesla"
-git config --global user.email "admino@fficinetesla.it"
+git config --global user.email "admin@officinetesla.it"
 
 -check for mongod - message
 -check for meteor - message
