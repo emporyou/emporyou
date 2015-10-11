@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient, format=require('util').format;
-var builder = require('xmlbuilder');
 //APP-INIT + DATABASE CONNECTION
 var Gdb=null;
 var merchant=null;
@@ -113,26 +112,6 @@ app.get('/get_product14', function (req, res) {
     });
   });
 });
-prodstoxml=function(docs){
-	var xml='';
-	for(var p=0;p<docs.length;p++){
-		xml+='<product>';
-		xml+=xnl('description',docs[p].description,true);
-		xml+='</product>'+endOfLine;
-	}
-	return xml;
-};
-xnl=function(n,o,cd,_props){
-	var xml='';
-	if(Array.prototype.isProtypeof(o)){
-		for(var i=0;i<o.length;i++){
-			
-		}
-	}else if(typeof(d)=='object'){
-		
-	}
-	else{if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}}
-};
 
 o2xml=function(n,o){
 	if(Array.prototype.isPrototypeOf(o)){return a2xml(n,o);}
@@ -155,10 +134,9 @@ a2xml=function(n,a){var xml='';
 };
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
 
-
-
 app.use(express.static('.'));
-var server = app.listen(3000, function () {
+
+var server = app.listen(80, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
