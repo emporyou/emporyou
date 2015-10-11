@@ -131,7 +131,7 @@ xnl=function(n,o,cd,_props){
 };
 
 o2xml=function(n,o){
-	if(Array.prototype.isPrototypeOf(o[prop])){return a2xml(n,o);}
+	if(Array.prototype.isPrototypeOf(o)){return a2xml(n,o);}
 	else if(typeof(o)=='object'){return _o2xml(n,o);}
 	else{return v2xml(n,o);}
 };
