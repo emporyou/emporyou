@@ -91,24 +91,35 @@ app.get('/get_product14', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
   var results={m1:null,m2:null,m3:null,m4:null,m5:null};
-  var P;
+  var P;var p;var xml='';
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
-		var xml=builder.create({root:{product:docs}});
-		res.send(JSON.stringify(xml));
+	xml+=prodstoxml(docs);
+		try{
+			MongoClient.connect('mongodb://localhost:3021/meteor', function(err, db) {
+				P=db.collection('Products');
+				P.find({}).toArray(function(err, docs) {
+				xml+=prodstoxml(docs);
+				res.send(JSON.stringify(xml));
+			});
+			});
+		}catch(ex){res.send(JSON.stringify(xml));}
     });
   });
 });
-
-
-
+prodstoxml=function(docs){
+	var xml='';
+	for(var p=0;p<docs.length;p++){
+		xml+='<product>';
+		xml+=xnl('description',docs[p].description);
+		xml+='</product>\n';
+	}
+	return xml;
+};
+xnl=function(n,d){return '<'+n+'>'+d+'</'+n+'>';};
 
 app.use(express.static('.'));
-
-
-
-
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
