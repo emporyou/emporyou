@@ -140,7 +140,7 @@ o2xml=function(n,o){var xml='<'+n+'>';
 a2xml=function(n,a){var xml='';
 	for(var i=0;i<a.length;i++){
 		if(Array.prototype.isProtypeof(a[i])){xml+=a2xml(n,a[i]);}
-		else if(typeof(a[i]==object'){xml+=o2xml(n,a[i]);}
+		else if(typeof(a[i]=='object')){xml+=o2xml(n,a[i]);}
 		else{xml+=v2xml(n,a[i]);}
 	}return xml;	
 };
