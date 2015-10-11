@@ -6,6 +6,9 @@ cd recommerce
 clone repo recommerce
 -install express -save
 
+git config --global user.name "officinetesla"
+git config --global user.email "admino@fficinetesla.it"
+
 -check for mongod - message
 -check for meteor - message
 -check for reaction - message
