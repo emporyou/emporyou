@@ -95,7 +95,7 @@ app.get('/get_product14', function (req, res) {
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
-		var xml=builder.create({root:{docs}});
+		var xml=builder.create({root:{product:docs}});
 		res.send(JSON.stringify(xml));
     });
   });
