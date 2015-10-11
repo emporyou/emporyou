@@ -79,7 +79,7 @@ app.get('/get_product', function (req, res) {
   var min=req.query.min||-1;
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
-};
+});
   
 app.get('/get_product14', function (req, res) {
   var m_id=req.query.m_id||-1;
