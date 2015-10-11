@@ -132,19 +132,19 @@ xnl=function(n,o,cd,_props){
 
 o2xml=function(n,o){var xml='<'+n+'>';
 	for(var prop in o){
-		if(Array.prototype.isProtypeof(o)){xml+=a2xml(prop,o[prop]);}
-		else if(typeof(o)=='object'){xml+=o2xml(prop,o[prop]);}
+		if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(prop,o[prop]);}
+		else if(typeof(o[prop])=='object'){xml+=o2xml(prop,o[prop]);}
 		else{xml+=v2xml(prop,o[prop]);}
 	}return xml+'</'+n+'>';
 };
 a2xml=function(n,a){var xml='';
 	for(var i=0;i<a.length;i++){
-		if(Array.prototype.isProtypeof(a[i])){xml+=a2xml(n,a[i]);}
+		if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}
 		else if(typeof(a[i]=='object')){xml+=o2xml(n,a[i]);}
 		else{xml+=v2xml(n,a[i]);}
 	}return xml;	
 };
-v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}};
+v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
 
 
 
