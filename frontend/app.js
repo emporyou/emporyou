@@ -96,12 +96,12 @@ app.get('/get_product14', function (req, res) {
   MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
 	P=db.collection('Products');
 	P.find({}).toArray(function(err, docs) {
-	xml+=prodstoxml(docs);
+	xml+=o2xml(docs);
 		try{
 			MongoClient.connect('mongodb://localhost:3021/meteor', function(err, db) {
 				P=db.collection('Products');
 				P.find({}).toArray(function(err, docs) {
-				xml+=prodstoxml(docs);
+				xml+=o2xml(docs);
 				res.send(xml+'</response>');
 			});
 			});
@@ -118,7 +118,35 @@ prodstoxml=function(docs){
 	}
 	return xml;
 };
-xnl=function(n,d,cd){if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}};
+xnl=function(n,o,cd,_props){
+	var xml='';
+	if(Array.prototype.isProtypeof(o)){
+		for(var i=0;i<o.length;i++){
+			
+		}
+	}else if(typeof(d)=='object'){
+		
+	}
+	else{if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}}
+};
+
+o2xml=function(n,o){var xml='<'+n+'>';
+	for(var prop in o){
+		if(Array.prototype.isProtypeof(o)){xml+=a2xml(prop,o[prop]);}
+		else if(typeof(o)=='object'){xml+=o2xml(prop,o[prop]);}
+		else{xml+=v2xml(prop,o[prop]);}
+	}return xml+'</'+n+'>';
+};
+a2xml=function(n,a){var xml='';
+	for(var i=0;i<a.length;i++){
+		if(Array.prototype.isProtypeof(a[i])){xml+=a2xml(n,a[i]);}
+		else if(typeof(a[i]==object'){xml+=o2xml(n,a[i]);}
+		else{xml+=v2xml(n,a[i]);}
+	}return xml;	
+};
+v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+d+']]></'+n+'>';}else{return '<'+n+'>'+d+'</'+n+'>';}};
+
+
 
 app.use(express.static('.'));
 var server = app.listen(3000, function () {
