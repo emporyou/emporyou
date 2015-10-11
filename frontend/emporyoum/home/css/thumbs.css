@@ -1,0 +1,111 @@
+#thumb-wrap {
+    width: 100%;
+}
+#thumb-wrap a {
+    opacity: 1.0;
+}
+#thumb-wrap a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+#thumb-container {
+    display: inline-block;
+    position: relative;
+    width: 33.3%;
+    float: left;
+    height: 0;
+    padding-bottom: 40%;
+}
+#thumb-container-2 {
+    display: inline-block;
+    position: relative;
+    width: 66.6%;
+    float: left;
+    height:0;
+    padding-bottom:40%;
+}
+.thumb-dummy {
+    padding-top: 66%;
+}
+.thumb-product{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 8px solid aliceblue;
+}
+.thumb-element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background: no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index:100;
+    -webkit-transition: all 100ms ease-out;
+-moz-transition: all 100ms ease-out;
+-ms-transition: all 100ms ease-out;
+-o-transition: all 100ms ease-out;
+transition: all 100ms ease-out;
+}
+#thumb-container:hover .thumb-element{transform:scale(1.01);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.14);
+-moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.14);
+box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.14);}
+#thumb-container-2:hover .thumb-element{transform:scale(1.01);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.14);
+-moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.14);
+box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.14);}
+/*------------------------------------------RIQUADRI INFO PRODOTTO--------*/
+.product-bar-2{
+    background-color:#e7e7e7;
+    position:absolute;
+    width:100%;
+    height:15%;
+    bottom:0;
+    left:0;
+}
+.product-bar{
+    background-color:#e7e7e7;
+    position:absolute;
+    width:100%;
+    height:30%;
+    bottom:0;
+    left:0;
+}
+.product-header{
+    background-color:#e7e7e7;
+    position:absolute;
+    width:100%;
+    height:20px;
+    top:0;
+    left:0;
+}
+.product-discount{
+    background-color:#f69393;
+    height:20px;
+    position:absolute;
+    top:0;
+    right:0;
+    text-align:center;
+    line-height:20px;
+    color:#fbe268;
+    font-family:arial;
+    font-size:1em;
+}
+.city{
+    background-color:transparent;
+    height:20px;
+    position:absolute;
+    top:0;
+    left:5px;
+    text-align:center;
+    line-height:20px;
+    color:#666;
+    font-family:arial;
+    font-size:1em;
+}

@@ -1,0 +1,438 @@
+//* VERDE #D3FF8D GIALLINO #F9F5CA *//
+    
+html,body{
+    margin:0;
+}
+body{
+    background-color: #fff;
+}
+
+.header{
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left:0;
+    background-color: #D3FF8D;
+    box-sizing: border-box;
+    color: #000;
+    font-size:28px;
+    direction: ltr;
+    display: block;
+    height: 50px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    width: 95%;
+    float:right;
+    text-align:right;
+-webkit-box-shadow: 1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+-moz-box-shadow:    1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+box-shadow:         1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+}
+.header-prodotto{
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left:0;
+    background-color: #FBE268;
+    box-sizing: border-box;
+    color: #000;
+    font-size:28px;
+    direction: ltr;
+    display: block;
+    height: 50px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    width:100%;
+-webkit-box-shadow: 1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+-moz-box-shadow:    1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+box-shadow:         1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+}
+.map{
+    height:100%;
+}
+.logo-tipit{
+    height:70%;
+    position:absolute;
+    bottom:0;
+    left:13%
+}
+.map:hover{cursor:pointer}
+.logo{
+    z-index:3;
+    position:absolute;
+    top:20px;
+    left:0;
+    background-color: transparent;
+    display: block;
+}
+.cart{
+
+    position: fixed;
+    z-index: 100;
+    top:0;
+    right:0;
+    background-color: #D3FF8D;
+    color: rgb(255, 255, 255);
+    display: block;
+    height: 50px;
+    letter-spacing: 0.8px;
+    line-height: 17.1429px;
+    width: 5%;
+    min-width:50px;
+-webkit-box-shadow: 1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+-moz-box-shadow:    1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+box-shadow:         1px 7px 5px 0px rgba(50, 50, 50, 0.2);
+}
+.cart:hover{cursor:pointer}
+.target{
+    z-index:-1;
+    position:absolute;
+    background-color:white;
+    width:100%;
+    top:470px;
+    height:100%;
+}
+.hamburger{
+    width:100%;
+   top: -325px;
+    position: relative;
+	transition: all 1000ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+}
+#thumb-wrap {
+    position: absolute;
+    width: 75%;
+    left: 25%;
+    top: 40px;
+    margin: 5px;
+}
+#thumb-wrap a {
+    opacity: 1.0;
+}
+#thumb-wrap a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+#thumb-container {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    float: left;
+    height: 0;
+    padding-bottom: 30%;
+}
+#thumb-container:hover{opacity:0.7;cursor:pointer}
+#thumb-container-2 {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    float: left;
+}
+.thumb-dummy {
+    padding-top: 66%;
+}
+.thumb-element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 10px solid white;
+    background: no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.side{
+    width:25%;
+    height:100%;
+    position:absolute;
+    background-color:white;
+}
+#side-wrap {
+    position: absolute;
+    width: 75%;
+    left: 25%;
+    top: 40px;
+    margin: 5px;
+}
+#side-wrap a {
+    opacity: 1.0;
+}
+#side-wrap a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+#side-container {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    float: left;
+    height: 0;
+    padding-bottom: 30%;
+}
+#side-container:hover{opacity:0.7;cursor:pointer}
+#side-container-2 {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    float: left;
+}
+.side-dummy {
+    padding-top: 66%;
+}
+.side-element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border: 10px solid white;
+    padding-top: 19px;
+    background: no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.triangle {
+    position:absolute;
+    right:0;
+    top:0;
+	width: 0;
+	height: 0;
+	border-top: 8vw solid #f79494;
+	border-left: 8vw solid transparent;
+    z-index:3;
+}
+.city{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:7%;
+    z-index:2;
+    background-color:#fce368;
+}
+.description{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:90%;
+    height:20%;
+    z-index:2;
+    background-color:#97ddd8;
+}
+.price{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:10%;
+    height:20%;
+    z-index:2;
+    background-color:#97ddd8;
+}
+.googlemap{
+    z-index:0;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+#map { height: 500px; }
+/*-----------------------------LEFT CONTAINER-----------------------*/
+.right-container{
+    position:absolute;
+    left:13%;
+    width:40%;
+    top:13%;
+    height:0;
+    padding-bottom:40%;
+    background-color:transparent;
+}
+.left-container{
+    position:absolute;
+    right:13%;
+    width:40%;
+    top:13%;
+    height:0;
+    padding-bottom:40%;
+    background-color:transparent;
+}
+.main-product{
+    position:absolute;
+    top:5%;
+    left:5%;
+    width:55%;
+    height:0;
+    padding-bottom:55%;
+    background-image:url('../img/Maglietta-Product-page00.png');
+    background-repeat:round;
+}
+.thumbs-space{
+    position:absolute;
+    top:65%;
+    width:80%;
+    height:0;
+    padding-bottom:15%;
+    background-color:transparent;
+    left:5%;
+}
+.options{
+    position:absolute;
+    top:85%;
+    width:80%;
+    height:0;
+    padding-bottom:8%;
+    background-color:transparent;
+    left:5%;
+}
+.product-image{
+    position:absolute;
+    left:2%;
+    top:2%;
+    width:96%;
+    height:0;
+    padding-bottom:96%;
+    background-color:transparent;
+}
+.cont-thumb{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    padding:1%;
+    display:inline-block
+}
+.cont-opt{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    padding:1%;
+    display:inline-block
+}
+.thumb-product{
+    width:17%;
+    height:0;
+    padding-bottom:17%;
+    background-color:transparent;
+    display:inline-block;
+    background-image:url('../img/Maglietta-Product-page00.png');
+    background-repeat:round;
+}
+.thumb-product:hover{cursor:pointer;opacity:0.5}
+.opt{
+    width:30%;
+    height:0;
+    padding-bottom:8%;
+    background-color:#FBE268;
+    display:inline-block;
+    vertical-align:middle;
+    text-align:center
+}
+.opt:hover{cursor:pointer;opacity:0.7;}
+/*-------------------RIGHT CONTAINER ---------------------*/
+.info{
+    position:absolute;
+    width:90%;
+    height:0;
+    padding-bottom:20%;
+    left:5%;
+    top:5%;
+    background-color:transparent;
+}
+.cont-info{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:transparent;
+    padding:0.1%
+}
+.info-disp{
+    width:48.5%;
+    height:98%;
+    background-color:transparent;
+    display:inline-block
+}
+.info-price{
+    width:48.5%;
+    height:98%;
+    background-color:transparent;
+    display:inline-block
+}
+.set{
+    width:98%;
+    height:0;
+    padding-bottom:20%;
+    background-color:#FBE268;
+    text-align:center
+}
+.var{
+    width:98%;
+    height:0;
+    padding-bottom:20%;
+    background-image:url("../img/barra-prodotto_01.png");
+    background-repeat:round;
+    text-align:center
+}
+.spedizione{
+    position:absolute;
+    width:90%;
+    height:0;
+    padding-bottom:7%;
+    left:5%;
+    top:30%;
+    background-color:transparent;
+    text-align:center
+}
+.add-cart{
+    position:absolute;
+    width:90%;
+    height:0;
+    padding-bottom:16%;
+    left:5%;
+    top:35%;
+    background-image:url('../img/bottone-aggiungi-cesta.png');
+    background-repeat:round;
+}
+.add-cart:hover{cursor:pointer;opacity:0.7}
+.vendor-image{
+    position:absolute;
+    width:90%;
+    height:0;
+    padding-bottom:28%;
+    left:5%;
+    top:53%;
+    background-image:url('../img/Emporio-del-fumetto.png');
+    background-repeat:round;
+}
+.vendor-info{
+    position:absolute;
+    width:90%;
+    height:0;
+    padding-bottom:12%;
+    left:5%;
+    top:83%;
+    background-color:transparent;
+}
+.cont-vendor{
+   width:100%;
+    height:100%;
+    position:absolute;
+    background-color:transparent;
+    padding:1% 
+}
+.address{
+   width:49%;
+    height:98%;
+    background-color:transparent;
+    display:inline-block 
+}
+.map-image{
+   width:49%;
+    height:98%;
+    background-color:transparent;
+    display:inline-block 
+}
