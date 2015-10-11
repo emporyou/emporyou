@@ -4,6 +4,6 @@ function addProduct(p){
     element.appendChild(document.createTextNode(p));
     element.className='flag';
     document.getElementById('bought-container').appendChild(element);
-    cartPosition+=20;
+    cartPosition-=25;
     document.getElementById('basket').style.top='-'+cartPosition+'px';
 }
