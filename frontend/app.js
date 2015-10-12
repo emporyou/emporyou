@@ -133,6 +133,7 @@ doit=function(m_id,onend,res){
 				res.myxml+="<merchant_products><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city>";
 				res.myxml+=o2xml('product',docs);
 				res.myxml+="</merchant_products>";
+				db.close();
 				try{onend();}
 				catch(ex){res.send(res.myxml+'</response>');}
 		});
