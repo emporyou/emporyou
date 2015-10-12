@@ -60,7 +60,7 @@ app.get('/get_product_image', function (req, res) {
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 			console.log(docs[priority]);
 			//res.set('Content-Type', docs[priority].type);
-			res.set('Content-Type', text/plain);
+			res.set('Content-Type', 'text/plain');
 			res.send(docs[priority].original.name);
 			}else{
 				 errs[errs.length]='Image not found';
