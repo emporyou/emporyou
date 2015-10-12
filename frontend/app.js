@@ -52,13 +52,13 @@ app.get('/get_product_image', function (req, res) {
   }else{
 	var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.cfs.Media.filerecord.find({metadata:{productId:p_id}}).toArray(function(err,docs){
+		db.collection('cfs.Media.filerecord').find({metadata:{productId:p_id}}).toArray(function(err,docs){
 			console.log(docs);
 			res.set('Content-Type', 'text/plain');
 			res.send(JSON.stringify(docs));
 		});
 	});
-  }    
+  }
 });
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
