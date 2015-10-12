@@ -1,4 +1,5 @@
 echo touse  curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postrebootdev.txt | /bin/sh
+cd /home/root
 cd react001/reaction
 meteor run --port 3010 &
 cd ../..
