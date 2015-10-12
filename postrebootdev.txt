@@ -16,5 +16,20 @@ cd react004/reaction
 meteor run --port 3040 &
 cd ../..
 sleep 40s
+echo CREDENTIALS 1
+grep "EMAIL/LOGIN:" react001/reaction/started1.txt
+grep "PASSWORD:" react001/reaction/started1.txt
+echo CREDENTIALS 2
+grep "EMAIL/LOGIN:" react001/reaction/started2.txt
+grep "PASSWORD:" react001/reaction/started2.txt
+echo CREDENTIALS 3
+grep "EMAIL/LOGIN:" react001/reaction/started3.txt
+grep "PASSWORD:" react001/reaction/started3.txt
+echo CREDENTIALS 4
+grep "EMAIL/LOGIN:" react001/reaction/started4.txt
+grep "PASSWORD:" react001/reaction/started4.txt
+echo CREDENTIALS 5
+grep "EMAIL/LOGIN:" react001/reaction/started5.txt
+grep "PASSWORD:" react001/reaction/started5.txt
 cd recommerce
 node frontend/app.js
