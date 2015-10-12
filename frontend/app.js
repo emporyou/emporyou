@@ -31,7 +31,7 @@ app.get('/SVC/del_merchant', function (req, res) {res.send('Hello World!!');});
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
 app.get('/shutdown', function (req, res) {
-	var f=g+y;
+	server.close();
 });
 app.get('/get_productREAL', function (req, res) {
   var m_id=req.query.m_id||-1;
