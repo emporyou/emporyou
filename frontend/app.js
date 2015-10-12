@@ -7,7 +7,9 @@ var endOfLine = require('os').EOL;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------ EXAMPLES
-app.get('/', function (req, res) { res.send('Hello World!!');});
+app.get('/', function (req, res) {
+    res.sendfile('./frontend/index.html');
+});
 app.post('/', function (req, res) {res.send('Got a POST request');});
 app.put('/user', function (req, res) { res.send('Got a PUT request at /user');});
 app.delete('/user', function (req, res) {res.send('Got a DELETE request at /user');});
@@ -50,7 +52,7 @@ app.get('/get_product', function (req, res) {
   var pgnum=req.query.pgnum||-1;
   res.myxml='<?xml version="1.0" encoding="UTF-8"?><response>';
   res.set('Content-Type', 'text/xml');
-  doit(1,function(){doit(2,function(){doit(3,function(){doit(4,function(){res.send(res.myxml+'</response>');},res);},res);},res);},res); 
+  doit(1,function(){doit(2,function(){doit(3,function(){doit(4,function(){doit(5,function(){res.send(res.myxml+'</response>');},res);},res);},res);},res);},res); 
 });
 doit=function(m_id,onend,res){var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
