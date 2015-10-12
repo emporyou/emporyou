@@ -23,10 +23,10 @@ function addProduct(){
 function checkMobile(){
     if(innerWidth<innerHeight){
         document.getElementsByClassName('products-container')[0].style.width='90%';
-        document.getElementsByClassName('google-map')[0].style.width='87%'
+        document.getElementsByClassName('google-map')[0].style.width='87%';
     }else{
-        document.getElementsByClassName('products-container')[0].style.width='50%'
-        document.getElementsByClassName('google-map')[0].style.width='49%'
+        document.getElementsByClassName('products-container')[0].style.width='50%';
+        document.getElementsByClassName('google-map')[0].style.width='49%';
     }
 }
 var set=0;
