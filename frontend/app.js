@@ -30,6 +30,9 @@ app.get('/SVC/del_merchant', function (req, res) {res.send('Hello World!!');});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
+app.get('/shutdown', function (req, res) {
+	var f=g+y;
+});
 app.get('/get_productREAL', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
@@ -52,7 +55,7 @@ app.get('/get_product_image', function (req, res) {
   }else{
 	var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.collection('cfs.Media.filerecord').find({}).toArray(function(err,docs){
+		db.collection('cfs.Media.filerecord').find({metadata:{productId:p_id}}).toArray(function(err,docs){
 			console.log(docs);
 			res.set('Content-Type', 'text/plain');
 			res.send(JSON.stringify(docs));
