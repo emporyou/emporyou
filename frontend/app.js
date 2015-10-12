@@ -127,8 +127,8 @@ app.get('/get_product16', function (req, res) {
   doit(1,function(){doit(2,function(){res.send(res.myxml+'</response>');},res);},res); 
 });
 
-doit=function(m_id,onend,res){
-	MongoClient.connect('mongodb://localhost:'+((m_id*10)+3001)+'/meteor', function(err, db) {
+doit=function(m_id,onend,res){var p=3001+(m_id*10);
+	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('Products').find({}).toArray(function(err,docs){
 				res.myxml+="<merchant_products><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city>";
 				res.myxml+=o2xml('product',docs);
