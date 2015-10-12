@@ -3,7 +3,7 @@
 # description: RECOMMERCE!!!
 start(){
         echo "Starting RECOMMERCE..."
-        su root /bin/sh /root/recommerce/postreboot.txt &
+        /bin/sh /root/recommerce/postreboot.txt &
 }
 
 stop(){
