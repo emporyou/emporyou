@@ -128,7 +128,7 @@ app.get('/get_product16', function (req, res) {
 });
 
 doit=function(m_id,onend,res){var p=3001+(m_id*10);
-	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
+	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {console.log(res.myxml);
 		db.collection('Products').find({}).toArray(function(err,docs){
 				res.myxml+="<merchant_products><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city>";
 				res.myxml+=o2xml('product',docs);
