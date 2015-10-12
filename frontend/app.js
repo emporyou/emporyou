@@ -40,7 +40,26 @@ app.get('/get_productREAL', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
 });
-
+app.get('/get_product_image', function (req, res) {
+  var m_id=req.query.m_id||-1;
+  var p_id=req.query.p_id||-1;
+  var errs=[];
+  if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
+  if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
+  if(errs.length>0){
+	  res.set('Content-Type', 'text/plain');
+	  res.send(errs);
+  }else{
+	var p=3001+(m_id*10);
+	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
+		db.cfs.Media.filerecord.find({metadata:{productId:p_id}}).toArray(function(err,docs){
+			console.log(docs);
+			res.set('Content-Type', 'text/plain');
+			res.send(JSON.stringify(docs));
+		});
+	});
+  }    
+});
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
