@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var MongoClient = require('mongodb').MongoClient, format=require('util').format;
+var MJ = require("mongo-fast-join"), mongoJoin = new MJ();
 //APP-INIT + DATABASE CONNECTION
 var endOfLine = require('os').EOL;
 
@@ -58,9 +59,8 @@ app.get('/get_product_image', function (req, res) {
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('cfs.Media.filerecord').find({'metadata.productId':p_id}).toArray(function(err,docs){
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
-			console.log(docs[priority]);
-			//res.set('Content-Type', docs[priority].type);
-			res.set('Content-Type', 'text/plain');
+			res.set('Content-Type', docs[priority].type);
+			//res.set('Content-Type', 'text/plain');
 			res.send(docs[priority].original.name);
 			}else{
 				 errs[errs.length]='Image not found';
@@ -71,6 +71,47 @@ app.get('/get_product_image', function (req, res) {
 	});
   }
 });
+
+app.get('/get_product_imagex', function (req, res) {
+  var m_id=req.query.m_id||-1;
+  var p_id=req.query.p_id||-1;
+  var priority=req.query.priority||0;
+  var errs=[];
+  if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
+  if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
+  if(errs.length>0){
+	  res.set('Content-Type', 'text/plain');
+	  res.send(errs);
+  }else{
+	var p=3001+(m_id*10);
+	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
+		mongoJoin
+    .query(
+      db.collection("Products"),
+        {}, //query statement
+        {}, //fields
+        {limit: 10000//options
+        }
+    )
+    .join({
+        joinCollection: db.collection("products"),
+        //respects the dot notation, multiple keys can be specified in this array
+        leftKeys: ["metadata.product_id"],
+        //This is the key of the document in the right hand document
+        rightKeys: ["_id"],
+        //This is the new subdocument that will be added to the result document
+        newKey: "image"
+    }).exec(function (err, items) {
+        console.log(items);
+		res.send(items);
+    });
+	
+	});
+  }
+});
+
+
+
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
