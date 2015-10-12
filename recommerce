@@ -4,6 +4,7 @@
 start(){
         echo "Starting RECOMMERCE..."
         /bin/sh /root/recommerce/postreboot.txt &
+        echo "Started RECOMMERCE..."
 }
 
 stop(){
