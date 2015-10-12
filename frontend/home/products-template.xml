@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//product">
+<variable tagname="../name" substitution="%vendor-name"/>
+<variable tagname="../lat" substitution="%lat"/>
+<variable tagname="../lon" substitution="%lon"/>
+<variable tagname="../city" substitution="%city"/>
+<variable tagname="id" substitution="%id"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
+<inline tagname="variants" substitution="%price" preload="variants-template.xml"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<html><div id="thumb-container" onclick="addProduct('Massaggi')"><div class="thumb-dummy"></div><div class="thumb-product"><div 
+             style="background-image: url('../img/products/massage.jpg');" class="thumb-element"><div class="product-bar"><div 
+                 class="add"><img class="add-button" src="../img/add.png"/></div><div 
+                 class="share"><img class="share-button" src="../img/share.png"/></div><div 
+                 class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div>%price</div><div 
+                 class="product-header"><div 
+                 class="city">%city</div><div 
+                 class="product-discount" style="width:33%;">33%</div></div></div></div> </div></html></rowtype></document>

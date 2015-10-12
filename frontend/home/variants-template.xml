@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="metafields">
+<variable tagname="price" substitution="%price"/>
+<variable tagname="value" substitution="%value"/>
+<html><div class="price">€300 da €<span style="color:orange">%price</span></div></html>
+</rowtype>
+</document>
