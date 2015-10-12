@@ -20,4 +20,4 @@ meteor run --port 3050 &
 cd ../..
 sleep 30s
 cd recommerce
-node frontend/app.js
+node frontend/app.js &
