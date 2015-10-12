@@ -24,13 +24,13 @@ function checkMobile(){
     if(innerWidth<innerHeight){
         document.getElementsByClassName('products-container')[0].style.width='90%';
         document.getElementsByClassName('google-map')[0].style.width='87%';
-        document.getElementsByClassName('basket-container').style.display="none";
-        document.getElementsByClassName('header-items-container').style.display="none";
+        document.getElementsByClassName('basket-container')[0].style.display="none";
+        document.getElementsByClassName('header-items-container')[0].style.display="none";
     }else{
         document.getElementsByClassName('products-container')[0].style.width='50%';
         document.getElementsByClassName('google-map')[0].style.width='49%';
-        document.getElementsByClassName('basket-container').style.display="";
-        document.getElementsByClassName('header-items-container').style.display="flex";
+        document.getElementsByClassName('basket-container')[0].style.display="";
+        document.getElementsByClassName('header-items-container')[0].style.display="flex";
     }
 }
 var set=0;
