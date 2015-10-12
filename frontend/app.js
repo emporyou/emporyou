@@ -8,7 +8,7 @@ var endOfLine = require('os').EOL;
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------ EXAMPLES
 app.get('/', function (req, res) {
-    res.sendFile('./frontend/index.html');
+    res.sendFile('/root/recommerce/frontend/index.html');
 });
 app.post('/', function (req, res) {res.send('Got a POST request');});
 app.put('/user', function (req, res) { res.send('Got a PUT request at /user');});
