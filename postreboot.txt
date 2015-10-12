@@ -1,5 +1,5 @@
 echo touse  curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postreboot.txt | /bin/sh
-cd /home/root
+cd /root
 cd react001/reaction
 meteor run --port 3010 &
 cd ../..
@@ -22,7 +22,7 @@ cd ../..
 sleep 30s
 cd recommerce
 node frontend/app.js &
-cd /home/root
+cd /root
 
 echo CREDENTIALS 1
 grep "EMAIL/LOGIN:" react001/reaction/started1.txt
