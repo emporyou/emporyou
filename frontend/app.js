@@ -9,7 +9,7 @@ var endOfLine = require('os').EOL;
 //------------------------------------------------------------------------------------------ EXAMPLES
 app.get('/', function (req, res) {
 	app.get('/', function(req, res){
-    res.sendfile('index.html', { root: __dirname + "/frontend" } );
+    res.sendfile('index.html');
 });
 	
 });
