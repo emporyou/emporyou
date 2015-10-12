@@ -122,7 +122,6 @@ app.get('/get_product16', function (req, res) {
   var min=req.query.min||-1;
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
-  var results={m1:null,m2:null,m3:null,m4:null,m5:null};
   res.myxml='<?xml version="1.0" encoding="UTF-8"?><response>';
   res.set('Content-Type', 'text/xml');
   doit(1,function(){doit(2,function(){res.send(res.myxml+'</response>');},res);},res);
