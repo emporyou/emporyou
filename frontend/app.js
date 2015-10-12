@@ -96,7 +96,7 @@ app.get('/get_product_imagex', function (req, res) {
     .join({
         joinCollection: db.collection("products"),
         //respects the dot notation, multiple keys can be specified in this array
-        leftKeys: ["metadata.product_id"],
+        leftKeys: ["metadata.productId"],
         //This is the key of the document in the right hand document
         rightKeys: ["_id"],
         //This is the new subdocument that will be added to the result document
