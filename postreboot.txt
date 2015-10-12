@@ -1,5 +1,7 @@
 #!/bin/sh
 echo touse:  curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postreboot.txt | /bin/sh
+PATH=$PATH:/root/.meteor
+export PATH
 echo STARTING MERCHANT 1-------------------------------------
 cd /root/react001/reaction
 su root -c "meteor run --port 3010 &"
