@@ -1,4 +1,0 @@
-porta frontend : 80
-porta adminend : 89
-
-
