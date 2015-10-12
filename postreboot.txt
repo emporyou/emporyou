@@ -21,3 +21,4 @@ cd ../..
 sleep 30s
 cd recommerce
 node frontend/app.js &
+cd /home/root
