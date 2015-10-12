@@ -1,5 +1,6 @@
 #!/bin/sh
 echo touse:  curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postreboot.txt | /bin/sh
+su root
 cd /root/react001/reaction
 meteor run --port 3010 &
 sleep 30s
