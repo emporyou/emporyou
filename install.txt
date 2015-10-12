@@ -9,6 +9,7 @@ yum install -y ImageMagick
 curl https://install.meteor.com | /bin/sh
 npm install express
 npm install mongodb
+npm install mongo-fast-join
 yum install -y mongodb
 yum install -y mongodb-server
 echo SET MONGOD AUTOSTART
