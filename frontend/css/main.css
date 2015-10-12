@@ -1,8 +1,21 @@
+html{
+    height:100%;
+}
 body{
-    /* SVG as background image (IE9/Chrome/Safari/Opera) */ 
-background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc0ODUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwMDBGRiIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGNTI3MCIgb2Zmc2V0PSIwLjc0Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzQ4NSkiIC8+Cjwvc3ZnPg==);
+background: rgba(0,0,255,1);
+background: -moz-linear-gradient(-45deg, rgba(0,0,255,1) 0%, rgba(255,82,112,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,0,255,1)), color-stop(100%, rgba(255,82,112,1)));
+background: -webkit-linear-gradient(-45deg, rgba(0,0,255,1) 0%, rgba(255,82,112,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(0,0,255,1) 0%, rgba(255,82,112,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(0,0,255,1) 0%, rgba(255,82,112,1) 100%);
+background: linear-gradient(135deg, rgba(0,0,255,1) 0%, rgba(255,82,112,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000ff', endColorstr='#ff5270', GradientType=1 );
     margin:0;
     overflow:hidden;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .logo-bar{
     position:absolute;
