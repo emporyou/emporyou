@@ -23,14 +23,14 @@ function addProduct(){
 function checkMobile(){
     if(innerWidth<innerHeight){
         document.getElementsByClassName('products-container')[0].style.width='90%';
-        document.getElementsByClassName('google-map')[0].style.width='87%';
-        document.getElementsByClassName('basket-container')[0].style.display="none";
-        document.getElementsByClassName('header-items-container')[0].style.display="none";
+        if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';}
+        document.getElementById('basket-container').style.display="none";
+        document.getElementById('header-items-container').style.display="none";
     }else{
         document.getElementsByClassName('products-container')[0].style.width='50%';
-        document.getElementsByClassName('google-map')[0].style.width='49%';
-        document.getElementsByClassName('basket-container')[0].style.display="";
-        document.getElementsByClassName('header-items-container')[0].style.display="flex";
+        if(set==1){document.getElementsByClassName('google-map')[0].style.width='49%';}
+        document.getElementById('basket-container').style.display="";
+        document.getElementById('header-items-container').style.display="flex";
     }
 }
 var set=0;
