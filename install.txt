@@ -1,4 +1,4 @@
-# /bin/sh
+#!/bin/sh
 echo to use : curl https://raw.githubusercontent.com/officinetesla/recommerce/master/install.txt | /bin/sh
 echo INSTALLING PREREQUISITES
 cd /root
