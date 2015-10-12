@@ -42,7 +42,7 @@ app.get('/get_productREAL', function (req, res) {
 });
 app.get('/get_product_image', function (req, res) {
   var m_id=req.query.m_id||-1;
-  var p_id=req.query.m_id||-1;
+  var p_id=req.query.p_id||-1;
   var errs=[];
   if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
   if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
