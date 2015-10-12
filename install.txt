@@ -1,5 +1,6 @@
 echo curl https://raw.githubusercontent.com/officinetesla/recommerce/master/install.txt | /bin/sh
 echo INSTALLING PREREQUISITES
+cd /home/root
 yum install -y nodejs
 yum install -y npm
 yum install -y git
