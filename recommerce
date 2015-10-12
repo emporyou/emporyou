@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# chkconfig: 3 20 80
+# description: RECOMMERCE!!!
 start(){
         echo "Starting RECOMMERCE..."
         /bin/sh /root/recommerce/postreboot.txt &
