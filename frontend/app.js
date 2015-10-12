@@ -113,25 +113,50 @@ app.get('/get_product14', function (req, res) {
   });
 });
 
+app.get('/get_product16', function (req, res) {
+  var m_id=req.query.m_id||-1;
+  var p_id=req.query.m_id||-1;
+  var geo=req.query.geo||null;
+  var cat=req.query.cat||-1;
+  var max=req.query.max||-1;
+  var min=req.query.min||-1;
+  var pgmax=req.query.pgmax||-1;
+  var pgnum=req.query.pgnum||-1;
+  var results={m1:null,m2:null,m3:null,m4:null,m5:null};
+  res.myxml='<?xml version="1.0" encoding="UTF-8"?><response>';
+  res.set('Content-Type', 'text/xml');
+  doit(1,function(){doit(2,function(){res.send(res.myxml+'</response>');},res);},res);
+});
+
+doit=function(m_id,onend,res){
+	MongoClient.connect('mongodb://localhost:'+((m_id*10)+3001)+'/meteor', function(err, db) {
+		db.collection('Products').find({}).toArray(function(err,docs){
+				res.myxml+="<merchant_products><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city>";
+				res.myxml+=o2xml('product',docs);
+				res.myxml+="</merchant_products>";
+				try{onend();}
+				catch(ex){res.send(res.myxml+'</response>');}
+		});
+	});
+}
+
+//--------------------------------------------------------------------OBJECT 2 XML
 o2xml=function(n,o){
 	if(Array.prototype.isPrototypeOf(o)){return a2xml(n,o);}
 	else if(typeof(o)=='object'){return _o2xml(n,o);}
-	else{return v2xml(n,o);}
-};
+	else{return v2xml(n,o);}};
 _o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
 	for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}
 		if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}
 		else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}
 		else{xml+=v2xml(pr,o[prop]);}
-	}return xml+'</'+n+'>';}else{return ''}
-};
+	}return xml+'</'+n+'>';}else{return ''}};
 a2xml=function(n,a){var xml='';
 	for(var i=0;i<a.length;i++){
 		if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}
 		else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}
 		else{xml+=v2xml(n,a[i]);}
-	}return xml;	
-};
+	}return xml;};
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
 
 app.use(express.static('.'));
