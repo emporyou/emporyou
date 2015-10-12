@@ -30,7 +30,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     margin:0 auto;
 }
 .logo:hover{cursor:pointer}
-.header-items-container{
+#header-items-container{
     height:60%;
     width:50%;
     background-color:transparent;
