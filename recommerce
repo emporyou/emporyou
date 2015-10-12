@@ -1,12 +1,12 @@
 #!/bin/bash
 
 start(){
-        echo "Starting ..."
+        echo "Starting RECOMMERCE..."
         /bin/sh /root/recommerce/postreboot.txt &
 }
 
 stop(){
-        echo "Stopping jboss... (doing nothing)"
+        echo "Stopping RECOMMERCE... (doing nothing)"
         
 }
 
