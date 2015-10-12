@@ -83,3 +83,6 @@ grep "PASSWORD:" react004/reaction/started4.txt
 echo CREDENTIALS 5
 grep "EMAIL/LOGIN:" react005/reaction/started5.txt
 grep "PASSWORD:" react005/reaction/started5.txt
+echo REBOOTING in 10sec press CTRL+C to abort
+sleep 10s
+reboot
