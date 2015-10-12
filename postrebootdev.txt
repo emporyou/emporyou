@@ -1,4 +1,4 @@
-# /bin/sh
+#!/bin/sh
 echo touse : curl https://raw.githubusercontent.com/officinetesla/recommerce/master/postrebootdev.txt | /bin/sh
 cd /root
 cd react001/reaction
