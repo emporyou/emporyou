@@ -15,9 +15,5 @@ cd react004/reaction
 meteor run --port 3040 &
 cd ../..
 sleep 30s
-cd react005/reaction
-meteor run --port 3050 &
-cd ../..
-sleep 30s
 cd recommerce
 node frontend/app.js
