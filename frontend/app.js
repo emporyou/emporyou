@@ -94,7 +94,7 @@ app.get('/get_product_imagex', function (req, res) {
         }
     )
     .join({
-        joinCollection: db.collection("products"),
+        joinCollection: db.collection("cfs.Media.filerecord"),
         //respects the dot notation, multiple keys can be specified in this array
         leftKeys: ["metadata.productId"],
         //This is the key of the document in the right hand document
