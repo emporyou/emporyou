@@ -61,6 +61,10 @@ cd ../..
 sleep 30s
 echo CLONING FRONTEND
 git clone https://github.com/officinetesla/recommerce.git
+echo SETUP REBOOT SCRIPT --------------------------
+cp recommerce/recommerce /etc/init.d/
+chmod 755 /etc/init.d/recommerce
+chkconfig recommerce on
 cd recommerce
 node frontend/app.js &
 cd /root
