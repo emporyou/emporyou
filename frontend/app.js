@@ -48,7 +48,7 @@ app.get('/get_product_image', function (req, res) {
   if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
   if(errs.length>0){
 	  res.set('Content-Type', 'text/plain');
-	  res.send(docs);
+	  res.send(errs);
   }else{
 	var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
