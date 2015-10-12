@@ -46,6 +46,7 @@ app.get('/get_productREAL', function (req, res) {
 app.get('/get_product_image', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.p_id||-1;
+  var priority=req.query.priority||0;
   var errs=[];
   if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
   if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
@@ -56,9 +57,16 @@ app.get('/get_product_image', function (req, res) {
 	var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('cfs.Media.filerecord').find({'metadata.productId':p_id}).toArray(function(err,docs){
-			console.log(docs);
-			res.set('Content-Type', 'text/plain');
-			res.send(JSON.stringify(docs));
+			if(docs.length>0){if(priority>docs.length){priority=docs.length}
+			console.log(docs[priority]);
+			//res.set('Content-Type', docs[priority].type);
+			res.set('Content-Type', text/plain);
+			res.send(docs[priority].original.name);
+			}else{
+				 errs[errs.length]='Image not found';
+				 res.set('Content-Type', 'text/plain');
+				 res.send(errs);
+			}
 		});
 	});
   }
