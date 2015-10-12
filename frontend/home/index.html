@@ -18,6 +18,7 @@
 <!-- //////////////////////////THREEJS -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/map.css">
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <script src="js/main.js"></script>
@@ -34,32 +35,33 @@
 <img id="basket" src="../img/basket.png"/>
 </div>
 <div class="header">
-   <div class="ham-square">
-       <div class="ham-container">
-        <img class="ham" src="../img/hamburger.png"/>
-        </div>
-    </div>
-    <div class="logo-container">
-        <img class="logo" src="../img/logo-white.png" onclick="location.href='../index.html';"/>
-    </div>
-</div>
+    <div class="logo-container"><img
+        class="logo" src="../img/logo-white.png" onclick="location.href='../index.html';"/></div><div 
+        class="header-items-container">
+            <div class="item-container" onclick="openMap()"><img class="map-icon" src="../img/map-icon.png"/></div>
+            <div class="item-container">città ▼</div>
+            <div class="item-container">categoria ▼</div>
+            <div class="item-container">fascia di prezzo ▼</div>
+            <div class="item-container">ordina per ▼</div>
+        </div></div>
 <div class="emporyoum-bar">
     <div class="emporyoum-container">
         <img class="emporyoum" src="../img/emporyoum-home.png"/>
     </div>
 </div>
+<div class="google-map-container-start"><img class="google-map-start" src="../img/google-maps.png"/></div>
 <div class="products-main">
     <div class="products-container">
         <div id="thumb-wrap"> 
-        <div id="thumb-container-2" onclick="addProduct('Massaggi')">
+        <div id="thumb-container" onclick="addProduct('Massaggi')">
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
-              <div class="product-bar-2">
-                  <div class="add-2"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share-2"><img class="share-button" src="../img/share.png"/></div>
-                  <div class="description-2"><b>Massaggi</b><br/>In un accogliente centro nella città di Milano</div>
-                  <div class="price-2">€300 da €<span style="color:orange">200</span></div>
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description"><b>Massaggi</b><br/><i>by La Scarpa di Aladino</i><br/>In un accogliente centro nella città di Milano</div>
+                  <div class="price">€300 da €<span style="color:orange">200</span></div>
               </div>
               <div class="product-header">
                  <div class="city">Milano</div>
@@ -137,11 +139,11 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container-2" onclick="addProduct('Palestra')"> 
+        <div id="thumb-container" onclick="addProduct('Palestra')"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
           <div style="background-image: url('../img/products/palestra.jpg');" class="thumb-element">
-              <div class="product-bar-2"></div>
+              <div class="product-bar"></div>
               <div class="product-header">
                  <div class="city">Milano</div>
                   <div class="product-discount" style="width:50%;">50%</div>
