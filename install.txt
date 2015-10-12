@@ -1,6 +1,6 @@
 echo curl https://raw.githubusercontent.com/officinetesla/recommerce/master/install.txt | /bin/sh
 echo INSTALLING PREREQUISITES
-cd /home/root
+cd /root
 yum install -y nodejs
 yum install -y npm
 yum install -y git
@@ -62,7 +62,7 @@ echo CLONING FRONTEND
 git clone https://github.com/officinetesla/recommerce.git
 cd recommerce
 node frontend/app.js &
-cd /home/root
+cd /root
 echo CREDENTIALS 1
 grep "EMAIL/LOGIN:" react001/reaction/started1.txt
 grep "PASSWORD:" react001/reaction/started1.txt
