@@ -30,6 +30,7 @@
 <meta charset="utf-8"/>
 </head>
 <body onload="checkMobile()" onresize="checkMobile()">
+<!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
 <div id="basket-container">
 <div id="bought-container"></div>
 <img src="../img/dot.png" id="else"/>
@@ -38,7 +39,7 @@
     <div class="logo-container"><img
         class="logo" src="../img/logo-white.png" onclick="location.href='../index.html';"/></div><div 
         class="header-items-container">
-            <div class="item-container" onclick="ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')"><img class="map-icon" src="../img/map-icon.png"/></div>
+            <div class="item-container" onclick="openMap()"><img class="map-icon" src="../img/map-icon.png"/></div>
             <div class="item-container">città ▼</div>
             <div class="item-container">categoria ▼</div>
             <div class="item-container">fascia di prezzo ▼</div>
