@@ -79,39 +79,6 @@ app.get('/get_product', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
 });
-  
-app.get('/get_product14', function (req, res) {
-  var m_id=req.query.m_id||-1;
-  var p_id=req.query.m_id||-1;
-  var geo=req.query.geo||null;
-  var cat=req.query.cat||-1;
-  var max=req.query.max||-1;
-  var min=req.query.min||-1;
-  var pgmax=req.query.pgmax||-1;
-  var pgnum=req.query.pgnum||-1;
-  var results={m1:null,m2:null,m3:null,m4:null,m5:null};
-  var P;var p;var xml='<?xml version="1.0" encoding="UTF-8"?><response>';
-  res.set('Content-Type', 'text/xml');
-  MongoClient.connect('mongodb://localhost:3011/meteor', function(err, db) {
-	P=db.collection('Products');
-	P.find({}).toArray(function(err, docs) {
-	xml+="<merchant_products><name>Merchant 1</name><id>1</id><lat>1</lat><lon>1</lon><city>Milano</city>";
-	xml+=o2xml('product',docs);
-	xml+="</merchant_products>";
-		try{
-			MongoClient.connect('mongodb://localhost:3021/meteor', function(err, db) {
-				P=db.collection('Products');
-				P.find({}).toArray(function(err, docs) {
-				xml+="<merchant_products><name>Merchant 2</name><id>2</id><lat>2</lat><lon>2</lon><city>Milano</city>";
-				xml+=o2xml('product',docs);
-				xml+="</merchant_products>";
-				res.send(xml+'</response>');
-			});
-			});
-		}catch(ex){res.send(xml+'</response>');}
-    });
-  });
-});
 
 app.get('/get_product16', function (req, res) {
   var m_id=req.query.m_id||-1;
@@ -124,11 +91,11 @@ app.get('/get_product16', function (req, res) {
   var pgnum=req.query.pgnum||-1;
   res.myxml='<?xml version="1.0" encoding="UTF-8"?><response>';
   res.set('Content-Type', 'text/xml');
-  doit(1,function(){doit(2,function(){res.send(res.myxml+'</response>');},res);},res); 
+  doit(1,function(){doit(2,function(){doit(3,function(){doit(4,function(){res.send(res.myxml+'</response>');},res);},res);},res);},res); 
 });
 
 doit=function(m_id,onend,res){var p=3001+(m_id*10);
-	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {console.log(res.myxml);
+	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('Products').find({}).toArray(function(err,docs){
 				res.myxml+="<merchant_products><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city>";
 				res.myxml+=o2xml('product',docs);
