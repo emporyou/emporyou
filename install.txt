@@ -61,4 +61,4 @@ echo CLONING FRONTEND
 git clone https://github.com/officinetesla/recommerce.git
 cd recommerce
 node frontend/app.js &
-
+cd /home/root
