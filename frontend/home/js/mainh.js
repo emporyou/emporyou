@@ -4,5 +4,5 @@ rendercart=function(){
 	var cartdata=document.getElementById('cart-data');
 	var cartXML='<?xml version="1.0" encoding="UTF-8"?><response>';
 	cartXML+='</response>';
-	ooo.syncrender('products-cart-target',ooo.parsexml(cartXML).documentElement,ooo.preloaded('products-cart.xml'));this.value='CLEAR';}
+	ooo.syncrender('products-cart-target',ooo.parsexml(cartXML).documentElement,ooo.preloaded('products-cart.xml'));
 };
