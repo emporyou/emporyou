@@ -53,15 +53,12 @@ app.get('/get_product_image', function (req, res) {
   var errs=[];
   if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
   if(p_id==-1){errs[errs.length]='Parameter p_id is mandatory.\n'}
-  if(errs.length>0){
-	  res.set('Content-Type', 'text/plain');
-	  res.send(errs);
-  }else{
-	var p=3001+(m_id*10);
+  if(errs.length>0){res.set('Content-Type', 'text/plain');res.send(errs);}
+  else{var p=3001+(m_id*10);
 	var q_exp='metadata.productId';var q_field=p_id;
 	if(v_id>-1){q_exp='metadata.variantId';q_field=v_id;}
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.collection('cfs_gridfs.'+isize+'.files').find({'metadata.productId':p_id}).toArray(function(err,docs){
+		db.collection('cfs_gridfs.'+isize+'.files').find({q_exp:q_field}).toArray(function(err,docs){
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 				res.set('Content-Type', docs[priority].contentType);
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
