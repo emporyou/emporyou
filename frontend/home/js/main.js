@@ -87,5 +87,5 @@ function openCart(){
     if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}
     document.getElementsByClassName('products-main')[0].style.top="100%";
     if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
-    document.getElementById('product-page-target').style.display="flex";
+    document.getElementById('product-page-target').style.top="58%";
 }
