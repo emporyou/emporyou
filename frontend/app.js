@@ -62,14 +62,14 @@ app.get('/get_product_image', function (req, res) {
 		projection['copies.'+isize+'.key']=1;		
 		db.collection('cfs.Media.filerecord').find({'metadata.productId':q_field}).toArray(function(err,d1){
 		  if(d1.length>0){console.log(d1[0].copies[isize].key);
-			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':d1[0].copies[isize].key}).toArray(function(err,d2){
+			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':ObjectId(d1[0].copies[isize].key})).toArray(function(err,d2){
 				if(d2.length>0){
 					res.set('Content-Type', d2[0].contentType);
 					db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':d2[0]._id}).toArray(function(err,d3){
 						if(d3.length>0){
 							res.set('Content-Type', d2[0].contentType);
 							res.send(new Buffer(d3[0].data.buffer, 'binary'))
-						}else{console.log('imgexit3');servenoimage(res);}						
+						}else{console.log('imgexit3');servenoimage(res);}		
 					});
 				}else{console.log('imgexit2');servenoimage(res);}
 			});
