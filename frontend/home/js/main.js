@@ -70,7 +70,11 @@ function openMap(){
     document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
     document.getElementsByClassName('google-map-start')[0].classList.remove('google-map-start');
     document.getElementsByClassName('google-map-container-start')[0].classList.remove('google-map-container-start');
-    if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
+    if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
+        if(document.getElementsByClassName('google-map-container-start')[0]){
+            document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}else{
+                document.getElementsByClassName('google-map-container')[0].style.top="13%"}
+    };
     document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');set=1}else{
         document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
@@ -89,7 +93,9 @@ function openCart(){
 }
 function cartReady(){
     cartOpened=1;
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}else{
+        document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="75%";
+    };
     document.getElementsByClassName('products-main')[0].style.top="100%";
     if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementById('product-page-target').style.top="58%";
@@ -108,17 +114,20 @@ function scrollTo(element, to, duration) {
     }, 10);
 }
 function defaultPage(){
-    if(cartOpened==1){//closeCart};
-    if(set==1){openMap()};
+    if(cartOpened==1){closeCart()};
+    if(set==1){openMap()}else{document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
-    scrollTo(document.body, 0, 200);
-}
-function closeCart(){
-    if(document.getElementsByClassName('emporyoum-bar')[0]){
-        document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
-    };
     document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementById('product-page-target').style.top="58%";
+    document.getElementById('basket-container').style.top="0";
+    scrollTo(document.body, 0, 200);
+}
+function closeCart(){cartOpened=0;
+    if(document.getElementsByClassName('emporyoum-bar')[0]){
+        document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    }else{
+        document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="30%";
+    };
     document.getElementById('products-cart-target').style.height="0";
-    document.getElementById('pattern').style.bottom="-150px";
+    document.getElementById('pattern').style.bottom="150px";
 }
