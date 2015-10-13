@@ -83,7 +83,7 @@ function openMap(){
     
 }
 function openCart(){
-    document.getElementById('basket-container').style.top="-20%";
+    document.getElementById('basket-container').style.top="-30%";
     setTimeout('cartReady()',400)
 }
 function cartReady(){
