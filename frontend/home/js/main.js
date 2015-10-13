@@ -20,7 +20,8 @@ function addProduct(){
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
 }
-function openProduct(event,elm){
+function openProduct(event,elm,merid,id){
+    ooo.render('product-page-target','product-page-template.xml','http://emporyoum.com/get_product?m_id='+merid+'&p_id='+id);
     if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//variants">
+<variable tagname="optionTitle" substitution="%options"/>
+<html><div class="product-values">%options</div></html>
+</rowtype>
+</document>
