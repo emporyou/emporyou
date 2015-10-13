@@ -20,16 +20,24 @@ function addProduct(){
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
 }
+function openProduct(event,elm){
+    //var elm=document.getElementById('openProd');
+if(event.srcElement==elm){
+    document.getElementsByClassName('products-main')[0].style.display="none";
+    document.getElementsByClassName('emporyoum-bar')[0].style.display="none";
+    document.getElementById('basket-container').style.display="none";
+}
+}
 function checkMobile(){
     if(innerWidth<innerHeight){
         document.getElementsByClassName('products-container')[0].style.width='90%';
         if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';}
-        document.getElementById('basket-container').style.display="none";
+        //document.getElementById('basket-container').style.display="none";
         document.getElementById('header-items-container').style.display="none";
     }else{
         document.getElementsByClassName('products-container')[0].style.width='50%';
         if(set==1){document.getElementsByClassName('google-map')[0].style.width='49%';}
-        document.getElementById('basket-container').style.display="";
+        //document.getElementById('basket-container').style.display="";
         document.getElementById('header-items-container').style.display="flex";
     }
 }

@@ -20,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/map.css">
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
+<link rel="stylesheet" type="text/css" href="css/product-page.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <script src="js/main.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
@@ -29,9 +30,9 @@
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
 </head>
-<body onload="checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
+<body onload="checkMobile();" onresize="checkMobile()">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
-<div id="basket-container">
+<div id="basket-container" style="display:none">
 <div id="bought-container"></div>
 <img src="../img/dot.png" id="else"/>
 <img id="basket" src="../img/basket.png"/></div>
@@ -45,16 +46,16 @@
             <div class="item-container">fascia di prezzo ▼</div>
             <div class="item-container">ordina per ▼</div>
         </div></div>
-<div class="emporyoum-bar">
+<div class="emporyoum-bar-finish">
     <div class="emporyoum-container">
         <img class="emporyoum" src="../img/emporyoum-home.png"/>
     </div>
 </div>
 <div class="google-map-container-start"><img class="google-map-start" src="../img/google-maps.png"/></div>
-<div class="products-main">
+<div class="products-main" style="display:none">
     <div class="products-container">
         <div id="thumb-wrap"> 
-        <!--<div id="thumb-container" onclick="addProduct('Massaggi')">
+        <div id="thumb-container" onclick="addProduct('Massaggi')">
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
@@ -70,12 +71,12 @@
               </div>
           </div></div> 
         </div> 
-        <div id="thumb-container" onclick="addProduct('Bicicletta')"> 
+        <div id="thumb-container"> 
           <div class="thumb-dummy"></div>
           <div class="thumb-product"> 
-          <div style="background-image: url('../img/bici.jpg');" class="thumb-element">
+          <div style="background-image: url('../img/bici.jpg');" onclick="openProduct(event,this)" id="openProd" class="thumb-element">
               <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="add" onclick="addProduct()"><img class="add-button" src="../img/add.png"/></div>
                   <div class="share"><img class="share-button" src="../img/share.png"/></div>
                   <div class="description"><b>Bicicletta</b><br/>Una elegante bicicletta da città</div>
                   <div class="price">€300 da €<span style="color:orange">200</span></div>
@@ -182,8 +183,21 @@
                   <div class="product-discount"></div>
               </div>
           </div></div> 
-        </div>-->
+        </div>
       </div>
+    </div>
+</div>
+<div class="products-page-main">
+    <div class="product-title-bar">
+        <div class="product-title"></div>
+        <div class="product-subtitle"></div>
+    </div>
+    <div class="product-info-main"><div class="product-left-container">
+        <div class="product-photos"><div class="main-photo"></div><div class="other-photo"></div></div>
+        <div class="product-description"></div>
+    </div><div class="product-right-container">
+    <div class="product-buy-container"></div>
+    <div class="product-social-maps-container"></div></div>
     </div>
 </div>
 </body></html>
