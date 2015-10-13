@@ -94,7 +94,7 @@ app.get('/get_product', function (req, res) {
   res.set('Content-Type', 'text/xml');
   var q={};
   console.log(p_id);
-  if(p_id!=-1){q={_id:ObjectID(p_id)}}
+  if(p_id!=-1){q={_id:p_id}}
   doit(1,function(){doit(2,function(){doit(3,function(){doit(4,function(){doit(5,function(){res.send(res.myxml+'</response>');},res,q);},res,q);},res,q);},res,q);},res,q); 
 });
 doit=function(m_id,onend,res,q){var p=3001+(m_id*10);
