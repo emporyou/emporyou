@@ -66,7 +66,7 @@ app.get('/get_product_image', function (req, res) {
 				res.set('Content-Type', docs[priority].contentType);
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
 					console.log(docs[0].data);
-					res.send(new Buffer(docs[0].data, 'base64'))
+					res.send(new Buffer(docs[0].data.buffer, 'binary'))
 				});
 			}else{
 				 errs[errs.length]='Image not found';
