@@ -34,5 +34,6 @@
         class="buy-element"><img onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/buy-button.png" class="buy-button"/></div><div 
         class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div><div 
         class="buy-element">%options</div></div><div 
-        class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div>
+        class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 </html></rowtype></document>
