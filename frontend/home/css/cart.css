@@ -1,0 +1,7 @@
+.products-cart-target{
+    position:absolute;
+    width:100%;
+    top:50px;
+    height:50%;
+    background-color:red;
+}
