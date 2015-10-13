@@ -114,7 +114,9 @@ function defaultPage(){
     scrollTo(document.body, 0, 200);
 }
 function closeCart(){
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";}
+    if(document.getElementsByClassName('emporyoum-bar')[0]){
+        document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    };
     document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="0";
