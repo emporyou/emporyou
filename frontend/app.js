@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-var MongoClient = require('mongodb').MongoClient, format=require('util').format;
+var format=require('util').format;
+var MongoClient = require('mongodb').MongoClient,ObjectID = require('mongodb').ObjectID;
 var MJ = require("mongo-fast-join"), mongoJoin = new MJ();
 //APP-INIT + DATABASE CONNECTION
 var endOfLine = require('os').EOL;
