@@ -29,7 +29,7 @@
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
 </head>
-<body onload="checkMobile()" onresize="checkMobile()">
+<body onload="checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
 <div id="basket-container">
 <div id="bought-container"></div>
@@ -54,7 +54,7 @@
 <div class="products-main">
     <div class="products-container">
         <div id="thumb-wrap"> 
-        <div id="thumb-container" onclick="addProduct('Massaggi')">
+        <!--<div id="thumb-container" onclick="addProduct('Massaggi')">
           <div class="thumb-dummy"></div> 
           <div class="thumb-product">
           <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
@@ -182,7 +182,7 @@
                   <div class="product-discount"></div>
               </div>
           </div></div> 
-        </div> 
+        </div>-->
       </div>
     </div>
 </div>
