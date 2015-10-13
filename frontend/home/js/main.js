@@ -84,8 +84,8 @@ function openMap(){
 }
 function openCart(){
     cartOpened=1;
-    if('emporyoum-bar'){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}
     document.getElementsByClassName('products-main')[0].style.top="100%";
-    if('google-map-container'){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
+    if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementById('product-page-target').style.display="flex";
 }
