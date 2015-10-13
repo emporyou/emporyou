@@ -5,7 +5,7 @@ function addProduct(productName,XMLid,PRDid){
         var qt=parseInt(elm.className.replace('a',''));qt++;
         elm.className='a'+qt;
     }else{
-    elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid],document.getElementById(XMLid).value);}
+    elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
     total++;
     if(total==1){
         var element = document.createElement("div");
