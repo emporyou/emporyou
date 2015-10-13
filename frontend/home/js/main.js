@@ -1,4 +1,4 @@
-var cartPosition=450;var total=0;
+var cartPosition=450;var total=0;var set=0;
 function addProduct(){
     total++;
     if(total==1){
@@ -21,6 +21,7 @@ function addProduct(){
     }
 }
 function openProduct(event,elm){
+    if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
     document.getElementsByClassName('products-main')[0].style.display="none";
@@ -50,7 +51,7 @@ function checkMobile(){
         document.getElementById('header-items-container').style.display="flex";
     }
 }
-var set=0;
+
 function openMap(){
     if(set==0){
     document.getElementsByClassName('google-map-start')[0].classList.add('google-map');
