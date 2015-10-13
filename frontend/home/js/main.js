@@ -32,7 +32,6 @@ if(event.srcElement==elm){
 }
 }
 function closeProduct(){
-    if(set==0){openMap()}
     document.getElementsByClassName('products-main')[0].style.display="";
     if(document.getElementsByClassName('emporyoum-bar-finish')[0]){document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');}
