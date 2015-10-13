@@ -58,7 +58,7 @@ app.get('/get_product_image', function (req, res) {
 	var q_exp='metadata.productId';var q_field=p_id;
 	if(v_id!=-1){q_exp='metadata.variantId';q_field=v_id;}
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.collection('cfs_gridfs.'+isize+'.files').find({q_exp:q_field}).toArray(function(err,docs){
+		db.collection('cfs_gridfs.'+isize+'.files').find({q_exp.valueOf():q_field}).toArray(function(err,docs){
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 				res.set('Content-Type', docs[priority].contentType);
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
