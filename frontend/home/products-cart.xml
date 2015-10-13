@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//product">
+<variable tagname="../name" substitution="%vendor-name"/>
+<variable tagname="../lat" substitution="%lat"/>
+<variable tagname="../lon" substitution="%lon"/>
+<variable tagname="../city" substitution="%city"/>
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="../id" substitution="%merch-id"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<variable tagname="title" substitution="%jsproduct-name" escape="js"/>
+<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<html><div id="thumb-container"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
+             style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
+                 class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div 
+                 class="share"><img class="share-button" src="../img/share.png"/></div><div 
+                 class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
+                 class="price">€300 da €<span style="color:orange">%price</span></div></div><div 
+                 class="product-header"> <div 
+                 class="city">%city</div><div 
+                 class="product-discount" style="width:33%;">33%</div></div></div></div></div></html></rowtype></document>
