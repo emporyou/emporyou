@@ -56,20 +56,25 @@ app.get('/get_product_image', function (req, res) {
   if(errs.length>0){res.set('Content-Type', 'text/plain');res.send(errs);}
   else{var p=3001+(m_id*10);
 	var q_exp='metadata.productId';var q_field=p_id;
-	if(v_id!=-1){q_exp='metadata.variantId';q_field=v_id;}
+	//if(v_id!=-1){q_exp='metadata.variantId';q_field=v_id;}
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.collection('cfs_gridfs.'+isize+'.files').find({'metadata.productId':q_field}).toArray(function(err,docs){
-			if(docs.length>0){if(priority>docs.length){priority=docs.length}
-				res.set('Content-Type', docs[priority].contentType);
-				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
-					res.send(new Buffer(docs[0].data.buffer, 'binary'))
-				});
-			}else{
-				 errs[errs.length]='Image not found';
-				 res.set('Content-Type', 'text/plain');
-				 res.send(errs);
-			}
-		});
+		var projection={};
+		projection['copies.'+isize+'.key']=1;		
+		db.collection('cfs.Media.filerecord').find({q_exp:q_field},projection).toArray(function(err,d1){
+		  if(d1.length>0){console.log(d1[0].copies[isize].key);
+			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':d1[0].copies[isize].key}).toArray(function(err,d2){
+				if(d2.length>0){
+					res.set('Content-Type', d2[0].contentType);
+					db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':d2[0]._id}).toArray(function(err,d3){
+						if(d3.length>0){
+							res.set('Content-Type', d2[0].contentType);
+							res.send(new Buffer(d3[0].data.buffer, 'binary'))
+						}else{servenoimage(res);}						
+					});
+				}else{servenoimage(res);}
+			});
+		  }else{servenoimage(res);}		  
+		});		
 	});
   }
 });
@@ -102,6 +107,12 @@ _o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
 	for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}else{xml+=v2xml(pr,o[prop]);}}return xml+'</'+n+'>';}else{return ''}};
 a2xml=function(n,a){var xml='';for(var i=0;i<a.length;i++){if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}else{xml+=v2xml(n,a[i]);}}return xml;};
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
+serve404=function(res){
+	
+};
+servenoimage=function(res){
+	res.sendFile('/root/recommerce/frontend/img/defaultproduct.png');
+};
 //---------------------------------------------------------------------------------------------------
 app.use(express.static('./frontend'));
 var server = app.listen(80,function () {
