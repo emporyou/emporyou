@@ -74,6 +74,18 @@ echo  --------------- STARTING FRONTEND ----------------------------
 cd recommerce
 node frontend/app.js &
 cd /root
+echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
+cd react001/reaction/packages
+git clone -b development https://github.com/reactioncommerce/reaction-core.git
+cd react002/reaction/packages
+git clone -b development https://github.com/reactioncommerce/reaction-core.git
+cd react003/reaction/packages
+git clone -b development https://github.com/reactioncommerce/reaction-core.git
+cd react004/reaction/packages
+git clone -b development https://github.com/reactioncommerce/reaction-core.git
+cd react005/reaction/packages
+git clone -b development https://github.com/reactioncommerce/reaction-core.git
+cd ../../..
 echo  --------------- GREP CREDENTIALS -----------------------------
 echo CREDENTIALS 1
 grep "EMAIL/LOGIN:" react001/reaction/started1.txt
