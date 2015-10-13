@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <rowtype tagname="//product">
-<variable tagname="../name" substitution="%vendor-name"/>
-<variable tagname="../lat" substitution="%lat"/>
-<variable tagname="../lon" substitution="%lon"/>
-<variable tagname="../city" substitution="%city"/>
+<variable tagname="merchant/name" substitution="%vendor-name"/>
+<variable tagname="merchant/lat" substitution="%lat"/>
+<variable tagname="merchant/lon" substitution="%lon"/>
+<variable tagname="merchant/city" substitution="%city"/>
 <variable tagname="_id" substitution="%id"/>
-<variable tagname="../id" substitution="%merch-id"/>
+<variable tagname="merchant/id" substitution="%merch-id"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>

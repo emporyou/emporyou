@@ -94,6 +94,7 @@ function cartReady(){
     if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="50%";
+    document.getElementById('pattern').style.bottom="0";
 }
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
