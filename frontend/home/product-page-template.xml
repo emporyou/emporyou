@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <rowtype tagname="//product">
-<variable tagname="../name" substitution="%vendor-name"/>
-<variable tagname="../lat" substitution="%lat"/>
-<variable tagname="../lon" substitution="%lon"/>
-<variable tagname="../city" substitution="%city"/>
+<variable tagname="merchant/name" substitution="%vendor-name"/>
+<variable tagname="merchant/lat" substitution="%lat"/>
+<variable tagname="merchant/lon" substitution="%lon"/>
+<variable tagname="merchant/city" substitution="%city"/>
 <variable tagname="_id" substitution="%id"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<variable tagname="../id" substitution="%merch-id"/>
+<variable tagname="merchant/id" substitution="%merch-id"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
@@ -34,5 +34,6 @@
         class="buy-element"><img onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/buy-button.png" class="buy-button"/></div><div 
         class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div><div 
         class="buy-element">%options</div></div><div 
-        class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div>
+        class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 </html></rowtype></document>

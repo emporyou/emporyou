@@ -9,3 +9,20 @@
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
 }
+#pattern{
+    background-color:#f7f7f7;
+    color:#cccccc;
+    bottom:150px;
+    height:15%;
+    width:100%;
+    left:0;
+    position:absolute;
+    text-align:center;
+    font-family:'open sans';
+    font-size:5vh;
+}
+#pattern:hover{
+    color:#0c2d4d;
+    cursor:pointer;
+    border-bottom:dashed 1px rgba(12, 45, 77, 0.24);
+}
