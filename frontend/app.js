@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var format=require('util').format;
-var MongoClient = require('mongodb').MongoClient,ObjectID = require('mongodb').ObjectID;
+var MongoClient = require('mongodb').MongoClient;
+var ObjectID = require('mongodb').ObjectID;
 var MJ = require("mongo-fast-join"), mongoJoin = new MJ();
 //APP-INIT + DATABASE CONNECTION
 var endOfLine = require('os').EOL;
@@ -63,7 +64,7 @@ app.get('/get_product_image', function (req, res) {
 		projection['copies.'+isize+'.key']=1;		
 		db.collection('cfs.Media.filerecord').find({'metadata.productId':q_field}).toArray(function(err,d1){
 		  if(d1.length>0){console.log(d1[0].copies[isize].key);
-			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':ObjectId(d1[0].copies[isize].key)}).toArray(function(err,d2){
+			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':ObjectID(d1[0].copies[isize].key)}).toArray(function(err,d2){
 				if(d2.length>0){
 					res.set('Content-Type', d2[0].contentType);
 					db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':d2[0]._id}).toArray(function(err,d3){
