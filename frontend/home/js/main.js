@@ -28,7 +28,7 @@ if(event.srcElement==elm){
     document.getElementsByClassName('products-main')[0].style.display="none";
     if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
     document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');}
-    document.getElementById('basket-container').style.display="none";
+    //document.getElementById('basket-container').style.display="none";
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
 }
 }
@@ -36,17 +36,19 @@ function closeProduct(){
     document.getElementsByClassName('products-main')[0].style.display="";
     if(document.getElementsByClassName('emporyoum-bar-finish')[0]){document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');}
-    document.getElementById('basket-container').style.display="";
+    //document.getElementById('basket-container').style.display="";
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
 }
 function checkMobile(){
     if(innerWidth<innerHeight){
         document.getElementsByClassName('products-container')[0].style.width='90%';
+        document.getElementsByClassName('product-info-main')[0].style.width='90%';
         if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';}
         //document.getElementById('basket-container').style.display="none";
         document.getElementById('header-items-container').style.display="none";
     }else{
         document.getElementsByClassName('products-container')[0].style.width='50%';
+        document.getElementsByClassName('products-info-main')[0].style.width='60%';
         if(set==1){document.getElementsByClassName('google-map')[0].style.width='49%';}
         //document.getElementById('basket-container').style.display="";
         document.getElementById('header-items-container').style.display="flex";

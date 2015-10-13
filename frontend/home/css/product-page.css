@@ -155,7 +155,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 .goback{
     position:absolute;
     top:50px;
-    right:150px;
+    left:100px;
     width:30px;
     height:30px;
 }
