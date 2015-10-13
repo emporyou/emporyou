@@ -83,6 +83,10 @@ function openMap(){
     
 }
 function openCart(){
+    document.getElementById('basket-container').style.top="-20%";
+    setTimeout('cartReady()',400)
+}
+function cartReady(){
     cartOpened=1;
     if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}
     document.getElementsByClassName('products-main')[0].style.top="100%";
