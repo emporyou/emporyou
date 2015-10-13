@@ -21,7 +21,7 @@ function addProduct(){
     }
 }
 function openProduct(event,elm,merid,id){
-    ooo.render('product-page-target','product-page-template.xml','http://emporyoum.com/get_product?m_id='+merid+'&p_id='+id);
+    ooo.render('product-page-target','product-page-template.xml','http://emporyoum.com/get_product?m_id='+merid+'&p_id='+id,false,false,checkMobile);
     if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
