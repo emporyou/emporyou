@@ -47,6 +47,8 @@ app.get('/get_productREAL', function (req, res) {
 app.get('/get_product_image', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.p_id||-1;
+  var v_id=req.query.v_id||-1;
+  var isize=req.query.size||'medium';
   var priority=req.query.priority||0;
   var errs=[];
   if(m_id==-1){errs[errs.length]='Parameter m_id is mandatory.\n'}
@@ -56,12 +58,13 @@ app.get('/get_product_image', function (req, res) {
 	  res.send(errs);
   }else{
 	var p=3001+(m_id*10);
+	var q_exp='metadata.productId';var q_field=p_id;
+	if(v_id>-1){q_exp='metadata.variantId';q_field=v_id;}
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
-		db.collection('cfs.Media.filerecord').find({'metadata.productId':p_id}).toArray(function(err,docs){
+		db.collection('cfs_gridfs.'+isize+'.files').find({q_exp:q_field}).toArray(function(err,docs){
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 			res.set('Content-Type', docs[priority].type);
-			//res.set('Content-Type', 'text/plain');
-			res.send(docs[priority].original.name);
+			db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
 			}else{
 				 errs[errs.length]='Image not found';
 				 res.set('Content-Type', 'text/plain');
@@ -86,26 +89,21 @@ app.get('/get_product_imagex', function (req, res) {
 	var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		mongoJoin
-    .query(
-      db.collection("Products"),
-        {}, //query statement
-        {}, //fields
-        {limit: 10000//options
-        }
-    )
-    .join({
-        joinCollection: db.collection("cfs.Media.filerecord"),
-        //respects the dot notation, multiple keys can be specified in this array
-        leftKeys: ["metadata.productId"],
-        //This is the key of the document in the right hand document
-        rightKeys: ["_id"],
-        //This is the new subdocument that will be added to the result document
-        newKey: "image"
-    }).exec(function (err, items) {
-        console.log(items);
-		res.send(items);
-    });
-	
+		.query(
+			db.collection("Products"),
+			{}, //query statement
+			{}, //fields
+			{limit: 10000}
+		)
+		.join({
+			joinCollection: db.collection('cfs.Media.filerecord'),
+			leftKeys: ["metadata.productId"],
+			rightKeys: ["_id"],
+			newKey: "image"
+		}).exec(function (err, items) {
+			console.log(items);
+			res.send(items);
+		});	
 	});
   }
 });
