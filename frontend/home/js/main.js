@@ -1,6 +1,6 @@
 var cartPosition=450;var total=0;var set=0;
 function addProduct(productName,XMLid,PRDid){
-    var elm=document.getElementById(XMLid);
+    var elm=document.getElementById(PRDid);
     if(elm){
         var qt=parseInt(elm.className.replace('a',''));qt++;
         elm.className='a'+qt;
