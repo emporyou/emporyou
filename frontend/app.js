@@ -113,7 +113,7 @@ serve404=function(res){
 	
 };
 servenoimage=function(res){
-	res.sendFile('/root/recommerce/frontend/img/defaultproduct.png');
+	res.sendFile('/root/recommerce/frontend/img/default-product.png');
 };
 //---------------------------------------------------------------------------------------------------
 app.use(express.static('./frontend'));
