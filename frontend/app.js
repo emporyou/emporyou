@@ -71,11 +71,11 @@ app.get('/get_product_image', function (req, res) {
 						if(d3.length>0){
 							res.set('Content-Type', d2[0].contentType);
 							res.send(new Buffer(d3[0].data.buffer, 'binary'))
-						}else{console.log('imgexit3');servenoimage(res);}		
+						}else{servenoimage(res);}		
 					});
-				}else{console.log('imgexit2');servenoimage(res);}
+				}else{servenoimage(res);}
 			});
-		  }else{console.log('imgexit1');servenoimage(res);}		  
+		  }else{servenoimage(res);}		  
 		});		
 	});
   }
@@ -90,11 +90,15 @@ app.get('/get_product', function (req, res) {
   var min=req.query.min||-1;
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
+  var city=req.query.city||-1;
   res.myxml='<?xml version="1.0" encoding="UTF-8"?><response>';
   res.set('Content-Type', 'text/xml');
   var q={};
   console.log(p_id);
   if(p_id!=-1){q={_id:p_id}}
+	if(city!=-1){
+		
+	}	
   if(m_id!=-1){
 	  doit(m_id,function(){res.send(res.myxml+'</response>');},res,q);
   }else{
