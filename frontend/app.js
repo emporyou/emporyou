@@ -65,7 +65,6 @@ app.get('/get_product_image', function (req, res) {
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 				res.set('Content-Type', docs[priority].contentType);
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
-					console.log(docs[0].data);
 					res.send(new Buffer(docs[0].data.buffer, 'binary'))
 				});
 			}else{
