@@ -2,7 +2,7 @@ var cartPosition=450;var total=0;var set=0;
 function addProduct(productName,XMLid,PRDid){
     var elm=document.getElementById(XMLid);
     if(elm){
-        var qt=parseInt(elm.className.replace('a','');qt++;
+        var qt=parseInt(elm.className.replace('a',''));qt++;
         elm.className='a'+qt;
     }else{
     elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid],document.getElementById(XMLid).value);}
