@@ -1,5 +1,6 @@
 var cartPosition=450;var total=0;var set=0;
-function addProduct(){
+function addProduct(productName,XMLid,PRDid){
+    var elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid],document.getElementById(XMLid).value);
     total++;
     if(total==1){
         var element = document.createElement("div");
