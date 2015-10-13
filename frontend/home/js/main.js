@@ -107,3 +107,16 @@ function scrollTo(element, to, duration) {
         scrollTo(element, to, duration - 10);
     }, 10);
 }
+function defaultPage(){
+    if(cartOpened==1){//closeCart};
+    if(set==1){openMap()};
+    document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
+    scrollTo(document.body, 0, 200);
+}
+function closeCart(){
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";}
+    document.getElementsByClassName('products-main')[0].style.top="55%";
+    document.getElementById('product-page-target').style.top="58%";
+    document.getElementById('products-cart-target').style.height="0";
+    document.getElementById('pattern').style.bottom="-150px";
+}
