@@ -83,7 +83,7 @@ app.get('/get_product_image', function (req, res) {
 
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
-  var p_id=req.query.m_id||-1;
+  var p_id=req.query.p_id||-1;
   var geo=req.query.geo||null;
   var cat=req.query.cat||-1;
   var max=req.query.max||-1;
