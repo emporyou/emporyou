@@ -70,6 +70,7 @@ function openMap(){
     document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
     document.getElementsByClassName('google-map-start')[0].classList.remove('google-map-start');
     document.getElementsByClassName('google-map-container-start')[0].classList.remove('google-map-container-start');
+    if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');set=1}else{
         document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
