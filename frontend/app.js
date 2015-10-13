@@ -65,6 +65,7 @@ app.get('/get_product_image', function (req, res) {
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 				res.set('Content-Type', docs[priority].contentType);
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
+					console.log(data);
 					res.send(new Buffer(docs[0].data, 'base64'))
 				});
 			}else{
@@ -97,6 +98,7 @@ app.get('/get_product_imageq', function (req, res) {
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
 				res.set('Content-Type', 'text/plain');
 				db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,xdocs){
+					console.log(data);
 					res.send(new Buffer(xdocs[0].data, 'base64'))
 				});
 			}else{
