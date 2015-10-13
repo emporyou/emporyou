@@ -23,7 +23,7 @@ iptables -I INPUT 4 -p tcp --match multiport --dports 3000:4000 -j ACCEPT
 mkdir react001
 cd react001
 echo CLONING FIRST AND WAITING 2 minutes
-git clone https://github.com/reactioncommerce/reaction
+git clone -b development https://github.com/reactioncommerce/reaction
 cd reaction && git checkout master
 meteor run --port 3010 > started1.txt &
 cd ../..
