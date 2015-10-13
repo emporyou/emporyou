@@ -63,8 +63,10 @@ app.get('/get_product_image', function (req, res) {
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('cfs_gridfs.'+isize+'.files').find({q_exp:q_field}).toArray(function(err,docs){
 			if(docs.length>0){if(priority>docs.length){priority=docs.length}
-			res.set('Content-Type', docs[priority].type);
+			res.set('Content-Type', docs[priority].contentType);
 			db.collection('cfs_gridfs.'+isize+'.chunks').find({'files_id':docs[priority]._id}).toArray(function(err,docs){
+				res.send(docs[0].data)
+			});
 			}else{
 				 errs[errs.length]='Image not found';
 				 res.set('Content-Type', 'text/plain');
