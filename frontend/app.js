@@ -60,7 +60,7 @@ app.get('/get_product_image', function (req, res) {
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		var projection={};
 		projection['copies.'+isize+'.key']=1;		
-		db.collection('cfs.Media.filerecord').find({q_exp:q_field},projection).toArray(function(err,d1){
+		db.collection('cfs.Media.filerecord').find({q_exp:q_field}).toArray(function(err,d1){
 		  if(d1.length>0){console.log(d1[0].copies[isize].key);
 			  db.collection('cfs_gridfs.'+isize+'.files').find({'_id':d1[0].copies[isize].key}).toArray(function(err,d2){
 				if(d2.length>0){
