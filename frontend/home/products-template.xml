@@ -12,12 +12,12 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div id="thumb-container" onclick="addProduct('Massaggi')"><div class="thumb-dummy"> </div><div class="thumb-product"> <div 
+<html><div id="thumb-container" onclick="addProduct('Massaggi')"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
              style="background-image: url('../img/products/massage.jpg');" class="thumb-element"><div class="product-bar"><div 
                  class="add"><img class="add-button" src="http://emporyoum.com/get_product_image?m_id=%merch-id&p_id=%id"/></div><div 
                  class="share"><img class="share-button" src="../img/share.png"/></div><div 
                  class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
                  class="price">€300 da €<span style="color:orange">%price</span></div></div><div 
-                 class="product-header"><div 
+                 class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div></div></div></html></rowtype></document>
