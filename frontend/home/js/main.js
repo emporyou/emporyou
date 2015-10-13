@@ -48,7 +48,7 @@ function checkMobile(){
         document.getElementById('header-items-container').style.display="none";
     }else{
         document.getElementsByClassName('products-container')[0].style.width='50%';
-        document.getElementsByClassName('products-info-main')[0].style.width='60%';
+        document.getElementsByClassName('product-info-main')[0].style.width='60%';
         if(set==1){document.getElementsByClassName('google-map')[0].style.width='49%';}
         //document.getElementById('basket-container').style.display="";
         document.getElementById('header-items-container').style.display="flex";
