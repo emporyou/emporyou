@@ -1,6 +1,6 @@
 var cartPosition=450;var total=0;var set=0;var cartOpened=0;
 function addProduct(productName,XMLid,PRDid){
-    var elm=document.getElementById(PRDid);
+   var elm=document.getElementById(PRDid);
     if(elm){
         var qt=parseInt(elm.className.replace('a',''));qt++;
         elm.className='a'+qt;
@@ -21,7 +21,7 @@ function addProduct(productName,XMLid,PRDid){
     }/*else{
         document.getElementById('else').style.display='block'
     }*/
-    if(cartPosition!=450){
+ if(cartPosition!=450){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
@@ -130,4 +130,8 @@ function closeCart(){cartOpened=0;
     };
     document.getElementById('products-cart-target').style.height="0";
     document.getElementById('pattern').style.bottom="150px";
+}
+function share(){
+    document.getElementById('fbb').style.display="block";
+    document.getElementById('shb').style.display="none"
 }

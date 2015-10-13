@@ -15,8 +15,8 @@
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div id="thumb-container"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
              style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
-                 class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div 
-                 class="share"><img class="share-button" src="../img/share.png"/></div><div 
+                 class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
+                 id="fbb" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"></div></div><div 
                  class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
                  class="price">€300 da €<span style="color:orange">%price</span></div></div><div 
                  class="product-header"> <div 

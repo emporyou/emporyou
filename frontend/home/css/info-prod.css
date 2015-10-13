@@ -24,6 +24,14 @@
     font-family:'Open sans';
     font-size:1.5vh;
 }
+.fb-share-button{
+    margin:0 auto;
+    display:none;
+    width:20px;
+    height:20px;
+    position:absolute;
+    left:20px;
+}
 .add-2{
     position:absolute;
     height:25px;
