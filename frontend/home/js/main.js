@@ -83,6 +83,7 @@ function openMap(){
     
 }
 function openCart(){
+    scrollTo(document.body, 0, 200);
     document.getElementById('basket-container').style.top="-30%";
     setTimeout('cartReady()',400)
 }
@@ -92,4 +93,16 @@ function cartReady(){
     document.getElementsByClassName('products-main')[0].style.top="100%";
     if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementById('product-page-target').style.top="58%";
+    document.getElementById('products-cart-target').style.height="50%";
+}
+function scrollTo(element, to, duration) {
+    if (duration < 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+
+    setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop === to) return;
+        scrollTo(element, to, duration - 10);
+    }, 10);
 }
