@@ -37,7 +37,7 @@
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
 </head>
-<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
+<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product');ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?callback=initMap']);" onresize="checkMobile()">
 <script>
 function initMap() {
   var customMapType = new google.maps.StyledMapType([
@@ -311,7 +311,4 @@ function initMap() {
 </div>
 <div id="pattern"><b>check out now</b></div>--></div>
 <div id="cart-data" style="display:none"></div>
-<script async defer
-      src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-    </script>
 </body></html>
