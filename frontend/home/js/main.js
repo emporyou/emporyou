@@ -77,15 +77,13 @@ function openMap(){
     document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
-            document.getElementsByClassName('google-map-container')[0].style.top="13%"};set=1}else{
+            document.getElementsByClassName('google-map-container')[0].style.top="13%"};
+			set=1}else{
     document.getElementsByClassName('google-map')[0].classList.add('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";set=0;
-    }
-    
-    
-    
+    }  
 }}
 function openCart(){
     scrollTo(document.body, 0, 200);
