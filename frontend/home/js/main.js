@@ -68,7 +68,7 @@ function checkMobile(){
         document.getElementById('header-items-container').style.display="flex";
     }
 }
-
+window.ismaploadedonce=false;
 function openMap(){
     if(productOpened==0){
     if(set==0){
@@ -78,7 +78,10 @@ function openMap(){
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
             document.getElementsByClassName('google-map-container')[0].style.top="13%"};
-			set=1}else{
+			set=1;if(!window.ismaploadedonce){
+				ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
+				setTimeout('initMap()',500);
+		}}else{
     document.getElementsByClassName('google-map')[0].classList.add('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
