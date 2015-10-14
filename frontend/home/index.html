@@ -36,8 +36,14 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
+<script>
+myappinit=function(){
+checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product');
+ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?callback=initMap']);
+}
+</script>
 </head>
-<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product');ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?callback=initMap']);" onresize="checkMobile()">
+<body onload="myappinit();" onresize="checkMobile()">
 <script>
 function initMap() {
   var customMapType = new google.maps.StyledMapType([
