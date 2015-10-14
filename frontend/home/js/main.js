@@ -68,7 +68,7 @@ function openMap(){
     if(set==0){
     document.getElementsByClassName('google-map-start')[0].classList.add('google-map');
     document.getElementsByClassName('google-map-container-start')[0].classList.add('google-map-container');
-    document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');}
     document.getElementsByClassName('google-map-start')[0].classList.remove('google-map-start');
     document.getElementsByClassName('google-map-container-start')[0].classList.remove('google-map-container-start');
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
@@ -132,6 +132,7 @@ function closeCart(){cartOpened=0;
     }else{
         document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="30%";
     };
+                     ooo.$$('products-cart-target').style.display='none';
     document.getElementById('products-cart-target').style.height="0";
     document.getElementById('pattern').style.bottom="150px";
 }
