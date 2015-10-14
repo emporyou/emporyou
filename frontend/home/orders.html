@@ -27,8 +27,11 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <script>function myLoad(){
-    ooo.render('target','orders.xml','orders-data.xml');
+    ooo.render('target','orders.xml','orders-data.xml',false,false,myLoaded);
     
+    
+}
+    function myLoaded(){
     $('#example').DataTable( {
         columnDefs: [ {
             targets: [ 0 ],
@@ -41,7 +44,7 @@
             orderData: [ 4, 0 ]
         } ]
     } );
-}</script>
+    }</script>
 </head>
 <body onload="myLoad()">
 <div class="header">
