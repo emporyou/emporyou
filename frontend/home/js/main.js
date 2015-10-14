@@ -81,7 +81,6 @@ function openMap(){window.lastSet=set;
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
     document.getElementsByClassName('google-map')[0].classList.remove('google-map');
-    document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');set=0;
     }
     
