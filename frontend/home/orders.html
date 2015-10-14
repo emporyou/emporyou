@@ -26,9 +26,9 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-</head>
-<body onload="ooo.render('target','orders.xml','orders-data.xml')"><script>
-$(document).ready(function() {
+<script>function myLoad(){
+    ooo.render('target','orders.xml','orders-data.xml');
+    
     $('#example').DataTable( {
         columnDefs: [ {
             targets: [ 0 ],
@@ -41,7 +41,9 @@ $(document).ready(function() {
             orderData: [ 4, 0 ]
         } ]
     } );
-} );</script>
+}</script>
+</head>
+<body onload="myLoad()">
 <div class="header">
    <div class="ham-square">
        <div class="ham-container">
