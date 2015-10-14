@@ -34,8 +34,8 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 			elm.className='a'+qt;
 		}else{
 			elm.parentNode.removeChild(elm);
-		}
-		rendercart();
+		};document.getElementById('pattern').style.display='none';
+		rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';document.getElementById('pattern').style.display='block'",150);
     }
 	
 };
