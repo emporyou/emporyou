@@ -34,8 +34,7 @@ function openProduct(event,elm,merid,id){
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
     document.getElementsByClassName('products-main')[0].style.display="none";
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
-    document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');}
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');}
     //document.getElementById('basket-container').style.display="none";
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
 }
