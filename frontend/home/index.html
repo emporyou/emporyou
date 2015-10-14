@@ -36,6 +36,8 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
+</head>
+<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
 <script>
 function initMap() {
   var customMapType = new google.maps.StyledMapType([
@@ -73,8 +75,6 @@ function initMap() {
 }
 
     </script>
-</head>
-<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -312,6 +312,6 @@ function initMap() {
 <div id="pattern"><b>check out now</b></div>--></div>
 <div id="cart-data" style="display:none"></div>
 <script async defer
-      src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTiJYrZX_idriq20c6vihhjDpqEYCsswA&callback=initMap">
     </script>
 </body></html>
