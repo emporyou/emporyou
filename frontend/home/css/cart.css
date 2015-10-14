@@ -136,3 +136,4 @@ box-sizing: border-box;         /* Opera/IE 8+ */
 .cart-remove-icon{
     height:28px
 }
+.buttoncart:hover{cursor:pointer;opacity:0.8}

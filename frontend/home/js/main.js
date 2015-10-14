@@ -26,7 +26,7 @@ function addProduct(productName,XMLid,PRDid){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
-	rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';",50);
+	rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';",150);
 }
 function openProduct(event,elm,merid,id){
     ooo.render('product-page-target','product-page-template.xml','http://emporyoum.com/get_product?m_id='+merid+'&p_id='+id,false,false,checkMobile);
