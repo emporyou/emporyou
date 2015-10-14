@@ -36,8 +36,45 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
+<script>
+function initMap() {
+  var customMapType = new google.maps.StyledMapType([
+      {
+        stylers: [
+          {hue: '#890000'},
+          {visibility: 'simplified'},
+          {gamma: 0.5},
+          {weight: 0.5}
+        ]
+      },
+      {
+        elementType: 'labels',
+        stylers: [{visibility: 'off'}]
+      },
+      {
+        featureType: 'water',
+        stylers: [{color: '#890000'}]
+      }
+    ], {
+      name: 'Custom Style'
+  });
+  var customMapTypeId = 'custom_style';
+
+  var map = new google.maps.Map(document.getElementsByClassName('google-map')[0], {
+    zoom: 12,
+    center: {lat: 40.674, lng: -73.946},  // Brooklyn.
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+    }
+  });
+
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+}
+
+    </script>
 </head>
-<body onload="checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
+<body onload="initMap();checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')" onresize="checkMobile()">
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -82,7 +119,7 @@
         <img class="emporyoum" src="../img/emporyoum-home.png"/>
     </div>
 </div>
-<div class="google-map-container"><img class="google-map transformed" src="../img/google-maps.png"/></div>
+<div class="google-map-container"><div class="google-map transformed"></div></div>
 <div class="products-main">
     <div class="products-container">
         <div id="thumb-wrap"> 
@@ -274,4 +311,7 @@
 </div>
 <div id="pattern"><b>check out now</b></div>--></div>
 <div id="cart-data" style="display:none"></div>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg0kxvRQEm4yG50ch_tVXB5Ih-9RAjj9A&callback=initMap">
+    </script>
 </body></html>
