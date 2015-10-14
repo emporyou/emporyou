@@ -7,7 +7,7 @@ window.cartTotalSub=0;
 window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
-	if(cartdata.length>0){
+	
 		var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
 		for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
 			window.cartTotalItems+=pnum;
@@ -25,7 +25,7 @@ window.cartTotalShipment=0;
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
-}	}	};
+}	};
 
 removeProduct=function(NONUSED2,NONUSED1,PRDid){
 	var elm=document.getElementById(PRDid);
