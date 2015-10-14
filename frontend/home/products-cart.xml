@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <rowtype tagname="//product">
-
-
 <variable tagname="cart_qt" substitution="%cart-qt"/>
-
-
 <variable tagname="merchant/name" substitution="%vendor-name"/>
 <variable tagname="merchant/lat" substitution="%lat"/>
 <variable tagname="merchant/lon" substitution="%lon"/>
@@ -18,13 +14,28 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="thumb-container" style="width:300px;max-height:50%"><div class="thumb-dummy"> </div><div class="thumb-product" style="max-height:25%"><div 
-             style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
-                 class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
-                 id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
-                 class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>QT:%cart-qt<br/>%subtitle</div><div 
-                 class="price">€300 da €<span style="color:orange">%price</span></div></div><div 
-                 class="product-header"> <div 
-                 class="city">%city</div><div 
-                 class="product-discount" style="width:33%;">33%</div></div></div></div></div>
-</html></rowtype></document>
+<html><div class="cart-items-container">
+       <div class="cart-item-image" style="background: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover">
+        <div class="cart-add-item"><img class="cart-add-icon buttoncart" src="../img/more.png"/></div>
+        <div class="cart-remove-item"><img class="cart-remove-icon buttoncart" src="../img/less.png"/></div>
+    </div>
+<div class="qt-name"><div class="cart-item-qt">%cart-qt</div><div class="cart-item-name">%product-name</div></div>
+</div>
+</html>
+</rowtype>
+<!--<beforeall><div class="cart-infos">
+    <div class="cart-summary">Items in cart</div>
+    <div class="cart-summary">Sub total</div>
+    <div class="cart-summary">Shipping</div>
+    <div class="cart-summary">Tax</div>
+    <div class="cart-summary"><b>Total</b></div>
+</div>
+<div class="cart-infos-values">
+    <div class="cart-summary qt-items"></div>
+    <div class="cart-summary">€55,00</div>
+    <div class="cart-summary">€0.00</div>
+    <div class="cart-summary">€1000,00</div>
+    <div class="cart-summary"><b>1055,00</b></div>
+</div></beforeall>
+<afterall><div id="pattern"><b>check out now</b></div></afterall>-->
+</document>

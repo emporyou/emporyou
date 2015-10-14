@@ -15,7 +15,8 @@ function addProduct(productName,XMLid,PRDid){
     element.className='flag';
         element.appendChild(name);
     document.getElementById('bought-container').appendChild(element);
-    cartPosition-=25;}else{document.getElementsByClassName('flag-text')[0].innerHTML=total.toString()};
+    cartPosition-=25;}else{document.getElementsByClassName('flag-text')[0].innerHTML=total.toString();
+                          document.getElementsByClassName('qt-items')[0].innerHTML=total.toString()};
     if(cartPosition!=0){
     document.getElementById('basket').style.top='-'+cartPosition+'px';
     }/*else{
@@ -122,6 +123,7 @@ function defaultPage(){
     if(set==1){openMap()}else{document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
     document.getElementsByClassName('products-main')[0].style.top="55%";
+    document.getElementsByClassName('products-main')[0].style.display="block";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('basket-container').style.top="0";
     scrollTo(document.body, 0, 200);
