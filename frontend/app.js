@@ -104,10 +104,11 @@ app.get('/get_product', function (req, res) {
   }else{
   doit(1,function(){doit(2,function(){doit(3,function(){doit(4,function(){doit(5,function(){res.send(res.myxml+'</response>');},res,q);},res,q);},res,q);},res,q);},res,q); 
 }});
+var mmss=[{n:'La Bottega del Fumetto'},{n:'Panificio Beretta'},{n:'Shoppy'},{n:'Estetica Biraghi s.r.l'},{n:'Ferramenta da Luigi'}];
 doit=function(m_id,onend,res,q){var p=3001+(m_id*10);
 	MongoClient.connect('mongodb://localhost:'+p+'/meteor', function(err, db) {
 		db.collection('Products').find(q).toArray(function(err,docs){
-			var x="<merchant><name>Merchant "+m_id+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city></merchant></product>";
+			var x="<merchant><name>Merchant "+mmss[m_id-1].n+"</name><id>"+m_id+"</id><lat>2</lat><lon>2</lon><city>Milano</city></merchant></product>";
 			res.myxml+=o2xml('product',docs).replace(/<\/product>/g,x);
 			db.close();try{onend();}catch(ex){res.send(res.myxml+'</response>');}
 });});};
