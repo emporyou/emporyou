@@ -43,8 +43,6 @@ ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascri
 setTimeout('initMap()',500);
 }
 </script>
-</head>
-<body onload="myappinit();" onresize="checkMobile()">
 <script>
 function initMap() {
   var customMapType = new google.maps.StyledMapType([
@@ -82,6 +80,8 @@ function initMap() {
 }
 
     </script>
+</head>
+<body onload="myappinit();" onresize="checkMobile()">
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
