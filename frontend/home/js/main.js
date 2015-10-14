@@ -39,7 +39,7 @@ if(event.srcElement==elm){
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
 }
 }
-function closeProduct(){openMap(window.lastSet)
+function closeProduct(){reswitchMap();
     document.getElementsByClassName('products-main')[0].style.display="";
     //document.getElementById('basket-container').style.display="";
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
@@ -62,7 +62,7 @@ function checkMobile(){
     }
 }
 window.lastSet=0;
-function switchMap(){openMap();
+function reswitchMap(){openMap();
     if(set==0){set=1}else{set=0};
 }
 function openMap(){window.lastSet=set;
@@ -76,13 +76,13 @@ function openMap(){window.lastSet=set;
         if(document.getElementsByClassName('google-map-container-start')[0]){
             document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}else{
                 document.getElementsByClassName('google-map-container')[0].style.top="13%"}
-    };}else{
+    };set=1}else{
         document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
     document.getElementsByClassName('google-map')[0].classList.remove('google-map');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');
+    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');set=0;
     }
     
     
