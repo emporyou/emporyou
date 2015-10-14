@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <constantjavascript substitution="%total-items">cartTotalItems</constantjavascript>
+<constantjavascript substitution="%total-tax">cartTotalTax</constantjavascript>
+<constantjavascript substitution="%total-sub">cartTotalSub</constantjavascript>
+<constantjavascript substitution="%total-shipment">cartTotalShipment</constantjavascript>
+<constantjavascript substitution="%total-total">cartTotalTotal</constantjavascript>
 <rowtype tagname="//product">
 <variable tagname="cart_qt" substitution="%cart-qt"/>
 <variable tagname="merchant/name" substitution="%vendor-name"/>
@@ -33,10 +37,10 @@
 </div>
 <div class="cart-infos-values">
     <div class="cart-summary qt-items">%total-items</div>
-    <div class="cart-summary">€55,00</div>
-    <div class="cart-summary">€0.00</div>
-    <div class="cart-summary">€1000,00</div>
-    <div class="cart-summary"><b>1055,00</b></div>
+    <div class="cart-summary">%total-sub</div>
+    <div class="cart-summary">%total-shipment</div>
+    <div class="cart-summary">%total-tax</div>
+    <div class="cart-summary"><b>%total-total</b></div>
 </div>
 <div class="cart-items-container">]]></beforeall>
 <afterall><![CDATA[</div><div id="pattern"><b>check out now</b></div>]]></afterall>
