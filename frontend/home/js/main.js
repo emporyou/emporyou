@@ -64,8 +64,8 @@ function checkMobile(){
         document.getElementById('header-items-container').style.display="flex";
     }
 }
-window.lastSet;
-function openMap(){lastSet=set;
+window.lastSet=0;
+function openMap(){window.lastSet=set;
     if(set==0){
     document.getElementsByClassName('google-map-start')[0].classList.add('google-map');
     document.getElementsByClassName('google-map-container-start')[0].classList.add('google-map-container');
@@ -125,7 +125,7 @@ function defaultPage(){
     document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('products-main')[0].style.display="block";
     document.getElementById('product-page-target').style.top="58%";
-    openMap(lastSet);
+    openMap(window.lastSet);
     document.getElementById('basket-container').style.top="0";
     scrollTo(document.body, 0, 200);
 }
