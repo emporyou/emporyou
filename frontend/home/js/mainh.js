@@ -20,7 +20,8 @@ window.cartTotalShipment=0;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
 		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
 		window.cartTotalShipment=Math.round(window.cartTotalShipment*100)/100;
-		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;		
+		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;	
+		window.cartTotalTotal=Math.round(window.cartTotalTotal*100)/100;		
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
