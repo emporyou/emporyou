@@ -14,16 +14,16 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div class="cart-items-container">
-       <div class="cart-item-image" style="background: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover">
-        <div class="cart-add-item"><img class="cart-add-icon buttoncart" src="../img/more.png"/></div>
-        <div class="cart-remove-item"><img class="cart-remove-icon buttoncart" src="../img/less.png"/></div>
-    </div>
-<div class="qt-name"><div class="cart-item-qt">%cart-qt</div><div class="cart-item-name">%product-name</div></div>
-</div>
-</html>
+<html><div class="object-container"><div 
+       class="cart-item-image" 
+       style="background: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"><div 
+       class="cart-add-item"><img class="cart-add-icon buttoncart" src="../img/more.png"/></div><div 
+       class="cart-remove-item"><img class="cart-remove-icon buttoncart" src="../img/less.png"/></div></div><div 
+       class="qt-name"><div 
+       class="cart-item-qt">%cart-qt</div><div 
+       class="cart-item-name">%product-name</div></div></div></html>
 </rowtype>
-<!--<beforeall><div class="cart-infos">
+<beforeall><![CDATA[<div class="cart-infos">
     <div class="cart-summary">Items in cart</div>
     <div class="cart-summary">Sub total</div>
     <div class="cart-summary">Shipping</div>
@@ -36,6 +36,7 @@
     <div class="cart-summary">€0.00</div>
     <div class="cart-summary">€1000,00</div>
     <div class="cart-summary"><b>1055,00</b></div>
-</div></beforeall>
-<afterall><div id="pattern"><b>check out now</b></div></afterall>-->
+</div>
+<div class="cart-items-container">]]></beforeall>
+<afterall><![CDATA[</div><div id="pattern"><b>check out now</b></div>]]></afterall>
 </document>
