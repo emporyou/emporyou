@@ -4,6 +4,7 @@ rendercart=function(){
 	var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
 window.cartTotalItems=0;
 window.cartTotalSub=0;
+window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
 	if(cartdata.length>0){
@@ -16,6 +17,7 @@ window.cartTotalShipment=0;
 			cartXML+=pxml;}
 		cartXML+='</response>';
 		window.cartTotalTax=(cartTotalSub/100)*22;
+		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
@@ -28,7 +30,7 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		if(qt>0){
 			elm.className='a'+qt;
 		}else{
-			elm.parentElement.removeChild(elm);
+			elm.parentNode.removeChild(elm);
 		}
 		rendercart();
     }
