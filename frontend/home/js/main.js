@@ -114,6 +114,7 @@ function scrollTo(element, to, duration) {
     }, 10);
 }
 function defaultPage(){
+    productOpened=0;
     if(cartOpened==1){closeCart()};
     if(set==1){openMap()}else{document.getElementsByClassName('google-map-container')[0].style.top="13%"}
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
