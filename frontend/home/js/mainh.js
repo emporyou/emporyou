@@ -8,16 +8,19 @@ window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
 	if(cartdata.length>0){
-		var cartXML='<response>';var pxml='';var pxmlD=null;
-		for(var c=0;c<cartdata.length;c++){
-			window.cartTotalItems+=parseInt(cartdata[c].className.replace('a',''));
+		var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
+		for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
+			window.cartTotalItems+=pnum;
 			pxml='<product>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></product>';
 			pxmlD=ooo.parsexml(pxml);
-			window.cartTotalSub+=parseFloat(ooo.ixml(ooo.selone('//variants[optionTitle]/price',pxmlD.documentElement)));
+			window.cartTotalSub+=pnum*parseFloat(ooo.ixml(ooo.selone('//variants[optionTitle]/price',pxmlD.documentElement)));
 			cartXML+=pxml;}
 		cartXML+='</response>';
 		window.cartTotalTax=(cartTotalSub/100)*22;
-		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;
+		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
+		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
+		window.cartTotalShipment=Math.round(window.cartTotalShipment*100)/100;
+		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;		
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
