@@ -15,7 +15,8 @@ function addProduct(productName,XMLid,PRDid){
     element.className='flag';
         element.appendChild(name);
     document.getElementById('bought-container').appendChild(element);
-    cartPosition-=25;}else{document.getElementsByClassName('flag-text')[0].innerHTML=total.toString()};
+    cartPosition-=25;}else{document.getElementsByClassName('flag-text')[0].innerHTML=total.toString();
+                          document.getElementsByClassName('qt-items')[0].innerHTML=total.toString()};
     if(cartPosition!=0){
     document.getElementById('basket').style.top='-'+cartPosition+'px';
     }/*else{
