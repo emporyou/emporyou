@@ -30,7 +30,7 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		}else{
 			elm.parentElement.removeChild(elm);
 		}
-		renderCart();
+		rendercart();
     }
 	
 };
