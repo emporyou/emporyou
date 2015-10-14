@@ -40,10 +40,8 @@ if(event.srcElement==elm){
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
 }
 }
-function closeProduct(){
+function closeProduct(){openMap(window.lastSet)
     document.getElementsByClassName('products-main')[0].style.display="";
-    if(document.getElementsByClassName('emporyoum-bar-finish')[0]){document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');}
     //document.getElementById('basket-container').style.display="";
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
 }
