@@ -62,8 +62,8 @@ function checkMobile(){
     }
 }
 window.lastSet=0;
-function reswitchMap(){openMap();
-    if(set==0){set=1}else{set=0};
+function reswitchMap(){
+    if(set==0){set=1}else{set=0};openMap();
 }
 function openMap(){window.lastSet=set;
     if(set==0){
