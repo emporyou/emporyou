@@ -124,7 +124,7 @@ function defaultPage(){
     document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('products-main')[0].style.display="block";
     document.getElementById('product-page-target').style.top="58%";
-    set=0;reswitchMap();
+    set=1;reswitchMap();
     document.getElementById('basket-container').style.top="0";
     scrollTo(document.body, 0, 200);
 }
