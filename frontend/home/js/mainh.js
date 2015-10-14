@@ -34,7 +34,7 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 			elm.className='a'+qt;
 		}else{
 			elm.parentNode.removeChild(elm);
-		};document.getElementById('pattern').style.display='none';
+		};if(document.getElementById('pattern')){document.getElementById('pattern').style.display='none';}else{console.log('pattern do not exist')}
 		rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';document.getElementById('pattern').style.display='block'",150);
     }
 	
@@ -60,3 +60,6 @@ updateCartFlag=function(){
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
 };
+emptyCart=function(){
+    ooo.clearchilds('products-cart-data');renderCart();
+}
