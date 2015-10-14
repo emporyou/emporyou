@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
+<constantjavascript substitution="%total-items">cartTotalItems</constantjavascript>
 <rowtype tagname="//product">
 <variable tagname="cart_qt" substitution="%cart-qt"/>
 <variable tagname="merchant/name" substitution="%vendor-name"/>
@@ -31,7 +32,7 @@
     <div class="cart-summary"><b>Total</b></div>
 </div>
 <div class="cart-infos-values">
-    <div class="cart-summary qt-items"></div>
+    <div class="cart-summary qt-items">%total-items</div>
     <div class="cart-summary">€55,00</div>
     <div class="cart-summary">€0.00</div>
     <div class="cart-summary">€1000,00</div>
