@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//order">
+<variable tagname="product_name" substitution="%product-name"/>
+<variable tagname="date" substitution="%date"/>
+<variable tagname="shipping_address" substitution="%shipping-address"/>
+<variable tagname="amount" substitution="%cart_qt"/>
+<html><tr><td>%product-name</td><td>%date</td><td>%shipping-address</td><td>Da evadere</td><td>%cart_qt</td></tr></html></rowtype>
+<beforeall><![CDATA[<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Ordered Product</th>
+                <th>Order date</th>
+                <th>Shipping address</th>
+                <th>Status</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>]]></beforeall><afterall><![CDATA[</tbody></table>]]></afterall></document>
