@@ -62,6 +62,9 @@ function checkMobile(){
     }
 }
 window.lastSet=0;
+function switchMap(){openMap();
+    if(set==0){set=1}else{set=0};
+}
 function openMap(){window.lastSet=set;
     if(set==0){
     document.getElementsByClassName('google-map-start')[0].classList.add('google-map');
@@ -73,13 +76,13 @@ function openMap(){window.lastSet=set;
         if(document.getElementsByClassName('google-map-container-start')[0]){
             document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}else{
                 document.getElementsByClassName('google-map-container')[0].style.top="13%"}
-    };set=1}else{
+    };}else{
         document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
     document.getElementsByClassName('google-map')[0].classList.remove('google-map');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');set=0;
+    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');
     }
     
     
