@@ -1,10 +1,10 @@
 .google-map-container-opened{
     position:absolute;
-    width:100% !important;;
+    width:100% !important;
     background-color:transparent;
     display:flex;
-    justify-content: center !important;;
-    top:13% !important;;
+    justify-content: center !important;
+    top:13% !important;
     height:40%;
     -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 

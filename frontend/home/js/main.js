@@ -38,7 +38,7 @@ if(event.srcElement==elm){
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     //document.getElementById('basket-container').style.display="none";
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
-    document.getElementsByClassName('products-page-main')[0].style.top('13%');
+    document.getElementsByClassName('products-page-main')[0].style.top=('13%');
 }
 }
 function closeProduct(){
