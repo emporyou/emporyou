@@ -25,8 +25,8 @@ function addProduct(productName,XMLid,PRDid){
  if(cartPosition!=450){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
-    }
-	rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';",150);
+    };document.getElementById('pattern').style.display='none';
+	rendercart();setTimeout("document.getElementById('pattern').style.bottom='0';document.getElementById('pattern').style.display='block'",150);
 }
 function openProduct(event,elm,merid,id){
     ooo.render('product-page-target','product-page-template.xml','http://emporyoum.com/get_product?m_id='+merid+'&p_id='+id,false,false,checkMobile);
