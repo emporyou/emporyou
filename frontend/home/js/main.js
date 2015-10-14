@@ -77,12 +77,12 @@ function openMap(){
             document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}else{
                 document.getElementsByClassName('google-map-container')[0].style.top="13%"}
     };
-    document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');set=1}else{
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar')};set=1}else{
         document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
+    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar')};
     document.getElementsByClassName('google-map')[0].classList.remove('google-map');
-    document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container');
+    if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container')};
     document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');set=0;
     }
     
