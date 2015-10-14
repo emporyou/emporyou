@@ -90,15 +90,15 @@
 </div>
 <div id="product-page-target" class="products-page-main hidden">loading...</div>
 <div id="products-cart-target" class="hidden"><div id="pattern"><b>check out now</b></div></div>
-<div id="products-checkout-target"><div>
-	LA PROCEDURA DI CHECKOUT E' SIMULATA:<br/>
-	STEP 1/2 : Inserisci la tua email:<input type="text" placeholder="email@dominio.com"/><br/>
+<div id="products-checkout-target" style="margin-top:30%">
+	LA PROCEDURA DI CHECKOUT E' SIMULATA:<br/><div>
+	STEP 1/2 : Inserisci la tua email (di norma sarebbe il form con indirizzo ex spedizione ecc...):<input type="text" placeholder="email@dominio.com"/><br/>
 	<input type="button" value="pagamento (fasullo)" onclick="this.parentElement.style.display='none';this.parentElement.nextSibling.style.display='';"/>
-	</div><div>Questo contenuto è solitamente sul gestore del pagamento esterno.
+	</div><div>
+	STEP 2/2 : Questo contenuto è solitamente sul gestore del pagamento esterno.<br/>
 	<input type="button" value="simula ritorno con transazione OK" onclick="alert('todo')"/>
 	<input type="button" value="simula ritorno con transazione KO" onclick="alert('todo')"/>
 	</div>
-<br/>	
 </div>
 <div id="cart-data" style="display:none"></div>
 </body></html>
