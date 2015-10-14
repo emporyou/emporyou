@@ -92,11 +92,11 @@ function openCart(){
     scrollTo(document.body, 0, 200);
     document.getElementById('basket-container').style.top="-30%";
     setTimeout('cartReady()',400);
-	ooo.$$('products-cart-target').style.display='';//SHOW the cart
+	
 	rendercart();//defined in mainh.js, control output via products-cart.xml
 }
 function cartReady(){
-    cartOpened=1;
+    cartOpened=1;ooo.$$('products-cart-target').style.display='';//SHOW the cart
     if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}else{
         document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="75%";
     };
