@@ -74,7 +74,6 @@ function openMap(){
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
             document.getElementsByClassName('google-map-container')[0].style.top="13%"};
-    };
     document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');set=1}else{
     document.getElementsByClassName('google-map')[0].classList.add('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
