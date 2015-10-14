@@ -94,9 +94,8 @@ function openCart(){
 function cartReady(){
     cartOpened=1;ooo.$$('products-cart-target').style.display='';//SHOW the cart
     document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";
-    };
     document.getElementsByClassName('products-main')[0].style.top="100%";
-    document.getElementsByClassName('google-map-container')[0].style.top="58%"};
+    document.getElementsByClassName('google-map-container')[0].style.top="58%";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="50%";
     document.getElementById('pattern').style.bottom="0";
