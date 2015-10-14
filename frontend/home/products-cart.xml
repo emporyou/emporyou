@@ -22,7 +22,7 @@
        class="qt-name"><div class="cart-item-qt">%cart-qt</div><div class="cart-item-name">%product-name</div></div></div></html>
 <beforeall><div class="cart-infos"><div class="cart-summary">Items in cart</div><div class="cart-summary">Sub total</div><div 
    class="cart-summary">Shipping</div><div class="cart-summary">Tax</div><div class="cart-summary"><b>Total</b></div></div><div 
-   class="cart-infos-values"><div class="cart-summary qt-items"></div><div class="cart-summary">€55,00</div><div 
-   class="cart-summary">€0.00</div><div 
-   class="cart-summary">€1000,00</div><div 
+   class="cart-infos-values"><div class="cart-summary qt-items"></div><div class="cart-summary">55,00</div><div 
+   class="cart-summary">0.00</div><div 
+   class="cart-summary">1000,00</div><div 
    class="cart-summary"><b>1055,00</b></div></div></beforeall><afterall><div id="pattern"><b>check out now</b></div></afterall></rowtype></document>
