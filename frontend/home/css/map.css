@@ -20,28 +20,6 @@
     justify-content:flex-start;
     top:-32%;
     height:40%;
-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
-transform-origin: 0% 0%;
-perspective: 200;-webkit-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
--webkit-transform-origin: 0% 0%;
--webkit-perspective: 200;
--webkit-perspective-origin: 50% 50%;
--moz-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
--moz-transform-origin: 0% 0%;
--moz-perspective: 200;
--moz-perspective-origin: 50% 50%;
--o-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
--o-transform-origin: 0% 0%;
--o-perspective: 200;
--o-perspective-origin: 50% 50%;
--ms-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
--ms-transform-origin: 0% 0%;
--ms-perspective: 200;
--ms-perspective-origin: 50% 50%;
-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
-transform-origin: 0% 0%;
-perspective: 200;
-perspective-origin: 50% 50%;
 }
 .google-map{
     width:50%;
