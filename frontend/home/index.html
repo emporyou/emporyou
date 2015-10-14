@@ -75,8 +75,8 @@ initMap=function() {
     }
   });
 
-  map.mapTypes.set(customMapTypeId, customMapType);
-  map.setMapTypeId(customMapTypeId);
+  window.gmap.mapTypes.set(customMapTypeId, customMapType);
+  window.gmap.setMapTypeId(customMapTypeId);
 };    </script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()">
