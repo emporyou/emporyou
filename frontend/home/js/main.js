@@ -34,16 +34,17 @@ function openProduct(event,elm,merid,id){
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
     document.getElementsByClassName('products-main')[0].style.display="none";
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');
-    document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');}
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     //document.getElementById('basket-container').style.display="none";
     document.getElementsByClassName('products-page-main')[0].classList.remove('hidden');
+    document.getElementsByClassName('products-page-main')[0].style.top('13%');
 }
 }
 function closeProduct(){
     document.getElementsByClassName('products-main')[0].style.display="";
-    if(document.getElementsByClassName('emporyoum-bar-finish')[0]){document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');}
+   document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";
     //document.getElementById('basket-container').style.display="";
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
 }
@@ -67,23 +68,18 @@ function checkMobile(){
 
 function openMap(){
     if(set==0){
-    document.getElementsByClassName('google-map-start')[0].classList.add('google-map');
-    document.getElementsByClassName('google-map-container-start')[0].classList.add('google-map-container');
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].classList.add('emporyoum-bar-finish');}
-    document.getElementsByClassName('google-map-start')[0].classList.remove('google-map-start');
-    document.getElementsByClassName('google-map-container-start')[0].classList.remove('google-map-container-start');
+    document.getElementsByClassName('google-map')[0].classList.remove('transformed');
+    document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-opened');
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
-        if(document.getElementsByClassName('google-map-container-start')[0]){
-            document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}else{
-                document.getElementsByClassName('google-map-container')[0].style.top="13%"}
+            document.getElementsByClassName('google-map-container')[0].style.top="13%"};
     };
     document.getElementsByClassName('emporyoum-bar')[0].classList.remove('emporyoum-bar');set=1}else{
-        document.getElementsByClassName('google-map')[0].classList.add('google-map-start');
-    document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-start');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.add('emporyoum-bar');
-    document.getElementsByClassName('google-map')[0].classList.remove('google-map');
-    document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container');
-    document.getElementsByClassName('emporyoum-bar-finish')[0].classList.remove('emporyoum-bar-finish');set=0;
+    document.getElementsByClassName('google-map')[0].classList.add('transformed');
+    document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";set=0;
     }
     
     
@@ -98,11 +94,10 @@ function openCart(){
 }
 function cartReady(){
     cartOpened=1;ooo.$$('products-cart-target').style.display='';//SHOW the cart
-    if(document.getElementsByClassName('emporyoum-bar')[0]){document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";}else{
-        document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="75%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";
     };
     document.getElementsByClassName('products-main')[0].style.top="100%";
-    if(document.getElementsByClassName('google-map-container')[0]){document.getElementsByClassName('google-map-container')[0].style.top="58%"};
+    document.getElementsByClassName('google-map-container')[0].style.top="58%"};
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="50%";
     document.getElementById('pattern').style.bottom="0";
@@ -120,7 +115,7 @@ function scrollTo(element, to, duration) {
 }
 function defaultPage(){
     if(cartOpened==1){closeCart()};
-    if(set==1){openMap()}else{document.getElementsByClassName('google-map-container-start')[0].style.top="13%"}
+    if(set==1){openMap()}else{document.getElementsByClassName('google-map-container')[0].style.top="13%"}
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
     document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('products-main')[0].style.display="block";
@@ -129,12 +124,8 @@ function defaultPage(){
     scrollTo(document.body, 0, 200);
 }
 function closeCart(){cartOpened=0;
-    if(document.getElementsByClassName('emporyoum-bar')[0]){
-        document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
-    }else{
-        document.getElementsByClassName('emporyoum-bar-finish')[0].style.top="30%";
-    };
-                     ooo.$$('products-cart-target').style.display='none';
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    ooo.$$('products-cart-target').style.display='none';
     document.getElementById('products-cart-target').style.height="0";
     document.getElementById('pattern').style.bottom="150px";
 }
