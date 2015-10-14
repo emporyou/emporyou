@@ -4,7 +4,7 @@ rendercart=function(){
 	var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
 	if(cartdata.length>0){
 		var cartXML='<response>';
-		for(var c=0;c<cartdata.length;c++){cartXML+='<product>'+cartdata[c].value+'</product>';}cartXML+='</response>';
+		for(var c=0;c<cartdata.length;c++){cartXML+='<product>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></product>';}cartXML+='</response>';
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
