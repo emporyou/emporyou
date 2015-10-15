@@ -10,10 +10,15 @@
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<condition substitution="%main-class"><js>#ROWIDX#%5==0</js><true>thumb-container-2</true><false>thumb-container</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%add-class"><js>#ROWIDX#%5==0</js><true>add-2</true><false>add</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%share-class"><js>#ROWIDX#%5==0</js><true>share-2</true><false>share</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%desc-class"><js>#ROWIDX#%5==0</js><true>description-2</true><false>description</false><error>console.log('#ROWIDX#%3')</error></condition>
+<switch js="true" value="#ROWIDX#%7" substitution="%main-class">
+    <match value="0">thumb-container-2</match>
+    <match value="4">thumb-container-4</match>
+    <match value="5">thumb-container-5</match>
+</switch>
+<onload>console.log(#ROWIDX#)</onload>
+<condition substitution="%add-class"><js>#ROWIDX#%7==0||#ROWIDX#%6==0</js><true>add-2</true><false>add</false><error></error></condition>
+<condition substitution="%share-class"><js>#ROWIDX#%7==0||#ROWIDX#%6==0</js><true>share-2</true><false>share</false><error></error></condition>
+<condition substitution="%desc-class"><js>#ROWIDX#%7==0||#ROWIDX#%6==0</js><true>description-2</true><false>description</false><error></error></condition>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
