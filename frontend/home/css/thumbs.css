@@ -33,10 +33,26 @@
     flex-direction: column;
     margin-top: 42%;
     margin-left: -33%;
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    float: left;
+    height: 0;
+    padding-bottom: 33%;
+    min-width:146px;
+    min-height:100px;
 }
 .thumb-container-4{
     display: flex;
     flex-direction: column;
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    float: left;
+    height: 0;
+    padding-bottom: 33%;
+    min-width:146px;
+    min-height:100px;
 }
 .thumb-dummy {
     padding-top: 66%;

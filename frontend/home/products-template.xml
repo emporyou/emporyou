@@ -14,7 +14,7 @@
     <match value="0">thumb-container-2</match>
     <match value="3">thumb-container-4</match>
     <match value="4">thumb-container-5</match>
-    <match value="2ghjgj0" default="true">thumb-container</match>
+    <match value="other" default="true">thumb-container</match>
 </switch>
 <onload>console.log(#ROWIDX#)</onload>
 <condition substitution="%add-class"><js>#ROWIDX#%7==0||#ROWIDX#%6==0</js><true>add-2</true><false>add</false><error></error></condition>
