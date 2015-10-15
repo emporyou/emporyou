@@ -10,14 +10,18 @@
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
+<condition substitution="%main-class"><js>#ROWIDX#%3==0</js><true>thumb-container-2</true><false>thumb-container</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%add-class"><js>#ROWIDX#%3==0</js><true>add-2</true><false>add</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%share-class"><js>#ROWIDX#%3==0</js><true>share-2</true><false>share</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%desc-class"><js>#ROWIDX#%3==0</js><true>description-2</true><false>description</false><error>console.log('#ROWIDX#%3')</error></condition>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="thumb-container"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
+<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
              style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
-                 class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
+                 class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
-                 class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
+                 class="%desc-class"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
                  class="price">€<span style="color:orange">%price</span></div></div><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
