@@ -10,10 +10,10 @@
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<condition substitution="%main-class"><js>#ROWIDX#%4==0</js><true>thumb-container-2</true><false>thumb-container</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%add-class"><js>#ROWIDX#%4==0</js><true>add-2</true><false>add</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%share-class"><js>#ROWIDX#%4==0</js><true>share-2</true><false>share</false><error>console.log('#ROWIDX#%3')</error></condition>
-<condition substitution="%desc-class"><js>#ROWIDX#%4==0</js><true>description-2</true><false>description</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%main-class"><js>#ROWIDX#%5==0</js><true>thumb-container-2</true><false>thumb-container</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%add-class"><js>#ROWIDX#%5==0</js><true>add-2</true><false>add</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%share-class"><js>#ROWIDX#%5==0</js><true>share-2</true><false>share</false><error>console.log('#ROWIDX#%3')</error></condition>
+<condition substitution="%desc-class"><js>#ROWIDX#%5==0</js><true>description-2</true><false>description</false><error>console.log('#ROWIDX#%3')</error></condition>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
