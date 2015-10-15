@@ -34,6 +34,14 @@
     <match value="2">share</match>
     <match value="0">share-2</match>
 </switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%desc-class">
+    <match value="5">description-2</match>
+    <match value="3">description</match>
+    <match value="4">description</match>
+    <match value="1">description</match>
+    <match value="2">description</match>
+    <match value="0">description-2</match>
+</switch>
 <onload>console.log(#ROWIDX#)</onload>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
@@ -42,7 +50,7 @@
              style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
-                 class="description"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
+                 class="%desc-class"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
                  class="price">€<span style="color:orange">%price</span></div></div><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
