@@ -11,20 +11,20 @@
 .thumb-container {
     display: inline-block;
     position: relative;
-    width: 50%;
+    width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 50%;
+    padding-bottom: 33%;
     min-width:146px;
     min-height:100px;
 }
 #thumb-container-2 {
     display: inline-block;
     position: relative;
-    width: 100%;
+    width: 66%;
     float: left;
     height:0;
-    padding-bottom:33.3%;
+    padding-bottom:72%;
     min-width:292px;
     min-height:100px;
 }
