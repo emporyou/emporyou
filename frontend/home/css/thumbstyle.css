@@ -14,22 +14,21 @@
 	position: relative;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
-.da-thumbs li a,
-.da-thumbs li a .thumb-element {
+.da-thumbs li  .thumb-element {
 	display: block;
 	position: relative;
 }
-.da-thumbs li a {
+.da-thumbs li  {
 	overflow: hidden;
 }
-.da-thumbs li a .product-bar {
+.da-thumbs li  .product-bar {
 	position: absolute;
 	background: #333;
 	background: rgba(75,75,75,0.7);
 	width: 100%;
 	height: 100%;
 }
-.da-thumbs li a .product-bar div {
+.da-thumbs li  .product-bar div {
 	display: block;
 	padding: 10px 0;
 	margin: 40px 20px 20px 20px;
