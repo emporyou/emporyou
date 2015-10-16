@@ -80,7 +80,7 @@ $(function() {
 	fly=jQuery(fly).get(0);
 	fly.classList.add(startC);
 	setTimeout(function(){fly.style.display='block';fly.classList.add("product-bar-in")},35);	
-	setTimeout(function(){fly.classList.remove(startC)},350);
+	setTimeout(function(){fly.classList.remove(startC)},50);
     }, function(e) {
         var el_pos = $(this).offset();
         var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
