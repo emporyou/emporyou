@@ -11,7 +11,7 @@
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
-<variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <inline tagname="variants[optionTitle]" substitution="%options" preload="options-template.xml"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div class="goback" onclick="closeProduct()"><img src="../img/x.png" class="ics"/></div><div class="product-title-bar"><div 
