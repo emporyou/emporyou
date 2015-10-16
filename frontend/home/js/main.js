@@ -129,6 +129,7 @@ function defaultPage(){
     scrollTo(document.body, 0, 200);
 }
 function closeCart(){
+    ooo.$$('products-cart-target').style.display='none';
     if(document.getElementById('pattern')){
     cartOpened=0;
     document.getElementsByClassName('emporyoum-bar')[0].style.top="14%";
