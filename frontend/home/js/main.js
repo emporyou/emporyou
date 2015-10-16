@@ -141,6 +141,9 @@ function share(){
     document.getElementById('fbb').style.display="block";
     document.getElementById('shb').style.display="none"
 }
-function shareDialog(){
-    
+function shareDialog(elm){
+    if (elm.src == "../img/share.png
+        {
+            elm.src = "../img/diamond.png";
+        }
 }
