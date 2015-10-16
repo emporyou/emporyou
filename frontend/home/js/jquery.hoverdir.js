@@ -49,7 +49,7 @@
 			this.$el.on( 'mouseenter.hoverdir, mouseleave.hoverdir', function( event ) {
 				
 				var $el = $( this ),
-					$hoverElem = $el.find( 'div' ),
+					$hoverElem = $el.find( 'div.info-container' ),
 					direction = self._getDir( $el, { x : event.pageX, y : event.pageY } ),
 					styleCSS = self._getStyle( direction );
 				
