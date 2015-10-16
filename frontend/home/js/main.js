@@ -99,7 +99,7 @@ function cartReady(){
     //document.getElementsByClassName('products-main')[0].style.top="100%";
     //document.getElementsByClassName('google-map-container')[0].style.top="58%";
     document.getElementById('product-page-target').style.top="58%";
-    document.getElementById('products-cart-target').style.height="50%";
+    document.getElementById('products-cart-target').style.height="48%";
     document.getElementById('pattern').style.bottom="0";
 }
 function scrollTo(element, to, duration) {
