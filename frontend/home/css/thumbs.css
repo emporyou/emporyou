@@ -88,8 +88,8 @@
 -ms-transition: all 100ms ease-out;
 -o-transition: all 100ms ease-out;
 transition: all 100ms ease-out;
-    -webkit-filter: saturate(1.4) contrast(1.1);
-  filter: saturate(1.4) contrast(1.1);
+    -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
 }
 .thumb-element:hover{
     cursor:pointer;
