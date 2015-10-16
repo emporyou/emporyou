@@ -1,9 +1,9 @@
 .add{
     position:absolute;
     height:20%;
-    width:50%;
+    width:40%;
     bottom:0;
-    left:0;
+    left:10%;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
@@ -14,9 +14,9 @@
 .share{
     position:absolute;
     height:20%;
-    width:50%;
+    width:40%;
     bottom:0;
-    right:0%;
+    right:10%;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
@@ -35,9 +35,9 @@
 .add-2{
     position:absolute;
     height:20%;
-    width:12.5%;
+    width:40%;
     bottom:0;
-    left:0;
+    left:10;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
@@ -48,9 +48,9 @@
 .share-2{
     position:absolute;
     height:20%;
-    width:50%;
+    width:40%;
     bottom:0;
-    right:0%;
+    right:10%;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
