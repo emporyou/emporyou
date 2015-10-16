@@ -124,11 +124,11 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 border: 0px solid #000000;
 }
 .transition-1{
-    -webkit-transition: all 0.3s ease-in-out;
--moz-transition: all 0.3s ease-in-out;
--ms-transition: all 0.3s ease-in-out;
--o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .product-bar-in{
     top:10%;
