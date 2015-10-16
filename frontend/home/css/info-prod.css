@@ -79,6 +79,7 @@
     background-color:transparent;
     vertical-align:middle;
     line-height:100%;
+    color:white;
     font-family:'Open sans';
     font-size:2.5vh;
     padding:3%;
@@ -96,6 +97,7 @@
 }
 .description-2{
     left:0;
+    color:white;
     margin-top:5%;
     text-align:center;
     width:100%;
