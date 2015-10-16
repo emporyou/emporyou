@@ -89,7 +89,8 @@
 -o-transition: all 100ms ease-out;
 transition: all 100ms ease-out;
 }
-.thumb-element:hover{cursor:pointer}
+.thumb-element:hover{cursor:pointer;-webkit-filter: sepia(1);
+  filter: sepia(1);}
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
