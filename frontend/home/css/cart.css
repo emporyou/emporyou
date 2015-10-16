@@ -63,6 +63,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
     background-color:transparent;
     height:75%;
     display:flex;
+    overflow-x:scroll;
+    overflow-y:hidden;
 }
 .object-container{
     width:14%;
