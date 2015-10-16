@@ -8,8 +8,6 @@
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */;
-    overflow-x:auto;
-    overflow-y:hidden;
 }
 #pattern{
     background-color:#f7f7f7;
