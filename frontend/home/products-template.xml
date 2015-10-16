@@ -57,4 +57,5 @@
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div></div></div><textarea 
-                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></html></rowtype></document>
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></html></rowtype>
+                 <onloadall>jQuery('.thumb-product').each(function(){this.onmouseenter=startProductEnter(event)})</onloadall></document>
