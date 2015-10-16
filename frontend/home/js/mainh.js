@@ -64,3 +64,64 @@ updateCartFlag=function(){
 emptyCart=function(){
     ooo.clearchilds('products-cart-data');renderCart();
 }
+
+doItProducts=function(){
+
+
+
+$(function() {
+    $(".thumb-product").hover(function(e) {
+        var el_pos = $(this).offset();
+        var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
+        console.log('entered at: '+edge);
+		var startC='bar-n';console.log(edge);if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
+		console.log(startC);
+		var fly=jQuery(e.currentTarget).find('.product-bar');
+	fly=jQuery(fly).get(0);
+	fly.classList.add(startC);
+	setTimeout(function(){fly.style.display='block';fly.classList.add("product-bar-in")},35);	
+	setTimeout(function(){fly.classList.remove(startC)},350);
+    }, function(e) {
+        var el_pos = $(this).offset();
+        var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
+		console.log('left at: '+edge);
+		var startC='bar-n';console.log(edge);if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
+		console.log(startC);
+        var fly=jQuery(e.currentTarget).find('.product-bar');
+	fly=jQuery(fly).get(0);
+	fly.classList.add(startC);
+	setTimeout(function(){fly.classList.remove("product-bar-in")},25);
+	setTimeout(function(){fly.style.display='none';fly.classList.remove(startC)},350);
+    });
+});
+}
+function closestEdge(x,y,w,h) {
+        var topEdgeDist = distMetric(x,y,w/2,0);
+        var bottomEdgeDist = distMetric(x,y,w/2,h);
+        var leftEdgeDist = distMetric(x,y,0,h/2);
+        var rightEdgeDist = distMetric(x,y,w,h/2);
+    
+        var min = Math.min(topEdgeDist,bottomEdgeDist,leftEdgeDist,rightEdgeDist);
+        switch (min) {
+            case leftEdgeDist:
+                return "left";
+            case rightEdgeDist:
+                return "right";
+            case topEdgeDist:
+                return "top";
+            case bottomEdgeDist:
+                return "bottom";
+        }
+}
+    
+function distMetric(x,y,x2,y2) {
+    var xDiff = x - x2;
+    var yDiff = y - y2;
+    return (xDiff * xDiff) + (yDiff * yDiff);
+}
+
+
+
+
+
+

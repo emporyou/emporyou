@@ -219,3 +219,20 @@
 	};
 	
 } )( jQuery, window );
+
+
+ooo.developer=function(){
+	var Q=ooo.ins(document.body,'div',['style','display:block;position:absolute;width:100px;height:100px;z-index:1000;background-color:#F00']);
+	var C=ooo.ins(document.body,'div',['style','display:block;position:absolute;width:100%;z-index:1000;background-color:#000']);
+	//for(var j=0;j<)
+	var T=ooo.ins(Q,'textarea');
+	var D=ooo.ins(Q,'textarea');
+	var B=ooo.ins(Q,'button',['onclick','']);
+};
+ooo.editjob=function(){
+	var Q=ooo.ins(document.body,'div',['style','display:block;position:absolute;width:100px;height:100px;z-index:1000;background-color:#F00']);
+	var C=ooo.ins(document.body,'div',['style','display:block;position:absolute;width:100%;z-index:1000;background-color:#000']);
+	var T=ooo.ins(Q,'textarea');
+	var D=ooo.ins(Q,'textarea');
+	var B=ooo.ins(Q,'button',['onclick','']);
+};
