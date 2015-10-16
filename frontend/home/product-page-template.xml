@@ -31,7 +31,7 @@
         class="product-buy-container"><div 
         class="buy-element text">%subtitle</div><div 
         class="buy-element text">%price</div><div 
-        class="buy-element"><a href="#?%product-name" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" class="button-gen">Aggiungi al carrello</a><!--><img  src="../img/buy-button.png" class="buy-button"/>--></div><div 
+        class="buy-element"><a href="#?b=%product-name" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" class="button-gen">Aggiungi al carrello</a><!--><img  src="../img/buy-button.png" class="buy-button"/>--></div><div 
         class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div><div 
         class="buy-element">%options</div></div><div 
         class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div><textarea 
