@@ -14,7 +14,7 @@
     <match value="5">thumb-container-2</match>
     <match value="3">thumb-container-4</match>
     <match value="4">thumb-container-5</match>
-    <match value="1">thumb-container.margin-2</match>
+    <match value="1">thumb-container-margin-2</match>
     <match value="2">thumb-container</match>
     <match value="0">thumb-container-2</match>
 </switch>
