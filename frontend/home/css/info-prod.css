@@ -65,9 +65,10 @@
     background-color:transparent;
     padding:3%;
     vertical-align:middle;
-    line-height:20px;
+    line-height:100%;
     font-family:'Open sans';
     font-size:4vh;
+    text-align:center;
 }
 .description{
     left:0;
@@ -78,7 +79,7 @@
     vertical-align:middle;
     line-height:100%;
     font-family:'Open sans';
-    font-size:4vh;
+    font-size:2.5vh;
     padding:3%;
 }
 .price-2{
