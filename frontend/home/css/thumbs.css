@@ -92,8 +92,8 @@ transition: all 250ms ease-out;
 }
 .thumb-element:hover{
     cursor:pointer;
-    -webkit-filter: grayscale(0.6);
-  filter: grayscale(0.6);
+    -webkit-filter: grayscale(0.7);
+  filter: grayscale(0.7);
 }
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
