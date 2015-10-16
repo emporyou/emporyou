@@ -95,7 +95,7 @@ transition: all 250ms ease-out;
   filter: grayscale(0.7);
 }
 .thumb-element:hover .product-discount{
-    background-color:#f00 !important;
+    background-color:#f00 !important;color:white;
 }
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
@@ -126,6 +126,8 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 border: 0px solid #000000;
     z-index:399;
 }
+.product-bar:hover{cursor:pointer}
+.product-bar:hover .product-discount{background-color:#f00;color:white;}
 .transition-1{
     -webkit-transition: all 0.3s ease;
 -moz-transition: all 0.3s ease;
