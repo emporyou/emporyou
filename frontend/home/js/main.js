@@ -136,3 +136,6 @@ function share(){
     document.getElementById('fbb').style.display="block";
     document.getElementById('shb').style.display="none"
 }
+function shareDialog(){
+    
+}
