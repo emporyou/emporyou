@@ -124,11 +124,13 @@ function defaultPage(){
     document.getElementById('basket-container').style.top="0";
     scrollTo(document.body, 0, 200);
 }
-function closeCart(){cartOpened=0;
+function closeCart(){
+    if(document.getElementById('pattern')){
+    cartOpened=0;
     document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
     ooo.$$('products-cart-target').style.display='none';
     document.getElementById('products-cart-target').style.height="0";
-    document.getElementById('pattern').style.bottom="150px";
+    document.getElementById('pattern').style.bottom="150px";}
 }
 function share(){
     document.getElementById('fbb').style.display="block";
