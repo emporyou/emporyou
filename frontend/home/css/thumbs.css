@@ -128,7 +128,8 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     transition: all 0.3s ease-in-out;
 }
 .product-bar-in{
-    
+    top:0%;
+    left:0%;
 }
 .product-header{
     background-color:#ffffff;
@@ -174,22 +175,22 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     position:absolute;
     opacity:0;
     top:-100%;
-    left:0;
+    left:0%;
     filter:grayscale(0) !important;
 }
 .bar-s{
     background-color:#333333;
     position:absolute;
     opacity:0;
-    bottom:-100%;
-    left:0;
+    top:100%;
+    left:0%;
     filter:grayscale(0) !important;
 }
 .bar-w{
     background-color:#333333;
     position:absolute;
     opacity:0;
-    top:0;
+    top:0%;
     left:-100%;
     filter:grayscale(0) !important;
 }
@@ -197,8 +198,8 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
    background-color:#333333;
     position:absolute;
     opacity:0;
-    bottom:0;
-    right:-100%;
+    top:0%;
+    left:100%;
     filter:grayscale(0) !important;
 }
 li{overflow:hidden}
