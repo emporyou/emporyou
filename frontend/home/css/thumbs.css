@@ -170,7 +170,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 .thumb-element:hover .product-bar{
     height:100%;
     opacity:0.8;
-    top:0 !important;
+    bottom:0 !important;
 }
 .bar-n{
     background-color:#333333;
