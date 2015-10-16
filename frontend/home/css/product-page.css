@@ -175,7 +175,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  -webkit-border-radius:20px;
  -moz-border-radius:20px; 
  border-radius: 20px; 
- font:29px Verdana, Geneva, sans-serif; 
+ font:14px Verdana, Geneva, sans-serif; 
  font-weight:bold; 
  color:#f7f7f7; 
  background-color:#ff9900; 
@@ -189,13 +189,13 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  -moz-box-shadow: 3px 3px 8px #bababa,  inset 0px 0px 1px #ffffff;  
  box-shadow:3px 3px 8px #bababa, inset 0px 0px 1px #ffffff;  
   
-  }.button:hover{
+  }.button-gen:hover{
  padding:14px 68px; 
  border:none; 
  -webkit-border-radius:20px;
  -moz-border-radius:20px; 
  border-radius: 20px; 
- font:29px Verdana, Geneva, sans-serif; 
+ font:14px Verdana, Geneva, sans-serif; 
  font-weight:bold; 
  color:#f7f7f7; 
  background-color:#ff9900; 
