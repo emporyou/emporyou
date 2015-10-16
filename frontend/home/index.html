@@ -33,6 +33,7 @@
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <script src="js/main.js"></script>
 <script src="js/mainh.js"></script>
+<script src="js/modernizr.custom.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -41,7 +42,7 @@
 <meta charset="utf-8"/>
 <script>
 myappinit=function(){
-checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product');
+checkMobile();ooo.render('thumb-wrap','products-test.xml','http://emporyoum.com/get_product');
 ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
 setTimeout('initMap()',500);
 }
@@ -319,4 +320,15 @@ initMap=function() {
 </div>
 <div id="pattern"><b>check out now</b></div>--></div>
 <div id="cart-data" style="display:none"></div>
+<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
 </body></html>

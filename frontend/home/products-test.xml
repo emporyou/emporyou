@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//product">
+<variable tagname="merchant/name" substitution="%vendor-name"/>
+<variable tagname="merchant/lat" substitution="%lat"/>
+<variable tagname="merchant/lon" substitution="%lon"/>
+<variable tagname="merchant/city" substitution="%city"/>
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="merchant/id" substitution="%merch-id"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<variable tagname="title" substitution="%jsproduct-name" escape="js"/>
+<switch js="true" value="#ROWIDX#%6" substitution="%main-class">
+    <match value="5">thumb-container-2</match>
+    <match value="3">thumb-container-4</match>
+    <match value="4">thumb-container-5</match>
+    <match value="1">thumb-container</match>
+    <match value="2">thumb-container</match>
+    <match value="0">thumb-container-2</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%add-class">
+    <match value="5">add-2</match>
+    <match value="3">add</match>
+    <match value="4">add</match>
+    <match value="1">add</match>
+    <match value="2">add</match>
+    <match value="0">add-2</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%share-class">
+    <match value="5">share-2</match>
+    <match value="3">share</match>
+    <match value="4">share</match>
+    <match value="1">share</match>
+    <match value="2">share</match>
+    <match value="0">share-2</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%desc-class">
+    <match value="5">description-2</match>
+    <match value="3">description</match>
+    <match value="4">description</match>
+    <match value="1">description</match>
+    <match value="2">description</match>
+    <match value="0">description-2</match>
+</switch>
+<onload>console.log(#ROWIDX#)</onload>
+<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<before><![CDATA[<ul style="list-style:none" class="grid effect-2" id="grid">]]></before><html><li>
+    <a class="%main-class" href="#" onclick="openProduct(event,this,'%merch-id','%id')"><img class="thumb-element" src="http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id"/></a><!--<div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
+             style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
+                 class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
+                 id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
+                 class="%desc-class"><b>%product-name</b><br/><i>by %vendor-name</i><br/>%subtitle</div><div 
+                 class="price">€<span style="color:orange">%price</span></div></div><div 
+                 class="product-header"> <div 
+                 class="city">%city</div><div 
+                 class="product-discount" style="width:33%;">33%</div></div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>--></li></html><after><![CDATA[</ul>]]></after></rowtype></document>
