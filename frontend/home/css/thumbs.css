@@ -110,7 +110,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     left:0;
 }
 .product-bar{
-    display:none;
+    background-color:#333333;
     -webkit-transition: all 250ms ease-out;
 -moz-transition: all 250ms ease-out;
 -ms-transition: all 250ms ease-out;
@@ -119,18 +119,12 @@ transition: all 250ms ease-out;
     font-family:'open sans';
 }
 .product-bar-in{
-    background-color:#333333;
+    
     position:absolute;
     width:100% !important;
     height:100% !important;
     opacity:0.8 !important;
     filter:grayscale(0) !important;
-    -webkit-transition: all 250ms ease-out;
--moz-transition: all 250ms ease-out;
--ms-transition: all 250ms ease-out;
--o-transition: all 250ms ease-out;
-transition: all 250ms ease-out;
-    font-family:'open sans';
 }
 .product-header{
     background-color:#ffffff;
@@ -180,12 +174,6 @@ transition: all 250ms ease-out;
     top:0;
     left:0;
     filter:grayscale(0) !important;
-    font-family:'open sans';
-    -webkit-transition: all 250ms ease-out;
--moz-transition: all 250ms ease-out;
--ms-transition: all 250ms ease-out;
--o-transition: all 250ms ease-out;
-transition: all 250ms ease-out;
 }
 .bar-s{
     background-color:#333333;
@@ -196,12 +184,6 @@ transition: all 250ms ease-out;
     bottom:0;
     left:0;
     filter:grayscale(0) !important;
-    font-family:'open sans';
-    -webkit-transition: all 250ms ease-out;
--moz-transition: all 250ms ease-out;
--ms-transition: all 250ms ease-out;
--o-transition: all 250ms ease-out;
-transition: all 250ms ease-out;
 }
 .bar-w{
     background-color:#333333;
@@ -212,12 +194,6 @@ transition: all 250ms ease-out;
     top:0;
     left:0;
     filter:grayscale(0) !important;
-    font-family:'open sans';
-    -webkit-transition: all 250ms ease-out;
--moz-transition: all 250ms ease-out;
--ms-transition: all 250ms ease-out;
--o-transition: all 250ms ease-out;
-transition: all 250ms ease-out;
 }
 .bar-e{
    background-color:#333333;
@@ -228,10 +204,4 @@ transition: all 250ms ease-out;
     bottom:0;
     right:0;
     filter:grayscale(0) !important;
-    font-family:'open sans';
-    -webkit-transition: all 250ms ease-out;
--moz-transition: all 250ms ease-out;
--ms-transition: all 250ms ease-out;
--o-transition: all 250ms ease-out;
-transition: all 250ms ease-out; 
 }
