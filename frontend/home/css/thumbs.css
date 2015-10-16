@@ -117,7 +117,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     opacity:0;
     bottom:0;
     left:0;
-    display:none;
+    filter:grayscale(0) !important;
     font-family:'open sans';
     -webkit-transition: all 100ms ease-out;
 -moz-transition: all 100ms ease-out;
@@ -162,5 +162,5 @@ transition: all 100ms ease-out;
 }
 .thumb-element:hover .product-bar{
     height:100%;
-    opacity:0.3
+    opacity:0.7;
 }
