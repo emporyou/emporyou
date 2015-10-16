@@ -71,6 +71,10 @@
     bottom: 0;
     left: 0;
     right: 0;
+    border: 2px solid #ccc;
+    border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+-webkit-border-radius: 7px 7px 7px 7px;
     background: no-repeat 50% 50%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
