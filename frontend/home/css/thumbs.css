@@ -83,11 +83,11 @@
     -o-background-size: cover;
     background-size: cover;
     z-index:100;
-    -webkit-transition: all 100ms ease-out;
--moz-transition: all 100ms ease-out;
--ms-transition: all 100ms ease-out;
--o-transition: all 100ms ease-out;
-transition: all 100ms ease-out;
+    -webkit-transition: all 200ms ease-out;
+-moz-transition: all 200ms ease-out;
+-ms-transition: all 200ms ease-out;
+-o-transition: all 200ms ease-out;
+transition: all 200ms ease-out;
     -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg) grayscale(0);
   filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg) grayscale(0);
 }
