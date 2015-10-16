@@ -118,6 +118,10 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
         position:absolute;
     opacity:0.8 !important;
     filter:grayscale(0) !important;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border: 0px solid #000000;
 }
 .transition-1{
     -webkit-transition: all 0.3s ease-in-out;
