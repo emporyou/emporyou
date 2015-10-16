@@ -88,11 +88,13 @@
 -ms-transition: all 250ms ease-out;
 -o-transition: all 250ms ease-out;
 transition: all 250ms ease-out;
+    -webkit-filter: grayscale(0.3);
+  filter: grayscale(0.3);
 }
 .thumb-element:hover{
     cursor:pointer;
-    -webkit-filter: grayscale(0.3);
-  filter: grayscale(0.3);
+    -webkit-filter: grayscale(0.4);
+  filter: grayscale(0.4);
 }
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
