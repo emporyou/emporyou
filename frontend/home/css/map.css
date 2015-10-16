@@ -10,7 +10,6 @@
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */;
-    min-width:740px;
 }
 .google-map-container{
     position:absolute;
@@ -23,7 +22,6 @@
     height:40%;
 }
 .google-map{
-    min-width:740px;
     width:71%;
     -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
