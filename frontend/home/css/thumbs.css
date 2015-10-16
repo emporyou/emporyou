@@ -92,6 +92,11 @@ transition: all 100ms ease-out;
   filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
 }
 .thumb-element:hover{
+    -webkit-transition: all 100ms ease-out;
+-moz-transition: all 100ms ease-out;
+-ms-transition: all 100ms ease-out;
+-o-transition: all 100ms ease-out;
+transition: all 100ms ease-out;
     cursor:pointer;
     -webkit-filter: grayscale(1);
   filter: grayscale(1);
@@ -162,6 +167,11 @@ transition: all 100ms ease-out;
     font-size:2vh;
 }
 .thumb-element:hover .product-bar{
+    -webkit-transition: all 100ms ease-out;
+-moz-transition: all 100ms ease-out;
+-ms-transition: all 100ms ease-out;
+-o-transition: all 100ms ease-out;
+transition: all 100ms ease-out;
     height:120px;
     display:block;
 }
