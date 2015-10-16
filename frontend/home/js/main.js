@@ -142,7 +142,7 @@ function share(){
     document.getElementById('shb').style.display="none"
 }
 function shareDialog(elm){
-    if (elm.src == "../img/share.png
+    if (elm.src == "../img/share.png")
         {
             elm.src = "../img/diamond.png";
         }
