@@ -169,7 +169,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
     width:100%;
 }
 .goback:hover{cursor:pointer;transform:scale(1.2)}
-.button-gen{text-decoration:none; text-align:center; 
+.button-gen{text-decoration:none; text-align:center;
+    white-space:nowrap;
  padding:14px 68px; 
  border:none; 
  -webkit-border-radius:20px;
@@ -189,7 +190,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  -moz-box-shadow: 3px 3px 8px #bababa,  inset 0px 0px 1px #ffffff;  
  box-shadow:3px 3px 8px #bababa, inset 0px 0px 1px #ffffff;  
   
-  }.button-gen:hover{
+  }.button-gen:hover{white-space:nowrap;
  padding:14px 68px; 
  border:none; 
  -webkit-border-radius:20px;
@@ -211,7 +212,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  opacity:0.8; 
  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); 
  filter: alpha(opacity=80); 
- }.button-gen:active{
+ }.button-gen:active{white-space:nowrap;
  padding:14px 68px; 
  border:none; 
  -webkit-border-radius:20px;
