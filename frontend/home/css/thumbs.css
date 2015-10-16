@@ -24,7 +24,7 @@
     width: 66%;
     float: left;
     height:0;
-    padding-bottom:76%;
+    padding-bottom:66%;
     min-width:292px;
     min-height:100px;
 }
@@ -109,6 +109,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     height:120px;
     bottom:0;
     left:0;
+    display:none;
     font-family:'open sans';
 }
 .product-header{
