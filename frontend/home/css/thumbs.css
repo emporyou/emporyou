@@ -159,6 +159,11 @@ border: 0px solid #000000;
     font-size:2vh;
     border-left: 2px solid #e87c7c;
     max-width:220px;
+    -webkit-transition: all 250ms ease-out;
+-moz-transition: all 250ms ease-out;
+-ms-transition: all 250ms ease-out;
+-o-transition: all 250ms ease-out;
+transition: all 250ms ease-out;
 }
 .city{
     background-color:transparent;
