@@ -83,7 +83,6 @@
     color:white;
     font-family:'Open sans';
     font-size:2.5vh;
-    padding:3%;
 }
 .price-2{
     width:50%;
@@ -107,7 +106,6 @@
     line-height:100%;
     font-family:'Open sans';
     font-size:4vh;
-    padding:3%;
 }
 .share-button{
     width:80%;
