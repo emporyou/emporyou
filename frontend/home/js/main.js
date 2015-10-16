@@ -46,7 +46,7 @@ if(event.srcElement==elm){
 function closeProduct(){
     productOpened=0;
     document.getElementsByClassName('products-main')[0].style.display="";
-   document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+   document.getElementsByClassName('emporyoum-bar')[0].style.top="14%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";
     //document.getElementById('basket-container').style.display="";
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
@@ -73,6 +73,7 @@ function openMap(){
     document.getElementsByClassName('google-map')[0].classList.remove('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
+        document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
             document.getElementsByClassName('google-map-container')[0].style.top="13%"};
@@ -80,9 +81,10 @@ function openMap(){
 				ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
 				setTimeout('initMap()',500);
 		}}else{
+            document.getElementsByClassName('products-main')[0].style.top="25%";
     document.getElementsByClassName('google-map')[0].classList.add('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
-    document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="14%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";set=0;
     }  
 }}
@@ -118,7 +120,7 @@ function defaultPage(){
     if(cartOpened==1){closeCart()};
     if(set==1){openMap()}else{document.getElementsByClassName('google-map-container')[0].style.top="13%"}
     document.getElementsByClassName('products-page-main')[0].classList.add('hidden');
-    document.getElementsByClassName('products-main')[0].style.top="55%";
+    document.getElementsByClassName('products-main')[0].style.top="25%";
     document.getElementsByClassName('products-main')[0].style.display="block";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('basket-container').style.top="0";
@@ -127,7 +129,7 @@ function defaultPage(){
 function closeCart(){
     if(document.getElementById('pattern')){
     cartOpened=0;
-    document.getElementsByClassName('emporyoum-bar')[0].style.top="30%";
+    document.getElementsByClassName('emporyoum-bar')[0].style.top="14%";
     ooo.$$('products-cart-target').style.display='none';
     document.getElementById('products-cart-target').style.height="0";
     document.getElementById('pattern').style.bottom="150px";}
