@@ -46,7 +46,7 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<before><![CDATA[<ul class="da-thumbs" id="da-thumbs">]]></before><html><li><a href="#" onclick="openProduct(event,this,'%merch-id','%id')"><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><img 
+<before><![CDATA[<ul class="da-thumbs" id="da-thumbs" style="list-style:none">]]></before><html><li><a href="#" onclick="openProduct(event,this,'%merch-id','%id')"><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><img 
              src="http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id"  class="thumb-element"/><div class="info-container"><span><div class="product-bar"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
