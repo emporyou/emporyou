@@ -55,5 +55,5 @@
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div></div><textarea 
-                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></a></li></html><after><![CDATA[<ul>]]></after></rowtype>
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></a></li></html><after><![CDATA[</ul>]]></after></rowtype>
                  <onloadall>jQuery('#da-thumbs > li').each(function(){jQuery(this).hoverdir()})</onloadall></document>
