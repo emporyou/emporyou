@@ -71,10 +71,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border: 8px solid #fff;
-    border-radius: 7px 7px 7px 7px;
--moz-border-radius: 7px 7px 7px 7px;
--webkit-border-radius: 7px 7px 7px 7px;
+    border: 5px solid #fff;
+    border-radius: 4px 4px 4px 4px;
+-moz-border-radius: 4px 4px 4px 4px;
+-webkit-border-radius: 4px 4px 4px 4px;
     background: no-repeat 50% 50%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -87,6 +87,7 @@
 -o-transition: all 100ms ease-out;
 transition: all 100ms ease-out;
 }
+.thumb-element:hover{cursor:pointer}
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
