@@ -3,7 +3,7 @@
     height:20%;
     width:50%;
     bottom:0;
-    right:20%;
+    left:0;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
@@ -37,7 +37,7 @@
     height:20%;
     width:12.5%;
     bottom:0;
-    right:12.5%;
+    left:0;
     background-color:transparent;
     text-align:center;
     vertical-align:middle;
