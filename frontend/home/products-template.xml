@@ -49,7 +49,7 @@
 <variable tagname="variants[optionTitle]/price" substitution="%discount" convert="g_discount"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class" style="overflow:hidden"><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
-             style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar transition-1" style="display:none"><div 
+             style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar transition-1" onclick="openProduct(event,this,'%merch-id','%id')" style="display:none"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class" onclick="shareDialog()"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
                  class="%desc-class"><b>%product-name</b><br/><i>by %vendor-name</i><br/></div><div 
