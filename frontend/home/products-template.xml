@@ -12,36 +12,36 @@
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
-    <match value="5">thumb-container-2</match>
-    <match value="3">thumb-container-4</match>
-    <match value="4">thumb-container-5</match>
+    <match value="5">thumb-container</match>
+    <match value="3">thumb-container</match>
+    <match value="4">thumb-container</match>
     <match value="1">thumb-container</match>
     <match value="2">thumb-container</match>
-    <match value="0">thumb-container-2</match>
+    <match value="0">thumb-container</match>
 </switch>
 <switch js="true" value="#ROWIDX#%6" substitution="%add-class">
-    <match value="5">add-2</match>
+    <match value="5">add</match>
     <match value="3">add</match>
     <match value="4">add</match>
     <match value="1">add</match>
     <match value="2">add</match>
-    <match value="0">add-2</match>
+    <match value="0">add</match>
 </switch>
 <switch js="true" value="#ROWIDX#%6" substitution="%share-class">
-    <match value="5">share-2</match>
+    <match value="5">share</match>
     <match value="3">share</match>
     <match value="4">share</match>
     <match value="1">share</match>
     <match value="2">share</match>
-    <match value="0">share-2</match>
+    <match value="0">share</match>
 </switch>
 <switch js="true" value="#ROWIDX#%6" substitution="%desc-class">
-    <match value="5">description-2</match>
+    <match value="5">description</match>
     <match value="3">description</match>
     <match value="4">description</match>
     <match value="1">description</match>
     <match value="2">description</match>
-    <match value="0">description-2</match>
+    <match value="0">description</match>
 </switch>
 <onload>console.log(#ROWIDX#)</onload>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
