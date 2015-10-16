@@ -46,7 +46,7 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<before><![CDATA[<ul style="list-style:none">]]></before><html><li><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
+<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
              style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
@@ -55,4 +55,4 @@
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div></div></div><textarea 
-                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></li></html><after><![CDATA[</ul>]]></after></rowtype></document>
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></html></rowtype></document>
