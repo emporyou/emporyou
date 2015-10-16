@@ -88,8 +88,6 @@
 -ms-transition: all 200ms ease-out;
 -o-transition: all 200ms ease-out;
 transition: all 200ms ease-out;
-    -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg) grayscale(0);
-  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg) grayscale(0);
 }
 .thumb-element:hover{
     cursor:pointer;
@@ -163,5 +161,4 @@ transition: all 100ms ease-out;
 }
 .thumb-element:hover .product-bar{
     height:120px;
-    display:block;
 }
