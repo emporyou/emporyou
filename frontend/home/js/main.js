@@ -88,16 +88,16 @@ function openMap(){
 }}
 function openCart(){
     scrollTo(document.body, 0, 200);
-    document.getElementById('basket-container').style.top="-30%";
+    //document.getElementById('basket-container').style.top="-30%";
     setTimeout('cartReady()',400);
 	
 	rendercart();//defined in mainh.js, control output via products-cart.xml
 }
 function cartReady(){
     cartOpened=1;ooo.$$('products-cart-target').style.display='';//SHOW the cart
-    document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";
-    document.getElementsByClassName('products-main')[0].style.top="100%";
-    document.getElementsByClassName('google-map-container')[0].style.top="58%";
+    //document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";
+    //document.getElementsByClassName('products-main')[0].style.top="100%";
+    //document.getElementsByClassName('google-map-container')[0].style.top="58%";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="50%";
     document.getElementById('pattern').style.bottom="0";
