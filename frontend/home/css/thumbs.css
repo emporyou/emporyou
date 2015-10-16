@@ -91,7 +91,6 @@ transition: all 250ms ease-out;
 }
 .thumb-element:hover{
     cursor:pointer;
-    border: 0.75vh solid #fff;
     -webkit-filter: grayscale(0.7);
   filter: grayscale(0.7);
 }
