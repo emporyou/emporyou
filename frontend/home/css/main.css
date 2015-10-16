@@ -1,4 +1,4 @@
-body{
+body{min-width:740px;
     background-color:#f7f7f7;
     margin:0;
     overflow-x:hidden;
@@ -15,6 +15,7 @@ body{
 -moz-box-shadow:    0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     z-index:400;
+    min-width:740px;
 }
 .logo-container{
     height:60%;
@@ -35,6 +36,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     width:50%;
     background-color:transparent;
     margin-left:0;
+    min-width:500px;
     align-self: center;
     display: -webkit-flex;
 	display: flex;
@@ -84,6 +86,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     top:30%;
     height:40px;
     width:100%;
+    min-width:740px;
     background-color:transparent;
     align-items:center;
     text-align:center;
