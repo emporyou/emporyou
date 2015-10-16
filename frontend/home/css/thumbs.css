@@ -28,6 +28,17 @@
     min-width:292px;
     min-height:100px;
 }
+.thumb-container-margin-2 {
+    margin-top:2%;
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    float: left;
+    height: 0;
+    padding-bottom: 25%;
+    min-width:146px;
+    min-height:100px;
+}
 .thumb-container-5{
     display: flex !important;
     flex-direction: column;
