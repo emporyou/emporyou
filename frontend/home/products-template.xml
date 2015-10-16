@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
+<constantjavascript substitution="$$$">function g_discount(p){return (p/3)+p}</constantjavascript>
 <rowtype tagname="//product">
 <variable tagname="merchant/name" substitution="%vendor-name"/>
 <variable tagname="merchant/lat" substitution="%lat"/>
@@ -44,14 +45,15 @@
 </switch>
 <onload>console.log(#ROWIDX#)</onload>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
-<variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price"/>
+<variable tagname="variants[optionTitle]/price" substitution="%discount" convert="g_discount"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class"><div class="thumb-dummy"> </div><div class="thumb-product"><div 
              style="background-image: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div class="product-bar"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
                  class="%desc-class"><b>%product-name</b><br/><i>by %vendor-name</i><br/></div><div 
-                class="price">€<b style="color:orange">%price</b><br/>%subtitle</div></div><div 
+                class="price">€<strike style="color:#eee">%discount</strike><br/>€<b style="color:orange">%price</b><br/>%subtitle</div></div><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div></div></div><textarea 
