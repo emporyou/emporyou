@@ -94,6 +94,9 @@ transition: all 250ms ease-out;
     -webkit-filter: grayscale(0.7);
   filter: grayscale(0.7);
 }
+.thumb-element .product-header{
+    background-color:#f00 !important;
+}
 #thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
