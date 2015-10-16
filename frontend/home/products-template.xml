@@ -54,8 +54,8 @@
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%merch-id','%id')" style="display:none"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class" onclick="shareDialog()"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/><div 
-                 id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><a href="#"
-                 class="%desc-class" onclick="openProduct(event,this,'%merch-id','%id')"><b>%product-name</b><br/><i>by %vendor-name</i><br/></a><div 
+                 id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyoum.com/%product-name" data-layout="icon"> </div></div><div 
+                 class="%desc-class" onclick="openProduct(event,this,'%merch-id','%id')"><b>%product-name</b><br/><i>by %vendor-name</i><br/></div><div 
                 class="price" onclick="openProduct(event,this,'%merch-id','%id')">€<strike style="color:#eee">%discount</strike><br/>€<b style="color:orange">%price</b><br/>%subtitle</div></div></div></div><textarea 
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></html></rowtype>
                  <onloadall>doItProducts()</onloadall></document>
