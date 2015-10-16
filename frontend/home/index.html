@@ -42,14 +42,10 @@
 <meta charset="utf-8"/>
 <script>
 myappinit=function(){
-checkMobile();ooo.render('thumb-wrap','products-test.xml','http://emporyoum.com/get_product');
+checkMobile();ooo.render('thumb-wrap','products-test.xml','http://emporyoum.com/get_product',false,false,renderAnim);
 ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
 setTimeout('initMap()',500);
-    new AnimOnScroll( document.getElementById( 'grid' ), {
-				minDuration : 0.4,
-				maxDuration : 0.7,
-				viewportFactor : 0.2
-			} );
+    
 }
 </script>
 <script>
@@ -330,6 +326,11 @@ initMap=function() {
 		<script src="js/classie.js"></script>
 		<script src="js/AnimOnScroll.js"></script>
 		<script>
-			
+            function renderAnim(){
+	new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );}		
 		</script>
 </body></html>
