@@ -133,5 +133,6 @@ var server = app.listen(80,function () {
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
 });
-setInterval(beAlive,10000);
-function beAlive(){console.log('111ijrirjir')}
+setInterval(beAlive,60000);
+var alive=0;
+function beAlive(){alive++;console.log('minute passed='alive)}
