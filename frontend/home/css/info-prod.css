@@ -117,7 +117,5 @@
     margin:0 auto;
     opacity:0.7;
 }
-.add:hover{cursor:pointer;filter:sepia(1)}
-.share:hover{cursor:pointer;filter:sepia(1)}
-.add-2:hover{cursor:pointer;filter:sepia(1)}
-.share-2:hover{cursor:pointer;filter:sepia(1)}
+.add-button:hover{cursor:pointer;filter:sepia(1)}
+.share-button:hover{cursor:pointer;filter:sepia(1)}
