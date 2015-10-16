@@ -88,8 +88,8 @@
 -ms-transition: all 100ms ease-out;
 -o-transition: all 100ms ease-out;
 transition: all 100ms ease-out;
-    -webkit-filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
-  filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+    -webkit-filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+  filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
 }
 .thumb-element:hover{
     cursor:pointer;
@@ -118,6 +118,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     height:0px;
     bottom:0;
     left:0;
+    display:none;
     font-family:'open sans';
     -webkit-transition: all 100ms ease-out;
 -moz-transition: all 100ms ease-out;
@@ -162,4 +163,5 @@ transition: all 100ms ease-out;
 }
 .thumb-element:hover .product-bar{
     height:120px;
+    display:block;
 }
