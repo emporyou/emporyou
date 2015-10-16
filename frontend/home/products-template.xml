@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-<constantjavascript substitution="$$$">function g_discount(p){console.log(p);p=parseFloat(p);return (p/3)+p}</constantjavascript>
+<constantjavascript substitution="zwzwzwzwzw">function g_discount(p){console.log(p);p=parseFloat(p);return (p/3)+p}</constantjavascript>
 <rowtype tagname="//product">
 <variable tagname="merchant/name" substitution="%vendor-name"/>
 <variable tagname="merchant/lat" substitution="%lat"/>
