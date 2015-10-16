@@ -89,12 +89,14 @@ function openMap(){
     }  
 }}
 function openCart(){
+    if(openCart==1){closeCart()}else{
     scrollTo(document.body, 0, 200);
+    document.getElementsByClassName('products-main')[0].style.top="55%";
     //document.getElementById('basket-container').style.top="-30%";
     setTimeout('cartReady()',400);
 	
 	rendercart();//defined in mainh.js, control output via products-cart.xml
-}
+}}
 function cartReady(){
     cartOpened=1;ooo.$$('products-cart-target').style.display='';//SHOW the cart
     //document.getElementsByClassName('emporyoum-bar')[0].style.top="75%";
