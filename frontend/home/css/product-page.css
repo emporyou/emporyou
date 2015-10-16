@@ -211,7 +211,7 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  opacity:0.8; 
  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); 
  filter: alpha(opacity=80); 
- }.button:active{
+ }.button-gen:active{
  padding:14px 68px; 
  border:none; 
  -webkit-border-radius:20px;
