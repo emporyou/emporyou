@@ -2,8 +2,6 @@
 /*This is not minified, this is how I have worked up until now... first version of this is dated 2007 */
 /*u1=function(o,t,v){o.setAttribute(t,v);};_u2=function(u){var o=document.createElement('script');_u1(o,'type','text/javascript');_u1(o,'src',u);document.getElementsByTagName('head')[0].appendChild(o);};*/
 /*--------------------------------------------------------------------------------------------------  BROWSER RECOGNITION */
-contentSecurityPolicy: { 'default-src': "'none' 'self'",
-'script-src': "'self' 'localhost' 'unsafe-inline' 'unsafe-eval' 10.1.3.34:35729", 'font-src': "'self'", 'connect-src': "'self' 'localhost'", 'style-src': "'self' 'unsafe-inline'", }
 window._t00UA=navigator.userAgent.toLowerCase();window._t00D=window.document;
 var isIE=document.ActiveXObject;var isIE6=isIE&&document.implementation;var isgteIE6=isIE7||isIE6;var isIE7=_t00UA.indexOf('msie 7')>-1;var isIE5=isIE&&window.print&&!isgteIE6;var isIEDOM2=isIE5||isgteIE6;var isIE8=_t00UA.indexOf('msie 8')>-1;var isIE9=_t00UA.indexOf('msie 9')>-1;var isIE10=_t00UA.indexOf('msie 10')>-1;var isIENO9=(isIE&&((isIE5)||(isIE6))||((isIE7)||(isIE8)));var isIE11=(_t00UA.indexOf('rv:11')>-1)&&(_t00UA.indexOf('win')>-1);
 var is_chrome=_t00UA.indexOf('chrome')>-1;var is_opera=_t00UA.indexOf("opera")!=-1;var is_firefox=_t00UA.indexOf("firefox")!=-1;var is_safari=_t00UA.indexOf('safari')!=-1;var is_ios=_t00UA.indexOf('apple-i')!=-1;var is_iphone=_t00UA.indexOf('iphone')!=-1;var is_ipad=_t00UA.indexOf('ipad')!=-1;
@@ -299,18 +297,40 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
     else{setTimeout('ooo.render(\''+tgt+'\',\''+curl+'\',\''+durl+'\',false,false,\''+appnd+'\');',timeout);timeout+=ooo.rendertimestep;}}    
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
+function tryDiscount(value){
+    var price=document.getElementById('voucher-value').innerHTML;
+    var discount=(price/100)*value
+    var total=price-discount;
+    document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;
+    
+    
+}
 
 prodXML=ooo.JSON2xmldoc(selectedProduct());
 var tpl='<?xml version="1.0" encoding="UTF-8"?>\n';
 tpl=`
-
+<document>
+<rowtype tagname="item">
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="title" substitution="%title"/>
+<variable tagname="vendor" substitution="%vendor"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price"/>
+<html>
+<div>Prodotto: </div><div id="voucher-title">%title</div><br/>
+<div>Marca: </div><div id="voucher-vendor">%vendor</div><br/>
+<div>Valore: </div><div id="voucher-value">%price</div><div> €</div><br/>
+<div>Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/>
+<div>Prezzo finale: </div><div id="voucher-price">%price</div>
+</html>
+</rowtype>
+</document>
 `;
 var xtpl=ooo.parsexml(tpl);
 var g=document.createElement('div'); 
 g.className='voucher';
 g.setAttribute('id','voucher-target');
 g.setAttribute('style',`
-position:absolute;width:50%;height:50%;top:25%;left:25%;background-color:red;z-index:10000;
+position:absolute;width:70%;height:60%;top:20%;left:15%;background-color:white;z-index:10000;border:5px solid black;
 `);
 document.body.appendChild(g);
 ooo.syncrender('voucher-target',xtpl,prodXML);
