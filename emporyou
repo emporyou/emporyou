@@ -2,13 +2,13 @@
 # chkconfig: 3 20 80
 # description: RECOMMERCE!!!
 start(){
-        echo "Starting RECOMMERCE..."
-        /bin/sh /root/recommerce/postreboot.txt &
-        echo "Started RECOMMERCE..."
+        echo "Starting emporyou..."
+        /bin/sh /root/emporyou/postreboot.txt &
+        echo "Started emporyou..."
 }
 
 stop(){
-        echo "Stopping RECOMMERCE... (doing nothing)"
+        echo "Stopping emporyou... (doing nothing)"
         
 }
 
