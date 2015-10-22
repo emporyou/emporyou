@@ -65,13 +65,13 @@ meteor run --port 3050 > started5.txt &
 cd ../..
 sleep 60s
 echo --------------- CLONING FRONTEND ------------------------------
-git clone https://github.com/officinetesla/recommerce.git
+git clone https://github.com/officinetesla/emporyou.git
 echo  -------------- SETUP REBOOT SCRIPT ---------------------------
-cp recommerce/recommerce /etc/init.d/
-chmod 755 /etc/init.d/recommerce
-chkconfig recommerce on
+cp emporyou/emporyou /etc/init.d/
+chmod 755 /etc/init.d/emporyou
+chkconfig emporyou on
 echo  --------------- STARTING FRONTEND ----------------------------
-cd recommerce
+cd emporyou
 node frontend/app.js &
 cd /root
 echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
