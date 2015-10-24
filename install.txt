@@ -27,7 +27,7 @@ echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
 cd react001/reaction/packages
 git clone -b development https://github.com/reactioncommerce/reaction-core.git
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
-git clone git@github.com:emporyou/reaction2emporyou.git
+git clone -b https://github.com/emporyou/reaction2emporyou.git
 cd ..
 meteor add reactioncommerce:reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
@@ -35,7 +35,7 @@ meteor run --port 3010 > started1.txt &
 cd ../..
 sleep 2m
 echo --------------- CLONING FRONTEND ------------------------------
-git clone https://github.com/emporyou/emporyou.git
+git clone -b https://github.com/emporyou/emporyou.git
 echo  -------------- SETUP REBOOT SCRIPT ---------------------------
 cp emporyou/emporyou /etc/init.d/
 chmod 755 /etc/init.d/emporyou
