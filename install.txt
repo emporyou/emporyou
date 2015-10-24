@@ -77,7 +77,10 @@ cd /root
 echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
 cd react001/reaction/packages
 git clone -b development https://github.com/reactioncommerce/reaction-core.git
-cd ../../..
+git clone git@github.com:emporyou/reaction2emporyou.git
+cd ..
+meteor add reactioncommerce:reaction2emporyou
+cd ../..
 cd react002/reaction/packages
 git clone -b development https://github.com/reactioncommerce/reaction-core.git
 cd ../../..
