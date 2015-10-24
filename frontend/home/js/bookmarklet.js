@@ -308,6 +308,9 @@ function tryDiscount(value){
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:50px;right:50px;}
+#prez-cont{bottom:25px;right:50px;}
+#prod-cont{bottom:50px;right:150px;}
+#marc-cont{bottom:25px;right:150px;}
 .text-vau{color:white}
 
 `,
