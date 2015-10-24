@@ -339,21 +339,20 @@ tpl=`
 <variable tagname="title" substitution="%title"/>
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<html>
+<html><form action="http://emporyou.com/postback" method="post" target="_blank">
+<input type="hidden" value="%title" name="title" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
 <div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
 <div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
-</html>
+</form></html>
 </rowtype>
 </document>
 `;
 var xtpl=ooo.parsexml(tpl);
-var g=document.createElement('div'); 
-g.className='voucher';
-g.setAttribute('id','voucher-target');
-g.setAttribute('style',`
+var g=document.createElement('div');g.className='voucher';
+g.setAttribute('id','voucher-target');g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
