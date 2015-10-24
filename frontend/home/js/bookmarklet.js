@@ -309,9 +309,10 @@ var css = `
 .cont{position:absolute}
 #scon-cont{bottom:50px;right:50px;}
 #prez-cont{bottom:25px;right:50px;}
-#prod-cont{bottom:50px;right:150px;}
-#marc-cont{bottom:25px;right:150px;}
+#prod-cont{bottom:75px;right:350px;}
+#marc-cont{bottom:25px;right:350px;}
 .text-vau{color:white}
+.testo{color:#f7f7f7}
 
 `,
     head = document.head || document.getElementsByTagName('head')[0],
@@ -336,11 +337,11 @@ tpl=`
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <html>
-<div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div id="voucher-title">%title</div><br/></div>
-<div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div id="voucher-vendor">%vendor</div><br/></div>
-<div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div id="voucher-value">%price</div><div> €</div><br/></div>
+<div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
+<div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
+<div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
 <div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/></div>
-<div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div id="voucher-price">%price</div></div>
+<div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
 </html>
 </rowtype>
 </document>
