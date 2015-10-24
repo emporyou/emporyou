@@ -330,7 +330,7 @@ var g=document.createElement('div');
 g.className='voucher';
 g.setAttribute('id','voucher-target');
 g.setAttribute('style',`
-position:absolute;width:70%;height:60%;top:20%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyoum.com/vaucher.png')
+position:absolute;width:70%;height:60%;top:20%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyoum.com/vaucher.png');background-size:100%;
 `);
 document.body.appendChild(g);
 ooo.syncrender('voucher-target',xtpl,prodXML);
