@@ -314,7 +314,7 @@ var css = `
 .text-vau{color:white;font-weight: bold;}
 .testo{color:#f7f7f7}
 #valo-cont{right: 148px;
-    bottom: 105px;
+    bottom: 145px;
     transform: scale(1.4);}
 
 `,
