@@ -21,7 +21,7 @@
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div class="object-container"><div 
        class="cart-item-image" 
-       style="background: url('http://emporyoum.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"><div 
+       style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"><div 
        class="cart-add-item"><img class="cart-add-icon buttoncart" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/more.png"/></div><div 
        class="cart-remove-item"><img class="cart-remove-icon buttoncart" onclick="removeProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/less.png"/></div></div><div 
        class="qt-name"><div 
