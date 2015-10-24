@@ -83,15 +83,15 @@ app.get('/get_product_image', function (req, res) {
 app.get('/postback', function (req, res) {
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';
 	out+='<h3>headers</h3>\n';
-	for each(key in req.headers){
+	for (key in req.headers){
 		out+=key+':'+req.headers[key]+'<br/>';
 	}
 	out+='<h3>querystring</h3>\n';
-	for each(key in req.query){
+	for (key in req.query){
 		out+=key+':'+req.query[key]+'<br/>';
 	}
 	out+='<h3>form</h3>\n';
-	for each(key in req.params){
+	for (key in req.params){
 		out+=key+':'+req.params[key]+'<br/>';
 	}
 	out+='</body></html>';
