@@ -305,6 +305,22 @@ function tryDiscount(value){
     
     
 }
+var css = `
+.cont{position:absolute};
+#scon-cont{bottom:50px;right:50px;}
+
+`,
+    head = document.head || document.getElementsByTagName('head')[0],
+    style = document.createElement('style');
+
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+head.appendChild(style);
 
 prodXML=ooo.JSON2xmldoc(selectedProduct());
 var tpl='<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -316,11 +332,11 @@ tpl=`
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <html>
-<div>Prodotto: </div><div id="voucher-title">%title</div><br/>
-<div>Marca: </div><div id="voucher-vendor">%vendor</div><br/>
-<div>Valore: </div><div id="voucher-value">%price</div><div> €</div><br/>
-<div>Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/>
-<div>Prezzo finale: </div><div id="voucher-price">%price</div>
+<div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div id="voucher-title">%title</div><br/></div>
+<div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div id="voucher-vendor">%vendor</div><br/></div>
+<div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div id="voucher-value">%price</div><div> €</div><br/></div>
+<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/></div>
+<div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div id="voucher-price">%price</div></div>
 </html>
 </rowtype>
 </document>
@@ -334,3 +350,4 @@ position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;backgro
 `);
 document.body.appendChild(g);
 ooo.syncrender('voucher-target',xtpl,prodXML);
+
