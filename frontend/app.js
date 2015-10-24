@@ -80,6 +80,24 @@ app.get('/get_product_image', function (req, res) {
 	});
   }
 });
+app.get('/postback', function (req, res) {
+	var out='<!DOCTYPE html><head><title>postback</title></head><body>';
+	out+='<h3>headers</h3>\n';
+	for each(key in req.headers){
+		out+=key+':'+req.headers[key]+'<br/>';
+	}
+	out+='<h3>querystring</h3>\n';
+	for each(key in req.query){
+		out+=key+':'+req.query[key]+'<br/>';
+	}
+	out+='<h3>form</h3>\n';
+	for each(key in req.params){
+		out+=key+':'+req.params[key]+'<br/>';
+	}
+	out+='</body></html>';
+	res.set('Content-Type', 'text/html');
+	res.end(out);
+};
 
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
@@ -112,6 +130,8 @@ doit=function(m_id,onend,res,q){var p=3001+(m_id*10);
 			res.myxml+=o2xml('product',docs).replace(/<\/product>/g,x);
 			db.close();try{onend();}catch(ex){res.send(res.myxml+'</response>');}
 });});};
+
+
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------- OBJECT 2 XML
@@ -124,7 +144,7 @@ serve404=function(res){
 	
 };
 servenoimage=function(res){
-	res.sendFile('/root/recommerce/frontend/img/default-product.png');
+	res.sendFile('/root/emporyou/frontend/img/default-product.png');
 };
 //---------------------------------------------------------------------------------------------------
 app.use(express.static('./frontend'));
@@ -133,6 +153,7 @@ var server = app.listen(80,function () {
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
 });
-setInterval(beAlive,60000);
-var alive=0;
-function beAlive(){alive++;console.log('minute passed='+alive)}
+//setInterval(beAlive,60000);
+//var alive=0;
+//function beAlive(){alive++;console.log('minute passed='+alive)}
+
