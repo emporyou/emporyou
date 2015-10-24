@@ -307,11 +307,11 @@ function tryDiscount(value){
 }
 var css = `
 .cont{position:absolute}
-#scon-cont{bottom:50px;right:50px;}
-#prez-cont{bottom:25px;right:50px;}
+#scon-cont{bottom:51px;right:50px;}
+#prez-cont{bottom:50px;right:115px;}
 #prod-cont{bottom:75px;right:350px;}
 #marc-cont{bottom:25px;right:350px;}
-.text-vau{color:white}
+.text-vau{color:white;font-weight: bold;}
 .testo{color:#f7f7f7}
 
 `,
