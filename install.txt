@@ -24,7 +24,7 @@ echo --------------- CLONING 1st ------------------------------------
 git clone -b development https://github.com/reactioncommerce/reaction
 cd reaction && git checkout master
 echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
-cd react001/reaction/packages
+cd packages
 git clone -b development https://github.com/reactioncommerce/reaction-core.git
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
 git clone -b https://github.com/emporyou/reaction2emporyou.git
