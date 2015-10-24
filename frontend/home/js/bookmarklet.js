@@ -306,8 +306,9 @@ function tryDiscount(value){
     
 }
 var css = `
-.cont{position:absolute};
+.cont{position:absolute}
 #scon-cont{bottom:50px;right:50px;}
+.text-vau{color:white}
 
 `,
     head = document.head || document.getElementsByTagName('head')[0],
