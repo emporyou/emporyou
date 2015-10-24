@@ -97,7 +97,7 @@ app.get('/postback', function (req, res) {
 	out+='</body></html>';
 	res.set('Content-Type', 'text/html');
 	res.end(out);
-};
+});
 
 app.get('/get_product', function (req, res) {
   var m_id=req.query.m_id||-1;
