@@ -308,11 +308,14 @@ function tryDiscount(value){
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:51px;right:50px;}
-#prez-cont{bottom:50px;right:115px;}
+#prez-cont{bottom:50px;right:109px;}
 #prod-cont{bottom:75px;right:350px;}
-#marc-cont{bottom:25px;right:350px;}
+#marc-cont{bottom:25px;right:349px;}
 .text-vau{color:white;font-weight: bold;}
 .testo{color:#f7f7f7}
+#valo-cont{right: 148px;
+    bottom: 105px;
+    transform: scale(1.4);}
 
 `,
     head = document.head || document.getElementsByTagName('head')[0],
