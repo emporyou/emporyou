@@ -1,5 +1,5 @@
 #thumb-wrap {
-    width: 100%;
+    width: 127%;
 }
 #thumb-wrap a {
     opacity: 1.0;
@@ -14,7 +14,7 @@
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 18%;
+    padding-bottom: 19.6%;
     min-width:146px;
     min-height:100px;
 }
@@ -31,14 +31,14 @@
 .thumb-container-5{
     display: flex !important;
     flex-direction: column;
-    margin-top: 34%;
+    margin-top: 32.4%;
     margin-left: -33%;
     display: inline-block;
     position: relative;
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 18%;
+    padding-bottom: 19.6%;
     min-width:146px;
     min-height:100px;
 }
@@ -50,7 +50,7 @@
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 18%;
+    padding-bottom: 19.6%;
     min-width:146px;
     min-height:100px;
 }
