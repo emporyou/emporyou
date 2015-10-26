@@ -73,9 +73,7 @@ $(function() {
     $(".thumb-product").hover(function(e) {
         var el_pos = $(this).offset();
         var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
-        console.log('entered at: '+edge);
-		var startC='bar-n';console.log(edge);if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
-		console.log(startC);
+		var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
 		var fly=jQuery(e.currentTarget).find('.product-bar');
 	fly=jQuery(fly).get(0);
 	fly.classList.add(startC);
@@ -84,9 +82,7 @@ $(function() {
     }, function(e) {
         var el_pos = $(this).offset();
         var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
-		console.log('left at: '+edge);
-		var startC='bar-n';console.log(edge);if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
-		console.log(startC);
+		var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
         var fly=jQuery(e.currentTarget).find('.product-bar');
 	fly=jQuery(fly).get(0);
 	fly.classList.add(startC);
