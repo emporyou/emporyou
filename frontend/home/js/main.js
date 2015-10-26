@@ -153,6 +153,6 @@ function shareDialog(elm){
 function openCat(e){
     e.style.height="25px";
     e.style.lineHeight="25px";
-    e.firstChild.style.height="50px";
-    e.firstChild.style.display="block";
+    e.nextSibling.style.height="50px";
+    e.nextSibling.style.display="block";
 }
