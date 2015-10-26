@@ -154,7 +154,7 @@ function openCat(e){
     for(i=0;i<10;i++){
         if(document.getElementsByClassName('search')[i]){
             document.getElementsByClassName('cat-cont')[i].style.height="50px";
-            document.getElementsByClassName('cat-cont')[i].style.display="50px";
+            document.getElementsByClassName('cat-cont')[i].style.lineHeight="50px";
             document.getElementsByClassName('search')[i].style.height="0";
             document.getElementsByClassName('search')[i].style.display="none";
         }
