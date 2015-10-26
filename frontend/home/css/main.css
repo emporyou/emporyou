@@ -229,7 +229,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     color:white;
     background-color:#0c2d4d;
 }
-.city-search{
+#city-search{
     height:0;
     width:94%;
     margin-left:0 auto;
