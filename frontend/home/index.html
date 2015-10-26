@@ -34,6 +34,8 @@
 <script src="js/main.js"></script>
 <script src="js/mainh.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="js/jquery.geocomplete.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
@@ -44,11 +46,17 @@ myappinit=function(){
 checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product');
 ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
 setTimeout('initMap()',500);
+    $("#city-input").geocomplete();  // Option 1: Call on element.
+$.fn.geocomplete("input"); // Option 2: Pass element as argument.
+    $("#city-input").geocomplete({
+  map: "#google-map"
+});
 }
 </script>
 <script>
 window.mapcenter={lat: 40.674, lng: -73.946}
 initMap=function() {
+    
   var customMapType = new google.maps.StyledMapType([
       {
         stylers: [
@@ -127,11 +135,13 @@ initMap=function() {
         <img class="emporyoum" src="../img/emporyoum-home.png"/>
     </div>
 </div>
-<div class="google-map-container"><div class="google-map transformed"></div></div>
+<div class="google-map-container"><div id="google-map" class="google-map transformed"></div></div>
 <div class="products-main">
    <div class="categories-container">
        <div class="cat-cont transition-1" id="cat-city" onclick="openCat(this)">Città</div>
-       <div id="city-search" class="search transition-1">test</div>
+       <div id="city-search" class="search transition-1">
+           <input type="text" id="city-input" value="città"/>
+       </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">test</div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
