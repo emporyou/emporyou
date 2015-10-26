@@ -72,10 +72,10 @@ initMap=function() {
       //mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
   };
-  
-  
+  //window.gmap=new google.maps.Map(document.getElementById('main-google-map'),mapOpts);
   window.ismaploadedonce=true;
   $("#city-input").geocomplete({
+	location:'Milano',
 	map:"#main-google-map",
 	mapOptions:mapOpts,
 	markerOptions:{draggable: true}
@@ -83,8 +83,7 @@ initMap=function() {
   $("#city-input").bind("geocode:dragged", function(event, latLng){
           $("#city-input").val(latLng.lat()+','+latLng.lng());
           $("#city-input").trigger("geocode");
-   });
-  //window.gmap = new google.maps.Map(document.getElementById('main-google-map'),mapOpts );
+   });  
   window.gmap=$("#city-input").geocomplete('map');
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
