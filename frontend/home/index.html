@@ -44,24 +44,7 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 <script>
 window.mapcenter={lat: 40.674, lng: -73.946}
 initMap=function() {    
-  var customMapType = new google.maps.StyledMapType([
-      {
-        stylers: [
-          {hue: '#890000'},
-          {visibility: 'simplified'},
-          {gamma: 0.5},
-          {weight: 0.5}
-        ]
-      },
-      {
-        elementType: 'labels',
-        stylers: [{visibility: 'off'}]
-      },
-      {
-        featureType: 'water',
-        stylers: [{color: '#890000'}]
-      }
-    ], {
+  var customMapType = new google.maps.StyledMapType(getmapstyle(), {
       name: 'Mappa delle offerte | trascina il pallocino rosso per cambiare la zona di ricerca, usa lo zoom per cambiare l\' ampiezza.'
   });
   var customMapTypeId = 'emporyou_style';
