@@ -151,6 +151,12 @@ function shareDialog(elm){
         }
 }
 function openCat(e){
+    for(i=0;i<10;i++){
+        if(document.getElementsByClassName('search')[i]){
+            document.getElementsByClassName('search')[i].style.height="0";
+            document.getElementsByClassName('search')[i].style.display="none";
+        }
+    }
     e.style.height="25px";
     e.style.lineHeight="25px";
     var n = e.nextSibling;
