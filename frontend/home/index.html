@@ -79,9 +79,8 @@ initMap=function() {
     draggable: true
   }});
   $("#city-input").bind("geocode:dragged", function(event, latLng){
-          $("input[name=lat]").val(latLng.lat());
-          $("input[name=lng]").val(latLng.lng());
-          $("#geocomplete").trigger("geocode");
+          $("#city-input").val(latLng.lat()+','+latLng.lng());
+          $("#city-input").trigger("geocode");
    });
 };</script>
 </head>
