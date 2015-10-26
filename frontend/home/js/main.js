@@ -56,13 +56,14 @@ function checkMobile(){
     if(innerWidth<innerHeight){
         //document.getElementsByClassName('product-info-main')[0].style.width='90%';
         document.getElementsByClassName('ics')[0].style.display="none";
-        if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';}
+        //if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';
+    }
         //document.getElementById('basket-container').style.display="none";
         //document.getElementById('header-items-container').style.display="none";
     }else{
         document.getElementsByClassName('product-info-main')[0].style.width='60%';
         document.getElementsByClassName('ics')[0].style.display="";
-        if(set==1){document.getElementsByClassName('google-map')[0].style.width='63%';}
+        if(set==1){document.getElementsByClassName('google-map')[0].style.width='61.5%';}
         //document.getElementById('basket-container').style.display="";
         document.getElementById('header-items-container').style.display="flex";
     }
@@ -74,6 +75,7 @@ function openMap(){
     document.getElementsByClassName('google-map')[0].classList.remove('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
+        document.getElementsByClassName('emporyoum-bar')[0].style.left="16.3%";
         document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
@@ -86,6 +88,7 @@ function openMap(){
     document.getElementsByClassName('google-map')[0].classList.add('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.remove('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="14%";
+            document.getElementsByClassName('emporyoum-bar')[0].style.left="";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="100%";set=0;
     }  
 }}
