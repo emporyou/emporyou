@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<constantjavascript substitution="zwzwzwzwzw">g_discount=function(p){console.log(p);p=parseFloat(p);return Math.floor(((p/3)+p)*100)/100};</constantjavascript>
+<rowtype tagname="//product">
+<variable tagname="merchant/name" substitution="%vendor-name"/>
+<variable tagname="merchant/lat" substitution="%lat"/>
+<variable tagname="merchant/lon" substitution="%lon"/>
+<variable tagname="merchant/city" substitution="%city"/>
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="merchant/id" substitution="%merch-id"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<variable tagname="title" substitution="%jsproduct-name" escape="js"/>>
+<onload>console.log(#ROWIDX#)</onload>
+<!--<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>-->
+<variable tagname="variants[optionTitle]/price" substitution="%price"/>
+<variable tagname="variants[optionTitle]/price" substitution="%discount" convert="g_discount"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="product thumb t3" style="background-image:url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');">
+   <div class="hh"><div class="city">%city</div><div class="discount">33%</div></div>
+   <div style=""> </div>
+   <div class="fly transition-1" onclick="openProduct(event,this,'%merch-id','%id')" style="display:none"><div 
+        class="add" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="share"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
+           id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="http://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
+        class="description" onclick="openProduct(event,this,'%merch-id','%id')"><b>%product-name</b><br/><i>by %vendor-name</i><br/></div><div 
+        class="price" onclick="openProduct(event,this,'%merch-id','%id')">€<strike style="color:#eee">%discount</strike><br/>
+		€<b style="color:orange">%price</b><br/>%subtitle</div></div><textarea
+		id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></div></html>
+</rowtype><onloadall>doItProducts()</onloadall></document>
