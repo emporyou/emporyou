@@ -61,30 +61,31 @@
     font-size:1.5vh;
 }
 .price{
-    width:100%;
-    height:30px;
-    left:0;
-    color:white;
-    background-color:transparent;
-    padding:0;
-    vertical-align:middle;
-    line-height:100%;
-    font-family:'Open sans';
-    font-size:2.5vh;
-    text-align:center;
-    margin-top:10%;
+        width: 100%;
+    height: 30px;
+    left: 0;
+    /* margin-top: -39%; */
+    color: white;
+    background-color: transparent;
+    padding: 0;
+    vertical-align: middle;
+    line-height: 100%;
+    font-family: 'Open sans';
+    font-size: 2vh;
+    text-align: center;
+    margin-top: 0%;
 }
 .description{
-    left:0;
-    margin-top:10%;
-    text-align:center;
-    width:100%;
-    background-color:transparent;
-    vertical-align:middle;
-    line-height:100%;
-    color:white;
-    font-family:'Open sans';
-    font-size:2.5vh;
+        left: 0;
+    margin-top: 2%;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    vertical-align: middle;
+    line-height: 100%;
+    color: white;
+    font-family: 'Open sans';
+    font-size: 2vh;
 }
 .price-2{
     width:50%;
