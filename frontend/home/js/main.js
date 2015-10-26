@@ -74,7 +74,7 @@ function openMap(){
     document.getElementsByClassName('google-map')[0].classList.remove('transformed');
     document.getElementsByClassName('google-map-container')[0].classList.add('google-map-container-opened');
     document.getElementsByClassName('emporyoum-bar')[0].style.top="13%";
-        document.getElementsByClassName('emporyoum-bar')[0].style.left="16.3%";
+        document.getElementsByClassName('emporyoum-bar')[0].style.left="-16.3%";
         document.getElementsByClassName('products-main')[0].style.top="55%";
     document.getElementsByClassName('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){document.getElementsByClassName('google-map-container')[0].style.top="58%"}else{
