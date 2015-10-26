@@ -62,10 +62,10 @@ initMap=function() {
         stylers: [{color: '#890000'}]
       }
     ], {
-      name: 'Custom Style'
+      name: 'Emporyou Style'
   });
-  var customMapTypeId = 'custom_style';
-  window.gmap = new google.maps.Map(document.getElementById('main-google-map'), {
+  var customMapTypeId = 'emporyou_style';
+    window.gmap = new google.maps.Map(document.getElementById('main-google-map'), {
     zoom: 12,
     center:window.mapcenter,  // Brooklyn.
     mapTypeControlOptions: {
@@ -77,7 +77,7 @@ initMap=function() {
   window.ismaploadedonce=true;
   $("#city-input").geocomplete({
 	map:"#main-google-map",
-	mapOptions:{mapTypeId:customMapTypeId},
+	mapOptions:{mapTypeIds:[google.maps.MapTypeId.ROADMAP, customMapTypeId]},
 	markerOptions:{draggable: true}
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
