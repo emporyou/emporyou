@@ -204,7 +204,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     cursor:pointer;opacity:0.7;
 }
 .categories-container{
-    position:absolute;
+    position:fixed;
     width:20%;
     left: 3.5%;
     top: 1.3%;
