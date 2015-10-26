@@ -168,6 +168,6 @@ function openCat(e){
     while(n && n.nodeType != 1) {
     n = n.nextSibling
 }
-    n.style.height="50px";
+    n.style.height="";
     n.style.display="block";
 }
