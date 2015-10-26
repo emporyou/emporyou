@@ -74,6 +74,7 @@ initMap=function() {
   });
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
+  window.ismaploadedonce=true;
   $("#city-input").geocomplete();
 };    </script>
 </head>

@@ -43,7 +43,7 @@
     <match value="2">description</match>
     <match value="0">description</match>
 </switch>
-<onload>console.log(#ROWIDX#)</onload>
+<!--<onload>console.log(#ROWIDX#)</onload>-->
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <variable tagname="variants[optionTitle]/price" substitution="%discount" convert="g_discount"/>
