@@ -115,7 +115,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 .product-bar{
     background-color:#333333;
     font-family:'open sans';
-    width:95%;
+    width:93%;
     height:25%;
         position:absolute;
     opacity:0.6 !important;
@@ -134,7 +134,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 }
 .product-bar-in{
     bottom:6px;
-    left:6px;
+    left:9px;
 }
 .product-header{
     background-color:#ffffff;
