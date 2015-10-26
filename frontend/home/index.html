@@ -72,9 +72,7 @@ initMap=function() {
       //mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
   };
-  //window.gmap = new google.maps.Map(document.getElementById('main-google-map'),mapOpts );
-  //window.gmap.mapTypes.set(customMapTypeId, customMapType);
-  //window.gmap.setMapTypeId(customMapTypeId);
+  
   
   window.ismaploadedonce=true;
   $("#city-input").geocomplete({
@@ -86,6 +84,10 @@ initMap=function() {
           $("#city-input").val(latLng.lat()+','+latLng.lng());
           $("#city-input").trigger("geocode");
    });
+  //window.gmap = new google.maps.Map(document.getElementById('main-google-map'),mapOpts );
+  window.gmap=$("#city-input").geocomplete('map');
+  window.gmap.mapTypes.set(customMapTypeId, customMapType);
+  window.gmap.setMapTypeId(customMapTypeId);
 };</script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()">
