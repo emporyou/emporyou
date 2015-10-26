@@ -75,9 +75,11 @@ initMap=function() {
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
   window.ismaploadedonce=true;
-  $("#city-input").geocomplete({ map: "#main-google-map",markerOptions: {
-    draggable: true
-  }});
+  $("#city-input").geocomplete({
+	map:"#main-google-map",
+	mapOptions:{mapTypeId:customMapTypeId},
+	markerOptions:{draggable: true}
+  });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
           $("#city-input").val(latLng.lat()+','+latLng.lng());
           $("#city-input").trigger("geocode");
