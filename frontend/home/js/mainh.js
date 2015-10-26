@@ -64,7 +64,8 @@ updateCartFlag=function(){
 emptyCart=function(){
     ooo.clearchilds('products-cart-data');renderCart();
 }
-
+ensureMapIsOpen=function(){if(set==0){openMap();}};
+ensureMapIsClosed=function(){if(set==1){openMap();}};
 doItProducts=function(){
 
 
