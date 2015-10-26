@@ -65,7 +65,7 @@ initMap=function() {
       name: 'Custom Style'
   });
   var customMapTypeId = 'custom_style';
-  window.gmap = new google.maps.Map(document.getElementsByClassName('google-map')[0], {
+  window.gmap = new google.maps.Map(document.getElementById('main-google-map'), {
     zoom: 12,
     center:window.mapcenter,  // Brooklyn.
     mapTypeControlOptions: {
@@ -75,7 +75,7 @@ initMap=function() {
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
   window.ismaploadedonce=true;
-  $("#city-input").geocomplete();
+  $("#city-input").geocomplete({ map: "#main-google-map"});
 };    </script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()">
@@ -123,7 +123,7 @@ initMap=function() {
         <img class="emporyoum" src="../img/emporyoum-home.png"/>
     </div>
 </div>
-<div class="google-map-container"><div id="google-map" class="google-map transformed"></div></div>
+<div class="google-map-container"><div id="main-google-map" class="google-map transformed"></div></div>
 <div class="products-main">
    <div class="categories-container">
        <div class="cat-cont transition-1" id="cat-city" onclick="openMap();openCat(this)">Città</div>

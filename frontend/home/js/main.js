@@ -80,9 +80,8 @@ function openMap(){
     gClass('emporyoum-bar')[0].style.width="25%";
     if(cartOpened==1){gClass('google-map-container')[0].style.top="58%"}else{
             gClass('google-map-container')[0].style.top="13%"};
-			set=1;if(!window.ismaploadedonce){
-				ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
-				//setTimeout('initMap()',500);
+			set=1;if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
+				ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);
 		}}else{
             gClass('products-main')[0].style.top="25%";
     gClass('google-map')[0].classList.add('transformed');
