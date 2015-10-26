@@ -14,7 +14,7 @@
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 25%;
+    padding-bottom: 18%;
     min-width:146px;
     min-height:100px;
 }
@@ -24,21 +24,21 @@
     width: 66%;
     float: left;
     height:0;
-    padding-bottom:61%;
+    padding-bottom:52%;
     min-width:292px;
     min-height:100px;
 }
 .thumb-container-5{
     display: flex !important;
     flex-direction: column;
-    margin-top: 36%;
+    margin-top: 34%;
     margin-left: -33%;
     display: inline-block;
     position: relative;
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 25%;
+    padding-bottom: 18%;
     min-width:146px;
     min-height:100px;
 }
@@ -50,7 +50,7 @@
     width: 33%;
     float: left;
     height: 0;
-    padding-bottom: 25%;
+    padding-bottom: 18%;
     min-width:146px;
     min-height:100px;
 }
