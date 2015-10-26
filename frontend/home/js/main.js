@@ -150,3 +150,7 @@ function shareDialog(elm){
             elm.src = "../img/diamond.png";
         }
 }
+function cityCat(){
+    document.getElementById('cat-city').style.height="25px";
+    document.getElementById('city-search').style.height="50px"
+}
