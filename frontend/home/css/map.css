@@ -22,11 +22,17 @@
     height:40%;
 }
 .google-map{
-    width:63%;
     -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 99%;
+    left: 26%;
+    width: 61.5%;
+    background-color: rgb(229, 227, 223);
 }
 .transformed{
     transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
