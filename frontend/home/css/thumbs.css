@@ -185,7 +185,7 @@ transition: all 250ms ease-out;
     position:absolute;
     opacity:0;
     left:0%;
-    bottom:0;
+    bottom:120%;
     filter:grayscale(0) !important;
 }
 .bar-s{
@@ -193,7 +193,7 @@ transition: all 250ms ease-out;
     position:absolute;
     opacity:0;
     left:0%;
-    bottom:0;
+    bottom:-120%;
     filter:grayscale(0) !important;
 }
 .bar-w{
