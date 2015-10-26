@@ -121,6 +121,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     opacity:0.8 !important;
     filter:grayscale(0) !important;
     z-index:399;
+    bottom:0;
 }
 .product-bar:hover{cursor:pointer}
 .product-bar:hover .product-discount{background-color:#f00;color:white;}
@@ -184,6 +185,7 @@ transition: all 250ms ease-out;
     position:absolute;
     opacity:0;
     left:0%;
+    bottom:0;
     filter:grayscale(0) !important;
 }
 .bar-s{
@@ -191,6 +193,7 @@ transition: all 250ms ease-out;
     position:absolute;
     opacity:0;
     left:0%;
+    bottom:0;
     filter:grayscale(0) !important;
 }
 .bar-w{
@@ -198,12 +201,14 @@ transition: all 250ms ease-out;
     position:absolute;
     opacity:0;
     left:-110%;
+    bottom:0;
     filter:grayscale(0) !important;
 }
 .bar-e{
    background-color:#333333;
     position:absolute;
     opacity:0;
+    bottom:0;
     left:110%;
     filter:grayscale(0) !important;
 }
