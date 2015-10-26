@@ -89,10 +89,10 @@ function openMap(){
     }  
 }}
 function openCart(){
-    if(openCart==1){defaultPage()}else{
+    if(openCart==1){closeCart()}else{
     scrollTo(document.body, 0, 200);
     document.getElementsByClassName('products-main')[0].style.top="55%";
-    document.getElementById('basket-container').style.top="-22%";
+    document.getElementById('basket-container').style.top="-50%";
     setTimeout('cartReady()',400);
 	
 	rendercart();//defined in mainh.js, control output via products-cart.xml
