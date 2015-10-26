@@ -56,8 +56,7 @@ function checkMobile(){
     if(innerWidth<innerHeight){
         //document.getElementsByClassName('product-info-main')[0].style.width='90%';
         document.getElementsByClassName('ics')[0].style.display="none";
-        //if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';
-    }
+        //if(set==1){document.getElementsByClassName('google-map')[0].style.width='87%';}
         //document.getElementById('basket-container').style.display="none";
         //document.getElementById('header-items-container').style.display="none";
     }else{
