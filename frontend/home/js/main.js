@@ -158,10 +158,12 @@ function openCat(e){
             gClass('cat-cont')[i].style.lineHeight="50px";
             gClass('search')[i].style.height="0";
             gClass('search')[i].style.display="none";
+            gClass('cat-cont')[i].classList.remove('selected');
         }
     }
     e.style.height="25px";
     e.style.lineHeight="25px";
+    e.classList.add('selected');
     var n = e.nextSibling;
     while(n && n.nodeType != 1) {
     n = n.nextSibling
