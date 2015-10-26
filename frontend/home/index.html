@@ -65,20 +65,22 @@ initMap=function() {
       name: 'Emporyou Style'
   });
   var customMapTypeId = 'emporyou_style';
-    window.gmap = new google.maps.Map(document.getElementById('main-google-map'), {
+  var mapOpts={
     zoom: 12,
     center:window.mapcenter,  // Brooklyn.
     mapTypeControlOptions: {
-		mapTypeIds: [customMapTypeId]
+	  mapTypeIds: [customMapTypeId]
       //mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
-  });
-  window.gmap.mapTypes.set(customMapTypeId, customMapType);
-  window.gmap.setMapTypeId(customMapTypeId);
+  };
+  //window.gmap = new google.maps.Map(document.getElementById('main-google-map'),mapOpts );
+  //window.gmap.mapTypes.set(customMapTypeId, customMapType);
+  //window.gmap.setMapTypeId(customMapTypeId);
+  
   window.ismaploadedonce=true;
   $("#city-input").geocomplete({
 	map:"#main-google-map",
-	mapOptions:{mapTypeId:[customMapTypeId]},
+	mapOptions:mapOpts,
 	markerOptions:{draggable: true}
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
