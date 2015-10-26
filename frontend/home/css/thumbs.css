@@ -183,7 +183,6 @@ transition: all 250ms ease-out;
     background-color:#333333;
     position:absolute;
     opacity:0;
-    top:0;
     left:0%;
     filter:grayscale(0) !important;
 }
@@ -191,7 +190,6 @@ transition: all 250ms ease-out;
     background-color:#333333;
     position:absolute;
     opacity:0;
-    top:110%;
     left:0%;
     filter:grayscale(0) !important;
 }
@@ -199,7 +197,6 @@ transition: all 250ms ease-out;
     background-color:#333333;
     position:absolute;
     opacity:0;
-    top:0%;
     left:-110%;
     filter:grayscale(0) !important;
 }
@@ -207,7 +204,6 @@ transition: all 250ms ease-out;
    background-color:#333333;
     position:absolute;
     opacity:0;
-    top:0%;
     left:110%;
     filter:grayscale(0) !important;
 }
