@@ -81,7 +81,7 @@ function openMap(){
     if(cartOpened==1){gClass('google-map-container')[0].style.top="58%"}else{
             gClass('google-map-container')[0].style.top="13%"};
 			set=1;if(!window.ismaploadedonce){
-				//ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
+				ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&callback=initMap']);
 				//setTimeout('initMap()',500);
 		}}else{
             gClass('products-main')[0].style.top="25%";

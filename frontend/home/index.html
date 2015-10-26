@@ -32,18 +32,18 @@
 <script>
 myappinit=function(){
 checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product');
-setTimeout('initMap()',500);
-    $("#city-input").geocomplete();  // Option 1: Call on element.
+	//setTimeout('initMap()',500);
+  // Option 1: Call on element.
+  /*
 $.fn.geocomplete("input"); // Option 2: Pass element as argument.
     $("#city-input").geocomplete({
-  map: "#google-map"
-});
+	map: "#google-map"
+});*/
 }
 </script>
 <script>
 window.mapcenter={lat: 40.674, lng: -73.946}
-initMap=function() {
-    
+initMap=function() {    
   var customMapType = new google.maps.StyledMapType([
       {
         stylers: [
@@ -72,9 +72,9 @@ initMap=function() {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
     }
   });
-
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
+  $("#city-input").geocomplete();
 };    </script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()">
