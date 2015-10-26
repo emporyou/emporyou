@@ -130,11 +130,14 @@ initMap=function() {
 <div class="google-map-container"><div class="google-map transformed"></div></div>
 <div class="products-main">
    <div class="categories-container">
-       <div class="cat-cont transition-1" id="cat-city" onclick="cityCat()">Città</div>
+       <div class="cat-cont transition-1" id="cat-city" onclick="openCat(this)">Città</div>
        <div id="city-search" class="transition-1">test</div>
-       <div class="cat-cont transition-1" id="cat-price"  onclick="fasciaCat()">Fascia di prezzo</div>
-       <div class="cat-cont transition-1" id="cat-category"  onclick="catCat()">Categoria</div>
-       <div class="cat-cont transition-1" id="cat-ordina"  onclick="priceCat()">Ordina Prezzo</div>
+       <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
+       <div id="price-search" class="transition-1">test</div>
+       <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
+       <div id="cat-search" class="transition-1">test</div>
+       <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina Prezzo</div>
+       <div id="ordina-search" class="transition-1">test</div>
    </div>
     <div class="products-container">
         <div id="thumb-wrap"> 

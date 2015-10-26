@@ -150,9 +150,9 @@ function shareDialog(elm){
             elm.src = "../img/diamond.png";
         }
 }
-function cityCat(){
-    document.getElementById('cat-city').style.height="25px";
-    document.getElementById('cat-city').style.lineHeight="25px";
-    document.getElementById('city-search').style.height="50px";
-    document.getElementById('city-search').style.display="block";
+function openCat(e){
+    e.style.height="25px";
+    e.style.lineHeight="25px";
+    e.firstChild.style.height="50px";
+    e.firstChild.style.display="block";
 }
