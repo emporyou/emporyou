@@ -154,5 +154,5 @@ function cityCat(){
     document.getElementById('cat-city').style.height="25px";
     document.getElementById('cat-city').style.lineHeight="25px";
     document.getElementById('city-search').style.height="50px";
-    document.getElementById('city-search').style.display=""
+    document.getElementById('city-search').style.display="";
 }
