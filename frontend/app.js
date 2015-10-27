@@ -169,7 +169,7 @@ servenoimage=function(res){
 //---------------------------------------------------------------------------------------------------
 function updatemerchantchache(_handler){
 	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
-		db.collection('merchant.find').toArray(err,rows){if(err){if(handler)handler(err);}else{MERCHANTCHACHE=rows;if(handler)handler(false,rows);}}
+		db.collection('merchant.find').toArray(function(err,rows){if(err){if(handler)handler(err);}else{MERCHANTCHACHE=rows;if(handler)handler(false,rows);}});
 	});
 }
 //---------------------------------------------------------------------------------------------------
