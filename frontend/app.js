@@ -50,8 +50,11 @@ app.get('/get_productREAL', function (req, res) {
   res.xmlout='';
   
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').find({}).toArray(function(err,rows){if(err){throw err}else{res.set('Content-Type', 'application/json');
-			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.send(JSON.stringify(rows[r]));}}});});
+		db.collection('deal').find({}).toArray(function(err,rows){if(err){throw err}else{
+			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.xmlout+=JSON.stringify(rows[r]);}
+				res.set('Content-Type', 'application/json');
+				res.end(res.xmlout);
+			}});});
    /*
    // Grab a cursor using the find
       var cursor = collection.find({});
