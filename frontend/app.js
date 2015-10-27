@@ -6,7 +6,7 @@ var ObjectID = require('mongodb').ObjectID;
 var MJ = require("mongo-fast-join"), mongoJoin = new MJ();
 //APP-INIT + DATABASE CONNECTION
 var endOfLine = require('os').EOL;
-
+var MERCHANTCHACHE=false;
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------ EXAMPLES
@@ -175,11 +175,11 @@ var server = app.listen(80,function () {
 var deal={
 	merchant:0,
 	title:'new deal',subtitle:'new deal',desc:'',url:'',
-	visible:false,
+	visible:false,imageurl:'',price:0,
 	variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]
 };
 var merchant={
-	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrativeAreaLevel2:'',geo:''}]
+	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:''}
 };
 
 
@@ -189,8 +189,18 @@ var merchant={
 //function beAlive(){alive++;console.log('minute passed='+alive)}
 
 /*
+{user:0,username:'merchantX',password:'merchantX',name:'merchantX',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'via dei metaschemi',street_number:'1',zipcode:'20100',location:'milano',country:'italia',administrative_area_level_2:'MI',lat:'',lng:''}]}
+{merchant:0,title:'new deal',subtitle:'new deal',desc:'new deal desc',url:'',visible:false,imageurl:'',price:0,variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]}
+*/
+
+/*
 	use emporyou
-    cd.createCollection('deals')
+    db.createCollection('deals')
+	db.createCollection('merchant')
+	
+	
+	
+	
 	
 	
 	*/
