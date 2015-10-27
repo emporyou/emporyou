@@ -45,6 +45,23 @@ app.get('/get_productREAL', function (req, res) {
   var min=req.query.min||-1;
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
+  res.xmlout='';
+   // Grab a cursor using the find
+      var cursor = collection.find({});
+      // Fetch the first object off the cursor
+      cursor.nextObject(function(err, item) {
+        
+        // Rewind the cursor, resetting it to point to the start of the query
+        cursor.rewind();
+
+        // Grab the first object again
+        cursor.nextObject(function(err, item) {
+          
+
+          db.close();
+        })
+      })
+  
 });
 app.get('/get_product_image', function (req, res) {
   var m_id=req.query.m_id||-1;
@@ -153,7 +170,27 @@ var server = app.listen(80,function () {
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
 });
+
+
+var deal={
+	merchant:0,
+	title:'new deal',subtitle:'new deal',desc:'',url:'',
+	visible:false,
+	variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]
+};
+var merchant={
+	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrativeAreaLevel2:'',geo:''}]
+};
+
+
+
 //setInterval(beAlive,60000);
 //var alive=0;
 //function beAlive(){alive++;console.log('minute passed='+alive)}
 
+/*
+	use emporyou
+    cd.createCollection('deals')
+	
+	
+	*/
