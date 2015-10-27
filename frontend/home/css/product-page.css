@@ -238,5 +238,6 @@
 .option-button:hover{
     cursor:pointer;
     border-radius:10px 10px 10px 10px;
-    background-color:#dedada
+    background-color:#dedada;
+    height:70% !important;
 }
