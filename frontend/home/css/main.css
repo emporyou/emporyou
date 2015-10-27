@@ -248,3 +248,10 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     display:none;
 }
 .search:hover{background-color:#cccccc;color:white;cursor:pointer;}
+.text-logo{
+    position:absolute;
+    margin:0 auto;
+    width:50%;
+    background-color:red;
+    height:100%;
+}
