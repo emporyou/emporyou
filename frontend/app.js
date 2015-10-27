@@ -3,10 +3,9 @@ var app = express();
 var format=require('util').format;
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
-var MJ = require("mongo-fast-join"), mongoJoin = new MJ();
 //APP-INIT + DATABASE CONNECTION
 var endOfLine = require('os').EOL;
-var MERCHANTCHACHE=false;
+var MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------ EXAMPLES
@@ -49,6 +48,11 @@ app.get('/get_productREAL', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
   res.xmlout='';
+  
+  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+		db.collection('deal').find({}).toArray(function(err,rows){if(err){throw err}else{res.set('Content-Type', 'application/json');
+			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.send(JSON.stringify(rows[r]));}}});});
+   /*
    // Grab a cursor using the find
       var cursor = collection.find({});
       // Fetch the first object off the cursor
@@ -64,6 +68,7 @@ app.get('/get_productREAL', function (req, res) {
           db.close();
         })
       })
+	  */
   
 });
 app.get('/get_product_image', function (req, res) {
@@ -167,9 +172,11 @@ servenoimage=function(res){
 	res.sendFile('/root/emporyou/frontend/img/default-product.png');
 };
 //---------------------------------------------------------------------------------------------------
-function updatemerchantchache(handler){
+function updatemerchantchache(handler){MERCHANTCHACHE=[];
 	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
-		db.collection('merchant').find({}).toArray(function(err,rows){if(err){if(handler)handler(err);}else{MERCHANTCHACHE=rows;if(handler)handler(false,rows);}});
+		db.collection('merchant').find({}).toArray(function(err,rows){if(err){if(handler)handler(err);}else{
+			for(var r=0;r<rows.length;r++){MERCHANTCHACHE[rows[r]._id]=rows[r]}
+		if(handler)handler(false,rows);}});
 	});
 }
 //---------------------------------------------------------------------------------------------------
@@ -212,7 +219,4 @@ var merchant={
 	
 	
 	
-	
-	
-	
-	*/
+*/
