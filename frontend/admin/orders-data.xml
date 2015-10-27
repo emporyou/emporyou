@@ -15,12 +15,12 @@
    <user>
        <firstname>Paolo</firstname>
        <lastname>Giuliani</lastname>
-       <address>Via pascoli 32, 22066,Mariano Comense</address>
+       <address><route><![CDATA[via dei metaschemi]]></route><street_number><![CDATA[1]]></street_number><zipcode><![CDATA[20100]]></zipcode><location><![CDATA[milano]]></location><country><![CDATA[italia]]></country><administrativeAreaLevel2><![CDATA[MI]]></administrativeAreaLevel2><lat><![CDATA[]]></lat><lng><![CDATA[]]></lng></address>
        <email>paolo.giuliani@gmail.com</email>
    </user>
-    <created>10-10-2015 00:00</created><!--initial / failed / success-->
+    <created>2015-10-10 00:00</created><!--initial / failed / success-->
     <status>success</status>
-    <paidtime>10-10-2015 00:10</paidtime>
+    <paidtime>2015-10-10 00:10</paidtime>
 </order>
 <order>
    <cart>
@@ -43,11 +43,11 @@
    <user>
        <firstname>Paolo</firstname>
        <lastname>Giuliani</lastname>
-       <address>Via pascoli 32, 22066,Mariano Comense</address>
+       <address><route><![CDATA[via dei metaschemi]]></route><street_number><![CDATA[1]]></street_number><zipcode><![CDATA[20100]]></zipcode><location><![CDATA[milano]]></location><country><![CDATA[italia]]></country><administrativeAreaLevel2><![CDATA[MI]]></administrativeAreaLevel2><lat><![CDATA[]]></lat><lng><![CDATA[]]></lng></address>
        <email>paolo.giuliani@gmail.com</email>
    </user>
-    <created>10-10-2015 00:00</created><!--initial / failed / success-->
+    <created>2015-10-10 00:00</created><!--initial / failed / success-->
     <status>failed</status>
-    <paidtime>10-10-2015 00:10</paidtime>
+    <paidtime>2015-10-10 00:10</paidtime>
 </order>
 </document>

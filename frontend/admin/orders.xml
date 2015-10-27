@@ -8,11 +8,15 @@
 <variable tagname="status" substitution="%status"/>
 <variable tagname="user/firstname" substitution="%firstname"/>
 <variable tagname="user/lastname" substitution="%lastname"/>
-<variable tagname="user/address" substitution="%address"/>
+<variable tagname="user/address/route" substitution="%route"/>
+<variable tagname="user/address/street_number" substitution="%number"/>
+<variable tagname="user/address/location" substitution="%city"/>
+<variable tagname="user/address/zipcode" substitution="%zipcode"/>
+<variable tagname="user/address/country" substitution="%country"/>
 <variable tagname="user/email" substitution="%email"/>
 <switch value="%status" substitution="%finalpaid"><match value="success"><span style="color:green">Successful</span></match><match value="initial">Uncompleted</match><match value="failed"><span style="color:red">Failed</span></match><match value="finished"><span style="color:green">Successful</span></match></switch>
 <switch value="%status" substitution="%finalstatus"><match value="success"><span style="color:red">To be shipped</span></match><match value="initial"> - </match><match value="failed"><span style="color:red"> - </span></match><match value="finished"><span style="color:green">Shipped</span></match></switch>
-<html><tr><td>%created</td><td>%finalpaid</td><td>%finalstatus</td><td>%firstname %lastname</td><td>%address</td><td>%email</td><td><div id="#UNIQUEID#-#ROWIDX#" style="display:none">%products</div></td></tr></html></rowtype>
+<html><tr><td>%created</td><td>%finalpaid</td><td>%finalstatus</td><td>%firstname %lastname</td><td>%route %number - %city - %zipcode - %country</td><td>%email</td><td><div id="#UNIQUEID#-#ROWIDX#" style="display:none">%products</div></td></tr></html></rowtype>
 <beforeall><![CDATA[<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
