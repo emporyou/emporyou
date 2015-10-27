@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//order">
+<variable tagname="product/name" substitution="%product-name"/>
+<inline tagname="product" substitution="%products" preload="order-cart-preview.xml"/>
+<variable tagname="created" substitution="%created"/>
+<variable tagname="paidtime" substitution="%paidtime"/>
+<variable tagname="status" substitution="%status"/>
+<variable tagname="user/firstname" substitution="%firstname"/>
+<variable tagname="user/lastname" substitution="%lastname"/>
+<variable tagname="user/address" substitution="%address"/>
+<variable tagname="user/email" substitution="%email"/>
+<switch value="%status" substitution="%finalpaid"><match value="success"><span style="color:green">Successful</span></match><match value="initial">Uncompleted</match><match value="failed"><span style="color:red">Failed</span></match><match value="finished"><span style="color:green">Successful</span></match></switch>
+<switch value="%status" substitution="%finalstatus"><match value="success"><span style="color:red">To be shipped</span></match><match value="initial"> - </match><match value="failed"><span style="color:red"> - </span></match><match value="finished"><span style="color:green">Shipped</span></match></switch>
+<html><tr><td>%created</td><td>%</td><td>%finalpaid</td><td>%finalstatus</td><td>%firstname %lastname</td><td>%address</td><td>%email</td><td><div id="#UNIQUEID#-#ROWIDX#" style="display:none">%products</div></td></tr></html></rowtype>
+<beforeall><![CDATA[<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Created</th>
+                <th>Payment</th>
+                <th>Status</th>
+                <th>Buyer name</th>
+                <th>Buyer address</th>
+                <th>Buyer email</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>]]></beforeall><afterall><![CDATA[</tbody></table>]]></afterall></document>
