@@ -2,30 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <title></title>
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 <!-- //////////////////////////BOOTSTRAP -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
 <!-- //////////////////////////FONT AWESOME -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-<!-- //////////////////////////ANGULAR -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
-<!-- //////////////////////////JQUERY -->
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
 <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-<!-- //////////////////////////PROTOTYPE -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script> -->
-<!-- //////////////////////////THREEJS -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/thumbs.css">
 <link rel="stylesheet" type="text/css" href="css/admin.css">
+<link rel="stylesheet" type="text/css" href="css/map.css">
+<link rel="stylesheet" type="text/css" href="css/cart.css">
+<link rel="stylesheet" type="text/css" href="css/thumbs.css">
+<link rel="stylesheet" type="text/css" href="css/product-page.css">
+<link rel="stylesheet" type="text/css" href="css/info-prod.css">
+<link rel="stylesheet" type="text/css" href="css/digital.css">
 <script src="js/main.js"></script>
+<script src="js/mainh.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+<script src="js/jquery.geocomplete.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<meta charset="utf-8"/>
+
 <script>function myLoad(){
     ooo.render('target','orders.xml','orders-data.xml',false,false,myLoaded);
     
@@ -48,19 +56,7 @@
 </head>
 <body onload="myLoad()">
 <div class="header">
-   <div class="ham-square">
-       <div class="ham-container">
-        <img class="ham" src="../img/hamburger.png"/>
-        </div>
-    </div>
-    <div class="logo-container">
-        <img class="logo" src="../img/logo-white.png" onclick="location.href='../index.html';"/>
-    </div>
-</div>
-<div class="emporyoum-bar" style="top:10%">
-    <div class="emporyoum-container">
-        <img class="emporyoum" src="../img/emporyoum-admin.png"/>
-    </div>
+   <div class="fontlogo text-logo">ORDINI<b></b></div>
 </div>
 <div id="target" style="top:24%;width:100%;position:absolute;">
 <table id="example" class="display" cellspacing="0" width="100%">
