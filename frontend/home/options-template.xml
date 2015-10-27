@@ -2,6 +2,6 @@
 <document>
 <rowtype tagname="//variants">
 <variable tagname="optionTitle" substitution="%options"/>
-<html><div class="product-values">%options</div></html>
+<html><div class="product-values option-button">%options</div></html>
 </rowtype>
 </document>

@@ -29,7 +29,7 @@
         style="font-size:2.5vh;">%product-name</span><br/>%description</div></div><div 
         class="product-right-container"><div 
         class="product-buy-container"><div 
-        class="buy-element text">%subtitle</div><div 
+        class="buy-element text" style="border-radius:0 0 0 0 !important">%subtitle</div><div 
         class="buy-element text">%price</div><div 
         class="buy-element"><a href="#?b=%product-name" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" class="button-gen">Aggiungi al carrello</a><!--><img  src="../img/buy-button.png" class="buy-button"/>--></div><div 
         class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div><div 

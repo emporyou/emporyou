@@ -137,22 +137,24 @@
     cursor:pointer;
 }
 .text{
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
--moz-box-sizing: border-box;    /* Firefox, other Gecko */
-box-sizing: border-box;         /* Opera/IE 8+ */
-    padding:5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5%;
+    background-color: #DEDADA;
+    border-radius: 0px 0px 14px 14px;
 }
 .product-values{
-    padding:7%;
-    width:33%;
-    font-size:1.5vh;
-    font-family:'open sans';
-    display:inline-block;
-    height:100%;
-    background-color:transparent;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
--moz-box-sizing: border-box;    /* Firefox, other Gecko */
-box-sizing: border-box;         /* Opera/IE 8+ */
+        padding: 4%;
+    width: 33%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-size: 2vh;
+    font-family: 'open sans';
+    display: inline-block;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .product-page-map{
     height:90%;
@@ -233,3 +235,8 @@ box-sizing: border-box;         /* Opera/IE 8+ */
  box-shadow:3px 3px 8px #bababa, inset 0px 0px 1px #ffffff;  
   
  }
+.option-button:hover{
+    cursor:pointer;
+    border-radius:10px 10px 10px 10px;
+    background-color:#dedada
+}
