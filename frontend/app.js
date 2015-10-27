@@ -13,6 +13,9 @@ var MERCHANTCHACHE=false;
 app.get('/', function (req, res) {
     res.sendFile('/root/emporyou/frontend/index.html');
 });
+app.get('/console', function (req, res) {
+    res.send(JSON.stringify(MERCHANTCHACHE));
+});
 app.post('/', function (req, res) {res.send('Got a POST request');});
 app.put('/user', function (req, res) { res.send('Got a PUT request at /user');});
 app.delete('/user', function (req, res) {res.send('Got a DELETE request at /user');});
@@ -164,14 +167,21 @@ servenoimage=function(res){
 	res.sendFile('/root/emporyou/frontend/img/default-product.png');
 };
 //---------------------------------------------------------------------------------------------------
+function updatemerchantchache(_handler){
+	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
+		db.collection('merchant.find').toArray(err,rows){if(err){if(handler)handler(err);}else{MERCHANTCHACHE=rows;if(handler)handler(false,rows);}}
+	});
+}
+//---------------------------------------------------------------------------------------------------
 app.use(express.static('./frontend'));
 var server = app.listen(80,function () {
   var host = server.address().address;
   var port = server.address().port;
+  updatemerchantchache();
   console.log('Example app listening at http://%s:%s', host, port);
 });
 
-
+/*
 var deal={
 	merchant:0,
 	title:'new deal',subtitle:'new deal',desc:'',url:'',
@@ -181,6 +191,8 @@ var deal={
 var merchant={
 	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:''}
 };
+*/
+
 
 
 
