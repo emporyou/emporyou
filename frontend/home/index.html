@@ -123,7 +123,10 @@ initMap=function() {
            <input type="text" id="city-input" placeholder="città,zona o indirizzo..." style="    font-size: 2.7vh;padding: 1vh;width: 90%;"/>
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
-       <div id="price-search" class="search transition-1">test</div>
+       <div id="price-search" class="search transition-1">
+           <input type="range" min="10" max="1000" value="10" step="10" onchange="rangevalue.value=value" />
+<output id="rangevalue">10</output>
+       </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">
            <div class="category transition-1" onclick="this.classList.toggle('select')">Casa</div>
@@ -136,8 +139,19 @@ initMap=function() {
            <div class="category transition-1" onclick="this.classList.toggle('select')">Salute</div>
            <div class="category transition-1" onclick="this.classList.toggle('select')">Animali</div>
        </div>
-       <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina Prezzo</div>
-       <div id="ordina-search" class="search transition-1">test</div>
+       <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina per</div>
+       <div id="ordina-search" class="search transition-1">
+           <label>
+    <select>
+        <option selected> Ordina per .. </option>
+        <option>Prezzo crescente</option>
+        <option>Prezzo decrescente</option>
+        <option>Popolarità</option>
+        <option>Vicinanza</option>
+        <option>Percentuale di sconto</option>
+    </select>
+</label>
+       </div>
    </div>
     <div class="products-container">
         <div id="thumb-wrap"> 
