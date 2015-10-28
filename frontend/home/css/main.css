@@ -258,8 +258,6 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 }
 .cat-searchbar:hover{
     cursor:pointer;
-    color:white;
-    background-color:#0c2d4d;
 }
 .categories-container .cat-cont.selected{
     color:white;
