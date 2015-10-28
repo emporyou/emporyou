@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var passport = require('passport');
+var BasicStrategy = require('passport-http').BasicStrategy;
+var DigestStrategy = require('passport-http').DigestStrategy;
 var format=require('util').format;
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
@@ -8,16 +11,51 @@ var endOfLine = require('os').EOL;
 var MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------ EXAMPLES
-app.get('/', function (req, res) {
-    res.sendFile('/root/emporyou/frontend/index.html');
+//------------------------------------------------------------------------------------ ADMIN SERVICES
+emporyou_login_basic=function(args,next){
+		if(args.username=='admin'){next(false,{id:'0',name:'admin',validPassword:function(p){if(p=='admin'){return true}}})}
+ else if(args.username=='guest'){next(false,{id:'1',name:'guest',validPassword:function(p){if(p=='guest'){return true}}})}
+	else{next(new Error('login unsuccesful'),null)}
+};
+emporyou_login_digest=function(args,next){
+	if(args.username=='admin'){next(false,{id:'0',name:'admin',password:'admin'})}
+	else if(args.username=='guest'){next(false,{id:'1',name:'guest',password:'guest'})}	
+	else{next(new Error('login unsuccesful'),null)}
+};
+passport.use(new BasicStrategy(
+  function(username, password, done) {
+    emporyou_login_basic({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.validPassword(password)) { return done(null, false); }
+      return done(null, user);
+    });
+  }
+));
+passport.use(new DigestStrategy({ qop: 'auth' },
+  function(username, done) {
+    emporyou_login_digest({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      return done(null, user, user.password);
+    });
+  },
+  function(params, done) {
+    // validate nonces as necessary
+    done(null, true)
+  }
+));
+
+app.get('/api/basic/me',
+  passport.authenticate('basic', { session: false }),
+  function(req, res) {
+    res.json(req.user);
 });
-app.get('/console', function (req, res) {
-    res.send(JSON.stringify(MERCHANTCHACHE));
-});
-app.post('/', function (req, res) {res.send('Got a POST request');});
-app.put('/user', function (req, res) { res.send('Got a PUT request at /user');});
-app.delete('/user', function (req, res) {res.send('Got a DELETE request at /user');});
+app.get('/api/digest/me',
+  passport.authenticate('digest', { session: false }),
+  function(req, res) {
+    res.json(req.user);
+  });
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
@@ -38,7 +76,7 @@ app.get('/SVC/del_merchant', function (req, res) {res.send('Hello World!!');});
 app.get('/shutdown', function (req, res) {
 	process.exit();
 });
-app.get('/get_productREAL', function (req, res) {
+app.get('/get_deal', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
   var geo=req.query.geo||null;
@@ -47,33 +85,35 @@ app.get('/get_productREAL', function (req, res) {
   var min=req.query.min||-1;
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
-  res.xmlout='';
-  
+  res.jsonout='';  
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').find({}).toArray(function(err,rows){if(err){throw err}else{
+		db.collection('deal').find({visible:true}).toArray(function(err,rows){if(err){throw err}else{
+			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.jsonout+=JSON.stringify(rows[r]);}
+				res.set('Content-Type', 'application/json');res.end(res.jsonout);
+  }});});});
+app.get('/add_deal', function (req, res) {
+  var m_id=req.query.m_id||-1;
+  var p_id=req.query.m_id||-1;
+  var geo=req.query.geo||null;
+  var cat=req.query.cat||-1;
+  var max=req.query.max||-1;
+  var min=req.query.min||-1;
+  var pgmax=req.query.pgmax||-1;
+  var pgnum=req.query.pgnum||-1;
+  res.xmlout='';  
+  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+		db.collection('deal').find({visible:true}).toArray(function(err,rows){if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.xmlout+=JSON.stringify(rows[r]);}
 				res.set('Content-Type', 'application/json');
 				res.end(res.xmlout);
 			}});});
-   /*
-   // Grab a cursor using the find
-      var cursor = collection.find({});
-      // Fetch the first object off the cursor
-      cursor.nextObject(function(err, item) {
-        
-        // Rewind the cursor, resetting it to point to the start of the query
-        cursor.rewind();
 
-        // Grab the first object again
-        cursor.nextObject(function(err, item) {
-          
-
-          db.close();
-        })
-      })
-	  */
   
 });
+
+
+
+
 app.get('/get_product_image', function (req, res) {
   var m_id=req.query.m_id||-1;
   var p_id=req.query.p_id||-1;
@@ -184,7 +224,12 @@ function updatemerchantchache(handler){MERCHANTCHACHE=[];
 }
 //---------------------------------------------------------------------------------------------------
 app.use(express.static('./frontend'));
-var server = app.listen(80,function () {
+
+var PORT=80;
+if(process.argv[2]){PORT=process.argv[2];};
+
+
+var server = app.listen(PORT,function () {
   var host = server.address().address;
   var port = server.address().port;
   updatemerchantchache();
@@ -199,10 +244,15 @@ var deal={
 	variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]
 };
 var merchant={
-	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:''}
+	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:'',authkeys:['demoapikey']}
 };
 */
-
+var cart={
+	
+};
+var transaction={
+	
+};
 
 
 
@@ -220,6 +270,10 @@ var merchant={
     db.createCollection('deals')
 	db.createCollection('merchant')
 	
+	562fadaad98f070d16311903
 	
 	
 */
+
+
+
