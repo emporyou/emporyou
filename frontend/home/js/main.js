@@ -41,7 +41,7 @@ if(event.srcElement==elm){
     gClass('emporyoum-bar')[0].style.width="25%";
     //document.getElementById('basket-container').style.display="none";
     gClass('products-page-main')[0].classList.remove('hidden');
-    gClass('products-page-main')[0].style.top=('13%');
+    gClass('products-page-main')[0].style.top=('60px');
     
 }
 }
