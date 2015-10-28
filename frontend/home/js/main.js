@@ -171,9 +171,8 @@ function openCat(e){
     n.style.display="block";
 }
 function clean(elm){
-    
     for(i=0;i<30;i++){if(elm.value!='all'&&elm.value!='recents'){
-        if(gClass('orders-button')[i]){gClass('orders-button')[i].classList.remove('select')}
+        if(gClass('orders-button')[i]&&gClass('orders-button').value!='all'&&gClass('orders-button').value!='recents'){gClass('orders-button')[i].classList.remove('select')}
     }else{elm.classList.add('select');
         if(elm.value=='all'){document.getElementById('recentOrders').classList.remove('select');}else{
             document.getElementById('allOrders').classList.remove('select');
