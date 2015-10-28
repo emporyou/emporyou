@@ -170,3 +170,8 @@ function openCat(e){
     n.style.height="auto";
     n.style.display="block";
 }
+function clean(){
+    for(i=0;i<100;i++){
+        if(gClass('orders-button')[i]){gClass('orders-button')[i].classList.remove('select')}
+    }
+}
