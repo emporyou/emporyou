@@ -254,7 +254,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     text-align:center;
     line-height:50px;
     border-radius:4px 4px 4px 4px;
-    margin-bottom:15px;
+    margin-bottom:45px;
 }
 .cat-searchbar:hover{
     cursor:pointer;
@@ -510,7 +510,7 @@ input[type="search"]::-webkit-search-decoration {
 /* ---------- SEARCH ---------- */
 
 #search {
-	background: #42454e;
+	background: transparent;
 	border-radius: 3px;
 	display: inline-block;
 	padding: 7px;
@@ -529,7 +529,8 @@ input[type="search"]::-webkit-search-decoration {
 #search input[type="search"] {
 	background: #fff;
 	color: #42454e;
-	min-width: 184px;
+	max-width: 155px;
+    width:60%;
 	padding: 6px 8px;
 }
 
@@ -538,6 +539,7 @@ input[type="search"]::-webkit-search-decoration {
 	color: #fff;
 	font-weight: bold;
 	margin-left: 7px;
+    width:30%;
 	padding: 6px 10px;
 }
 
