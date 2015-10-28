@@ -153,8 +153,8 @@ function shareDialog(elm){
 function openCat(e){
     for(i=0;i<10;i++){
         if(gClass('search')[i]){
-            gClass('cat-cont')[i].style.height="40px";
-            gClass('cat-cont')[i].style.lineHeight="40px";
+            gClass('cat-cont')[i].style.height="50px";
+            gClass('cat-cont')[i].style.lineHeight="50px";
             gClass('search')[i].style.height="0";
             gClass('search')[i].style.display="none";
             gClass('cat-cont')[i].classList.remove('selected');
