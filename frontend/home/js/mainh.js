@@ -117,8 +117,8 @@ function distMetric(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff
 
 
 
-window.overridestyleidx=2;
-//window.overridestyleidx=-1;
+window.overridestyleidx=-1;
+//window.overridestyleidx=2;
 getmapstyle=function(){var x=-1;
 	if(window.overridestyleidx>-1){x=window.overridestyleidx}
 	else{x=Math.floor(Math.random()*mapstyles.length);}
