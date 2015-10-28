@@ -171,7 +171,7 @@ function openCat(e){
     n.style.display="block";
 }
 function clean(){
-    for(i=0;i<100;i++){
+    for(i=0;i<30;i++){
         if(gClass('orders-button')[i]){gClass('orders-button')[i].classList.remove('select')}
     }
 }
