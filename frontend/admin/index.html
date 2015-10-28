@@ -93,15 +93,15 @@ myappinit=function(){
         <div class="dash-main-content">
             <div class="main-content-title">ordini</div>
             <div class="main-content">
-                <input type="button" value="all" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="processed" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="completed" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="open" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="declined" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="backordered" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="canceled" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="failed" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
-                <input type="button" value="recents" onclick="clean();this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" id="allOrders" value="all" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="processed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="completed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="open" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="declined" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="backordered" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="canceled" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="failed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" id="recentOrders" value="recents" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
             </div>
         </div>
     </div>
