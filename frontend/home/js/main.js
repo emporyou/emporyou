@@ -172,6 +172,7 @@ function openCat(e){
 }
 function clean(){
     for(i=0;i<30;i++){
-        if(gClass('orders-button')[i]){gClass('orders-button')[i].classList.remove('select')}
+        var butVal=gClass('orders-button')[i].value;
+        if(gClass('orders-button')[i]&&butVal!='all'&&butVal!='recents'){gClass('orders-button')[i].classList.remove('select')}
     }
 }
