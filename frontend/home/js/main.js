@@ -160,8 +160,8 @@ function openCat(e){
             gClass('cat-cont')[i].classList.remove('selected');
         }
     }
-    e.style.height="25px";
-    e.style.lineHeight="25px";
+    e.style.height="40px";
+    e.style.lineHeight="40px";
     e.classList.add('selected');
     var n = e.nextSibling;
     while(n && n.nodeType != 1) {
