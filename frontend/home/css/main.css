@@ -462,12 +462,6 @@ label:before {
 
 /* ---------- GENERAL ---------- */
 
-body {
-	background: #61646d;
-	color: #000;
-	font: 14px/1.5em "Open Sans", sans-serif;
-	margin: 0;
-}
 
 fieldset {
 	border: 0;
