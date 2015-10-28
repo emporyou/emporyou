@@ -97,10 +97,10 @@ transition: all 250ms ease-out;
 .thumb-element:hover .product-discount{
     background-color:transparent;color:black
 }
-#thumb-container:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
+#thumb-container:hover .thumb-element{cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
-#thumb-container-2:hover .thumb-element{transform:scale(1.0001);cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
+#thumb-container-2:hover .thumb-element{cursor:pointer;-webkit-box-shadow: 5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 -moz-box-shadow:    5px 5px 21px 0px rgba(50, 50, 50, 0.08);
 box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 /*------------------------------------------RIQUADRI INFO PRODOTTO--------*/
