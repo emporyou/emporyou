@@ -1,13 +1,14 @@
 var format=require('util').format;var endOfLine = require('os').EOL;
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');var app = express();var passport = require('passport');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 app.enable('strict routing');
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({extended:true}));
-app.use(require('express-session')({secret:'keyboard cat',resave:true,saveUninitialized:true}));
+app.use(session({secret:'logic is red',store:new MongoStore({ url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
 app.use(passport.session());
-
 //APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
@@ -28,7 +29,7 @@ var SHOPIFY_CLIENT_SECRET='';
 //------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
 var User={
 	findOrCreate:function(a,next){
-		if(!a.displayName){a.displayName='display name';}
+		if(!a.displayName){a.displayName='utente anonimo';}
       MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
 			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
 				if(rows.length<1){var uid=new ObjectID();a._id=uid;
@@ -43,39 +44,30 @@ var User={
 }});}});},
 };
 
-var BasicStrategy = require('passport-http').BasicStrategy;
-var DigestStrategy = require('passport-http').DigestStrategy;
-var ShopifyStrategy = require('passport-shopify').Strategy;
-var GoogleStrategy0 = require('passport-google-oauth').Strategy;
-var GoogleStrategy = require('passport-google-oauth2').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
+var BasicStrategy=require('passport-http').BasicStrategy;
+var DigestStrategy=require('passport-http').DigestStrategy;
+var ShopifyStrategy=require('passport-shopify').Strategy;
+var GoogleStrategy0=require('passport-google-oauth').Strategy;
+var GoogleStrategy=require('passport-google-oauth2').Strategy;
+var FacebookStrategy=require('passport-facebook').Strategy;
+var TwitterStrategy=require('passport-twitter').Strategy;
 
-passport.serializeUser(function(user,cb){cb(null,user);});
-passport.deserializeUser(function(obj,cb){cb(null, obj);});
+passport.serializeUser(function(user,cb){cb(null,user);});passport.deserializeUser(function(obj,cb){cb(null, obj);});
 //---------------------------------------------------------------------------------------------------- G O O G L E
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){profile.googleId=profile.id;profile.id=false;User.findOrCreate(profile,function(err,user){return done(err,user);});}));
 app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}));
-app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/res.redirect('/admin');});
+app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/res.redirect('/home.html');});
 //---------------------------------------------------------------------------------------------------- F A C E B O O K
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/facebook',passport.authenticate('facebook'));
-app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:'/login?failed=failed'}),function(req, res) {/*Successful*/res.redirect('/admin');});
+app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/res.redirect('/home.html');});
 //---------------------------------------------------------------------------------------------------- T W I T T E R
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
   function(token,tokenSecret,profile,done){User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
-app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/res.redirect('/admin');});
-app.get('/login',function(req,res,next){
-	var s='<!DOCTYPE html><html><head><title>login</title></head><body>';
-	s+='<a href="'+HOST+'/auth/google">google</a>';
-	s+='<a href="'+HOST+'/auth/facebook">facebook</a>';
-	s+='<a href="'+HOST+'/auth/twitter">twitter</a>';
-	s+='</body></html>';
-	res.set('Content-Type', 'text/html');res.end(s);
-});
+app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login,html?failed=failed'}),function(req,res){/*Successful*/res.redirect('/home.html');});
 //-----------------------------------------------
 /*passport.use(new ShopifyStrategy({clientID:SHOPIFY_CLIENT_ID,clientSecret:SHOPIFY_CLIENT_SECRET,callbackURL:HOST+"/auth/shopify/callback",shop: SHOPIFY_SHOP_SLUG},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({shopifyId:profile.id},function(err,user){return done(err,user);});}));
@@ -89,13 +81,18 @@ app.get('/auth/shopify/callback',passport.authenticate('shopify',{failureRedirec
 app.get('/SVC/get_merchant',function(req, res){var collection=db.collection('simple_limit_skip_query');res.send('Hello World!!');});
 app.get('/SVC/set_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/SVC/del_merchant',function(req, res){res.send('Hello World!!');});
-app.get('/shutdown',function(req,res){process.exit();});
+app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
+res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
+}else{
+	res.set('Content-Type', 'application/json');res.end(JSON.stringify(req.user));
+	}});
+app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.get('/postback',function(req,res){
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
 	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
 	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
 	for (key in req.params){out+=key+':'+req.params[key]+'<br/>';}out+='</body></html>';
-	res.set('Content-Type', 'text/html');res.end(out);});
+res.set('Content-Type', 'text/html');res.end(out);});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
@@ -141,21 +138,10 @@ function updatemerchantchache(handler){MERCHANTCHACHE=[];
 	});
 }
 //---------------------------------------------------------------------------------------------------
-app.get('/admin/login', function (req, res, next){
-   var s='<!DOCTYPE html><html><head><title>login</title></head><body>';
-	s+='<a href="'+HOST+'/auth/google">google</a>';
-	s+='<a href="'+HOST+'/auth/facebook">facebook</a>';
-	s+='<a href="'+HOST+'/auth/twitter">twitter</a>';
-	s+='</body></html>';
-	res.set('Content-Type', 'text/html');res.end(s);
-});
 app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
-app.use(function(req,res,next){if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('login')}
+app.use(function(req,res,next){if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('login.html')}
 		else{express.static('./')(req,res,next)}}else{express.static('./home')(req,res,next)}}
 );
-
-
-
 var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){updatemerchantchache();console.log('Example app listening ...');});

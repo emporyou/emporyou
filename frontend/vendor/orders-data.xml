@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<order>
+   <cart>
+       <total>99.99</total>
+       <tax>10.99</tax>
+       <subtotal>89.00</subtotal>
+       <product>
+           <name>Bici</name>
+           <amount>1</amount>
+           <unitprice>99.99</unitprice>
+           <variant>White</variant>
+       </product>
+   </cart>
+   <user>
+       <firstname>Paolo</firstname>
+       <lastname>Giuliani</lastname>
+       <address><route><![CDATA[via dei metaschemi]]></route><street_number><![CDATA[1]]></street_number><zipcode><![CDATA[20100]]></zipcode><location><![CDATA[milano]]></location><country><![CDATA[italia]]></country><administrativeAreaLevel2><![CDATA[MI]]></administrativeAreaLevel2><lat><![CDATA[]]></lat><lng><![CDATA[]]></lng></address>
+       <email>paolo.giuliani@gmail.com</email>
+   </user>
+    <created>2015-10-10 00:00</created><!--initial / failed / success-->
+    <status>success</status>
+    <paidtime>2015-10-10 00:10</paidtime>
+</order>
+<order>
+   <cart>
+       <total>198.98</total>
+       <tax>21.98</tax>
+       <subtotal>177.00</subtotal>
+       <product>
+           <name>Bici</name>
+           <amount>1</amount>
+           <unitprice>99.99</unitprice>
+           <variant>White</variant>
+       </product>
+       <product>
+           <name>Bici</name>
+           <amount>1</amount>
+           <unitprice>99.99</unitprice>
+           <variant>Black</variant>
+       </product>
+   </cart>
+   <user>
+       <firstname>Paolo</firstname>
+       <lastname>Giuliani</lastname>
+       <address><route><![CDATA[via dei metaschemi]]></route><street_number><![CDATA[1]]></street_number><zipcode><![CDATA[20100]]></zipcode><location><![CDATA[milano]]></location><country><![CDATA[italia]]></country><administrativeAreaLevel2><![CDATA[MI]]></administrativeAreaLevel2><lat><![CDATA[]]></lat><lng><![CDATA[]]></lng></address>
+       <email>paolo.giuliani@gmail.com</email>
+   </user>
+    <created>2015-10-10 00:00</created><!--initial / failed / success-->
+    <status>failed</status>
+    <paidtime>2015-10-10 00:10</paidtime>
+</order>
+</document>
