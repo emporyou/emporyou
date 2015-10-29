@@ -298,8 +298,10 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
 function tryDiscount(value){
-    var discount=(price/100)*value
-    var total=price-discount;
+     console.log(value+' is value');
+    console.log(price+' is price');
+    var discount=(price/100)*value; console.log(discount+' is discount');
+    var total=price-discount; console.log(total+' is total');
     document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;
     
     
