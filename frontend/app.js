@@ -77,7 +77,7 @@ app.get('/api/digest/me',passport.authenticate('digest', { session: false }),fun
 //---------------------------------------------------------------------------------------------------
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({googleId:profile.id},function(err,user){return done(err,user);});}));
-app.get('/auth/google',passport.authenticate('google',{scope:'https://www.googleapis.com/auth/plus.login,https://www.googleapis.com/auth/userinfo.email'}));
+app.get('/auth/google',passport.authenticate('google',{scope:'https://www.googleapis.com/auth/plus.login'}));
 app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/console.log('g login');res.redirect('/');});
 //----------------------------------------------------------------------------------------------------
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
