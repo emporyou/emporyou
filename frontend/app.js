@@ -1,18 +1,18 @@
 var format=require('util').format;var endOfLine = require('os').EOL;
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');var app = express();var passport = require('passport');
-
+app.enable('strict routing');
 app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(require('body-parser').urlencoded({extended:true}));
+app.use(require('express-session')({secret:'keyboard cat',resave:true,saveUninitialized:true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
 //APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
-var HOST='http://emporyou.com';
-//var HOST='http://localhost:1024';
+//var HOST='http://emporyou.com';
+var HOST='http://localhost:1024';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
@@ -22,6 +22,7 @@ var GOOGLE_API_SCOPE = ['profile','email'];
 var SHOPIFY_SHOP_SLUG /*e.g. my-shop-name.myshopify.com ... the `my-shop-name` part*/
 var SHOPIFY_CLIENT_ID='';
 var SHOPIFY_CLIENT_SECRET='';
+
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
@@ -40,8 +41,8 @@ var User={
 				if(rows.length<1){db.close();next(err,null);}
 				else{db.close();next(false,rows[0]);}
 }});}});},
-	isLoggedIn:function(req, res, next) {
-		if (req.isAuthenticated()){return next(req, res);}
+	isLoggedIn:function(req, res, next,exp) {
+		if (req.isAuthenticated()){exp(req, res,next);}		
 		else{res.redirect('/login');}
 	}
 };
@@ -53,8 +54,6 @@ var GoogleStrategy0 = require('passport-google-oauth').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
-
-app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
 
 passport.serializeUser(function(user,cb){cb(null,user);});
 passport.deserializeUser(function(obj,cb){cb(null, obj);});
@@ -154,8 +153,15 @@ app.get('/admin/login', function (req, res, next){
 	s+='</body></html>';
 	res.set('Content-Type', 'text/html');res.end(s);
 });
-app.use(/^\/admin\/?.*/,function(req,res,next){User.isLoggedIn(req,res,express.static('./admin'))});
-app.use(express.static('./home'));
+app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
+app.use(/^\/admin\/?.*/,function(req,res,next){console.log(req.originalUrl);
+       User.isLoggedIn(req,res,next,express.static('./admin'))
+});
+
+app.use(function(req,res,next){console.log(req.originalUrl);express.static('./home')(req,res,next)});
+
+
+
 var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){updatemerchantchache();console.log('Example app listening ...');});
