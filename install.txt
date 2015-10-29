@@ -9,6 +9,18 @@ curl https://install.meteor.com | /bin/sh
 npm install express
 npm install mongodb
 npm install mongo-fast-join
+npm install express-session
+npm install cookie-parser
+npm install body-parser
+npm install passport
+npm install passport-google
+npm install passport-google-oauth
+npm install passport-google-oauth2
+npm install passport-facebook
+npm install passport-twitter
+npm install passport-shopify
+npm install passport-amazon
+
 yum install -y mongodb
 yum install -y mongodb-server
 echo ---------- SETUP MONGOD AUTOSTART ----------
