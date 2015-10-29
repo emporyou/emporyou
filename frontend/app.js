@@ -8,8 +8,8 @@ var ObjectID = require('mongodb').ObjectID;
 var endOfLine = require('os').EOL;
 var MERCHANTCHACHE=[];
 
-//var HOST='http://emporyou.com';
-var HOST='http://localhost:1024';
+var HOST='http://emporyou.com';
+//var HOST='http://localhost:1024';
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
