@@ -358,6 +358,7 @@ window.couponData={
     'price':`+lastPrice+`,
     'discount':`+lastDiscount+`,
     'saving':`+lastSaving+`,
+    'image':`+productImageUrl+`
 };document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
 <input type="hidden" id="JSONdata" value="%title" name="title" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
