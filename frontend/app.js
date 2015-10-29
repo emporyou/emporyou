@@ -22,19 +22,19 @@ var User={
  else if(a.shopifyId){}
  else if(a.amazonId){}
  else{}*/ 
-      MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){next(err,null)}else{
-			db.collection('user').find(a).toArray(function(err,rows){
+      MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){db.close();next(err,null)}else{
+			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
 				if(rows.length<1){
-					db.collection('user').insert(a,function(err){
+					db.collection('user').insert(a,function(err){if(err){db.close();next(err,null)}else{
 						
-					});
+					}});
 				}else{
-					var sid=new ObjectID();
-					db.collection('session').insert({_id:sid,userid:rows[0]._id,displayname:rows[0].displayname},function(err){
-						
-					});
+					var sid=new ObjectID();var newuser={_id:sid,userid:rows[0]._id,displayname:rows[0].displayname};
+					db.collection('session').insert(newuser,function(err){if(err){db.close();next(err,null)}else{
+							next(false,{_id:sid,userid:rows[0]._id,displayname:rows[0].displayname});
+					}});
 				}
-			});
+			}});
 		}});
 	},
 	// route middleware to make sure a user is logged in
@@ -50,7 +50,7 @@ var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 var DigestStrategy = require('passport-http').DigestStrategy;
 var ShopifyStrategy = require('passport-shopify').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth2').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
@@ -77,7 +77,7 @@ app.get('/api/digest/me',passport.authenticate('digest', { session: false }),fun
 //---------------------------------------------------------------------------------------------------
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({googleId:profile.id},function(err,user){return done(err,user);});}));
-app.get('/auth/google',passport.authenticate('google',{scope:'https://www.googleapis.com/auth/plus.login'}));
+app.get('/auth/google',passport.authenticate('google',{scope:'https://www.googleapis.com/auth/plus.login,https://www.googleapis.com/auth/userinfo.email'}));
 app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/console.log('g login');res.redirect('/');});
 //----------------------------------------------------------------------------------------------------
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
