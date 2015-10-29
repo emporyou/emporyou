@@ -321,7 +321,7 @@ var css = `
 #prod-cont{bottom:75px;right:350px;}
 #marc-cont{bottom:25px;right:349px;}
 .text-vau{color:white;font-weight: bold;}
-.testo{color:#f7f7f7}
+.testo{color:#000}
 #valo-cont{right: 148px;
     bottom: 145px;
     transform: scale(1.4);}
@@ -364,7 +364,7 @@ document.getElementById('JSONdata').value=JSON.stringify(couponData);return true
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><textarea  class="testo" value="%price" id="voucher-value"> </textarea><div> €</div><br/></div>
 <div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};"> </textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo" id="voucher-price">%price</div></div>
-<input type="submit" value="Send Coupon"/>
+<input type="submit" value="Send Coupon" style="position:absolute;"/>
 </form></html>
 </rowtype>
 </document>
