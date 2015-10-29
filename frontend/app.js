@@ -154,11 +154,18 @@ app.get('/admin/login', function (req, res, next){
 	res.set('Content-Type', 'text/html');res.end(s);
 });
 app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
-app.use(/^\/admin\/?.*/,function(req,res,next){console.log(req.originalUrl);
+/*
+app.use(/^\/admin\/?.* /,function(req,res,next){console.log(req.originalUrl);
        User.isLoggedIn(req,res,next,express.static('./admin'))
 });
-
-app.use(function(req,res,next){console.log(req.originalUrl);express.static('./home')(req,res,next)});
+*/
+var ADMS=express.static('./admin');
+var HDMS=express.static('./home');
+app.use(function(req,res,next){console.log(req.originalUrl);
+	if(req.isAuthenticated()){ADMS(req,res,next)}
+	else{HDMS(req,res,next)}
+	}
+);
 
 
 
