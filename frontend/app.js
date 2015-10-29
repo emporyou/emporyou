@@ -27,16 +27,14 @@ var SHOPIFY_CLIENT_SECRET='';
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
-var User={
-	findOrCreate:function(a,next){
+var User={findOrCreate:function(a,next){
 		if(!a.displayName){a.displayName='utente anonimo';}
       MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
 			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
 				if(rows.length<1){var uid=new ObjectID();a._id=uid;
 					db.collection('user').insert(a,function(err){db.close();if(err){next(err,null)}else{next(false,a);
 				}});}else{db.close();next(false,rows[0]);}
-}});}});},
-	findById:function(a,next){
+}});}});},findById:function(a,next){
       MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
 			db.collection('user').find({_id:a}).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
 				if(rows.length<1){db.close();next(err,null);}
@@ -75,7 +73,20 @@ app.get('/auth/shopify',passport.authenticate('shopify',{scope:['read_products']
 app.get('/auth/shopify/callback',passport.authenticate('shopify',{failureRedirect:'/login'}),function(req,res){
 	//Successful
 	res.redirect('/')});*/
-app.get('/#',function(req,res,next){res.redirect('/')});
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------ ADMIN SERVICES
+JSON2xml=function(o,n){return '<?xml version="1.0" encoding="UTF-8"?>\n'+o2xml(n,o)};
+o2xml=function(n,o){if(Array.prototype.isPrototypeOf(o)){return a2xml(n,o);}else if(typeof(o)=='object'){return _o2xml(n,o);}else{return v2xml(n,o);}};
+_o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
+ for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}else{xml+=v2xml(pr,o[prop]);}}return xml+'</'+n+'>';}else{return ''}};
+a2xml=function(n,a){var xml='';for(var i=0;i<a.length;i++){if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}else{xml+=v2xml(n,a[i]);}}return xml;};
+v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
+var emporyou={}
+emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated()){logontype='user';
+		if(false){logontype='vendor';
+		if(false){logontype='admin';}}}
+return logontype;};
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
@@ -94,10 +105,38 @@ app.get('/postback',function(req,res){
 	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
 	for (key in req.params){out+=key+':'+req.params[key]+'<br/>';}out+='</body></html>';
 res.set('Content-Type', 'text/html');res.end(out);});
+app.post('/postback',function(req,res){
+	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
+	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
+	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
+	for (key in req.params){out+=key+':'+req.params[key]+'<br/>';}out+='</body></html>';
+res.set('Content-Type', 'text/html');res.end(out);});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
 app.get('/get_deal', function (req, res) {
+  var logontype=emporyou.logontype(req);
+  var m_id=req.query.m_id||-1;
+  var p_id=req.query.m_id||-1;
+  var geo=req.query.geo||null;
+  var cat=req.query.cat||-1;
+  var max=req.query.max||-1;
+  var min=req.query.min||-1;
+  var pgmax=req.query.pgmax||-1;
+  var pgnum=req.query.pgnum||-1;
+  var outputfomat=(req.query.output||'json').toLowerCase();
+  var jq={};
+  res.jsonout={requested:req.originalUrl};
+  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+		db.collection('deal').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
+			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
+			res.jsonout.deal=rows[r];
+			if(outputfomat=='xml'){res.set('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
+			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
+			
+  }});});});
+app.get('/get_transactions', function (req, res) {
+  var logontype=emporyou.logontype(req);
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
   var geo=req.query.geo||null;
@@ -108,9 +147,11 @@ app.get('/get_deal', function (req, res) {
   var pgnum=req.query.pgnum||-1;
   res.jsonout='';  
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
-			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];res.jsonout+=JSON.stringify(rows[r]);}
-				res.set('Content-Type', 'application/json');res.end(res.jsonout);
+		db.collection('transaction').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
+			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
+			res.jsonout.transaction=rows[r];
+			if(outputfomat=='xml'){res.set('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
+			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
   }});});});
 app.get('/add_deal', function (req, res) {
   var m_id=req.query.m_id||-1;
@@ -125,7 +166,7 @@ app.get('/add_deal', function (req, res) {
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').insert({},function(err){
 			res.set('Content-Type', 'application/json');res.end(res.jsonin);
-		});
+		});0432744210
 	});  
 });
 serve404=function(res){};
