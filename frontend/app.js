@@ -50,7 +50,7 @@ var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 var DigestStrategy = require('passport-http').DigestStrategy;
 var ShopifyStrategy = require('passport-shopify').Strategy;
-var GoogleStrategy = require('passport-google-oauth2').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
