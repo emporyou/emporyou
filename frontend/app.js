@@ -103,13 +103,13 @@ app.get('/postback',function(req,res){
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
 	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
 	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
-	for (key in req.params){out+=key+':'+req.params[key]+'<br/>';}out+='</body></html>';
+	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
 res.set('Content-Type', 'text/html');res.end(out);});
 app.post('/postback',function(req,res){
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
 	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
 	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
-	for (key in req.form){out+=key+':'+req.form[key]+'<br/>';}out+='</body></html>';
+	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
 res.set('Content-Type', 'text/html');res.end(out);});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
