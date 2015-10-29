@@ -2,6 +2,7 @@
 /*This is not minified, this is how I have worked up until now... first version of this is dated 2007 */
 /*u1=function(o,t,v){o.setAttribute(t,v);};_u2=function(u){var o=document.createElement('script');_u1(o,'type','text/javascript');_u1(o,'src',u);document.getElementsByTagName('head')[0].appendChild(o);};*/
 /*--------------------------------------------------------------------------------------------------  BROWSER RECOGNITION */
+var productImageUrl;
 window._t00UA=navigator.userAgent.toLowerCase();window._t00D=window.document;
 var isIE=document.ActiveXObject;var isIE6=isIE&&document.implementation;var isgteIE6=isIE7||isIE6;var isIE7=_t00UA.indexOf('msie 7')>-1;var isIE5=isIE&&window.print&&!isgteIE6;var isIEDOM2=isIE5||isgteIE6;var isIE8=_t00UA.indexOf('msie 8')>-1;var isIE9=_t00UA.indexOf('msie 9')>-1;var isIE10=_t00UA.indexOf('msie 10')>-1;var isIENO9=(isIE&&((isIE5)||(isIE6))||((isIE7)||(isIE8)));var isIE11=(_t00UA.indexOf('rv:11')>-1)&&(_t00UA.indexOf('win')>-1);
 var is_chrome=_t00UA.indexOf('chrome')>-1;var is_opera=_t00UA.indexOf("opera")!=-1;var is_firefox=_t00UA.indexOf("firefox")!=-1;var is_safari=_t00UA.indexOf('safari')!=-1;var is_ios=_t00UA.indexOf('apple-i')!=-1;var is_iphone=_t00UA.indexOf('iphone')!=-1;var is_ipad=_t00UA.indexOf('ipad')!=-1;
@@ -297,14 +298,18 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
     else{setTimeout('ooo.render(\''+tgt+'\',\''+curl+'\',\''+durl+'\',false,false,\''+appnd+'\');',timeout);timeout+=ooo.rendertimestep;}}    
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
+var lastPrice; var lastDiscount; var lastSaving;
 function tryDiscount(value){
-    var price=document.getElementById('voucher-value').innerHTML;
-    var discount=(price/100)*value
-    var total=price-discount;
-    document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;
-    
-    
+     console.log(value+' is value');
+    console.log(price+' is price');
+    var discount=(price/100)*value; console.log(discount+' is discount');
+    window.lastDiscount=value;
+    window.lastSaving=discount;
+    var total=price-discount; console.log(total+' is total');
+    window.lastPrice=total;
+    document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;    
 }
+
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:51px;right:50px;}
@@ -327,6 +332,9 @@ if (style.styleSheet){
 } else {
   style.appendChild(document.createTextNode(css));
 }
+function clearContents(element) {
+  element.value = '';
+}
 
 head.appendChild(style);
 
@@ -337,24 +345,41 @@ tpl=`
 <rowtype tagname="item">
 <variable tagname="_id" substitution="%id"/>
 <variable tagname="title" substitution="%title"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<html><form action="http://emporyou.com/postback" method="post" target="_blank">
-<input type="hidden" value="%title" name="title" />
+<html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="
+window.couponData={
+    'title':'%title',
+    'subtitle':'%subtitle',
+    'description':'description',
+    'vendor':'vendor',
+    'price':`+lastPrice+`,
+    'discount':`+lastDiscount+`,
+    'saving':`+lastSaving+`,
+    'image':`+productImageUrl+`
+};document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
+<input type="hidden" id="JSONdata" value="%title" name="title" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
 <div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
-<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)"> </textarea><div>%</div><br/></div>
+<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};"> </textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
+<input type="submit" value="Send Coupon"/>
 </form></html>
 </rowtype>
 </document>
 `;
 var xtpl=ooo.parsexml(tpl);
-var g=document.createElement('div');g.className='voucher';
-g.setAttribute('id','voucher-target');g.setAttribute('style',`
+var g=document.createElement('div');
+g.className='voucher';
+g.setAttribute('id','voucher-target');
+g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
+setTimeout("window.price=document.getElementById('voucher-value').innerHTML;window.productImageUrl=document.getElementsByClassName('img-responsive')[0].src;",1000);
 ooo.syncrender('voucher-target',xtpl,prodXML);
 
