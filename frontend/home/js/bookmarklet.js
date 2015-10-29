@@ -354,7 +354,7 @@ tpl=`
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="
+<html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="makeCoupon();
 document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
 <input type="hidden" id="JSONdata" value="%title" name="title" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><textarea class="testo" value="%title"  id="voucher-title">%title</textarea><br/></div>
