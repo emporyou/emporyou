@@ -355,6 +355,6 @@ g.setAttribute('id','voucher-target');g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
-window.price=document.getElementById('voucher-value').innerHTML;
+setTimeout("window.price=document.getElementById('voucher-value').innerHTML;",1000);
 ooo.syncrender('voucher-target',xtpl,prodXML);
 
