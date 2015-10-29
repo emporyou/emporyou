@@ -328,6 +328,9 @@ if (style.styleSheet){
 } else {
   style.appendChild(document.createTextNode(css));
 }
+function clearContents(element) {
+  element.value = '';
+}
 
 head.appendChild(style);
 
@@ -345,7 +348,7 @@ tpl=`
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
 <div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
-<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13) tryDiscount(this.value);"> </textarea><div>%</div><br/></div>
+<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};"> </textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
 </form></html>
 </rowtype>
