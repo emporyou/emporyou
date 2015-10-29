@@ -316,11 +316,7 @@ function tryDiscount(value){
 }
 
 var css = `
-.cont{position:absolute}
-#scon-cont{bottom:51px;right:50px;}
-#prez-cont{bottom:50px;right:109px;}
-#prod-cont{bottom:75px;right:350px;}
-#marc-cont{bottom:25px;right:349px;}
+.cont{display:inline-block}
 .text-vau{color:white;font-weight: bold;}
 .testo{color:#000}
 #valo-cont{right: 148px;
@@ -357,7 +353,7 @@ tpl=`
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="makeCoupon();
 document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
-<input type="hidden" id="JSONdata" value="%title" name="title" />
+<input type="hidden" id="JSONdata" value="%title" name="product" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><textarea class="testo" value="%title"  id="voucher-title">%title</textarea><br/></div>
 <div class="cont" id="subt-cont"><div class="text-vau" id="subt">Sottotitolo: </div><textarea class="testo" value="%pageTitle"  id="voucher-subtitle">%pageTitle</textarea><br/></div>
 <div class="cont" id="desc-cont"><div class="text-vau" id="desc">Descrizione: </div><textarea class="testo" value="%description"  id="voucher-description">%description</textarea><br/></div>
@@ -365,7 +361,7 @@ document.getElementById('JSONdata').value=JSON.stringify(couponData);return true
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><textarea  class="testo" value="%price" id="voucher-value">%price</textarea><div> €</div><br/></div>
 <div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">0</textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo" id="voucher-price">%price</div></div>
-<input type="submit" value="Send Coupon" style="position:absolute;"/>
+<input type="submit" value="Send Coupon" style="display:line-block;"/>
 </form></html>
 </rowtype>
 </document>
