@@ -309,6 +309,7 @@ function tryDiscount(value){
     window.lastPrice=total;
     window.lastTitle=document.getElementById('voucher-title').value;
     window.lastVendor=document.getElementById('voucher-vendor').value;
+    window.lastSubtitle=document.getElementById('voucher-subtitle').value;
     window.lastDescription=document.getElementById('voucher-description').value;
     window.lastValue=document.getElementById('voucher-value').value;
     document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;    
