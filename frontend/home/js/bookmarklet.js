@@ -297,15 +297,15 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
     else{setTimeout('ooo.render(\''+tgt+'\',\''+curl+'\',\''+durl+'\',false,false,\''+appnd+'\');',timeout);timeout+=ooo.rendertimestep;}}    
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
+
 function tryDiscount(value){
      console.log(value+' is value');
     console.log(price+' is price');
     var discount=(price/100)*value; console.log(discount+' is discount');
     var total=price-discount; console.log(total+' is total');
-    document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;
-    
-    
+    document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;    
 }
+
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:51px;right:50px;}
@@ -345,15 +345,17 @@ tpl=`
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
 <div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
 <div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
-<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0" onchange="tryDiscount(this.value)" onkeyup="if(event.keyCode==13) tryDiscount(this.value);"> </textarea><div>%</div><br/></div>
+<div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13) tryDiscount(this.value);"> </textarea><div>%</div><br/></div>
 <div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
 </form></html>
 </rowtype>
 </document>
 `;
 var xtpl=ooo.parsexml(tpl);
-var g=document.createElement('div');g.className='voucher';
-g.setAttribute('id','voucher-target');g.setAttribute('style',`
+var g=document.createElement('div');
+g.className='voucher';
+g.setAttribute('id','voucher-target');
+g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
