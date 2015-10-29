@@ -360,7 +360,7 @@ window.couponData={
     'discount':`+lastDiscount+`,
     'saving':`+lastSaving+`,
     'image':`+productImageUrl+`
-};document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
+};document.getElementById('JSONdata').value=JSON.stringify(couponData);console.log(couponData);return true;">
 <input type="hidden" id="JSONdata" value="%title" name="title" />
 <div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
 <div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
