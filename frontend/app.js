@@ -11,8 +11,8 @@ app.use(passport.session());
 //APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
-var HOST='http://emporyou.com';
-//var HOST='http://localhost:1024';
+//var HOST='http://emporyou.com';
+var HOST='http://localhost:1024';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
@@ -41,10 +41,6 @@ var User={
 				if(rows.length<1){db.close();next(err,null);}
 				else{db.close();next(false,rows[0]);}
 }});}});},
-	isLoggedIn:function(req, res, next,exp) {
-		if (req.isAuthenticated()){exp(req, res,next);}		
-		else{res.redirect('/login');}
-	}
 };
 
 var BasicStrategy = require('passport-http').BasicStrategy;
@@ -154,17 +150,8 @@ app.get('/admin/login', function (req, res, next){
 	res.set('Content-Type', 'text/html');res.end(s);
 });
 app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
-/*
-app.use(/^\/admin\/?.* /,function(req,res,next){console.log(req.originalUrl);
-       User.isLoggedIn(req,res,next,express.static('./admin'))
-});
-*/
-var ADMS=express.static('./admin');
-var HDMS=express.static('./home');
-app.use(function(req,res,next){console.log(req.originalUrl);
-	if(req.isAuthenticated()){ADMS(req,res,next)}
-	else{HDMS(req,res,next)}
-	}
+app.use(function(req,res,next){if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('login')}
+		else{express.static('./')(req,res,next)}}else{express.static('./home')(req,res,next)}}
 );
 
 
