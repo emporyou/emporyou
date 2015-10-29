@@ -67,7 +67,7 @@ app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedir
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
   function(token,tokenSecret,profile,done){User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
-app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login,html?failed=failed'}),function(req,res){/*Successful*/res.redirect('/home.html');});
+app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/res.redirect('/home.html');});
 //-----------------------------------------------
 /*passport.use(new ShopifyStrategy({clientID:SHOPIFY_CLIENT_ID,clientSecret:SHOPIFY_CLIENT_SECRET,callbackURL:HOST+"/auth/shopify/callback",shop: SHOPIFY_SHOP_SLUG},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({shopifyId:profile.id},function(err,user){return done(err,user);});}));
@@ -75,6 +75,7 @@ app.get('/auth/shopify',passport.authenticate('shopify',{scope:['read_products']
 app.get('/auth/shopify/callback',passport.authenticate('shopify',{failureRedirect:'/login'}),function(req,res){
 	//Successful
 	res.redirect('/')});*/
+app.get('/#',function(req,res,next){res.redirect('/')});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
