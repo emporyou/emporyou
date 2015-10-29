@@ -298,7 +298,6 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
 function tryDiscount(value){
-    var price=document.getElementById('voucher-value').innerHTML;
     var discount=(price/100)*value
     var total=price-discount;
     document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;
@@ -356,5 +355,6 @@ g.setAttribute('id','voucher-target');g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
+window.price=document.getElementById('voucher-value').innerHTML;
 ooo.syncrender('voucher-target',xtpl,prodXML);
 
