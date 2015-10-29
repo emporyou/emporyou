@@ -297,7 +297,7 @@ uno.xml._chainload=function(node,sublev,consts,consts_name,const_conds,const_con
     else{setTimeout('ooo.render(\''+tgt+'\',\''+curl+'\',\''+durl+'\',false,false,\''+appnd+'\');',timeout);timeout+=ooo.rendertimestep;}}    
   catch(exxxx){ooo.err('Error chainloading control '+e+'.');}}
   if(sublev>1){return outcodes;}};
-
+var lastPrice; var lastDiscount; var lastSaving;
 function tryDiscount(value){
      console.log(value+' is value');
     console.log(price+' is price');
