@@ -14,7 +14,7 @@ var HOST='http://emporyou.com';
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
 var User={
-	findOrCreate:function(a,n){
+	findOrCreate:function(a,next){
 		//will user a as jq 
 		/*if(a.googleId){}
  else if(a.facebookId){}
@@ -25,13 +25,17 @@ var User={
       MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){db.close();next(err,null)}else{
 			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
 				if(rows.length<1){
+					var uid=new ObjectID();var newuser={_id:uid,displayname:'displayname'};
 					db.collection('user').insert(a,function(err){if(err){db.close();next(err,null)}else{
-						
+						var sid=new ObjectID();var newsession={_id:sid,userid:uid,displayname:rows[0].displayname};
+						db.collection('session').insert(newsession,function(err){if(err){db.close();next(err,null)}else{
+							next(false,newsession);
+						}});
 					}});
 				}else{
-					var sid=new ObjectID();var newuser={_id:sid,userid:rows[0]._id,displayname:rows[0].displayname};
-					db.collection('session').insert(newuser,function(err){if(err){db.close();next(err,null)}else{
-							next(false,{_id:sid,userid:rows[0]._id,displayname:rows[0].displayname});
+					var sid=new ObjectID();var newsession={_id:sid,userid:rows[0]._id,displayname:rows[0].displayname};
+					db.collection('session').insert(newsession,function(err){if(err){db.close();next(err,null)}else{
+							next(false,newsession);
 					}});
 				}
 			}});
@@ -50,12 +54,14 @@ var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 var DigestStrategy = require('passport-http').DigestStrategy;
 var ShopifyStrategy = require('passport-shopify').Strategy;
+var GoogleStrategy0 = require('passport-google-oauth').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
 var FACEBOOK_APP_ID='460219550850496';var FACEBOOK_APP_SECRET='92c6695c348098685ad74418946b9c8d';
 var GOOGLE_CLIENT_ID='1090089087428-k638posl6k8nkgl140bj4ebecrfhmopo.apps.googleusercontent.com';var GOOGLE_CLIENT_SECRET='iejkVQ8FcjXguhQwzgcANM5T';
+var GOOGLE_API_SCOPE = ['profile','email'];
 var SHOPIFY_SHOP_SLUG /*e.g. my-shop-name.myshopify.com ... the `my-shop-name` part*/
 var SHOPIFY_CLIENT_ID='';
 var SHOPIFY_CLIENT_SECRET='';
@@ -77,7 +83,7 @@ app.get('/api/digest/me',passport.authenticate('digest', { session: false }),fun
 //---------------------------------------------------------------------------------------------------
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({googleId:profile.id},function(err,user){return done(err,user);});}));
-app.get('/auth/google',passport.authenticate('google',{scope:'https://www.googleapis.com/auth/plus.login'}));
+app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}));
 app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/console.log('g login');res.redirect('/');});
 //----------------------------------------------------------------------------------------------------
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
