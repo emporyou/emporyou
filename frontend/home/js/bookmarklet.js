@@ -308,7 +308,7 @@ function tryDiscount(value){
     window.lastPrice=total;
     document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;    
 }
-window.productImageUrl=document.getElementsByClassName('img-responsive')[0].src;
+
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:51px;right:50px;}
@@ -379,6 +379,6 @@ g.setAttribute('style',`
 position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;background-color:white;z-index:10000;border:5px solid black;background-image:url('http://emporyou.com/vaucher.png');background-repeat:round;
 `);
 document.body.appendChild(g);
-setTimeout("window.price=document.getElementById('voucher-value').innerHTML;",1000);
+setTimeout("window.price=document.getElementById('voucher-value').innerHTML;window.productImageUrl=document.getElementsByClassName('img-responsive')[0].src;",1000);
 ooo.syncrender('voucher-target',xtpl,prodXML);
 
