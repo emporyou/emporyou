@@ -1,63 +1,20 @@
-var express = require('express');
-var app = express();
+var format=require('util').format;var endOfLine = require('os').EOL;
+var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
+var express = require('express');var app = express();var passport = require('passport');
 
-var format=require('util').format;
-var MongoClient = require('mongodb').MongoClient;
-var ObjectID = require('mongodb').ObjectID;
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 //APP-INIT + DATABASE CONNECTION
-var endOfLine = require('os').EOL;
-var MERCHANTCHACHE=[];
 
-var HOST='http://emporyou.com';
-//var HOST='http://localhost:1024';
-//---------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
-var User={
-	findOrCreate:function(a,next){
-		//will user a as jq 
-		/*if(a.googleId){}
- else if(a.facebookId){}
- else if(a.twitterId){}
- else if(a.shopifyId){}
- else if(a.amazonId){}
- else{}*/ 
-      MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){db.close();next(err,null)}else{
-			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
-				if(rows.length<1){
-					var uid=new ObjectID();var newuser={_id:uid,displayname:'displayname'};
-					db.collection('user').insert(a,function(err){if(err){db.close();next(err,null)}else{
-						var sid=new ObjectID();var newsession={_id:sid,userid:uid,displayname:rows[0].displayname};
-						db.collection('session').insert(newsession,function(err){if(err){db.close();next(err,null)}else{
-							next(false,newsession);
-						}});
-					}});
-				}else{
-					var sid=new ObjectID();var newsession={_id:sid,userid:rows[0]._id,displayname:rows[0].displayname};
-					db.collection('session').insert(newsession,function(err){if(err){db.close();next(err,null)}else{
-							next(false,newsession);
-					}});
-				}
-			}});
-		}});
-	},
-	// route middleware to make sure a user is logged in
-	isLoggedIn:function(req, res, next) {
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-    // if they aren't redirect them to the home page
-    res.redirect('/login');
-	}
-};
-var passport = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
-var DigestStrategy = require('passport-http').DigestStrategy;
-var ShopifyStrategy = require('passport-shopify').Strategy;
-var GoogleStrategy0 = require('passport-google-oauth').Strategy;
-var GoogleStrategy = require('passport-google-oauth2').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
+var MERCHANTCHACHE=[];
+//var HOST='http://emporyou.com';
+var HOST='http://localhost:1024';
+var MONGOURL='mongodb://localhost:27017/emporyou';
+
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
 var FACEBOOK_APP_ID='460219550850496';var FACEBOOK_APP_SECRET='92c6695c348098685ad74418946b9c8d';
 var GOOGLE_CLIENT_ID='1090089087428-k638posl6k8nkgl140bj4ebecrfhmopo.apps.googleusercontent.com';var GOOGLE_CLIENT_SECRET='iejkVQ8FcjXguhQwzgcANM5T';
@@ -65,36 +22,57 @@ var GOOGLE_API_SCOPE = ['profile','email'];
 var SHOPIFY_SHOP_SLUG /*e.g. my-shop-name.myshopify.com ... the `my-shop-name` part*/
 var SHOPIFY_CLIENT_ID='';
 var SHOPIFY_CLIENT_SECRET='';
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
+var User={
+	findOrCreate:function(a,next){
+		if(!a.displayName){a.displayName='display name';}
+      MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
+			db.collection('user').find(a).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
+				if(rows.length<1){var uid=new ObjectID();a._id=uid;
+					db.collection('user').insert(a,function(err){db.close();if(err){next(err,null)}else{next(false,a);
+				}});}else{db.close();next(false,rows[0]);}
+}});}});},
+	findById:function(a,next){
+      MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
+			db.collection('user').find({_id:a}).toArray(function(err,rows){if(err){db.close();next(err,null)}else{
+				if(rows.length<1){db.close();next(err,null);}
+				else{db.close();next(false,rows[0]);}
+}});}});},
+	isLoggedIn:function(req, res, next) {
+		if (req.isAuthenticated()){return next(req, res);}
+		else{res.redirect('/login');}
+	}
+};
+
+var BasicStrategy = require('passport-http').BasicStrategy;
+var DigestStrategy = require('passport-http').DigestStrategy;
+var ShopifyStrategy = require('passport-shopify').Strategy;
+var GoogleStrategy0 = require('passport-google-oauth').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
+
 app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
-//---------------------------------------------------------------------------------------------------
-emporyou_login_basic=function(args,next){if(args.username=='admin'){next(false,{id:'0',name:'admin',validPassword:function(p){if(p=='admin'){return true}}})}
- else if(args.username=='guest'){next(false,{id:'1',name:'guest',validPassword:function(p){if(p=='guest'){return true}}})}else{next(new Error('login unsuccesful'),null)}};
-emporyou_login_digest=function(args,next){if(args.username=='admin'){next(false,{id:'0',name:'admin',password:'admin'})}
-	else if(args.username=='guest'){next(false,{id:'1',name:'guest',password:'guest'})}else{next(new Error('login unsuccesful'),null)}};
-passport.use(new BasicStrategy(function(username,password,done){
-    emporyou_login_basic({username:username},function(err,user){
-      if(err){return done(err);}if(!user){return done(null,false);}
-      if(!user.validPassword(password)){return done(null,false);}return done(null,user);});}));
-passport.use(new DigestStrategy({qop:'auth'},function(username,done){emporyou_login_digest({username:username},function(err,user){
-  if(err){return done(err);}if(!user){return done(null,false);}return done(null,user,user.password);});},
-  function(params, done) {/* validate nonces as necessary*/done(null,true)}));
-app.get('/api/basic/me',passport.authenticate('basic', { session: false }),function(req, res) {res.json(req.user);});
-app.get('/api/digest/me',passport.authenticate('digest', { session: false }),function(req, res) {res.json(req.user);});
-//---------------------------------------------------------------------------------------------------
+
+passport.serializeUser(function(user,cb){cb(null,user);});
+passport.deserializeUser(function(obj,cb){cb(null, obj);});
+//---------------------------------------------------------------------------------------------------- G O O G L E
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
-  function(accessToken,refreshToken,profile,done){User.findOrCreate({googleId:profile.id},function(err,user){return done(err,user);});}));
+  function(accessToken,refreshToken,profile,done){profile.googleId=profile.id;profile.id=false;User.findOrCreate(profile,function(err,user){return done(err,user);});}));
 app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}));
-app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/console.log('g login');res.redirect('/');});
-//----------------------------------------------------------------------------------------------------
+app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/res.redirect('/');});
+//---------------------------------------------------------------------------------------------------- F A C E B O O K
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/facebook',passport.authenticate('facebook'));
-app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:'/login?failed=failed'}),function(req, res) {/*Successful*/console.log('f login');res.redirect('/');});
-//----------------------------------------------------------------------------------------------------- T W I T T E R
+app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:'/login?failed=failed'}),function(req, res) {/*Successful*/res.redirect('/');});
+//---------------------------------------------------------------------------------------------------- T W I T T E R
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
   function(token,tokenSecret,profile,done){User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
-app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/console.log('t login');res.redirect('/');});
+app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:'/login?failed=failed'}),function(req,res){/*Successful*/res.redirect('/');});
 app.get('/login',function(req,res,next){
 	var s='<!DOCTYPE html><html><head><title>login</title></head><body>';
 	s+='<a href="'+HOST+'/auth/google">google</a>';
@@ -168,7 +146,7 @@ function updatemerchantchache(handler){MERCHANTCHACHE=[];
 	});
 }
 //---------------------------------------------------------------------------------------------------
-app.use(express.static('./frontend'));
+app.use(express.static('./home'));
 var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){updatemerchantchache();console.log('Example app listening ...');});

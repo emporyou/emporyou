@@ -2,353 +2,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <title></title>
-<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="Your Website Title" />
-<meta property="og:description"   content="Your description" />
-<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 <!-- //////////////////////////BOOTSTRAP -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
 <!-- //////////////////////////FONT AWESOME -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- //////////////////////////ANGULAR -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+<!-- //////////////////////////JQUERY -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+<!-- //////////////////////////PROTOTYPE -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script> -->
+<!-- //////////////////////////THREEJS -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/map.css">
-<link rel="stylesheet" type="text/css" href="css/cart.css">
-<link rel="stylesheet" type="text/css" href="css/thumbs.css">
-<link rel="stylesheet" type="text/css" href="css/product-page.css">
-<link rel="stylesheet" type="text/css" href="css/info-prod.css">
-<link rel="stylesheet" type="text/css" href="css/digital.css">
-<script src="js/main.js"></script>
-<script src="js/mainh.js"></script>
-<script src="http://tipozerozero.com/ooox/ooox.js"></script>
-<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
-<script src="js/jquery.geocomplete.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic' rel='stylesheet' type='text/css'>
 <meta name=viewport content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta charset="utf-8"/>
-<script>
-myappinit=function(){
-checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product');
-	//setTimeout('initMap()',500);
-  // Option 1: Call on element.
-  /*
-$.fn.geocomplete("input"); // Option 2: Pass element as argument.
-    $("#city-input").geocomplete({
-	map: "#google-map"
-});*/
-}
-</script>
-<script>
-window.mapcenter={lat: 40.674, lng: -73.946}
-initMap=function() {    
-  var customMapType = new google.maps.StyledMapType(getmapstyle(), {
-      name: 'Mappa delle offerte | trascina il pallocino rosso per cambiare la zona di ricerca, usa lo zoom per cambiare l\' ampiezza.'
-  });
-  var customMapTypeId = 'emporyou_style';
-  var mapOpts={
-    zoom: 12,
-    mapTypeControlOptions: {
-	  mapTypeIds: [customMapTypeId]
-      //mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
-    }
-  };
-  //window.gmap=new google.maps.Map(document.getElementById('main-google-map'),mapOpts);
-  window.ismaploadedonce=true;
-  $("#city-input").geocomplete({
-	location:'Milano',
-	map:"#main-google-map",
-	mapOptions:mapOpts,
-	markerOptions:{draggable: true}
-  });
-  $("#city-input").bind("geocode:dragged", function(event, latLng){
-          $("#city-input").val(latLng.lat()+','+latLng.lng());
-          $("#city-input").trigger("geocode");
-   });  
-  window.gmap=$("#city-input").geocomplete('map');
-  window.gmap.mapTypes.set(customMapTypeId, customMapType);
-  window.gmap.setMapTypeId(customMapTypeId);
-};</script>
 </head>
-<body onload="myappinit();" onresize="checkMobile()">
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '898201326937821',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=898201326937821";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
-<div id="basket-container">
-<div id="bought-container"></div>
-<img src="../img/dot.png" id="else"/>
-<img id="basket" src="../img/basket.png" onclick="openCart()"/></div>
-<div class="header">
-   <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png"/></div>
-    <div class="logo-container"><img
-        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/></div><div 
-        id="header-items-container">
-            <div class="item-container" onclick="openMap();checkMobile()"><img class="map-icon" src="../img/map-icon.png"/></div>
-        </div></div>
-<div class="emporyoum-bar">
-    <div class="emporyoum-container">
-        <!--<img class="emporyoum" src="../img/emporyoum-home.png"/>-->
-    </div>
-</div>
-<div class="google-map-container"><div id="main-google-map" class="google-map transformed"></div></div>
-<div class="products-main">
-   <div class="categories-container">
-      <div class="cat-searchbar transition-1" id="cat-searchbar">
-                         		<div id="search">
-          				<fieldset class="clearfix">
-
-					<input type="search" name="search" value="Cosa stai cercando?" onBlur="if(this.value=='')this.value='Cosa stai cercando?'" onFocus="if(this.value=='Cosa stai cercando?')this.value='' ">
-					<input type="submit" value="Cerca" class="button">
-
-				</fieldset>
-          </div>
-      </div>
-       <div class="cat-cont transition-1" id="cat-city" onclick="ensureMapIsOpened();openCat(this)">Città</div>
-       <div id="city-search" class="search transition-1">
-           <input type="text" id="city-input" placeholder="città,zona o indirizzo..." style="    font-size: 2.7vh;padding: 1vh;width: 90%;"/>
-       </div>
-       <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
-       <div id="price-search" class="search transition-1">
-           <input type="range" min="10" max="1000" value="10" step="10" onchange="rangevalue.value=value" />
-<output id="rangevalue">10</output>
-       </div>
-       <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
-       <div id="cat-search" class="search transition-1">
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Casa</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Tempo libero</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Moda</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Mangiare e bere</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Elettronica</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Bellezza</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Cartoleria</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Salute</div>
-           <div class="category transition-1" onclick="this.classList.toggle('select')">Animali</div>
-       </div>
-       <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina per</div>
-       <div id="ordina-search" class="search transition-1">
-           <label>
-    <select>
-        <option selected>...</option>
-        <option>Prezzo crescente</option>
-        <option>Prezzo decrescente</option>
-        <option>Popolarità</option>
-        <option>Vicinanza</option>
-        <option>Percentuale di sconto</option>
-    </select>
-</label>
-       </div>
+<body>
+<!--SVG syntax--> 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="150%" viewBox="0 0 1 1" preserveAspectRatio="none">
+<linearGradient id="g485" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop stop-color="#0000FF" offset="0"/><stop stop-color="#FF5270" offset="0.74">
+</stop>
+</linearGradient>
+<rect x="0" y="0" width="1" height="1" fill="url(#g485)" />
+</svg>
+<div class="logo-bar">
+   <div class="logo-container">
+    <img class="logo" src="img/logo-white.png"/>
    </div>
-    <div class="products-container">
-        <div id="thumb-wrap"> 
-        <!--div id="thumb-container" onclick="addProduct('Massaggi')">
-          <div class="thumb-dummy"></div> 
-          <div class="thumb-product">
-          <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/>
-                  <div id="fbb" class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
-                  </div>
-                  <div class="description"><b>Massaggi</b><br/><i>by La Scarpa di Aladino</i><br/>In un accogliente centro nella città di Milano</div>
-                  <div class="price">€300 da €<span style="color:orange">200</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:33%;">33%</div>
-              </div>
-          </div></div> 
-          <div class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/bici.jpg');" onclick="openProduct(event,this)" id="openProd" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add" onclick="addProduct()"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                  <div class="description"><b>Bicicletta</b><br/>Una elegante bicicletta da città</div>
-                  <div class="price">€300 da €<span style="color:orange">200</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Brescia</div>
-                  <div class="product-discount" style="width:33%">33%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Taxi')"> 
-          <div class="thumb-dummy"></div> 
-          <div class="thumb-product">
-          <div style="background-image: url('../img/products/autista.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                <div class="description"><b>Autista</b><br/>Servizio auto nella città di Milano</div>
-                  <div class="price">€150 da €<span style="color:orange">50</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:66%">66%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Tende')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/tende.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                  <div class="description"><b>Tende</b><br/>Raffinate tende da casa in diversi colori</div>
-                  <div class="price">€200 da €<span style="color:orange">180</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Bergamo</div>
-                  <div class="product-discount" style="width:10%;min-width:50px">10%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Shirt')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/maglia.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Carnate</div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Cavo')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/cavo.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Abbiategrasso</div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Palestra')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/products/palestra.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:50%;">50%</div>
-              </div>
-          </div></div> 
-        </div>
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city"></div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city"></div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div>-->
-      </div>
-    </div>
 </div>
-<div id="product-page-target" class="products-page-main hidden">
-   <div class="goback" onclick="closeProduct()"><img src="../img/x.png" class="ics"/></div>
-    <div class="product-title-bar">
-        <div class="product-title"></div>
-        <div class="product-subtitle"></div>
-    </div>
-    <div class="product-info-main">
-    <div class="fixer-container">   
-       <div class="product-left-container">
-        <div class="product-photos"><div class="main-photo" style="background: url('../img/products/parrucchiera.jpg');background-size:cover"></div><div class="other-photo">
-            
-        </div></div>
-           <div class="product-description"><span style="font-size:2.5vh;"></span></div>
-    </div><div class="product-right-container">
-    <div class="product-buy-container">
-        <div class="buy-element text">Taglio + Shampoo + Tinte naturali</div>
-        <div class="buy-element text">40€</div>
-        <div class="buy-element"><img src="../img/buy-button.png" class="buy-button"/></div>
-        <div class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div>
-        <div class="buy-element"><div class="product-values">opzione 1</div><div class="product-values">opzione 2</div><div class="product-values">opzione 3</div></div>
-    </div>
-    <div class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div>
-    </div>
-    </div>
+<div class="emporyoum-bar">
+   <div class="emporyoum-container">
+    <img class="emporyoum" src="img/emporyoum-landing.png"/>
+   </div>
 </div>
-<div id="products-cart-target" style="display:none"><!--
-<div class="cart-infos">
-    <div class="cart-summary">Items in cart</div>
-    <div class="cart-summary">Sub total</div>
-    <div class="cart-summary">Shipping</div>
-    <div class="cart-summary">Tax</div>
-    <div class="cart-summary"><b>Total</b></div>
+<div class="subtitle-bar">
+   <div class="subtitle-container">
+    <i>the hint marketplace</i>
+   </div>
 </div>
-<div class="cart-infos-values">
-    <div class="cart-summary qt-items"></div>
-    <div class="cart-summary">€55,00</div>
-    <div class="cart-summary">€0.00</div>
-    <div class="cart-summary">€1000,00</div>
-    <div class="cart-summary"><b>1055,00</b></div>
+<div class="continue-bar">
+   <div class="continue-container">
+    <button class="continue" onclick="location.href='home.html';">continue</button>
+   </div>
 </div>
-<div class="cart-items-container">
-   <div class="object-container">
-    <div class="cart-item-image" style="background: url('../img/products/massage.jpg');background-size:cover">
-        <div class="cart-add-item"><img class="cart-add-icon buttoncart" src="../img/more.png"/></div>
-        <div class="cart-remove-item"><img class="cart-remove-icon buttoncart" src="../img/less.png"/></div>
-    </div>
-<div class="qt-name"><div class="cart-item-qt">2</div><div class="cart-item-name">Cinese che piange</div></div>
-</div>
-</div>
-<div id="pattern"><b>check out now</b></div>--></div>
-<div id="cart-data" style="display:none"></div>
 </body></html>
