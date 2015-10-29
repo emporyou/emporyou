@@ -307,6 +307,10 @@ function tryDiscount(value){
     window.lastSaving=discount;
     var total=price-discount; console.log(total+' is total');
     window.lastPrice=total;
+    window.lastTitle=document.getElementById('vaucher-title').value;
+    window.lastVendor=document.getElementById('vaucher-vendor').value;
+    window.lastDescription=document.getElementById('vaucher-description').value;
+    window.lastValue=document.getElementById('vaucher-value').value;
     document.getElementById('voucher-price').innerHTML=Math.floor(total*100)/100;    
 }
 
@@ -351,22 +355,15 @@ tpl=`
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="
-window.couponData={
-    'title':'%title',
-    'subtitle':'%subtitle',
-    'description':'description',
-    'vendor':'vendor',
-    'price':`+lastPrice+`,
-    'discount':`+lastDiscount+`,
-    'saving':`+lastSaving+`,
-    'image':`+productImageUrl+`
-};document.getElementById('JSONdata').value=JSON.stringify(couponData);console.log(couponData);return true;">
+document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
 <input type="hidden" id="JSONdata" value="%title" name="title" />
-<div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><div class="testo"  id="voucher-title">%title</div><br/></div>
-<div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><div class="testo"  id="voucher-vendor">%vendor</div><br/></div>
-<div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><div  class="testo" id="voucher-value">%price</div><div> €</div><br/></div>
+<div class="cont" id="prod-cont"><div class="text-vau" id="prod">Prodotto: </div><textarea class="testo" value="%title"  id="voucher-title">%title</textarea><br/></div>
+<div class="cont" id="subt-cont"><div class="text-vau" id="subt">Sottotitolo: </div><textarea class="testo" value="%pageTitle"  id="voucher-subtitle"> </textarea><br/></div>
+<div class="cont" id="desc-cont"><div class="text-vau" id="desc">Descrizione: </div><textarea class="testo" value="%description"  id="voucher-description"> </textarea><br/></div>
+<div class="cont" id="marc-cont"><div class="text-vau" id="marc">Marca: </div><textarea class="testo" value="%vendor"  id="voucher-vendor"> </textarea><br/></div>
+<div class="cont" id="valo-cont"><div class="text-vau" id="valo">Valore: </div><textarea  class="testo" value="%price" id="voucher-value"> </textarea><div> €</div><br/></div>
 <div class="cont" id="scon-cont"><div class="text-vau" id="scon">Sconto: </div><textarea style="height:20px;" id="voucher-discount" value="0"  onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};"> </textarea><div>%</div><br/></div>
-<div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo"  id="voucher-price">%price</div></div>
+<div class="cont" id="prez-cont"><div class="text-vau" id="prez">Prezzo finale: </div><div class="testo" id="voucher-price">%price</div></div>
 <input type="submit" value="Send Coupon"/>
 </form></html>
 </rowtype>
@@ -382,4 +379,16 @@ position:absolute;width:70%;height:0;padding-bottom:35%;top:10%;left:15%;backgro
 document.body.appendChild(g);
 setTimeout("window.price=document.getElementById('voucher-value').innerHTML;window.productImageUrl=document.getElementsByClassName('img-responsive')[0].src;",1000);
 ooo.syncrender('voucher-target',xtpl,prodXML);
-
+function makeCoupon(){
+    window.couponData={
+    'title':lastTitle,
+    'subtitle':lastSubtitle,
+    'description':lastDescription,
+    'vendor':lastVendor,
+    'valore':lastValue,
+    'price':lastPrice,
+    'discount':lastDiscount,
+    'saving':lastSaving,
+    'image':productImageUrl
+};
+}
