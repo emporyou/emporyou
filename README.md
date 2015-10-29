@@ -1,5 +1,7 @@
 # emporyou
 Coupon marketplace with connectors.[reaction,magento...]<br/>
+Multiple reactioncommerce instances connected to a main frontend</br>
+Multitenants marketplace</br>
 <br/>
 TO INSTALL [FROM SSH][AUTOMATICALLY REBOOTS AT THE END]<br/>
 Starting from centos webmin on vultr [requires:yum, curl, git.]:<br/>
