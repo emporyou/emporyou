@@ -20,7 +20,7 @@ var FACEBOOK_APP_ID='460219550850496';var FACEBOOK_APP_SECRET='92c6695c348098685
 var GOOGLE_CLIENT_ID='1090089087428-k638posl6k8nkgl140bj4ebecrfhmopo.apps.googleusercontent.com';var GOOGLE_CLIENT_SECRET='iejkVQ8FcjXguhQwzgcANM5T';
 var GOOGLE_API_SCOPE = ['profile','email'];
 var SHOPIFY_SHOP_SLUG /*e.g. my-shop-name.myshopify.com ... the `my-shop-name` part*/
-var SHOPIFY_CLIENT_ID='';
+var SHOPIFY_CLIENT_ID=''; 
 var SHOPIFY_CLIENT_SECRET='';
 
 //---------------------------------------------------------------------------------------------------
