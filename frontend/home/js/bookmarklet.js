@@ -349,7 +349,7 @@ tpl=`
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <variable tagname="vendor" substitution="%vendor"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<html><form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="
+<html><form action="http://emporyou.com/home/postback" method="post" target="_blank"  onsubmit="
 window.couponData={
     'title':'%title',
     'subtitle':'%subtitle',
