@@ -11,8 +11,8 @@ app.use(passport.session());
 //APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
-//var HOST='http://emporyou.com';
-var HOST='http://localhost:1024';
+var HOST='http://emporyou.com';
+//var HOST='http://localhost:1024';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
