@@ -174,7 +174,7 @@ app.all('/add_deal',function(req,res){
   deal._id=new ObjectID();
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').insert(deal,function(err){
-			  res.setEncoding('utf8');res.set('Content-Type', 'application/json');res.end(deal);
+			  res.set('Content-Type', 'application/json; charset=utf-8');res.end(deal);
 		});
 	});  
 });
