@@ -162,6 +162,7 @@ textarea{
 }
 
 #dotted-cont {
+    z-index:-1;
     position:absolute;
     background-color:transparent;
     border-left:2px dotted black;
@@ -222,18 +223,18 @@ textarea{
     height:5%;
     top:45%;
     left:28%;
-        border-bottom:2px dotted black;
+        /*border-bottom:2px dotted black;*/
 }
 
-#qr-code {
+#map-container {
     position:absolute;
     background-color:#0D2D4D;
     opacity:0.5;
-    width:15%;
+    width:51.3%;
     height:0;
     padding-bottom:15%;
-    top:39%;
-    left:7%
+    top:45.5%;
+    left:30%
 }
 
 #footer {
@@ -242,9 +243,12 @@ textarea{
     left:5%;
     height:40%;
     top:58%;
-    opacity:0.5;
-    background-image:url('../../admin/footer.png');
+    background-color:#ccc;
     background-size:100%;
+    padding:5%;
+    box-sizing: border-box;
+    font-family:'open sans';
+    font-size:2vh
 }
 
 #svgg {
@@ -267,4 +271,72 @@ textarea{
 
 #logo-image-coupon {
     filter:brightness(0)
+}
+
+#map-searchbox {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:0.5;
+    width:18.3%;
+    height:4%;
+    top:45.5%;
+    left:10%
+}
+
+#map-textarea {
+    position:absolute;
+    width:80%;
+    left:7.5%;
+    top:10%;
+    height:60%
+}
+
+#vaucher-text {
+    position:absolute;
+    background-color:TRANSPARENT;
+    opacity:1;
+    width:31.5%;
+    left:5%;
+    height:4%;
+    top:18.5%;
+    color:orange;
+    font-size:8vh;
+    text-align:center;
+    font-family:'open sans';
+}
+
+#image-cont {
+    position:absolute;
+    background-color:red;
+    opacity:1;
+    width:15%;
+    left:78%;
+    height:0;
+    padding-bottom:18%;
+    top:20%
+}
+
+#image-target {
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+    background-color:blue;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#upload-image {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:20%;
+}
+#upload-image:hover{
+    cursor:pointer;
+}
+
+
+#textarea-sottotitolo {
+    
 }

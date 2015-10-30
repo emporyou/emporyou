@@ -23,6 +23,7 @@
 <link rel="stylesheet" type="text/css" href="../home/css/digital.css">
 <link rel="stylesheet" type="text/css" href="../home/css/coupon.css">
 <script src="../home/js/main.js"></script>
+<script src="http://www.tipozerozero.com/ooox/ooox.js"></script>
 <script src="../home/js/mainh.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
 <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
@@ -33,41 +34,32 @@
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
 <script>
-myappinit=function(){
-
+function clearContents(element) {
+  element.value = '';
+}
+function makeCoupon(){
+    window.lastTitle=document.getElementById('textarea-nomeprodotto').value;
+    window.lastSubtitle=document.getElementById('textarea-varianteprodotto').value
+    window.lastDescription=document.getElementById('textarea-descrizione').value;
+    window.lastVendor=document.getElementById('textarea-nomevenditore').value;
+    window.lastValue=document.getElementById('textarea-valore').value;
+    window.lastPrice=document.getElementById('target-totale').value;//funzione
+    window.lastDiscount=document.getElementById('textarea-sconto').value;
+    window.lastSaving=//todo funzione calcolo risparmio;
+    window.productImageUrl=//todo upload immagine;
+    window.couponData={
+    'title':lastTitle,
+    'subtitle':lastSubtitle,
+    'description':lastDescription,
+    'vendor':lastVendor,
+    'valore':lastValue,
+    'price':lastPrice,
+    'discount':lastDiscount,
+    'saving':lastSaving,
+    'image':productImageUrl
+};
 }
 </script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Mese', 'Vendite'],
-          ['Jan',  240],
-          ['Feb',  230],
-          ['Mar',  370],
-          ['Apr',  768],
-            ['May', 600],
-            ['Jun',  1000],
-          ['Jul',  990],
-          ['Aug',  220],
-          ['Sep',  340],
-            ['Oct',  540],
-          ['Nov',  1170],
-          ['Dec',  1670]
-        ]);
-
-        var options = {
-          title: 'Vendite',
-          hAxis: {title: 'Mese',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
-
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
 </head>
 <body onload="myappinit();">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
@@ -80,23 +72,41 @@ myappinit=function(){
    <img class="logo-coupon" src="../home/img/logo-text-black.png"/>
    <img class="icon-coupon" src="../home/img/logo-black.png"/>
    <div id="blue-cont"></div>
+   <div id="image-cont">
+      <div id="image-target"></div> 
+      <button id="upload-image">Carica immagine</button>
+   </div>
    <div id="dotted-cont"></div>
    <div id="blue-cont-head"></div>
-   <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div><textarea class="info-textarea" id="textarea-nomeprodotto">Bicicletta</textarea>
-   <div class="text-info" id="text-varianteprodotto">Variante prodotto: </div><textarea class="info-textarea" id="textarea-varianteprodotto">Rossa</textarea>
-   <div class="text-info" id="text-valore">Valore: €</div><textarea class="info-textarea" id="textarea-valore">100</textarea>
-   <div class="text-info" id="text-sconto">Sconto: %</div><textarea class="info-textarea" id="textarea-sconto">10</textarea>
-   <div class="text-info" id="text-totale">Totale: <div id="target-totale">90€</div></div>
-   <div class="text-info" id="text-nomevenditore">Nome venditore: </div><textarea class="info-textarea" id="textarea-nomevenditore">Mondobici</textarea>
-   <div class="text-info" id="text-indirizzo">Indirizzo venditore: </div><textarea class="info-textarea" id="textarea-indirizzo">Via Trenno 28
-Milano, 20151 - ITALY</textarea>
- <div id="qr-code"></div>
+   <div id="vaucher-text">VAUCHER</div>
+   <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div>
+   <div class="text-info" id="text-varianteprodotto">Altre info: </div>
+   <div class="text-info" id="text-valore">Valore: €</div>
+   <div class="text-info" id="text-sconto">Sconto: %</div>
+   <div class="text-info" id="text-totale">Totale: <div id="target-totale">90</div>€</div>
+   <div class="text-info" id="text-nomevenditore">Nome venditore: </div>
+   <div class="text-info" id="text-indirizzo">Descrizione Prodotto:  </div>
+ <div id="map-container"></div>
+ <div id="map-searchbox"><textarea id="map-textarea"></textarea></div>
   <div id="condizioni"></div>
-  <div id="footer"></div>
+  <form action="http://emporyou.com/postback" method="post" target="_blank"  onsubmit="makeCoupon();
+document.getElementById('JSONdata').value=JSON.stringify(couponData);return true;">
+<input type="hidden" id="JSONdata" value="%title" name="product" />
+  <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
+Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
+ <textarea class="info-textarea" id="textarea-nomevenditore">Mondobici</textarea>
+ <textarea class="info-textarea" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
+ <textarea class="info-textarea" id="textarea-valore">100</textarea>
+ <textarea class="info-textarea" id="textarea-varianteprodotto">Elegante bici da città</textarea>
+ <textarea class="info-textarea" id="textarea-nomeprodotto">Bicicletta</textarea>
+ <input type="submit" value="Send Coupon" style="display:line-block;"/>
+</form>
+  <div id="footer"><h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
+Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
   <div id="svgcont">
 <svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
             <path id="Selezione"
-        fill="orange" stroke="transparent" stroke-width="1" fill-opacity="0.5"
+        fill="yellow" stroke="transparent" stroke-width="1" fill-opacity="0.5"
         d="M 362.00,3.00
            C 362.00,3.00 361.00,4.00 361.00,4.00
              361.00,4.00 361.00,3.00 361.00,3.00
