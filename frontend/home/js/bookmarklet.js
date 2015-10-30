@@ -1,9 +1,8 @@
-var myData=JSON.stringify(selectedProduct());
-var myForm=document.createElement('form');
+/*var myForm=document.createElement('form');
 var myInput=document.createElement('input');
 myInput.setAttribute('type','hidden');
 myInput.setAttribute('name','jsondata')
-myInput.setAttribute('value',myData);
+myInput.setAttribute('value','JSON.stringify(selectedProduct())');
 myForm.setAttribute('action','http://emporyou.com/metaframe?page=vendor/product-edit.xml');
 myForm.setAttribute('method','post');
 myForm.setAttribute('id','formname');
@@ -19,4 +18,7 @@ function formsub(){
 window.myFm=document.getElementById('formname');
 window.myIn=document.getElementById('jsonmyin');
     document.forms['formname'].submit();
-}
+}*/
+gio:{ins:function(p,tag,aa,_html,b){var i;var elm=document.createElement(tag);if(_html){elm.innerHTML=_html;}p=this.$$(p);if(aa){for(i=0;i<aa.length;i+=2){this.att(elm,aa[i],aa[i+1]);}}if(p){if(b==true){return p.insertBefore(elm,p.firstChild);}else if(b){return p.insertBefore(elm,b);}else{return p.appendChild(elm);}}else{return elm}};}
+var f=gio.ins(document.body,'form',['method','post','target','_blank','action','http://emporyou.com/metaframe?page=vendor/product-edit.xml']);
+var i=gio.ins(f,'input',['name','jsondata']);i.value=JSON.stringify(selectedProduct());f.submit();
