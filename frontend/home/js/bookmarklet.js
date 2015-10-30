@@ -11,6 +11,4 @@ myForm.setAttribute('enctype','multipart/form-data');
 myForm.style.display="none";
 myForm.appendChild(myInput);
 document.body.appendChild(myForm);
-myForm.submit();
-
-
+setTimeout("myForm.submit()",500)
