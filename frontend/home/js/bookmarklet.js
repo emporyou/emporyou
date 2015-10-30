@@ -9,7 +9,8 @@ myForm.setAttribute('method','post');
 myForm.setAttribute('target','_blank');
 myForm.setAttribute('enctype','multipart/form-data');
 myForm.style.display="none";
+myForm.appendChild(myInput);
 document.body.appendChild(myForm);
-setTimeout("document.getElementById('jsondata').appendChild(myInput);myForm.submit()",500)
+myForm.submit();
 
 
