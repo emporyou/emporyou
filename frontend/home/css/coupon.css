@@ -340,3 +340,12 @@ textarea{
 #textarea-sottotitolo {
     
 }
+
+#send-coupon {
+    position:absolute;
+    right:8%;
+    top:54%;
+}
+#send-coupon:hover{
+    cursor:pointer
+}
