@@ -125,6 +125,7 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  var json=req.body.jsondata;
 	  if(!json){json=req.query.jsondata}
 	  console.log(json);
+	  if(json){console.log('undefine= not true')}
 	  fs.createReadStream(fn)
 		.pipe(replaceStream('%jsondata',json))
 		.pipe(res);
