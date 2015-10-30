@@ -13,5 +13,7 @@ myForm.appendChild(myInput);
 document.body.appendChild(myForm);
 setTimeout(formsub,500);
 function formsub(){
-    document.forms["jsondata"].submit()
+    var form = document.getElementById("jsondata");
+    console.log(form)
+    document.form.submit()
 }
