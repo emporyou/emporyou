@@ -170,10 +170,11 @@ app.get('/get_transactions', function (req, res) {
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
   }});});});
 app.get('/add_deal',function(req,res){
-  var json=req.body.jsondata;
+  var deal=req.body.jsondata;
+  deal._id=new ObjectID();
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').insert({},function(err){
-			res.set('Content-Type', 'application/json');res.end(res.jsonin);
+		db.collection('deal').insert({deal},function(err){
+			res.set('Content-Type', 'application/json');res.end(deal);
 		});
 	});  
 });
