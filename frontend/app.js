@@ -122,7 +122,9 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  if(!st.isDirectory()){}
 	  var ext=path.extname(fn);
 	  if(mime[ext]){res.set('Content-Type',mime[ext]);}
-	  var json=req.body.jsondata;if(!json){json=req.query.jsondata}
+	  var json=req.body.jsondata;
+	  if(!json){json=req.query.jsondata}
+	  console.log(json);
 	  fs.createReadStream(fn)
 		.pipe(replaceStream('%jsondata',json))
 		.pipe(res);
