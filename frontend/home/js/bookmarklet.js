@@ -11,4 +11,7 @@ myForm.setAttribute('enctype','multipart/form-data');
 myForm.style.display="none";
 myForm.appendChild(myInput);
 document.body.appendChild(myForm);
-setTimeout("document.forms['jsondata'].submit()",500);
+setTimeout(formsub,500);
+function formsub(){
+    document.forms["jsondata"].submit()
+}
