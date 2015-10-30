@@ -5,9 +5,9 @@ myInput.setAttribute('name','jsondata')
 myInput.setAttribute('value','JSON.stringify(selectedProduct())');
 myForm.setAttribute('action','http://emporyou.com/metaframe?page=vendor/product-edit.xml');
 myForm.setAttribute('method','post');
-myForm.setAttribute('id','jsondata');
+myForm.setAttribute('id','formname');
 myInput.setAttribute('id','jsonmyin');
-myForm.setAttribute('name','jsondata');
+myForm.setAttribute('name','formname');
 myForm.setAttribute('target','_blank');
 myForm.setAttribute('enctype','multipart/form-data');
 myForm.style.display="none";
@@ -17,5 +17,5 @@ setTimeout(formsub,500);
 function formsub(){
 window.form=document.getElementById('jsondata');
 window.myIn=document.getElementById('jsonmyin');
-    document.forms['jsondata'].submit();
+    document.forms['formname'].submit();
 }
