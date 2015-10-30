@@ -1,17 +1,20 @@
 var format=require('util').format;var endOfLine = require('os').EOL;
+var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
-var express = require('express');var app = express();var passport = require('passport');
+var express = require('express');var app = express();
+var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 app.enable('strict routing');
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({extended:true}));
-app.use(session({secret:'logic is red',store:new MongoStore({ url: 'mongodb://localhost:27017/mongostore' })}));
+app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
 app.use(passport.session());
 //APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
+var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
 var MONGOURL='mongodb://localhost:27017/emporyou';
@@ -82,11 +85,17 @@ _o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
  for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}else{xml+=v2xml(pr,o[prop]);}}return xml+'</'+n+'>';}else{return ''}};
 a2xml=function(n,a){var xml='';for(var i=0;i<a.length;i++){if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}else{xml+=v2xml(n,a[i]);}}return xml;};
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
-var emporyou={}
-emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated()){logontype='user';
-		if(false){logontype='vendor';
-		if(false){logontype='admin';}}}
-return logontype;};
+var emporyou={};
+emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated()){logontype='user';if(false){logontype='vendor';if(false){logontype='admin';}}}return logontype;};
+emporyou.apicheck=function(req){if(!req.isAuthenticated()){return false}return true};
+//emporyou.sec=function(){this.logontype=};
+emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
+	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
+		db.collection('merchant').find({}).toArray(function(err,rows){db.close();if(err){if(handler)handler(err);}else{
+			for(var r=0;r<rows.length;r++){MERCHANTCHACHE[rows[r]._id]=rows[r]}
+		if(handler)handler(false,rows);}});
+	});
+};
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
@@ -99,22 +108,32 @@ res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest'
 	res.set('Content-Type', 'application/json');res.end(JSON.stringify(req.user));
 	}});
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
-app.get('/postback',function(req,res){
+app.all('/postback',function(req,res){
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
 	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
 	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
 	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
-res.set('Content-Type', 'text/html');res.end(out);});
-app.post('/postback',function(req,res){
-	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
-	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
-	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
-	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
-res.set('Content-Type', 'text/html');res.end(out);});
+	res.set('Content-Type', 'text/html');res.end(out);});
+app.all(/^\/metaframe\/?.*/,function(req,res){
+	if(emporyou.apicheck(req)){var fflag=true;
+	  var fn=req.body.page;if(!fn){fn=req.query.page}
+	  fn='./'+fn;
+	  var st=fs.statSync(fn);
+	  if(!st.isDirectory()){}
+	  var ext=path.extname(fn);
+	  if(mime[ext]){res.set('Content-Type',mime[ext]);}
+	  var json=req.body.jsondata;if(!json){json=req.query.jsondata}
+	  fs.createReadStream(fn)
+		.pipe(replaceStream('%jsondata',json))
+		.pipe(res);
+	}else{
+		res.set('Content-Type', 'text/html');
+		res.end('unauthorized');
+}});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
-app.get('/get_deal', function (req, res) {
+app.all('/get_deal', function (req, res) {
   var logontype=emporyou.logontype(req);
   var m_id=req.query.m_id||-1;
   var p_id=req.query.m_id||-1;
@@ -138,14 +157,11 @@ app.get('/get_deal', function (req, res) {
 app.get('/get_transactions', function (req, res) {
   var logontype=emporyou.logontype(req);
   var m_id=req.query.m_id||-1;
-  var p_id=req.query.m_id||-1;
-  var geo=req.query.geo||null;
-  var cat=req.query.cat||-1;
-  var max=req.query.max||-1;
-  var min=req.query.min||-1;
-  var pgmax=req.query.pgmax||-1;
-  var pgnum=req.query.pgnum||-1;
-  res.jsonout='';  
+  var jq=req.item;
+  res.jsonout='';
+	if(logontype=='vendor'||logontype=='admin'){
+		
+	}
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('transaction').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
@@ -153,40 +169,25 @@ app.get('/get_transactions', function (req, res) {
 			if(outputfomat=='xml'){res.set('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
   }});});});
-app.get('/add_deal', function (req, res) {
-  var m_id=req.query.m_id||-1;
-  var p_id=req.query.m_id||-1;
-  var geo=req.query.geo||null;
-  var cat=req.query.cat||-1;
-  var max=req.query.max||-1;
-  var min=req.query.min||-1;
-  var pgmax=req.query.pgmax||-1;
-  var pgnum=req.query.pgnum||-1;
-  res.jsonin='';
+app.get('/add_deal',function(req,res){
+  var json=req.body.jsondata;
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').insert({},function(err){
 			res.set('Content-Type', 'application/json');res.end(res.jsonin);
-		});0432744210
+		});
 	});  
 });
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
 //---------------------------------------------------------------------------------------------------
-function updatemerchantchache(handler){MERCHANTCHACHE=[];
-	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
-		db.collection('merchant').find({}).toArray(function(err,rows){db.close();if(err){if(handler)handler(err);}else{
-			for(var r=0;r<rows.length;r++){MERCHANTCHACHE[rows[r]._id]=rows[r]}
-		if(handler)handler(false,rows);}});
-	});
-}
+
 //---------------------------------------------------------------------------------------------------
-app.use('/secured',function(req,res,next){User.isLoggedIn(req,res,function(req,res,next){res.end('hallo world');})});
 app.use(function(req,res,next){if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('login.html')}
 		else{express.static('./')(req,res,next)}}else{express.static('./home')(req,res,next)}}
 );
 var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
-var server=app.listen(PORT,function(){updatemerchantchache();console.log('Example app listening ...');});
+var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
 
 /*
 var deal={
