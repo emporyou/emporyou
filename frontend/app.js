@@ -183,10 +183,10 @@ servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-pro
 //---------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------
-app.use(function(req,res,next){if(req.originalUrl.indexOf('/admin')==0){
-	   if(!req.isAuthenticated()){res.redirect('login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/vendor')==0){
-	   if(!req.isAuthenticated()){res.redirect('login.html')}else{express.static('./')(req,res,next)}}else{express.static('./home')(req,res,next)}}
+app.use(function(req,res,next){
+	        if(req.originalUrl.indexOf('/admin' )==0){if(!req.isAuthenticated()){res.redirect('login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/vendor')==0){console.log('gio');if(!req.isAuthenticated()){res.redirect('login.html')}else{express.static('./')(req,res,next)}}
+		   else{express.static('./home')(req,res,next)}}
 );
 var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
