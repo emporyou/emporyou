@@ -5,7 +5,7 @@ myInput.setAttribute('id','jsondata');
 myInput.setAttribute('name','jsondata')
 myInput.setAttribute('value','JSON.stringify(selectedProduct())');
 myInput.setAttribute('name','jsondata');
-myForm.setAttribute('action','http://emporyou.com/metaframe?page=vendor/product_edit.txt');
+myForm.setAttribute('action','http://emporyou.com/metaframe?page=vendor/product_edit.xml');
 myForm.setAttribute('method','post');
 myForm.setAttribute('target','_blank');
 myForm.setAttribute('enctype','multipart/form-data');
