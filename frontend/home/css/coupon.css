@@ -1,0 +1,270 @@
+
+#form-coupon-container {
+    width:85%;
+    height:auto;
+    position:absolute;
+    top:100px;
+    left:7.5%;
+    min-width:500px;
+    min-height:300px;
+    border:2px solid #0D2D4D
+}
+
+#form-coupon-container {
+}
+
+#title-coupon {
+    text-align:center;
+    width:100%;
+    height:50px;
+    line-height:50px;
+    font-family:'Open sans';
+    font-size:4vh;
+    font-weight:bold;
+}
+
+#image-coupon {
+    width:100%;
+    opacity:0;
+}
+
+#text-valore {
+    position:absolute;
+    right:45%;
+    top:25%;
+}
+
+.text-info {
+    color:white;
+    font-family:'open sans';
+    font-size:2vh;
+    position:absolute;
+}
+.text-info.main{
+ font-size:2vh   
+}
+
+#textarea-valore {
+    position:absolute;
+    top:25.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+.info-textarea {
+    overflow:hidden;
+    border-radius:4px;
+    background-color:#cdcdcd;
+    border:none;
+    color:black;
+    font-family:'Open sans';
+        font-size:1.8vh;
+    position:Absolute;
+}
+
+
+#text-sconto {
+    position:absolute;
+    right:44.5%;
+    top:27%;
+}
+
+#textarea-sconto {
+    position:absolute;
+    top:27.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+body {
+    min-width:500px;
+    min-height:300px;
+}
+
+.fontlogo {
+    
+}
+
+.text-logo {
+    left:42%
+}
+
+#text-totale {
+    position:absolute;
+    right:42.5%;
+    top:29%;
+}
+
+#target-totale {
+    display:inline-block;
+    color:orange;
+}
+textarea{
+ resize: none;   
+}
+
+#text-nomeprodotto {
+    position:absolute;
+    right:47%;
+    top:20%;
+}
+
+#textarea-nomeprodotto {
+    position:absolute;
+    top:20.1%;
+    left:56%;
+        height:2.2vh;
+    width:20%
+}
+
+#blue-cont {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:1;
+    width:90%;
+    left:5%;
+    height:18.6%;
+    top:18.4%
+}
+
+.logo-coupon {
+    position:absolute;
+    width:20%;
+    top:16%;
+    left:11%;
+    opacity:0.8;
+}
+
+#blue-cont-head {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:1;
+    width:90%;
+    left:5%;
+    height:2%;
+    top:5.8%
+}
+
+#text-nomevenditore {
+    right:54.5%;
+    top:38%;
+    color:black;
+    font-weight:bold;
+}
+
+#textarea-nomevenditore {
+    top:38.1%;
+    left:46%;
+    height:2.2vh;
+    width:35%
+}
+
+#dotted-cont {
+    position:absolute;
+    background-color:transparent;
+    border-left:2px dotted black;
+    border-right:2px dotted black;
+    border-bottom:2px dotted black;
+    opacity:0.5;
+    width:89.7%;
+    left:5%;
+    height:49.9%;
+    top:7.4%
+}
+
+#text-indirizzo {
+   right:54.5%;
+    top:40%;
+    color:black;
+    font-weight:bold; 
+}
+
+#textarea-indirizzo {
+    top:40.1%;
+    left:46%;
+    height:4.2%;
+    width:35%
+}
+
+#text-varianteprodotto {
+    position:absolute;
+    right:47%;
+    top:22%;
+}
+
+#textarea-varianteprodotto {
+    position:absolute;
+    top:22.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+.icon-coupon {
+    position:absolute;
+    width:8%;
+    top:11%;
+    left:17%;
+    opacity:0.8;
+}
+
+#form-image-container {
+    
+}
+
+#condizioni {
+    position:absolute;
+    background-color:transparent;
+    opacity:0.5;
+    width:60%;
+    height:5%;
+    top:45%;
+    left:28%;
+        border-bottom:2px dotted black;
+}
+
+#qr-code {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:0.5;
+    width:15%;
+    height:0;
+    padding-bottom:15%;
+    top:39%;
+    left:7%
+}
+
+#footer {
+    position:Absolute;
+    width:90%;
+    left:5%;
+    height:40%;
+    top:58%;
+    opacity:0.5;
+    background-image:url('../../admin/footer.png');
+    background-size:100%;
+}
+
+#svgg {
+    fill:black;float:left;
+}
+
+#svgcont {
+    position:absolute;
+    width:38.5%;
+    top:25%;
+    background-color:transparent;
+    opacity:0.5;
+    height:12%;
+    left:5%
+}
+
+#logo-text-coupon {
+    filter: brightness(0)
+}
+
+#logo-image-coupon {
+    filter:brightness(0)
+}
