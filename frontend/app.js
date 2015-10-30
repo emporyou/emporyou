@@ -311,7 +311,8 @@ var transaction={
 // });});}});
 
 
-var f=ooo.ins(document.body,'form',['method','post','target','_blank','action','http://emporyou.com/metaframe?page=vendor/product-edit.xml']);
-var i=ooo.ins(f,i,['name','jsondata']);
-i.value="jSON";
-f.submit(JSON.stringify(selectedProduct()));
+//var f=ooo.ins(document.body,'form',['method','post','target','_blank','action','http://emporyou.com/metaframe?page=vendor/product-edit.xml']);
+//var i=ooo.ins(f,i,['name','jsondata']);i.value=JSON.stringify(selectedProduct());f.submit();
+
+
+
