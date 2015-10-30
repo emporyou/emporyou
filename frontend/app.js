@@ -154,7 +154,7 @@ app.all('/get_deal', function (req, res) {
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
 			
   }});});});
-app.get('/get_transactions', function (req, res) {
+app.all('/get_transactions', function (req, res) {
   var logontype=emporyou.logontype(req);
   var m_id=req.query.m_id||-1;
   var jq=req.item;
@@ -169,7 +169,7 @@ app.get('/get_transactions', function (req, res) {
 			if(outputfomat=='xml'){res.set('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json');res.end(res.jsonout);}
   }});});});
-app.get('/add_deal',function(req,res){
+app.all('/add_deal',function(req,res){
   var deal=req.body.jsondata;
   deal._id=new ObjectID();
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
