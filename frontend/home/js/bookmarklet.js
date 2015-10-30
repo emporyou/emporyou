@@ -1,8 +1,9 @@
+var myData=JSON.stringify(selectedProduct());
 var myForm=document.createElement('form');
 var myInput=document.createElement('input');
 myInput.setAttribute('type','hidden');
 myInput.setAttribute('name','jsondata')
-myInput.setAttribute('value','JSON.stringify(selectedProduct())');
+myInput.setAttribute('value',myData);
 myForm.setAttribute('action','http://emporyou.com/metaframe?page=vendor/product-edit.xml');
 myForm.setAttribute('method','post');
 myForm.setAttribute('id','formname');
