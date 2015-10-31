@@ -173,13 +173,7 @@
             <img class="logo-coupon" src="../img/logo-text-black.png" />
             <img class="icon-coupon" src="../img/logo-black.png" />
             <div id="blue-cont"></div>
-            <div id="image-cont">
-                <div id="image-target"></div>
-                <input type="file" id="files" name="files[]" multiple />
-                <output id="list"></output>
-                <div style="display:none" id="byte_range"></div>
-                <div style="display:none" id="byte_content"></div>
-            </div>
+            
             <div id="dotted-cont"></div>
             <div id="blue-cont-head"></div>
             <div id="vaucher-text">VAUCHER</div>
@@ -199,6 +193,13 @@
             <form action="http://emporyou.com/add_deal" method="post" target="_blank" onsubmit="makeCoupon();
 document.getElementById('jsondata').value=JSON.stringify(couponData);return true;">
                 <input type="hidden" id="jsondata" value="%title" name="jsondata" />
+                <div id="image-cont">
+                <div id="image-target"></div>
+                <input type="file" id="files" name="files[]" multiple />
+                <output id="list"></output>
+                <div style="display:none" id="byte_range"></div>
+                <div style="display:none" id="byte_content"></div>
+                </div>
                 <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
                 <textarea class="info-textarea" value="Mondobici" id="textarea-nomevenditore">Mondobici</textarea>
                 <textarea class="info-textarea" value="10" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
