@@ -307,7 +307,7 @@ textarea{
 
 #image-cont {
     position:absolute;
-    background-color:red;
+    background-color:transparent;
     opacity:1;
     width:15%;
     left:78%;
@@ -348,4 +348,20 @@ textarea{
 }
 #send-coupon:hover{
     cursor:pointer
+}
+
+#list {
+        height: 0;
+    padding-bottom: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000000;
+    background-color: transparent;
+}
+
+#files {
+        position: absolute;
+    bottom: 0%;
+    left: -60%;
+    background-color: white;
 }
