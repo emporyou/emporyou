@@ -76,12 +76,12 @@
             window.lastPrice = document.getElementById('target-totale').value;
             window.lastDiscount = document.getElementById('textarea-sconto').value;
             window.lastSaving = (lastValue / 100) * lastDiscount;
-            if (document.getElementById('image-target').style.backgroundImage) {
+           /* if (document.getElementById('image-target').style.backgroundImage) {
                 window.productImageUrl = document.getElementById('image-target').style.backgroundImage;
             } else {
                 alert('immagine mancante!');
                 return false
-            }
+            }*/
             window.couponData = {
                 'title': lastTitle,
                 'subtitle': lastSubtitle,
@@ -90,8 +90,7 @@
                 'valore': lastValue,
                 'price': lastPrice,
                 'discount': lastDiscount,
-                'saving': lastSaving,
-                'image': productImageUrl
+                'saving': lastSaving
             };
         }
 
@@ -110,13 +109,13 @@
         function handleFileSelect(evt) {
             var files = evt.target.files; // FileList object
 
-            // Loop through the FileList and render image files as thumbnails.
+           /* // Loop through the FileList and render image files as thumbnails.
             for (var i = 0, f; f = files[i]; i++) {
 
                 // Only process image files.
                 if (!f.type.match('image.*')) {
                     continue;
-                }
+                }*/
 
                 var reader = new FileReader();
 
@@ -139,7 +138,7 @@
 
         function readBlob(opt_startByte, opt_stopByte) {
             var files = document.getElementById('files').files;
-            var file = files[0];
+            var file = filesf;
             var start = parseInt(opt_startByte) || 0;
             var stop = parseInt(opt_stopByte) || file.size - 1;
 
@@ -195,7 +194,7 @@ document.getElementById('jsondata').value=JSON.stringify(couponData);return true
                 <input type="hidden" id="jsondata" value="%title" name="jsondata" />
                 <div id="image-cont">
                 <div id="image-target"></div>
-                <input type="file" id="files" name="files[]" multiple />
+                <input type="file" id="files" name="files" multiple />
                 <output id="list"></output>
                 <div style="display:none" id="byte_range"></div>
                 <div style="display:none" id="byte_content"></div>
