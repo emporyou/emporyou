@@ -76,7 +76,7 @@
             window.lastPrice = document.getElementById('target-totale').value;
             window.lastDiscount = document.getElementById('textarea-sconto').value;
             window.lastSaving = (lastValue / 100) * lastDiscount;
-            if (document.getElementById('byte-content').innerHTML != "") {
+            if (document.getElementById('byte_content').innerHTML != "") {
                 window.productImageUrl = document.getElementById('byte_content').innerHTML;
             } else if (document.getElementById('image-target').style.backgroundImage) {
                 window.productImageUrl = jsondata.imageUrl
@@ -179,6 +179,8 @@
                 <div id="image-target"></div>
                 <input type="file" id="files" name="files[]" multiple />
                 <output id="list"></output>
+                <div style="display:none" id="byte_range"></div>
+                <div style="display:none" id="byte_content"></div>
             </div>
             <div id="dotted-cont"></div>
             <div id="blue-cont-head"></div>
@@ -208,8 +210,6 @@ document.getElementById('jsondata').value=JSON.stringify(couponData);return true
                 <span class="readBytesButtons">
  <input type="submit" value="Send Coupon" id="send-coupon" style="display:line-block;"/>
       </span>
-                <div style="display:none" id="byte_range"></div>
-                <div style="display:none" id="byte_content"></div>
             </form>
             <div id="footer">
                 <h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
