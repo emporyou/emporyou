@@ -76,10 +76,8 @@
             window.lastPrice = document.getElementById('target-totale').value;
             window.lastDiscount = document.getElementById('textarea-sconto').value;
             window.lastSaving = (lastValue / 100) * lastDiscount;
-            if (document.getElementById('byte_content').innerHTML != "") {
-                window.productImageUrl = document.getElementById('byte_content').innerHTML;
-            } else if (document.getElementById('image-target').style.backgroundImage) {
-                window.productImageUrl = jsondata.imageUrl
+            if (document.getElementById('image-target').style.backgroundImage) {
+                window.productImageUrl = document.getElementById('image-target').style.backgroundImage;
             } else {
                 alert('immagine mancante!');
                 return false
