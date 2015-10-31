@@ -65,7 +65,9 @@ function makeCoupon(){
     window.lastPrice=document.getElementById('target-totale').value;
     window.lastDiscount=document.getElementById('textarea-sconto').value;
     window.lastSaving=(lastValue/100)*lastDiscount;
-    //window.productImageUrl=//todo upload immagine;
+    if(document.getElementById('byte-content').innerHTML!=""){window.productImageUrl=document.getElementById('byte-content').innerHTML;}else if{
+    window.productImageUrl=jsondata.imageUrl}else if{alert('immagine mancante!';return false)
+    }
     window.couponData={
     'title':lastTitle,
     'subtitle':lastSubtitle,
@@ -74,7 +76,8 @@ function makeCoupon(){
     'valore':lastValue,
     'price':lastPrice,
     'discount':lastDiscount,
-    'saving':lastSaving
+    'saving':lastSaving,
+    'image':productImageUrl
 };
 }
     function tryDiscount(value){
@@ -117,7 +120,36 @@ function makeCoupon(){
     }
   }
 
-  
+  function readBlob(opt_startByte, opt_stopByte) {
+
+    var file = files[0];
+    var start = parseInt(opt_startByte) || 0;
+    var stop = parseInt(opt_stopByte) || file.size - 1;
+
+    var reader = new FileReader();
+
+    // If we use onloadend, we need to check the readyState.
+    reader.onloadend = function(evt) {
+      if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+          //TODO SEND evt.target.result 
+        document.getElementById('byte_content').textContent = evt.target.result;
+        document.getElementById('byte_range').textContent = 
+            ['Read bytes: ', start + 1, ' - ', stop + 1,
+             ' of ', file.size, ' byte file'].join('');
+      }
+    };
+
+    var blob = file.slice(start, stop + 1);
+    reader.readAsBinaryString(blob);
+  }
+    
+    document.querySelector('.readBytesButtons').addEventListener('click', function(evt) {
+    if (evt.target.tagName.toLowerCase() == 'input') {
+      var startByte = evt.target.getAttribute('data-startbyte');
+      var endByte = evt.target.getAttribute('data-endbyte');
+      readBlob(startByte, endByte);
+    }
+  }, false);
 </script>
 </head>
 <body onload="myInit()">
@@ -159,7 +191,11 @@ Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
  <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
  <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
  <textarea class="info-textarea" value="Bicicletta" id="textarea-nomeprodotto">Bicicletta</textarea>
+ <span class="readBytesButtons">
  <input type="submit" value="Send Coupon" id="send-coupon" style="display:line-block;"/>
+      </span>
+      <div style="display:none" id="byte_range"></div>
+<div style="display:none"></div>
 </form>
   <div id="footer"><h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
 Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
