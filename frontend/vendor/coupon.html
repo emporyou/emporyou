@@ -35,6 +35,7 @@
 <script>
     window.jsondata=%jsondata;
     function myInit(){
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
         if(jsondata.fromReaction){
             document.getElementById('form-coupon-container').style.height="260%";
             document.getElementById('textarea-nomevenditore').value=jsondata.vendor;
@@ -115,7 +116,7 @@ function makeCoupon(){
     }
   }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  
 </script>
 </head>
 <body onload="myInit()">
