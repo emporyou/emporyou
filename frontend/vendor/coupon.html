@@ -67,9 +67,9 @@ function makeCoupon(){
     window.lastSaving=(lastValue/100)*lastDiscount;
     if(document.getElementById('byte-content').innerHTML!=""){
         window.productImageUrl=document.getElementById('byte-content').innerHTML;
-    }else if{
+    }else if(document.getElementById('image-target').style.backgroundImage){
     window.productImageUrl=jsondata.imageUrl
-    }else if{
+    }else{
         alert('immagine mancante!';return false)
     }
     window.couponData={
