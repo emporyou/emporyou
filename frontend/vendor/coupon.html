@@ -23,9 +23,8 @@
 <link rel="stylesheet" type="text/css" href="../css/digital.css">
 <link rel="stylesheet" type="text/css" href="../css/coupon.css">
 <script src="../js/main.js"></script>
-<script src="http://www.tipozerozero.com/ooox/ooox.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/metaschema/browser/master/metaschema.js"></script>
 <script src="../js/mainh.js"></script>
-<script src="http://tipozerozero.com/ooox/ooox.js"></script>
 <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
 <script src="../js/jquery.geocomplete.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
@@ -35,6 +34,19 @@
 <meta charset="utf-8"/>
 <script>
     window.jsondata=%jsondata;
+    function myInit(){
+        if(jsondata.fromReaction){
+            document.getElementById('form-coupon-container').style.height="260%";
+            document.getElementById('textarea-nomevenditore').value=jsondata.vendor;
+            document.getElementById('textarea-nomeprodotto').value=jsondata.title;
+            document.getElementById('textarea-valore').value=jsondata.variants[0].price;
+            document.getElementById('textarea-nomeprodotto').value=jsondata.title;
+            document.getElementById('textarea-indirizzo').value=jsondata.description;
+            document.getElementById('textarea-sconto').value="";
+            document.getElementById('target-totale').innerHTML=jsondata.price;
+            document.getElementById('textarea-varianteprodotto').value=jsondata.pageTitle;
+        }
+    }
 </script>
 <script>
     var price=null;
@@ -72,7 +84,7 @@ function makeCoupon(){
     }
 </script>
 </head>
-<body>
+<body onload="myInit()">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
 <div class="header-admin">
    <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png"/></div>
