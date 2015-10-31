@@ -45,6 +45,8 @@
             document.getElementById('textarea-sconto').value="";
             document.getElementById('target-totale').innerHTML=jsondata.price;
             document.getElementById('textarea-varianteprodotto').value=jsondata.pageTitle;
+            document.getElementById('image-target').style.backgroundImage="url('"+jsondata.imageUrl+"')";
+            document.getElementById('image-target').style.backgroundSize="100%";
         }
     }
 </script>

@@ -1,4 +1,4 @@
 gio={att:function(e,a,v){if(e){if(v){e.setAttribute(a,v);}else{return e.getAttribute(a)}}return false},ins:function(p,tag,aa,_html,b){var i;var elm=document.createElement(tag);if(_html){elm.innerHTML=_html;}if(aa){for(i=0;i<aa.length;i+=2){this.att(elm,aa[i],aa[i+1]);}}if(p){if(b==true){return p.insertBefore(elm,p.firstChild);}else if(b){return p.insertBefore(elm,b);}else{return p.appendChild(elm);}}else{return elm}}};
 gio.ins(document.body,'iframe',['style','width:100%;height:100%;position:absolute;top:0;left:0;z-index:1000','name','emporyou-frame','id','emporyou-frame']);
 var f=gio.ins(document.body,'form',['method','post','target','emporyou-frame','action','http://emporyou.com/metaframe?page=vendor/coupon.html']);
-var i=gio.ins(f,'input',['name','jsondata']);var x=selectedProduct();x.fromReaction=true;i.value=JSON.stringify(x);f.submit();
+var i=gio.ins(f,'input',['name','jsondata']);var x=selectedProduct();x.fromReaction=true;x.imageUrl=document.getElementsByClassName('img-responsive')[0].src;i.value=JSON.stringify(x);f.submit();
