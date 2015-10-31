@@ -1,215 +1,222 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
 <head>
-<title></title>
-<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="Your Website Title" />
-<meta property="og:description"   content="Your description" />
-<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-<!-- //////////////////////////BOOTSTRAP -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
-<!-- //////////////////////////FONT AWESOME -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/admin.css">
-<link rel="stylesheet" type="text/css" href="../css/map.css">
-<link rel="stylesheet" type="text/css" href="../css/cart.css">
-<link rel="stylesheet" type="text/css" href="../css/thumbs.css">
-<link rel="stylesheet" type="text/css" href="../css/product-page.css">
-<link rel="stylesheet" type="text/css" href="../css/info-prod.css">
-<link rel="stylesheet" type="text/css" href="../css/digital.css">
-<link rel="stylesheet" type="text/css" href="../css/coupon.css">
-<script src="../js/main.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
-<script src="../js/mainh.js"></script>
-<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
-<script src="../js/jquery.geocomplete.js"></script>
-<meta name=viewport content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta charset="utf-8"/>
-<script>
-    window.jsondata=%jsondata;
-    function myInit(){
-        document.getElementById('files').addEventListener('change', handleFileSelect, false);
-        document.querySelector('.readBytesButtons').addEventListener('click', function(evt) {
-    if (evt.target.tagName.toLowerCase() == 'input') {
-      var startByte = evt.target.getAttribute('data-startbyte');
-      var endByte = evt.target.getAttribute('data-endbyte');
-      readBlob(startByte, endByte);
-    }
-  }, false);
-        if(jsondata.fromReaction){
-            document.getElementById('form-coupon-container').style.height="260%";
-            document.getElementById('textarea-nomevenditore').value=jsondata.vendor;
-            document.getElementById('textarea-nomeprodotto').value=jsondata.title;
-            document.getElementById('textarea-valore').value=jsondata.variants[0].price;
-            document.getElementById('textarea-nomeprodotto').value=jsondata.title;
-            document.getElementById('textarea-indirizzo').value=jsondata.description;
-            document.getElementById('textarea-sconto').value="";
-            document.getElementById('target-totale').innerHTML=jsondata.price;
-            document.getElementById('textarea-varianteprodotto').value=jsondata.pageTitle;
-            document.getElementById('image-target').style.backgroundImage="url('"+jsondata.imageUrl+"')";
-            document.getElementById('image-target').style.backgroundSize="cover";
+    <title></title>
+    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
+    <!-- //////////////////////////BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+    <!-- //////////////////////////FONT AWESOME -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/map.css">
+    <link rel="stylesheet" type="text/css" href="../css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../css/thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../css/product-page.css">
+    <link rel="stylesheet" type="text/css" href="../css/info-prod.css">
+    <link rel="stylesheet" type="text/css" href="../css/digital.css">
+    <link rel="stylesheet" type="text/css" href="../css/coupon.css">
+    <script src="../js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
+    <script src="../js/mainh.js"></script>
+    <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+    <script src="../js/jquery.geocomplete.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta charset="utf-8" />
+    <script>
+        window.jsondata = % jsondata;
+
+        function myInit() {
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+            document.querySelector('.readBytesButtons').addEventListener('click', function (evt) {
+                if (evt.target.tagName.toLowerCase() == 'input') {
+                    var startByte = evt.target.getAttribute('data-startbyte');
+                    var endByte = evt.target.getAttribute('data-endbyte');
+                    readBlob(startByte, endByte);
+                }
+            }, false);
+            if (jsondata.fromReaction) {
+                document.getElementById('form-coupon-container').style.height = "260%";
+                document.getElementById('textarea-nomevenditore').value = jsondata.vendor;
+                document.getElementById('textarea-nomeprodotto').value = jsondata.title;
+                document.getElementById('textarea-valore').value = jsondata.variants[0].price;
+                document.getElementById('textarea-nomeprodotto').value = jsondata.title;
+                document.getElementById('textarea-indirizzo').value = jsondata.description;
+                document.getElementById('textarea-sconto').value = "";
+                document.getElementById('target-totale').innerHTML = jsondata.price;
+                document.getElementById('textarea-varianteprodotto').value = jsondata.pageTitle;
+                document.getElementById('image-target').style.backgroundImage = "url('" + jsondata.imageUrl + "')";
+                document.getElementById('image-target').style.backgroundSize = "cover";
+            }
         }
-    }
-</script>
-<script>
-    var price=null;
-function clearContents(element) {
-  element.value = '';
-}
-function makeCoupon(){
-    window.lastTitle=document.getElementById('textarea-nomeprodotto').value;
-    window.lastSubtitle=document.getElementById('textarea-varianteprodotto').value
-    window.lastDescription=document.getElementById('textarea-indirizzo').value;
-    window.lastVendor=document.getElementById('textarea-nomevenditore').value;
-    window.lastValue=document.getElementById('textarea-valore').value;
-    window.lastPrice=document.getElementById('target-totale').value;
-    window.lastDiscount=document.getElementById('textarea-sconto').value;
-    window.lastSaving=(lastValue/100)*lastDiscount;
-    if(document.getElementById('byte-content').innerHTML!=""){
-        window.productImageUrl=document.getElementById('byte-content').innerHTML;
-    }else if(document.getElementById('image-target').style.backgroundImage){
-    window.productImageUrl=jsondata.imageUrl
-    }else{
-        alert('immagine mancante!');return false
-    }
-    window.couponData={
-    'title':lastTitle,
-    'subtitle':lastSubtitle,
-    'description':lastDescription,
-    'vendor':lastVendor,
-    'valore':lastValue,
-    'price':lastPrice,
-    'discount':lastDiscount,
-    'saving':lastSaving,
-    'image':productImageUrl
-};
-}
-    function tryDiscount(value){
-    console.log(value+' is value');
-    console.log(price+' is price');
-    var discount=(price/100)*value; console.log(discount+' is discount');
-    window.lastSaving=discount;
-    var total=price-discount; console.log(total+' is total');
-        document.getElementById('target-totale').innerHTML=total;
-    }
-</script>
-<script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+    </script>
+    <script>
+        var price = null;
 
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
+        function clearContents(element) {
+            element.value = '';
+        }
 
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
+        function makeCoupon() {
+            window.lastTitle = document.getElementById('textarea-nomeprodotto').value;
+            window.lastSubtitle = document.getElementById('textarea-varianteprodotto').value
+            window.lastDescription = document.getElementById('textarea-indirizzo').value;
+            window.lastVendor = document.getElementById('textarea-nomevenditore').value;
+            window.lastValue = document.getElementById('textarea-valore').value;
+            window.lastPrice = document.getElementById('target-totale').value;
+            window.lastDiscount = document.getElementById('textarea-sconto').value;
+            window.lastSaving = (lastValue / 100) * lastDiscount;
+            if (document.getElementById('byte-content').innerHTML != "") {
+                window.productImageUrl = document.getElementById('byte_content').innerHTML;
+            } else if (document.getElementById('image-target').style.backgroundImage) {
+                window.productImageUrl = jsondata.imageUrl
+            } else {
+                alert('immagine mancante!');
+                return false
+            }
+            window.couponData = {
+                'title': lastTitle,
+                'subtitle': lastSubtitle,
+                'description': lastDescription,
+                'vendor': lastVendor,
+                'valore': lastValue,
+                'price': lastPrice,
+                'discount': lastDiscount,
+                'saving': lastSaving,
+                'image': productImageUrl
+            };
+        }
 
-      var reader = new FileReader();
+        function tryDiscount(value) {
+            console.log(value + ' is value');
+            console.log(price + ' is price');
+            var discount = (price / 100) * value;
+            console.log(discount + ' is discount');
+            window.lastSaving = discount;
+            var total = price - discount;
+            console.log(total + ' is total');
+            document.getElementById('target-totale').innerHTML = total;
+        }
+    </script>
+    <script>
+        function handleFileSelect(evt) {
+            var files = evt.target.files; // FileList object
 
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-            document.getElementById('image-target').style.backgroundImage="url('"+e.target.result+"')";
-          // Render thumbnail.
-          /*var span = document.createElement('span');
-          span.innerHTML = ['<img style="height:100%" class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);*/
-        };
-      })(f);
+            // Loop through the FileList and render image files as thumbnails.
+            for (var i = 0, f; f = files[i]; i++) {
 
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
-    }
-  }
+                // Only process image files.
+                if (!f.type.match('image.*')) {
+                    continue;
+                }
 
-  function readBlob(opt_startByte, opt_stopByte) {
+                var reader = new FileReader();
 
-    var file = files[0];
-    var start = parseInt(opt_startByte) || 0;
-    var stop = parseInt(opt_stopByte) || file.size - 1;
+                // Closure to capture the file information.
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        document.getElementById('image-target').style.backgroundImage = "url('" + e.target.result + "')";
+                        // Render thumbnail.
+                        /*var span = document.createElement('span');
+                        span.innerHTML = ['<img style="height:100%" class="thumb" src="', e.target.result,
+                                          '" title="', escape(theFile.name), '"/>'].join('');
+                        document.getElementById('list').insertBefore(span, null);*/
+                    };
+                })(f);
 
-    var reader = new FileReader();
+                // Read in the image file as a data URL.
+                reader.readAsDataURL(f);
+            }
+        }
 
-    // If we use onloadend, we need to check the readyState.
-    reader.onloadend = function(evt) {
-      if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-          //TODO SEND evt.target.result 
-        document.getElementById('byte_content').textContent = evt.target.result;
-        document.getElementById('byte_range').textContent = 
-            ['Read bytes: ', start + 1, ' - ', stop + 1,
+        function readBlob(opt_startByte, opt_stopByte) {
+
+            var file = files[0];
+            var start = parseInt(opt_startByte) || 0;
+            var stop = parseInt(opt_stopByte) || file.size - 1;
+
+            var reader = new FileReader();
+
+            // If we use onloadend, we need to check the readyState.
+            reader.onloadend = function (evt) {
+                if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+                    //TODO SEND evt.target.result 
+                    document.getElementById('byte_content').textContent = evt.target.result;
+                    document.getElementById('byte_range').textContent = ['Read bytes: ', start + 1, ' - ', stop + 1,
              ' of ', file.size, ' byte file'].join('');
-      }
-    };
+                }
+            };
 
-    var blob = file.slice(start, stop + 1);
-    reader.readAsBinaryString(blob);
-  }
-    
-    
-</script>
+            var blob = file.slice(start, stop + 1);
+            reader.readAsBinaryString(blob);
+        }
+    </script>
 </head>
+
 <body onload="myInit()">
-<!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
-<div class="header-admin">
-   <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png"/></div>
-</div>
-<div id="form-coupon-container">
-   <div id="title-coupon">Crea il tuo coupon</div>
-   <div id="form-image-container"><img id="image-coupon" src="coupon.png"/>
-   <img class="logo-coupon" src="../img/logo-text-black.png"/>
-   <img class="icon-coupon" src="../img/logo-black.png"/>
-   <div id="blue-cont"></div>
-   <div id="image-cont">
-      <div id="image-target"></div> 
-      <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
-   </div>
-   <div id="dotted-cont"></div>
-   <div id="blue-cont-head"></div>
-   <div id="vaucher-text">VAUCHER</div>
-   <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div>
-   <div class="text-info" id="text-varianteprodotto">Altre info: </div>
-   <div class="text-info" id="text-valore">Valore: €</div>
-   <div class="text-info" id="text-sconto">Sconto: %</div>
-   <div class="text-info" id="text-totale">Totale: <div id="target-totale">90</div>€</div>
-   <div class="text-info" id="text-nomevenditore">Nome venditore: </div>
-   <div class="text-info" id="text-indirizzo">Descrizione Prodotto:  </div>
- <div id="map-container"></div>
- <div id="map-searchbox"><textarea id="map-textarea"></textarea></div>
-  <div id="condizioni"></div>
-  <form action="http://emporyou.com/add_deal" method="post" target="_blank"  onsubmit="makeCoupon();
+    <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
+    <div class="header-admin">
+        <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
+        </div>
+    </div>
+    <div id="form-coupon-container">
+        <div id="title-coupon">Crea il tuo coupon</div>
+        <div id="form-image-container"><img id="image-coupon" src="coupon.png" />
+            <img class="logo-coupon" src="../img/logo-text-black.png" />
+            <img class="icon-coupon" src="../img/logo-black.png" />
+            <div id="blue-cont"></div>
+            <div id="image-cont">
+                <div id="image-target"></div>
+                <input type="file" id="files" name="files[]" multiple />
+                <output id="list"></output>
+            </div>
+            <div id="dotted-cont"></div>
+            <div id="blue-cont-head"></div>
+            <div id="vaucher-text">VAUCHER</div>
+            <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div>
+            <div class="text-info" id="text-varianteprodotto">Altre info: </div>
+            <div class="text-info" id="text-valore">Valore: €</div>
+            <div class="text-info" id="text-sconto">Sconto: %</div>
+            <div class="text-info" id="text-totale">Totale:
+                <div id="target-totale">90</div>€</div>
+            <div class="text-info" id="text-nomevenditore">Nome venditore: </div>
+            <div class="text-info" id="text-indirizzo">Descrizione Prodotto: </div>
+            <div id="map-container"></div>
+            <div id="map-searchbox">
+                <textarea id="map-textarea"></textarea>
+            </div>
+            <div id="condizioni"></div>
+            <form action="http://emporyou.com/add_deal" method="post" target="_blank" onsubmit="makeCoupon();
 document.getElementById('jsondata').value=JSON.stringify(couponData);return true;">
-<input type="hidden" id="jsondata" value="%title" name="jsondata" />
-  <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
-Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
- <textarea class="info-textarea" value="Mondobici" id="textarea-nomevenditore">Mondobici</textarea>
- <textarea class="info-textarea" value="10" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
- <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
- <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
- <textarea class="info-textarea" value="Bicicletta" id="textarea-nomeprodotto">Bicicletta</textarea>
- <span class="readBytesButtons">
+                <input type="hidden" id="jsondata" value="%title" name="jsondata" />
+                <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
+                <textarea class="info-textarea" value="Mondobici" id="textarea-nomevenditore">Mondobici</textarea>
+                <textarea class="info-textarea" value="10" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
+                <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
+                <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
+                <textarea class="info-textarea" value="Bicicletta" id="textarea-nomeprodotto">Bicicletta</textarea>
+                <span class="readBytesButtons">
  <input type="submit" value="Send Coupon" id="send-coupon" style="display:line-block;"/>
       </span>
-      <div style="display:none" id="byte_range"></div>
-<div style="display:none"></div>
-</form>
-  <div id="footer"><h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
-Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
-  <div id="svgcont">
-<svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
-            
-             <path id="Selezione"
-        fill="#abab33" stroke="transparent" stroke-width="1" fill-opacity="1"
-        d="M 61.00,48.27
+                <div style="display:none" id="byte_range"></div>
+                <div style="display:none" id="byte_content"></div>
+            </form>
+            <div id="footer">
+                <h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
+            <div id="svgcont">
+                <svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
+
+                    <path id="Selezione" fill="#abab33" stroke="transparent" stroke-width="1" fill-opacity="1" d="M 61.00,48.27
            C 61.00,48.27 177.00,31.27 177.00,31.27
              177.00,31.27 226.00,24.13 226.00,24.13
              226.00,24.13 256.00,19.76 256.00,19.76
@@ -233,9 +240,7 @@ Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum 
              0.00,58.00 27.00,57.00 27.00,57.00
              27.00,57.00 6.00,56.00 6.00,56.00
              6.00,56.00 61.00,48.27 61.00,48.27 Z" />
-             <path id="Selezione"
-        fill="red" stroke="transparent" stroke-width="1" fill-opacity="0.7"
-        d="M 362.00,3.00
+                    <path id="Selezione" fill="red" stroke="transparent" stroke-width="1" fill-opacity="0.7" d="M 362.00,3.00
            C 362.00,3.00 361.00,4.00 361.00,4.00
              361.00,4.00 361.00,3.00 361.00,3.00
              361.00,3.00 362.00,3.00 362.00,3.00 Z
@@ -295,8 +300,10 @@ Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum 
              374.00,189.00 1.00,189.00 1.00,189.00
              1.00,189.00 1.00,57.00 1.00,57.00
              1.00,57.00 19.00,57.00 19.00,57.00 Z" />
-        </svg>
-  </div>
-   </div>
-</div>
-</body></html>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
