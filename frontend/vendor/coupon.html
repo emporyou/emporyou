@@ -49,6 +49,37 @@
             document.getElementById('image-target').style.backgroundSize="cover";
         }
     }
+    
+    function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>
 <script>
     var price=null;
@@ -99,7 +130,8 @@ function makeCoupon(){
    <div id="blue-cont"></div>
    <div id="image-cont">
       <div id="image-target"></div> 
-      <button id="upload-image">Carica immagine</button>
+      <input type="file" id="files" name="files[]" multiple />
+<output id="list"></output>
    </div>
    <div id="dotted-cont"></div>
    <div id="blue-cont-head"></div>
