@@ -36,6 +36,13 @@
     window.jsondata=%jsondata;
     function myInit(){
         document.getElementById('files').addEventListener('change', handleFileSelect, false);
+        document.querySelector('.readBytesButtons').addEventListener('click', function(evt) {
+    if (evt.target.tagName.toLowerCase() == 'input') {
+      var startByte = evt.target.getAttribute('data-startbyte');
+      var endByte = evt.target.getAttribute('data-endbyte');
+      readBlob(startByte, endByte);
+    }
+  }, false);
         if(jsondata.fromReaction){
             document.getElementById('form-coupon-container').style.height="260%";
             document.getElementById('textarea-nomevenditore').value=jsondata.vendor;
@@ -147,13 +154,7 @@ function makeCoupon(){
     reader.readAsBinaryString(blob);
   }
     
-    document.querySelector('.readBytesButtons').addEventListener('click', function(evt) {
-    if (evt.target.tagName.toLowerCase() == 'input') {
-      var startByte = evt.target.getAttribute('data-startbyte');
-      var endByte = evt.target.getAttribute('data-endbyte');
-      readBlob(startByte, endByte);
-    }
-  }, false);
+    
 </script>
 </head>
 <body onload="myInit()">
