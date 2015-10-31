@@ -140,7 +140,7 @@
         }
 
         function readBlob(opt_startByte, opt_stopByte) {
-
+            var files = document.getElementById('files').files;
             var file = files[0];
             var start = parseInt(opt_startByte) || 0;
             var stop = parseInt(opt_stopByte) || file.size - 1;
