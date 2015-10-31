@@ -65,8 +65,12 @@ function makeCoupon(){
     window.lastPrice=document.getElementById('target-totale').value;
     window.lastDiscount=document.getElementById('textarea-sconto').value;
     window.lastSaving=(lastValue/100)*lastDiscount;
-    if(document.getElementById('byte-content').innerHTML!=""){window.productImageUrl=document.getElementById('byte-content').innerHTML;}else if{
-    window.productImageUrl=jsondata.imageUrl}else if{alert('immagine mancante!';return false)
+    if(document.getElementById('byte-content').innerHTML!=""){
+        window.productImageUrl=document.getElementById('byte-content').innerHTML;
+    }else if{
+    window.productImageUrl=jsondata.imageUrl
+    }else if{
+        alert('immagine mancante!';return false)
     }
     window.couponData={
     'title':lastTitle,
