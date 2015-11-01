@@ -175,15 +175,16 @@ app.all('/get_transactions', function (req, res) {
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(res.jsonout);}
   }});});});
   
-app.post('/add_deal', upload.any(), function (req, res, next) {
+app.all('/add_deal', upload.any(), function (req, res, next) {
    var jsondata=null;
-	eval('jsondata='+req.body.jsondata);  
+	eval('jsondata='+req.body.jsondata);
 	jsondata._id=new ObjectID();
 	if(req.files.length<1){res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;}
 	jsondata.imagefile=req.files[0].filename;
 	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
-				db.collection('deal').insert(jsondata,function(err){if(err){db.close;throw err}
-				res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);return false;
+				db.collection('deal').insert(jsondata,function(err){if(err){db.close();throw err}
+				res.writeHeader('Content-Type', 'application/json; charset=utf-8');
+				res.end(JSON.stringify(jsondata));
 		});
 	});
 });
