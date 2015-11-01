@@ -184,7 +184,7 @@ app.all('/add_deal',function(req,res){
 			jsondata.imagefilename=filename;
 
   });});
-  busboy.on('finish', function() {
+  req.busboy.on('finish', function() {
 	if(jsondata.imagefilename){
 		MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
 				db.collection('deal').insert(jsondata,function(err){if(err){db.close;throw err}
