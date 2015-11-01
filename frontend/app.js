@@ -170,8 +170,8 @@ app.all('/get_transactions', function (req, res) {
 		db.collection('transaction').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
 			res.jsonout.transaction=rows[r];
-			if(outputfomat=='xml'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
-			if(outputfomat=='json'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
+			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
+			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
   }});});});
   
 app.all('/add_deal', upload.any(), function (req, res, next) {
