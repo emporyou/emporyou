@@ -13,4 +13,4 @@
                        class="text-address" placeholder="ZIP code.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
                        class="text-address" placeholder="City.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
                        class="text-address" placeholder="Region.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
-                       class="text-address" placeholder="Phone.." onfocus="this.value='';" id="country-textaera">Phone</textarea>]]></html></rowtype></document>
+                       class="text-address" placeholder="Phone.." onfocus="this.value='';" id="country-textaera"></textarea>]]></html></rowtype></document>
