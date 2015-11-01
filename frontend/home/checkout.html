@@ -39,8 +39,14 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
+<script>
+    function checkLogin(){
+        var ch=document.getElementById('checkLogin').innerHTML;
+    if(ch='guest'){alert('not logged!')}else{alert('alread logged!')}
+    }
+</script>
 </head>
-<body>
+<body onload="ooo.render('check-login','checkout-template-xml','http://emporyou.com/admin/session');checkLogin()">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
 <div class="header">
    <div class="fontlogo text-logo"><img class="logo-text" src="img/logo-text.png"/></div>
@@ -118,4 +124,5 @@
     </div>
     <div id="checkout-address-container"></div>
 </div>
+<div id="check-login"></div>
 </body></html>
