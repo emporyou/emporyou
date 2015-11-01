@@ -12,6 +12,6 @@ function stepCheckout(elm){
     elm.parentElement.classList.remove('menu-closed');
     elm.parentElement.classList.add('menu-opened');
     $('html, body').animate({
-        scrollTop: $("#"+elm.id+"").offset().top
-    }, 1000);
+        scrollTop: $("#"+elm.parentElement.id+"").offset().top
+    }, 100);
 }
