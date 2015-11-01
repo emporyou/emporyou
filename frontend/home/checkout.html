@@ -64,7 +64,7 @@
 <div id="checkout-main-container">
     <div id="checkout-progress-container"></div>
     <div class="menu-opened transition-1">
-        <div class="left-square open transition-1" onclick="stepCheckout(this)" id="checkout-login">
+        <div class="left-square open transition-1" id="checkout-login">
             <div class="single-container" id="single-login">
                 <div class="single-header">Login account</div>
                 <div class="single-content">
@@ -77,28 +77,38 @@
                         <div class="social-logo">Amazon</div>
                     </div>
                 </div>
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-address'))">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
             </div>
             <div class="circle-step">1</div>
+            
         </div>
-        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-address">
+        <div class="left-square closed transition-1"  id="checkout-address">
             <div class="single-container" id="single-address"  style="display:none">
                 <div class="single-header">Choose shipping and billing address</div>
                 <div class="single-content">
                     <form id="form-target">
-                        <textarea class="text-address" id="country-textarea">Country</textarea>
-                        <textarea class="text-address" id="country-textaera">Full Name</textarea>
-                        <textarea class="text-address" id="country-textaera">Address</textarea>
-                        <textarea class="text-address" id="country-textaera">Address</textarea>
-                        <textarea class="text-address" id="country-textaera">ZIP code</textarea>
-                        <textarea class="text-address" id="country-textaera">City</textarea>
-                        <textarea class="text-address" id="country-textaera">Region</textarea>
-                        <textarea class="text-address" id="country-textaera">Phone</textarea>
+                        <textarea class="text-address" placeholder="Country.." id="country-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Full Name.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="ZIP code..." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="City.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Region.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Phone" id="country-textaera"></textarea>
                     </form>
                 </div>
+                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'))">
+                     <img src="img/next.png" class="next-image image-button transition-1"/>
+                 </div>
+                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-login'))">
+                     <img src="img/next.png" class="pre-image image-button transition-1"/>
+                 </div>
             </div>
             <div class="circle-step">2</div>
         </div>
-        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-shipping">
+        <div class="left-square closed transition-1"  id="checkout-shipping">
             <div class="single-container" id="single-shipping"  style="display:none">
                 <div class="single-header">Shipping options</div>
                 <div class="single-content">
@@ -106,23 +116,38 @@
                        <div class="shipping-option">Standard</div>
                        <div class="shipping-option">Priority</div>
                 </div>
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-review'))">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-address'));">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                </div>
             </div>
             <div class="circle-step">3</div>
         </div>
     </div>
     <div class="menu-closed transition-1">
-        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-review">
+        <div class="left-square closed transition-1"  id="checkout-review">
             <div class="single-container" id="single-review"  style="display:none">
                 <div class="single-header">Review your order</div>
                 <div class="single-content"></div>
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'))">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'))">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                </div>
             </div>
             <div class="circle-step">4</div>
         </div>
-        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-complete">
+        <div class="left-square closed transition-1" id="checkout-complete">
             <div class="single-container" id="single-complete"  style="display:none">
                 <div class="single-header">Complete and pay</div>
                 <div class="single-content">
                     <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'))">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
             <div class="circle-step">5</div>
