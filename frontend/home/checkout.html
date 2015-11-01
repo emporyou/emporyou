@@ -28,61 +28,94 @@
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
 <link rel="stylesheet" type="text/css" href="css/product-page.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
+<link rel="stylesheet" type="text/css" href="css/checkout.css">
 <script src="js/main.js"></script>
 <script src="js/mainh.js"></script>
+<script src="js/checkout.js"></script>
 <script src="http://tipozerozero.com/ooox/ooox.js"></script>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
 </head>
-<body onload="checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')" onresize="checkMobile()">
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '898201326937821',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=898201326937821";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<body>
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
 <div class="header">
+   <div class="fontlogo text-logo"><img class="logo-text" src="img/logo-text.png"/></div>
     <div class="logo-container"><img
-        class="logo" src="../img/logo-white.png" onclick="defaultPage()"/></div><div 
+        class="logo" src="img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/></div><div 
         id="header-items-container">
+            <div class="item-container"></div>
         </div></div>
-<div class="emporyoum-bar">
-    <div class="emporyoum-container">
-        <img class="emporyoum" src="../img/emporyoum-home.png"/>
+<div id="checkout-main-container">
+    <div id="checkout-progress-container"></div>
+    <div class="menu-opened transition-1">
+        <div class="left-square open transition-1" onclick="stepCheckout(this)" id="checkout-login">
+            <div class="single-container" id="single-login">
+                <div class="single-header">Login account</div>
+                <div class="single-content">
+                    <a href="login.html" class="login-button-checkout" target="_blank">Login</a>
+                    <div id="button-social-container">
+                        <div class="social-logo">Google</div>
+                        <div class="social-logo">Facebook</div>
+                        <div class="social-logo">Twitter</div>
+                        <div class="social-logo">Shopify</div>
+                        <div class="social-logo">Amazon</div>
+                    </div>
+                </div>
+            </div>
+            <div class="circle-step">1</div>
+        </div>
+        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-address">
+            <div class="single-container" id="single-address"  style="display:none">
+                <div class="single-header">Choose shipping and billing address</div>
+                <div class="single-content">
+                    <form>
+                        <textarea class="text-address" id="country-textarea">Country</textarea>
+                        <textarea class="text-address" id="country-textaera">Full Name</textarea>
+                        <textarea class="text-address" id="country-textaera">Address</textarea>
+                        <textarea class="text-address" id="country-textaera">Address</textarea>
+                        <textarea class="text-address" id="country-textaera">ZIP code</textarea>
+                        <textarea class="text-address" id="country-textaera">City</textarea>
+                        <textarea class="text-address" id="country-textaera">Region</textarea>
+                        <textarea class="text-address" id="country-textaera">Phone</textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="circle-step">2</div>
+        </div>
+        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-shipping">
+            <div class="single-container" id="single-shipping"  style="display:none">
+                <div class="single-header">Shipping options</div>
+                <div class="single-content">
+                    <div class="shipping-option">Free</div>
+                       <div class="shipping-option">Standard</div>
+                       <div class="shipping-option">Priority</div>
+                </div>
+            </div>
+            <div class="circle-step">3</div>
+        </div>
     </div>
+    <div class="menu-closed transition-1">
+        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-review">
+            <div class="single-container" id="single-review"  style="display:none">
+                <div class="single-header">Review your order</div>
+                <div class="single-content"></div>
+            </div>
+            <div class="circle-step">4</div>
+        </div>
+        <div class="left-square closed transition-1" onclick="stepCheckout(this)"  id="checkout-complete">
+            <div class="single-container" id="single-complete"  style="display:none">
+                <div class="single-header">Complete and pay</div>
+                <div class="single-content">
+                    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
+                </div>
+            </div>
+            <div class="circle-step">5</div>
+        </div>
+    </div>
+    <div id="checkout-address-container"></div>
 </div>
-
-<div id="products-checkout-target" style="margin-top:30%">
-	LA PROCEDURA DI CHECKOUT E' SIMULATA:<br/><div>
-	STEP 1/2 : Inserisci la tua email :<input type="text" placeholder="email@dominio.com"/><br/>
-	<input type="button" value="pagamento (fasullo)" onclick="this.parentElement.style.display='none';this.parentElement.nextSibling.style.display='';"/>
-	</div><div style="display:none">
-	STEP 2/2 : Questo contenuto è solitamente sul gestore del pagamento esterno.<br/>
-	<input type="button" value="simula ritorno con transazione OK" onclick="alert('todo')"/>
-	<input type="button" value="simula ritorno con transazione KO" onclick="alert('todo')"/>
-	</div>
-</div>
-<div id="cart-data" style="display:none"></div>
 </body></html>
