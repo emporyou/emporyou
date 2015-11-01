@@ -4,8 +4,8 @@
 <variable tagname="name/familyName" substitution="%lastname"/>
 <variable tagname="name/givenName" substitution="%name"/>
 <variable tagname="email" substitution="%email"/>
-<variable tagname="language" substitution="%language" convert="lang"/>
-<constantjavascript substitution="%country">if(lang=='it'){var c="Italy";return c}else{var c="Country";return c;}</constantjavascript>
+<variable tagname="language" substitution="%language" convert="sessionlang"/>
+<constantjavascript substitution="%country">window.sessionlang=function(lang){if(lang=='it'){var c="Italy";return c}else{var c="Country";return c;}}</constantjavascript>
 <html><textarea class="text-address" id="country-textarea">%country</textarea><textarea 
                        class="text-address" id="country-textaera">%name %lastname</textarea><textarea 
                        class="text-address" id="country-textaera">Address</textarea><textarea 
