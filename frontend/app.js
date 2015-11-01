@@ -177,7 +177,7 @@ app.all('/add_deal',function(req,res){
   console.log(req.body.files+'-body');
   jsondata._id=new ObjectID();
   if(!jsondata.title){res.set('Content-Type', 'text/plain;');res.end('title is mandatory');}  
-  fs.readFile(req.files.files.path, function (err, data) {
+  fs.readFile(req.body.files.path, function (err, data) {
   var newPath = __dirname + "/uploads/"+jsondata._id+'/'+req.files.files.name;
   fs.writeFile(newPath, data, function (err) {
      jsondata.imagefilename=req.files.files.name;
