@@ -41,12 +41,14 @@
 <meta charset="utf-8"/>
 <script>
     function checkLogin(){
-        var ch=document.getElementById('check-login').innerHTML;console.log(ch+' is ch')
-    setTimeout("if(ch=='guest'){}else{document.getElementById('checkout-address').click()}",250);
+        var ch=document.getElementById('check-login').innerHTML;chooseStart()
+    }
+    function chooseStart(){console.log(ch+' is ch')
+    if(ch=='guest'){}else{document.getElementById('checkout-address').click()}
     }
 </script>
 </head>
-<body onload="ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/admin/session');checkLogin()">
+<body onload="ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/admin/session',false,checkLogin);">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyoum.com/get_product')-->
 <div class="header">
    <div class="fontlogo text-logo"><img class="logo-text" src="img/logo-text.png"/></div>
