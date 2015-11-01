@@ -154,8 +154,8 @@ app.all('/get_deal', function (req, res) {
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').find({}).toArray(function(err,rows){db.close();if(err){throw err}else{
 			res.jsonout.deal=rows;
-			if(outputfomat=='xml'){res.writeHead('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
-			if(outputfomat=='json'){res.writeHead('Content-Type', 'application/json');res.end(JSON.stringify(res.jsonout));}
+			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'text/xml; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
+			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
 			
   }});});});
 app.all('/get_transactions', function (req, res) {
@@ -170,7 +170,7 @@ app.all('/get_transactions', function (req, res) {
 		db.collection('transaction').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
 			res.jsonout.transaction=rows[r];
-			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
+			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'text/xml; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
   }});});});
   
