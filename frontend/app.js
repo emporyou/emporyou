@@ -153,8 +153,7 @@ app.all('/get_deal', function (req, res) {
   res.jsonout={requested:req.originalUrl};
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').find({}).toArray(function(err,rows){db.close();if(err){throw err}else{
-			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
-			res.jsonout.deal=rows[r];
+			res.jsonout.deal=rows;
 			if(outputfomat=='xml'){res.writeHead('Content-Type', 'application/json');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.writeHead('Content-Type', 'application/json');res.end(JSON.stringify(res.jsonout));}
 			
