@@ -125,7 +125,6 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  var json=req.body.jsondata;
 	  if(!json){json=req.query.jsondata}
 	  console.log(json);
-	  if(json){console.log('undefine= not true')}
 	  fs.createReadStream(fn)
 		.pipe(replaceStream('%jsondata',json))
 		.pipe(res);
@@ -173,13 +172,22 @@ app.all('/get_transactions', function (req, res) {
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(res.jsonout);}
   }});});});
 app.all('/add_deal',function(req,res){
-  var deal=req.body.jsondata;
-  deal._id=new ObjectID();
-  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').insert(deal,function(err){
-			  res.set('Content-Type', 'application/json; charset=utf-8');res.end(deal);
+  var jsondata=req.body.jsondata;
+  jsondata._id=new ObjectID();
+  if(!jsondata.title){res.set('Content-Type', 'text/plain;');res.end('title is mandatory');}
+  
+  fs.readFile(req.files.files.path, function (err, data) {
+  var newPath = __dirname + "/uploads/"+jsondata._id+'/'+req.files.files.name;
+  fs.writeFile(newPath, data, function (err) {
+     jsondata.filename=req.files.files.name;
+	    MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+		db.collection('deal').insert(jsondata,function(err){
+			  res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);
 		});
-	});  
+	}); 
+  });
+}); 
+ 
 });
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
@@ -312,10 +320,3 @@ var transaction={
 			// });
 		  // }else{servenoimage(res);}		  
 // });});}});
-
-
-//var f=ooo.ins(document.body,'form',['method','post','target','_blank','action','http://emporyou.com/metaframe?page=vendor/product-edit.xml']);
-//var i=ooo.ins(f,i,['name','jsondata']);i.value=JSON.stringify(selectedProduct());f.submit();
-
-
-
