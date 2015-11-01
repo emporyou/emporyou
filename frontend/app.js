@@ -2,12 +2,14 @@ var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');var app = express();
+var busboy = require('connect-busboy');
 var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 app.enable('strict routing');
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({extended:true}));
+app.use(busboy({ immediate: true }));
 app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -173,20 +175,29 @@ app.all('/get_transactions', function (req, res) {
   }});});});
 app.all('/add_deal',function(req,res){
   var jsondata=req.body.jsondata;
-  console.log(JSON.stringify(req.body.files)+'-body');
+  console.log(JSON.stringify(req.body.files));
   jsondata._id=new ObjectID();
-  if(!jsondata.title){res.set('Content-Type', 'text/plain;');res.end('title is mandatory');}  
-  fs.readFile(req.body.files.path, function (err, data) {
-  var newPath = __dirname + "/uploads/"+jsondata._id+'/'+req.files.files.name;
-  fs.writeFile(newPath, data, function (err) {
-     jsondata.imagefilename=req.files.files.name;
-	    MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').insert(jsondata,function(err){
-			  res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);
-		});
-	}); 
+  if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
+  var files=req.body.files;
+  if(!files){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}
+  req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+		var newPath = __dirname + "/uploads/"+jsondata._id+'/'+filename;
+		fs.writeFile(newPath, file, function (err) {if(err){throw err}
+			jsondata.imagefilename=filename;
+
+  });	 
   });
-}); 
+  busboy.on('finish', function() {
+	if(jsondata.imagefilename){
+		MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+				db.collection('deal').insert(jsondata,function(err){if(err){db.close;throw err}
+					res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);
+		});
+	});}else{
+		res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;
+	}
+  }); 
+  return req.pipe(req.busboy);
  
 });
 serve404=function(res){};
