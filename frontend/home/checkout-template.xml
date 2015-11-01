@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-<rowtype tagname="//item">
+<rowtype tagname="item">
 <variable tagname="displayName" substitution="%name"/>
 <html>%name</html>
 </rowtype>
