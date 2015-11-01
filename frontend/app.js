@@ -2,14 +2,14 @@ var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');var app = express();
-var busboy = require('connect-busboy');
 var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-app.enable('strict routing');
-app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({extended:true}));
-app.use(busboy({ immediate: true }));
+var multer = require('multer');
+var upload = multer({ dest: 'uploads/' });
+//app.enable('strict routing');
+//app.use(require('cookie-parser')());
+//app.use(require('body-parser').urlencoded({extended:true}));
 app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -113,7 +113,8 @@ app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redir
 app.all('/postback',function(req,res){
 	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
 	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
-	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>form</h3>\n';
+	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>files</h3>\n';
+	for (key in req.files){out+=key+':'+req.files[key]+'<br/>';}out+='<h3>form</h3>\n';
 	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
 	res.set('Content-Type', 'text/html');res.end(out);});
 app.all(/^\/metaframe\/?.*/,function(req,res){
@@ -173,32 +174,20 @@ app.all('/get_transactions', function (req, res) {
 			if(outputfomat=='xml'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.set('Content-Type', 'application/json; charset=utf-8');res.end(res.jsonout);}
   }});});});
-app.all('/add_deal',function(req,res){
-  var jsondata=req.body.jsondata;
-  console.log(JSON.stringify(req.body.files));
-  req.body.jsondata._id=new ObjectID();
-  console.log(JSON.stringify(req.body.jsondata));
-  req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
-	  try{console.log('file is here');
-		var newPath = __dirname + "/uploads/"+req.body.jsondata._id+'/'+filename;
-		fs.writeFile(newPath, file, function (err) {if(err){throw err}
-			req.body.jsondata.imagefilename=filename;
-
-  });}catch(ex){console.log(ex.message);res.writeHeader('Content-Type', 'text/plain;');res.end('error copying file');return false;}});
-  req.busboy.on('finish', function() {console.log('busboy have finished');
-	if(req.body.jsondata.imagefilename){
-		MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
-				db.collection('deal').insert(req.body.jsondata,function(err){if(err){db.close;throw err}
-					res.set('Content-Type', 'application/json; charset=utf-8');res.end(req.body.jsondata);return false;
+  
+app.post('/add_deal', upload.any(), function (req, res, next) {
+   var jsondata=null;
+	eval('jsondata='+req.body.jsondata);  
+	jsondata._id=new ObjectID();
+	if(req.files.length<1){res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;}
+	jsondata.imagefile=req.body.files[0].filename;
+	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+				db.collection('deal').insert(jsondata,function(err){if(err){db.close;throw err}
+				res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);return false;
 		});
-	});}else{
-		res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;
-	}
-  }); 
-  console.log('method end/ busboy start');
-  return req.pipe(req.busboy);
- 
+	});
 });
+
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
 //---------------------------------------------------------------------------------------------------
