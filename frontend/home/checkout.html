@@ -42,7 +42,7 @@
 <script>
     function checkLogin(){
         var ch=document.getElementById('check-login').innerHTML;console.log(ch+' is ch')
-    if(ch=='guest'){}else{document.getElementById('checkout-address').click()}
+    setTimeout("if(ch=='guest'){}else{document.getElementById('checkout-address').click()}",250);
     }
 </script>
 </head>
