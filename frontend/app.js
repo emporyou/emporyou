@@ -179,7 +179,7 @@ app.all('/add_deal',function(req,res){
   fs.readFile(req.files.files.path, function (err, data) {
   var newPath = __dirname + "/uploads/"+jsondata._id+'/'+req.files.files.name;
   fs.writeFile(newPath, data, function (err) {
-     jsondata.filename=req.files.files.name;
+     jsondata.imagefilename=req.files.files.name;
 	    MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').insert(jsondata,function(err){
 			  res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);
