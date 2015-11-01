@@ -187,3 +187,58 @@ a {
     margin-left:5%;
     margin-top:3%;
 }
+
+.next {
+    position:absolute;
+    height:0;
+    width:15%;
+    padding-bottom:15%;
+    background-color:transparent;
+    bottom:0;
+    right:0;
+}
+.next:hover{
+    cursor:pointer;
+    background-color:#ccc;
+}
+.next:hover img{
+    transform:translateY(45%) rotate(90deg)
+}
+.pre:hover img{
+    transform:translateY(-45%) rotate(270deg)
+}
+
+.pre {
+    position:absolute;
+    height:0;
+    width:15%;
+    padding-bottom:15%;
+    background-color:transparent;
+    top:0;
+    right:0;
+    
+}
+.pre:hover{
+    cursor:pointer;
+    background-color:#ccc;
+}
+
+.next-image {
+    transform:rotate(90deg);
+    width:50%;
+    position:absolute;
+    left:25%;
+    top:25%;
+}
+
+.pre-image {
+    transform:rotate(270deg);
+    width:50%;
+    position:absolute;
+    left:25%;
+    top:25%;
+}
+
+.image-button {
+    
+}
