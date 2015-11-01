@@ -177,7 +177,7 @@ app.all('/add_deal',function(req,res){
   var jsondata=req.body.jsondata;
   console.log(JSON.stringify(req.body.files));
   jsondata._id=new ObjectID();
-  if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
+  //if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
   req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
 		var newPath = __dirname + "/uploads/"+jsondata._id+'/'+filename;
 		fs.writeFile(newPath, file, function (err) {if(err){throw err}
