@@ -6,11 +6,11 @@
 <variable tagname="email" substitution="%email"/>
 <variable tagname="language" substitution="%language" convert="sessionlang"/>
 <constantjavascript substitution="qweqweqweqwe">window.sessionlang=function(lang){if(lang=='it'){var c="Italy";return c}else{var c="Country";return c;}}</constantjavascript>
-<html><textarea class="text-address" id="country-textarea">%language</textarea><textarea 
-                       class="text-address" id="country-textaera">%name %lastname</textarea><textarea 
-                       class="text-address" id="country-textaera">Address</textarea><textarea 
-                       class="text-address" id="country-textaera">Address</textarea><textarea 
-                       class="text-address" id="country-textaera">ZIP code</textarea><textarea 
-                       class="text-address" id="country-textaera">City</textarea><textarea 
-                       class="text-address" id="country-textaera">Region</textarea><textarea 
-                       class="text-address" id="country-textaera">Phone</textarea></html></rowtype></document>
+<html><textarea class="text-address"  placeholder="Country.." id="country-textarea">%language</textarea><textarea 
+                       class="text-address" placeholder="Full name.." id="country-textaera">%name %lastname</textarea><textarea 
+                       class="text-address"  placeholder="Address.." id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Address.." id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="ZIP code.." id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="City.." id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Region.." id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Phone.." id="country-textaera">Phone</textarea></html></rowtype></document>
