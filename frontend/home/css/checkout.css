@@ -175,8 +175,9 @@ a {
     width:50%;
     border-radius:6px;
     height:50px;
-    line-height:50px;
-    padding:5px;
+    line-height:20px;
+    padding:15px;
+    box-sizing: border-box;
     background-color:#c6c6c6;
     font-family:'open sans'
 }
