@@ -2,12 +2,15 @@
 <document>
 <constantjavascript substitution="zwzwzwzwzw">g_discount=function(p){console.log(p);p=parseFloat(p);return Math.floor(((p/3)+p)*100)/100};</constantjavascript>
 <rowtype tagname="//product">
-<variable tagname="merchant/name" substitution="%vendor-name"/>
+<variable tagname="vendor" substitution="%vendor-name"/>
+<!--
 <variable tagname="merchant/lat" substitution="%lat"/>
 <variable tagname="merchant/lon" substitution="%lon"/>
 <variable tagname="merchant/city" substitution="%city"/>
-<variable tagname="_id" substitution="%id"/>
 <variable tagname="merchant/id" substitution="%merch-id"/>
+-->
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="imagefile" substitution="%imagefile"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
@@ -49,7 +52,7 @@
 <variable tagname="variants[optionTitle]/price" substitution="%discount" convert="g_discount"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class" style="overflow:hidden"><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
-             style="background-image: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div 
+             style="background-image: url('http://emporyou.com/uploads/%imagefile');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%merch-id','%id')" style="display:none"><div 
