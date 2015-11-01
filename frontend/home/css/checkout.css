@@ -107,6 +107,9 @@
     text-align:center;
     border-right:2px solid #ccc;
 }
+.login-button-checkout:hover{
+    color:darkorange;   
+}
 
 #button-social-container {
     right:0;
