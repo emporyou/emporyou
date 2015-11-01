@@ -45,6 +45,10 @@
     }
     function chooseStart(){console.log(ch+' is ch');
     if(ch=='guest'){}else{document.getElementById('checkout-address').click()}
+                           fillAddress();
+    }
+    function fillAddress(){
+        ooo.render('form-target','address.xml','http://emporyou.com/admin/session')
     }
 </script>
 </head>
@@ -80,7 +84,7 @@
             <div class="single-container" id="single-address"  style="display:none">
                 <div class="single-header">Choose shipping and billing address</div>
                 <div class="single-content">
-                    <form>
+                    <form id="form-target">
                         <textarea class="text-address" id="country-textarea">Country</textarea>
                         <textarea class="text-address" id="country-textaera">Full Name</textarea>
                         <textarea class="text-address" id="country-textaera">Address</textarea>
