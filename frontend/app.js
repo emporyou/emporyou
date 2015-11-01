@@ -173,9 +173,10 @@ app.all('/get_transactions', function (req, res) {
   }});});});
 app.all('/add_deal',function(req,res){
   var jsondata=req.body.jsondata;
+  console.log(req.files+'-');
+  console.log(req.files+'-body');
   jsondata._id=new ObjectID();
-  if(!jsondata.title){res.set('Content-Type', 'text/plain;');res.end('title is mandatory');}
-  
+  if(!jsondata.title){res.set('Content-Type', 'text/plain;');res.end('title is mandatory');}  
   fs.readFile(req.files.files.path, function (err, data) {
   var newPath = __dirname + "/uploads/"+jsondata._id+'/'+req.files.files.name;
   fs.writeFile(newPath, data, function (err) {
