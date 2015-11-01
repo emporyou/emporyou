@@ -177,7 +177,7 @@ app.all('/add_deal',function(req,res){
   var jsondata=req.body.jsondata;
   console.log(JSON.stringify(req.body.files));
   jsondata._id=new ObjectID();
-  if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
+  //if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
   var files=req.body.files;
   if(!files){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}
   req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
@@ -185,8 +185,7 @@ app.all('/add_deal',function(req,res){
 		fs.writeFile(newPath, file, function (err) {if(err){throw err}
 			jsondata.imagefilename=filename;
 
-  });	 
-  });
+  });});
   busboy.on('finish', function() {
 	if(jsondata.imagefilename){
 		MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
