@@ -88,7 +88,7 @@ $.v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof
  	var req=(ev.currentTarget||ev.target||ev.srcElement);if(req.readyState>1&&req.readyState<4){if(req.status==200){if(_onstep)_onstep(req);}
  	}else if(req.readyState==4){if(req.status==200){_onfinish(req,_mem);}else{console.log('Request failed');console.log(req);if(_onerror){_onerror(req)}}}};
  $._preloaded=[];$._dopreload=function(req,oo){$._preloaded[$._preloaded.length]={url:oo.pre_url,xml:ooo.parsexml(req.responseText)};if(oo.pre_onfinish){oo.pre_onfinish(req,oo);}};
- $._dorendercontrol1=function(req,oo){var ct=req.getResponseHeader('content-type');if(ct.indexOf('xml')<0){oo.templateXML=ooo.JSON2xmldoc(JSON.parse(req.responseText))}else{oo.templateXML=ooo.parsexml(req.responseText);}$._dorendercontrol2(false,oo);};
+ $._dorendercontrol1=function(req,oo){var ct=req.getResponseHeader('content-type');if(!ct){ct='xml'}if(ct.indexOf('xml')<0){oo.templateXML=ooo.JSON2xmldoc(JSON.parse(req.responseText))}else{oo.templateXML=ooo.parsexml(req.responseText);}$._dorendercontrol2(false,oo);};
  $._dorendercontrol2=function(nouse,oo){/*AUTOMAGIC PRELOAD RETRIVAL*/
     var ins=ooo.sel('//inline',oo.templateXML);var flag=false;if(ins){if(ins.length>0){
     var prel;for(var xi=0;xi<ins.length;xi++){prel=ooo.xatt(ins[xi],'preload');if(!$.preloaded(prel)){flag=true;break;}}}}
