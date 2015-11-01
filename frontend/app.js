@@ -179,16 +179,17 @@ app.all('/add_deal',function(req,res){
   jsondata._id=new ObjectID();
   //if(!jsondata.title){res.writeHeader('Content-Type', 'text/plain;');res.end('title is mandatory');return false;}  
   req.busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+	  try{
 		var newPath = __dirname + "/uploads/"+jsondata._id+'/'+filename;
 		fs.writeFile(newPath, file, function (err) {if(err){throw err}
 			jsondata.imagefilename=filename;
 
-  });});
+  });}catch(ex){console.log(ex.message);res.writeHeader('Content-Type', 'text/plain;');res.end('error copying file');return false;}});
   req.busboy.on('finish', function() {
 	if(jsondata.imagefilename){
 		MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
 				db.collection('deal').insert(jsondata,function(err){if(err){db.close;throw err}
-					res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);
+					res.set('Content-Type', 'application/json; charset=utf-8');res.end(jsondata);return false;
 		});
 	});}else{
 		res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;
