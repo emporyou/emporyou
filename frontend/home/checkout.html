@@ -41,7 +41,7 @@
 <meta charset="utf-8"/>
 <script>
     function checkLogin(){
-        window.ch=document.getElementById('check-login').innerHTML;chooseStart()
+        setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
     }
     function chooseStart(){console.log(ch+' is ch');
     if(ch=='guest'){}else{document.getElementById('checkout-address').click()}
