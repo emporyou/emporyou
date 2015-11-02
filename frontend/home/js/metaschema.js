@@ -94,7 +94,10 @@ $.v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof
     var prel;for(var xi=0;xi<ins.length;xi++){prel=ooo.xatt(ins[xi],'preload');if(!$.preloaded(prel)){flag=true;break;}}}}
     //TODO:Check inline's inlines
     if(flag){$.preload(prel,$._dorendercontrol2,oo);}else{$.load(oo.data,oo.elm,$._dorendercontrol3,false,false,oo);}};
- $._dorendercontrol3=function(req,oo){console.log('1'+req.responseText);var ct=req.getResponseHeader('content-type');if(!ct){if(req.responseText.indexOf('<?xml version="1')<20){ct='xml'}}if(!ct){ct='json'}ct=json;if(ct.indexOf('xml')<0){
+ $._dorendercontrol3=function(req,oo){console.log('1'+req.responseText);var ct=req.getResponseHeader('content-type');
+ if(!ct){if(req.responseText.indexOf('<?xml version="1')<20){ct='xml'}}
+ if(!ct){ct='json'}
+ if(ct.indexOf('xml')<0){
 	 console.log('2'+req.responseText);
 	 oo.dataXML=ooo.JSON2xmldoc(JSON.parse(req.responseText));
 	 if(ooo.ixml(oo.dataXML).indexOf("Below")>-1){throw new Error('here')}	 
