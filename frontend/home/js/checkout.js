@@ -12,3 +12,6 @@ function stepCheckout(elm){
     elm.parentElement.classList.remove('menu-closed');
     elm.parentElement.classList.add('menu-opened');
 }
+function progressBar(e,num){
+    document.getElementById('progress-bar').style.width=num+'%'
+}

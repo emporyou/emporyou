@@ -245,3 +245,40 @@ a {
 .image-button {
     
 }
+
+.step {
+    display:inline-block;
+    width:20%;
+    height:70px;
+    background-color:white;
+    text-align:center;
+    font-size:4vmin;
+    font-family:'Open sans';
+    box-sizing: border-box;
+    line-height:70px;
+    z-index:2;
+}
+
+.done {
+    background-color:orange
+}
+
+#progress-bar {
+    background-color:rgba(255, 131, 0, 0.53);
+    height:70px;
+    position:absolute;
+    left:0;
+    z-index:1
+}
+#progress-bar:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 70px solid rgba(255, 255, 255, 1);;
+    border-left: 70px solid rgba(255, 131, 0, 0.0);
+    width: 0;
+}
+
+.uno {
+    width:20%
+}
