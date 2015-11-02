@@ -131,7 +131,7 @@
             <div class="single-container" id="single-review"  style="display:none">
                 <div class="single-header">Review your order</div>
                 <div class="single-content"></div>
-                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=100;progressBar('next',now)">
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=120;progressBar('next',now)">
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('pre',now)">
@@ -154,6 +154,7 @@
         </div>
     </div>
     <div id="checkout-address-container"></div>
+    <div id="quit-checkout">BACK</div>
 </div>
-<div id="check-login"></div>
+<div id="check-login" style="display:none"></div>
 </body></html>

@@ -124,7 +124,7 @@ function defaultPage(){
     productOpened=0;
     if(cartOpened==1){closeCart()};
     if(set==1){openMap()}else{gClass('google-map-container')[0].style.top="13%"}
-    gClass('products-page-main')[0].classList.add('hidden');
+    if(gClass('products-page-main')[0].style.display!="none"){gClass('products-page-main')[0].classList.add('hidden');}
     gClass('products-main')[0].style.top="25%";
     gClass('products-main')[0].style.display="block";
     document.getElementById('product-page-target').style.top="58%";
@@ -178,4 +178,19 @@ function clean(elm){
             document.getElementById('allOrders').classList.remove('select');
         }
     }}
+}
+function openCheckout{
+    defaultPage();
+    gClass('emporyoum-bar')[0].style.display="none";
+    gClass('google-map-container')[0].style.display="none";
+    gClass('products-main')[0].style.display="none";
+    document.getElementById('product-cart-target').style.display="none";
+    
+}
+function closeCheckout{
+    gClass('emporyoum-bar')[0].style.display="";
+    gClass('google-map-container')[0].style.display="";
+    gClass('products-main')[0].style.display="";
+    document.getElementById('product-cart-target').style.display="";
+    defaultPage();
 }
