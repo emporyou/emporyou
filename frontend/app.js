@@ -97,7 +97,7 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
-app.get('/SVC/get_merchant',function(req, res){res.writeHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(MERCHANTCHACHE));)});
+app.get('/SVC/get_merchant',function(req, res){res.writeHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(MERCHANTCHACHE))});
 app.get('/SVC/set_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/SVC/del_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
