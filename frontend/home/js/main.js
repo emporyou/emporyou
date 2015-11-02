@@ -107,7 +107,7 @@ function cartReady(){
     //gClass('google-map-container')[0].style.top="58%";
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('products-cart-target').style.height="48%";
-    document.getElementById('pattern').style.bottom="0";
+    //document.getElementById('pattern').style.bottom="0";
 }
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
@@ -121,6 +121,7 @@ function scrollTo(element, to, duration) {
     }, 10);
 }
 function defaultPage(){
+    document.getElementById('checkout-main-container').setAttribute('style','display:none');
     productOpened=0;
     if(cartOpened==1){closeCart()};
     if(set==1){openMap()}else{gClass('google-map-container')[0].style.top="13%"}
@@ -184,6 +185,7 @@ function openCheckout(){
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
     gClass('products-main')[0].style.display="none";
+    document.getElementById('basket-container').style.display="none";
     document.getElementById('products-cart-target').style.display="none";
     document.getElementById('checkout-main-container').setAttribute('style','');
     
@@ -193,6 +195,7 @@ function closeCheckout(){
     gClass('google-map-container')[0].style.display="";
     gClass('products-main')[0].style.display="";
     document.getElementById('products-cart-target').style.display="";
-    document.getElementById('checkout-main-container').setAttribute('style','none');
+    document.getElementById('basket-container').style.display="";
+    document.getElementById('checkout-main-container').setAttribute('style','display:none');
     defaultPage();
 }
