@@ -116,7 +116,7 @@ app.all('/del_merchant',upload.any(), function (req, res, next) {
   var jq=false;
   res.jsonout={requested:req.originalUrl};
   if(_id){jq={_id:ObjectID(_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
-  MongoClient.connect(Metaschema.config.mongoUrl,function(err,db){if(err){throw err}
+  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
 	db.collection('merchant').remove(jq,function(err,rows){
 		db.close();
 		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
