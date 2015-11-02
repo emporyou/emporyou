@@ -99,7 +99,7 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //------------------------------------------------------------------------------------ ADMIN SERVICES
 app.all('/get_merchant',function(req, res){emporyou.updatemerchantchache(function(err,rows){res.writeHeader('Content-Type','application/json; charset=utf-8');if(err){rows=err}res.end(JSON.stringify(rows))});});
 app.all('/set_merchant',function(req, res){res.send('Hello World!!');});
-app.all('/add_merchant',function(req, res){
+app.all('/add_merchant',function(req, res){upload.any(), function (req, res, next) {
 	var jsondata=null;
 	eval('jsondata='+req.body.jsondata);
 	jsondata._id=new ObjectID();
@@ -109,7 +109,7 @@ app.all('/add_merchant',function(req, res){
 				res.end(JSON.stringify(jsondata));
 		});
 	});
-});
+});});
 app.get('/del_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
