@@ -84,7 +84,7 @@ _o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
 a2xml=function(n,a){var xml='';for(var i=0;i<a.length;i++){if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}else{xml+=v2xml(n,a[i]);}}return xml;};
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
 var emporyou={};
-emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated()){logontype='user';if(false){logontype='vendor';if(false){logontype='admin';}}}return logontype;};
+emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated()){logontype='user';if(false){logontype='merchant';if(false){logontype='admin';}}}return logontype;};
 emporyou.apicheck=function(req){if(!req.isAuthenticated()){return false}return true};
 //emporyou.sec=function(){this.logontype=};
 emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
@@ -149,7 +149,7 @@ app.all('/get_deal', function (req, res) {
   res.jsonout={requested:req.originalUrl};
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').find(jq).toArray(function(err,rows){db.close();if(err){throw err}else{
-			for(var r=0;r<rows.length;r++){if(MERCHANTCHACHE[rows[r].vendor])rows[r].vendor=MERCHANTCHACHE[rows[r].vendor];}
+			for(var r=0;r<rows.length;r++){if(MERCHANTCHACHE[rows[r].merchant])rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
 			res.jsonout.deal=rows;
 			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'text/xml; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
@@ -160,7 +160,7 @@ app.all('/get_transactions', function (req, res) {
   var m_id=req.query.m_id||-1;
   var jq=req.item;
   res.jsonout='';
-	if(logontype=='vendor'||logontype=='admin'){
+	if(logontype=='merchant'||logontype=='admin'){
 		
 	}
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
@@ -192,7 +192,7 @@ servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-pro
 //---------------------------------------------------------------------------------------------------
 app.use(function(req,res,next){
 	        if(req.originalUrl.indexOf('/admin' )==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/vendor')==0){console.log('gio');if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/merchant')==0){console.log('gio');if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/uploads')==0){console.log('gio');express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
