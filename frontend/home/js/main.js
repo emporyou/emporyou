@@ -181,7 +181,7 @@ function clean(elm){
     }}
 }
 function openCheckout(){
-    defaultPage();
+    defaultPage();checkLogin();
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
     gClass('products-main')[0].style.display="none";
