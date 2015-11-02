@@ -1,11 +1,11 @@
 <!DOCTYPEhtml><html><head><title>gh</title></head><body>
 
-<form action="http://localhost:1024/add_deal" method="post" enctype="multipart/form-data" id="testdata">
+<form action="http://emporyou.com/add_merchant" method="post" enctype="multipart/form-data" id="testdata">
 <textarea name="jsondata"id="jsondata">
 {name:'Merchant01',lat:'',lon:'':city:'Milano'}
 </textarea><br/>
 <input type="file" name="files" placeholder="choose one file"/><br/>
 <input type="text" id="posturi" placeholder="data url" value="http://emporyou.com/add_merchant"/><br/>
-<input type="submit" onclick=document.getElementByID('testdata').action=document.getElementById('posturi').value" />
+<input type="submit" onclick=document.getElementByID('testdata')setAttribute('action',document.getElementById('posturi').value)" />
 </form>
 </body></html>
