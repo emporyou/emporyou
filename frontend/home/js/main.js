@@ -181,6 +181,7 @@ function clean(elm){
     }}
 }
 function openCheckout(){
+    closeCart();
     defaultPage();
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
