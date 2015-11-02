@@ -109,13 +109,13 @@ app.all('/add_merchant',upload.any(), function (req, res, next) {
 		});
 	});
 });
-app.get('/del_merchant',upload.any(), function (req, res, next) {
+app.all('/del_merchant',upload.any(), function (req, res, next) {
   var logontype=emporyou.logontype(req);
   var _id=req.query._id;if(!_id){_id=req.body._id}
   var outputfomat=(req.query.output||'json').toLowerCase();
   var jq=false;
   res.jsonout={requested:req.originalUrl};
-  if(_id){jq={_id:ObjectID(p_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
+  if(_id){jq={_id:ObjectID(_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
   MongoClient.connect(Metaschema.config.mongoUrl,function(err,db){if(err){throw err}
 	db.collection('merchant').remove(jq,function(err,rows){
 		db.close();
