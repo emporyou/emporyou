@@ -184,7 +184,7 @@ function openCheckout(){
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
     gClass('products-main')[0].style.display="none";
-    document.getElementById('product-cart-target').style.display="none";
+    document.getElementById('products-cart-target').style.display="none";
     document.getElementById('checkout-main-container').setAttribute('style','');
     
 }
@@ -192,7 +192,7 @@ function closeCheckout(){
     gClass('emporyoum-bar')[0].style.display="";
     gClass('google-map-container')[0].style.display="";
     gClass('products-main')[0].style.display="";
-    document.getElementById('product-cart-target').style.display="";
+    document.getElementById('products-cart-target').style.display="";
     document.getElementById('checkout-main-container').setAttribute('style','none');
     defaultPage();
 }
