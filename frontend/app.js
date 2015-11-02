@@ -109,7 +109,7 @@ app.all('/add_merchant',function(req, res){upload.any(), function (req, res, nex
 				res.end(JSON.stringify(jsondata));
 		});
 	});
-});});
+}});
 app.get('/del_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
