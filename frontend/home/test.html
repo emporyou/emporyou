@@ -1,11 +1,24 @@
 <!DOCTYPEhtml><html><head><title>gh</title></head><body>
-
-<form action="http://emporyou.com/add_merchant" onsubmit="document.getElementByID('testdata')setAttribute('action',document.getElementById('posturi').value)" method="post" enctype="multipart/form-data" id="testdata">
+<h1>add merchant<h1>
+<form action="http://emporyou.com/add_merchant" target="_blank" onsubmit="document.getElementByID('testdata')setAttribute('action',document.getElementById('posturi').value)" method="post" enctype="multipart/form-data" id="testdata">
 <textarea name="jsondata"id="jsondata">
-{name:'Merchant01',lat:'',lon:'':city:'Milano'}
+{"name":"Merchant01","lat":"","lon":"","city":"Milano"}
 </textarea><br/>
 <input type="file" name="files" placeholder="choose one file"/><br/>
 <input type="text" id="posturi" placeholder="data url" value="http://emporyou.com/add_merchant"/><br/>
 <input type="submit"  />
-</form>
+</form><br/>
+<h1>add product<h1>
+<form action="http://emporyou.com/add_deal" target="_blank" onsubmit="document.getElementByID('testdata')setAttribute('action',document.getElementById('posturi').value)" method="post" enctype="multipart/form-data" id="testdata">
+<textarea name="jsondata"id="jsondata">
+{"name":"Merchant01","lat":"","lon":"","city":"Milano"}
+</textarea><br/>
+<input type="file" name="files" placeholder="choose one file"/><br/>
+<input type="text" id="posturi" placeholder="data url" value="http://emporyou.com/add_merchant"/><br/>
+<input type="submit"  />
+</form><br/>
+<a href="http://emporyou.com/get_deal" target="_blank">get_deal</a><br/>
+<a href="http://emporyou.com/get_merchant" target="_blank">get_merchant</a>r/>
+
+
 </body></html>
