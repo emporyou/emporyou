@@ -100,8 +100,7 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 app.all('/get_merchant',function(req, res){emporyou.updatemerchantchache(function(err,rows){res.writeHeader('Content-Type','application/json; charset=utf-8');if(err){rows=err}res.end(JSON.stringify(rows))});});
 app.all('/set_merchant',function(req, res){res.send('Hello World!!');});
 app.all('/add_merchant',upload.any(), function (req, res, next) {
-	var jsondata=null;
-	eval('jsondata='+req.body.jsondata);
+	var jsondata=JSON.parse(req.body.jsondata);
 	jsondata._id=new ObjectID();
 	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
 				db.collection('merchant').insert(jsondata,function(err){if(err){db.close();throw err}
