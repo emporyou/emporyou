@@ -179,7 +179,7 @@ function clean(elm){
         }
     }}
 }
-function openCheckout{
+function openCheckout(){
     defaultPage();
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
@@ -187,7 +187,7 @@ function openCheckout{
     document.getElementById('product-cart-target').style.display="none";
     
 }
-function closeCheckout{
+function closeCheckout(){
     gClass('emporyoum-bar')[0].style.display="";
     gClass('google-map-container')[0].style.display="";
     gClass('products-main')[0].style.display="";
