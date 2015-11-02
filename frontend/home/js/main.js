@@ -32,7 +32,7 @@ function addProduct(productName,XMLid,PRDid){
 function openProduct(event,elm,merid,id){closeCart();
     if(set==1){openMap();}
     productOpened=1;
-    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/get_product?m_id='+merid+'&p_id='+id,false,false,checkMobile);
+    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/get_deal?m_id='+merid+'&p_id='+id,false,false,checkMobile);
     if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
