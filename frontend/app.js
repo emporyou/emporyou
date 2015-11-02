@@ -153,7 +153,7 @@ app.all('/get_deal', function (req, res) {
   if(p_id){jq={_id:ObjectID(p_id)}}
   res.jsonout={requested:req.originalUrl};
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
-		db.collection('deal').find({}).toArray(function(err,rows){db.close();if(err){throw err}else{
+		db.collection('deal').find(jq).toArray(function(err,rows){db.close();if(err){throw err}else{
 			res.jsonout.deal=rows;
 			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'text/xml; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
