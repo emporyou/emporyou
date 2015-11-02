@@ -47,7 +47,7 @@
             }, false);
             if (jsondata.fromReaction) {
                 document.getElementById('form-coupon-container').style.height = "260%";
-                document.getElementById('textarea-nomevenditore').value = jsondata.vendor;
+                document.getElementById('textarea-apivenditore').value = jsondata.vendor;
                 document.getElementById('textarea-nomeprodotto').value = jsondata.title;
                 document.getElementById('textarea-valore').value = jsondata.variants[0].price;
                 document.getElementById('textarea-nomeprodotto').value = jsondata.title;
@@ -71,7 +71,7 @@
             window.lastTitle = document.getElementById('textarea-nomeprodotto').value;
             window.lastSubtitle = document.getElementById('textarea-varianteprodotto').value
             window.lastDescription = document.getElementById('textarea-indirizzo').value;
-            window.lastVendor = document.getElementById('textarea-nomevenditore').value;
+            window.lastVendor = document.getElementById('textarea-apivenditore').value;
             window.lastValue = document.getElementById('textarea-valore').value;
             window.lastPrice = document.getElementById('target-totale').value;
             window.lastDiscount = document.getElementById('textarea-sconto').value;
@@ -182,7 +182,7 @@
             <div class="text-info" id="text-sconto">Sconto: %</div>
             <div class="text-info" id="text-totale">Totale:
                 <div id="target-totale">90</div>€</div>
-            <div class="text-info" id="text-nomevenditore">Nome venditore: </div>
+            <div class="text-info" id="text-apivenditore">Chiave api di emporyou: </div>
             <div class="text-info" id="text-indirizzo">Descrizione Prodotto: </div>
             <div id="map-container"></div>
             <div id="map-searchbox">
@@ -200,7 +200,7 @@ document.getElementById('jsondata').value=JSON.stringify(couponData);return true
                 <div style="display:none" id="byte_content"></div>
                 </div>
                 <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
-                <textarea class="info-textarea" value="Mondobici" id="textarea-nomevenditore">Mondobici</textarea>
+                <textarea class="info-textarea" value="Mondobici" id="textarea-apivenditore">Mondobici</textarea>
                 <textarea class="info-textarea" value="10" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
                 <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
                 <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
