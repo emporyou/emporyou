@@ -97,13 +97,13 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
-app.get('/SVC/get_merchant',function(req, res){var collection=db.collection('simple_limit_skip_query');res.send('Hello World!!');});
+app.get('/SVC/get_merchant',function(req, res){res.writeHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(MERCHANTCHACHE));)});
 app.get('/SVC/set_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/SVC/del_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
 }else{
-	res.set('Content-Type', 'application/json');res.end(JSON.stringify(req.user));
+	res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));
 	}});
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.all('/postback',function(req,res){
@@ -149,6 +149,7 @@ app.all('/get_deal', function (req, res) {
   res.jsonout={requested:req.originalUrl};
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').find(jq).toArray(function(err,rows){db.close();if(err){throw err}else{
+			for(var r=0;r<rows.length;r++){if(MERCHANTCHACHE[rows[r].vendor])rows[r].vendor=MERCHANTCHACHE[rows[r].vendor];}
 			res.jsonout.deal=rows;
 			if(outputfomat=='xml'){res.writeHeader('Content-Type', 'text/xml; charset=utf-8');res.end(JSON2xml(res.jsonout,'response'));}
 			if(outputfomat=='json'){res.writeHeader('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(res.jsonout));}
