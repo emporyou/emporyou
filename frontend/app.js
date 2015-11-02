@@ -149,9 +149,8 @@ app.all('/get_deal', function (req, res) {
   var pgmax=req.query.pgmax||-1;
   var pgnum=req.query.pgnum||-1;
   var outputfomat=(req.query.output||'json').toLowerCase();
-  
   var jq={};
-  if(p_id){jq._id=ObjectID(p_id)}
+  if(p_id){jq={_id=ObjectID(p_id)}}
   res.jsonout={requested:req.originalUrl};
   MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
 		db.collection('deal').find(jq).toArray(function(err,rows){db.close();if(err){throw err}else{
