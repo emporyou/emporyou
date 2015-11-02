@@ -95,7 +95,7 @@ $.v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof
     //TODO:Check inline's inlines
     if(flag){$.preload(prel,$._dorendercontrol2,oo);}else{$.load(oo.data,oo.elm,$._dorendercontrol3,false,false,oo);}};
  $._dorendercontrol3=function(req,oo){console.log('1'+req.responseText);var ct=req.getResponseHeader('content-type');
- if(!ct){if(req.responseText.indexOf('<?xml version="1')>0){ct='xml'}}
+ if(!ct){if((req.responseText.indexOf('<?xml version="1')>0)&&(req.responseText.indexOf('<?xml version="1')<20)){ct='xml'}}
  if(!ct){ct='json'}
  if(ct.indexOf('xml')<0){
 	 console.log('2'+req.responseText);
