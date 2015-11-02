@@ -181,7 +181,6 @@ function clean(elm){
     }}
 }
 function openCheckout(){
-    closeCart();
     defaultPage();
     gClass('emporyoum-bar')[0].style.display="none";
     gClass('google-map-container')[0].style.display="none";
@@ -198,5 +197,5 @@ function closeCheckout(){
     document.getElementById('products-cart-target').style.display="";
     document.getElementById('basket-container').style.display="";
     document.getElementById('checkout-main-container').setAttribute('style','display:none');
-    defaultPage();
+    defaultPage();    closeCart();
 }
