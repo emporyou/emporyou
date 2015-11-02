@@ -43,7 +43,7 @@
     <div class="cart-summary"><b>%total-total</b></div>
 </div>
 <div class="cart-items-container">]]></beforeall>
-<afterall><![CDATA[</div><div id="pattern" onclick="openCheckou()'" style="display:none"><b>check out now</b></div>]]></afterall>
+<afterall><![CDATA[</div><div id="pattern" onclick="openCheckout()'" style="display:none"><b>check out now</b></div>]]></afterall>
 <casezero>:( <br/> Il tuo carrello è vuoto! (sfigato)</casezero>
 <onloadall>setTimeout("document.getElementById('pattern').style.bottom='0';document.getElementById('pattern').style.display='block'",150)</onloadall>
 </document>

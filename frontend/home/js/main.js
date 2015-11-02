@@ -185,6 +185,7 @@ function openCheckout(){
     gClass('google-map-container')[0].style.display="none";
     gClass('products-main')[0].style.display="none";
     document.getElementById('product-cart-target').style.display="none";
+    document.getElementById('checkout-main-container').setAttribute('style','');
     
 }
 function closeCheckout(){
@@ -192,5 +193,6 @@ function closeCheckout(){
     gClass('google-map-container')[0].style.display="";
     gClass('products-main')[0].style.display="";
     document.getElementById('product-cart-target').style.display="";
+    document.getElementById('checkout-main-container').setAttribute('style','none');
     defaultPage();
 }
