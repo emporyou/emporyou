@@ -97,9 +97,9 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
-app.get('/SVC/get_merchant',function(req, res){res.writeHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify(MERCHANTCHACHE))});
-app.get('/SVC/set_merchant',function(req, res){res.send('Hello World!!');});
-app.get('/SVC/del_merchant',function(req, res){res.send('Hello World!!');});
+app.get('/get_merchant',function(req, res){emporyou.updatemerchantchache(function(err,rows){res.writeHeader('Content-Type','application/json; charset=utf-8');if(err){rows=err}res.end(JSON.stringify(rows))});});
+app.get('/set_merchant',function(req, res){res.send('Hello World!!');});
+app.get('/del_merchant',function(req, res){res.send('Hello World!!');});
 app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
 }else{
@@ -192,8 +192,8 @@ servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-pro
 //---------------------------------------------------------------------------------------------------
 app.use(function(req,res,next){
 	        if(req.originalUrl.indexOf('/admin' )==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/merchant')==0){console.log('gio');if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/uploads')==0){console.log('gio');express.static('./')(req,res,next)}
+		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
 var PORT=80;
