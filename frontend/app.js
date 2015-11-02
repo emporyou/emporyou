@@ -221,7 +221,7 @@ app.all('/del_deal',upload.any(), function (req, res, next) {
 		db.close();
 		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
 		return res.end(JSON.stringify(res.jsonout));
-});});
+});});});
 
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
