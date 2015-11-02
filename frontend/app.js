@@ -140,8 +140,8 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 //------------------------------------------------------------------------------------ FRONT SERVICES
 app.all('/get_deal', function (req, res) {
   var logontype=emporyou.logontype(req);
-  var m_id=req.query.m_id||-1;
-  var p_id=req.query.p_id||-1;
+  var p_id=req.query.p_id;
+  var m_id=req.query.m_id||-1;  
   var geo=req.query.geo||null;
   var cat=req.query.cat||-1;
   var max=req.query.max||-1;
