@@ -127,7 +127,7 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  fs.createReadStream(fn)
 		.pipe(replaceStream('%jsondata',json))
 		.pipe(res);
-	}else{res.set('Content-Type', 'text/html');res.end('page must be a file');
+	}else{res.set('Content-Type', 'text/html');res.end('page must be a file');}
 	}else{res.set('Content-Type', 'text/html');res.end('unauthorized');
 }});
 //---------------------------------------------------------------------------------------------------
