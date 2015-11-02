@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-<rowtype tagname="//product">
-<variable tagname="merchant/name" substitution="%vendor-name"/>
+<rowtype tagname="//deal">
+<variable tagname="vendor" substitution="%vendor-name"/>
 <variable tagname="merchant/lat" substitution="%lat"/>
 <variable tagname="merchant/lon" substitution="%lon"/>
 <variable tagname="merchant/city" substitution="%city"/>
@@ -10,6 +10,7 @@
 <variable tagname="merchant/id" substitution="%merch-id"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
+<variable tagname="imagefile" substitution="%imagefile"/>
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price"/>
 <inline tagname="variants[optionTitle]" substitution="%options" preload="options-template.xml"/>
@@ -19,7 +20,7 @@
        class="product-subtitle">%subtitle</div></div><div class="product-info-main"><div 
        class="fixer-container"><div 
        class="product-left-container"><div 
-           class="product-photos"><div class="main-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div><div class="other-photo">
+           class="product-photos"><div class="main-photo" style="background: url('http://emporyou.com/uploads/%imagefile');background-size:cover"> </div><div class="other-photo">
             <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
             <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
             <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
