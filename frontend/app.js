@@ -7,13 +7,9 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
-//app.enable('strict routing');
-//app.use(require('cookie-parser')());
-//app.use(require('body-parser').urlencoded({extended:true}));
 app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
 app.use(passport.session());
-//APP-INIT + DATABASE CONNECTION
 
 var MERCHANTCHACHE=[];
 var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
@@ -122,7 +118,7 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  var fn=req.body.page;if(!fn){fn=req.query.page}
 	  fn='./'+fn;
 	  var st=fs.statSync(fn);
-	  if(!st.isDirectory()){}
+	  if(!st.isDirectory()){ 
 	  var ext=path.extname(fn);
 	  if(mime[ext]){res.set('Content-Type',mime[ext]);}
 	  var json=req.body.jsondata;
@@ -131,9 +127,8 @@ app.all(/^\/metaframe\/?.*/,function(req,res){
 	  fs.createReadStream(fn)
 		.pipe(replaceStream('%jsondata',json))
 		.pipe(res);
-	}else{
-		res.set('Content-Type', 'text/html');
-		res.end('unauthorized');
+	}else{res.set('Content-Type', 'text/html');res.end('page must be a file');
+	}else{res.set('Content-Type', 'text/html');res.end('unauthorized');
 }});
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<title></title>
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+<!-- //////////////////////////BOOTSTRAP -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+<!-- //////////////////////////FONT AWESOME -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<link rel="stylesheet" type="text/css" href="../css/map.css">
+<link rel="stylesheet" type="text/css" href="../css/cart.css">
+<link rel="stylesheet" type="text/css" href="../css/thumbs.css">
+<link rel="stylesheet" type="text/css" href="../css/product-page.css">
+<link rel="stylesheet" type="text/css" href="../css/info-prod.css">
+<link rel="stylesheet" type="text/css" href="../css/digital.css">
+<script src="../js/main.js"></script>
+<script src="../js/mainh.js"></script>
+<script src="http://tipozerozero.com/ooox/ooox.js"></script>
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+<script src="../js/jquery.geocomplete.js"></script>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta charset="utf-8"/>
+<script>
+myappinit=function(){
+
+}
+</script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mese', 'Vendite'],
+          ['Jan',  240],
+          ['Feb',  230],
+          ['Mar',  370],
+          ['Apr',  768],
+            ['May', 600],
+            ['Jun',  1000],
+          ['Jul',  990],
+          ['Aug',  220],
+          ['Sep',  340],
+            ['Oct',  540],
+          ['Nov',  1170],
+          ['Dec',  1670]
+        ]);
+
+        var options = {
+          title: 'Vendite',
+          hAxis: {title: 'Mese',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body onload="myappinit();">
+<!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
+<div class="header-admin">
+   <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png"/></div>
+</div>
+<div id="main-dash-container">
+    <div id="dash-menu">
+        <div class="dash-button title transition-1">DASHBOARD</div>
+        <a href="orders.html"><div class="dash-button  transition-1">ordini</div></a>
+        <div class="dash-button  transition-1">prodotti</div>
+        <div class="dash-button  transition-1">clienti</div>
+        <a href="../index.html"><div class="dash-button  transition-1">sito web</div></a>
+        <div class="dash-button  transition-1">fornitori</div>
+    </div>
+    <div id="left-dash-container">
+        <div class="head-dash">
+            <div class="head-dash-title">vendite</div>
+            <div class="head-dash-info">
+                <div class="period-value">0,00€</div>
+                <div class="total-value">1.435,29€</div>
+            </div>
+        </div>
+        <div class="dash-main-content">
+            <div class="main-content-title">ordini</div>
+            <div class="main-content">
+                <input type="button" id="allOrders" value="all" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/><input type="button" id="recentOrders" value="recents" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="processed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="completed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="open" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="declined" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="backordered" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="canceled" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+                <input type="button" value="failed" onclick="clean(this);this.classList.add('select')" class="orders-button transition-1"/>
+            </div>
+        </div>
+    </div>
+    <div id="right-dash-container">
+        <div class="head-dash">
+            <div class="head-dash-title">tasse</div>
+            <div class="head-dash-info">
+                <div class="period-value">0,00€</div>
+                <div class="total-value">1.435,29€</div>
+            </div>
+        </div>
+        <div class="dash-main-content">
+            <div class="main-content-title">statistiche</div>
+            <div class="main-content">
+                <div id="svg-graph-container">
+                    <div id="chart_div" style="width: 100%; height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>
