@@ -44,7 +44,7 @@
         setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
     }
     function chooseStart(){console.log(ch+' is ch');
-    if(ch=='guest'){}else{document.getElementById('checkout-address').click()}
+    if(ch=='guest'){}else{document.getElementById('next-logged').click()}
                            fillAddress();
     }
     function fillAddress(){
@@ -62,7 +62,7 @@
             <div class="item-container"></div>
         </div></div>
 <div id="checkout-main-container">
-    <div id="checkout-progress-container"></div>
+    <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
     <div class="menu-opened transition-1">
         <div class="left-square open transition-1" id="checkout-login">
             <div class="single-container" id="single-login">
@@ -77,7 +77,7 @@
                         <div class="social-logo">Amazon</div>
                     </div>
                 </div>
-                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-address'))">
+                <div class="next transition-1" id="next-logged" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('next',now)">
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
             </div>
@@ -99,10 +99,10 @@
                         <textarea class="text-address" placeholder="Phone" id="country-textaera"></textarea>
                     </form>
                 </div>
-                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'))">
+                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('next',now)">
                      <img src="img/next.png" class="next-image image-button transition-1"/>
                  </div>
-                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-login'))">
+                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-login'));var now=20;progressBar('pre',now)">
                      <img src="img/next.png" class="pre-image image-button transition-1"/>
                  </div>
             </div>
@@ -116,10 +116,10 @@
                        <div class="shipping-option">Standard</div>
                        <div class="shipping-option">Priority</div>
                 </div>
-                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-review'))">
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('next',now)">
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
-                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-address'));">
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('pre',now)">
                     <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
@@ -131,10 +131,10 @@
             <div class="single-container" id="single-review"  style="display:none">
                 <div class="single-header">Review your order</div>
                 <div class="single-content"></div>
-                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'))">
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=100;progressBar('next',now)">
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
-                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'))">
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('pre',now)">
                     <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
@@ -146,7 +146,7 @@
                 <div class="single-content">
                     <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
                 </div>
-                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'))">
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('pre',now)">
                     <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
