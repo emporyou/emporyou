@@ -69,7 +69,7 @@ $.load=function(url,_elm,_onfinish,_onstep,_onerror,_mem){var req=this._req();
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------- OBJECT 2 XML
-$.JSON2xmldoc=function(o,n){var s='<?xml version="1.0" encoding="utf-8" ?>\n'+$.o2xml(o,n);return $.parsexml(s);};
+$.JSON2xmldoc=function(o,n){var s='<?xml version="1.0" encoding="utf-8" ?>'+$.o2xml(o,n);console.log(s);return $.parsexml(s);};
 $.o2xml=function(o,n){if(!n){n='item'}if(Array.prototype.isPrototypeOf(o)){return $.a2xml(n,o);}else if(typeof(o)=='object'){return $._o2xml(n,o);}else{return $.v2xml(n,o);}};
 $._o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
 	for(var prop in o){pr=prop;if(!isNaN(prop)){pr='x'+pr}if(Array.prototype.isPrototypeOf(o[prop])){xml+=$.a2xml(pr,o[prop]);}else if(typeof(o[prop])=='object'){xml+=$._o2xml(pr,o[prop]);}else{xml+=$.v2xml(pr,o[prop]);}}return xml+'</'+n+'>';}else{return ''}};
