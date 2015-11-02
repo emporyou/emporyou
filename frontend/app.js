@@ -208,6 +208,21 @@ app.all('/add_deal', upload.any(), function (req, res, next) {
 	});
 });
 
+
+app.all('/del_deal',upload.any(), function (req, res, next) {
+  var logontype=emporyou.logontype(req);
+  var _id=req.query._id;if(!_id){_id=req.body._id}
+  var outputfomat=(req.query.output||'json').toLowerCase();
+  var jq=false;
+  res.jsonout={requested:req.originalUrl};
+  if(_id){jq={_id:ObjectID(_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
+  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+	db.collection('deal').remove(jq,function(err,rows){
+		db.close();
+		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
+		return res.end(JSON.stringify(res.jsonout));
+});});
+
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
 //---------------------------------------------------------------------------------------------------
