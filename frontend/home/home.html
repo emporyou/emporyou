@@ -52,7 +52,7 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
         setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
     }
     function chooseStart(){console.log(ch+' is ch');
-    if(ch=='guest'){}else{document.getElementById('next-logged').click()}
+    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click()}
                            fillAddress();//TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
     }
     function fillAddress(){
@@ -409,7 +409,7 @@ initMap=function() {
                  <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('next',now)">
                      <img src="img/next.png" class="next-image image-button transition-1"/>
                  </div>
-                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-login'));var now=20;progressBar('pre',now)">
+                 <div class="pre transition-1" id="pre-notlogged" onclick="stepCheckout(document.getElementById('checkout-login'));var now=20;progressBar('pre',now)">
                      <img src="img/next.png" class="pre-image image-button transition-1"/>
                  </div>
             </div>
