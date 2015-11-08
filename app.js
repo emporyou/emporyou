@@ -104,12 +104,10 @@ app.all('/add_merchant',upload.any(), function (req, res, next) {
 	var jsondata=JSON.parse(req.body.jsondata);
 	jsondata._id=new ObjectID();
 	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
-				db.collection('merchant').insert(jsondata,function(err){if(err){db.close();throw err}
-				res.writeHeader('Content-Type', 'application/json; charset=utf-8');
-				res.end(JSON.stringify(jsondata));
-		});
-	});
-});
+			db.collection('merchant').insert(jsondata,function(err){if(err){db.close();throw err}
+			res.writeHeader('Content-Type', 'application/json; charset=utf-8');
+			res.end(JSON.stringify(jsondata));
+});});});
 app.all('/del_merchant',upload.any(), function (req, res, next) {
   var logontype=emporyou.logontype(req);
   var _id=req.query._id;if(!_id){_id=req.body._id}
