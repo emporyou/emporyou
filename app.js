@@ -227,7 +227,6 @@ app.all('/del_deal',upload.any(), function (req, res, next) {
 serve404=function(res){};
 servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
 //---------------------------------------------------------------------------------------------------
-
 //---------------------------------------------------------------------------------------------------
 app.use(function(req,res,next){
 	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
