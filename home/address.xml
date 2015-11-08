@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//item">
+<variable tagname="name/familyName" substitution="%lastname"/>
+<variable tagname="name/givenName" substitution="%name"/>
+<variable tagname="email" substitution="%email"/>
+<variable tagname="language" substitution="%language" convert="sessionlang"/>
+<constantjavascript substitution="qweqweqweqwe">window.sessionlang=function(lang){if(lang=='it'){var c="Italy";return c}else{var c="Country";return c;}}</constantjavascript>
+<html><![CDATA[<textarea class="text-address" placeholder="Country.." onfocus="this.value='';" id="country-textarea">%language</textarea><textarea 
+                       class="text-address" placeholder="Full name.." onfocus="this.value='';" id="country-textaera">%name %lastname</textarea><textarea 
+                       class="text-address"  placeholder="Address.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Address.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="ZIP code.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="City.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Region.." onfocus="this.value='';" id="country-textaera"></textarea><textarea 
+                       class="text-address" placeholder="Phone.." onfocus="this.value='';" id="country-textaera"></textarea>]]></html></rowtype></document>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document>
-<rowtype tagname="//product">
-<variable tagname="name" substitution="%name"/>
-<variable tagname="unitprice" substitution="%unitprice"/>
-<variable tagname="amount" substitution="%amount"/>
-<html><div class="line"><span>%name - <span>%unitprice - <span>%amount</span></span></span></div></html></rowtype>
-</document>

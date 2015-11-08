@@ -1,0 +1,367 @@
+
+#form-coupon-container {
+    width:85%;
+    height:auto;
+    position:absolute;
+    top:100px;
+    left:7.5%;
+    min-width:500px;
+    min-height:300px;
+    border:2px solid #0D2D4D
+}
+
+#form-coupon-container {
+}
+
+#title-coupon {
+    text-align:center;
+    width:100%;
+    height:50px;
+    line-height:50px;
+    font-family:'Open sans';
+    font-size:4vh;
+    font-weight:bold;
+}
+
+#image-coupon {
+    width:100%;
+    opacity:0;
+}
+
+#text-valore {
+    position:absolute;
+    right:45%;
+    top:25%;
+}
+
+.text-info {
+    color:white;
+    font-family:'open sans';
+    font-size:2vh;
+    position:absolute;
+}
+.text-info.main{
+ font-size:2vh   
+}
+
+#textarea-valore {
+    position:absolute;
+    top:25.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+.info-textarea {
+    overflow:hidden;
+    border-radius:4px;
+    background-color:#cdcdcd;
+    border:none;
+    color:black;
+    font-family:'Open sans';
+        font-size:1.8vh;
+    position:Absolute;
+}
+
+
+#text-sconto {
+    position:absolute;
+    right:44.5%;
+    top:27%;
+}
+
+#textarea-sconto {
+    position:absolute;
+    top:27.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+body {
+    min-width:500px;
+    min-height:300px;
+}
+
+.fontlogo {
+    
+}
+
+.text-logo {
+    left:42%
+}
+
+#text-totale {
+    position:absolute;
+    right:42.5%;
+    top:29%;
+}
+
+#target-totale {
+    display:inline-block;
+    color:orange;
+}
+textarea{
+ resize: none;   
+}
+
+#text-nomeprodotto {
+    position:absolute;
+    right:47%;
+    top:20%;
+}
+
+#textarea-nomeprodotto {
+    position:absolute;
+    top:20.1%;
+    left:56%;
+        height:2.2vh;
+    width:20%
+}
+
+#blue-cont {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:1;
+    width:90%;
+    left:5%;
+    height:18.6%;
+    top:18.4%
+}
+
+.logo-coupon {
+    position:absolute;
+    width:20%;
+    top:16%;
+    left:11%;
+    opacity:0.8;
+}
+
+#blue-cont-head {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:1;
+    width:90%;
+    left:5%;
+    height:2%;
+    top:5.8%
+}
+
+#text-nomevenditore {
+    right:54.5%;
+    top:38%;
+    color:black;
+    font-weight:bold;
+}
+
+#textarea-nomevenditore {
+    top:38.1%;
+    left:46%;
+    height:2.2vh;
+    width:35%
+}
+
+#dotted-cont {
+    z-index:-1;
+    position:absolute;
+    background-color:transparent;
+    border-left:2px dotted black;
+    border-right:2px dotted black;
+    border-bottom:2px dotted black;
+    opacity:0.5;
+    width:89.7%;
+    left:5%;
+    height:49.9%;
+    top:7.4%
+}
+
+#text-indirizzo {
+   right:54.5%;
+    top:40%;
+    color:black;
+    font-weight:bold; 
+}
+
+#textarea-indirizzo {
+    top:40.1%;
+    left:46%;
+    height:4.2%;
+    width:35%
+}
+
+#text-varianteprodotto {
+    position:absolute;
+    right:47%;
+    top:22%;
+}
+
+#textarea-varianteprodotto {
+    position:absolute;
+    top:22.1%;
+    left:56%;
+    height:2.2vh;
+    width:20%
+}
+
+.icon-coupon {
+    position:absolute;
+    width:8%;
+    top:11%;
+    left:17%;
+    opacity:0.8;
+}
+
+#form-image-container {
+    
+}
+
+#condizioni {
+    position:absolute;
+    background-color:transparent;
+    opacity:0.5;
+    width:60%;
+    height:5%;
+    top:45%;
+    left:28%;
+        /*border-bottom:2px dotted black;*/
+}
+
+#map-container {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:0.5;
+    width:51.3%;
+    height:0;
+    padding-bottom:15%;
+    top:45.5%;
+    left:30%
+}
+
+#footer {
+    position:Absolute;
+    width:90%;
+    left:5%;
+    height:40%;
+    top:58%;
+    background-color:#ccc;
+    background-size:100%;
+    padding:5%;
+    box-sizing: border-box;
+    font-family:'open sans';
+    font-size:2vh
+}
+
+#svgg {
+    fill:black;float:left;
+}
+
+#svgcont {
+    position:absolute;
+    width:38.5%;
+    top:25%;
+    background-color:transparent;
+    opacity:0.5;
+    height:12%;
+    left:5%
+}
+
+#logo-text-coupon {
+    filter: brightness(0)
+}
+
+#logo-image-coupon {
+    filter:brightness(0)
+}
+
+#map-searchbox {
+    position:absolute;
+    background-color:#0D2D4D;
+    opacity:0.5;
+    width:18.3%;
+    height:4%;
+    top:45.5%;
+    left:10%
+}
+
+#map-textarea {
+    position:absolute;
+    width:80%;
+    left:7.5%;
+    top:10%;
+    height:60%
+}
+
+#vaucher-text {
+    position:absolute;
+    background-color:TRANSPARENT;
+    opacity:1;
+    width:31.5%;
+    left:5%;
+    height:4%;
+    top:18.5%;
+    color:orange;
+    font-size:8vh;
+    text-align:center;
+    font-family:'open sans';
+}
+
+#image-cont {
+    position:absolute;
+    background-color:transparent;
+    opacity:1;
+    width:15%;
+    left:78%;
+    height:0;
+    padding-bottom:18%;
+    top:20%
+}
+
+#image-target {
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+    background-color:blue;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#upload-image {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:20%;
+}
+#upload-image:hover{
+    cursor:pointer;
+}
+
+
+#textarea-sottotitolo {
+    
+}
+
+#send-coupon {
+    position:absolute;
+    right:8%;
+    top:54%;
+}
+#send-coupon:hover{
+    cursor:pointer
+}
+
+#list {
+        height: 0;
+    padding-bottom: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000000;
+    background-color: transparent;
+}
+
+#files {
+        position: absolute;
+    bottom: 0%;
+    left: -60%;
+    background-color: white;
+}

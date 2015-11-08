@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//deal">
+<variable tagname="vendor" substitution="%vendor-name"/>
+<variable tagname="merchant/lat" substitution="%lat"/>
+<variable tagname="merchant/lon" substitution="%lon"/>
+<variable tagname="merchant/city" substitution="%city"/>
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="title" substitution="%jsproduct-name" escape="js"/>
+<variable tagname="merchant/id" substitution="%merch-id"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<variable tagname="imagefile" substitution="%imagefile"/>
+<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
+<variable tagname="variants[optionTitle]/price" substitution="%price"/>
+<inline tagname="variants[optionTitle]" substitution="%options" preload="options-template.xml"/>
+<variable tagname="pageTitle" substitution="%subtitle"/>
+<html><div class="goback" onclick="closeProduct()"><img src="../img/x.png" class="ics"/></div><div class="product-title-bar"><div 
+       class="product-title">%product-name</div><div 
+       class="product-subtitle">%subtitle</div></div><div class="product-info-main"><div 
+       class="fixer-container"><div 
+       class="product-left-container"><div 
+           class="product-photos"><div class="main-photo" style="background: url('http://emporyou.com/uploads/%imagefile');background-size:cover"> </div><div class="other-photo">
+            <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
+            <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
+            <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover"> </div>
+            <div class="thumb-product-photo" style="background: url('http://emporyou.com/get_product_image?m_id=%merch-id&amp;p_id=%id');background-size:cover;"> </div>
+        </div></div><div 
+        class="product-description"><span 
+        style="font-size:2.5vh;">%product-name</span><br/>%description</div></div><div 
+        class="product-right-container"><div 
+        class="product-buy-container"><div 
+        class="buy-element text" style="border-radius:0 0 0 0 !important">%subtitle</div><div 
+        class="buy-element text">%price</div><div 
+        class="buy-element"><a href="#?b=%product-name" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" class="button-gen">Aggiungi al carrello</a><!--><img  src="../img/buy-button.png" class="buy-button"/>--></div><div 
+        class="buy-element"><div class="product-values">valore:<br/>€100</div><div class="product-values">sconto:<br/>60%</div><div class="product-values">risparmio<br/>€40</div></div><div 
+        class="buy-element">%options</div></div><div 
+        class="product-social-maps-container"><img class="product-page-map" src="../img/google-maps.png"/></div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
+</html></rowtype></document>

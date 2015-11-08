@@ -7,7 +7,7 @@ cd /root/react001/reaction
 su root -c "meteor run --port 3010 &"
 sleep 40s
 echo STARTING FRONTEND --------------------------------------
-cd /root/emporyou/frontend
+cd /root/emporyou
 node app.js &
 echo CREDENTIALS 1
 grep "EMAIL/LOGIN:" /root/react001/reaction/started1.txt

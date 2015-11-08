@@ -54,7 +54,7 @@ chmod 755 /etc/init.d/emporyou
 chkconfig emporyou on
 echo  --------------- STARTING FRONTEND ----------------------------
 cd emporyou
-node frontend/app.js &
+node app.js &
 cd /root
 echo  --------------- GREP CREDENTIALS -----------------------------
 echo CREDENTIALS 1
