@@ -19,6 +19,7 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
+<variable tagname="imagefile" substitution="%imagefile"/>
 <html><div class="object-container"><div 
        class="cart-item-image" 
        style="background: url('http://emporyou.com/uploads/%imagefile');background-size:cover"><div 
