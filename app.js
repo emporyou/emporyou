@@ -7,6 +7,13 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
+//-----------------------------------------------
+var metaschema=require('metaschema-node').express;
+var DIRNAME='.';
+var PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80;
+var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var mongoURL='mongodb://localhost:27017/emporyou';
+metaschema.apply({mongoUrl:mongoURL,dirname:DIRNAME});
 
 app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
 app.use(passport.initialize());
@@ -43,9 +50,6 @@ var User={findOrCreate:function(a,next){
 				else{db.close();next(false,rows[0]);}
 }});}});},
 };
-
-var BasicStrategy=require('passport-http').BasicStrategy;
-var DigestStrategy=require('passport-http').DigestStrategy;
 var ShopifyStrategy=require('passport-shopify').Strategy;
 var GoogleStrategy0=require('passport-google-oauth').Strategy;
 var GoogleStrategy=require('passport-google-oauth2').Strategy;
@@ -128,30 +132,14 @@ res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest'
 	res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));
 	}});
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
-app.all('/postback',function(req,res){
-	var out='<!DOCTYPE html><head><title>postback</title></head><body>';out+='<h3>headers</h3>\n';
-	for (key in req.headers){out+=key+':'+req.headers[key]+'<br/>';}out+='<h3>querystring</h3>\n';
-	for (key in req.query){out+=key+':'+req.query[key]+'<br/>';}out+='<h3>files</h3>\n';
-	for (key in req.files){out+=key+':'+req.files[key]+'<br/>';}out+='<h3>form</h3>\n';
-	for (key in req.body){out+=key+':'+req.body[key]+'<br/>';}out+='</body></html>';
-	res.set('Content-Type', 'text/html');res.end(out);});
-app.all(/^\/metaframe\/?.*/,function(req,res){
-	if(emporyou.apicheck(req)){var fflag=true;
-	  var fn=req.body.page;if(!fn){fn=req.query.page}
-	  fn='./'+fn;
-	  var st=fs.statSync(fn);
-	  if(!st.isDirectory()){ 
-	  var ext=path.extname(fn);
-	  if(mime[ext]){res.set('Content-Type',mime[ext]);}
-	  var json=req.body.jsondata;
-	  if(!json){json=req.query.jsondata}
-	  console.log(json);
-	  fs.createReadStream(fn)
-		.pipe(replaceStream('%jsondata',json))
-		.pipe(res);
-	}else{res.set('Content-Type', 'text/html');res.end('page must be a file');}
-	}else{res.set('Content-Type', 'text/html');res.end('unauthorized');
-}});
+app.all(/^\/postback\/?.*/,upload.any(),metaschema.postback);
+app.all(/^\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
+app.all(/^\/?api\/get\/?.*/,upload.any(),metaschema.get);
+app.all(/^\/?api\/set\/?.*/,upload.any(),metaschema.set);
+app.all(/^\/?api\/add\/?.*/,upload.any(),metaschema.add);
+app.all(/^\/?api\/del\/?.*/,upload.any(),metaschema.del);
+app.all(/^\/?api\/link\/?.*/,upload.any(),metaschema.link);
+app.all(/^\/?api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
@@ -232,7 +220,6 @@ app.use(function(req,res,next){
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
-var PORT=80;
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
 
