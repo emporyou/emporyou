@@ -23,7 +23,6 @@ metaschema.addbaserecord(
 metaschema.addbaserecord(
 {_id:ObjectID('000000000000000000000050'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
 	name:'category',desc:'default category node',	system:true,url:false,user:[],rel:[],meta:[]});
-
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
 //var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
 var HOST='http://emporyou.com';
