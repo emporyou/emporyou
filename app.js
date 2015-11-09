@@ -1,30 +1,38 @@
 var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
-var express = require('express');var app = express();
-var passport = require('passport');
+var express = require('express');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var multer = require('multer');
-var upload = multer({ dest: 'uploads/' });
+var multer = require('multer');var upload = multer({ dest: 'uploads/' });
+var passport = require('passport');
+var app = express();
 //-----------------------------------------------
 var metaschema=require('metaschema-node').express;
 var DIRNAME='.';
 var PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80;
 var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var mongoURL='mongodb://localhost:27017/emporyou';
-metaschema.apply({mongoUrl:mongoURL,dirname:DIRNAME});
+var MONGOURL='mongodb://localhost:27017/emporyou';
+metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
+metaschema.addbaserecord(
+{_id:ObjectID('000000000000000000000011'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
+	name:'merchant',desc:'default merchant node',	system:true,url:false,user:[],rel:[],meta:[]});
+metaschema.addbaserecord(
+{_id:ObjectID('000000000000000000000012'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
+	name:'deal',desc:'default deal node',				system:true,url:false,user:[],rel:[],meta:[]});
+metaschema.addbaserecord(
+{_id:ObjectID('000000000000000000000050'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
+	name:'category',desc:'default category node',	system:true,url:false,user:[],rel:[],meta:[]});
 
-app.use(session({secret:'logic is red',store:new MongoStore({url: 'mongodb://localhost:27017/mongostore' })}));
-app.use(passport.initialize());
-app.use(passport.session());
-
-var MERCHANTCHACHE=[];
-var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
+app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
+//var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
-var MONGOURL='mongodb://localhost:27017/emporyou';
-
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
+app.use(passport.initialize());
+app.use(passport.session());
 var TWITTER_CONSUMER_KEY='P4bDNt8Umk1k1YVMXBRf7EfFW';var TWITTER_CONSUMER_SECRET='Wlibc4hVhUfA21ZPMUZqJ7GuFDICTj7bQfkno3WpB5yRFneCmn';
 var FACEBOOK_APP_ID='460219550850496';var FACEBOOK_APP_SECRET='92c6695c348098685ad74418946b9c8d';
 var GOOGLE_CLIENT_ID='1090089087428-k638posl6k8nkgl140bj4ebecrfhmopo.apps.googleusercontent.com';var GOOGLE_CLIENT_SECRET='iejkVQ8FcjXguhQwzgcANM5T';
@@ -32,10 +40,6 @@ var GOOGLE_API_SCOPE = ['profile','email'];
 var SHOPIFY_SHOP_SLUG /*e.g. my-shop-name.myshopify.com ... the `my-shop-name` part*/
 var SHOPIFY_CLIENT_ID=''; 
 var SHOPIFY_CLIENT_SECRET='';
-
-//---------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------ LOGIN and PASSPORT CONFIGURATION
 var User={findOrCreate:function(a,next){
 		if(!a.displayName){a.displayName='utente anonimo';}
       MongoClient.connect(MONGOURL,function(err,db){if(err){db.close();next(err,null)}else{
@@ -93,7 +97,7 @@ emporyou.logontype=function(req){var logontype='guest';if(req.isAuthenticated())
 emporyou.apicheck=function(req){if(!req.isAuthenticated()){return false}return true};
 //emporyou.sec=function(){this.logontype=};
 emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
-	MongoClient.connect('mongodb://localhost:27017/emporyou', function(err, db) {
+	MongoClient.connect(MONGOURL, function(err, db) {
 		db.collection('merchant').find({}).toArray(function(err,rows){db.close();if(err){if(handler)handler(err);}else{
 			for(var r=0;r<rows.length;r++){MERCHANTCHACHE[rows[r]._id]=rows[r]}
 		if(handler)handler(false,rows);}});
@@ -107,7 +111,7 @@ app.all('/set_merchant',function(req, res){res.send('Hello World!!');});
 app.all('/add_merchant',upload.any(), function (req, res, next) {
 	var jsondata=JSON.parse(req.body.jsondata);
 	jsondata._id=new ObjectID();
-	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+	MongoClient.connect(MONGOURL,function(err,db){if(err){throw err}
 			db.collection('merchant').insert(jsondata,function(err){if(err){db.close();throw err}
 			res.writeHeader('Content-Type', 'application/json; charset=utf-8');
 			res.end(JSON.stringify(jsondata));
@@ -119,7 +123,7 @@ app.all('/del_merchant',upload.any(), function (req, res, next) {
   var jq=false;
   res.jsonout={requested:req.originalUrl};
   if(_id){jq={_id:ObjectID(_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
-  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+  MongoClient.connect(MONGOURL,function(err,db){if(err){throw err}
 	db.collection('merchant').remove(jq,function(err,rows){
 		db.close();
 		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
@@ -140,6 +144,7 @@ app.all(/^\/?api\/add\/?.*/,upload.any(),metaschema.add);
 app.all(/^\/?api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/?api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/?api\/unlink\/?.*/,upload.any(),metaschema.unlink);
+app.all(/^\/?api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ FRONT SERVICES
@@ -157,7 +162,7 @@ app.all('/get_deal', function (req, res) {
   var jq={};
   if(p_id){jq={_id:ObjectID(p_id)}}
   res.jsonout={requested:req.originalUrl};
-  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+  MongoClient.connect(MONGOURL,function(err,db){
 		db.collection('deal').find(jq).toArray(function(err,rows){db.close();if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){if(MERCHANTCHACHE[rows[r].merchant])rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
 			res.jsonout.deal=rows;
@@ -173,7 +178,7 @@ app.all('/get_transactions', function (req, res) {
 	if(logontype=='merchant'||logontype=='admin'){
 		
 	}
-  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){
+  MongoClient.connect(MONGOURL,function(err,db){
 		db.collection('transaction').find({visible:true}).toArray(function(err,rows){db.close();if(err){throw err}else{
 			for(var r=0;r<rows.length;r++){rows[r].merchant=MERCHANTCHACHE[rows[r].merchant];}
 			res.jsonout.transaction=rows[r];
@@ -187,7 +192,7 @@ app.all('/add_deal', upload.any(), function (req, res, next) {
 	jsondata._id=new ObjectID();
 	if(req.files.length<1){res.writeHeader('Content-Type', 'text/plain;');res.end('file is mandatory');return false;}
 	jsondata.imagefile=req.files[0].filename;
-	MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+	MongoClient.connect(MONGOURL,function(err,db){if(err){throw err}
 				db.collection('deal').insert(jsondata,function(err){if(err){db.close();throw err}
 				res.writeHeader('Content-Type', 'application/json; charset=utf-8');
 				res.end(JSON.stringify(jsondata));
@@ -203,7 +208,7 @@ app.all('/del_deal',upload.any(), function (req, res, next) {
   var jq=false;
   res.jsonout={requested:req.originalUrl};
   if(_id){jq={_id:ObjectID(_id)}}else{res.jsonout.error=[{message:'_id field is mandatory'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');return res.end(JSON.stringify(res.jsonout))}
-  MongoClient.connect('mongodb://localhost:27017/emporyou',function(err,db){if(err){throw err}
+  MongoClient.connect(MONGOURL,function(err,db){if(err){throw err}
 	db.collection('deal').remove(jq,function(err,rows){
 		db.close();
 		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
