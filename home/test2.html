@@ -3,7 +3,7 @@
 form,a{ font-size: 16px;}
 </style>
 </head><body>
-<h1>merchant (<a href="http://emporyou.com/api/get?id=000000000000000000000011" target="_blank">get_merchant</a>)<h1>
+<h1>merchant (<a href="http://emporyou.com/get_merchant" target="_blank">get_merchant</a>)<h1>
 <form action="http://emporyou.com/add_merchant" target="_blank" method="post" enctype="multipart/form-data">
 ADD:<textarea name="jsondata">
 {"name":"Merchant01","lat":"","lon":"","city":"Milano"}
@@ -13,19 +13,8 @@ ADD:<textarea name="jsondata">
 DELETE:<input type="text" name="_id" placeholder="merchant-id"/><input type="submit" value="delete" />
 </form><br/><br/>
 
-<h1>deal - (<a href="http://emporyou.com/api/get?id=000000000000000000000012" target="_blank">get_deal</a>)<h1>
+<h1>deal - (<a href="http://emporyou.com/get_deal" target="_blank">get_deal</a>)<h1>
 <form action="http://emporyou.com/add_deal" target="_blank"  method="post" enctype="multipart/form-data">
-ADD-DEAL-JSON:<textarea name="jsondata">
-{"name":"Merchant01","lat":"","lon":"","city":"Milano"}
-</textarea><br/>
-ADD-DEAL-IMAGE:<input type="file" name="files" placeholder="choose one file"/><input type="submit" value="add deal" />
-</form><br/>
-<form action="http://emporyou.com/del_deal" target="_blank" method="post" enctype="multipart/form-data">
-DELETE:<input type="text" name="_id" placeholder="deal-id"/><input type="submit" value="delete" />
-</form><br/><br/>
-
-<h1>category - (<a href="http://emporyou.com/api/get?k=000000000000000000000050" target="_blank">get_deal</a>)<h1>
-<form action="http://emporyou.com/api/add?p=000000000000000000000050&k=000000000000000000000050" target="_blank"  method="post" enctype="multipart/form-data">
 ADD-DEAL-JSON:<textarea name="jsondata">
 {"name":"Merchant01","lat":"","lon":"","city":"Milano"}
 </textarea><br/>
