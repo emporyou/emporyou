@@ -14,15 +14,11 @@ var PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80;
 var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
-metaschema.addbaserecord(
-{_id:ObjectID('000000000000000000000011'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
-	name:'merchant',desc:'default merchant node',	system:true,url:false,user:[],rel:[],meta:[]});
-metaschema.addbaserecord(
-{_id:ObjectID('000000000000000000000012'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
-	name:'deal',desc:'default deal node',				system:true,url:false,user:[],rel:[],meta:[]});
-metaschema.addbaserecord(
-{_id:ObjectID('000000000000000000000050'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
-	name:'category',desc:'default category node',	system:true,url:false,user:[],rel:[],meta:[]});
+var XD=Metaschema.CONFIG.docID;var XR=Metaschema.CONFIG.rootID;var XA=Metaschema.CONFIG.adminID;
+var XT=Metaschema.CONFIG.tagID;
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000011'),XR,XD,XA,'merchant','merchants node',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000012'),XR,XD,XA,'deal','deals node',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000050'),XR,XT,XA,'category','categories node',false,true));
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
