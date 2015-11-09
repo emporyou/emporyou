@@ -365,3 +365,19 @@ textarea{
     left: -60%;
     background-color: white;
 }
+
+.info-select {
+    position:absolute;
+}
+
+#select-categoria {
+    left:56%;
+    top:33%
+    
+}
+
+#text-categoria {
+    position:absolute;
+    right:45%;
+    top:32.7%;
+}
