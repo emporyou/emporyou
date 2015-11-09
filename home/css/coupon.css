@@ -48,7 +48,7 @@ textarea{
 
 #blue-cont {
     position:absolute;
-    background-color:#0D2D4D;
+    background-color:rgba(100,120,255,0.5);
     opacity:1;
     width:90%;
     left:5%;
@@ -432,4 +432,28 @@ textarea{
 }
 .image-target-option:hover{
    transform:scale(1.1) 
+}
+
+#category-target {
+    position:absolute;
+    right:10%;
+    top:10%;
+}
+
+#categorie-testo {
+    position:absolute;
+    right:10%;
+    top:8%;
+}
+
+#product-descrizione {
+    right:28%;
+    background-color:rgba(255,255,255,0.4);
+    position:absolute;
+    top:20%;
+    border-radius:6px;
+    height:15%;
+    width:25%;
+    z-index:1000;
+    font-family:'open sans'
 }

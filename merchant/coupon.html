@@ -14,20 +14,20 @@
     <!-- //////////////////////////FONT AWESOME -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../home/css/admin.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/map.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/cart.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/thumbs.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/product-page.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/info-prod.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/digital.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/coupon.css">
-    <script src="../home/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/map.css">
+    <link rel="stylesheet" type="text/css" href="../css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../css/thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../css/product-page.css">
+    <link rel="stylesheet" type="text/css" href="../css/info-prod.css">
+    <link rel="stylesheet" type="text/css" href="../css/digital.css">
+    <link rel="stylesheet" type="text/css" href="../css/coupon.css">
+    <script src="../js/main.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
-    <script src="../home/js/mainh.js"></script>
+    <script src="../js/mainh.js"></script>
     <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
-    <script src="../home/js/jquery.geocomplete.js"></script>
+    <script src="../js/jquery.geocomplete.js"></script>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -54,7 +54,6 @@
     "title": "Example Product",
     "image" : "image",
     "description": "descrizione",
-    "handle": "example-product",
     "metafields": [{
         "key": "Material",
         "value": "Cotton"
@@ -106,7 +105,7 @@
     }
     document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
   }
-
+window.nDetail=0;window.nOption=0;
     function addDetail(){
         var det=document.createElement('div');
         var del=document.createElement('div');
@@ -117,7 +116,9 @@
         del.setAttribute('class','delete-detail');
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         key.setAttribute('class','key detail');
+        key.setAttribute('name','keyDetail'+nDetail);
         valu.setAttribute('class','value detail');
+        valu.setAttribute('name','valuDetail'+nDetail);
         key.setAttribute('placeholder','Dettaglio..');
         valu.setAttribute('placeholder','Valore..');
         del.appendChild(ics);
@@ -136,7 +137,9 @@
         del.setAttribute('class','delete-option');
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         name.setAttribute('class','optionName detail');
+        name.setAttribute('name','nameOption'+nOption);
         price.setAttribute('class','priceName option');
+        price.setAttribute('name','priceOption'+nOption);
         name.setAttribute('placeholder','Opzione..');
         price.setAttribute('placeholder','Prezzo..');
         del.appendChild(ics);
@@ -148,7 +151,7 @@
             var inp=document.createElement('input');
             inp.setAttribute('type','file');
             inp.setAttribute('id','files');
-            inp.setAttribute('name','files[]');
+            inp.setAttribute('name','files[]'+nOption);
             var out=document.createElement('output');
             out.style.display="none";
             out.setAttribute('id','list');
@@ -161,17 +164,25 @@
 </script>
 </head>
 
-<body onload="myInit()">
+<body onload="myInit()"><form id="coupon-form">
     <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
     <div class="header-admin">
-        <div class="fontlogo text-logo"><img class="logo-text" src="../home/img/logo-text.png" />
+        <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
         </div>
     </div>
     <div id="form-coupon-container">
         <div id="title-coupon">Crea il tuo coupon</div>
-            <img class="logo-coupon" src="../home/img/logo-text-black.png" />
-            <textarea id="product-title" placeholder="Nome prodotto.."></textarea>
-            <textarea id="product-altreinfo" placeholder="Sottotitolo.."></textarea>
+            <img class="logo-coupon" src="../img/logo-text-black.png" />
+            <textarea id="product-title" name="productName" placeholder="Nome prodotto.."></textarea>
+            <textarea id="product-altreinfo" name="productSubtitle" placeholder="Sottotitolo.."></textarea>
+            <textarea id="product-descrizione" name="productDescription" placeholder="Descrizione.."></textarea>
+            <div id="categorie-testo">Seleziona una categoria</div>
+            <select id="category-target" name="categorySelect">
+                <option>Tempo libero e salute</option>
+                <option>Casa</option>
+                <option>Abbigliamento</option>
+                <option>Animali</option>
+            </select>
             <div id="blue-cont">
                <div id="image-guide">Scegli una foto</div>
                 <div id="image-target" class="transition-1">
@@ -292,6 +303,7 @@
                 </svg>
             </div>
         </div>
+        </form>
 </body>
 
 </html>
