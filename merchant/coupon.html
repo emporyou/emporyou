@@ -125,6 +125,7 @@ window.nDetail=0;window.nOption=0;
         det.appendChild(del);
         det.appendChild(key);
         det.appendChild(valu);
+        nDetail++;
         document.getElementById('details-cont').insertBefore(det,document.getElementById('details-cont').firstChild);
     }
         function addOption(){
@@ -158,6 +159,7 @@ window.nDetail=0;window.nOption=0;
             img.appendChild(out);
             img.appendChild(inp);
             opt.appendChild(img);
+            nOption++;
         document.getElementById('option-cont').insertBefore(opt,document.getElementById('option-cont').firstChild);
     }
   
@@ -191,7 +193,7 @@ window.nDetail=0;window.nOption=0;
                 </div>
             </div>
             <div id="dotted-cont"></div>
-            <div id="option-cont">
+            <fieldset id="option-cont" name="fieldOption">
                <!--<div class="new-option">
                    <div class="delete-option" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
                     <textarea class="optionName option" placeholder="Opzione.."></textarea><br/>
@@ -202,15 +204,15 @@ window.nDetail=0;window.nOption=0;
                 </div>
                 </div>-->
                 <div id="add-option" onclick="addOption()" class="adder transition-1">Add option <br/>+</div>
-            </div>
-            <div id="details-cont">
+            </fieldset>
+            <fieldset id="details-cont" name="fieldDetail">
                <!--<div class="new-detail">
                    <div class="delete-detail" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
                     <textarea class="key detail" placeholder="Dettaglio.."></textarea>
                     <textarea class="value detail" placeholder="Valore.."></textarea>
                 </div>-->
                 <div id="add-detail" onclick="addDetail()" class="adder transition-1">Add detail <br/>+</div>
-            </div>
+            </fieldset>
             <div id="blue-cont-head"></div>
             <div id="vaucher-text">VAUCHER</div>
             <div id="svgcont">
