@@ -13,7 +13,17 @@ uno.xml._add = function (a) {
 
 uno.xml.test = function (f){
     window.o={};
-    var i = uno.xml._add(f.getElementsByTagName('input'));console.log(i);
-    var fld = uno.xml._add(f.getElementsByTagName('fieldset'));console.log(fld);
-    o.field=fld;
+    o.fields=[];
+    window.fld = uno.xml._add(f.getElementsByTagName('fieldset'));
+    for(i=0;i<fld.length;i++){
+            var inp=fld[i].getElementsByTagName('input');
+        var t=fld[i].getElementsByTagName('textarea');
+        var ob={};
+        for(z=0;z<inp.length;z++){
+            if(inp[z].name){var cc=inp[z].value;var ni=inp[z].name;ob.ni=cc;}
+            if(t[z].name){var cc=t[z].value;var nt=t[z].name;ob.nt=cc;}
+        }
+        o.fields.push(ob);
+        }
+    
 }
