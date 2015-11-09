@@ -107,7 +107,7 @@
   }
 window.nDetail=0;window.nOption=0;
     function addDetail(){
-        var det=document.createElement('div');
+        var det=document.createElement('fieldset');
         var del=document.createElement('div');
         var ics=document.createTextNode('x');
         var key=document.createElement('textarea');
@@ -129,7 +129,7 @@ window.nDetail=0;window.nOption=0;
         document.getElementById('details-cont').insertBefore(det,document.getElementById('details-cont').firstChild);
     }
         function addOption(){
-        var opt=document.createElement('div');
+        var opt=document.createElement('fieldset');
         var del=document.createElement('div');
         var ics=document.createTextNode('x');
         var name=document.createElement('textarea');
@@ -193,7 +193,7 @@ window.nDetail=0;window.nOption=0;
                 </div>
             </div>
             <div id="dotted-cont"></div>
-            <fieldset id="option-cont" name="fieldOption">
+            <fieldset id="option-cont" name="variants[]">
                <!--<div class="new-option">
                    <div class="delete-option" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
                     <textarea class="optionName option" placeholder="Opzione.."></textarea><br/>
@@ -205,7 +205,7 @@ window.nDetail=0;window.nOption=0;
                 </div>-->
                 <div id="add-option" onclick="addOption()" class="adder transition-1">Add option <br/>+</div>
             </fieldset>
-            <fieldset id="details-cont" name="fieldDetail">
+            <fieldset id="details-cont" name="metafields[]">
                <!--<div class="new-detail">
                    <div class="delete-detail" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
                     <textarea class="key detail" placeholder="Dettaglio.."></textarea>
