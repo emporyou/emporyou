@@ -1,0 +1,31 @@
+{
+    "subtitle": "Basic Example Product",
+    "title": "Example Product",
+    "image" : "image"
+    "description": "descrizione",
+    "handle": "example-product",
+    "metafields": [{
+        "key": "Material",
+        "value": "Cotton"
+    }, {
+        "key": "Quality",
+        "value": "Excellent"
+    }],
+    "variants": [{
+        "title": "Basic Example Variant",
+        "price": "prezzo",
+        "optionImage" : "image"
+    }, {
+        "title": "Example option 1",
+        "price": "prezzo",
+        "optionTitle": "Option 1",
+        "optionImage" : "image"
+    }, {
+        "title": "Example option 2",
+        "price": "prezzo",
+        "optionTitle": "Option 2",
+        "optionImage" : "image"
+    }],
+    "manufacturer": "Example Manufacturer",
+    "category": "categoria"
+}

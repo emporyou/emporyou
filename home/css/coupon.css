@@ -1,7 +1,7 @@
 
 #form-coupon-container {
     width:85%;
-    height:auto;
+    height:200%;
     position:absolute;
     top:100px;
     left:7.5%;
@@ -28,55 +28,6 @@
     opacity:0;
 }
 
-#text-valore {
-    position:absolute;
-    right:45%;
-    top:25%;
-}
-
-.text-info {
-    color:white;
-    font-family:'open sans';
-    font-size:2vh;
-    position:absolute;
-}
-.text-info.main{
- font-size:2vh   
-}
-
-#textarea-valore {
-    position:absolute;
-    top:25.1%;
-    left:56%;
-    height:2.2vh;
-    width:20%
-}
-
-.info-textarea {
-    overflow:hidden;
-    border-radius:4px;
-    background-color:#cdcdcd;
-    border:none;
-    color:black;
-    font-family:'Open sans';
-        font-size:1.8vh;
-    position:Absolute;
-}
-
-
-#text-sconto {
-    position:absolute;
-    right:44.5%;
-    top:27%;
-}
-
-#textarea-sconto {
-    position:absolute;
-    top:27.1%;
-    left:56%;
-    height:2.2vh;
-    width:20%
-}
 
 body {
     min-width:500px;
@@ -90,34 +41,10 @@ body {
 .text-logo {
     left:42%
 }
-
-#text-totale {
-    position:absolute;
-    right:42.5%;
-    top:29%;
-}
-
-#target-totale {
-    display:inline-block;
-    color:orange;
-}
 textarea{
  resize: none;   
 }
 
-#text-nomeprodotto {
-    position:absolute;
-    right:47%;
-    top:20%;
-}
-
-#textarea-nomeprodotto {
-    position:absolute;
-    top:20.1%;
-    left:56%;
-        height:2.2vh;
-    width:20%
-}
 
 #blue-cont {
     position:absolute;
@@ -146,21 +73,6 @@ textarea{
     height:2%;
     top:5.8%
 }
-
-#text-nomevenditore {
-    right:54.5%;
-    top:38%;
-    color:black;
-    font-weight:bold;
-}
-
-#textarea-nomevenditore {
-    top:38.1%;
-    left:46%;
-    height:2.2vh;
-    width:35%
-}
-
 #dotted-cont {
     z-index:-1;
     position:absolute;
@@ -174,39 +86,9 @@ textarea{
     height:49.9%;
     top:7.4%
 }
-
-#text-indirizzo {
-   right:54.5%;
-    top:40%;
-    color:black;
-    font-weight:bold; 
-}
-
-#textarea-indirizzo {
-    top:40.1%;
-    left:46%;
-    height:4.2%;
-    width:35%
-}
-
-#text-varianteprodotto {
-    position:absolute;
-    right:47%;
-    top:22%;
-}
-
-#textarea-varianteprodotto {
-    position:absolute;
-    top:22.1%;
-    left:56%;
-    height:2.2vh;
-    width:20%
-}
-
-
-
 #form-image-container {
-    
+        position:relative;
+        height:1800px;
 }
 
 #condizioni {
@@ -267,38 +149,6 @@ textarea{
     filter:brightness(0)
 }
 
-#map-searchbox {
-    position:absolute;
-    background-color:#0D2D4D;
-    opacity:0.5;
-    width:18.3%;
-    height:4%;
-    top:45.5%;
-    left:10%
-}
-
-#map-textarea {
-    position:absolute;
-    width:80%;
-    left:7.5%;
-    top:10%;
-    height:60%
-}
-
-#vaucher-text {
-    position:absolute;
-    background-color:TRANSPARENT;
-    opacity:1;
-    width:31.5%;
-    left:5%;
-    height:4%;
-    top:18.5%;
-    color:orange;
-    font-size:8vh;
-    text-align:center;
-    font-family:'open sans';
-}
-
 #image-cont {
     position:absolute;
     background-color:transparent;
@@ -311,13 +161,18 @@ textarea{
 }
 
 #image-target {
-    width:100%;
+    width:32%;
     height:0;
-    padding-bottom:100%;
-    background-color:blue;
+    padding-bottom:32%;
+    background-color:rgba(255,255,255,0.2);
     position:absolute;
-    top:0;
-    left:0;
+    top:5%;
+    right:2%;
+}
+#image-target:hover{
+    cursor:pointer;
+    transform:scale(1.05);
+    background-color:rgba(255,255,255,0.4);
 }
 
 #upload-image {
@@ -329,12 +184,6 @@ textarea{
 #upload-image:hover{
     cursor:pointer;
 }
-
-
-#textarea-sottotitolo {
-    
-}
-
 #send-coupon {
     position:absolute;
     right:8%;
@@ -355,23 +204,162 @@ textarea{
 
 #files {
         position: absolute;
-    bottom: 0%;
-    left: -60%;
-    background-color: white;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:transparent;
+    opacity:0;
 }
-
-.info-select {
+#files:hover{
+   cursor:pointer; 
+}
+#vaucher-text {
     position:absolute;
+    background-color:TRANSPARENT;
+    opacity:1;
+    width:31.5%;
+    left:5%;
+    height:4%;
+    top:18.5%;
+    color:orange;
+    font-size:8vh;
+    text-align:center;
+    font-family:'open sans';
+}
+#image-guide {
+    width:32%;
+    height:35px;
+    line-height:35px;
+    background-color:transparent;
+    position:absolute;
+    right:2%;
+    top:-12%;
+    font-size:2.5vh;
+    text-align:center;
+    color:black;
+    font-family: 'pacifico'
 }
 
-#select-categoria {
-    left:56%;
-    top:33%
+#product-title {
+    position:absolute;
+    width:80%;
+    left:10%;
+    height:4%;
+    top:8%;
+    line-height:100%;
+    font-size:6vh;
+    border:none;
+    font-family:'open sans';
+    outline:0px;
+}
+
+#product-altreinfo {
+    position:absolute;
+    width:80%;
+    left:10%;
+    height:4%;
+    top:12%;
+    line-height:100%;
+    background-color:transparent;
+    font-size:4vh;
+    border:none;
+    font-family:'open sans';
+    outline:0px;
+}
+
+#option-cont {
+    position:absolute;
+    background-color:#c6c6c6;
+    opacity:1;
+    width:58%;
+    left:5%;
+    height:58.6%;
+    top:38.4%
+}
+
+#details-cont {
+    position:absolute;
+    background-color:#c6c6c6;
+    opacity:1;
+    width:30.5%;
+    right:5%;
+    height:58.6%;
+    top:38.4%
+}
+
+#add-option {
+    text-align:center;
+    width:100%;
+    height:80px;
+    line-height:40px;
+    font-family:'open sans';
+    font-size:30px;
+    margin-top:5px;
+    background-color:white;
+}
+
+#add-detail {
+    text-align:center;
+    width:100%;
+    height:80px;
+    line-height:40px;
+    font-family:'open sans';
+    font-size:30px;
+    margin-top:5px;
+    background-color:white;
+}
+
+.adder:hover {
+    cursor:pointer;
+    background-color:#b6b6b6 !important;
+}
+
+.new-detail {
+    text-align:center;
+    width:100%;
+    height:80px;
+    line-height:40px;
+    font-family:'open sans';
+    font-size:30px;
+    margin-top:5px;
+    background-color:#c6c6c6;
+}
+
+.key {
+    border:1px solid #ccc;
+    width:40%;
+    font-family:'open sans';
+    outline:0px;
+    height:40px;
+    margin-top:20px;
+    line-height:40px;
+}
+
+.value {
+    border:1px solid #ccc;
+    width:40%;
+    font-family:'open sans';
+    outline:0px;
+    height:40px;
+    margin-top:20px;
+    line-height:40px;
+}
+
+.detail {
+    border-radius:6px;
+    padding:1px;
+}
+
+.delete-detail {
+    position:absolute;
+    right:5px;
+    top:5x;
+    font-size:2vh;
+    background-color:transparent;
+    height:14px;
+        line-height:14px;
     
 }
-
-#text-categoria {
-    position:absolute;
-    right:45%;
-    top:32.7%;
+.delete-detail:hover{
+    cursor:pointer;
 }

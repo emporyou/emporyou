@@ -14,50 +14,31 @@
     <!-- //////////////////////////FONT AWESOME -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/admin.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/map.css">
-    <link rel="stylesheet" type="text/css" href="../css/cart.css">
-    <link rel="stylesheet" type="text/css" href="../css/thumbs.css">
-    <link rel="stylesheet" type="text/css" href="../css/product-page.css">
-    <link rel="stylesheet" type="text/css" href="../css/info-prod.css">
-    <link rel="stylesheet" type="text/css" href="../css/digital.css">
-    <link rel="stylesheet" type="text/css" href="../css/coupon.css">
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../home/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/map.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/product-page.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/info-prod.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/digital.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/coupon.css">
+    <script src="../home/js/main.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
-    <script src="../js/mainh.js"></script>
+    <script src="../home/js/mainh.js"></script>
     <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
-    <script src="../js/jquery.geocomplete.js"></script>
+    <script src="../home/js/jquery.geocomplete.js"></script>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta charset="utf-8" />
     <script>
-        window.jsondata=%jsondata;
+        //window.jsondata=%jsondata;
 
         function myInit() {
             document.getElementById('files').addEventListener('change', handleFileSelect, false);
-            document.querySelector('.readBytesButtons').addEventListener('click', function (evt) {
-                if (evt.target.tagName.toLowerCase() == 'input') {
-                    var startByte = evt.target.getAttribute('data-startbyte');
-                    var endByte = evt.target.getAttribute('data-endbyte');
-                    readBlob(startByte, endByte);
-                }
-            }, false);
-            if (jsondata.fromReaction) {
-                document.getElementById('form-coupon-container').style.height = "260%";
-                document.getElementById('textarea-apivenditore').value = jsondata.vendor;
-                document.getElementById('textarea-nomeprodotto').value = jsondata.title;
-                document.getElementById('textarea-valore').value = jsondata.variants[0].price;
-                document.getElementById('textarea-nomeprodotto').value = jsondata.title;
-                document.getElementById('textarea-indirizzo').value = jsondata.description;
-                document.getElementById('textarea-sconto').value = "";
-                document.getElementById('target-totale').innerHTML = jsondata.price;
-                document.getElementById('textarea-varianteprodotto').value = jsondata.pageTitle;
-                document.getElementById('image-target').style.backgroundImage = "url('" + jsondata.imageUrl + "')";
-                document.getElementById('image-target').style.backgroundSize = "cover";
-            }
         }
     </script>
     <script>
@@ -68,30 +49,38 @@
         }
 
         function makeCoupon() {
-            window.lastTitle = document.getElementById('textarea-nomeprodotto').value;
-            window.lastSubtitle = document.getElementById('textarea-varianteprodotto').value
-            window.lastDescription = document.getElementById('textarea-indirizzo').value;
-            window.lastVendor = document.getElementById('textarea-apivenditore').value;
-            window.lastValue = document.getElementById('textarea-valore').value;
-            window.lastPrice = document.getElementById('target-totale').value;
-            window.lastDiscount = document.getElementById('textarea-sconto').value;
-            window.lastSaving = (lastValue / 100) * lastDiscount;
-           /* if (document.getElementById('image-target').style.backgroundImage) {
-                window.productImageUrl = document.getElementById('image-target').style.backgroundImage;
-            } else {
-                alert('immagine mancante!');
-                return false
-            }*/
             window.couponData = {
-                'title': lastTitle,
-                'subtitle': lastSubtitle,
-                'description': lastDescription,
-                'vendor': lastVendor,
-                'valore': lastValue,
-                'price': lastPrice,
-                'discount': lastDiscount,
-                'saving': lastSaving
-            };
+    "subtitle": "Basic Example Product",
+    "title": "Example Product",
+    "image" : "image",
+    "description": "descrizione",
+    "handle": "example-product",
+    "metafields": [{
+        "key": "Material",
+        "value": "Cotton"
+    }, {
+        "key": "Quality",
+        "value": "Excellent"
+    }],
+    "variants": [{
+        "title": "Basic Example Variant",
+        "price": "prezzo",
+        "optionImage" : "image"
+    }, {
+        "title": "Example option 1",
+        "price": "prezzo",
+        "optionTitle": "Option 1",
+        "optionImage" : "image"
+    }, {
+        "title": "Example option 2",
+        "price": "prezzo",
+        "optionTitle": "Option 2",
+        "optionImage" : "image"
+    }],
+    "manufacturer": "Example Manufacturer",
+    "category": "categoria"
+}
+
         }
 
         function tryDiscount(value) {
@@ -106,121 +95,80 @@
         }
     </script>
     <script>
-        function handleFileSelect(evt) {
-            var files = evt.target.files; // FileList object
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
 
-            // Loop through the FileList and render image files as thumbnails.
-            for (var i = 0, f; f = files[i]; i++) {
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                  '</li>');
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
 
-                // Only process image files.
-                if (!f.type.match('image.*')) {
-                    continue;
-                }
-
-                var reader = new FileReader();
-
-                // Closure to capture the file information.
-                reader.onload = (function (theFile) {
-                    return function (e) {
-                        document.getElementById('image-target').style.backgroundImage = "url('" + e.target.result + "')";
-                        // Render thumbnail.
-                        /*var span = document.createElement('span');
-                        span.innerHTML = ['<img style="height:100%" class="thumb" src="', e.target.result,
-                                          '" title="', escape(theFile.name), '"/>'].join('');
-                        document.getElementById('list').insertBefore(span, null);*/
-                    };
-                })(f);
-
-                // Read in the image file as a data URL.
-                reader.readAsDataURL(f);
-            }
-        }
-
-        function readBlob(opt_startByte, opt_stopByte) {
-            var files = document.getElementById('files').files;
-            var file = filesf;
-            var start = parseInt(opt_startByte) || 0;
-            var stop = parseInt(opt_stopByte) || file.size - 1;
-
-            var reader = new FileReader();
-
-            // If we use onloadend, we need to check the readyState.
-            reader.onloadend = function (evt) {
-                if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-                    //TODO SEND evt.target.result 
-                    document.getElementById('byte_content').textContent = evt.target.result;
-                    document.getElementById('byte_range').textContent = ['Read bytes: ', start + 1, ' - ', stop + 1,
-             ' of ', file.size, ' byte file'].join('');
-                }
-            };
-
-            var blob = file.slice(start, stop + 1);
-            reader.readAsBinaryString(blob);
-        }
-    </script>
+    function addDetail(){
+        var det=document.createElement('div');
+        var del=document.createElement('div');
+        var ics=document.createTextNode('x');
+        var key=document.createElement('textarea');
+        var valu=document.createElement('textarea');
+        det.setAttribute('class','new-detail');
+        del.setAttribute('class','delete-detail');
+        del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
+        key.setAttribute('class','key detail');
+        valu.setAttribute('class','value detail');
+        key.setAttribute('placeholder','Nome..');
+        valu.setAttribute('placeholder','Dettaglio');
+        del.appendChild(ics);
+        det.appendChild(del);
+        det.appendChild(key);
+        det.appendChild(valu);
+        document.getElementById('details-cont').insertBefore(det,document.getElementById('details-cont').firstChild);
+    }
+  
+</script>
 </head>
 
 <body onload="myInit()">
     <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
     <div class="header-admin">
-        <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
+        <div class="fontlogo text-logo"><img class="logo-text" src="../home/img/logo-text.png" />
         </div>
     </div>
     <div id="form-coupon-container">
         <div id="title-coupon">Crea il tuo coupon</div>
-        <div id="form-image-container"><img id="image-coupon" src="coupon.png" />
-            <img class="logo-coupon" src="../img/logo-text-black.png" />
-            <div id="blue-cont"></div>
+            <img class="logo-coupon" src="../home/img/logo-text-black.png" />
+            <textarea id="product-title" placeholder="Nome prodotto.."></textarea>
+            <textarea id="product-altreinfo" placeholder="Sottotitolo.."></textarea>
+            <div id="blue-cont">
+               <div id="image-guide">Scegli una foto</div>
+                <div id="image-target" class="transition-1">
+                    <input type="file" id="files" name="files[]" multiple />
+                    <output style="display:none" id="list"></output>
+                </div>
+            </div>
             <div id="dotted-cont"></div>
+            <div id="option-cont">
+               <div class="new-option">
+                   <div class="delete-option" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
+                    <textarea class="optionName option" placeholder="Nome.."></textarea>
+                    <textarea class="priceName option" placeholder="Prezzo.."></textarea>
+                </div>
+                <div id="add-option" class="adder transition-1">Add option <br/>+</div>
+            </div>
+            <div id="details-cont">
+                <div class="new-detail">
+                   <div class="delete-detail" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
+                    <textarea class="key detail" placeholder="Nome.."></textarea>
+                    <textarea class="value detail" placeholder="Dettaglio.."></textarea>
+                </div>
+                <div id="add-detail" onclick="addDetail()" class="adder transition-1">Add detail <br/>+</div>
+            </div>
             <div id="blue-cont-head"></div>
             <div id="vaucher-text">VAUCHER</div>
-            <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div>
-            <div class="text-info" id="text-varianteprodotto">Altre info: </div>
-            <div class="text-info" id="text-valore">Valore: €</div>
-            <div class="text-info" id="text-categoria">Categoria: </div>
-            <div class="text-info" id="text-sconto">Sconto: %</div>
-            <div class="text-info" id="text-totale">Totale:
-                <div id="target-totale">90</div>€</div>
-            <div class="text-info" id="text-apivenditore">Chiave api di emporyou: </div>
-            <div class="text-info" id="text-indirizzo">Descrizione Prodotto: </div>
-            <div id="map-container"></div>
-            <div id="map-searchbox">
-                <textarea id="map-textarea"></textarea>
-            </div>
-            <div id="condizioni"></div>
-            <form action="http://emporyou.com/api/add" method="post" target="_blank" onsubmit="makeCoupon();
-document.getElementById('jsondata').value=JSON.stringify(couponData);return true;">
-                <input type="hidden" id="jsondata" value="%title" name="jsondata" />
-                <div id="image-cont">
-                <div id="image-target"></div>
-                <input type="file" id="files" name="files" multiple />
-                <output id="list"></output>
-                <div style="display:none" id="byte_range"></div>
-                <div style="display:none" id="byte_content"></div>
-                </div>
-                <textarea class="info-textarea" id="textarea-indirizzo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</textarea>
-                <textarea class="info-textarea" value="Mondobici" id="textarea-apivenditore">Mondobici</textarea>
-                <textarea class="info-textarea" value="10" id="textarea-sconto" onkeyup="if(event.keyCode==13){tryDiscount(this.value);clearContents(this)};">10</textarea>
-                <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
-                <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
-                <textarea class="info-textarea" value="Bicicletta" id="textarea-nomeprodotto">Bicicletta</textarea>
-                <select class="info-select" id="select-categoria">
-                    <option>Casa</option>
-                    <option>Tempo libero</option>
-                    <option>Moda</option>
-                    <option>Mangiare e bere</option>
-                    <option>Elettronica</option>
-                    <option>Bellezza</option>
-                    <option>Cartoleria</option>
-                    <option>Salute</option>
-                    <option>Animali</option>
-                </select>
-                <span class="readBytesButtons">
- <input type="submit" value="FINISCI" id="send-coupon" style="display:line-block;"/>
-      </span>
-            </form>
-            <div id="footer">
-                <h2>Privacy Policy</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</div>
             <div id="svgcont">
                 <svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
 
@@ -311,7 +259,6 @@ document.getElementById('jsondata').value=JSON.stringify(couponData);return true
                 </svg>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
