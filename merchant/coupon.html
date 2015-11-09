@@ -14,7 +14,7 @@
     <!-- //////////////////////////FONT AWESOME -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <link rel="stylesheet" type="text/css" href="../css/map.css">
     <link rel="stylesheet" type="text/css" href="../css/cart.css">
@@ -179,6 +179,7 @@
             <div class="text-info" id="text-nomeprodotto">Nome prodotto: </div>
             <div class="text-info" id="text-varianteprodotto">Altre info: </div>
             <div class="text-info" id="text-valore">Valore: €</div>
+            <div class="text-info" id="text-categoria">Categoria: </div>
             <div class="text-info" id="text-sconto">Sconto: %</div>
             <div class="text-info" id="text-totale">Totale:
                 <div id="target-totale">90</div>€</div>
@@ -189,7 +190,7 @@
                 <textarea id="map-textarea"></textarea>
             </div>
             <div id="condizioni"></div>
-            <form action="http://emporyou.com/add_deal" method="post" target="_blank" onsubmit="makeCoupon();
+            <form action="http://emporyou.com/api/add" method="post" target="_blank" onsubmit="makeCoupon();
 document.getElementById('jsondata').value=JSON.stringify(couponData);return true;">
                 <input type="hidden" id="jsondata" value="%title" name="jsondata" />
                 <div id="image-cont">
@@ -205,8 +206,19 @@ document.getElementById('jsondata').value=JSON.stringify(couponData);return true
                 <textarea class="info-textarea" value="100" id="textarea-valore" onkeyup="price=this.value">100</textarea>
                 <textarea class="info-textarea" value="Elegante bici da città" id="textarea-varianteprodotto">Elegante bici da città</textarea>
                 <textarea class="info-textarea" value="Bicicletta" id="textarea-nomeprodotto">Bicicletta</textarea>
+                <select class="info-select" id="select-categoria">
+                    <option>Casa</option>
+                    <option>Tempo libero</option>
+                    <option>Moda</option>
+                    <option>Mangiare e bere</option>
+                    <option>Elettronica</option>
+                    <option>Bellezza</option>
+                    <option>Cartoleria</option>
+                    <option>Salute</option>
+                    <option>Animali</option>
+                </select>
                 <span class="readBytesButtons">
- <input type="submit" value="Send Coupon" id="send-coupon" style="display:line-block;"/>
+ <input type="submit" value="FINISCI" id="send-coupon" style="display:line-block;"/>
       </span>
             </form>
             <div id="footer">
