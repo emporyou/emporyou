@@ -24,7 +24,6 @@ metaschema.addbaserecord(
 {_id:ObjectID('000000000000000000000050'),_p:ObjectID('000000000000000000000010'),_k:ObjectID('000000000000000000000010'),_owned_by:ObjectID('000000000000000000000009'),created:new Date(),_created_by:ObjectID('000000000000000000000009'),modified:new Date(),_modified_by:ObjectID('000000000000000000000009'),
 	name:'category',desc:'default category node',	system:true,url:false,user:[],rel:[],meta:[]});
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
-//var mime={mp3:'audio/mpeg',wav:'audio/x-wav',html:'text/html',htm:'text/html',xml:'text/xml',txt:'text/plain',js:'text/javascript'};
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
 //---------------------------------------------------------------------------------------------------
@@ -105,6 +104,51 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------ ADMIN SERVICES
+app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
+	res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
+	}else{res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));}});
+app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
+app.all(/^\/api\/postback\/?.*/,upload.any(),metaschema.postback);
+app.all(/^\/api\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
+app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
+app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
+app.all(/^\/api\/add\/?.*/,upload.any(),metaschema.add);
+app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
+app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
+app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
+app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
+//---------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+app.use(function(req,res,next){
+	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
+		   else{express.static('./home')(req,res,next)}}
+);
+app.all(/^(?!\/api).*$/,metaschema.urltorecord);
+if(process.argv[2]){PORT=process.argv[2];};
+var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
+
+/*
+var deal={
+	merchant:0,
+	title:'new deal',subtitle:'new deal',desc:'',url:'',
+	visible:false,imageurl:'',price:0,
+	variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]
+};
+var merchant={
+	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:'',authkeys:['demoapikey']}
+};
+*/
+var cart={
+	
+};
+var transaction={
+	
+};
+
+/*
+
 app.all('/get_merchant',function(req, res){emporyou.updatemerchantchache(function(err,rows){res.writeHeader('Content-Type','application/json; charset=utf-8');if(err){rows=err}res.end(JSON.stringify(rows))});});
 app.all('/set_merchant',function(req, res){res.send('Hello World!!');});
 app.all('/add_merchant',upload.any(), function (req, res, next) {
@@ -127,26 +171,7 @@ app.all('/del_merchant',upload.any(), function (req, res, next) {
 		db.close();
 		res.jsonout.serverout=[{type:'confirm',message:'document was removed'}]; res.writeHeader('Content-Type','application/json; charset=utf-8');
 		return res.end(JSON.stringify(res.jsonout));
-});});
-});
-app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
-res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
-}else{
-	res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));
-	}});
-app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
-app.all(/^\/postback\/?.*/,upload.any(),metaschema.postback);
-app.all(/^\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
-app.all(/^\/?api\/get\/?.*/,upload.any(),metaschema.get);
-app.all(/^\/?api\/set\/?.*/,upload.any(),metaschema.set);
-app.all(/^\/?api\/add\/?.*/,upload.any(),metaschema.add);
-app.all(/^\/?api\/del\/?.*/,upload.any(),metaschema.del);
-app.all(/^\/?api\/link\/?.*/,upload.any(),metaschema.link);
-app.all(/^\/?api\/unlink\/?.*/,upload.any(),metaschema.unlink);
-app.all(/^\/?api\/reset\/?.*/,upload.any(),metaschema.reset);
-//---------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------ FRONT SERVICES
+});});});
 app.all('/get_deal', function (req, res) {
   var logontype=emporyou.logontype(req);
   var p_id=req.query.p_id;
@@ -214,38 +239,7 @@ app.all('/del_deal',upload.any(), function (req, res, next) {
 		return res.end(JSON.stringify(res.jsonout));
 });});});
 
-serve404=function(res){};
-servenoimage=function(res){res.sendFile('/root/emporyou/frontend/img/default-product.png');};
-//---------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------
-app.use(function(req,res,next){
-	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
-		   else{express.static('./home')(req,res,next)}}
-);
-if(process.argv[2]){PORT=process.argv[2];};
-var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
-
-/*
-var deal={
-	merchant:0,
-	title:'new deal',subtitle:'new deal',desc:'',url:'',
-	visible:false,imageurl:'',price:0,
-	variant:[{title:'new deal',subtitle:'new deal',desc:'',url:'',quantity:0,price:0,imageurl:''}]
-};
-var merchant={
-	user:0,username:'',password:'',name:'',fattinfos:{todo:"todo"},contact:[{mail:'admin@metaschema.io'}],address:{route:'',street_number:'',zipcode:'',state:'',country:'',administrative_area_level_2:'',lat:'',lng:'',authkeys:['demoapikey']}
-};
 */
-var cart={
-	
-};
-var transaction={
-	
-};
-
-
 
 //setInterval(beAlive,60000);
 //var alive=0;

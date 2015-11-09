@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
 <link rel="stylesheet" type="text/css" href="css/product-page.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
+<link rel="stylesheet" type="text/css" href="css/digital.css">
 <link rel="stylesheet" type="text/css" href="css/checkout.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <script src="js/checkout.js"></script>
@@ -136,7 +137,7 @@ initMap=function() {
    <div class="categories-container">
       <div class="cat-searchbar transition-1" id="cat-searchbar">
                          		<div id="search">
-          				<fieldset class="clearfix">
+          	<fieldset class="clearfix">
 
 					<input type="search" name="search" value="Cosa stai cercando?" onBlur="if(this.value=='')this.value='Cosa stai cercando?'" onFocus="if(this.value=='Cosa stai cercando?')this.value='' ">
 					<input type="submit" value="Cerca" class="button">
@@ -181,138 +182,7 @@ initMap=function() {
    </div>
     <div class="products-container">
         <div id="thumb-wrap"> 
-        <!--div id="thumb-container" onclick="addProduct('Massaggi')">
-          <div class="thumb-dummy"></div> 
-          <div class="thumb-product">
-          <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/>
-                  <div id="fbb" class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
-                  </div>
-                  <div class="description"><b>Massaggi</b><br/><i>by La Scarpa di Aladino</i><br/>In un accogliente centro nella città di Milano</div>
-                  <div class="price">€300 da €<span style="color:orange">200</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:33%;">33%</div>
-              </div>
-          </div></div> 
-          <div class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/bici.jpg');" onclick="openProduct(event,this)" id="openProd" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add" onclick="addProduct()"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                  <div class="description"><b>Bicicletta</b><br/>Una elegante bicicletta da città</div>
-                  <div class="price">€300 da €<span style="color:orange">200</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Brescia</div>
-                  <div class="product-discount" style="width:33%">33%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Taxi')"> 
-          <div class="thumb-dummy"></div> 
-          <div class="thumb-product">
-          <div style="background-image: url('../img/products/autista.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                <div class="description"><b>Autista</b><br/>Servizio auto nella città di Milano</div>
-                  <div class="price">€150 da €<span style="color:orange">50</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:66%">66%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Tende')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/tende.jpg');" class="thumb-element">
-              <div class="product-bar">
-                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
-                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
-                  <div class="description"><b>Tende</b><br/>Raffinate tende da casa in diversi colori</div>
-                  <div class="price">€200 da €<span style="color:orange">180</span></div>
-              </div>
-              <div class="product-header">
-                 <div class="city">Bergamo</div>
-                  <div class="product-discount" style="width:10%;min-width:50px">10%</div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Shirt')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/maglia.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Carnate</div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Cavo')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/cavo.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Abbiategrasso</div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container" onclick="addProduct('Palestra')"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-image: url('../img/products/palestra.jpg');" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city">Milano</div>
-                  <div class="product-discount" style="width:50%;">50%</div>
-              </div>
-          </div></div> 
-        </div>
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city"></div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                 <div class="city"></div>
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div> 
-        <div id="thumb-container"> 
-          <div class="thumb-dummy"></div>
-          <div class="thumb-product"> 
-          <div style="background-color: #ffffff;" class="thumb-element">
-              <div class="product-bar"></div>
-              <div class="product-header">
-                  <div class="product-discount"></div>
-              </div>
-          </div></div> 
-        </div>-->
+
       </div>
     </div>
 </div>
@@ -341,31 +211,7 @@ initMap=function() {
     </div>
     </div>
 </div>
-<div id="products-cart-target" style="display:none"><!--
-<div class="cart-infos">
-    <div class="cart-summary">Items in cart</div>
-    <div class="cart-summary">Sub total</div>
-    <div class="cart-summary">Shipping</div>
-    <div class="cart-summary">Tax</div>
-    <div class="cart-summary"><b>Total</b></div>
-</div>
-<div class="cart-infos-values">
-    <div class="cart-summary qt-items"></div>
-    <div class="cart-summary">€55,00</div>
-    <div class="cart-summary">€0.00</div>
-    <div class="cart-summary">€1000,00</div>
-    <div class="cart-summary"><b>1055,00</b></div>
-</div>
-<div class="cart-items-container">
-   <div class="object-container">
-    <div class="cart-item-image" style="background: url('../img/products/massage.jpg');background-size:cover">
-        <div class="cart-add-item"><img class="cart-add-icon buttoncart" src="../img/more.png"/></div>
-        <div class="cart-remove-item"><img class="cart-remove-icon buttoncart" src="../img/less.png"/></div>
-    </div>
-<div class="qt-name"><div class="cart-item-qt">2</div><div class="cart-item-name">Cinese che piange</div></div>
-</div>
-</div>
-<div id="pattern"><b>check out now</b></div>--></div>
+<div id="products-cart-target" style="display:none">loading...</div>
 <div id="cart-data" style="display:none"></div>
 <div id="checkout-main-container" style="display:none">
     <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
