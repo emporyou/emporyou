@@ -67,12 +67,10 @@
         "price": "prezzo",
         "optionImage" : "image"
     }, {
-        "title": "Example option 1",
         "price": "prezzo",
         "optionTitle": "Option 1",
         "optionImage" : "image"
     }, {
-        "title": "Example option 2",
         "price": "prezzo",
         "optionTitle": "Option 2",
         "optionImage" : "image"
@@ -120,13 +118,44 @@
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         key.setAttribute('class','key detail');
         valu.setAttribute('class','value detail');
-        key.setAttribute('placeholder','Nome..');
-        valu.setAttribute('placeholder','Dettaglio');
+        key.setAttribute('placeholder','Dettaglio..');
+        valu.setAttribute('placeholder','Valore..');
         del.appendChild(ics);
         det.appendChild(del);
         det.appendChild(key);
         det.appendChild(valu);
         document.getElementById('details-cont').insertBefore(det,document.getElementById('details-cont').firstChild);
+    }
+        function addOption(){
+        var opt=document.createElement('div');
+        var del=document.createElement('div');
+        var ics=document.createTextNode('x');
+        var name=document.createElement('textarea');
+        var price=document.createElement('textarea');
+        opt.setAttribute('class','new-option');
+        del.setAttribute('class','delete-option');
+        del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
+        name.setAttribute('class','optionName detail');
+        price.setAttribute('class','priceName option');
+        name.setAttribute('placeholder','Opzione..');
+        price.setAttribute('placeholder','Prezzo..');
+        del.appendChild(ics);
+        opt.appendChild(del);
+        opt.appendChild(name);
+        opt.appendChild(price);
+            var img=document.createElement('div');
+            img.setAttribute('class','image-target-option transition-1');
+            var inp=document.createElement('input');
+            inp.setAttribute('type','file');
+            inp.setAttribute('id','files');
+            inp.setAttribute('name','files[]');
+            var out=document.createElement('output');
+            out.style.display="none";
+            out.setAttribute('id','list');
+            img.appendChild(out);
+            img.appendChild(inp);
+            opt.appendChild(img);
+        document.getElementById('option-cont').insertBefore(opt,document.getElementById('option-cont').firstChild);
     }
   
 </script>
@@ -152,19 +181,23 @@
             </div>
             <div id="dotted-cont"></div>
             <div id="option-cont">
-               <div class="new-option">
+               <!--<div class="new-option">
                    <div class="delete-option" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
-                    <textarea class="optionName option" placeholder="Nome.."></textarea>
+                    <textarea class="optionName option" placeholder="Opzione.."></textarea><br/>
                     <textarea class="priceName option" placeholder="Prezzo.."></textarea>
+                <div class="image-target-option transition-1">
+                    <input type="file" id="files" name="files[]" multiple />
+                    <output style="display:none" id="list"></output>
                 </div>
-                <div id="add-option" class="adder transition-1">Add option <br/>+</div>
+                </div>-->
+                <div id="add-option" onclick="addOption()" class="adder transition-1">Add option <br/>+</div>
             </div>
             <div id="details-cont">
-                <div class="new-detail">
+               <!--<div class="new-detail">
                    <div class="delete-detail" onclick="var c=this.parentElement;c.parentNode.removeChild(c)">x</div>
-                    <textarea class="key detail" placeholder="Nome.."></textarea>
-                    <textarea class="value detail" placeholder="Dettaglio.."></textarea>
-                </div>
+                    <textarea class="key detail" placeholder="Dettaglio.."></textarea>
+                    <textarea class="value detail" placeholder="Valore.."></textarea>
+                </div>-->
                 <div id="add-detail" onclick="addDetail()" class="adder transition-1">Add detail <br/>+</div>
             </div>
             <div id="blue-cont-head"></div>
