@@ -113,6 +113,7 @@ window.nDetail=0;window.nOption=0;
         var key=document.createElement('textarea');
         var valu=document.createElement('textarea');
         det.setAttribute('class','new-detail');
+        det.setAttribute('name','detail[]');
         del.setAttribute('class','delete-detail');
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         key.setAttribute('class','key detail');
@@ -139,6 +140,7 @@ window.nDetail=0;window.nOption=0;
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         name.setAttribute('class','optionName detail');
         name.setAttribute('name','option');
+        opt.setAttribute('name','option[]');
         price.setAttribute('class','priceName option');
         price.setAttribute('name','price');
         name.setAttribute('placeholder','Opzione..');
@@ -152,7 +154,7 @@ window.nDetail=0;window.nOption=0;
             var inp=document.createElement('input');
             inp.setAttribute('type','file');
             inp.setAttribute('id','files');
-            inp.setAttribute('name','files[]'+nOption);
+            inp.setAttribute('name','files[]');
             var out=document.createElement('output');
             out.style.display="none";
             out.setAttribute('id','list');

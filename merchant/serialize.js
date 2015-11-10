@@ -39,8 +39,8 @@ ooo.form2JSON = function (f) {
                     }}
                 o[fldName] = fldObj
             }
-        };if(isArr == true){console.log(arrFld[i]);
-            for (i = 0; i < arrFld.length; i++) {
+        };if(isArr == true){
+            for (i = 0; i < arrFld.length; i++) {console.log(arrFld[i]);
                 var arrName = arrFld[i].name;
                 var af = arrFld[i].getElementsByTagName('fieldset');
                 for (r = 0; r < af.length; r++) {
@@ -85,6 +85,7 @@ ooo.form2JSON = function (f) {
                     var b = a[i].name;
                     var c = a[i].value;
                     o[b] = c;
+                    a[i].setAttribute('id','');
                 }
             }}
         }
