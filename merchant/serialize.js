@@ -9,7 +9,7 @@ ooo.form2JSON = function (f) {
             var idd = fld[i].name;
             if (idd.indexOf('[]') > -1) {
                 isArr = true;
-                arrFld.push(fld[i]);
+                arrFld.push(fld[i]);console.log(arrFld);
             }else{isNotArr=true;}
         };
         if (isArr != true || isNotArr==true) {
@@ -20,23 +20,26 @@ ooo.form2JSON = function (f) {
                 var t = fld[i].getElementsByTagName('textarea');
                 var s = f.getElementsByTagName('select');
                 if(inp.length>0){for (z = 0; z < inp.length; z++) {
+                    inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
-                    var c = inp[z].value
+                    var c = inp[z].value;
                     fldObj[b] = c;
                 }}
                 if(t.length>0){for (z = 0; z < t.length; z++) {
+                    t[z].setAttribute('id','ifi')
                     var b = t[z].name;
-                    var c = t[z].value
+                    var c = t[z].value;
                     fldObj[b] = c;
                 }}
                 if(s.length>0){for (z = 0; z < s.length; z++) {
+                        s[z].setAttribute('id','ifi')
                         var b = s[z].name;
-                        var c = s[z].value
+                        var c = s[z].value;
                         fldObj[b] = c;
                     }}
                 o[fldName] = fldObj
             }
-        };if(isArr == true){
+        };if(isArr == true){console.log(arrFld[i]);
             for (i = 0; i < arrFld.length; i++) {
                 var arrName = arrFld[i].name;
                 var af = arrFld[i].getElementsByTagName('fieldset');
@@ -47,18 +50,21 @@ ooo.form2JSON = function (f) {
                     var t = af[r].getElementsByTagName('textarea');
                     var s = f.getElementsByTagName('select');
                     if(inp.length>0){for (z = 0; z < inp.length; z++) {
+                        inp[z].setAttribute('id','ifi')
                         var b = inp[z].name;
-                        var c = inp[z].value
+                        var c = inp[z].value;
                         arrObj[b] = c;
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
+                        s[z].setAttribute('id','ifi')
                         var b = s[z].name;
-                        var c = s[z].value
+                        var c = s[z].value;
                         arrObj[b] = c;
                     }}
                     if(t.length>0){for (z = 0; z < t.length; z++) {
+                        t[z].setAttribute('id','ifi')
                         var b = t[z].name;
-                        var c = t[z].value
+                        var c = t[z].value;
                         arrObj[b] = c;
                     }}
                     o[arrName] = [];
@@ -66,22 +72,24 @@ ooo.form2JSON = function (f) {
                 }
             }
         }
-    } else {
+    } 
         var t = f.getElementsByTagName('textarea');
         var i = f.getElementsByTagName('input');
         var s = f.getElementsByTagName('select');
         var g = function (a) {
             for (var i = 0; i < a.length; i++) {
+                var idifi=a[i].id
+                if(idifi.indexOf('ifi') == -1){
                 var v = a[i];
                 if (v != null) {
                     var b = a[i].name;
                     var c = a[i].value;
                     o[b] = c;
                 }
-            }
+            }}
         }
         g(t);
         g(i);
-    }
+    
     return o;
 }
