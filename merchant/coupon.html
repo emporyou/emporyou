@@ -116,9 +116,9 @@ window.nDetail=0;window.nOption=0;
         del.setAttribute('class','delete-detail');
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         key.setAttribute('class','key detail');
-        key.setAttribute('name','keyDetail'+nDetail);
+        key.setAttribute('name','key');
         valu.setAttribute('class','value detail');
-        valu.setAttribute('name','valuDetail'+nDetail);
+        valu.setAttribute('name','value');
         key.setAttribute('placeholder','Dettaglio..');
         valu.setAttribute('placeholder','Valore..');
         del.appendChild(ics);
@@ -138,9 +138,9 @@ window.nDetail=0;window.nOption=0;
         del.setAttribute('class','delete-option');
         del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
         name.setAttribute('class','optionName detail');
-        name.setAttribute('name','nameOption'+nOption);
+        name.setAttribute('name','option');
         price.setAttribute('class','priceName option');
-        price.setAttribute('name','priceOption'+nOption);
+        price.setAttribute('name','price');
         name.setAttribute('placeholder','Opzione..');
         price.setAttribute('placeholder','Prezzo..');
         del.appendChild(ics);
@@ -175,15 +175,21 @@ window.nDetail=0;window.nOption=0;
     <div id="form-coupon-container">
         <div id="title-coupon">Crea il tuo coupon</div>
             <img class="logo-coupon" src="../img/logo-text-black.png" />
-            <textarea id="product-title" name="productName" placeholder="Nome prodotto.."></textarea>
-            <textarea id="product-altreinfo" name="productSubtitle" placeholder="Sottotitolo.."></textarea>
-            <textarea id="product-descrizione" name="productDescription" placeholder="Descrizione.."></textarea>
+            <textarea id="product-title" name="title" placeholder="Nome prodotto.."></textarea>
+            <textarea id="product-altreinfo" name="subtitle" placeholder="Sottotitolo.."></textarea>
+            <textarea id="product-descrizione" name="description" placeholder="Descrizione.."></textarea>
             <div id="categorie-testo">Seleziona una categoria</div>
-            <select id="category-target" name="categorySelect">
-                <option>Tempo libero e salute</option>
+            <select id="category-target" name="category">
+                <option>Tempo libero</option>
                 <option>Casa</option>
                 <option>Abbigliamento</option>
                 <option>Animali</option>
+                <option>Moda</option>
+                <option>Mangiare e bere</option>
+                <option>Elettronica</option>
+                <option>Bellezza</option>
+                <option>Cartoleria</option>
+                <option>Salute</option>
             </select>
             <div id="blue-cont">
                <div id="image-guide">Scegli una foto</div>
