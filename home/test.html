@@ -28,15 +28,15 @@ showtab=function(hideclass,showid){
 	</div>
 <div class="g"><input type="text" id="api-url" placeholder="api/get?..."/><button onclick="document.getElementById('output').src=this.previousSibling.value">-></button></div>
 <div id="category" class="tab">
-<h1>category - (<a href="api/get?k=50" target="output">get_deal</a>)<h1>
+<h1>category - (<a href="api/get?k=50" target="output">get categories</a>)<h1>
 <form action="api/add?p=50&k=50" target="output"  method="post" enctype="multipart/form-data">
 ADD-DEAL-JSON:<textarea name="jdata">
 {"name":"Merchant01","lat":"","lon":"","city":"Milano"}
 </textarea><br/>
 ADD-DEAL-IMAGE:<input type="file" name="files" placeholder="choose one file"/><input type="submit" value="add deal" />
 </form><br/>
-<form action="http://emporyou.com/del_deal" target="output" method="post" enctype="multipart/form-data">
-DELETE ID:<input type="text" name="_id" placeholder="deal-id"/><input type="submit" value="delete" />
+<form action="http://emporyou.com/api/del" target="output" method="post" enctype="multipart/form-data">
+DELETE ID:<input type="text" name="id" placeholder="category id"/><input type="submit" value="delete" />
 </form></div>
 
 <div id="merchant-g" class="tab"><h1>merchant (<a href="api/get?k=11" target="output">get_merchant</a>)<h1>
