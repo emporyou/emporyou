@@ -67,7 +67,7 @@ ooo.form2JSON = function (f) {
                         var c = t[z].value;
                         arrObj[b] = c;
                     }}
-                    o[arrName] = [];
+                    if(!o[arrName]){o[arrName] = [];}
                     o[arrName].push(arrObj);
                 }
             }
