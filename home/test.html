@@ -9,14 +9,25 @@ form,a{ font-size: 16px;}
 .l{float:right;}
 </style>
 <script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
+<script>
+
+showtab=function(hideclass,showid){
+	var cc=ooo.sel("//*[contains(@class,'"+hideclass+"'])",document);
+	for (var c=0;c<cc.length;c++){cc[c].style.display='none'}
+	ooo.$$(showid).style.display='';
+};
+</script>
 </head><body>
 <div id="input-g" class="g">
+	<div class="g">
 	<input type="radio" value="category" name="doc-k" checked="checked" />category
 	<input type="radio" value="merchant" name="doc-k" />merchant
 	<input type="radio" value="coupon" name="doc-k" />coupon
 	<input type="radio" value="cart" name="doc-k" />cart
 	<input type="radio" value="transaction" name="doc-k" />transaction
-<div id="category-g" class="tab">
+	</div>
+<div class="g"><input type="text" id="api-url" placeholder="api/get?..."/><button onclick="document.getElementById('output').src=this.previousSibling.value">-></button></div>
+<div id="category" class="tab">
 <h1>category - (<a href="api/get?k=50" target="output">get_deal</a>)<h1>
 <form action="api/add?p=50&k=50" target="output"  method="post" enctype="multipart/form-data">
 ADD-DEAL-JSON:<textarea name="jdata">
@@ -34,7 +45,7 @@ ADD:<textarea name="jdata">
 {"name":"Merchant01","lat":"","lon":"","city":"Milano"}
 </textarea><input type="submit" value="add merchant" />
 </form><br/>
-<form action="del_merchant" target="output" method="post" enctype="multipart/form-data">
+<form action="api/add?k=11" target="output" method="post" enctype="multipart/form-data">
 DELETE ID:<input type="text" name="id" placeholder="merchant-id"/><input type="submit" value="delete" />
 </form></div>
 
