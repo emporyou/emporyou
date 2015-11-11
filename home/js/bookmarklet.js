@@ -34,7 +34,9 @@ function processVariants(){
 function _processVariants(){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     var zzz=cidx-1;
-    var imgObj={'url':imgSrc,'name':optNum[zzz].innerHTML,'isvariant':true,'optionurl'+zzz:imgSrc};
+    var nnn='optionurl'+zzz
+    var imgObj={'url':imgSrc,'name':optNum[cidx-1].innerHTML,'isvariant':true};
+    imgObg[nnn]=imgSrc;
     prodJSON.image.push(imgObj);
     processVariants()
 }
