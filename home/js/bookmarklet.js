@@ -13,7 +13,7 @@ prodJSON.fromreaction=true;
     prodJSON.image=[];
     var imgObj={'url':imgSrc,'name':'mainExternal'};
     prodJSON.image.push(imgObj);
-    processVariants();
+    setTimeout(processVariants,200);
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
