@@ -3,7 +3,7 @@
 <rowtype tagname="//doc">
 <variable tagname="name" substitution="%name"/>
 <variable tagname="id" substitution="%id"/>
-<html><option value="%id">%name</option></html>
+<html><option value="%name" id="%id">%name</option></html>
 <beforeall><![CDATA[<select id="category-target" name="category">]]></beforeall>
 <afterall><![CDATA[</select>]]></afterall>
 </rowtype>
