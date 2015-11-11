@@ -137,7 +137,7 @@ function handleFileSelect(evt) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb main-image" id="main-image'+count+'" src="', e.target.result,
+          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this)" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
           evt.target.name="mainImage_"+count;
@@ -184,3 +184,6 @@ function handleFileSelecto(evt) {
       
     }
   }
+function removeThis(n){
+n.parentNode.removeChild(n);
+}
