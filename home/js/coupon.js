@@ -1,4 +1,4 @@
-function myInit() {window.nDetail = 0;
+function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
@@ -75,6 +75,7 @@ function sendCoupon() {
 }
 
 function handleFileSelect(evt) {
+    count++;
     var files = evt.target.files; // FileList object
 
     // Loop through the FileList and render image files as thumbnails.
@@ -92,14 +93,19 @@ function handleFileSelect(evt) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" id="main-image" src="', e.target.result,
+          span.innerHTML = ['<img class="thumb main-image" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
+          evt.target.name="mainImages_"+count;
+          var rr=ooo.ins('blue-cont','input',['type','file']);
+          rr.addEventListener('change', handleFileSelect, false);
+          ooo.move('send-form',evt.target);
         };
       })(f);
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
+      
     }
   }
 function handleFileSelecto(evt) {

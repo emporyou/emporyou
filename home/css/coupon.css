@@ -451,7 +451,7 @@ textarea{
     z-index:1000;
     font-family:'open sans'
 }
-#main-image{
+.main-image{
     height:24%;
     margin:1%;
 }
