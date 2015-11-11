@@ -30,7 +30,7 @@ window.nOption = 0;
             document.getElementById('value_'+i).value=initialjdata.metafields[i].value;
         }
         for(y=0;y<initialjdata.images.length;y++){
-            if(initialjdata.images[y].optNum{
+            if(initialjdata.images[y].optNum){
                document.getElementById('priceName_'+initialjdata.images[y].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.images[y].url+"')"
             }
         }
