@@ -53,7 +53,7 @@ ooo.form2JSON = function (f) {
                         inp[z].setAttribute('id','ifi');
                         var b = inp[z].name;
                         var c = inp[z].value;
-                        if(inp[z].type!='hidden'||inp[z].type!='file'||inp[z].name!=''||!inp[z].name){arrObj[b] = c;}
+                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){arrObj[b] = c;}
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi');
