@@ -101,7 +101,8 @@ app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 	}else{res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));}});
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.all(/^\/api\/postback\/?.*/,upload.any(),metaschema.postback);
-app.all(/^\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
+app.all(/^\/merchant\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
+app.all(/^\/api\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
 app.all(/^\/api\/add\/?.*/,upload.any(),metaschema.add);
