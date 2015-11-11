@@ -11,9 +11,9 @@ prodJSON.fromreaction=true;
     for(z=0;z<optNum.length;z++){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     prodJSON.image=[];
-    var imgObj={'url':imgSrc,'name':'external'};
+    if(optNum[z-1]){var imgObj={'url':imgSrc,'name':optNum[z-1].value};}else{var imgObj={'url':imgSrc,'name':'mainExternal'};}
     prodJSON.image.push(imgObj);
-    if(opt[z]){opt[z].click()}}
+    if(optNum[z]){optNum[z].click()}}
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
