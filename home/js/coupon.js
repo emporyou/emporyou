@@ -71,6 +71,7 @@ function addOption(allowChange,hideX) {count++;
     var opt = document.createElement('fieldset');
     var del = document.createElement('div');
     var ics = document.createTextNode('x');
+    var qta = document.createElement('textarea');
     del.appendChild(ics)
     var name = document.createElement('textarea');
     var price = document.createElement('textarea');
@@ -80,6 +81,9 @@ function addOption(allowChange,hideX) {count++;
     name.setAttribute('class', 'optionName detail');
     name.setAttribute('id','optionName_'+nOption)
     name.setAttribute('name', 'option');
+    qta.setAttribute('class', 'qtaName detail');
+    qta.setAttribute('id','qtaName_'+nOption)
+    qta.setAttribute('name', 'quantity');
     opt.setAttribute('name', 'option[]');
     price.setAttribute('class', 'priceName option');
     price.setAttribute('id','priceName_'+nOption);
@@ -88,6 +92,7 @@ function addOption(allowChange,hideX) {count++;
     price.setAttribute('placeholder', 'Prezzo..');
     if(!hideX){opt.appendChild(del);}
     opt.appendChild(name);
+    opt.appendChild(qta);
     opt.appendChild(price);
     var img = document.createElement('div');
     img.setAttribute('class', 'image-target-option transition-1');
