@@ -2,7 +2,7 @@ function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    if(!initialjdata.variants){addOption(true,true);
+    if(!initialjdata.variants){addOption(false,true);
     document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);}
     if(initialjdata.fromreaction){
         document.getElementById('product-title').value=initialjdata.title;
@@ -12,8 +12,8 @@ window.nOption = 0;
           span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="'+initialjdata.image[0].url+'" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
         for(i=0;i<initialjdata.variants.length;i++){
-            addOption(false,true);
-            
+            addOption(true,i==0);
+            if(i==0){document.getElementById('image_0').style.backgroundImage="url('"+initialjdata.image[0].url+"')"}
             if(initialjdata.variants[i].optionTitle){document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;}else{
                 document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
             }
