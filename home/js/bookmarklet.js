@@ -1,10 +1,10 @@
 //////////////////// DETECT ECOMMERCE ////////////////////////////////////
 window.emporyoumode;
-document.getElementsByClassName('variant-title')[0].click();
 if(selectedProduct){emporyoumode='reaction'};console.log(selectedProduct);
 if(!emporyoumode){emporyoumode='magento'};
 var jsondata={};
 if(emporyoumode=='reaction'){
+    document.getElementsByClassName('variant-title')[0].click();
 prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
