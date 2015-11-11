@@ -95,7 +95,9 @@ function addOption() {count++;
 }
 
 function sendCoupon() {
-    var jsondata = JSON.stringify(ooo.form2JSON(document.getElementById('coupon-form')));
+    var myJSON=ooo.form2JSON(document.getElementById('coupon-form'));
+    myJSON.images=initialjdata.image;
+    var jsondata = JSON.stringify(myJSON);
     document.getElementById('send-target').value = jsondata;
     document.getElementById('send-form').submit();
 }
