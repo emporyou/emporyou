@@ -126,7 +126,7 @@ function sendCoupon() {
                     initialjdata.variants[ww].image=initialjdata.image[p].url;
                 } }
         if(initialjdata.variants[ww].option==initialjdata.image[p].name){
-                    initial.variants[ww].image=image[p].url;
+                    initialjdata.variants[ww].image=image[p].url;
                 }
             
         }
