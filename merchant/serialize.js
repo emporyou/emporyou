@@ -23,19 +23,19 @@ ooo.form2JSON = function (f) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
                     var c = inp[z].value;
-                    if(inp[z].type!='file'){fldObj[b] = c;}
+                    if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){fldObj[b] = c;}
                 }}
                 if(t.length>0){for (z = 0; z < t.length; z++) {
                     t[z].setAttribute('id','ifi')
                     var b = t[z].name;
                     var c = t[z].value;
-                    fldObj[b] = c;
+                    if(t[z].name!=''||!t[z].name){fldObj[b] = c;}
                 }}
                 if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
-                        fldObj[b] = c;
+                        if(s[z].name!=''||!s[z].name){fldObj[b] = c;}
                     }}
                 o[fldName] = fldObj
             }
@@ -53,19 +53,19 @@ ooo.form2JSON = function (f) {
                         inp[z].setAttribute('id','ifi')
                         var b = inp[z].name;
                         var c = inp[z].value;
-                        if(inp[z].type!='file'){arrObj[b] = c;}
+                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){arrObj[b] = c;}
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
-                        arrObj[b] = c;
+                        if(s[z].name!=''||!s[z].name){arrObj[b] = c;}
                     }}
                     if(t.length>0){for (z = 0; z < t.length; z++) {
                         t[z].setAttribute('id','ifi')
                         var b = t[z].name;
                         var c = t[z].value;
-                        arrObj[b] = c;
+                        if(t[z].name!=''||!t[z].name){arrObj[b] = c;}
                     }}
                     if(!o[arrName]){o[arrName] = [];}
                     o[arrName].push(arrObj);
@@ -82,10 +82,11 @@ ooo.form2JSON = function (f) {
                 if(idifi.indexOf('ifi') == -1){
                 var v = a[i];
                 if (v != null) {
+                    if(a[i].name!=''||!a[i].name){
                     var b = a[i].name;
                     var c = a[i].value;
                     o[b] = c;
-                    a[i].setAttribute('id','');
+                    a[i].setAttribute('id','');}
                 }
             }}
         }
