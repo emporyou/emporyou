@@ -96,7 +96,8 @@ function handleFileSelect(evt) {
           span.innerHTML = ['<img class="thumb main-image" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
-          evt.target.name="mainImages_"+count;
+          evt.target.name="mainImage_"+count;
+          evt.target.id="mainImage_"+count;
           var rr=ooo.ins('blue-cont','input',['type','file']);
           rr.addEventListener('change', handleFileSelect, false);
           ooo.move('send-form',evt.target);
