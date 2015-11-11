@@ -139,7 +139,7 @@ function handleFileSelect(evt) {
           var span = document.createElement('span');
             evt.target.name="mainImage_"+count;
           evt.target.id="mainImage_"+count;
-          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this);removeThis(document.getElementById("mainImage_'+count+'"))" id="main-image'+count+'" src="', e.target.result,
+          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this);removeThis(document.getElementById(\'mainImage_'+count+'\'))" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
           var rr=ooo.ins('image-target','input',['type','file','id','files']);
