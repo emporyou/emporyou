@@ -111,7 +111,7 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){MXS.fwd(req,r
 var q=req.item(MXS.CONFIG.dataParameter);var Q={};
 if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could not parse json');}}
 if(!req.files){res.jend(req,res,'error','files are mandatory');}
-Q.images=new Array();
+if(!Q.images){Q.images=new Array();}
 for(var f=0;f<req.files.length;f++){var v;
 	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:req.files[f].filename,size:req.files[f].size};}
 	else{
@@ -375,14 +375,15 @@ H 		Transazione e back
 H 		Dispatch email
 G 		Template email per cliente merchant e admin
 H+G 	Admin e merchant views 
-H 		Metaframe nuovo GIA 99%
+
 H+G 	+Autocompilamento da reaction
 H+G	+Autocompilamento da magento
 G		Aggiunta e RIMOZIONE immagini da editor coupon
 G 		QUANTITA PER OPZIONE PRODOTTO IN COUPON MAKER!!!!!
 
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
-H 		Ricerca per prezzo e per categoria funzionanti
+H 		Ricerca per prezzo MAG e MIN e per categoria funzionanti
+G     aggiungere MIN MAX in home
 G+H 	Layouts prodotti in emporyou per multi immagini e opzioni
 
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
@@ -391,8 +392,42 @@ H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
 /*
 DEMO
+
+0
+ELIMINARE DATABASE
+http://emporyou.com - confermare vuoto in home
+
+1
 MAGENTO
 http://108.61.188.200
 emporyou Emporyou2015
+BOTTONE MAGENTO
+
+2
+REACTION
+http://emporyou.com:3010
+BOTTONE EMPORYOU
+
+-------dimostrazione codice unificato bookmarklet + metaschema->coupon.html-------
+
+3
+http://emporyou.com vista prodotti
+-ricerca x categoria
+-ricerca x prezzo
+-ricerca x geo
+
+4 
+carrello
+
+5 
+checkout
+
+6 
+trans back OK
+trans back KO
+
+7
+VISTE ADMIN
+
 
 */
