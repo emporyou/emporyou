@@ -39,6 +39,7 @@
         //window.jsondata=%jsondata;
 
         function myInit() {
+            ooo.render('coupon-form','select-category.xml','http://emporyou.com/api/get?k=50',false,'append')
             document.getElementById('files').addEventListener('change', handleFileSelect, false);
         }
     </script>
@@ -186,18 +187,6 @@ window.nDetail=0;window.nOption=0;
             <textarea id="product-altreinfo" name="subtitle" placeholder="Sottotitolo.."></textarea>
             <textarea id="product-descrizione" name="description" placeholder="Descrizione.."></textarea>
             <div id="categorie-testo">Seleziona una categoria</div>
-            <select id="category-target" name="category">
-                <option>Tempo libero</option>
-                <option>Casa</option>
-                <option>Abbigliamento</option>
-                <option>Animali</option>
-                <option>Moda</option>
-                <option>Mangiare e bere</option>
-                <option>Elettronica</option>
-                <option>Bellezza</option>
-                <option>Cartoleria</option>
-                <option>Salute</option>
-            </select>
             <div id="blue-cont">
                <div id="image-guide">Scegli una foto</div>
                 <div id="image-target" class="transition-1">

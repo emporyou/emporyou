@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//doc">
+<variable tagname="name" substitution="%name"/>
+<variable tagname="id" substitution="%id"/>
+<html><option value="%id">%name</option></html>
+<beforeall><![CDATA[<select id="category-target" name="category">]]></beforeall>
+<afterall><![CDATA[</select>]]></afterall>
+</rowtype>
+</document>
