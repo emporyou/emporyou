@@ -92,8 +92,8 @@ function addOption(allowChange,hideX) {count++;
     price.setAttribute('placeholder', 'Prezzo..');
     if(!hideX){opt.appendChild(del);}
     opt.appendChild(name);
-    opt.appendChild(qta);
     opt.appendChild(price);
+    opt.appendChild(qta);                                   
     var img = document.createElement('div');
     img.setAttribute('class', 'image-target-option transition-1');
     var inp = document.createElement('input');
