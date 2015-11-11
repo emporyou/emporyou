@@ -7,12 +7,17 @@ window.nOption = 0;
         document.getElementById('product-title').value=initialjdata.title;
         document.getElementById('product-descrizione').value=initialjdata.description;
         document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
+        var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb main-image" id="main-image-created'" src="', initialjdata.images[0].url,
+                            '" title="mainImage"/>'].join('');
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
+            
             if(initialjdata.variants[i].optionTitle){document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;}else{
                 document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
             }
             document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
+            document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.images[0].optionurl+i+"')"
         }
         for(i=0;i<initialjdata.metafields.length;i++){
             addDetail();
