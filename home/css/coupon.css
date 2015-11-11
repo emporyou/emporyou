@@ -206,9 +206,9 @@ textarea{
         position: absolute;
     width:100%;
     height:100%;
+    top:100%;
     z-index:1000;
     background-color:transparent;
-    opacity:0;
 }
 #files:hover{
    cursor:pointer; 
@@ -456,4 +456,8 @@ textarea{
     width:25%;
     z-index:1000;
     font-family:'open sans'
+}
+#main-image{
+    height:100%;
+    width:100%;
 }

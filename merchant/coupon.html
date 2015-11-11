@@ -55,7 +55,7 @@
             <div id="blue-cont">
                 <div id="image-guide">Scegli una foto</div>
                 <div id="image-target" class="transition-1">
-                    <input type="file" id="files" name="files[]" multiple />
+                    <input type="file" value="immagine" id="files" name="files[]" multiple />
                     <output id="list"></output>
                 </div>
             </div>
@@ -162,7 +162,7 @@
             </div>
         </div>
     </form>
-    <form id="send-form" style="display:none" action="http://emporyou.com/api/add?k=12&p=12" method="post" enctype="multipart/form-data">
+    <form id="send-form" style="display:none" action="http://emporyou.com/api/new_deal?k=12&p=12" method="post" enctype="multipart/form-data">
         <textarea id="send-target" name="jdata"></textarea>
     </form>
 </body>
