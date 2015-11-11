@@ -7,6 +7,10 @@ var jsondata={};
 if(emporyoumode=='reaction'){
 prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
+    var imgSrc=document.getElementsByTagName('img')[0].src;
+    prodJSON.image=[];
+    var imgObj={'url':imgSrc,'name','external'};
+    prodJSON.image.push(imgObj);
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
