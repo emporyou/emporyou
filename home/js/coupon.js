@@ -5,7 +5,7 @@ window.nOption = 0;
     document.getElementById('defaultOpt').addEventListener('change', handleFileSelecto, false);
     if(initialjdata.fromreaction){
         document.getElementById('product-title').value=initialjdata.title;
-        document.getElementById('product-description').value=initialjdata.description;
+        document.getElementById('product-descrizione').value=initialjdata.description;
         document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
