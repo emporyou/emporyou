@@ -29,9 +29,9 @@ window.nOption = 0;
             document.getElementById('key_'+i).value=initialjdata.metafields[i].key;
             document.getElementById('value_'+i).value=initialjdata.metafields[i].value;
         }
-        for(y=0;y<initialjdata.images.length;y++){
-            if(initialjdata.images[y].optNum){
-               document.getElementById('priceName_'+initialjdata.images[y].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.images[y].url+"')"
+        for(y=0;y<initialjdata.image.length;y++){
+            if(initialjdata.image[y].optNum){
+               document.getElementById('priceName_'+initialjdata.image[y].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.image[y].url+"')"
             }
         }
     }
