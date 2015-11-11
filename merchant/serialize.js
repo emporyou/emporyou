@@ -18,7 +18,7 @@ ooo.form2JSON = function (f) {
                 var fldObj = {};
                 var inp = fld[i].getElementsByTagName('input');
                 var t = fld[i].getElementsByTagName('textarea');
-                var s = f.getElementsByTagName('select');
+                var s = fld[i].getElementsByTagName('select');
                 if(inp.length>0){for (z = 0; z < inp.length; z++) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
@@ -48,7 +48,7 @@ ooo.form2JSON = function (f) {
                     var arrObj = {};
                     var inp = af[r].getElementsByTagName('input');
                     var t = af[r].getElementsByTagName('textarea');
-                    var s = f.getElementsByTagName('select');
+                    var s = af[r].getElementsByTagName('select');
                     if(inp.length>0){for (z = 0; z < inp.length; z++) {
                         inp[z].setAttribute('id','ifi')
                         var b = inp[z].name;
@@ -91,6 +91,7 @@ ooo.form2JSON = function (f) {
         }
         g(t);
         if(i.type!='file'){g(i);}
+        g(s);
     
     return o;
 }
