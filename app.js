@@ -120,7 +120,7 @@ for(var f=0;f<req.files.length;f++){
 	console.log(req.files[f]);
 }
 req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
-MSX.add(req,res,next);
+MXS.add(req,res,next);
 })});
 app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
