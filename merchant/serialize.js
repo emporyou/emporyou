@@ -41,7 +41,7 @@ ooo.form2JSON = function (f) {
             }
         };if(isArr == true){
             for (i = 0; i < arrFld.length; i++) {console.log(arrFld[i]);
-                var arrName = arrFld[i].name;
+                var arrName = arrFld[i].name.replace('[]','');
                 var af = arrFld[i].getElementsByTagName('fieldset');
                 for (r = 0; r < af.length; r++) {
                     var fldName = af[r].name;
@@ -67,7 +67,7 @@ ooo.form2JSON = function (f) {
                         var c = t[z].value;
                         arrObj[b] = c;
                     }}
-                    o[arrName] = [];
+                    if(!o[arrName]){o[arrName] = [];}
                     o[arrName].push(arrObj);
                 }
             }

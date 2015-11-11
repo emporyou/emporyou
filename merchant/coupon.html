@@ -28,6 +28,7 @@
     <script src="../js/mainh.js"></script>
     <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
     <script src="../js/jquery.geocomplete.js"></script>
+    <script src="serialize.js"></script>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -164,11 +165,15 @@ window.nDetail=0;window.nOption=0;
             nOption++;
         document.getElementById('option-cont').insertBefore(opt,document.getElementById('option-cont').firstChild);
     }
-  
+  function sendCoupon(){
+        var jsondata=JSON.stringify(ooo.form2JSON(document.getElementById('coupon-form')));
+        document.getElementById('send-target').value=jsondata;
+        document.getElementById('send-form').submit();
+  }
 </script>
 </head>
 
-<body onload="myInit()"><form id="coupon-form">
+<body onload="myInit()"><form id="coupon-form" action="http://emporyou.com" method="post" onsubmit="return false">
     <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
     <div class="header-admin">
         <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
@@ -209,6 +214,7 @@ window.nDetail=0;window.nOption=0;
             </fieldset>
             <div id="blue-cont-head"></div>
             <div id="vaucher-text">VAUCHER</div>
+            <button onclick="sendCoupon()">MANDA COUPON</button>
             <div id="svgcont">
                 <svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
 
@@ -299,6 +305,9 @@ window.nDetail=0;window.nOption=0;
                 </svg>
             </div>
         </div>
+        </form>
+        <form id="send-form" style="display:none" action="http://emporyou.com/api/add?k=12&p=12" method="post" enctype="multipart/form-data">
+            <textarea id="send-target" name="jdata"></textarea>
         </form>
 </body>
 
