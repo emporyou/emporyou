@@ -132,7 +132,7 @@ function handleFileSelecto(evt) {
         return function(e) {
           // Render thumbnail.
             var imgCont=evt.target.parentElement;
-            imgCont.style.backgroundImage="url('"+evt.target.result+"')";
+            imgCont.style.backgroundImage="url('"+e.target.result+"')";
           evt.target.name="varimg_"+evt.target.previousSibling.value;
           evt.target.id="varimg_"+evt.target.previousSibling.value;
           ooo.move(evt.target,'send-form');
