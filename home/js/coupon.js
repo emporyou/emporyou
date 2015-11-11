@@ -10,7 +10,7 @@ window.nOption = 0;
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
             document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
-            document.getElementById('pricename'+i).value=initialjdata.variants[i].price;
+            document.getElementById('priceName'+i).value=initialjdata.variants[i].price;
         }
     }
 }
