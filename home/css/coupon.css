@@ -431,6 +431,7 @@ textarea{
     position:absolute;
     border-radius:4px;
     top:22%;
+    background-size:cover;
 }
 .image-target-option:hover{
    transform:scale(1.1) 
