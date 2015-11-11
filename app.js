@@ -123,7 +123,7 @@ for(var f=0;f<req.files.length;f++){var v;
 		var fn=req.files[f].fieldname.replace('varimg_','');
 		for(v=0;v<Q.variants.length;v++){
 			if(Q.variants[v].v_id==fn){
-				Q.image=req.files[f].filename;v=1000;
+				Q.variants[v].image=req.files[f].filename;v=1000;
 			}
 		}
 	}
