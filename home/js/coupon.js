@@ -121,7 +121,7 @@ function sendCoupon() {
     for(var p=0;p<initialjdata.image.length;p++){
         var pname=initialjdata.image[p].name;
         if(pname=='mainExternal'){
-            for(var ww=0;ww<initialjdata.variants;ww++){
+            for(var ww=0;ww<initialjdata.variants.length;ww++){
                 if(initialjdata.variants[ww].isMain==true){
                     initialjdata.variants[ww].image==initialjdata.image[p].name;
                 }else if(initial.variants[ww].option==initialjdata.image[p].name){
