@@ -2,7 +2,7 @@ function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    if(!initialjdata.variants){addOption(true);
+    if(!initialjdata.variants){addOption(true,true);
     document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);}
     if(initialjdata.fromreaction){
         document.getElementById('product-title').value=initialjdata.title;
@@ -12,7 +12,7 @@ window.nOption = 0;
           span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="'+initialjdata.image[0].url+'" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
         for(i=0;i<initialjdata.variants.length;i++){
-            addOption();
+            addOption(false,true);
             
             if(initialjdata.variants[i].optionTitle){document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;}else{
                 document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
@@ -67,11 +67,11 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption(hideX) {count++;
+function addOption(allowChange,hideX) {count++;
     var opt = document.createElement('fieldset');
-    if(!hideX){var del = document.createElement('div');
+    var del = document.createElement('div');
     var ics = document.createTextNode('x');
-    del.appendChild(ics);}
+    del.appendChild(ics)
     var name = document.createElement('textarea');
     var price = document.createElement('textarea');
     opt.setAttribute('class', 'new-option');
@@ -102,9 +102,9 @@ function addOption(hideX) {count++;
     out.setAttribute('id', 'listo');
     img.appendChild(out);
     img.appendChild(hid);
-    img.appendChild(inp);
-    img.setAttribute('id','image_'+nOption)
-    inp.addEventListener('change', handleFileSelecto, false);
+    img.setAttribute('id','image_'+nOption);
+    if(allowChange){img.appendChild(inp);
+    inp.addEventListener('change', handleFileSelecto, false);}
     opt.appendChild(img);
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
