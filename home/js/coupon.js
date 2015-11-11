@@ -67,6 +67,7 @@ function addOption() {count++;
     img.appendChild(out);
     img.appendChild(hid);
     img.appendChild(inp);
+    inp.addEventListener('change', handleFileSelecto, false);
     opt.appendChild(img);
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
