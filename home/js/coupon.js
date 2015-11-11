@@ -2,7 +2,8 @@ function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    document.getElementById('defaultOpt').addEventListener('change', handleFileSelecto, false);
+    if(!initialjdata.variants){addOption(true);
+    document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);}
     if(initialjdata.fromreaction){
         document.getElementById('product-title').value=initialjdata.title;
         document.getElementById('product-descrizione').value=initialjdata.description;
@@ -17,13 +18,21 @@ window.nOption = 0;
                 document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
             }
             document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
-            var opturl='optionurl'+i
-            document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.image[0].opturl+"')"
+            
+           //var opturl='optionurl'+i
+        //document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.image[0].opturl+"')"
+            
+            
         }
         for(i=0;i<initialjdata.metafields.length;i++){
             addDetail();
             document.getElementById('key_'+i).value=initialjdata.metafields[i].key;
             document.getElementById('value_'+i).value=initialjdata.metafields[i].value;
+        }
+        for(y=0;y<initialjdata.images.length){
+            if(initialjdata.images[y].optNum{
+               document.getElementById('priceName_'+initialjdata.images[y].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.images[y].url+"')"
+            }
         }
     }
 }
@@ -58,10 +67,11 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption() {count++;
+function addOption(hideX) {count++;
     var opt = document.createElement('fieldset');
-    var del = document.createElement('div');
+    if(!hideX){var del = document.createElement('div');
     var ics = document.createTextNode('x');
+    del.appendChild(ics);}
     var name = document.createElement('textarea');
     var price = document.createElement('textarea');
     opt.setAttribute('class', 'new-option');
@@ -76,8 +86,7 @@ function addOption() {count++;
     price.setAttribute('name', 'price');
     name.setAttribute('placeholder', 'Opzione..');
     price.setAttribute('placeholder', 'Prezzo..');
-    del.appendChild(ics);
-    opt.appendChild(del);
+    if(!hideX){opt.appendChild(del);}
     opt.appendChild(name);
     opt.appendChild(price);
     var img = document.createElement('div');
@@ -94,6 +103,7 @@ function addOption() {count++;
     img.appendChild(out);
     img.appendChild(hid);
     img.appendChild(inp);
+    img.setAttribute('id','image_'+nOption)
     inp.addEventListener('change', handleFileSelecto, false);
     opt.appendChild(img);
     nOption++;
