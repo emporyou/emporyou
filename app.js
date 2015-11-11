@@ -116,9 +116,19 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){MXS.fwd(req,r
 var q=req.item(MXS.CONFIG.dataParameter);var Q={};
 if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could not parse json');}}
 if(!req.files){res.jend(req,res,'error','files are mandatory');}
-for(var f=0;f<req.files.length;f++){
-	console.log(req.files[f]);
+Q.images=[];
+for(var f=0;f<.files.length;f++){var v;
+	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]=req.files[f].filename;}
+	else{
+		var fn=req.files[f].fieldname.replace('varimg_','');
+		for(v=0;v<Q.variants.length;v++){
+			if(Q.variants[v].v_id==fn){
+				Q.image=req.files[f].filename;v=1000;
+			}
+		}
+	}
 }
+for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
 req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
 MXS.add(req,res,next);
 })});
@@ -347,3 +357,34 @@ app.all('/del_deal',upload.any(), function (req, res, next) {
 			// });
 		  // }else{servenoimage(res);}		  
 // });});}});
+
+/*
+HANDBOOK
+a posted file, parsed with multer looks like this:
+fieldname		Field name specified in the form	
+originalname	Name of the file on the user's computer	
+encoding			Encoding type of the file	
+mimetype			Mime type of the file	
+size				Size of the file in bytes	
+destination		The folder to which the file has been saved	DiskStorage
+filename			The name of the file within the destination	DiskStorage
+path				The full path to the uploaded file	DiskStorage
+buffer			A Buffer of the entire file	MemoryStorage
+
+----------------
+1-aggiungere al aggiungitore di opzioni
+una input hidden IMMEDIATAMENTE PRIMA DEL INPUT FILE con name="v_id" e come
+value il tuo STESSO count di prima che incrementa.
+
+2-Aggiungere la prima opzione vuota, senza tasto X (con tanto di input hidden e dentro come value 0 (fai partire count da 1))
+  e con ID UNIVOCO
+
+3-On body load aggiungere con lo stesso ID UNIVOCO l'handler on select.
+
+4-nel codice del select dove si da il nome all'input e lo si sposta fare un if che controlla se il previousSibling di evt.target
+ha invatti come name v_id - SE NO come prima, SE SI
+ 4A:nome è diverso varimg_+ contenuto di v_id previous sibling 
+ 4B:ins è diverso.. DEVE essere inserito IMMEDIATAMENTE dopo il v_id precedente.
+ Il move è sempre uguale dato che la destinazione di tutti i files è il form.
+
+*/
