@@ -5,7 +5,7 @@ if(!emporyoumode){emporyoumode='magento'};
 var jsondata={};
 if(emporyoumode=='reaction'){
     document.getElementsByClassName('variant-title')[0].click();
-prodJSON=selectedProduct();
+ setTimeout(`prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
     window.cidx=0;
@@ -13,7 +13,7 @@ prodJSON.fromreaction=true;
     prodJSON.image=[];
     var imgObj={'url':imgSrc,'name':'mainExternal'};
     prodJSON.image.push(imgObj);
-    setTimeout(processVariants,200);
+   processVariants()`,200);
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
