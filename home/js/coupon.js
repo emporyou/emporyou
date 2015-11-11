@@ -3,6 +3,16 @@ window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     document.getElementById('defaultOpt').addEventListener('change', handleFileSelecto, false);
+    if(initialjdata.fromreaction){
+        document.getElementById('product-title').value=initialdata.title;
+        document.getElementById('product-description').value=initialdata.description;
+        document.getElementById('product-altreinfo').value=initialdata.pageTitle;
+        for(i=0;i<initialdata.variants.length;i++){
+            addOption();
+            document.getElementById('optionName_'+i).value=initialdata.variants[i].title;
+            document.getElementById('pricename'+i).value=initialdata.variants[i].price;
+        }
+    }
 }
 
 function clearContents(element) {
@@ -43,9 +53,11 @@ function addOption() {count++;
     del.setAttribute('class', 'delete-option');
     del.setAttribute('onclick', 'var c=this.parentElement;c.parentNode.removeChild(c)')
     name.setAttribute('class', 'optionName detail');
+    name.setAttribute('id','optionName_'+nOption)
     name.setAttribute('name', 'option');
     opt.setAttribute('name', 'option[]');
     price.setAttribute('class', 'priceName option');
+    price.setAttribute('id','priceName_'+nOption);
     price.setAttribute('name', 'price');
     name.setAttribute('placeholder', 'Opzione..');
     price.setAttribute('placeholder', 'Prezzo..');
