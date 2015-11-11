@@ -23,24 +23,24 @@ ooo.form2JSON = function (f) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
                     var c = inp[z].value;
-                    if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){fldObj[b] = c;}
+                    if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name||b!=''){fldObj[b] = c;}
                 }}
                 if(t.length>0){for (z = 0; z < t.length; z++) {
                     t[z].setAttribute('id','ifi')
                     var b = t[z].name;
                     var c = t[z].value;
-                    if(t[z].name!=''||!t[z].name){fldObj[b] = c;}
+                    if(t[z].name!=''||!t[z].name||b!=''){fldObj[b] = c;}
                 }}
                 if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
-                        if(s[z].name!=''||!s[z].name){fldObj[b] = c;}
+                        if(s[z].name!=''||!s[z].name||b!=''){fldObj[b] = c;}
                     }}
                 o[fldName] = fldObj
             }
         };if(isArr == true){
-            for (i = 0; i < arrFld.length; i++) {console.log(arrFld[i]);
+            for (i = 0; i < arrFld.length; i++) {
                 var arrName = arrFld[i].name.replace('[]','');
                 var af = arrFld[i].getElementsByTagName('fieldset');
                 for (r = 0; r < af.length; r++) {
@@ -53,19 +53,19 @@ ooo.form2JSON = function (f) {
                         inp[z].setAttribute('id','ifi')
                         var b = inp[z].name;
                         var c = inp[z].value;
-                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){arrObj[b] = c;}
+                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name||b!=''){arrObj[b] = c;}
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
-                        if(s[z].name!=''||!s[z].name){arrObj[b] = c;}
+                        if(s[z].name!=''||!s[z].name||b!=''){arrObj[b] = c;}
                     }}
                     if(t.length>0){for (z = 0; z < t.length; z++) {
                         t[z].setAttribute('id','ifi')
                         var b = t[z].name;
                         var c = t[z].value;
-                        if(t[z].name!=''||!t[z].name){arrObj[b] = c;}
+                        if(t[z].name!=''||!t[z].name||b!=''){arrObj[b] = c;}
                     }}
                     if(!o[arrName]){o[arrName] = [];}
                     o[arrName].push(arrObj);
