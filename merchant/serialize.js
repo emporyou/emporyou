@@ -46,11 +46,9 @@ ooo.form2JSON = function (f) {
                 for (r = 0; r < af.length; r++){
                     var fldName = af[r].name;
                     var arrObj = {};
-                    var fldCld=af[r].getElementsByTagName('fieldset');
-                    for(ee=0;ee<fldCld.length;ee++){
-                    var inp = fldCld[ee].getElementsByTagName('input');
-                    var t = fldCld[ee].getElementsByTagName('textarea');
-                    var s = fldCld[ee].getElementsByTagName('select');
+                    var inp = af[r].getElementsByTagName('input');
+                    var t = af[r].getElementsByTagName('textarea');
+                    var s = af[r].getElementsByTagName('select');
                     if(inp.length>0){for (z = 0; z < inp.length; z++) {
                         inp[z].setAttribute('id','ifi');
                         var b = inp[z].name;
@@ -70,7 +68,7 @@ ooo.form2JSON = function (f) {
                         if(t[z].name!=''||!t[z].name){arrObj[b] = c;}
                     }}
                     if(!o[arrName]){o[arrName] = [];}
-                    o[arrName].push(arrObj);}
+                    o[arrName].push(arrObj);
                 }
             }
         }
