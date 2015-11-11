@@ -112,12 +112,12 @@ if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could
 if(!req.files){res.jend(req,res,'error','files are mandatory');}
 Q.images=new Array();
 for(var f=0;f<req.files.length;f++){var v;
-	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]=req.files[f].filename;}
+	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:req.files[f].filename,size:req.files[f].size};}
 	else{
 		var fn=req.files[f].fieldname.replace('varimg_','');
 		for(v=0;v<Q.variants.length;v++){
 			if(Q.variants[v].v_id==fn){
-				Q.variants[v].image=req.files[f].filename;v=1000;
+				Q.variants[v].image={url:req.files[f].filename,size:req.files[f].size};v=1000;
 			}
 		}
 	}
