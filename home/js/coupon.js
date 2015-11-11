@@ -118,6 +118,18 @@ function addOption(allowChange,hideX) {count++;
 
 function sendCoupon() {
     var myJSON=ooo.form2JSON(document.getElementById('coupon-form'));
+    for(var p=0;p<initialjdata.image.length;p++){
+        var pname=initialjdata.image[p].name;
+        if(pname=='mainExternal'){
+            for(var ww=0;ww<initialjdata.variants;ww++){
+                if(initialjdata.variants[ww].isMain==true){
+                    initialjdata.variants[ww].image==initialjdata.image[p].name;
+                }else if(initial.variants[ww].option==initialjdata.image[p].name){
+                    initial.variants[ww].image=image[p];
+                }
+            }
+        }
+    }
     myJSON.images=initialjdata.image;
     var jsondata = JSON.stringify(myJSON);
     document.getElementById('send-target').value = jsondata;

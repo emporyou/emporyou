@@ -11,7 +11,7 @@ prodJSON.fromreaction=true;
     window.cidx=0;
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     prodJSON.image=[];
-    var imgObj={'url':imgSrc,'name':'mainExternal'};
+    var imgObj={'url':imgSrc,'name':'mainExternal','isMain':true};
     prodJSON.image.push(imgObj);
    processVariants()`,200);
 }else if(emporyoumode=="magento"){
