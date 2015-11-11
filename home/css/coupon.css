@@ -423,15 +423,16 @@ textarea{
 }
 
 .qtaName {
-    border:1px solid #ccc;
-    width:7.5%;
-    font-family:'open sans';
-    outline:0px;
-    height:0;
-    padding-bottom:7.5%;
-    margin-top:20px;
-    margin-right:20px;
-    line-height:40px;
+    border: 1px solid #ccc;
+    width: 7.5%;
+    font-family: 'open sans';
+    outline: 0px;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 6.5%;
+    margin-top: 20px;
+    margin-left: 10px;
+    line-height: 40px;
 }
 
 .image-target-option {
