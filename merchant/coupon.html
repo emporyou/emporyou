@@ -28,6 +28,7 @@
     <script src="../js/mainh.js"></script>
     <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
     <script src="../js/jquery.geocomplete.js"></script>
+    <script src="../js/coupon.js"></script>
     <script src="serialize.js"></script>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -35,171 +36,37 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta charset="utf-8" />
-    <script>
-        //window.jsondata=%jsondata;
-
-        function myInit() {
-            ooo.render('coupon-form','select-category.xml','http://emporyou.com/api/get?k=50&output=xml',false,'append')
-            document.getElementById('files').addEventListener('change', handleFileSelect, false);
-        }
-    </script>
-    <script>
-        var price = null;
-
-        function clearContents(element) {
-            element.value = '';
-        }
-
-        function makeCoupon() {
-            window.couponData = {
-    "subtitle": "Basic Example Product",
-    "title": "Example Product",
-    "image" : "image",
-    "description": "descrizione",
-    "metafields": [{
-        "key": "Material",
-        "value": "Cotton"
-    }, {
-        "key": "Quality",
-        "value": "Excellent"
-    }],
-    "variants": [{
-        "title": "Basic Example Variant",
-        "price": "prezzo",
-        "optionImage" : "image"
-    }, {
-        "price": "prezzo",
-        "optionTitle": "Option 1",
-        "optionImage" : "image"
-    }, {
-        "price": "prezzo",
-        "optionTitle": "Option 2",
-        "optionImage" : "image"
-    }],
-    "manufacturer": "Example Manufacturer",
-    "category": "categoria"
-}
-
-        }
-
-        function tryDiscount(value) {
-            console.log(value + ' is value');
-            console.log(price + ' is price');
-            var discount = (price / 100) * value;
-            console.log(discount + ' is discount');
-            window.lastSaving = discount;
-            var total = price - discount;
-            console.log(total + ' is total');
-            document.getElementById('target-totale').innerHTML = total;
-        }
-    </script>
-    <script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
-
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                  '</li>');
-    }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
-window.nDetail=0;window.nOption=0;
-    function addDetail(){
-        var det=document.createElement('fieldset');
-        var del=document.createElement('div');
-        var ics=document.createTextNode('x');
-        var key=document.createElement('textarea');
-        var valu=document.createElement('textarea');
-        det.setAttribute('class','new-detail');
-        det.setAttribute('name','detail[]');
-        del.setAttribute('class','delete-detail');
-        del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
-        key.setAttribute('class','key detail');
-        key.setAttribute('name','key');
-        valu.setAttribute('class','value detail');
-        valu.setAttribute('name','value');
-        key.setAttribute('placeholder','Dettaglio..');
-        valu.setAttribute('placeholder','Valore..');
-        del.appendChild(ics);
-        det.appendChild(del);
-        det.appendChild(key);
-        det.appendChild(valu);
-        nDetail++;
-        document.getElementById('details-cont').insertBefore(det,document.getElementById('details-cont').firstChild);
-    }
-        function addOption(){
-        var opt=document.createElement('fieldset');
-        var del=document.createElement('div');
-        var ics=document.createTextNode('x');
-        var name=document.createElement('textarea');
-        var price=document.createElement('textarea');
-        opt.setAttribute('class','new-option');
-        del.setAttribute('class','delete-option');
-        del.setAttribute('onclick','var c=this.parentElement;c.parentNode.removeChild(c)')
-        name.setAttribute('class','optionName detail');
-        name.setAttribute('name','option');
-        opt.setAttribute('name','option[]');
-        price.setAttribute('class','priceName option');
-        price.setAttribute('name','price');
-        name.setAttribute('placeholder','Opzione..');
-        price.setAttribute('placeholder','Prezzo..');
-        del.appendChild(ics);
-        opt.appendChild(del);
-        opt.appendChild(name);
-        opt.appendChild(price);
-            var img=document.createElement('div');
-            img.setAttribute('class','image-target-option transition-1');
-            var inp=document.createElement('input');
-            inp.setAttribute('type','file');
-            inp.setAttribute('id','files');
-            inp.setAttribute('name','files[]');
-            var out=document.createElement('output');
-            out.style.display="none";
-            out.setAttribute('id','list');
-            img.appendChild(out);
-            img.appendChild(inp);
-            opt.appendChild(img);
-            nOption++;
-        document.getElementById('option-cont').insertBefore(opt,document.getElementById('option-cont').firstChild);
-    }
-  function sendCoupon(){
-        var jsondata=JSON.stringify(ooo.form2JSON(document.getElementById('coupon-form')));
-        document.getElementById('send-target').value=jsondata;
-        document.getElementById('send-form').submit();
-  }
-</script>
 </head>
 
-<body onload="myInit()"><form id="coupon-form" action="http://emporyou.com" method="post" onsubmit="return false">
-    <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
-    <div class="header-admin">
-        <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
+<body onload="myInit()">
+    <form id="coupon-form" action="http://emporyou.com" method="post" onsubmit="return false">
+        <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
+        <div class="header-admin">
+            <div class="fontlogo text-logo"><img class="logo-text" src="../img/logo-text.png" />
+            </div>
         </div>
-    </div>
-    <div id="form-coupon-container">
-        <div id="title-coupon">Crea il tuo coupon</div>
+        <div id="form-coupon-container">
+            <div id="title-coupon">Crea il tuo coupon</div>
             <img class="logo-coupon" src="../img/logo-text-black.png" />
             <textarea id="product-title" name="title" placeholder="Nome prodotto.."></textarea>
             <textarea id="product-altreinfo" name="subtitle" placeholder="Sottotitolo.."></textarea>
             <textarea id="product-descrizione" name="description" placeholder="Descrizione.."></textarea>
             <div id="categorie-testo">Seleziona una categoria</div>
             <div id="blue-cont">
-               <div id="image-guide">Scegli una foto</div>
+                <div id="image-guide">Scegli una foto</div>
                 <div id="image-target" class="transition-1">
                     <input type="file" id="files" name="files[]" multiple />
-                    <output style="display:none" id="list"></output>
+                    <output id="list"></output>
                 </div>
             </div>
             <div id="dotted-cont"></div>
             <fieldset id="option-cont" name="variants[]">
-                <div id="add-option" onclick="addOption()" class="adder transition-1">Add option <br/>+</div>
+                <div id="add-option" onclick="addOption()" class="adder transition-1">Add option
+                    <br/>+</div>
             </fieldset>
             <fieldset id="details-cont" name="metafields[]">
-                <div id="add-detail" onclick="addDetail()" class="adder transition-1">Add detail <br/>+</div>
+                <div id="add-detail" onclick="addDetail()" class="adder transition-1">Add detail
+                    <br/>+</div>
             </fieldset>
             <div id="blue-cont-head"></div>
             <div id="vaucher-text">VAUCHER</div>
@@ -294,10 +161,10 @@ window.nDetail=0;window.nOption=0;
                 </svg>
             </div>
         </div>
-        </form>
-        <form id="send-form" style="display:none" action="http://emporyou.com/api/add?k=12&p=12" method="post" enctype="multipart/form-data">
-            <textarea id="send-target" name="jdata"></textarea>
-        </form>
+    </form>
+    <form id="send-form" style="display:none" action="http://emporyou.com/api/add?k=12&p=12" method="post" enctype="multipart/form-data">
+        <textarea id="send-target" name="jdata"></textarea>
+    </form>
 </body>
 
 </html>
