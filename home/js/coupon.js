@@ -9,8 +9,15 @@ window.nOption = 0;
         document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
-            document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;
+            if(initialjdata.variants[i].optionTitle){document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;}else{
+                document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
+            }
             document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
+        }
+        for(i=0;i<initialjdata.metafields.length;i++){
+            addDetail();
+            document.getElementById('key_'+i).value=initialjdata.metafields[i].key;
+            document.getElementById('value_'+i).value=initialjdata.metafields[i].value;
         }
     }
 }
@@ -30,9 +37,11 @@ function addDetail() {
     del.setAttribute('class', 'delete-detail');
     del.setAttribute('onclick', 'var c=this.parentElement;c.parentNode.removeChild(c)')
     key.setAttribute('class', 'key detail');
+    key.setAttribute('id', 'key_'+nDetail);
     key.setAttribute('name', 'key');
     valu.setAttribute('class', 'value detail');
     valu.setAttribute('name', 'value');
+    valu.setAttribute('id', 'value_'+nDetail);
     key.setAttribute('placeholder', 'Dettaglio..');
     valu.setAttribute('placeholder', 'Valore..');
     del.appendChild(ics);
