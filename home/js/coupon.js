@@ -123,9 +123,10 @@ function sendCoupon() {
         if(pname=='mainExternal'){
             for(var ww=0;ww<initialjdata.variants.length;ww++){
                 if(initialjdata.variants[ww].isMain==true){
-                    initialjdata.variants[ww].image==initialjdata.image[p].name;
-                }else if(initialjdata.variants[ww].option==initialjdata.image[p].name){
-                    initial.variants[ww].image=image[p];
+                    initialjdata.variants[ww].image=initialjdata.image[p].url;
+                }} 
+        if(initialjdata.variants[ww].option==initialjdata.image[p].name){
+                    initial.variants[ww].image=image[p].url;
                 }
             }
         }
