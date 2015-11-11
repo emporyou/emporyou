@@ -90,6 +90,7 @@ function addOption(allowChange,hideX) {count++;
     price.setAttribute('name', 'price');
     name.setAttribute('placeholder', 'Opzione..');
     price.setAttribute('placeholder', 'Prezzo..');
+    qta.setAttribute('placeholder', 'Qty..');
     if(!hideX){opt.appendChild(del);}
     opt.appendChild(name);
     opt.appendChild(price);
