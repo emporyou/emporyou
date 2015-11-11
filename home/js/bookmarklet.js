@@ -1,6 +1,6 @@
 //////////////////// DETECT ECOMMERCE ////////////////////////////////////
 window.emporyoumode;
-
+document.getElementsByClassName('variant-title')[0].click();
 if(selectedProduct){emporyoumode='reaction'};console.log(selectedProduct);
 if(!emporyoumode){emporyoumode='magento'};
 var jsondata={};
