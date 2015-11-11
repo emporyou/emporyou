@@ -98,7 +98,7 @@ function handleFileSelect(evt) {
           document.getElementById('list').insertBefore(span, null);
           evt.target.name="mainImage_"+count;
           evt.target.id="mainImage_"+count;
-          var rr=ooo.ins('blue-cont','input',['type','file']);
+          var rr=ooo.ins('blue-cont','input',['type','file','id','files']);
           rr.addEventListener('change', handleFileSelect, false);
           ooo.move(evt.target,'send-form');
         };
