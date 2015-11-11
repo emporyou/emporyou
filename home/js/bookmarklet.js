@@ -14,6 +14,7 @@ prodJSON.fromreaction=true;
     prodJSON.image.push(imgObj);
     for(z=0;z<optNum.length;z++){
     if(optNum[z]){optNum[z].click()}; 
+    imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     if(optNum[z]){var imgObj={'url':imgSrc,'name':optNum[z].innerHTML,'isvariant':true};}
     prodJSON.image.push(imgObj);
     }
