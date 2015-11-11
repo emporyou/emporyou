@@ -100,7 +100,7 @@ function handleFileSelect(evt) {
           evt.target.id="mainImage_"+count;
           var rr=ooo.ins('blue-cont','input',['type','file']);
           rr.addEventListener('change', handleFileSelect, false);
-          ooo.move('send-form',evt.target);
+          ooo.move(evt.target,'send-form');
         };
       })(f);
 
