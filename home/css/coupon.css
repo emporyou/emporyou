@@ -427,9 +427,9 @@ textarea{
     padding-bottom:7.5%;
     width:7.5%;
     background-color:rgba(255,255,255,0.4);
-    right:8%;
+    right:5%;
     position:absolute;
-    border-radius:6px;
+    border-radius:4px;
     top:22%;
 }
 .image-target-option:hover{
@@ -476,4 +476,8 @@ textarea{
 
 #coupbod {
 
+}
+.fileso{
+    width:0;
+    height:0;
 }

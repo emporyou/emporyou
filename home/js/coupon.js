@@ -2,6 +2,7 @@ function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    document.getElementById('defaultOpt').addEventListener('change', handleFileSelecto, false);
 }
 
 function clearContents(element) {
@@ -32,7 +33,7 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption() {
+function addOption() {count++;
     var opt = document.createElement('fieldset');
     var del = document.createElement('div');
     var ics = document.createTextNode('x');
@@ -52,9 +53,23 @@ function addOption() {
     opt.appendChild(del);
     opt.appendChild(name);
     opt.appendChild(price);
+    var img = document.createElement('div');
+    img.setAttribute('class', 'image-target-option transition-1');
+    var inp = document.createElement('input');
+    inp.setAttribute('type', 'file');
+    inp.setAttribute('class', 'fileso');
+    var hid = document.createElement('input');
+    hid.setAttribute('type', 'hidden');
+    hid.setAttribute('name', 'v_id');
+    hid.setAttribute('value', count);
+    var out = document.createElement('output');
+    out.setAttribute('id', 'listo');
+    img.appendChild(out);
+    img.appendChild(hid);
+    img.appendChild(inp);
+    opt.appendChild(img);
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
-    document.getElementById('fileso').addEventListener('change', handleFileSelect, false);
 }
 
 function sendCoupon() {
@@ -87,8 +102,39 @@ function handleFileSelect(evt) {
           document.getElementById('list').insertBefore(span, null);
           evt.target.name="mainImage_"+count;
           evt.target.id="mainImage_"+count;
-          var rr=ooo.ins('image-target','input',['type','file','id','files']);
+          var rr=ooo.ins('blue-cont','input',['type','file','id','files']);
           rr.addEventListener('change', handleFileSelect, false);
+          ooo.move(evt.target,'send-form');
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+      
+    }
+  }
+
+function handleFileSelecto(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+            var imgCont=evt.target.parentElement;
+            imgCont.style.backgroundImage="url('"+evt.target.result+"')";
+          evt.target.name="varimg_"+evt.target.previousSibling.value;
+          evt.target.id="varimg_"+evt.target.previousSibling.value;
           ooo.move(evt.target,'send-form');
         };
       })(f);
