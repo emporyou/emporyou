@@ -84,7 +84,7 @@ app.get('/auth/shopify/callback',passport.authenticate('shopify',{failureRedirec
 //------------------------------------------------------------------------------------ ADMIN SERVICES
 JSON2xml=function(o,n){return '<?xml version="1.0" encoding="UTF-8"?>\n'+o2xml(n,o)};
 o2xml=function(n,o){if(Array.prototype.isPrototypeOf(o)){return a2xml(n,o);}else if(typeof(o)=='object'){return _o2xml(n,o);}else{return v2xml(n,o);}};
-_o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n!='hashtags'){
+_o2xml=function(n,o){var xml='<'+n+'>';var pr;if(n=='images'){return a2xml(n,o)}{if(n!='hashtags'){
  for(var prop in o){pr=prop;if(Array.prototype.isPrototypeOf(o[prop])){xml+=a2xml(pr,o[prop]);}else if(typeof(o[prop])=='object'){xml+=_o2xml(pr,o[prop]);}else{xml+=v2xml(pr,o[prop]);}}return xml+'</'+n+'>';}else{return ''}};
 a2xml=function(n,a){var xml='';for(var i=0;i<a.length;i++){if(Array.prototype.isPrototypeOf(a[i])){xml+=a2xml(n,a[i]);}else if(typeof(a[i]=='object')){xml+=_o2xml(n,a[i]);}else{xml+=v2xml(n,a[i]);}}return xml;};
 v2xml=function(n,v){if(typeof(v)=='function'){return ''}var cd=false;if(typeof(v)=='string'){cd=true;}if(cd){return '<'+n+'><![CDATA['+v+']]></'+n+'>';}else{return '<'+n+'>'+v+'</'+n+'>';}};
@@ -116,7 +116,7 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){MXS.fwd(req,r
 var q=req.item(MXS.CONFIG.dataParameter);var Q={};
 if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could not parse json');}}
 if(!req.files){res.jend(req,res,'error','files are mandatory');}
-Q.images=[];
+Q.images=new Array();
 for(var f=0;f<req.files.length;f++){var v;
 	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]=req.files[f].filename;}
 	else{
