@@ -8,7 +8,7 @@ window.nOption = 0;
         document.getElementById('product-descrizione').value=initialjdata.description;
         document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
         var span = document.createElement('span');
-          span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="initialjdata.images[0].url" title="mainImage"/>';
+          span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="'+initialjdata.images[0].url+'" title="mainImage"/>';
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
             
