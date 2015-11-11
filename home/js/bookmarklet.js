@@ -33,7 +33,7 @@ function processVariants(){
 }
 function _processVariants(){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
-    var imgObj={'url':imgSrc,'name':optNum[cidx-1].innerHTML,'isvariant':true,'optNum':cidx-1};
+    var imgObj={'url':imgSrc,'name':optNum[cidx-1].innerHTML,'isvariant':true,'optNum':cidx};
 
     prodJSON.image.push(imgObj);
     processVariants()
