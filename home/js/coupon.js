@@ -124,11 +124,11 @@ function sendCoupon() {
             for(var ww=0;ww<initialjdata.variants.length;ww++){
                 if(initialjdata.variants[ww].isMain==true){
                     initialjdata.variants[ww].image=initialjdata.image[p].url;
-                } }}
+                } }}else{
             for(var ww=0;ww<initialjdata.variants.length;ww++){
         if(initialjdata.variants[ww].option==initialjdata.image[p].name){
                     initialjdata.variants[ww].image=image[p].url;
-                }}
+                }}}
             
         }
     }
