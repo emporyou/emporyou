@@ -8,12 +8,15 @@ if(emporyoumode=='reaction'){
 prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
-    prodJSON.image=[];
-    for(z=0;z<optNum.length;z++){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
-    if(optNum[z-1]){var imgObj={'url':imgSrc,'name':optNum[z-1].innerHTML};}else{var imgObj={'url':imgSrc,'name':'mainExternal'};}
+    prodJSON.image=[];
+    var imgObj={'url':imgSrc,'name':'mainExternal'};
     prodJSON.image.push(imgObj);
-    if(optNum[z]){setTimeout("optNum[z].click()",500)}}
+    for(z=0;z<optNum.length;z++){
+    if(optNum[z]){setTimeout("optNum[z].click()",500)}; 
+    if(optNum[z]){var imgObj={'url':imgSrc,'name':optNum[z].innerHTML,'isvariant',true};}
+    prodJSON.image.push(imgObj);
+    }
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
