@@ -137,11 +137,11 @@ function handleFileSelect(evt) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this)" id="main-image'+count+'" src="', e.target.result,
+            evt.target.name="mainImage_"+count;
+          evt.target.id="mainImage_"+count;
+          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this);removeThis(document.getElementById("mainImage_'+count'"))" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
-          evt.target.name="mainImage_"+count;
-          evt.target.id="mainImage_"+count;
           var rr=ooo.ins('image-target','input',['type','file','id','files']);
           rr.addEventListener('change', handleFileSelect, false);
           ooo.move(evt.target,'send-form');
