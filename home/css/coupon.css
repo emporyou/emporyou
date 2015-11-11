@@ -458,6 +458,8 @@ textarea{
     font-family:'open sans'
 }
 #main-image{
-    height:100%;
-    width:100%;
+    height:0;
+    padding-bottom:0;
+    width:10%;
+    margin:0;
 }
