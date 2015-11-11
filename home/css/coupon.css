@@ -199,7 +199,6 @@ textarea{
     height:100%;
     z-index:1000;
     background-color:transparent;
-    opacity:0;
 }
 
 #files {
@@ -458,8 +457,6 @@ textarea{
     font-family:'open sans'
 }
 #main-image{
-    height:0;
-    padding-bottom:0;
-    width:10%;
-    margin:0;
+    height:24%;
+    margin:1%;
 }
