@@ -31,7 +31,7 @@ window.nOption = 0;
         }
         for(y=0;y<initialjdata.image.length;y++){
             if(initialjdata.image[y].optNum){
-               document.getElementById('priceName_'+initialjdata.image[y-1].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.image[y-1].url+"')"
+               document.getElementById('priceName_'+initialjdata.image[y+1].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.image[y+1].url+"')"
             }
         }
     }
