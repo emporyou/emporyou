@@ -68,7 +68,7 @@ ooo.form2JSON = function (f) {
                         if(t[z].name!=''||!t[z].name){arrObj[b] = c;}
                     }}
                     if(!o[arrName]){o[arrName] = [];}
-                    if(o[arrName]!=''){o[arrName].push(arrObj);}
+                    if(arrObj!={'':''}){o[arrName].push(arrObj);}
                 }
             }
         }
