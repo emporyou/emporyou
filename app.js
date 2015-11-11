@@ -117,7 +117,7 @@ var q=req.item(MXS.CONFIG.dataParameter);var Q={};
 if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could not parse json');}}
 if(!req.files){res.jend(req,res,'error','files are mandatory');}
 Q.images=[];
-for(var f=0;f<.files.length;f++){var v;
+for(var f=0;f<req.files.length;f++){var v;
 	if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]=req.files[f].filename;}
 	else{
 		var fn=req.files[f].fieldname.replace('varimg_','');
