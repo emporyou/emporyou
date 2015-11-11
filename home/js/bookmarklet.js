@@ -8,10 +8,10 @@ if(emporyoumode=='reaction'){
 prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
+    prodJSON.image=[];
     for(z=0;z<optNum.length;z++){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
-    prodJSON.image=[];
-    if(optNum[z-1]){var imgObj={'url':imgSrc,'name':optNum[z-1].value};}else{var imgObj={'url':imgSrc,'name':'mainExternal'};}
+    if(optNum[z-1]){var imgObj={'url':imgSrc,'name':optNum[z-1].innerHTML};}else{var imgObj={'url':imgSrc,'name':'mainExternal'};}
     prodJSON.image.push(imgObj);
     if(optNum[z]){setTimeout("optNum[z].click()",500)}}
 }else if(emporyoumode=="magento"){
