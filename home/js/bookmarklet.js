@@ -9,7 +9,7 @@ prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
     var imgSrc=document.getElementsByTagName('img')[0].src;
     prodJSON.image=[];
-    var imgObj={'url':imgSrc,'name','external'};
+    var imgObj={'url':imgSrc,'name':'external'};
     prodJSON.image.push(imgObj);
 }else if(emporyoumode=="magento"){
     
