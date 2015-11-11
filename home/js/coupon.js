@@ -4,13 +4,13 @@ window.nOption = 0;
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     document.getElementById('defaultOpt').addEventListener('change', handleFileSelecto, false);
     if(initialjdata.fromreaction){
-        document.getElementById('product-title').value=initialdata.title;
-        document.getElementById('product-description').value=initialdata.description;
-        document.getElementById('product-altreinfo').value=initialdata.pageTitle;
-        for(i=0;i<initialdata.variants.length;i++){
+        document.getElementById('product-title').value=initialjdata.title;
+        document.getElementById('product-description').value=initialjdata.description;
+        document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
+        for(i=0;i<initialjdata.variants.length;i++){
             addOption();
-            document.getElementById('optionName_'+i).value=initialdata.variants[i].title;
-            document.getElementById('pricename'+i).value=initialdata.variants[i].price;
+            document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
+            document.getElementById('pricename'+i).value=initialjdata.variants[i].price;
         }
     }
 }
