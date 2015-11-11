@@ -131,7 +131,7 @@ function sendCoupon() {
                 }}}
             
         }
-    }
+    
     myJSON.images=initialjdata.image;
     var jsondata = JSON.stringify(myJSON);
     document.getElementById('send-target').value = jsondata;
