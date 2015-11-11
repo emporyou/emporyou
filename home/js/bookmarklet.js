@@ -7,10 +7,13 @@ var jsondata={};
 if(emporyoumode=='reaction'){
 prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
+    var optNum=document.getElementsByClassName('variant-select-option');
+    for(z=0;z<optNum.length;z++){
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     prodJSON.image=[];
     var imgObj={'url':imgSrc,'name':'external'};
     prodJSON.image.push(imgObj);
+    if(opt[z]){opt[z].click()}}
 }else if(emporyoumode=="magento"){
     
 }else{console.log('error:unsupported ecommerce')};
