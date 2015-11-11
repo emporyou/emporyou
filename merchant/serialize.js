@@ -78,6 +78,7 @@ ooo.form2JSON = function (f) {
         var s = f.getElementsByTagName('select');
         var g = function (a) {
             for (var i = 0; i < a.length; i++) {
+                if(a[i].type!='file'){
                 var idifi=a[i].id
                 if(idifi.indexOf('ifi') == -1){
                 var v = a[i];
@@ -86,12 +87,12 @@ ooo.form2JSON = function (f) {
                     var b = a[i].name;
                     var c = a[i].value;
                     o[b] = c;
-                    a[i].setAttribute('id','');}
+                    a[i].setAttribute('id','');}}
                 }
             }}
         }
         g(t);
-        if(i.type!='file'){g(i);}
+        g(i);
         g(s);
     
     return o;
