@@ -8,7 +8,8 @@ var multer = require('multer');var upload = multer({ dest: 'uploads/' });
 var passport = require('passport');
 var app = express();
 //-----------------------------------------------
-var metaschema=require('metaschema-node').express;
+var MXS=require('metaschema-node');
+var metaschema=MXS.express;
 var DIRNAME='.';
 var PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80;
 var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
@@ -110,6 +111,17 @@ app.all(/^\/api\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
 app.all(/^\/api\/add\/?.*/,upload.any(),metaschema.add);
+app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){MXS.fwd(req,res,next,function(req,res,next){
+//jsondata.imagefile=req.files[0].filename;
+var q=req.item(MXS.CONFIG.dataParameter);var Q={};
+if(q){try{Q=JSON.parse(q);}catch(ex){Q={};return res.jend(req,res,'error','could not parse json');}}
+if(!req.files){res.jend(req,res,'error','files are mandatory');}
+for(var f=0;f<req.files.length;f++){
+	console.log(req.files[f]);
+}
+req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
+MSX.add(req,res,next);
+})});
 app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
