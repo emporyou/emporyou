@@ -5,9 +5,11 @@
     position:absolute;
     top:100px;
     left:7.5%;
-    min-width:500px;
+    min-width:1000px;
     min-height:300px;
-    border:2px solid #0D2D4D
+    border-top:2px solid #0D2D4D;
+    border-left:2px solid #0D2D4D;
+    border-right:2px solid #0D2D4D;
 }
 
 #form-coupon-container {
@@ -48,7 +50,7 @@ textarea{
 
 #blue-cont {
     position:absolute;
-    background-color:rgba(100,120,255,0.5);
+    background-color:rgba(100,120,255,0.9);
     opacity:1;
     width:90%;
     left:5%;
@@ -59,14 +61,14 @@ textarea{
 .logo-coupon {
     position:absolute;
     width:20%;
-    top:16%;
-    left:11%;
+    top:-15%;
+    left:7%;
     opacity:0.8;
 }
 
 #blue-cont-head {
     position:absolute;
-    background-color:#0D2D4D;
+    background-color:rgba(100,120,255,0.9);
     opacity:1;
     width:90%;
     left:5%;
@@ -79,11 +81,10 @@ textarea{
     background-color:transparent;
     border-left:2px dotted black;
     border-right:2px dotted black;
-    border-bottom:2px dotted black;
     opacity:0.5;
     width:89.7%;
     left:5%;
-    height:49.9%;
+    height:90%;
     top:7.4%
 }
 #form-image-container {
@@ -162,12 +163,12 @@ textarea{
 
 #image-target {
     width:22%;
-    height:0;
-    padding-bottom:22%;
+    height:80%;
     background-color:rgba(255,255,255,0.2);
     position:absolute;
-    top:5%;
+    top:10%;
     right:2%;
+    box-sizing: border-box
 }
 #image-target:hover{
 }
@@ -200,7 +201,7 @@ textarea{
 
 #files {
         position: absolute;
-    top:100%;
+    top:-26%;
     z-index:1000;
     background-color:transparent;
 }
@@ -212,13 +213,13 @@ textarea{
     background-color:TRANSPARENT;
     opacity:1;
     width:31.5%;
-    left:5%;
+    left:1.5%;
     height:4%;
-    top:18.5%;
+    top:0%;
     color:orange;
     font-size:8vh;
     text-align:center;
-    font-family:'open sans';
+    font-family:'pacifico';
 }
 #image-guide {
     width:22%;
@@ -237,10 +238,11 @@ textarea{
 #product-title {
     position:absolute;
     width:80%;
-    left:10%;
-    height:4%;
-    top:8%;
+    left:0%;
+    height:20%;
+    top:-58%;
     line-height:100%;
+    background-color:transparent;
     font-size:6vh;
     border:none;
     font-family:'open sans';
@@ -250,9 +252,9 @@ textarea{
 #product-altreinfo {
     position:absolute;
     width:80%;
-    left:10%;
-    height:4%;
-    top:12%;
+    left:0%;
+    height:15%;
+    top:-36%;
     line-height:100%;
     background-color:transparent;
     font-size:4vh;
@@ -263,7 +265,7 @@ textarea{
 
 #option-cont {
     position:absolute;
-    background-color:#c6c6c6;
+    background-color:transparent;
     opacity:1;
     width:58%;
     left:5%;
@@ -273,7 +275,7 @@ textarea{
 
 #details-cont {
     position:absolute;
-    background-color:#c6c6c6;
+    background-color:transparent;
     opacity:1;
     width:30.5%;
     right:5%;
@@ -289,7 +291,7 @@ textarea{
     font-family:'open sans';
     font-size:30px;
     margin-top:5px;
-    background-color:white;
+    background-color:transparent;
 }
 
 #add-detail {
@@ -300,7 +302,7 @@ textarea{
     font-family:'open sans';
     font-size:30px;
     margin-top:5px;
-    background-color:white;
+    background-color:transparent;
 }
 
 .adder:hover {
@@ -309,14 +311,18 @@ textarea{
 }
 
 .new-detail {
-    text-align:center;
+    text-align:left;
+    padding-left:15px;
     width:100%;
-    height:80px;
+    position:relative;
+    box-sizing: border-box;
+    /*height:80px;*/
     line-height:40px;
     font-family:'open sans';
     font-size:30px;
-    margin-top:5px;
-    background-color:#999;
+    margin-top:0px;
+    padding-bottom:10px;
+    background-color:rgba(100,120,255,0.9);
     border:5px solid #fff
 }
 
@@ -341,8 +347,9 @@ textarea{
 }
 
 .detail {
-    border-radius:6px;
+    border-radius:4px;
     padding:1px;
+    margin-right:20px;
 }
 
 .delete-detail {
@@ -371,7 +378,7 @@ textarea{
     font-size:30px;
     margin-top:0px;
     padding-bottom:10px;
-    background-color:#999;
+    background-color:rgba(100,120,255,0.9);
     border:5px solid #fff
 }
 
@@ -390,7 +397,7 @@ textarea{
 }
 
 .option {
-    border-radius:6px;
+    border-radius:4px;
     padding:1px;
 }
 
@@ -411,6 +418,7 @@ textarea{
     outline:0px;
     height:40px;
     margin-top:20px;
+    margin-right:20px;
     line-height:40px;
 }
 
@@ -436,22 +444,36 @@ textarea{
 
 #categorie-testo {
     position:absolute;
-    right:10%;
+    right:8%;
     top:8%;
+    font-family:'pacifico'
 }
 
 #product-descrizione {
     right:28%;
-    background-color:rgba(255,255,255,0.4);
+    background-color:rgba(255,255,255,0.9);
     position:absolute;
-    top:20%;
-    border-radius:6px;
-    height:15%;
+    top:10%;
+    border-radius:2px;
+    height:80%;
     width:25%;
     z-index:1000;
-    font-family:'open sans'
+    font-family:'open sans';
+    box-sizing: border-box;
 }
 .main-image{
     height:24%;
     margin:1%;
+}
+
+#manda-coupon {
+    position:absolute;
+    right:5%;
+    top:0%;
+    width:25%;
+    height:50px;
+}
+
+#coupbod {
+
 }
