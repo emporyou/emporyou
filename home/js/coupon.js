@@ -124,7 +124,7 @@ function sendCoupon() {
             for(var ww=0;ww<initialjdata.variants.length;ww++){
                 if(initialjdata.variants[ww].isMain==true){
                     initialjdata.variants[ww].image==initialjdata.image[p].name;
-                }else if(initial.variants[ww].option==initialjdata.image[p].name){
+                }else if(initialjdata.variants[ww].option==initialjdata.image[p].name){
                     initial.variants[ww].image=image[p];
                 }
             }
