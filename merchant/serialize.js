@@ -12,7 +12,7 @@ ooo.form2JSON = function (f) {
                 arrFld.push(fld[i]);console.log(arrFld);
             }else{isNotArr=true;}
         };
-        if (isArr != true || isNotArr==true) {
+        if (isArr != true || isNotArr==true){
             for (i = 0; i < fld.length; i++) {
                 var fldName = fld[i].name;
                 var fldObj = {};
@@ -23,52 +23,52 @@ ooo.form2JSON = function (f) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
                     var c = inp[z].value;
-                    if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){fldObj[b] = c;}
+                    if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name||c!=''){fldObj[b] = c;}
                 }}
                 if(t.length>0){for (z = 0; z < t.length; z++) {
                     t[z].setAttribute('id','ifi')
                     var b = t[z].name;
                     var c = t[z].value;
-                    if(t[z].name!=''||!t[z].name){fldObj[b] = c;}
+                    if(t[z].name!=''||!t[z].name||c!=''){fldObj[b] = c;}
                 }}
                 if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
-                        if(s[z].name!=''||!s[z].name){fldObj[b] = c;}
+                        if(s[z].name!=''||!s[z].name||c!=''){fldObj[b] = c;}
                     }}
                 o[fldName] = fldObj
             }
         };if(isArr == true){
-            for (i = 0; i < arrFld.length; i++) {
+            for (i = 0; i < arrFld.length; i++){
                 var arrName = arrFld[i].name.replace('[]','');
                 var af = arrFld[i].getElementsByTagName('fieldset');
-                for (r = 0; r < af.length; r++) {
+                for (r = 0; r < af.length; r++){
                     var fldName = af[r].name;
                     var arrObj = {};
                     var inp = af[r].getElementsByTagName('input');
                     var t = af[r].getElementsByTagName('textarea');
                     var s = af[r].getElementsByTagName('select');
                     if(inp.length>0){for (z = 0; z < inp.length; z++) {
-                        inp[z].setAttribute('id','ifi')
+                        inp[z].setAttribute('id','ifi');
                         var b = inp[z].name;
                         var c = inp[z].value;
-                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name){arrObj[b] = c;}
+                        if(inp[z].type!='file'||inp[z].name!=''||!inp[z].name||c!=''){arrObj[b] = c;}
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
-                        s[z].setAttribute('id','ifi')
+                        s[z].setAttribute('id','ifi');
                         var b = s[z].name;
                         var c = s[z].value;
-                        if(s[z].name!=''||!s[z].name){arrObj[b] = c;}
+                        if(s[z].name!=''||!s[z].name||c!=''){arrObj[b] = c;}
                     }}
                     if(t.length>0){for (z = 0; z < t.length; z++) {
-                        t[z].setAttribute('id','ifi')
+                        t[z].setAttribute('id','ifi');
                         var b = t[z].name;
                         var c = t[z].value;
-                        if(t[z].name!=''||!t[z].name){arrObj[b] = c;}
+                        if(t[z].name!=''||!t[z].name||c!=''){arrObj[b] = c;}
                     }}
                     if(!o[arrName]){o[arrName] = [];}
-                    if(arrObj!={'':''}){o[arrName].push(arrObj);}
+                    o[arrName].push(arrObj);
                 }
             }
         }
@@ -77,7 +77,7 @@ ooo.form2JSON = function (f) {
         var i = f.getElementsByTagName('input');
         var s = f.getElementsByTagName('select');
         var g = function (a) {
-            for (var i = 0; i < a.length; i++) {
+            for (var i = 0; i < a.length; i++){
                 if(a[i].type!='file'){
                 var idifi=a[i].id
                 if(idifi.indexOf('ifi') == -1){
