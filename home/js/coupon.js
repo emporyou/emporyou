@@ -1,4 +1,4 @@
-function myInit() {window.nDetail = 0;
+function myInit() {window.nDetail = 0;window.count=0;
 window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
@@ -52,17 +52,6 @@ function addOption() {
     opt.appendChild(del);
     opt.appendChild(name);
     opt.appendChild(price);
-    var img = document.createElement('div');
-    img.setAttribute('class', 'image-target-option transition-1');
-    var inp = document.createElement('input');
-    inp.setAttribute('type', 'file');
-    inp.setAttribute('id', 'fileso');
-    inp.setAttribute('name', 'fileso[]');
-    var out = document.createElement('output');
-    out.setAttribute('id', 'listo');
-    img.appendChild(out);
-    img.appendChild(inp);
-    opt.appendChild(img);
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
     document.getElementById('fileso').addEventListener('change', handleFileSelect, false);
@@ -75,6 +64,7 @@ function sendCoupon() {
 }
 
 function handleFileSelect(evt) {
+    count++;
     var files = evt.target.files; // FileList object
 
     // Loop through the FileList and render image files as thumbnails.
@@ -92,42 +82,20 @@ function handleFileSelect(evt) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" id="main-image" src="', e.target.result,
+          span.innerHTML = ['<img class="thumb main-image" id="main-image'+count+'" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
+          evt.target.name="mainImage_"+count;
+          evt.target.id="mainImage_"+count;
+          var rr=ooo.ins('blue-cont','input',['type','file','id','files']);
+          rr.addEventListener('change', handleFileSelect, false);
+          ooo.move(evt.target,'send-form');
         };
       })(f);
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(f);
-    }
-  }
-function handleFileSelecto(evt) {
-    var files = evt.target.files; // FileList object
-
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = fileso[i]; i++) {
-
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
-
-      var reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('listo').insertBefore(span, null);
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
+      
     }
   }
 
