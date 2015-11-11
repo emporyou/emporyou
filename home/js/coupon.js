@@ -9,8 +9,8 @@ window.nOption = 0;
         document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
         for(i=0;i<initialjdata.variants.length;i++){
             addOption();
-            document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
-            document.getElementById('priceName'+i).value=initialjdata.variants[i].price;
+            document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;
+            document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
         }
     }
 }
