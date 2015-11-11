@@ -13,7 +13,7 @@ prodJSON.fromreaction=true;
     var imgObj={'url':imgSrc,'name':'mainExternal'};
     prodJSON.image.push(imgObj);
     for(z=0;z<optNum.length;z++){
-    if(optNum[z]){optNum[z].click())}; 
+    if(optNum[z]){optNum[z].click()}; 
     if(optNum[z]){var imgObj={'url':imgSrc,'name':optNum[z].innerHTML,'isvariant':true};}
     prodJSON.image.push(imgObj);
     }
