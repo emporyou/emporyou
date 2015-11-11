@@ -23,7 +23,7 @@ ooo.form2JSON = function (f) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
                     var c = inp[z].value;
-                    fldObj[b] = c;
+                    if(inp[z].type!='file'){fldObj[b] = c;}
                 }}
                 if(t.length>0){for (z = 0; z < t.length; z++) {
                     t[z].setAttribute('id','ifi')
@@ -53,7 +53,7 @@ ooo.form2JSON = function (f) {
                         inp[z].setAttribute('id','ifi')
                         var b = inp[z].name;
                         var c = inp[z].value;
-                        arrObj[b] = c;
+                        if(inp[z].type!='file'){arrObj[b] = c;}
                     }}
                     if(s.length>0){for (z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
@@ -90,7 +90,7 @@ ooo.form2JSON = function (f) {
             }}
         }
         g(t);
-        g(i);
+        if(i.type!='file'){g(i);}
     
     return o;
 }
