@@ -101,7 +101,7 @@ app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 	}else{res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));}});
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.all(/^\/api\/postback\/?.*/,upload.any(),metaschema.postback);
-app.all(/^\/api\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
+app.all(/^\/metaframe\/?.*/,upload.any(),metaschema.metaframe);
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
 app.all(/^\/api\/add\/?.*/,upload.any(),metaschema.add);
@@ -364,21 +364,34 @@ destination		The folder to which the file has been saved	DiskStorage
 filename			The name of the file within the destination	DiskStorage
 path				The full path to the uploaded file	DiskStorage
 buffer			A Buffer of the entire file	MemoryStorage
+ 
+*/
 
-----------------
-1-aggiungere al aggiungitore di opzioni
-una input hidden IMMEDIATAMENTE PRIMA DEL INPUT FILE con name="v_id" e come
-value il tuo STESSO count di prima che incrementa.
+/*
+TODO EMPORYOU:
+H 		Carrello in sessione
+H 		Transazione e back
+H 		Dispatch email
+G 		Template email per cliente merchant e admin
+H+G 	Admin e merchant views 
+H 		Metaframe nuovo GIA 99%
+H+G 	+Autocompilamento da reaction
+H+G	+Autocompilamento da magento
+G		Aggiunta e RIMOZIONE immagini da editor coupon
+G 		QUANTITA PER OPZIONE PRODOTTO IN COUPON MAKER!!!!!
 
-2-Aggiungere la prima opzione vuota, senza tasto X (con tanto di input hidden e dentro come value 0 (fai partire count da 1))
-  e con ID UNIVOCO
+H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
+H 		Ricerca per prezzo e per categoria funzionanti
+G+H 	Layouts prodotti in emporyou per multi immagini e opzioni
 
-3-On body load aggiungere con lo stesso ID UNIVOCO l'handler on select.
+H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
-4-nel codice del select dove si da il nome all'input e lo si sposta fare un if che controlla se il previousSibling di evt.target
-ha invatti come name v_id - SE NO come prima, SE SI
- 4A:nome è diverso varimg_+ contenuto di v_id previous sibling 
- 4B:ins è diverso.. DEVE essere inserito IMMEDIATAMENTE dopo il v_id precedente.
- Il move è sempre uguale dato che la destinazione di tutti i files è il form.
+*/
+
+/*
+DEMO
+MAGENTO
+http://108.61.188.200
+emporyou Emporyou2015
 
 */
