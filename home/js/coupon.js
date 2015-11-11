@@ -17,7 +17,7 @@ window.nOption = 0;
                 document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
             }
             document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
-            var opturl=optionurl+i
+            var opturl='optionurl'+i
             document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.image[0].opturl+"')"
         }
         for(i=0;i<initialjdata.metafields.length;i++){
