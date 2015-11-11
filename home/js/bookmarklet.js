@@ -36,7 +36,7 @@ function _processVariants(){
     var zzz=cidx-1;
     var nnn='optionurl'+zzz
     var imgObj={'url':imgSrc,'name':optNum[cidx-1].innerHTML,'isvariant':true};
-    imgObg[nnn]=imgSrc;
+    imgObj[nnn]=imgSrc;
     prodJSON.image.push(imgObj);
     processVariants()
 }
