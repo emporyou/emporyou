@@ -14,7 +14,7 @@ prodJSON.fromreaction=true;
     prodJSON.image.push(imgObj);
     for(z=0;z<optNum.length;z++){
     if(optNum[z]){setTimeout("optNum[z].click()",500)}; 
-    if(optNum[z]){var imgObj={'url':imgSrc,'name':optNum[z].innerHTML,'isvariant',true};}
+    if(optNum[z]){var imgObj={'url':imgSrc,'name':optNum[z].innerHTML,'isvariant':true};}
     prodJSON.image.push(imgObj);
     }
 }else if(emporyoumode=="magento"){
