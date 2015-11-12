@@ -7,6 +7,7 @@ if(emporyoumode=='reaction'){
     document.getElementsByClassName('variant-title')[0].click();
  setTimeout(`prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
+    prod.JSON.variants[0].isMain=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
     window.cidx=0;
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
