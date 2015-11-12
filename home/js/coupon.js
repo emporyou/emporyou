@@ -165,7 +165,7 @@ function sendCoupon(preview) {
     var jsondata = JSON.stringify(myJSON);
 	 if(preview){
 		 var f=ooo.ins(document.body,'form',['enctype','multipart/form-data','method','post','target','_blank','action','http://emporyou.com/metaframe?page=home/index.html']);
-		 var i=ooo.ins(f,'input',['name','jdata']);i.value=jsondata;setTimeout(function(){f.submit();},100);
+		 var i=ooo.ins(f,'textarea',['name','jdata'],jsondata);setTimeout(function(){f.submit();},100);
 	 }else{
 		 document.getElementById('send-target').value = jsondata;
 			document.getElementById('send-form').submit();
