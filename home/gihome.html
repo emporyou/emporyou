@@ -1,21 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document>
-<rowtype tagname="//deal">
-<variable tagname="vendor" substitution="%vendor-name"/>
-<variable tagname="merchant/lat" substitution="%lat"/>
-<variable tagname="merchant/lon" substitution="%lon"/>
-<variable tagname="merchant/city" substitution="%city"/>
-<variable tagname="_id" substitution="%id"/>
-<variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<variable tagname="merchant/id" substitution="%merch-id"/>
-<variable tagname="description" substitution="%description"/>
-<variable tagname="title" substitution="%product-name"/>
-<variable tagname="imagefile" substitution="%imagefile"/>
-<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
-<variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<inline tagname="variants[optionTitle]" substitution="%options" preload="options-template.xml"/>
-<variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div class="product-info-main">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <title></title>
+    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
+    <!-- //////////////////////////BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+    <!-- //////////////////////////FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../home/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/map.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/product-page.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/info-prod.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/checkout.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="../home/js/checkout.js"></script>
+    <script src="../home/js/main.js"></script>
+    <script src="../home/js/product.js"></script>
+    <script src="../home/js/mainh.js"></script>
+    <script src="../home/js/metaschema.js"></script>
+    <!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
+    <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+    <script src="js/jquery.geocomplete.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta charset="utf-8" />
+    <script>
+    </script>
+</head>
+
+<body id="probod">
+    <div class="header">
+        <div class="fontlogo text-logo"><img class="logo-text" src="../home//img/logo-text.png" />
+        </div>
+        <div class="logo-container"><img class="logo" src="../home//img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)" />
+        </div>
+        <div id="header-items-container">
+            <div class="item-container" onclick="openMap();checkMobile()"><img class="map-icon" src="../home//img/map-icon.png" />
+            </div>
+        </div>
+    </div>
+    <div class="product-info-main">
         <div id="left-column-pro">
             <div id="main-image-container">
                 <div id="main-image-pro"></div>
@@ -141,4 +177,6 @@
             </div>
         </div>
     </div>
-</html></rowtype></document>
+</body>
+
+</html>

@@ -1,37 +1,45 @@
-function myInit() {window.nDetail = 0;window.count=0;
-window.nOption = 0;
+function myInit() {
+    window.nDetail = 0;
+    window.count = 0;
+    window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    if(!initialjdata.variants){addOption(false,true);
-    document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);}
-    if(initialjdata.fromreaction){
-        document.getElementById('product-title').value=initialjdata.title;
-        document.getElementById('product-descrizione').value=initialjdata.description;
-        document.getElementById('product-altreinfo').value=initialjdata.pageTitle;
+    if (!initialjdata.variants) {
+        addOption(false, true);
+        document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
+    }
+    if (initialjdata.fromreaction) {
+        document.getElementById('product-title').value = initialjdata.title;
+        document.getElementById('product-descrizione').value = initialjdata.description;
+        document.getElementById('product-altreinfo').value = initialjdata.pageTitle;
         var span = document.createElement('span');
-          span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="'+initialjdata.image[0].url+'" title="mainImage"/>';
+        span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
-        for(i=0;i<initialjdata.variants.length;i++){
-            addOption(true,i==0);
-            if(i==0){document.getElementById('image_0').style.backgroundImage="url('"+initialjdata.image[0].url+"')"}
-            if(initialjdata.variants[i].optionTitle){document.getElementById('optionName_'+i).value=initialjdata.variants[i].optionTitle;}else{
-                document.getElementById('optionName_'+i).value=initialjdata.variants[i].title;
+        for (i = 0; i < initialjdata.variants.length; i++) {
+            addOption(true, i == 0);
+            if (i == 0) {
+                document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
-            document.getElementById('priceName_'+i).value=initialjdata.variants[i].price;
-            
-           //var opturl='optionurl'+i
-        //document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.image[0].opturl+"')"
-            
-            
+            if (initialjdata.variants[i].optionTitle) {
+                document.getElementById('optionName_' + i).value = initialjdata.variants[i].optionTitle;
+            } else {
+                document.getElementById('optionName_' + i).value = initialjdata.variants[i].title;
+            }
+            document.getElementById('priceName_' + i).value = initialjdata.variants[i].price;
+
+            //var opturl='optionurl'+i
+            //document.getElementById('priceName_'+i).nextSibling.style.backgroundImage="url('"+initialjdata.image[0].opturl+"')"
+
+
         }
-        for(i=0;i<initialjdata.metafields.length;i++){
+        for (i = 0; i < initialjdata.metafields.length; i++) {
             addDetail();
-            document.getElementById('key_'+i).value=initialjdata.metafields[i].key;
-            document.getElementById('value_'+i).value=initialjdata.metafields[i].value;
+            document.getElementById('key_' + i).value = initialjdata.metafields[i].key;
+            document.getElementById('value_' + i).value = initialjdata.metafields[i].value;
         }
-        for(y=0;y<initialjdata.image.length;y++){
-            if(initialjdata.image[y].optNum){
-               document.getElementById('priceName_'+initialjdata.image[y].optNum).nextSibling.style.backgroundImage="url('"+initialjdata.image[y].url+"')"
+        for (y = 0; y < initialjdata.image.length; y++) {
+            if (initialjdata.image[y].optNum) {
+                document.getElementById('priceName_' + initialjdata.image[y].optNum).nextSibling.style.backgroundImage = "url('" + initialjdata.image[y].url + "')"
             }
         }
     }
@@ -52,11 +60,11 @@ function addDetail() {
     del.setAttribute('class', 'delete-detail');
     del.setAttribute('onclick', 'var c=this.parentElement;c.parentNode.removeChild(c)')
     key.setAttribute('class', 'key detail');
-    key.setAttribute('id', 'key_'+nDetail);
+    key.setAttribute('id', 'key_' + nDetail);
     key.setAttribute('name', 'key');
     valu.setAttribute('class', 'value detail');
     valu.setAttribute('name', 'value');
-    valu.setAttribute('id', 'value_'+nDetail);
+    valu.setAttribute('id', 'value_' + nDetail);
     key.setAttribute('placeholder', 'Dettaglio..');
     valu.setAttribute('placeholder', 'Valore..');
     del.appendChild(ics);
@@ -67,7 +75,8 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption(allowChange,hideX) {count++;
+function addOption(allowChange, hideX) {
+    count++;
     var opt = document.createElement('fieldset');
     var del = document.createElement('div');
     var ics = document.createTextNode('x');
@@ -79,22 +88,24 @@ function addOption(allowChange,hideX) {count++;
     del.setAttribute('class', 'delete-option');
     del.setAttribute('onclick', 'var c=this.parentElement;c.parentNode.removeChild(c)')
     name.setAttribute('class', 'optionName detail');
-    name.setAttribute('id','optionName_'+nOption)
+    name.setAttribute('id', 'optionName_' + nOption)
     name.setAttribute('name', 'option');
     qta.setAttribute('class', 'qtaName detail');
-    qta.setAttribute('id','qtaName_'+nOption)
+    qta.setAttribute('id', 'qtaName_' + nOption)
     qta.setAttribute('name', 'quantity');
     opt.setAttribute('name', 'option[]');
     price.setAttribute('class', 'priceName option');
-    price.setAttribute('id','priceName_'+nOption);
+    price.setAttribute('id', 'priceName_' + nOption);
     price.setAttribute('name', 'price');
     name.setAttribute('placeholder', 'Opzione..');
     price.setAttribute('placeholder', 'Prezzo..');
     qta.setAttribute('placeholder', 'Qty..');
-    if(!hideX){opt.appendChild(del);}
+    if (!hideX) {
+        opt.appendChild(del);
+    }
     opt.appendChild(name);
-    opt.appendChild(qta);                                      
-    opt.appendChild(price);                                 
+    opt.appendChild(qta);
+    opt.appendChild(price);
     var img = document.createElement('div');
     img.setAttribute('class', 'image-target-option transition-1');
     var inp = document.createElement('input');
@@ -108,31 +119,37 @@ function addOption(allowChange,hideX) {count++;
     out.setAttribute('id', 'listo');
     img.appendChild(out);
     img.appendChild(hid);
-    img.setAttribute('id','image_'+nOption);
-    if(allowChange){img.appendChild(inp);
-    inp.addEventListener('change', handleFileSelecto, false);}
+    img.setAttribute('id', 'image_' + nOption);
+    if (allowChange) {
+        img.appendChild(inp);
+        inp.addEventListener('change', handleFileSelecto, false);
+    }
     opt.appendChild(img);
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
 }
 
 function sendCoupon() {
-    var myJSON=ooo.form2JSON(document.getElementById('coupon-form'));
-    for(var p=0;p<initialjdata.image.length;p++){
-        var pname=initialjdata.image[p].name;
-        if(pname=='mainExternal'){
-            for(var ww=0;ww<initialjdata.variants.length;ww++){
-                if(initialjdata.variants[ww].isMain==true){
-                    initialjdata.variants[ww].image=initialjdata.image[p].url;
-                } }}else{
-            for(var ww=0;ww<initialjdata.variants.length;ww++){
-        if(initialjdata.variants[ww].option==initialjdata.image[p].name){
-                    initialjdata.variants[ww].image=image[p].url;
-                }}}
-            
+    var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
+    for (var p = 0; p < initialjdata.image.length; p++) {
+        var pname = initialjdata.image[p].name;
+        if (pname == 'mainExternal') {
+            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
+                if (initialjdata.variants[ww].isMain == true) {
+                    initialjdata.variants[ww].image = initialjdata.image[p].url;
+                }
+            }
+        } else {
+            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
+                if (initialjdata.variants[ww].option == initialjdata.image[p].name) {
+                    initialjdata.variants[ww].image = image[p].url;
+                }
+            }
         }
-    
-    myJSON.images=initialjdata.image;
+
+    }
+
+    myJSON.images = initialjdata.image;
     var jsondata = JSON.stringify(myJSON);
     document.getElementById('send-target').value = jsondata;
     document.getElementById('send-form').submit();
@@ -145,34 +162,34 @@ function handleFileSelect(evt) {
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
 
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
+        // Only process image files.
+        if (!f.type.match('image.*')) {
+            continue;
+        }
 
-      var reader = new FileReader();
+        var reader = new FileReader();
 
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-            evt.target.name="mainImage_"+count;
-          evt.target.id="mainImage_"+count;
-          span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this);removeThis(document.getElementById(\'mainImage_'+count+'\'))" id="main-image'+count+'" src="', e.target.result,
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                // Render thumbnail.
+                var span = document.createElement('span');
+                evt.target.name = "mainImage_" + count;
+                evt.target.id = "mainImage_" + count;
+                span.innerHTML = ['<img class="thumb main-image" onclick="removeThis(this);removeThis(document.getElementById(\'mainImage_' + count + '\'))" id="main-image' + count + '" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
-          var rr=ooo.ins('image-target','input',['type','file','id','files']);
-          rr.addEventListener('change', handleFileSelect, false);
-          ooo.move(evt.target,'send-form');
-        };
-      })(f);
+                document.getElementById('list').insertBefore(span, null);
+                var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
+                rr.addEventListener('change', handleFileSelect, false);
+                ooo.move(evt.target, 'send-form');
+            };
+        })(f);
 
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
-      
+        // Read in the image file as a data URL.
+        reader.readAsDataURL(f);
+
     }
-  }
+}
 
 function handleFileSelecto(evt) {
     var files = evt.target.files; // FileList object
@@ -180,30 +197,31 @@ function handleFileSelecto(evt) {
     // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
 
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
+        // Only process image files.
+        if (!f.type.match('image.*')) {
+            continue;
+        }
 
-      var reader = new FileReader();
+        var reader = new FileReader();
 
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-            var imgCont=evt.target.parentElement;
-            imgCont.style.backgroundImage="url('"+e.target.result+"')";
-          evt.target.name="varimg_"+evt.target.previousSibling.value;
-          evt.target.id="varimg_"+evt.target.previousSibling.value;
-          ooo.move(evt.target,'send-form');
-        };
-      })(f);
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                // Render thumbnail.
+                var imgCont = evt.target.parentElement;
+                imgCont.style.backgroundImage = "url('" + e.target.result + "')";
+                evt.target.name = "varimg_" + evt.target.previousSibling.value;
+                evt.target.id = "varimg_" + evt.target.previousSibling.value;
+                ooo.move(evt.target, 'send-form');
+            };
+        })(f);
 
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
-      
+        // Read in the image file as a data URL.
+        reader.readAsDataURL(f);
+
     }
-  }
-function removeThis(n){
-n.parentNode.removeChild(n);
+}
+
+function removeThis(n) {
+    n.parentNode.removeChild(n);
 }
