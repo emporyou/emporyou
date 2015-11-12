@@ -5,46 +5,21 @@
 <constantjavascript substitution="%total-sub">cartTotalSub</constantjavascript>
 <constantjavascript substitution="%total-shipment">cartTotalShipment</constantjavascript>
 <constantjavascript substitution="%total-total">cartTotalTotal</constantjavascript>
-<rowtype tagname="//product">
-<variable tagname="cart_qt" substitution="%cart-qt"/>
-<variable tagname="merchant/name" substitution="%vendor-name"/>
-<variable tagname="merchant/lat" substitution="%lat"/>
-<variable tagname="merchant/lon" substitution="%lon"/>
-<variable tagname="merchant/city" substitution="%city"/>
+<rowtype tagname="//doc">
+<variable tagname="variants/qta" substitution="%cart-qt"/>
+<variable tagname="lat" substitution="%lat"/>
+<variable tagname="lon" substitution="%lon"/>
+<variable tagname="city" substitution="%city"/>
 <variable tagname="_id" substitution="%id"/>
-<variable tagname="merchant/id" substitution="%merch-id"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
-<variable tagname="variants[optionTitle]/price" substitution="%price" pickup="csv:-"/>
-<variable tagname="pageTitle" substitution="%subtitle"/>
-<variable tagname="imagefile" substitution="%imagefile"/>
-<html><div class="object-container"><div 
-       class="cart-item-image" 
-       style="background: url('http://emporyou.com/uploads/%imagefile');background-size:cover"><div 
-       class="cart-add-item"><img class="cart-add-icon buttoncart" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/more.png"/></div><div 
-       class="cart-remove-item"><img class="cart-remove-icon buttoncart" onclick="removeProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')" src="../img/less.png"/></div></div><div 
-       class="qt-name"><div 
-       class="cart-item-qt">%cart-qt</div><div 
-       class="cart-item-name">%product-name</div></div></div></html>
-</rowtype>
-<beforeall><![CDATA[<div class="cart-infos">
-    <div class="cart-summary">Items in cart</div>
-    <div class="cart-summary">Sub total</div>
-    <div class="cart-summary">Shipping</div>
-    <div class="cart-summary">Tax</div>
-    <div class="cart-summary"><b>Total</b></div>
-</div>
-<div class="cart-infos-values">
-    <div class="cart-summary qt-items">%total-items</div>
-    <div class="cart-summary">%total-sub</div>
-    <div class="cart-summary">%total-shipment</div>
-    <div class="cart-summary">%total-tax</div>
-    <div class="cart-summary"><b>%total-total</b></div>
-</div>
-<div class="cart-items-container">]]></beforeall>
-<afterall><![CDATA[</div><div id="pattern" onclick="openCheckout()" style="display:none"><b>check out now</b></div>]]></afterall>
+<inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
+<variable tagname="variants/price" substitution="%price" pickup="csv:-"/>
+<variable tagname="subtitle" substitution="%subtitle"/>
+<variable tagname="variants/url" substitution="%imageurl"/>
+<html><div class="image-cart" style="background-image:url('%imageurl');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> %title<br/>%subtitle</div></html></rowtype>
+<beforeall><![CDATA[<div id="products-cart-info">Oggetti nel carrello<br/>Sub totale<br/>Spedizione<br/>Tasse<br/>Totale<br/></div><div id="products-cart-info-number">0<br/>€0.00<br/>€0.00<br/>€0.00<br/>€0.00</div><div class="checkout-button" onclick="openCheckout()" id="checkout-top">CHECKOUT NOW</div>]]></beforeall>
+<afterall><![CDATA[<div id="checkout-bottom" onclick="openCheckout()" class="checkout-button">CHECKOUT NOW</div>]]></afterall>
 <casezero>:( <br/> Il tuo carrello è vuoto! (sfigato)</casezero>
-<onloadall>setTimeout("document.getElementById('pattern').style.bottom='0';document.getElementById('pattern').style.display='block'",150)</onloadall>
 </document>

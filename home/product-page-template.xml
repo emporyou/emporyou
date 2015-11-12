@@ -39,7 +39,7 @@ id="main-info-container"><div
 id="main-info-pro"><div 
 id="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target" style="font-size:5vh;font-weight:bold">€ %price</span></div><div id="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
 id="main-add-container"> <div 
-id="main-add-pro"><b>aggiungi al carrello</b></div></div><div 
+id="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="main-social-container"><div 
 id="main-social-pro"><div 
 class="social-element soc1" id="pdf"><i class="fa fa-file-pdf-o"> </i></div><div 
@@ -74,4 +74,5 @@ id="nome-merchant"><b>La scarpa di Aladino</b></div><div
 id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
 id="orario-merchant">Orari negozio: <b> %orari</b></div><div 
 id="indirizzo-merchant">Indirizzo: <b> %road, %cap, %city</b></div><div 
-id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div></html></rowtype></document>
+id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea></html></rowtype></document>

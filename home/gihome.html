@@ -1,182 +1,422 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
-
 <head>
-    <title></title>
-    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Your Website Title" />
-    <meta property="og:description" content="Your description" />
-    <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
-    <!-- //////////////////////////BOOTSTRAP -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
-    <!-- //////////////////////////FONT AWESOME -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../home/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/map.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/cart.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/thumbs.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/product-page.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/info-prod.css">
-    <link rel="stylesheet" type="text/css" href="../home/css/checkout.css">
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <script src="../home/js/checkout.js"></script>
-    <script src="../home/js/main.js"></script>
-    <script src="../home/js/product.js"></script>
-    <script src="../home/js/mainh.js"></script>
-    <script src="../home/js/metaschema.js"></script>
-    <!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
-    <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
-    <script src="js/jquery.geocomplete.js"></script>
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta charset="utf-8" />
-    <script>
-    </script>
+<title></title>
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+<!-- //////////////////////////BOOTSTRAP -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+<!-- //////////////////////////FONT AWESOME -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/map.css">
+<link rel="stylesheet" type="text/css" href="css/cart.css">
+<link rel="stylesheet" type="text/css" href="css/thumbs.css">
+<link rel="stylesheet" type="text/css" href="css/product-page.css">
+<link rel="stylesheet" type="text/css" href="css/info-prod.css">
+<link rel="stylesheet" type="text/css" href="css/checkout.css">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<script src="js/checkout.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mainh.js"></script>
+<script src="js/metaschema.js"></script>
+<!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+<script src="js/jquery.geocomplete.js"></script>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta charset="utf-8"/>
+<script>
+myappinit=function(){
+    ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
+checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');
+	//setTimeout('initMap()',500);
+  // Option 1: Call on element.
+  /*
+$.fn.geocomplete("input"); // Option 2: Pass element as argument.
+    $("#city-input").geocomplete({
+	map: "#google-map"
+});*/
+}
+</script>
+<script>
+    function checkLogin(){
+        setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
+    }
+    function chooseStart(){console.log(ch+' is ch');
+    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click()}
+                           fillAddress();//TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
+    }
+    function fillAddress(){
+        ooo.render('form-target','address.xml','http://emporyou.com/session');
+    }
+</script>
+<script>
+window.mapcenter={lat: 40.674, lng: -73.946}
+initMap=function() {    
+  var customMapType = new google.maps.StyledMapType(getmapstyle(), {
+      name: 'Mappa delle offerte | trascina il pallocino rosso per cambiare la zona di ricerca, usa lo zoom per cambiare l\' ampiezza.'
+  });
+  var customMapTypeId = 'emporyou_style';
+  var mapOpts={
+    zoom: 12,
+    mapTypeControlOptions: {
+	  mapTypeIds: [customMapTypeId]
+      //mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+    }
+  };
+  //window.gmap=new google.maps.Map(document.getElementById('main-google-map'),mapOpts);
+  window.ismaploadedonce=true;
+  $("#city-input").geocomplete({
+	location:'Milano',
+	map:"#main-google-map",
+	mapOptions:mapOpts,
+	markerOptions:{draggable: true}
+  });
+  $("#city-input").bind("geocode:dragged", function(event, latLng){
+          $("#city-input").val(latLng.lat()+','+latLng.lng());
+          $("#city-input").trigger("geocode");
+   });  
+  window.gmap=$("#city-input").geocomplete('map');
+  window.gmap.mapTypes.set(customMapTypeId, customMapType);
+  window.gmap.setMapTypeId(customMapTypeId);
+};</script>
 </head>
+<body onload="myappinit();" onresize="checkMobile()">
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '898201326937821',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
-<body id="probod">
-    <div class="header">
-        <div class="fontlogo text-logo"><img class="logo-text" src="../home//img/logo-text.png" />
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=898201326937821";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
+<div id="basket-container">
+<div id="bought-container"></div>
+<img src="../img/dot.png" id="else"/>
+<img id="basket" src="../img/basket.png" onclick="openCart()"/></div>
+<div class="header">
+   <div class="fontlogo text-logo"><img class="logo-text" src="../home/img/logo-text.png"/></div>
+    <div class="logo-container"><!--<img
+        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div><div 
+        id="header-items-container">
+            <div class="item-container" onclick="openMap();checkMobile()"><img class="map-icon" src="../home/img/map-icon.png"/></div>
+        </div></div>
+<div class="emporyoum-bar">
+    <div class="emporyoum-container">
+        <!--<img class="emporyoum" src="../img/emporyoum-home.png"/>-->
+    </div>
+</div>
+<div class="google-map-container"><div id="main-google-map" class="google-map transformed"></div></div>
+<div class="products-main">
+   <div class="categories-container">
+      <div class="cat-searchbar transition-1" id="cat-searchbar">
+                         		<div id="search">
+          				<fieldset class="clearfix">
+
+					<input type="search" name="search" value="Cosa stai cercando?" onBlur="if(this.value=='')this.value='Cosa stai cercando?'" onFocus="if(this.value=='Cosa stai cercando?')this.value='' ">
+					<input type="submit" value="Cerca" class="button">
+
+				</fieldset>
+          </div>
+      </div>
+       <div class="cat-cont transition-1" id="cat-city" onclick="ensureMapIsOpened();openCat(this)">Città</div>
+       <div id="city-search" class="search transition-1">
+           <input type="text" id="city-input" placeholder="città,zona o indirizzo..." style="    font-size: 2.7vh;padding: 1vh;width: 90%;"/>
+       </div>
+       <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
+       <div id="price-search" class="search transition-1">
+           <input type="range" min="10" max="1000" value="10" step="10" onchange="rangevalue.value=value" />
+<output id="rangevalue">10</output>
+       </div>
+       <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
+       <div id="cat-search" class="search transition-1">
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Casa</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Tempo libero</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Moda</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Mangiare e bere</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Elettronica</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Bellezza</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Cartoleria</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Salute</div>
+           <div class="category transition-1" onclick="this.classList.toggle('select')">Animali</div>
+       </div>
+       <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina per</div>
+       <div id="ordina-search" class="search transition-1">
+           <label>
+    <select>
+        <option selected>...</option>
+        <option>Prezzo crescente</option>
+        <option>Prezzo decrescente</option>
+        <option>Popolarità</option>
+        <option>Vicinanza</option>
+        <option>Percentuale di sconto</option>
+    </select>
+</label>
+       </div>
+   </div>
+    <div class="products-container">
+        <div id="thumb-wrap"> 
+        <!--div id="thumb-container" onclick="addProduct('Massaggi')">
+          <div class="thumb-dummy"></div> 
+          <div class="thumb-product">
+          <div style="background-image: url('../img/products/massage.jpg');" class="thumb-element">
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img id="shb" class="share-button" onclick="share()" src="../img/share.png"/>
+                  <div id="fbb" class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
+                  </div>
+                  <div class="description"><b>Massaggi</b><br/><i>by La Scarpa di Aladino</i><br/>In un accogliente centro nella città di Milano</div>
+                  <div class="price">€300 da €<span style="color:orange">200</span></div>
+              </div>
+              <div class="product-header">
+                 <div class="city">Milano</div>
+                  <div class="product-discount" style="width:33%;">33%</div>
+              </div>
+          </div></div> 
+          <div class="fb-share-button" data-href="https://add.here.the.share.link" data-layout="icon"></div>
+        </div> 
+        <div id="thumb-container"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-image: url('../img/bici.jpg');" onclick="openProduct(event,this)" id="openProd" class="thumb-element">
+              <div class="product-bar">
+                  <div class="add" onclick="addProduct()"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description"><b>Bicicletta</b><br/>Una elegante bicicletta da città</div>
+                  <div class="price">€300 da €<span style="color:orange">200</span></div>
+              </div>
+              <div class="product-header">
+                 <div class="city">Brescia</div>
+                  <div class="product-discount" style="width:33%">33%</div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container" onclick="addProduct('Taxi')"> 
+          <div class="thumb-dummy"></div> 
+          <div class="thumb-product">
+          <div style="background-image: url('../img/products/autista.jpg');" class="thumb-element">
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                <div class="description"><b>Autista</b><br/>Servizio auto nella città di Milano</div>
+                  <div class="price">€150 da €<span style="color:orange">50</span></div>
+              </div>
+              <div class="product-header">
+                 <div class="city">Milano</div>
+                  <div class="product-discount" style="width:66%">66%</div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container" onclick="addProduct('Tende')"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-image: url('../img/tende.jpg');" class="thumb-element">
+              <div class="product-bar">
+                  <div class="add"><img class="add-button" src="../img/add.png"/></div>
+                  <div class="share"><img class="share-button" src="../img/share.png"/></div>
+                  <div class="description"><b>Tende</b><br/>Raffinate tende da casa in diversi colori</div>
+                  <div class="price">€200 da €<span style="color:orange">180</span></div>
+              </div>
+              <div class="product-header">
+                 <div class="city">Bergamo</div>
+                  <div class="product-discount" style="width:10%;min-width:50px">10%</div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container" onclick="addProduct('Shirt')"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-image: url('../img/maglia.jpg');" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                 <div class="city">Carnate</div>
+                  <div class="product-discount"></div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container" onclick="addProduct('Cavo')"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-image: url('../img/cavo.jpg');" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                 <div class="city">Abbiategrasso</div>
+                  <div class="product-discount"></div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container" onclick="addProduct('Palestra')"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-image: url('../img/products/palestra.jpg');" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                 <div class="city">Milano</div>
+                  <div class="product-discount" style="width:50%;">50%</div>
+              </div>
+          </div></div> 
         </div>
-        <div class="logo-container"><img class="logo" src="../home//img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)" />
-        </div>
-        <div id="header-items-container">
-            <div class="item-container" onclick="openMap();checkMobile()"><img class="map-icon" src="../home//img/map-icon.png" />
+        <div id="thumb-container"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-color: #ffffff;" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                 <div class="city"></div>
+                  <div class="product-discount"></div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-color: #ffffff;" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                 <div class="city"></div>
+                  <div class="product-discount"></div>
+              </div>
+          </div></div> 
+        </div> 
+        <div id="thumb-container"> 
+          <div class="thumb-dummy"></div>
+          <div class="thumb-product"> 
+          <div style="background-color: #ffffff;" class="thumb-element">
+              <div class="product-bar"></div>
+              <div class="product-header">
+                  <div class="product-discount"></div>
+              </div>
+          </div></div> 
+        </div>-->
+      </div>
+    </div>
+</div>
+<div id="product-page-target" class="products-page-main hidden">
+</div>
+<div id="products-cart-target">
+    <div id="products-cart-info">Oggetti nel carrello<br/>Sub totale<br/>Spedizione<br/>Tasse<br/>Totale<br/></div><div id="products-cart-info-number">6<br/>€55.50<br/>€0.00<br/>€0.00<br/>€55.50</div><div class="checkout-button" onclick="openCheckout()" id="checkout-top">CHECKOUT NOW</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div class="image-cart" style="background-image:url('../home/img/coperta.jpg');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> Coperta bellissima</div><div id="checkout-bottom" onclick="openCheckout()" class="checkout-button">CHECKOUT NOW</div>
+</div>
+<div id="cart-data" style="display:none"></div>
+<div id="checkout-main-container" style="display:none">
+    <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
+    <div class="menu-opened transition-1">
+        <div class="left-square open transition-1" id="checkout-login">
+            <div class="single-container" id="single-login">
+                <div class="single-header">Login account</div>
+                <div class="single-content">
+                    <a href="login.html" class="login-button-checkout transition-1" target="_blank">Login</a>
+                    <div id="button-social-container">
+                        <div class="social-logo">Google</div>
+                        <div class="social-logo">Facebook</div>
+                        <div class="social-logo">Twitter</div>
+                        <div class="social-logo">Shopify</div>
+                        <div class="social-logo">Amazon</div>
+                    </div>
+                </div>
+                <div class="next transition-1" id="next-logged" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('next',now)">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
             </div>
+            <div class="circle-step">1</div>
+            
+        </div>
+        <div class="left-square closed transition-1"  id="checkout-address">
+            <div class="single-container" id="single-address"  style="display:none">
+                <div class="single-header">Choose shipping and billing address</div>
+                <div class="single-content">
+                    <form id="form-target">
+                        <textarea class="text-address" placeholder="Country.." id="country-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Full Name.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="ZIP code..." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="City.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Region.." id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Phone" id="country-textaera"></textarea>
+                    </form>
+                </div>
+                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('next',now)">
+                     <img src="img/next.png" class="next-image image-button transition-1"/>
+                 </div>
+                 <div class="pre transition-1" id="pre-notlogged" onclick="stepCheckout(document.getElementById('checkout-login'));var now=20;progressBar('pre',now)">
+                     <img src="img/next.png" class="pre-image image-button transition-1"/>
+                 </div>
+            </div>
+            <div class="circle-step">2</div>
+        </div>
+        <div class="left-square closed transition-1"  id="checkout-shipping">
+            <div class="single-container" id="single-shipping"  style="display:none">
+                <div class="single-header">Shipping options</div>
+                <div class="single-content">
+                    <div class="shipping-option">Free</div>
+                       <div class="shipping-option">Standard</div>
+                       <div class="shipping-option">Priority</div>
+                </div>
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('next',now)">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('pre',now)">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                </div>
+            </div>
+            <div class="circle-step">3</div>
         </div>
     </div>
-    <div class="product-info-main">
-        <div id="left-column-pro">
-            <div id="main-image-container">
-                <div id="main-image-pro"></div>
-            </div>
-            <div id="main-desc-container" class="height200 transition-1">
-                <div onclick="openDesc()" id="layer-desc"></div>
-                <div id="main-desc-pro">
-                    <div id="descrizione"><b>Descrizione</b>
-                    </div>
-                    <div id="descrizione-target">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+    <div class="menu-closed transition-1">
+        <div class="left-square closed transition-1"  id="checkout-review">
+            <div class="single-container" id="single-review"  style="display:none">
+                <div class="single-header">Review your order</div>
+                <div class="single-content"></div>
+                <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=120;progressBar('next',now)">
+                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('pre',now)">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
-            <div id="main-ship-container">
-                <div id="main-ship-pro">
-                    <div id="spedizione"><b>Spedizione</b>
-                    </div>
-                    <div id="spedizione-target">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse </div>
-                </div>
-            </div>
-            <div id="main-comm-container">
-                <div id="main-comm-pro">
-                    <div class="circle-commento" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTDx926xFZ2lumWsZO8UvqaR4iBFFdQY1HvEkhhNpqpEr5VrQSh0Q')"></div>
-                    <div class="commento"><span style="font-weight:bold">Enrique Gonzales</span>
-                        <br/>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua!</div>
-                    <div class="circle-commento" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRS4OH57xUCcsMIJAZjNdz4Z68f-aKm6e7oc2qpKJ84alLV-pbQ')"></div>
-                    <div class="commento">Giulia Brambilla
-                        <br/>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua!</div>
-                    <div class="circle-commento" id="commenter" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRS4OH57xUCcsMIJAZjNdz4Z68f-aKm6e7oc2qpKJ84alLV-pbQ')"></div>
-                    <textarea class="commento" placeholder="Scrivi un commento..." style="resize:none"></textarea>
-                </div>
-            </div>
+            <div class="circle-step">4</div>
         </div>
-        <div id="right-column-pro">
-            <div id="main-info-container">
-                <div id="main-info-pro">
-                    <div id="info-pro-text"><span style="font-size:4vh">Nike Blazer Infinity</span>
-                        <br/>
-                        <br/><span style="font-size:5vh;font-weight:bold">€ 200,00</span>
-                    </div>
-                    <div id="info-pro-opt">
-                        <br/>
-                        <select class="select-opt">
-                            <option>Taglia</option>
-                            <option>37</option>
-                            <option>38</option>
-                            <option>39</option>
-                            <option>40</option>
-                            <option>41</option>
-                            <option>42</option>
-                            <option>43</option>
-                            <option>44</option>
-                            <option>45</option>
-                        </select>
-                        <select class="select-opt">
-                            <option>Colore</option>
-                            <option>bianco</option>
-                            <option>nero</option>
-                            <option>verde</option>
-                            <option>rosso</option>
-                        </select>
-                    </div>
+        <div class="left-square closed transition-1" id="checkout-complete">
+            <div class="single-container" id="single-complete"  style="display:none">
+                <div class="single-header">Complete and pay</div>
+                <div class="single-content">
+                    <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
+                </div>
+                <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('pre',now)">
+                    <img src="img/next.png" class="pre-image image-button transition-1"/>
                 </div>
             </div>
-            <div id="main-add-container">
-                <div id="main-add-pro"><b>aggiungi al carrello</b>
-                </div>
-            </div>
-            <div id="main-social-container">
-                <div id="main-social-pro">
-                    <div class="social-element soc1" id="pdf"><i class="fa fa-file-pdf-o"></i>
-                    </div>
-                    <div class="social-element soc1" id="favorite"><i class="fa fa-heart"></i>
-                    </div>
-                    <div class="social-element soc2" id="text-fav">Preferiti</div>
-                    <div class="social-element soc1" id="regala"><i class="fa fa-gift"></i>
-                    </div>
-                    <div class="social-element soc2" id="text-reg">Regala</div>
-                    <div class="social-element soc1" id="facebook"><i class="fa fa-facebook-square"></i>
-                    </div>
-                    <div class="social-element soc1" id="google"><i class="fa fa-google-plus-square"></i>
-                    </div>
-                    <div class="social-element soc1" id="twitter"><i class="fa fa-twitter-square"></i>
-                    </div>
-                    <div class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"></i>
-                    </div>
-                </div>
-            </div>
-            <div id="main-photo-container">
-                <div id="main-photo-pro">
-                    <img id="logo-vendor" src="../home/img/logo-black.png" />
-                    <div id="nome-vendor">Altro da
-                        <br/><b>Scarpa di aladino</b> (Milano)</div>
-                    <div id="layer-other-from-vendor"></div>
-                    <div id="other-from-vendor-cont">
-                        <div class="other-vendor" style="background-image:url('../home/img/bici.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/bici.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"></div>
-                        <div class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"></div>
-                    </div>
-                    <div id="scroll-other-photos">
-                        <a href="#" id="scrolldiv"><img id="next-photo" src="../home/img/next.png" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="main-merchant-container">
-                <div id="main-merchant-pro">
-                    <div id="nome-merchant"><b>La scarpa di Aladino</b>
-                    </div>
-                    <div id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div>
-                    <div id="orario-merchant">Orari negozio: <b> aperto da Lunedì a Sabato h 09:00-20:00</b>
-                    </div>
-                    <div id="indirizzo-merchant">Indirizzo: <b> Via Trenno 33, 20151, Milano</b>
-                    </div>
-                    <div id="mappa-merchant"> MAPPA MERCHANT</div>
-                </div>
-            </div>
+            <div class="circle-step">5</div>
         </div>
     </div>
-</body>
-
-</html>
+    <div id="checkout-address-container"></div>
+    <div id="quit-checkout" onclick="closeCheckout()">BACK</div>
+</div>
+<div id="check-login" style="display:none"></div>
+</body></html>
