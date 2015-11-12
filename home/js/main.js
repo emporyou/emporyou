@@ -23,6 +23,8 @@ function addProduct(productName,XMLid,PRDid){
     }/*else{
         document.getElementById('else').style.display='block'
     }*/
+	 
+	 /**/
  if(cartPosition!=450){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
