@@ -15,13 +15,13 @@
 <inline tagname="variants" substitution="%options" preload="options-template.xml"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container" style="background-image:url('%mainimageurl')"><div id="main-image-pro"></div></div><div 
+<html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container" style="background-image:url('%mainimageurl')"><div id="main-image-pro"> </div></div><div 
 id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
 id="layer-desc"> </div><div 
 id="main-desc-pro"><div 
 id="descrizione"><b>%subtitle</b></div><div 
 id="descrizione-target">%description</div></div></div><div 
-id="main-ship-container"><div 
+id="main-ship-container"> <div 
 id="main-ship-pro"><div 
 id="spedizione"><b>Spedizione</b></div><div 
 id="spedizione-target">Il coupon verrà inviato via email ad effettuato acquisto.</div></div></div><div 
@@ -37,7 +37,7 @@ id="right-column-pro"><div
 id="main-info-container"><div 
 id="main-info-pro"><div 
 id="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target" style="font-size:5vh;font-weight:bold">€ %price</span></div><div id="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
-id="main-add-container"><div 
+id="main-add-container"> <div 
 id="main-add-pro"><b>aggiungi al carrello</b></div></div><div 
 id="main-social-container"><div 
 id="main-social-pro"><div 
