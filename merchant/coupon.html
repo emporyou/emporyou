@@ -37,7 +37,8 @@
     <meta name="keywords" content="" />
     <meta charset="utf-8" />
     <script>
-        window.initialjdata=%jdata;
+        try{window.initialjdata=replace_jdata;}
+		  catch(ex){window.initialjdata={}};
     </script>
 </head>
 <body onload="myInit()">

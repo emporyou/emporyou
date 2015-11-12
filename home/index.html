@@ -34,10 +34,16 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
+    <script>
+        try{window.initialjdata=replace_jdata;}
+		  catch(ex){window.initialjdata=false};
+    </script>
 <script>
 myappinit=function(){
+
     ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
-checkMobile();ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');
+checkMobile();
+	doinitialrender();
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -46,6 +52,20 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 	map: "#google-map"
 });*/
 }
+window.ISptloaded=false;
+doinitialrender=function(){
+	if(window.initialjdata){
+		if(!window.ISptloaded){ooo.preload('products-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
+		else{
+		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template.xml').documentElement.innerHTML+'</tmpdoc>');
+		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
+		}
+	}
+	else{
+		ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');
+	}
+};
+
 </script>
 <script>
     function checkLogin(){
