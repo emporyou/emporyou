@@ -99,6 +99,10 @@ app.all(/^\/merchant\/metaframe\/?.*/,upload.any(),function(req,res,next){
 	if(!req.isAuthenticated()){req.session.afterlogin='../../merchant/postlogin.html';return res.redirect('../login.html');}
 	metaschema.metaframe(req,res,next)}
 );
+app.all(/^\/metaframe\/?.*/,upload.any(),function(req,res,next){
+	if(!req.isAuthenticated()){req.session.afterlogin='../../merchant/postlogin.html';return res.redirect('../login.html');}
+	metaschema.metaframe(req,res,next)}
+);
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
