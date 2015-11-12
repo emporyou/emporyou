@@ -9,7 +9,7 @@
 <variable tagname="lat" substitution="%lat"/>
 <variable tagname="lon" substitution="%lon"/>
 <variable tagname="city" substitution="%city"/>
-<variable tagname="id" substitution="%id"/>
+<variable tagname="_id" substitution="%id"/>
 <variable tagname="images/url" substitution="%imageurl"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
