@@ -53,7 +53,7 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 server_syncart=function(xml){
 	if(!xml){xml=getcartXML()}
 	var f=ooo.ins(document.body,'form',['enctype','multipart/form-data','method','post','target','_blank','action','http://emporyou.com/syncart']);
-	var i=ooo.ins(f,'input',['name','xdata']);i.value=xml);setTimeout(function(){f.submit();},100);
+	var i=ooo.ins(f,'input',['name','xdata']);i.value=xml;setTimeout(function(){f.submit();},100);
 };
 updateCartFlag=function(){
 	if(total==1){

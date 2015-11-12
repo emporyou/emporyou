@@ -193,7 +193,6 @@ buffer			A Buffer of the entire file	MemoryStorage
 /*
 TODO EMPORYOU:
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
-H 		Carrello in sessione
 H 		Ricerca per prezzo MAG e MIN e per categoria funzionanti
 
 H 		Transazione e back
