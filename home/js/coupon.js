@@ -136,7 +136,7 @@ function addOption(allowChange, hideX,isMain) {
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
 }
 
-function sendCoupon() {
+function sendCoupon(preview) {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
@@ -163,9 +163,18 @@ function sendCoupon() {
 
     myJSON.images = initialjdata.image;
     var jsondata = JSON.stringify(myJSON);
-    document.getElementById('send-target').value = jsondata;
-    document.getElementById('send-form').submit();
+	 if(preview){
+		 var f=ooo.ins(document.body,'form',['enctype','multipart/form-data','method','post','target','_blank','action','http://emporyou.com/metaframe?page=home/index.html']);
+		 var i=ooo.ins(f,'input',['name','xdata']);i.value=jsondata;setTimeout(function(){f.submit();},100);
+	 }else{
+		 document.getElementById('send-target').value = jsondata;
+			document.getElementById('send-form').submit();
+	 }
+    
 }
+
+
+
 
 function handleFileSelect(evt) {
     count++;
