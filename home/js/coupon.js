@@ -133,9 +133,9 @@ function sendCoupon() {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
-        if (pname == 'mainExternal') {
-            for (var xx = 0; xx < initialjdata.variants.length; xx++) {
-                if (initialjdata.variants[xx].isMain == true) {
+        if (pname == 'mainExternal') {alert(pname+' is mainexternal');
+            for (var xx = 0; xx < initialjdata.variants.length; xx++) {alert(initialjdata.variants.length+' is variants length')
+                if (initialjdata.variants[xx].isMain == true) {alert(initialjdata.variants[xx].isMain+' is true');
                     myJSON.variants[xx].image = initialjdata.image[p].url;
                 }
             }
