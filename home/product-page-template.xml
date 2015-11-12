@@ -4,6 +4,12 @@
 <variable tagname="_id" substitution="%id"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
 <variable tagname="description" substitution="%description"/>
+<variable tagname="city" substitution="%city"/>
+<variable tagname="road" substitution="%road"/>
+<variable tagname="cap" substitution="%cap"/>
+<variable tagname="lat" substitution="%lat"/>
+<variable tagname="long" substitution="%long"/>
+<variable tagname="orari" substitution="%orari"/>
 <variable tagname="title" substitution="%product-name"/>
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants" substitution="%options" preload="options-template.xml"/>
@@ -47,7 +53,7 @@ class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"> </i></di
 id="main-photo-container"><div 
 id="main-photo-pro"><img 
 id="logo-vendor" src="../home/img/logo-black.png" /><div 
-id="nome-vendor">Altro da<br/><b>Scarpa di aladino</b> (Milano)</div><div 
+id="nome-vendor">Altro da<br/><b>Scarpa di aladino</b> (%city)</div><div 
 id="layer-other-from-vendor"> </div><div 
 id="other-from-vendor-cont"><div 
 class="other-vendor" style="background-image:url('../home/img/bici.jpg')"> </div><div 
@@ -65,6 +71,6 @@ id="main-merchant-container"><div
 id="main-merchant-pro"><div 
 id="nome-merchant"><b>La scarpa di Aladino</b></div><div 
 id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
-id="orario-merchant">Orari negozio: <b> aperto da Lunedì a Sabato h 09:00-20:00</b></div><div 
-id="indirizzo-merchant">Indirizzo: <b> Via Trenno 33, 20151, Milano</b></div><div 
+id="orario-merchant">Orari negozio: <b> %orari</b></div><div 
+id="indirizzo-merchant">Indirizzo: <b> %roat, %cap, %city</b></div><div 
 id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div></html></rowtype></document>
