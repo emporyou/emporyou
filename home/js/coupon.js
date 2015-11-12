@@ -5,7 +5,7 @@ function myInit() {
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if (!initialjdata.variants) {
-        addOption(false, true);
+        addOption(false, true,false);
         document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
@@ -16,7 +16,7 @@ function myInit() {
         span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
         for (i = 0; i < initialjdata.variants.length; i++) {
-            addOption(true, i == 0);
+            addOption(true, i == 0,true);
             if (i == 0) {
                 document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
@@ -75,7 +75,7 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption(allowChange, hideX) {
+function addOption(allowChange, hideX,isMain) {
     count++;
     var opt = document.createElement('fieldset');
     var del = document.createElement('div');
@@ -102,6 +102,13 @@ function addOption(allowChange, hideX) {
     qta.setAttribute('placeholder', 'Qty..');
     if (!hideX) {
         opt.appendChild(del);
+    }
+    if(isMain==true){
+        var mainInp=document.createElement('input');
+        mainInp.setAttribute('name','isMain');
+        mainInp.setAttribute('value',true);
+        mainInp.setAttribute('type','hidden');
+        opt.appendChild(mainInp);
     }
     opt.appendChild(name);
     opt.appendChild(qta);
@@ -133,11 +140,15 @@ function sendCoupon() {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
-        if (pname == 'mainExternal') {alert(pname+' is mainexternal');
-            for (var xx = 0; xx < initialjdata.variants.length; xx++) {alert(initialjdata.variants.length+' is variants length')
-                if (initialjdata.variants[xx].isMain == true) {alert(initialjdata.variants[xx].isMain+' is true');
-                    myJSON.variants[xx].image = initialjdata.image[p].url;
-                    alert(myJSON.variants[xx].image+' is myJSON.variants[xx].image');
+        if (pname == 'mainExternal') {
+            for (var xx = 0; xx < initialjdata.variants.length; xx++) {
+                if (initialjdata.variants[xx].isMain == true) {
+                    for(ii=0;ii<myJSON.variants.length;ii++){
+                        if(myJSON.variants[ii].isMain==true){
+                        myJSON.variants[xx].image = initialjdata.image[p].url;
+                        }
+                    }
+
                 }
             }
         } else {
