@@ -55,19 +55,6 @@ function closeProduct(){
     gClass('products-page-main')[0].classList.add('hidden');
 }
 function checkMobile(){
-    if(innerWidth<innerHeight){
-        //gClass('product-info-main')[0].style.width='90%';
-        gClass('ics')[0].style.display="none";
-        //if(set==1){gClass('google-map')[0].style.width='87%';}
-        //document.getElementById('basket-container').style.display="none";
-        //document.getElementById('header-items-container').style.display="none";
-    }else{
-        gClass('product-info-main')[0].style.width='60%';
-        gClass('ics')[0].style.display="";
-        if(set==1){gClass('google-map')[0].style.width='61.5%';}
-        //document.getElementById('basket-container').style.display="";
-        document.getElementById('header-items-container').style.display="flex";
-    }
 }
 window.ismaploadedonce=false;
 function openMap(){
