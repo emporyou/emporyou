@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="response">
+<variable tagname="provider" subsitution="%provider" />
+<variable tagname="displayName" subsitution="%displayName" />
+<variable tagname="googleId" subsitution="%googleId" />
+<variable tagname="facebookId" subsitution="%facebookId" />
+<variable tagname="twitterId" subsitution="%twitterId" />
+<switch value="%provider" value="%emporyouId">
+ <match value="google" >GO:%googleId</match>
+ <match value="twitter" >TW:%twitterId</match>
+ <match value="facebook" >FB:%facebookId</match>
+</switch>
+</rowtype>
+<html>
+<input type="hidden" value="%emporyouId" name="emporyouId"/>
+</html>
+<onload>document.getElementById('#gioleetarget').innerHTML=%displayName</onload>
+</document>

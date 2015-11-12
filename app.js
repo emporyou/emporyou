@@ -60,12 +60,12 @@ app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}))
 app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- F A C E B O O K
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
-  function(accessToken,refreshToken,profile,done){User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
+  function(accessToken,refreshToken,profile,done){profile.provider='facebook';User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/facebook',passport.authenticate('facebook'));
 app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- T W I T T E R
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
-  function(token,tokenSecret,profile,done){User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
+  function(token,tokenSecret,profile,done){profile.provider='twitter';User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
 //-----------------------------------------------
