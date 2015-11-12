@@ -79,13 +79,26 @@ function openMap(){
     gClass('emporyoum-bar')[0].style.width="100%";set=0;
     }  
 }}
-function openCart(myCart){
-    document.getElementById('products-cart-target').style.width="20%";
-    ooo.render('products-cart-target','products-cart.xml',myCart)
+function openCart(){
+   if(openCart==1){closeCart()}else{
+    //scrollTo(document.body, 0, 200);
+    //gClass('products-main')[0].style.top="55%";
+    document.getElementById('basket-container').style.top="-50%";
+    setTimeout('cartReady()',400);
+	
+	rendercart();//defined in mainh.js, control output via products-cart.xml
 	
 	//rendercart();
+}}
+function cartReady(){
+    cartOpened=1;ooo.$$('products-cart-target').style.width='20%';//SHOW the cart
+    //gClass('emporyoum-bar')[0].style.top="75%";
+    //gClass('products-main')[0].style.top="100%";
+    //gClass('google-map-container')[0].style.top="58%";
+    //document.getElementById('product-page-target').style.top="58%";
+    //document.getElementById('products-cart-target').style.height="48%";
+    //document.getElementById('pattern').style.bottom="0";
 }
-
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
     var difference = to - element.scrollTop;
