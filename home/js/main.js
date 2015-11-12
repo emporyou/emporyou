@@ -33,7 +33,7 @@ function addProduct(productName,XMLid,PRDid){
 function openProduct(event,elm,idd){closeCart();
     //if(set==1){openMap();}
     productOpened=1;
-    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/get_deal?id='+idd);
+    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
     //if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
