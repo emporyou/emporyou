@@ -52,21 +52,21 @@ class="social-element soc1" id="twitter"><i class="fa fa-twitter-square"> </i></
 class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"> </i></div></div></div><div 
 id="main-photo-container"><div 
 id="main-photo-pro"><img 
-id="logo-vendor" src="../home/img/logo-black.png" /><div 
+id="logo-vendor" src="../img/logo-black.png" /><div 
 id="nome-vendor">Altro da<br/><b>Scarpa di aladino</b> (%city)</div><div 
 id="layer-other-from-vendor"> </div><div 
 id="other-from-vendor-cont"><div 
-class="other-vendor" style="background-image:url('../home/img/bici.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/bici.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
-class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div></div><div 
-id="scroll-other-photos"><a href="#" id="scrolldiv"><img id="next-photo" src="../home/img/next.png" /></a></div></div></div><div 
+class="other-vendor" style="background-image:url('../img/bici.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/bicibianca.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/scarpa.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/bici.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/bicibianca.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/scarpa.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../img/focaccia.jpg')"> </div></div><div 
+id="scroll-other-photos"><a href="#" id="scrolldiv"><img id="next-photo" src="../img/next.png" /></a></div></div></div><div 
 id="main-merchant-container"><div 
 id="main-merchant-pro"><div 
 id="nome-merchant"><b>La scarpa di Aladino</b></div><div 
