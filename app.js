@@ -96,7 +96,7 @@ app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
 app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.all(/^\/api\/postback\/?.*/,upload.any(),metaschema.postback);
 app.all(/^\/merchant\/metaframe\/?.*/,upload.any(),function(req,res,next){
-	if(!req.isAuthenticated()){req.session.afterlogin='../merchant/postlogin.html';return res.redirect('../login.html');}
+	if(!req.isAuthenticated()){req.session.afterlogin='../../merchant/postlogin.html';return res.redirect('../login.html');}
 	metaschema.metaframe(req,res,next)}
 );
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
