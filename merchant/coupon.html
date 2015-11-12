@@ -37,7 +37,8 @@
     <meta name="keywords" content="" />
     <meta charset="utf-8" />
     <script>
-        window.initialjdata=%jdata;
+        try{window.initialjdata=replace_jdata;}
+		  catch(ex){window.initialjdata={}};
     </script>
 </head>
 <body onload="myInit()">
@@ -48,6 +49,8 @@
             </div>
         </div>
         <div id="form-coupon-container">
+				<button id="" onclick="sendCoupon(true)">PREVIEW HOME</button>
+				<button id="" onclick="sendCoupon(true,true)">PREVIEW DET</button>
             <div id="title-coupon">Crea il tuo coupon</div>
             <div id="categorie-testo">Seleziona una categoria</div>
             <div id="blue-cont">
@@ -72,6 +75,7 @@
             </fieldset>
             <div id="blue-cont-head"></div>
             <button id="manda-coupon" onclick="sendCoupon()">MANDA COUPON</button>
+				
             <div id="svgcont">
                 <svg id="svgg" height="100%" width="100%" viewBox="0 0 421 181" preserveAspectRatio="none">
 
