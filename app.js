@@ -90,10 +90,10 @@ emporyou.updatemerchantchache=function(handler){MERCHANTCHACHE=[];
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------ APPLICATION SERVICES
-app.get('/admin/session',function(req,res){if(!req.isAuthenticated()){
+app.all('/session',function(req,res){if(!req.isAuthenticated()){
 	res.set('Content-Type', 'application/json');res.end(JSON.stringify({user:'guest',username:'guest',name:'guest',displayName:'guest'}));
 	}else{res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify(req.user));}});
-app.get('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
+app.all('/admin/shutdown',function(req,res){if(!req.isAuthenticated()){res.redirect(HOST+'/login.html')}else{process.exit();}});
 app.all(/^\/api\/postback\/?.*/,upload.any(),metaschema.postback);
 app.all(/^\/merchant\/metaframe\/?.*/,upload.any(),function(req,res,next){
 	if(!req.isAuthenticated()){req.session.afterlogin='../../merchant/postlogin.html';return res.redirect('../login.html');}
@@ -126,6 +126,18 @@ app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
+//---------------Cartoleria
+app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+	try{
+		var c=req.body.xdata;if(!c){c=req.session.cart||"<response>-</response>"}else{req.session.cart=c;}		
+		res.set('Content-Type', 'text/xml;');
+		return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
+	}
+	catch(ex){
+		res.set('Content-Type', 'text/xml;');
+		return res.end('<?xml version="1.0" encoding="UTF-8"?><response><![CDATA['+ex.message+']]></response>');
+	}	
+});
 //---------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
 //---------------------------------------------------------------------------------------------------

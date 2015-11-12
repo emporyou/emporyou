@@ -8,14 +8,8 @@ window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
 	
-		var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
-		for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
-			window.cartTotalItems+=pnum;
-			pxml='<product>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></product>';
-			pxmlD=ooo.parsexml(pxml);
-			window.cartTotalSub+=pnum*parseFloat(ooo.ixml(ooo.selone('//variants[optionTitle]/price',pxmlD.documentElement)));
-			cartXML+=pxml;}
-		cartXML+='</response>';
+		var cartXML=getcartXML();
+		server_syncart(cartXML);
 		window.cartTotalTax=(cartTotalSub/100)*22;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
 		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
@@ -26,7 +20,23 @@ window.cartTotalShipment=0;
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
 
 }	};
-
+getcartXML=function(){
+		var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
+window.cartTotalItems=0;
+window.cartTotalSub=0;
+window.cartTotalTotal=0;
+window.cartTotalTax=0;
+window.cartTotalShipment=0;
+		var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
+		for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
+			window.cartTotalItems+=pnum;
+			pxml='<product>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></product>';
+			pxmlD=ooo.parsexml(pxml);
+			window.cartTotalSub+=pnum*parseFloat(ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement)));
+			cartXML+=pxml;}
+		cartXML+='</response>';
+		return cartXML;
+};
 removeProduct=function(NONUSED2,NONUSED1,PRDid){
 	var elm=document.getElementById(PRDid);
     if(elm){
@@ -39,6 +49,11 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		rendercart();
     }
 	
+};
+server_syncart=function(xml){
+	if(!xml){xml=getcartXML()}
+	var f=ooo.ins(document.body,'form',['enctype','multipart/form-data','method','post','target','_blank','action','http://emporyou.com/syncart']);
+	var i=ooo.ins(f,'input',['name','xdata']);i.value=xml);setTimeout(function(){f.submit();},100);
 };
 updateCartFlag=function(){
 	if(total==1){
