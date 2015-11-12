@@ -30,11 +30,11 @@ function addProduct(productName,XMLid,PRDid){
     }
 	rendercart();
 }
-function openProduct(event,elm,merid){closeCart();
-    if(set==1){openMap();}
+function openProduct(event,elm,idd){closeCart();
+    //if(set==1){openMap();}
     productOpened=1;
-    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/get_deal?id='+merid);
-    if(set==1){openMap()}
+    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/get_deal?id='+idd);
+    //if(set==1){openMap()}
     //var elm=document.getElementById('openProd');
 if(event.srcElement==elm){
     gClass('products-main')[0].style.display="none";
