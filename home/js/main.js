@@ -91,7 +91,7 @@ function openCart(){
 	//rendercart();
 }}
 function cartReady(){
-    cartOpened=1;ooo.$$('products-cart-target').style.width='20%';//SHOW the cart
+    cartOpened=1;ooo.$$('products-cart-target').setAttribute('style''width:20%');//SHOW the cart
     //gClass('emporyoum-bar')[0].style.top="75%";
     //gClass('products-main')[0].style.top="100%";
     //gClass('google-map-container')[0].style.top="58%";
