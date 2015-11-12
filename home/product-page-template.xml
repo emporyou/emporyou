@@ -14,14 +14,15 @@
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants" substitution="%options" preload="options-template.xml"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
+<variable tagname="variants/price" substitution="%price"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container" style="background-image:url('%mainimageurl')"><div id="main-image-pro"> </div></div><div 
+<html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container"><div id="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
 id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
 id="layer-desc"> </div><div 
 id="main-desc-pro"><div 
 id="descrizione"><b>%subtitle</b></div><div 
 id="descrizione-target">%description</div></div></div><div 
-id="main-ship-container"> <div 
+id="main-ship-container" style="display:none"> <div 
 id="main-ship-pro"><div 
 id="spedizione"><b>Spedizione</b></div><div 
 id="spedizione-target">Il coupon verrà inviato via email ad effettuato acquisto.</div></div></div><div 
@@ -72,5 +73,5 @@ id="main-merchant-pro"><div
 id="nome-merchant"><b>La scarpa di Aladino</b></div><div 
 id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
 id="orario-merchant">Orari negozio: <b> %orari</b></div><div 
-id="indirizzo-merchant">Indirizzo: <b> %roat, %cap, %city</b></div><div 
+id="indirizzo-merchant">Indirizzo: <b> %road, %cap, %city</b></div><div 
 id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div></html></rowtype></document>

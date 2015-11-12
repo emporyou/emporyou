@@ -133,16 +133,17 @@ function sendCoupon() {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
-        if (pname == 'mainExternal') {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
-                if (initialjdata.variants[ww].isMain == true) {
-                    initialjdata.variants[ww].image = initialjdata.image[p].url;
+        if (pname == 'mainExternal') {alert(pname+' is mainexternal');
+            for (var xx = 0; xx < initialjdata.variants.length; xx++) {alert(initialjdata.variants.length+' is variants length')
+                if (initialjdata.variants[xx].isMain == true) {alert(initialjdata.variants[xx].isMain+' is true');
+                    myJSON.variants[xx].image = initialjdata.image[p].url;
+                    alert(myJSON.variants[xx].image+' is myJSON.variants[xx].image');
                 }
             }
         } else {
             for (var ww = 0; ww < initialjdata.variants.length; ww++) {
-                if (initialjdata.variants[ww].option == initialjdata.image[p].name) {
-                    initialjdata.variants[ww].image = image[p].url;
+                if (myJSON.variants[ww].option == initialjdata.image[p].name) {
+                    myJSON.variants[ww].image = initialjdata.image[p].url;
                 }
             }
         }
