@@ -16,11 +16,22 @@ var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
 var XD=Metaschema.CONFIG.docID;var XR=Metaschema.CONFIG.rootID;var XA=Metaschema.CONFIG.adminID;var XT=Metaschema.CONFIG.tagID;
+var XCAT=ObjectID('000000000000000000000050');
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000011'),XR,XD,XA,'merchant','merchants node',false,true));
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000012'),XR,XD,XA,'deal','deals node',false,true));
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000013'),XR,XD,XA,'cart','carts node',false,true));
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000014'),XR,XD,XA,'transaction','transactions node',false,true));
-metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000050'),XR,XT,XA,'category','categories node',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(XCAT,XR,XT,XA,'category','categories node',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000101'),XR,XCAT,XA,'Casa','prodotti per la casa',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000102'),XR,XCAT,XA,'Tempo libero','prodotti per il tempo libero',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000103'),XR,XCAT,XA,'Moda','prodotti di moda',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000104'),XR,XCAT,XA,'Mangiare e Bere','prodotti per l\'alimentazione',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000105'),XR,XCAT,XA,'Elettronica','prodotti di elettronica',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000106'),XR,XCAT,XA,'Bellezza','prodotti per la bellezza',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000107'),XR,XCAT,XA,'Cartoleria','prodotti per la cartoleria',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000108'),XR,XCAT,XA,'Salute','prodotti per la salute',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109'),XR,XCAT,XA,'Animali','prodotti per gli animale',false,true));
+
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
@@ -370,22 +381,20 @@ buffer			A Buffer of the entire file	MemoryStorage
 
 /*
 TODO EMPORYOU:
+H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
 H 		Carrello in sessione
+H 		Ricerca per prezzo MAG e MIN e per categoria funzionanti
+
 H 		Transazione e back
 H 		Dispatch email
-G 		Template email per cliente merchant e admin
 H+G 	Admin e merchant views 
 
-H+G 	+Autocompilamento da reaction
 H+G	+Autocompilamento da magento
-G		Aggiunta e RIMOZIONE immagini da editor coupon
-G 		QUANTITA PER OPZIONE PRODOTTO IN COUPON MAKER!!!!!
 
-H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
-H 		Ricerca per prezzo MAG e MIN e per categoria funzionanti
 G     aggiungere MIN MAX in home
 G+H 	Layouts prodotti in emporyou per multi immagini e opzioni
 
+G 		Template email per cliente merchant e admin
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
 */
