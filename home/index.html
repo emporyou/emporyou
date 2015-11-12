@@ -57,11 +57,17 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 window.ISptloaded=false;
 doinitialrender=function(){
 	if(window.initialjdata){
+		if(window.initialjdata.doc[0].PREVIEWdetails){
+			if(!window.ISptloaded){ooo.preload('product-page-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
+			else{
+			var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('product-page-template.xml').documentElement.innerHTML+'</tmpdoc>');
+			productOpened=1;ooo.syncrender('product-page-target',ttt,window.initialjdata);}
+		}else{
 		if(!window.ISptloaded){ooo.preload('products-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
 		else{
 		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
-		}
+		}}
 	}
 	else{
 		ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');
