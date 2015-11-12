@@ -100,6 +100,7 @@ app.all(/^\/merchant\/metaframe\/?.*/,upload.any(),function(req,res,next){
 	metaschema.metaframe(req,res,next)}
 );
 app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
+app.all(/^\/api\/get\/?.*/,upload.any(),metaschema.get);
 app.all(/^\/api\/set\/?.*/,upload.any(),metaschema.set);
 app.all(/^\/api\/add\/?.*/,upload.any(),metaschema.add);
 app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
@@ -120,6 +121,7 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 					Q.variants[v].image={url:req.files[f].filename,size:req.files[f].size};v=1000;
 	}	}	}	}
 	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
+	Q.rel=[{key:ObjectID(Q.category)}];delete Q.category;
 	req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
 	MXS.add(req,res,next);})});
 app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
