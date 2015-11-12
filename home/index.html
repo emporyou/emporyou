@@ -35,8 +35,10 @@
 <meta name="keywords" content="" />
 <meta charset="utf-8"/>
     <script>
-        try{window.initialjdata=replace_jdata;}
+			window.initialjdata=false;
+        try{var ttt=replace_jdata;initialjdata.doc=[ttt]}
 		  catch(ex){window.initialjdata=false};
+		  if(!window.initialjdata.doc){window.initialjdata=false}
     </script>
 <script>
 myappinit=function(){
