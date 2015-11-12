@@ -1,6 +1,6 @@
 #!/bin/bash
 # chkconfig: 3 20 80
-# description: RECOMMERCE!!!
+# description: EMPORYOU!!!
 start(){
         echo "Starting emporyou..."
         /bin/sh /root/emporyou/postreboot.txt &
