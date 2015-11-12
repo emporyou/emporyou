@@ -7,12 +7,12 @@ if(emporyoumode=='reaction'){
     document.getElementsByClassName('variant-title')[0].click();
  setTimeout(`prodJSON=selectedProduct();
 prodJSON.fromreaction=true;
-    prod.JSON.variants[0].isMain=true;
     window.optNum=document.getElementsByClassName('variant-select-option');
     window.cidx=0;
+    prodJSON.variants[0].isMain=true;
     var imgSrc=document.getElementsByClassName('img-responsive')[0].src;
     prodJSON.image=[];
-    var imgObj={'url':imgSrc,'name':'mainExternal','isMain':true};
+    var imgObj={'url':imgSrc,'name':'mainExternal'};
     prodJSON.image.push(imgObj);
    processVariants()`,200);
 }else if(emporyoumode=="magento"){
