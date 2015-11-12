@@ -305,6 +305,21 @@ function tryDiscount(value){
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var css = `
 .cont{position:absolute}
 #scon-cont{bottom:51px;right:50px;}

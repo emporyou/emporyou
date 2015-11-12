@@ -149,6 +149,7 @@ app.use(function(req,res,next){
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
+app.use(metaschema.urltorecord);
 //---------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------ DEFAULT DATABASE DEF
 //---------------------------------------------------------------------------------------------------
@@ -171,7 +172,7 @@ metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109')
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------- SERVER LISTEN BOOTSTRAP
 //---------------------------------------------------------------------------------------------------
-app.all(/.*/,metaschema.urltorecord);
+
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
 

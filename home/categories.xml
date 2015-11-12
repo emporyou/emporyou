@@ -1,0 +1,2 @@
+
+<div class="category transition-1" onclick="this.classList.toggle('select')">Casa</div>
