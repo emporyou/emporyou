@@ -1,38 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-<rowtype tagname="//deal">
-<variable tagname="vendor" substitution="%vendor-name"/>
-<variable tagname="merchant/lat" substitution="%lat"/>
-<variable tagname="merchant/lon" substitution="%lon"/>
-<variable tagname="merchant/city" substitution="%city"/>
+<rowtype tagname="//doc">
 <variable tagname="_id" substitution="%id"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-<variable tagname="merchant/id" substitution="%merch-id"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
-<variable tagname="imagefile" substitution="%imagefile"/>
-<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
-<variable tagname="variants[optionTitle]/price" substitution="%price"/>
-<inline tagname="variants[optionTitle]" substitution="%options" preload="options-template.xml"/>
+<variable tagname="subtitle" substitution="%subtitle"/>
+<inline tagname="metafields" substitution="%details" preload="metafields-template.xml"/>
+<inline tagname="variants" substitution="%options" preload="options-template.xml"/>
 <variable tagname="pageTitle" substitution="%subtitle"/>
-<html><div class="product-info-main">
-        <div id="left-column-pro">
-            <div id="main-image-container">
-                <div id="main-image-pro"></div>
-            </div>
-            <div id="main-desc-container" class="height200 transition-1">
-                <div onclick="openDesc()" id="layer-desc"></div>
-                <div id="main-desc-pro">
-                    <div id="descrizione"><b>Descrizione</b>
-                    </div>
-                    <div id="descrizione-target">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
-                </div>
-            </div>
-            <div id="main-ship-container">
-                <div id="main-ship-pro">
+<html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container"><div id="main-image-pro"></div></div><div 
+id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
+id="layer-desc"> </div><div 
+id="main-desc-pro"><div 
+id="descrizione"><b>Descrizione</b></div><div 
+id="descrizione-target">%description</div></div></div><div 
+id="main-ship-container"><div 
+id="main-ship-pro">
                     <div id="spedizione"><b>Spedizione</b>
                     </div>
-                    <div id="spedizione-target">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse </div>
+                    <div id="spedizione-target">Il coupon verrà inviato via email ad effettuato acquisto.</div>
                 </div>
             </div>
             <div id="main-comm-container">
@@ -51,31 +38,14 @@
         <div id="right-column-pro">
             <div id="main-info-container">
                 <div id="main-info-pro">
-                    <div id="info-pro-text"><span style="font-size:4vh">Nike Blazer Infinity</span>
+                    <div id="info-pro-text"><span style="font-size:4vh">%product-name</span>
                         <br/>
-                        <br/><span style="font-size:5vh;font-weight:bold">€ 200,00</span>
+                        <br/><span style="font-size:5vh;font-weight:bold">€ %price</span>
                     </div>
                     <div id="info-pro-opt">
                         <br/>
-                        <select class="select-opt">
-                            <option>Taglia</option>
-                            <option>37</option>
-                            <option>38</option>
-                            <option>39</option>
-                            <option>40</option>
-                            <option>41</option>
-                            <option>42</option>
-                            <option>43</option>
-                            <option>44</option>
-                            <option>45</option>
-                        </select>
-                        <select class="select-opt">
-                            <option>Colore</option>
-                            <option>bianco</option>
-                            <option>nero</option>
-                            <option>verde</option>
-                            <option>rosso</option>
-                        </select>
+                        %options
+                        %details
                     </div>
                 </div>
             </div>
