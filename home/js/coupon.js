@@ -140,8 +140,8 @@ function sendCoupon() {
                 }
             }
         } else {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {alert(initialjdata.variants[ww].option+' && '+initialjdata.image[p].name)
-                if (initialjdata.variants[ww].option == initialjdata.image[p].name) {
+            for (var ww = 0; ww < initialjdata.variants.length; ww++) {alert(initialjdata.variants[ww].optionTitle+' && '+initialjdata.image[p].name)
+                if (initialjdata.variants[ww].optionTitle == initialjdata.image[p].name) {
                     initialjdata.variants[ww].image = image[p].url;
                 }
             }
