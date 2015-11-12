@@ -131,37 +131,17 @@ function addOption(allowChange, hideX) {
 
 function sendCoupon() {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
-    alert(JSON.stringify(initialjdata.image))
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
         if (pname == 'mainExternal') {
             for (var ww = 0; ww < initialjdata.variants.length; ww++) {
                 if (initialjdata.variants[ww].isMain == true) {
-                    initialjdata.variants[ww].image = initialjdata.image[p].url;
+                    myJSON.variants[ww].image = initialjdata.image[p].url;
                 }
             }
         } else {
             for (var ww = 0; ww < initialjdata.variants.length; ww++) {
-                if (initialjdata.variants[ww].option == initialjdata.image[p].name) {
-                    initialjdata.variants[ww].image = image[p].url;
-                }
-            }
-        }
-
-    }
-
-    myJSON.images = initialjdata.image;
-    for (var p = 0; p < myJSON.image.length; p++) {
-        var pname = myJSON.image[p].name;
-        if (pname == 'mainExternal') {
-            for (var ww = 0; ww < myJSON.variants.length; ww++) {
-                if (myJSON.variants[ww].isMain == true) {
-                    myJSON.variants[ww].image = myJSON.image[p].url;
-                }
-            }
-        } else {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
-                if (myJSON.variants[ww].option == myJSON.image[p].name) {
+                if (myJSON.variants[ww].option == initialjdata.image[p].name) {
                     myJSON.variants[ww].image = image[p].url;
                 }
             }
