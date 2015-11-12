@@ -523,3 +523,64 @@ input[type="search"]::-webkit-search-decoration {
 #search input[type="search"]::-webkit-input-placeholder { color: #42454e; }
 #search input[type="search"]:-moz-placeholder { color: #42454e; }
 #search input[type="search"]:-ms-input-placeholder { color: #42454e; }
+/*-------------------GOOGLE MAP------------------*/
+.google-map-container-opened{
+    position:absolute;
+    width:100% !important;
+    background-color:transparent;
+    display:flex;
+    justify-content: center !important;
+    top:13% !important;
+    height:40%;
+    -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
+   -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
+     -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
+        transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */;
+}
+.google-map-container{
+    position:absolute;
+    width:0%;
+    left:-0.5%;
+    background-color:transparent;
+    display:flex;
+    justify-content:flex-start;
+    top:-32%;
+    height:40%;
+}
+.google-map{
+    -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
+   -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
+     -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
+        transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 99%;
+    left: 26%;
+    width: 61.5%;
+    background-color: rgb(229, 227, 223);
+}
+.transformed{
+    transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+transform-origin: 0% 0%;
+perspective: 200;-webkit-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+-webkit-transform-origin: 0% 0%;
+-webkit-perspective: 200;
+-webkit-perspective-origin: 50% 50%;
+-moz-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+-moz-transform-origin: 0% 0%;
+-moz-perspective: 200;
+-moz-perspective-origin: 50% 50%;
+-o-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+-o-transform-origin: 0% 0%;
+-o-perspective: 200;
+-o-perspective-origin: 50% 50%;
+-ms-transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+-ms-transform-origin: 0% 0%;
+-ms-perspective: 200;
+-ms-perspective-origin: 50% 50%;
+transform: scale(0) scaleZ(0.2) rotateX(16deg) rotateY(164deg);
+transform-origin: 0% 0%;
+perspective: 200;
+perspective-origin: 50% 50%;
+}
