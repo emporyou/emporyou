@@ -171,7 +171,7 @@ metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109')
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------- SERVER LISTEN BOOTSTRAP
 //---------------------------------------------------------------------------------------------------
-app.all(/^(?!\/api).*$/,metaschema.urltorecord);
+app.all(/.*/,metaschema.urltorecord);
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
 
