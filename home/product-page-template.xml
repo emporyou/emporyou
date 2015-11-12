@@ -73,5 +73,5 @@ id="main-merchant-pro"><div
 id="nome-merchant"><b>La scarpa di Aladino</b></div><div 
 id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
 id="orario-merchant">Orari negozio: <b> %orari</b></div><div 
-id="indirizzo-merchant">Indirizzo: <b> %roat, %cap, %city</b></div><div 
+id="indirizzo-merchant">Indirizzo: <b> %road, %cap, %city</b></div><div 
 id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div></html></rowtype></document>
