@@ -134,9 +134,9 @@ function sendCoupon() {
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
         if (pname == 'mainExternal') {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
-                if (initialjdata.variants[ww].isMain == true) {
-                    myJSON.variants[ww].image = initialjdata.image[p].url;
+            for (var xx = 0; xx < initialjdata.variants.length; xx++) {
+                if (initialjdata.variants[xx].isMain == true) {
+                    myJSON.variants[xx].image = initialjdata.image[p].url;
                 }
             }
         } else {
