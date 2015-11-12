@@ -1,8 +1,8 @@
-if(!window.ooo)window.ooo = {};var gTag=function(v){return document.getElementsByTagName(v);}
+if(!window.ooo)window.ooo = {};
 ooo.form2JSON = function (f) {
     var o = {};
-    if (f.gTag('fieldset')[0]) {
-        var fld = f.gTag('fieldset');
+    if (f.getElementsByTagName('fieldset')[0]) {
+        var fld = f.getElementsByTagName('fieldset');
         var isArr;var isNotArr;
         window.arrFld = [];
         for (i = 0; i < fld.length; i++) {
@@ -16,9 +16,9 @@ ooo.form2JSON = function (f) {
             for (i = 0; i < fld.length; i++) {
                 var fldName = fld[i].name;
                 var fldObj = {};
-                var inp = fld[i].gTag('input');
-                var t = fld[i].gTag('textarea');
-                var s = fld[i].gTag('select');
+                var inp = fld[i].getElementsByTagName('input');
+                var t = fld[i].getElementsByTagName('textarea');
+                var s = fld[i].getElementsByTagName('select');
                 if(inp.length>0){for (z = 0; z < inp.length; z++) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
@@ -42,13 +42,13 @@ ooo.form2JSON = function (f) {
         };if(isArr == true){
             for (i = 0; i < arrFld.length; i++){
                 var arrName = arrFld[i].name.replace('[]','');
-                var af = arrFld[i].gTag('fieldset');
+                var af = arrFld[i].getElementsByTagName('fieldset');
                 for (r = 0; r < af.length; r++){
                     var fldName = af[r].name;
                     var arrObj = {};
-                    var inp = af[r].gTag('input');
-                    var t = af[r].gTag('textarea');
-                    var s = af[r].gTag('select');
+                    var inp = af[r].getElementsByTagName('input');
+                    var t = af[r].getElementsByTagName('textarea');
+                    var s = af[r].getElementsByTagName('select');
                     if(inp.length>0){for (z = 0; z < inp.length; z++) {
                         inp[z].setAttribute('id','ifi');
                         var b = inp[z].name;
