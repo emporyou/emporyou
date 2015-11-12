@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <rowtype tagname="//variants">
-<variable tagname="optionTitle" substitution="%options"/>
-<html><div class="product-values option-button">%options</div></html>
+<variable tagname="option" substitution="%name"/>
+<variable tagname="price" substitution="%price"/>
+<html><button value="%name" onclick="document.getElementById('price-target').innerHTML='€ '+%price"></button></html>
 </rowtype>
 </document>
