@@ -164,10 +164,10 @@ metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000102')
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000103'),XR,XCAT,XA,'Moda','prodotti di moda',false,true));
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000104'),XR,XCAT,XA,'Mangiare e Bere','prodotti per l\'alimentazione',false,true));
 metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000105'),XR,XCAT,XA,'Elettronica','prodotti di elettronica',false,true));
-metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000106'),XR,XCAT,XA,'Bellezza','prodotti per la bellezza',false,true));
-metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000107'),XR,XCAT,XA,'Cartoleria','prodotti per la cartoleria',false,true));
-metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000108'),XR,XCAT,XA,'Salute','prodotti per la salute',false,true));
-metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109'),XR,XCAT,XA,'Animali','prodotti per gli animale',false,true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000106'),XR,XCAT,XA,'Bellezza','prodotti per la bellezza','t2',true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000107'),XR,XCAT,XA,'Cartoleria','prodotti per la cartoleria','t1',true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000108'),ObjectID('000000000000000000000106'),XCAT,XA,'Salute','prodotti per la salute','test',true));
+metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109'),ObjectID('000000000000000000000107'),XCAT,XA,'Animali','prodotti per gli animale','test',true));
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------- SERVER LISTEN BOOTSTRAP
 //---------------------------------------------------------------------------------------------------

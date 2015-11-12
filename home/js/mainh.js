@@ -1,3 +1,8 @@
+updateproducts=function(){
+	
+	
+};
+
 rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
 	else{
