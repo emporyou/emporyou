@@ -131,6 +131,7 @@ function addOption(allowChange, hideX) {
 
 function sendCoupon() {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
+    alert(JSON.stringify(initialjdata.image))
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
         if (pname == 'mainExternal') {
@@ -140,8 +141,8 @@ function sendCoupon() {
                 }
             }
         } else {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {alert(initialjdata.variants[ww].optionTitle+' && '+initialjdata.image[p].name)
-                if (initialjdata.variants[ww].optionTitle == initialjdata.image[p].name) {
+            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
+                if (initialjdata.variants[ww].option == initialjdata.image[p].name) {
                     initialjdata.variants[ww].image = image[p].url;
                 }
             }
@@ -150,7 +151,25 @@ function sendCoupon() {
     }
 
     myJSON.images = initialjdata.image;
+    for (var p = 0; p < myJSON.image.length; p++) {
+        var pname = myJSON.image[p].name;
+        if (pname == 'mainExternal') {
+            for (var ww = 0; ww < myJSON.variants.length; ww++) {
+                if (myJSON.variants[ww].isMain == true) {
+                    myJSON.variants[ww].image = myJSON.image[p].url;
+                }
+            }
+        } else {
+            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
+                if (myJSON.variants[ww].option == myJSON.image[p].name) {
+                    myJSON.variants[ww].image = image[p].url;
+                }
+            }
+        }
+
+    }
     var jsondata = JSON.stringify(myJSON);
+    
     document.getElementById('send-target').value = jsondata;
     document.getElementById('send-form').submit();
 }
