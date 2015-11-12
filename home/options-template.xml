@@ -3,6 +3,6 @@
 <rowtype tagname="//variants">
 <variable tagname="option" substitution="%name"/>
 <variable tagname="price" substitution="%price"/>
-<html><button value="%name" onclick="document.getElementById('price-target').innerHTML='€ '+%price"></button></html>
+<html><button value="%name" onclick="document.getElementById('price-target').innerHTML='€ '+%price"> </button></html>
 </rowtype>
 </document>
