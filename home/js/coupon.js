@@ -143,7 +143,11 @@ function sendCoupon() {
         if (pname == 'mainExternal') {
             for (var xx = 0; xx < initialjdata.variants.length; xx++) {
                 if (initialjdata.variants[xx].isMain == true) {
-                    myJSON.variants[xx].image = initialjdata.image[p].url;
+                    for(ii=0;<myJSON.variants.length;ii++){
+                        if(myJSON.variants[ii].isMain==true){
+                        myJSON.variants[xx].image = initialjdata.image[p].url;
+                        }
+                    }
 
                 }
             }
