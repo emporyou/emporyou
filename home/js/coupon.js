@@ -137,6 +137,7 @@ function sendCoupon() {
             for (var xx = 0; xx < initialjdata.variants.length; xx++) {alert(initialjdata.variants.length+' is variants length')
                 if (initialjdata.variants[xx].isMain == true) {alert(initialjdata.variants[xx].isMain+' is true');
                     myJSON.variants[xx].image = initialjdata.image[p].url;
+                    alert(myJSON.variants[xx].image+' is myJSON.variants[xx].image');
                 }
             }
         } else {
