@@ -10,7 +10,7 @@
 <variable tagname="lon" substitution="%lon"/>
 <variable tagname="city" substitution="%city"/>
 <variable tagname="id" substitution="%id"/>
-<variable tagname="image" substitution="%url"/>
+<variable tagname="image/url" substitution="%imageurl"/>
 <variable tagname="description" substitution="%description"/>
 <variable tagname="title" substitution="%product-name"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
@@ -51,7 +51,7 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class" style="overflow:hidden"><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
-             style="background-image: url('http://emporyou.com/uploads/%imagefile');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div 
+             style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%merch-id','%id')" class="thumb-element"><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
