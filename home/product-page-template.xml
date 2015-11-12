@@ -14,6 +14,7 @@
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants" substitution="%options" preload="options-template.xml"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
+<variable tagname="variants" substitution="%price"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
 <html><div class="product-info-main"><div id="left-column-pro"><div id="main-image-container"><div id="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
 id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
