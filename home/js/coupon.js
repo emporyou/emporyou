@@ -139,6 +139,7 @@ function oldOption(allowChange, hideX,isMain) {
 
 function sendCoupon(preview,detailsview) {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
+	 if(!myJSON.variants){myJSON.variants={}}
 	 if(initialjdata){if(initialjdata.image){
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
