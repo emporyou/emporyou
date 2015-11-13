@@ -43,6 +43,7 @@
     </script>
 </head>
 <body onload="myInit()">
+   
     <form id="coupon-form" action="http://emporyou.com" method="post" onsubmit="return false">
         <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
         <div class="header-admin">
@@ -92,7 +93,7 @@
          <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="newDetail(this.previousSibling.previousSibling)">+</div>
          </fieldset>
         
-        </div> </div>
+        </div> <button id="manda-voucher" onclick="sendCoupon()">MANDA COUPON</button></div>
 				
         <input type="hidden" value="Milano" name="city"/>
         <input type="hidden" name="road" value="Via Trenno 33"/>
