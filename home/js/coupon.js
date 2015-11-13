@@ -22,7 +22,7 @@ function myInit() {
         for (i = 0; i < initialjdata.variants.length; i++) {
             addOption(document.getElementById('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
-                document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
+                //document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
             if (initialjdata.variants[i].optionTitle) {
                 document.getElementById('optionName_' + i).value = initialjdata.variants[i].optionTitle;
