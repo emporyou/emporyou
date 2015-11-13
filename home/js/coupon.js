@@ -154,7 +154,7 @@ function sendCoupon(preview,detailsview) {
                 }
             }
         } else {
-            for (var ww = 0; ww < initialjdata.variants.length; ww++) {
+            for (var ww = 0; ww < myJSON.variants.length; ww++) {
                 if (myJSON.variants[ww].option == initialjdata.image[p].name) {
                     myJSON.variants[ww].image = initialjdata.image[p].url;
                 }
