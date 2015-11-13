@@ -30,7 +30,7 @@ body.Bmode #categories-container{left: 3.5%;}
 body.Bmode #product-main-container{margin-top:116.3%;z-index:1;display:block}
 body.Bmode.map-isin #product-main-container{margin-top:136.3%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
-.zerothumb .product-info-main{display:none}
+body.Bmode .zerothumb .product-info-main{display:none}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
 /*----------------------------------------------------------------------------------------*/
