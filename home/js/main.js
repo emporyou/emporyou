@@ -37,13 +37,11 @@ function openProduct(event,elm,idd){
 	 elm.parentElement.parentElement.classList.add('selected');
     //ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
 }
-function closeProduct(){
-    productOpened=0;
-    gClass('products-main')[0].style.display="";
-   gClass('emporyoum-bar')[0].style.top="14%";
-    gClass('emporyoum-bar')[0].style.width="100%";
-    //document.getElementById('basket-container').style.display="";
-    gClass('products-page-main')[0].classList.add('hidden');
+function closeProduct(elm){	
+	 document.body.classList.remove('Pmode');
+	 document.body.classList.remove('Cmode');
+	 document.body.classList.add('Bmode');
+	 elm.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
 }
 function checkMobile(){
 }

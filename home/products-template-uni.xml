@@ -75,7 +75,7 @@
 id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
 id="layer-desc"> </div><div 
 id="main-desc-pro"><div 
-id="descrizione"><b>%subtitle</b></div><div 
+id="descrizione"><b>%subtitle</b><button onclick="closeProduct(this)">CHIUDI PAGINA PRODOTTO</button></div><div 
 id="descrizione-target">%description</div></div></div><div 
 id="main-ship-container" style="display:none"> <div 
 id="main-ship-pro"><div 
