@@ -296,10 +296,11 @@ function calc(){
     var risparmio=(valbas/100)*discount;
     var totale=valbas-risparmio;
     document.getElementById('price-base').value=totale.toFixed(2);
-    var optval=document.getElementsByClassName('value-opt-vaucher');
+    var optval=document.getElementsByClassName('value-opt-voucher');
     var prefin=document.getElementsByClassName('prezzo-finale-opzione');
     for(var pp=0;pp<optval.length;pp++){
         var valbas_=optval[pp].value;
+        var discount=document.getElementById('discount-textarea').value;
         var risparmio_=(valbas_/100)*discount;
         var totale_=valbas_-risparmio_
         prefin[pp].value=totale_.toFixed(2);
