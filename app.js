@@ -134,15 +134,14 @@ app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------Cartoleria
 app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+	var c='';
 	try{
-		var c=req.body.xdata;if(!c){c=req.session.cart||"<response>-</response>"}else{req.session.cart=c;}		
-		res.set('Content-Type', 'text/xml;');
-		return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
+		c=req.body.xdata;	
+		}catch(ex){
+		c=req.session.cart||"<response>-</response>";
 	}
-	catch(ex){
-		res.set('Content-Type', 'text/xml;');
-		return res.end('<?xml version="1.0" encoding="UTF-8"?><response><![CDATA['+ex.message+']]></response>');
-	}	
+	res.set('Content-Type', 'text/xml;');
+	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 //---------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
