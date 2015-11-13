@@ -239,18 +239,21 @@ http://emporyou.com vista prodotti
 -ricerca x prezzo
 -ricerca x geo
 
-4 
-carrello
-
-5 
-checkout
-
 6 
 trans back OK
 trans back KO
 
 7
 VISTE ADMIN
+
+
+
+
+
+
+
+
+
 
 
 */

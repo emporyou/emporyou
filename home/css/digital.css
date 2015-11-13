@@ -48,10 +48,10 @@ body.Cmode #checkout-main-container{display:block;}
 #basket-container{position:fixed;z-index:4000000000001;top:0;right:5%;cursor:pointer;height:100%;width:50px;background-color:transparent;}
 #basket{position:absolute;width:9vmin;top: 50px;
     right: 6%;
-    transform: translateY(-99.9%);
+    transform: translateY(-74.9%);
     transform-origin: top;transition-delay:250ms}
 #rope{position:absolute;width:9vmin;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
-body.cart-isin #basket{transform:translateY(-99.9%);transition-delay:0ms}
+body.cart-isin #basket{transform:translateY(-99.9%);transition-delay:0ms;z-index:1001}
 body.cart-isin #basket-container{transform:scaleY(0);}
 body.cart-isin #rope{transform:translateY(0) scaleY(0);transition-delay:0ms}
 body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);transition-delay:250ms}
