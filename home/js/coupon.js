@@ -5,8 +5,8 @@ function myInit() {
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if (!initialjdata.variants) {
-        newOption(false, true,false);
-        //document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
+        //TODO//newOption(false, true,false);
+        //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
         document.getElementById('product-title').value = initialjdata.title;
