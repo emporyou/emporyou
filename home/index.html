@@ -42,7 +42,7 @@
     </script>
 <script>
 myappinit=function(){
-
+    ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
 checkMobile();
 	doinitialrender();
