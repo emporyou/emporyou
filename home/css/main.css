@@ -122,35 +122,29 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
 }
-.emporyoum-container{
+/*.emporyoum-container{
     height:100%;
     background-color:transparent;
     margin: 0 auto;
-}
+}*/
 .emporyoum{
     width:25%;
     margin:0 auto;
 }
-.products-main{
-    min-width:740px;
+/*moved in digital.css .products-main{
     position:absolute;
     width:100%;
     height:100%;
     top:25%;
-    background-color:transparent;
-    z-index:0;
-    -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
-   -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
-     -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
-        transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
-    
-}
+   
+}*/
 .products-container{
     background-color:transparent;
     width:50%;
     height:100%;
     margin:0 auto;
 }
+/*
 #basket-container{
     z-index:100;
     position:fixed;
@@ -162,7 +156,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     -webkit-transition: all 400ms cubic-bezier(1,.01,.58,1) ;
    -moz-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
-        transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
+        transition: all 400ms cubic-bezier(1,.01,.58,1) ;
 }
 #basket-container:hover{cursor:pointer}
 #basket{
@@ -172,8 +166,8 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     -webkit-transition: all 400ms cubic-bezier(.56,.57,.54,1.24);
    -moz-transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
      -o-transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
-        transition: all 400ms cubic-bezier(.56,.57,.54,1.24); /* linear */
-}
+        transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
+}*/
 #bought-container{
     position:absolute;
     margin-top:65px;
