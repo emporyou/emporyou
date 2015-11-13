@@ -51,7 +51,7 @@
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class transition-3 zero-thumb" style="overflow:hidden"><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
-             style="background-image: url('%imageurl');" onclick="this.parentElement.classList.add('selected');/*openProduct(event,this,'%id')*/" class="thumb-element"><div 
+             style="background-image: url('%imageurl');" onclick="this.parentElement.parentElement.classList.add('selected');/*openProduct(event,this,'%id')*/" class="thumb-element"><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
