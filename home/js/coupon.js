@@ -1,4 +1,5 @@
 function myInit() {
+    window.countDetail=0;window.countOption=0;
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
@@ -257,22 +258,23 @@ function handleFileSelecto(evt) {
 function removeThis(n) {
     n.parentNode.removeChild(n);
 }
-var countDetail=0;var countOption=0;
+
 function addOption(v,allowChange, hideX,isMain){
 
 var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','option'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
-	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+count]);
-	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+count]);
+	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption]);
+	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
-	ooo.ins(TRI,'textarea',['class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+count]);
+	ooo.ins(TRI,'textarea',['class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption]);
+    countOption++;
 	ooo.ins(TRI,'textarea',['class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0,00€');
     ooo.ins(FLD,'div',['class','divider-voucher']);
-countOption++;
+
 
 }
 
