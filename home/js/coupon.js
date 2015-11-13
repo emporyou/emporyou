@@ -6,7 +6,7 @@ function myInit() {
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if(initialjdata){
 	 if (!initialjdata.variants) {
-        addOption(document.getElementById('add-option-voucher'),true, false,true);
+        addOption(document.getElementById('add-option-voucher'),true, true,true);
         //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
