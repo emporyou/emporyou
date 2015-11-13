@@ -40,7 +40,7 @@ body.Bmode .zero-thumb {overflow:hidden}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
 /*-----------------------------------------------------------------LAYOUT INDEPENTEND CART*/
-#products-cart-target{products-cart-target {
+#products-cart-target{
     position: fixed;
     top: 0;
     height: 100%;
@@ -53,7 +53,7 @@ body.Cmode #checkout-main-container{display:block;}
     overflow-y: scroll;
     z-index: 5000;
     border-left: 1px solid #ccc;
-}}
+}
 #products-cart-target.hidden{display:block;right:-17px; transform:translate(200,0);}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
