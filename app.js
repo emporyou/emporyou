@@ -207,7 +207,6 @@ H+G 	Admin e merchant views
 H+G	+Autocompilamento da magento
 
 G     aggiungere MIN MAX in home
-G+H 	Layouts prodotti in emporyou per multi immagini e opzioni
 
 G 		Template email per cliente merchant e admin
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
