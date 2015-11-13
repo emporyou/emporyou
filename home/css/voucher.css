@@ -167,8 +167,9 @@
     line-height:15px;
     height:99%;
     font-size:2vh;
-    padding:5.5%;
-    width:60%
+    padding:5%;
+    width:60%;
+        box-sizing: border-box;
 }
 
 
