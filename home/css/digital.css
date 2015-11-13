@@ -54,5 +54,5 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
 .transition-1{-webkit-transition: all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease;}
-.transition-3{-webkit-transition: all 400ms cubic-bezier(1,.01,.58,1);-moz-transition: all 400ms cubic-bezier(1,.01,.58,1);-o-transition: all 400ms cubic-bezier(1,.01,.58,1);transition: all 400ms cubic-bezier(1,.01,.58,1);}
-.transition-2{-webkit-transition: all 0.4s ease-out;-moz-transition:all 0.4s ease-out;-ms-transition: all 0.4s ease-out;-o-transition:all 0.4s ease-out;transition:all 0.4s ease-out;}
+.transition-2{-webkit-transition: all 400ms cubic-bezier(1,.01,.58,1);-moz-transition: all 400ms cubic-bezier(1,.01,.58,1);-o-transition: all 400ms cubic-bezier(1,.01,.58,1);transition: all 400ms cubic-bezier(1,.01,.58,1);}
+.transition-3{-webkit-transition: all 0.4s ease-out;-moz-transition:all 0.4s ease-out;-ms-transition: all 0.4s ease-out;-o-transition:all 0.4s ease-out;transition:all 0.4s ease-out;}
