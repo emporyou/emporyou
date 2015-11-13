@@ -51,10 +51,10 @@ body.Cmode #checkout-main-container{display:block;}
     padding: 30px;
     box-sizing: border-box;
     overflow-y: scroll;
-    z-index: 5000;
+    z-index: 5000;transform: translateX(100%);
     border-left: 1px solid #ccc;
 }
-#products-cart-target.hidden{display:block;right:-17px; transform:translate(200,0);}
+body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/

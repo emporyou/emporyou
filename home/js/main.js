@@ -54,15 +54,27 @@ function toggleMap(){
 	document.body.classList.toggle('map-isin');}
 function openMap(){toggleMap()}
 function openCart(){
-   if(openCart==1){closeCart()}else{
+	rendercart();
+	document.body.classList.add('cart-isin');
+   //if(openCart==1){closeCart()}else{
     //scrollTo(document.body, 0, 200);
     //gClass('products-main')[0].style.top="55%";
-    document.getElementById('basket-container').style.top="-50%";    	
-	rendercart();//defined in mainh.js, control output via products-cart.xml
-	cartReady()
+   //document.getElementById('basket-container').style.top="-50%";    	
+	//defined in mainh.js, control output via products-cart.xml
+	//ooo.$$('products-cart-target').classList.add('hidden');
 }}
-function cartReady(){
-    cartOpened=1;ooo.$$('products-cart-target').setAttribute('style','width:20%');//SHOW the cart
+function closeCart(){
+	document.body.classList.remove('cart-isin');
+    //ooo.$$('products-cart-target').classList.add('hidden');
+	 /*
+    ooo.$$('products-cart-target').style.display='none';
+    if(document.getElementById('pattern')){
+    cartOpened=0;
+    gClass('emporyoum-bar')[0].style.top="14%";
+    ooo.$$('products-cart-target').style.display='none';
+    document.getElementById('products-cart-target').style.height="0";
+    document.getElementById('pattern').style.bottom="150px";}
+	 */
 }
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
@@ -86,15 +98,6 @@ function defaultPage(){
     document.getElementById('product-page-target').style.top="58%";
     document.getElementById('basket-container').style.top="0";
     scrollTo(document.body, 0, 200);
-}
-function closeCart(){
-    ooo.$$('products-cart-target').style.display='none';
-    if(document.getElementById('pattern')){
-    cartOpened=0;
-    gClass('emporyoum-bar')[0].style.top="14%";
-    ooo.$$('products-cart-target').style.display='none';
-    document.getElementById('products-cart-target').style.height="0";
-    document.getElementById('pattern').style.bottom="150px";}
 }
 function share(){
     document.getElementById('fbb').style.display="block";
