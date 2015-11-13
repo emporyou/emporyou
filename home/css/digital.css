@@ -21,15 +21,14 @@
 #product-page-target{/*hidden mode*/margin-top:0%;z-index:0;}
 #checkout-main-container{display:none}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:200%;height: 100%; background-color: transparent;}
+/*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{margin-top:0%;}
 body.Pmode .zero-thumb{display:none}
 body.Pmode .zero-thumb.selected {display:block;width:100%;}
 body.Pmode .zero-thumb.selected .thumb-product{display:none}
-body.Pmode .zero-thumb .product-info-main{    position: absolute;
-    top: -35%;
-    left: -22%;
-    width: 100%;}
+body.Pmode .zero-thumb .product-info-main{position:absolute;width:100%;top:-35%;left:-22%;}
+/*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
 body.Bmode #product-main-container{margin-top:6.3%;z-index:1;display:block}
@@ -37,29 +36,20 @@ body.Bmode.map-isin #product-main-container{margin-top:26.3%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
 body.Bmode .zero-thumb .product-info-main{display:none}
 body.Bmode .zero-thumb {overflow:hidden}
+/*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
+/*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------LAYOUT INDEPENTEND CART*/
-body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);}
-#products-cart-target{position:fixed;top:0;right:-17px;
-    height: 100%;padding:30px;
-    font-size: 2vh;    
-    background-color: white;
+#products-cart-target{position:fixed;top:0;right:-17px;z-index:5000;overflow-y: scroll;
+    height: 100%;padding:30px;font-size: 2vh;background-color: white;
     box-sizing: border-box;border-left: 1px solid #ccc;
 	 -webkit-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09); -moz-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
-    overflow-y: scroll;
-    z-index: 5000;
-	 transform: translateX(100%);
-}
-
+	 /*hidden*/transform: translateX(100%);}
+#basket-container{position:fixed;z-index:100;top:0;right:5%;cursor:pointer;height:100%;width:50px;background-color:transparent;}
 #basket{position: absolute;width: 9vmin;top:-77vh;}
 body.cart-isin #basket{top:-100%}
-
-#basket-container{position:fixed;top:0;right:5%;cursor:pointer;
-    height: 100%; width: 50px;z-index: 100;
-    background-color: transparent;
-}
-body.cart-isin #basket-container{}
+body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);transition-delay:500ms}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
