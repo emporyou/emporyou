@@ -63,7 +63,7 @@
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class transition-3 zero-thumb" ><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
              style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%id')" class="thumb-element"><div 
                  class="product-header"> <div 
-                 class="city">%city</div><div 
+                 class="city">%city<button onclick="closeProduct(this)">CHIUDI PAGINA PRODOTTO</button></div><div 
                  class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
@@ -75,7 +75,7 @@
 id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
 id="layer-desc"> </div><div 
 id="main-desc-pro"><div 
-id="descrizione"><b>%subtitle</b><button onclick="closeProduct(this)">CHIUDI PAGINA PRODOTTO</button></div><div 
+id="descrizione"><b>%subtitle</b></div><div 
 id="descrizione-target">%description</div></div></div><div 
 id="main-ship-container" style="display:none"> <div 
 id="main-ship-pro"><div 
