@@ -425,9 +425,11 @@ width:100%;
     background-color:#ccc
 }
 #category-target{
-    position:absolute;
-    left:0;
-    top:50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
+    border: none;
 }
 .main-image{
     height:24%;

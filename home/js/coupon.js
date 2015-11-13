@@ -3,7 +3,7 @@ function myInit() {
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
-    ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
+    ooo.render('title-subtitle', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if(initialjdata){
 	 if (!initialjdata.variants) {
