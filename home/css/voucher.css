@@ -424,3 +424,8 @@ width:100%;
     cursor:pointer;
     background-color:#ccc
 }
+#category-target{
+    position:absolute;
+    left:0;
+    top:50%;
+}
