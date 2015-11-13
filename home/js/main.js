@@ -111,13 +111,15 @@ function clean(elm){
 }
 //---------------------------------------------------------------------------------- CHECKOUT
 function openCheckout(){
-    defaultPage();checkLogin();
-    gClass('emporyoum-bar')[0].style.display="none";
-    gClass('google-map-container')[0].style.display="none";
-    gClass('products-main')[0].style.display="none";
-    document.getElementById('basket-container').style.display="none";
-    document.getElementById('products-cart-target').style.display="none";
-    document.getElementById('checkout-main-container').setAttribute('style','');
+		
+    //defaultPage();
+	 //checkLogin();
+    //gClass('emporyoum-bar')[0].style.display="none";
+    //gClass('google-map-container')[0].style.display="none";
+    //gClass('products-main')[0].style.display="none";
+    //document.getElementById('basket-container').style.display="none";
+    //document.getElementById('products-cart-target').style.display="none";
+    //document.getElementById('checkout-main-container').setAttribute('style','');
     
 }
 function closeCheckout(){
