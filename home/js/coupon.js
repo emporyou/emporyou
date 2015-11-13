@@ -308,3 +308,12 @@ function calc(){
     //valore-base/100*discount-textarea-valore-base=price-base
     //priceName_0/discount-textarea=priceFinal_0  
 }
+function displayunicode(e){
+var unicode=e.keyCode? e.keyCode : e.charCode
+if unicode >= 48 && unicode <= 57 {
+    alert('number')
+}
+else{
+}
+    alert('nonnumber')
+}
