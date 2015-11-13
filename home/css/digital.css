@@ -55,6 +55,7 @@ body.Cmode #checkout-main-container{display:block;}
     border-left: 1px solid #ccc;
 }
 body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);}
+body.cart-isin #basket{top=-100%}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/

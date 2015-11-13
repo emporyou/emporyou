@@ -18,64 +18,35 @@ function addProduct(productName,XMLid,PRDid){
     document.getElementById('bought-container').appendChild(element);
     cartPosition-=25;}else{gClass('flag-text')[0].innerHTML=total.toString();
                           };
-    if(cartPosition!=0){
+    /*if(cartPosition!=0){
     document.getElementById('basket').style.top='-'+cartPosition+'px';
-    }/*else{
+    }*/
+	 /*else{
         document.getElementById('else').style.display='block'
     }*/
 	 server_syncart();
- if(cartPosition!=450){
+ /*if(cartPosition!=450){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
-    }
+    }*/
 	rendercart();
 }
-function openProduct(event,elm,idd){
-	 document.body.classList.remove('Bmode');
-	 document.body.classList.remove('Cmode');
-	 document.body.classList.add('Pmode');
-	 elm.parentElement.parentElement.classList.add('selected');
-    //ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
-}
-function closeProduct(elm){	
-	 document.body.classList.remove('Pmode');
-	 document.body.classList.remove('Cmode');
-	 document.body.classList.add('Bmode');
-	 console.log(elm);
-	 jQuery('.zero-thumb.selected').removeClass('selected');
-	 
-}
-function checkMobile(){
-}
-window.ismaploadedonce=false;
-function toggleMap(){
+//--------------------------------------------------------------------------- PRODUCT PAGE
+function openProduct(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
+	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
+function closeProduct(elm){document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
+	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
+function checkMobile(){console.log('remove all calls to checkmobile')}
+//--------------------------------------------------------------------------- MAP
+window.ismaploadedonce=false;function toggleMap(){
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
 	document.body.classList.toggle('map-isin');}
 function openMap(){toggleMap()}
-function openCart(){
-	rendercart();
-	document.body.classList.add('cart-isin');
-   //if(openCart==1){closeCart()}else{
-    //scrollTo(document.body, 0, 200);
-    //gClass('products-main')[0].style.top="55%";
-   //document.getElementById('basket-container').style.top="-50%";    	
-	//defined in mainh.js, control output via products-cart.xml
-	//ooo.$$('products-cart-target').classList.add('hidden');
-}
-function closeCart(){
-	document.body.classList.remove('cart-isin');
-    //ooo.$$('products-cart-target').classList.add('hidden');
-	 /*
-    ooo.$$('products-cart-target').style.display='none';
-    if(document.getElementById('pattern')){
-    cartOpened=0;
-    gClass('emporyoum-bar')[0].style.top="14%";
-    ooo.$$('products-cart-target').style.display='none';
-    document.getElementById('products-cart-target').style.height="0";
-    document.getElementById('pattern').style.bottom="150px";}
-	 */
-}
+//--------------------------------------------------------------------------- CART
+function openCart(){rendercart();document.body.classList.add('cart-isin');}
+function closeCart(){document.body.classList.remove('cart-isin');}
+//--------------------------------------------------------------------------- 
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
     var difference = to - element.scrollTop;
