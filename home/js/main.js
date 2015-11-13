@@ -42,10 +42,7 @@ function closeProduct(elm){
 	 document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');
 	 console.log(elm);
-	 elm.parentElement.parentElement.classList.remove('selected');	 
-	 elm.parentElement.parentElement.parentElement.classList.remove('selected');	 
-	 elm.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
-	 elm.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
+	 jQuery('.zero-thumb.selected').removeClass('selected');
 	 
 }
 function checkMobile(){
