@@ -3,14 +3,14 @@ ooo.form2JSON = function (f) {
     var o = {};
     if (f.getElementsByTagName('fieldset')[0]) {
         var fld = f.getElementsByTagName('fieldset');
-        var isArr;var isNotArr;
+        var isArr;var isNotArr;var outSideArr;
         window.arrFld = [];
         for (var i = 0; i < fld.length; i++) {
             var idd = fld[i].name;
             if (idd.indexOf('[]') > -1) {
                 isArr = true;
                 arrFld.push(fld[i]);console.log(arrFld);
-            }else{isNotArr=true;}
+            }else if(idd.indexOf('{}') > -1){outSideArr=true}else{isNotArr=true;}
         };
         if (isArr != true && isNotArr==true){
             for (var i = 0; i < fld.length; i++) {
