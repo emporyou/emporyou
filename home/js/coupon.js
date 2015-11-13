@@ -279,7 +279,7 @@ var TRI=ooo.ins(OC,'div',['class','tri33']);
 }
 
 function addDetail(v){
-
+ 
 var FLD=ooo.ins('divider-target-detail','fieldset',['class','nuovoDettaglio'],false,true);
     ooo.ins(FLD,'div',['class','divider-voucher']);
 var TRI=ooo.ins(FLD,'div',['class','tri100']);
