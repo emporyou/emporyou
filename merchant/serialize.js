@@ -41,10 +41,10 @@ ooo.form2JSON = function (f) {
             }
         };if(isArr == true){
             for (var i = 0; i < arrFld.length; i++){
-                var arrName = arrFld[i].name.replace('[]','');
+                var arrName = arrFld[i].name.replace('[]','');console.log(arrName+' is arrName');
                 var af = arrFld[i].getElementsByTagName('fieldset');
                 for (var r = 0; r < af.length; r++){
-                    var fldName = af[r].name;console.log(fldName+' is fldName');
+                    var fldName = af[r].name;
                     var arrObj = {};
                     var inp = af[r].getElementsByTagName('input');
                     var t = af[r].getElementsByTagName('textarea');
