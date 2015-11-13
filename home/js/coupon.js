@@ -271,7 +271,7 @@ var TRI=ooo.ins(OC,'div',['class','tri39']);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
 	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10']);
     countOption++;
-	ooo.ins(TRI,'textarea',['class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
+	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0,00€');
     ooo.ins(FLD,'div',['class','divider-voucher']);
