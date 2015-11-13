@@ -131,16 +131,13 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     width:25%;
     margin:0 auto;
 }
-.products-main{
-    min-width:740px;
+/*moved in digital.css .products-main{
     position:absolute;
     width:100%;
     height:100%;
     top:25%;
-    background-color:transparent;
-    z-index:0;
    
-}
+}*/
 .products-container{
     background-color:transparent;
     width:50%;
