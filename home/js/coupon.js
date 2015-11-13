@@ -267,7 +267,7 @@ var TRI=ooo.ins(OC,'div',['class','tri39']);
 	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+count]);
 	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+count]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
-	ooo.ins(TRI,'textarea',['class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName'+count]);
+	ooo.ins(TRI,'textarea',['class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+count]);
 	ooo.ins(TRI,'textarea',['class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0,00€');
