@@ -13,6 +13,8 @@ function myInit() {
         document.getElementById('title-textarea').value = initialjdata.title;
         document.getElementById('description-textarea').value = initialjdata.description;
         document.getElementById('subtitle-textarea').value = initialjdata.pageTitle;
+        document.getElementById('valore-base').value = initialjdata.variants[0].price;
+        document.getElementById('price-base').value = initialjdata.variants[0].price;
         //var span = document.createElement('span');
         //span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         //document.getElementById('list').insertBefore(span, null);
