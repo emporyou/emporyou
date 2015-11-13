@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/digital.css">
+<link rel="stylesheet" type="text/css" href="css/map.css">
 <link rel="stylesheet" type="text/css" href="css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/thumbs.css">
 <link rel="stylesheet" type="text/css" href="css/product-page.css">
@@ -44,8 +44,8 @@
 myappinit=function(){
     ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
-	doinitialrender();	
-	checkMobile();
+checkMobile();
+	doinitialrender();
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -63,12 +63,15 @@ doinitialrender=function(){
 			var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('product-page-template.xml').documentElement.innerHTML+'</tmpdoc>');
 			productOpened=1;ooo.syncrender('product-page-target',ttt,window.initialjdata);}
 		}else{
-	if(!window.ISptloaded){ooo.preload('products-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
-	else{
-		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template-uni.xml').documentElement.innerHTML+'</tmpdoc>');
+		if(!window.ISptloaded){ooo.preload('products-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
+		else{
+		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
-	}}}
-	else{ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');}
+		}}
+	}
+	else{
+		ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');
+	}
 };
 
 </script>
@@ -145,23 +148,28 @@ initMap=function() {
 <div id="bought-container"></div>
 <img src="../img/dot.png" id="else"/>
 <img id="basket" src="../img/basket.png" onclick="openCart()"/></div>
-<!-- ---------------------------------------------------------------------------- MAIN BAR -->
 <div class="header">
    <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div>
     <div class="logo-container"><!--<img
         class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div><div 
         id="header-items-container">
-            <div class="item-container" ><img class="map-icon" onclick="toggleMap();checkMobile()" src="../img/map-icon.png"/></div>
+            <div class="item-container" ><img class="map-icon" onclick="openMap();checkMobile()" src="../img/map-icon.png"/></div>
         </div></div>
-<!-- ---------------------------------------------------------------- GOOGLE MAP CONTAINER -->
-<div id="google-map-container" class="google-map-container transition-3"><div id="main-google-map" class="google-map"></div></div>
-<!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
-<div id="categories-container" class="categories-container transition-3">
+<div class="emporyoum-bar">
+    <div class="emporyoum-container">
+        <!--<img class="emporyoum" src="../img/emporyoum-home.png"/>-->
+    </div>
+</div>
+<div class="google-map-container"><div id="main-google-map" class="google-map transformed"></div></div>
+<div class="products-main">
+   <div class="categories-container">
       <div class="cat-searchbar transition-1" id="cat-searchbar">
-          <div id="search">
-          	<fieldset class="clearfix">
+                         		<div id="search">
+          				<fieldset class="clearfix">
+
 					<input type="search" name="search" value="Cosa stai cercando?" onBlur="if(this.value=='')this.value='Cosa stai cercando?'" onFocus="if(this.value=='Cosa stai cercando?')this.value='' ">
 					<input type="submit" value="Cerca" class="button">
+
 				</fieldset>
           </div>
       </div>
@@ -179,7 +187,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-ordina"  onclick="openCat(this)">Ordina per</div>
        <div id="ordina-search" class="search transition-1">
-	<label>
+           <label>
     <select>
         <option selected>...</option>
         <option>Prezzo crescente</option>
@@ -191,15 +199,15 @@ initMap=function() {
 </label>
        </div>
    </div>
-<!-- ----------------------------------------------------------------- PRODUCT PAGE TARGET -->
-<div id="product-page-target" class="products-page-main transition-3"> </div>
-<!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
-<div id="product-main-container" class="products-main transition-3">
-    <div class="products-container"><div id="thumb-wrap"> </div></div>
+    <div class="products-container">
+        <div id="thumb-wrap"> 
+      </div>
+    </div>
 </div>
-<!-- ------------------------------------------------------------------- CART TARGET START -->
+<div id="product-page-target" class="products-page-main hidden">
+</div>
 <div id="products-cart-target" style="display:none;width:0"> </div>
-<!-- ---------------------------------------------------------------------- CHECKOUT START -->
+<div id="cart-data" style="display:none"></div>
 <div id="checkout-main-container" style="display:none">
     <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
     <div class="menu-opened transition-1">
@@ -220,7 +228,8 @@ initMap=function() {
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
             </div>
-            <div class="circle-step">1</div>            
+            <div class="circle-step">1</div>
+            
         </div>
         <div class="left-square closed transition-1"  id="checkout-address">
             <div class="single-container" id="single-address"  style="display:none">
@@ -294,7 +303,5 @@ initMap=function() {
     <div id="checkout-address-container"></div>
     <div id="quit-checkout" onclick="closeCheckout()">BACK</div>
 </div>
-<!-- ----------------------------------------------------------------- HIDDEN STUFF START -->
 <div id="check-login" style="display:none"></div>
-<div id="cart-data" style="display:none"></div>
 </body></html>
