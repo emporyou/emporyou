@@ -136,10 +136,15 @@ function oldOption(allowChange, hideX,isMain) {
     nOption++;
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
 }
-
-function sendCoupon(preview,detailsview) {
+/*function validationerror(messages){alert(messages);}*/
+function sendCoupon(preview,detailsview) {var invalid=[];
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
-	 if(!myJSON.variants){myJSON.variants={}}
+	 /*
+	 if(!myJSON.variants){invalid.push('E\' necessario specificare almeno una opzione!')}
+	 if(!myJSON.discount){invalid.push('E\' necessario specificare uno sconto!')}
+	 
+	 if(invalid.length>0){return validationerror(invalid);}
+	 */
 	 if(initialjdata){if(initialjdata.image){
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
