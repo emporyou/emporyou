@@ -13,9 +13,10 @@ function myInit() {
         document.getElementById('title-textarea').value = initialjdata.title;
         document.getElementById('description-textarea').value = initialjdata.description;
         document.getElementById('subtitle-textarea').value = initialjdata.pageTitle;
-        var span = document.createElement('span');
-        span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
-        document.getElementById('list').insertBefore(span, null);
+        //var span = document.createElement('span');
+        //span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
+        //document.getElementById('list').insertBefore(span, null);
+        document.getElementById('files').style.backgroundImage="url('"+initialjdata.image[0].url+"')";
         for (i = 0; i < initialjdata.variants.length; i++) {
             addOption(document.getElementId('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
