@@ -109,6 +109,7 @@ function clean(elm){
         }
     }}
 }
+//---------------------------------------------------------------------------------- CHECKOUT
 function openCheckout(){
     defaultPage();checkLogin();
     gClass('emporyoum-bar')[0].style.display="none";
