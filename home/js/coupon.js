@@ -178,9 +178,6 @@ function sendCoupon(preview,detailsview) {
     
 }
 
-
-
-
 function handleFileSelect(evt) {
     count++;
     var files = evt.target.files; // FileList object
@@ -254,7 +251,7 @@ function removeThis(n) {
 
 function addOption(v,allowChange, hideX,isMain){
 
-var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione'],false,v);
+var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione new-option'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
@@ -269,6 +266,7 @@ var TRI=ooo.ins(OC,'div',['class','tri33']);
 
 
 }
+
 function newDetail(v){
 
 var FLD=ooo.ins('details-voucher-container','fieldset',['class','nuovoDettaglio'],false,v);

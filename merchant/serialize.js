@@ -5,7 +5,7 @@ ooo.form2JSON = function (f) {
         var fld = f.getElementsByTagName('fieldset');
         var isArr;var isNotArr;
         window.arrFld = [];
-        for (i = 0; i < fld.length; i++) {
+        for (var i = 0; i < fld.length; i++) {
             var idd = fld[i].name;
             if (idd.indexOf('[]') > -1) {
                 isArr = true;
@@ -13,25 +13,25 @@ ooo.form2JSON = function (f) {
             }else{isNotArr=true;}
         };
         if (isArr != true || isNotArr==true){
-            for (i = 0; i < fld.length; i++) {
+            for (var i = 0; i < fld.length; i++) {
                 var fldName = fld[i].name;
                 var fldObj = {};
                 var inp = fld[i].getElementsByTagName('input');
                 var t = fld[i].getElementsByTagName('textarea');
                 var s = fld[i].getElementsByTagName('select');
-                if(inp.length>0){for (z = 0; z < inp.length; z++) {
+                if(inp.length>0){for (var z = 0; z < inp.length; z++) {
                     inp[z].setAttribute('id','ifi')
                     var b = inp[z].name;
                     var c = inp[z].value;
                     if(inp[z].type!='file'&&inp[z].value&&inp[z].name){fldObj[b] = c;}
                 }}
-                if(t.length>0){for (z = 0; z < t.length; z++) {
+                if(t.length>0){for (var z = 0; z < t.length; z++) {
                     t[z].setAttribute('id','ifi');
                     var b = t[z].name;
                     var c = t[z].value;
                     if(t[z].name!=''&&t[z].name){fldObj[b] = c;}
                 }}
-                if(s.length>0){for (z = 0; z < s.length; z++) {
+                if(s.length>0){for (var z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi')
                         var b = s[z].name;
                         var c = s[z].value;
@@ -40,28 +40,28 @@ ooo.form2JSON = function (f) {
                 o[fldName] = fldObj
             }
         };if(isArr == true){
-            for (i = 0; i < arrFld.length; i++){
+            for (var i = 0; i < arrFld.length; i++){
                 var arrName = arrFld[i].name.replace('[]','');
                 var af = arrFld[i].getElementsByTagName('fieldset');
-                for (r = 0; r < af.length; r++){
+                for (var r = 0; r < af.length; r++){
                     var fldName = af[r].name;
                     var arrObj = {};
                     var inp = af[r].getElementsByTagName('input');
                     var t = af[r].getElementsByTagName('textarea');
                     var s = af[r].getElementsByTagName('select');
-                    if(inp.length>0){for (z = 0; z < inp.length; z++) {
+                    if(inp.length>0){for (var z = 0; z < inp.length; z++) {
                         inp[z].setAttribute('id','ifi');
                         var b = inp[z].name;
                         var c = inp[z].value;
                         if(inp[z].type!='file'&&inp[z].value&&inp[z].name&&inp[z].name!=''){arrObj[b] = c;}
                     }}
-                    if(s.length>0){for (z = 0; z < s.length; z++) {
+                    if(s.length>0){for (var z = 0; z < s.length; z++) {
                         s[z].setAttribute('id','ifi');
                         var b = s[z].name;
                         var c = s[z].value;
                         if(s[z].name!=''&&s[z].name){arrObj[b] = c;}
                     }}
-                    if(t.length>0){for (z = 0; z < t.length; z++) {
+                    if(t.length>0){for (var z = 0; z < t.length; z++) {
                         t[z].setAttribute('id','ifi');
                         var b = t[z].name;
                         var c = t[z].value;
