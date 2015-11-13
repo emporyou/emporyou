@@ -283,8 +283,8 @@ function addDetail(v){
 var FLD=ooo.ins('divider-target-detail','fieldset',['class','nuovoDettaglio'],false,true);
     ooo.ins(FLD,'div',['class','divider-voucher']);
 var TRI=ooo.ins(FLD,'div',['class','tri100']);
-	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','id','key_'+countDetail]);
-	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','id','value_'+countDetail]);
+	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','key','id','key_'+countDetail]);
+	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','value','id','value_'+countDetail]);
 countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
