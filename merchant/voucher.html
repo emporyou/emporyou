@@ -52,10 +52,10 @@
         <div id="voucher-container-main">
             <div id="voucher-header-container">
                 <div id="title-subtitle">
-                    <textarea class="inv-text" placeholder="Titolo" id="title-textarea"></textarea>
-                    <textarea class="inv-text" placeholder="Sottotitolo" id="subtitle-textarea"></textarea>
+                    <textarea class="inv-text" placeholder="Titolo" name="title" id="title-textarea"></textarea>
+                    <textarea class="inv-text" placeholder="Sottotitolo" name="subtitle" id="subtitle-textarea"></textarea>
                 </div><div id="discount-cont">
-                    <textarea class="inv-text" placeholder="% di Sconto" id="discount-textarea"></textarea>
+                    <textarea class="inv-text" placeholder="% di Sconto" name="discount" id="discount-textarea"></textarea>
                 </div>
             </div>
             <div id="voucher-basic-container" class="closed-v">
@@ -68,32 +68,27 @@
                 id="value-price-desc">
                     <div id="val-qt-price">
                        <div id="val-qt">
-                        <div id="val-vaucher" class="pad-val-qt-price">Valore (€)<br/><textarea class="inv-text" name="valore" placeholder="Valore base.." style="font-size:3vh;color:orange;">90,00 €</textarea></div>
-                        <div id="qt-vaucher" class="pad-val-qt-price"><textarea class="inv-text" name="qta" style="font-size:17px;color:orange;display:inline-block;height:17px;width:80%;text-align:left" placeholder="Quantità.." name="qta">10</textarea></div>
+                        <div id="val-vaucher" class="pad-val-qt-price">Valore (€)<br/><textarea class="inv-text" name="valore-base" placeholder="Valore base.." style="font-size:3vh;color:orange;">90,00 €</textarea></div>
+                        <div id="qt-vaucher" class="pad-val-qt-price"><textarea class="inv-text" name="qta-base" style="font-size:17px;color:orange;display:inline-block;height:17px;width:80%;text-align:left" placeholder="Quantità.." name="qta">10</textarea></div>
                        </div>
-                        <div id="price-vaucher" class="pad-val-qt-price">Prezzo finale<br/><textarea class="inv-text" name="price" style="font-size:4vh;color:orange;" readonly>30,00 €</textarea></div>
+                        <div id="price-vaucher" class="pad-val-qt-price">Prezzo finale<br/><textarea class="inv-text" name="price-base" style="font-size:4vh;color:orange;" readonly>30,00 €</textarea></div>
                     </div>
                     <div id="desc-container">
-                        <textarea class="inv-text" placeholder="Descrizione" id="description-textarea"></textarea>
+                        <textarea class="inv-text" placeholder="Descrizione" name="description" id="description-textarea"></textarea>
                     </div>
                 </div>
             </div><div id="options-and-details">
-            <fieldset id="options-voucher-container" name="variants[]">
-            <!--<fieldset class="nuovaOpzione">
+        <fieldset id="options-voucher-container" name="variants[]">
             <div class="divider-voucher"></div>
-            <div class="voucher-option-container"><div class="ics-voucher" onclick="removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);">x</div><div class="tri39">
-                <textarea class="opt-name inv-text" placeholder="Nome opzione.."></textarea><div class="opt-img" style="background-image:url('../img/coperta.jpg')"></div>
-            </div><div class="tri25"><textarea class="value-opt-voucher inv-text" name="optionValore" placeholder="Valore opzione.."></textarea><textarea class="qta-opt-voucher inv-text" name="optionQta" placeholder="Quantità.."></textarea></div><div class="tri33"><textarea class="prezzo-finale-opzione inv-text" readonly>30,00 €</textarea></div></div></fieldset>-->
-           <div class="divider-voucher"></div>
             <div id="add-option-voucher">
                 <div id="add-opt-text">Aggiungi opzione</div><div id="add-opt-but" onclick="addOption(this.parentElement.previousSibling)">+</div>
             </div>
         </fieldset>
-        <fieldset id="details-voucher-container" name="metafields[]"><!--<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
-         </div></fieldset>--><div class="divider-voucher"></div>
-         <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="newDetail(this.previousSibling.previousSibling)">+</div>
-         </fieldset>
-            </div> <button id="manda-voucher" onclick="sendCoupon()">MANDA COUPON</button></div>
+        <fieldset id="details-voucher-container" name="metafields[]">
+            <div class="divider-voucher"></div>
+            <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="newDetail(this.previousSibling.previousSibling)">+</div>
+        </fieldset>
+            </div><button id="manda-voucher" onclick="sendCoupon()">MANDA COUPON</button></div>
         <input type="hidden" value="Milano" name="city"/>
         <input type="hidden" name="road" value="Via Trenno 33"/>
         <input type="hidden" name="cap" value="20151"/>

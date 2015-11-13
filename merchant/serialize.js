@@ -12,7 +12,7 @@ ooo.form2JSON = function (f) {
                 arrFld.push(fld[i]);console.log(arrFld);
             }else{isNotArr=true;}
         };
-        if (isArr != true || isNotArr==true){
+        if (isArr != true || isNotArr==true && fld[i].parentElement.tagName!='fieldset'){
             for (var i = 0; i < fld.length; i++) {
                 var fldName = fld[i].name;
                 var fldObj = {};
