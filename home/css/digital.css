@@ -47,7 +47,8 @@ body.Cmode #checkout-main-container{display:block;}
 	 /*hidden*/transform: translateX(100%);}
 #basket-container{position:fixed;z-index:4000000000001;top:0;right:5%;cursor:pointer;height:100%;width:50px;background-color:transparent;}
 #basket{position:absolute;width:9vmin;top: 50px;
-    transform: translateY(-84.4vh);
+    right: 6%;
+    transform: translateY(-99.9%);
     transform-origin: top;transition-delay:250ms}
 #rope{position:absolute;width:9vmin;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
 body.cart-isin #basket{transform:translateY(-99.9%);transition-delay:0ms}
