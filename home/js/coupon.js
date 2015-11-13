@@ -294,8 +294,16 @@ function calc(){
     var valbas=document.getElementById('valore-base').value;
     var discount=document.getElementById('discount-textarea').value;
     var risparmio=(valbas/100)*discount;
-    var totale=((valbas-risparmio)*100)/100;
+    var totale=valbas-risparmio;
     document.getElementById('price-base').value=totale.toFixed(2);
+    var optval=document.getElementsByClassName('value-opt-vaucher');
+    var prefin=document.getElementsByClassName('prezzo-finale-opzione');
+    for(var pp=0;pp<optval.length;pp++){
+        var valbas_=optval[pp].value;
+        var risparmio_=(valbas_/100)*discount;
+        var totale_=valbas_-risparmio_
+        prefin[pp].value=totale_.toFixed(2);
+    }
     //valore-base/100*discount-textarea-valore-base=price-base
     //priceName_0/discount-textarea=priceFinal_0  
 }
