@@ -195,10 +195,11 @@ function handleFileSelect(evt) {
         reader.onload = (function (theFile) {
             return function (e) {
                 // Render thumbnail.
+                document.getElementById('files').style.backgroundImage="url('"+e.target.result+"')";
                 var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
-                document.getElementById('mainImage_'+count).style.backgroundImage="url('"+e.target.result+"')";
+                
                 //document.getElementById('list').insertBefore(span, null);
                 var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
                 rr.addEventListener('change', handleFileSelect, false);
