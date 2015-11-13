@@ -294,8 +294,8 @@ function calc(){
     var valbas=document.getElementById('valore-base').value;
     var discount=document.getElementById('discount-textarea').value;
     var risparmio=(valbas/100)*discount;
-    var total=((valbas-risparmio)*100)/100;
-    document.getElementById('price-base').value=total;
+    var totale=((valbas-risparmio)*100)/100;
+    document.getElementById('price-base').value=totale.toFixed(2);
     //valore-base/100*discount-textarea-valore-base=price-base
     //priceName_0/discount-textarea=priceFinal_0  
 }
