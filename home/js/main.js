@@ -62,7 +62,7 @@ function openCart(){
    //document.getElementById('basket-container').style.top="-50%";    	
 	//defined in mainh.js, control output via products-cart.xml
 	//ooo.$$('products-cart-target').classList.add('hidden');
-}}
+}
 function closeCart(){
 	document.body.classList.remove('cart-isin');
     //ooo.$$('products-cart-target').classList.add('hidden');
