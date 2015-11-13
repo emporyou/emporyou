@@ -39,6 +39,7 @@ function myInit() {
         }
         for (i = 0; i < initialjdata.metafields.length; i++) {
             addDetail();
+            document.getElementById('optImg_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             document.getElementById('key_' + i).value = initialjdata.metafields[i].key;
             document.getElementById('value_' + i).value = initialjdata.metafields[i].value;
         }
