@@ -77,7 +77,8 @@
                         <textarea class="inv-text" placeholder="Descrizione" id="description-textarea"></textarea>
                     </div>
                 </div>
-            </div><div id="options-and-details"><fieldset id="options-voucher-container" name="variants[]">
+            </div><div id="options-and-details">
+            <fieldset id="options-voucher-container" name="variants[]">
             <!--<fieldset class="nuovaOpzione">
             <div class="divider-voucher"></div>
             <div class="voucher-option-container"><div class="ics-voucher" onclick="removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);">x</div><div class="tri39">
@@ -87,8 +88,9 @@
             <div id="add-option-voucher">
                 <div id="add-opt-text">Aggiungi opzione</div><div id="add-opt-but" onclick="newOption(this.parentElement.previousSibling)">+</div>
             </div>
-        </fieldset><fieldset id="details-voucher-container" name="metafields[]"><fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
-         </div></fieldset><div class="divider-voucher"></div>
+        </fieldset>
+        <fieldset id="details-voucher-container" name="metafields[]"><!--<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
+         </div></fieldset>--><div class="divider-voucher"></div>
          <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="newDetail(this.previousSibling.previousSibling)">+</div>
          </fieldset>
             </div> <button id="manda-voucher" onclick="sendCoupon()">MANDA COUPON</button></div>
