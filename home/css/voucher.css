@@ -269,27 +269,28 @@
 }
 
 .qta-opt-voucher {
-width:100%;
-    background-color:white;
-    height:45px;
-    bottom:0;
+width: 100%;
+    background-color: white;
+    height: 44px;
+    bottom: 0;
     box-sizing: border-box;
-    line-height:45px;
-    text-align:center;
+    /* line-height: 17px; */
+    padding: 0;
+    text-align: center;
     font-family: 'josefin sans';
-    font-size:20px;
+    font-size: 20px;
 }
 
 .value-opt-voucher {
-    width:100%;
-    background-color:white;
-    height:45px;
-    top:0;
+        width: 100%;
+    background-color: white;
+    height: 71px;
+    /* top: 0; */
     box-sizing: border-box;
-    line-height:45px;
-    text-align:center;
+    line-height: 71px;
+    text-align: center;
     font-family: 'josefin sans';
-    font-size:20px;
+    font-size: 20px;
 }
 
 
