@@ -24,7 +24,7 @@
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{margin-top:0%;}
 body.Pmode .zero-thumb{display:none}
-body.Pmode .zero-thumb.selected {display:block;width:100;}
+body.Pmode .zero-thumb.selected {display:block;width:100%;}
 body.Pmode .zero-thumb.selected .thumb-product{display:none}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
