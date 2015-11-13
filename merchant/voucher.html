@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <title></title>
+    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
+    <!-- //////////////////////////BOOTSTRAP -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+    <!-- //////////////////////////FONT AWESOME -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../home/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/map.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/product-page.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/info-prod.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/digital.css">
+    <link rel="stylesheet" type="text/css" href="../home/css/voucher.css">
+    <script src="../home/js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>
+    <script src="../home/js/mainh.js"></script>
+    <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+    <script src="../home/js/jquery.geocomplete.js"></script>
+    <script src="../home/js/coupon.js"></script>
+    <script src="serialize.js"></script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta charset="utf-8" />
+    <script>
+        try{window.initialjdata=replace_jdata;}
+		  catch(ex){window.initialjdata={}};
+    </script>
+</head>
+<body onload="myInit()">
+    <form id="coupon-form" action="http://emporyou.com" method="post" onsubmit="return false">
+        <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
+        <div class="header-admin">
+            <div class="fontlogo text-logo"><img class="logo-text" src="../home/img/logo-text.png" />
+            </div>
+        </div>
+        <div id="voucher-container-main">
+            <div id="voucher-header-container">
+                <div id="title-subtitle">
+                    <textarea class="inv-text" placeholder="Titolo" id="title-textarea"></textarea>
+                    <textarea class="inv-text" placeholder="Sottotitolo" id="subtitle-textarea"></textarea>
+                </div><div id="discount-cont">
+                    <textarea class="inv-text" placeholder="% di Sconto" id="discount-textarea"></textarea>
+                </div>
+            </div>
+            <div id="voucher-basic-container" class="closed-v">
+                <div id="voucher-basic-image-cont" style="background-image:url('../home/img/coperta.jpg')"></div><div
+                id="value-price-desc">
+                    <div id="val-qt-price">
+                       <div id="val-qt">
+                        <div id="val-vaucher" class="pad-val-qt-price">Valore<br/><span style="font-size:3vh;color:orange;">90,00 €</span></div>
+                        <div id="qt-vaucher" class="pad-val-qt-price">Quantità<br/><span style="font-size:3vh;color:orange;">10</span></div>
+                       </div>
+                        <div id="price-vaucher" class="pad-val-qt-price">Prezzo finale<br/><span style="font-size:4vh;color:orange;">30,00 €</span></div>
+                    </div>
+                    <div id="desc-container">
+                        <textarea class="inv-text" placeholder="Descrizione" id="description-textarea"></textarea>
+                    </div>
+                </div>
+            </div><div id="options-and-details"><div id="options-voucher-container">
+            <fieldset>
+            <div class="divider-voucher"></div>
+            <div class="voucher-option-container"><div class="tri39">
+                <textarea class="opt-name inv-text" placeholder="Nome opzione.."></textarea><div class="opt-img" style="background-image:url('../home/img/coperta.jpg')"></div>
+            </div><div class="tri25"><textarea class="value-opt-voucher inv-text" placeholder="Valore.."></textarea><textarea class="qta-opt-voucher inv-text" placeholder="Quantità.."></textarea></div><div class="tri33"><textarea class="prezzo-finale-opzione inv-text" readonly>30,00 €</textarea></div></div></fieldset>
+           <div class="divider-voucher"></div>
+            <div id="add-option-voucher">
+                <div id="add-opt-text">Aggiungi opzione</div><div id="add-opt-but" >+</div>
+            </div>
+        </div><div id="details-voucher-container"><div class="divider-voucher"></div>
+        <div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
+         <div class="divider-voucher"></div></div>
+         <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" >+</div>
+         </div>
+        
+        </div> </div>
+				
+        <input type="hidden" value="Milano" name="city"/>
+        <input type="hidden" name="road" value="Via Trenno 33"/>
+        <input type="hidden" name="cap" value="20151"/>
+        <input type="hidden" name="lat" value="45.48771"/>
+        <input type="hidden" name="long" value="9.12555"/>
+        <input type="hidden" name="orari" value="aperto da Lunedì a Sabato h 09:00-20:00"/>
+    </form>
+    <form id="send-form" style="display:none" action="http://emporyou.com/api/newdeal?k=12&p=12" method="post" enctype="multipart/form-data">
+        <textarea id="send-target" name="jdata"></textarea>
+    </form>
+</body>
+</html>

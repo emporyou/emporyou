@@ -1,0 +1,390 @@
+#voucher-container-main {
+    width: 80%;
+    position: absolute;
+    top: 100px;
+    left: 10%;
+    background-color: rgb(246, 246, 246);
+}
+
+#voucher-header-container {
+    width: 100%;
+    position: relative;
+    background-color: rgb(246, 246, 246);
+}
+
+#title-subtitle {
+    display: inline-block;
+    width: 60%;
+    padding: 2%;
+    box-sizing: border-box;
+    background-color: white;
+    position:relative;
+    border-bottom:8px solid #f6f6f6;
+    border-right:8px solid #f6f6f6;
+}
+
+#discount-cont {
+    display: inline-block;
+    width: 40%;
+    padding: 2%;
+    box-sizing: border-box;
+    background-color: white;
+    position:relative;
+    border-bottom:8px solid #f6f6f6;
+    border-right:8px solid #f6f6f6;
+}
+
+.inv-text {
+    resize: none;
+    border: none;
+    font-family: 'josefin sans';
+    overflow:hidden;
+    outline:0px;
+}
+
+#discount-textarea {
+    width: 65%;
+    height:122px;
+    line-height:122px;
+    font-size:6vh;
+    color: black;
+    text-align: right;
+    outline: 0px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    overflow:hidden;
+}
+
+#perc {
+    width: 20%;
+    line-height:5vh;
+    margin-left:10px;
+    font-size:5vh;
+    font-family: 'josefin sans';
+    display: inline-block;
+    position:relative;
+}
+#title-text {
+    width:90%;
+    background-color:white;
+    padding:1%;
+}
+
+#subtitle-text {
+    width:90%;
+    background-color:white;
+    padding:1%;
+}
+
+#title-textarea {
+    line-height:70px;
+    height:70px;
+    font-size:4vh;
+    width:90%
+}
+
+#subtitle-textarea {
+    line-height:40px;
+    height:40px;
+    font-size:3vh;
+    width:90%
+}
+
+#voucher-basic-container {
+    width: 100%;
+    position: relative;
+    background-color: #f6f6f6;
+    
+}
+
+#voucher-basic-image-cont {
+    width:34%;
+    height:0;
+    padding-bottom:35%;
+    display:inline-block;
+    position:relative;
+    background-size:cover;
+    border-bottom:8px solid #f6f6f6;
+    border-right:8px solid #f6f6f6;
+}
+
+
+
+
+
+#voucher-description-container {
+    width:100%;
+}
+
+
+
+
+
+#value-price-desc {
+    width:65%;
+    position:absolute;
+    top:0;
+    right:0;
+    display:inline-block;
+    height:99%;
+    background-color:white;
+}
+
+#val-qt {
+    width:50%;
+    display:inline-block;
+}
+
+#price-vaucher {
+    position:absolute;
+    right:0;
+    top:0;
+    width:50%;
+    height:100%;
+    display:inline-block;
+}
+
+#val-vaucher {
+}
+
+#qt-vaucher {
+    
+}
+
+#val-qt-price {
+    position:relative;
+}
+
+.pad-val-qt-price {
+    box-sizing: border-box;
+    padding:11%;
+    font-family: 'josefin sans';
+    border-bottom:8px solid #f6f6f6;
+    border-right:8px solid #f6f6f6;
+}
+
+#description-textarea {
+    line-height:15px;
+    height:99%;
+    font-size:2vh;
+    padding:5.5%;
+    width:60%
+}
+
+
+
+#desc-container {
+    border-right:8px solid #f6f6f6;
+    border-bottom:8px solid #f6f6f6;
+    box-sizing: border-box;
+    background-color:transparent;
+
+}
+
+#add-opt-text {
+    width:80%;
+    display:inline-block;
+    background-color:white;
+    height:60px;
+    line-height:60px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+}
+
+#add-opt-but {
+    width:20%;
+    height:60px;
+    display:inline-block;
+    line-height:60px;
+    text-align:center;
+    background-color:orange;
+    font-family: 'josefin sans';
+    font-size:20px;
+    font-weight: bold;
+    color:white;
+}
+#add-opt-but:hover{
+    cursor:pointer;
+    opacity:0.8
+}
+
+#add-option-voucher {
+    width:50%
+}
+
+.divider-voucher {
+    width:100%;
+    margin:10px 0px 20px 0px;
+    border-bottom:2px dashed #ccc;
+}
+
+.voucher-option-container {
+    width: 100%;
+    position: relative;
+    background-color: #f6f6f6;
+    border-bottom:8px solid #f6f6f6
+}
+
+.tri39 {
+    width:39%;
+    display:inline-block;
+    position:relative;
+}
+
+.tri33 {
+    width:33%;
+    display:inline-block;
+    position:relative;
+    box-sizing: border-box;
+}
+
+.opt-name {
+    width:60%;
+    display:inline-block;
+    background-color:white;
+    height:90px;
+    
+    box-sizing: border-box;
+    line-height:30px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:14px;
+}
+
+.opt-img {
+    width:30%;
+    height:90px;
+    display:inline-block;
+    line-height:90px;
+    text-align:center;
+    background-color:orange;
+    font-family: 'josefin sans';
+    font-size:20px;
+    font-weight: bold;
+    color:white;
+    background-size:cover;
+}
+
+.qta-opt-voucher {
+width:100%;
+    background-color:white;
+    height:45px;
+    bottom:0;
+    box-sizing: border-box;
+    line-height:45px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+}
+
+.value-opt-voucher {
+    width:100%;
+    background-color:white;
+    height:45px;
+    top:0;
+    box-sizing: border-box;
+    line-height:45px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+}
+
+
+
+.prezzo-finale-opzione {
+    width:100%;
+    display:inline-block;
+    background-color:white;
+    height:95px;
+    padding:30px;
+    color:orange;
+    border-left:8px solid #f6f6f6;
+    box-sizing: border-box;
+    line-height:30px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:30px;
+}
+
+.tri25 {
+    width:25%;
+    display:inline-block;
+    position:relative;
+    box-sizing: border-box;
+}
+
+#options-voucher-container {
+    width:67%;
+    display:inline-block;
+}
+
+#details-voucher-container {
+    width:32.5%;
+    position:absolute;
+    top:0;
+    right:0;
+    box-sizing: border-box;
+    border-right:8px solid #f6f6f6;
+}
+
+#options-and-details {
+    position:relative;
+}
+
+.tri100 {
+    
+}
+
+.dettaglio-det-voucher {
+    width:100%;
+    background-color:white;
+    height:45px;
+    top:0;
+    box-sizing: border-box;
+    line-height:45px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+}
+
+.value-det-voucher {
+    width:100%;
+    background-color:white;
+    height:45px;
+    bottom:0;
+    box-sizing: border-box;
+    line-height:45px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+    margin-bottom:9px
+}
+
+#add-det-text {
+    width:80%;
+    display:inline-block;
+    background-color:white;
+    height:60px;
+    line-height:60px;
+    text-align:center;
+    font-family: 'josefin sans';
+    font-size:20px;
+}
+
+#add-det-but {
+    width:20%;
+    height:60px;
+    display:inline-block;
+    line-height:60px;
+    text-align:center;
+    background-color:orange;
+    font-family: 'josefin sans';
+    font-size:20px;
+    font-weight: bold;
+    color:white;
+}
+#add-det-but:hover{
+    cursor:pointer;
+    opacity:0.8
+}
