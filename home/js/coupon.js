@@ -272,7 +272,7 @@ var TRI=ooo.ins(OC,'div',['class','tri25']);
     countOption++;
 	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
-	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0.00');
+	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
 
 
@@ -288,4 +288,14 @@ var TRI=ooo.ins(FLD,'div',['class','tri100']);
 countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
+}
+
+function calc(){
+    var valbas=document.getElementById('valore-base').value;
+    var discount=document.getElementById('discount-textarea').value;
+    var risparmio=(valbas/100)*discount;
+    var total=valbas-risparmio;
+    document.getElementById('price-base').value=total;
+    //valore-base/100*discount-textarea-valore-base=price-base
+    //priceName_0/discount-textarea=priceFinal_0  
 }
