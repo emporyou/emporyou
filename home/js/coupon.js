@@ -6,7 +6,7 @@ function myInit() {
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if(initialjdata){
 	 if (!initialjdata.variants) {
-        addOption(document.getElementId('details-cont'),true, false,true);
+        addOption(document.getElementById('details-cont'),true, false,true);
         //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
@@ -139,7 +139,7 @@ function oldOption(allowChange, hideX,isMain) {
 
 function sendCoupon(preview,detailsview) {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
-	 if(initialjdata){
+	 if(initialjdata){if(initialjdata.image){
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
         if (pname == 'mainExternal') {
@@ -164,7 +164,7 @@ function sendCoupon(preview,detailsview) {
     }
 
     myJSON.images = initialjdata.image;
-	 }
+	 }}
     var jsondata = JSON.stringify(myJSON);
 	 if(preview){
 		 if(detailsview){myJSON.PREVIEWdetails=true; jsondata = JSON.stringify(myJSON);}
