@@ -86,8 +86,8 @@ updateCartFlag=function(){
 emptyCart=function(){
     ooo.clearchilds('products-cart-data');renderCart();
 }
-ensureMapIsOpened=function(){if(set==0){openMap();}};
-ensureMapIsClosed=function(){if(set==1){openMap();}};
+ensureMapIsOpened=function(){if(!document.body.classList.has('map-isin'));toggleMap()};
+ensureMapIsClosed=function(){if(document.body.classList.has('map-isin'));toggleMap()};
 doItProducts=function(){
 
 
