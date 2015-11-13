@@ -23,6 +23,8 @@
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:-25%;height: 100%; background-color: transparent;}
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{margin-top:0%;}
+body.Pmode .zero-thumb{display:none}
+body.Pmode .zero-thumb.selected {display:block}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
 body.Bmode #product-main-container{margin-top:116.3%;z-index:1;display:block}
@@ -31,8 +33,6 @@ body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:1
 body.Bmode 
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
-body.Cmode .zero-thumb{display:none}
-body.Cmode .zero-thumb.selected {display:block}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
