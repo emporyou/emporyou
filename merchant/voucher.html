@@ -85,8 +85,8 @@
             </div>
         </fieldset>
         <fieldset id="details-voucher-container" name="metafields[]">
-            <div class="divider-voucher"></div>
-            <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="newDetail(this.previousSibling.previousSibling)">+</div>
+            <div class="divider-voucher" id="divider-target-detail"></div>
+            <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="addDetail(this.previousSibling.previousSibling)">+</div>
         </fieldset>
             </div><button id="manda-voucher" onclick="sendCoupon()">MANDA COUPON</button></div>
         <input type="hidden" value="Milano" name="city"/>
