@@ -251,7 +251,7 @@ function removeThis(n) {
 
 function addOption(v,allowChange, hideX,isMain){
 
-var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione new-option'],false,v);
+var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione new-option','name','option'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
