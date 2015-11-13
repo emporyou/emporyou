@@ -122,11 +122,11 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
      -o-transition: all 400ms cubic-bezier(1,.01,.58,1) ; 
         transition: all 400ms cubic-bezier(1,.01,.58,1) ; /* linear */
 }
-/*removed .emporyoum-container{
+.emporyoum-container{
     height:100%;
     background-color:transparent;
     margin: 0 auto;
-}*/
+}
 .emporyoum{
     width:25%;
     margin:0 auto;
