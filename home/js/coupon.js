@@ -166,6 +166,7 @@ function sendCoupon(preview,detailsview) {
     myJSON.images = initialjdata.image;
 	 }}
     var jsondata = JSON.stringify(myJSON);
+	 alert(jsondata);
 	 if(preview){
 		 if(detailsview){myJSON.PREVIEWdetails=true; jsondata = JSON.stringify(myJSON);}
 		 var f=ooo.ins(document.body,'form',['enctype','multipart/form-data','method','post','target','_blank','action','http://emporyou.com/metaframe?page=home/index.html']);
