@@ -41,10 +41,12 @@ function closeProduct(elm){
 	 document.body.classList.remove('Pmode');
 	 document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');
-	 elm.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
+	 console.log(elm);
+	 elm.parentElement.parentElement.classList.remove('selected');	 
+	 elm.parentElement.parentElement.parentElement.classList.remove('selected');	 
 	 elm.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
-	 elm.parentElement.parentElement.parentElement.classList.remove('selected');
-	 elm.parentElement.parentElement.classList.remove('selected');
+	 elm.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove('selected');
+	 
 }
 function checkMobile(){
 }
