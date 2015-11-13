@@ -20,7 +20,7 @@
 						/*hidden mode*/z-index:0;margin-top:10%;}
 #product-page-target{/*hidden mode*/margin-top:0%;z-index:0;}
 #checkout-main-container{display:none}
-#categories-container{position:fixed;width: 20%;top: 13.2%;left:-25%;height: 100%; background-color: transparent;}
+#categories-container{position:fixed;width: 20%;top: 13.2%;left:200%;height: 100%; background-color: transparent;}
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{margin-top:0%;}
 body.Pmode .zero-thumb{display:none}
@@ -39,9 +39,25 @@ body.Bmode .zero-thumb .product-info-main{display:none}
 body.Bmode .zero-thumb {overflow:hidden}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
+/*-----------------------------------------------------------------LAYOUT INDEPENTEND CART*/
+#products-cart-target{products-cart-target {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    font-size: 2vh;
+    right: -17px;
+    background-color: white;
+    -webkit-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09); -moz-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 5000;
+    border-left: 1px solid #ccc;
+}}
+#products-cart-target.hidden{display:block;right:-17px; transform:translate(200,0);}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
 .transition-1{-webkit-transition: all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease;}
 .transition-2{-webkit-transition: all 400ms cubic-bezier(1,.01,.58,1);-moz-transition: all 400ms cubic-bezier(1,.01,.58,1);-o-transition: all 400ms cubic-bezier(1,.01,.58,1);transition: all 400ms cubic-bezier(1,.01,.58,1);}
-.transition-3{-webkit-transition: all 1s ease-out;-moz-transition:all 0.4s ease-out;-ms-transition: all 0.4s ease-out;-o-transition:all 0.4s ease-out;transition:all 0.4s ease-out;}
+.transition-3{-webkit-transition: all 0.4s ease-out;-moz-transition:all 0.4s ease-out;-ms-transition: all 0.4s ease-out;-o-transition:all 0.4s ease-out;transition:all 0.4s ease-out;}
