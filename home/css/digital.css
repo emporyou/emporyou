@@ -51,15 +51,15 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
     z-index: 5000;
 	 transform: translateX(100%);
 }
-//--
+
+#basket{position: absolute;width: 9vmin;top:-77vh;}
 body.cart-isin #basket{top=-100%}
-#basket{position: absolute;width: 9vmin;top: -77vh;}
-//--
-body.cart-isin #basket-container{}
+
 #basket-container{position:fixed;top:0;right:5%;cursor:pointer;
     height: 100%; width: 50px;z-index: 100;
     background-color: transparent;
 }
+body.cart-isin #basket-container{}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
