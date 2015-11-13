@@ -22,10 +22,10 @@
 #checkout-main-container{display:none}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:-25%;height: 100%; background-color: transparent;}
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
-body.Pmode #product-page-target{top:60px;opacity:1;z-index:1;}
+body.Pmode #product-page-target{top:0px;opacity:1;z-index:1;}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
-body.Bmode #product-main-container{top:20%;z-index:1;}
+body.Bmode #product-main-container{top:19%;z-index:1;}
 body.Bmode.map-isin #product-main-container{top:55%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
