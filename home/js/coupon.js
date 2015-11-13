@@ -4,8 +4,9 @@ function myInit() {
     window.nOption = 0;
     ooo.render('coupon-form', 'select-category.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    if (!initialjdata.variants) {
-        //TODO//newOption(false, true,false);
+    if(initialjdata){
+	 if (!initialjdata.variants) {
+        addOption(document.getElementId('details-cont'),true, false,true);
         //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
@@ -16,7 +17,7 @@ function myInit() {
         span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
         for (i = 0; i < initialjdata.variants.length; i++) {
-            newOption(true, i == 0,true);
+            addOption(document.getElementId('details-cont'),true, i == 0,i == 0);
             if (i == 0) {
                 document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
@@ -43,7 +44,7 @@ function myInit() {
             }
         }
     }
-}
+}else{addOption(document.getElementId('details-cont'),true, false,true);}}
 
 function clearContents(element) {
     element.value = '';
@@ -75,7 +76,7 @@ function addDetail() {
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
 
-function addOption(allowChange, hideX,isMain) {
+function oldOption(allowChange, hideX,isMain) {
     count++;
     var opt = document.createElement('fieldset');
     var del = document.createElement('div');
@@ -138,6 +139,7 @@ function addOption(allowChange, hideX,isMain) {
 
 function sendCoupon(preview,detailsview) {
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
+	 if(initialjdata){
     for (var p = 0; p < initialjdata.image.length; p++) {
         var pname = initialjdata.image[p].name;
         if (pname == 'mainExternal') {
@@ -162,6 +164,7 @@ function sendCoupon(preview,detailsview) {
     }
 
     myJSON.images = initialjdata.image;
+	 }
     var jsondata = JSON.stringify(myJSON);
 	 if(preview){
 		 if(detailsview){myJSON.PREVIEWdetails=true; jsondata = JSON.stringify(myJSON);}
@@ -248,7 +251,7 @@ function removeThis(n) {
     n.parentNode.removeChild(n);
 }
 
-function newOption(v){
+function addOption(v,allowChange, hideX,isMain){
 
 var FLD=ooo.ins('options-voucher-container','fieldset',['class','nuovaOpzione'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
