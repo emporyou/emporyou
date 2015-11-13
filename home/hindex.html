@@ -65,10 +65,10 @@ doinitialrender=function(){
 		}else{
 	if(!window.ISptloaded){ooo.preload('products-template.xml',function(){window.ISptloaded=true;setTimeout('doinitialrender();',250)})}
 	else{
-		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template.xml').documentElement.innerHTML+'</tmpdoc>');
+		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template-uni.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
 	}}}
-	else{ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/api/get?k=12&');}
+	else{ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');}
 };
 
 </script>

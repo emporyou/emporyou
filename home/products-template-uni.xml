@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<constantjavascript substitution="zwzwzwzwzw">g_discount=function(p){console.log(p);p=parseFloat(p);return Math.floor(((p/3)+p)*100)/100};</constantjavascript>
+<rowtype tagname="//doc">
+<!--
+
+<variable tagname="merchant/id" substitution="%merch-id"/>
+-->
+<variable tagname="lat" substitution="%lat"/>
+<variable tagname="lon" substitution="%lon"/>
+<variable tagname="city" substitution="%city"/>
+<variable tagname="_id" substitution="%id"/>
+<variable tagname="images/url" substitution="%imageurl"/>
+<variable tagname="description" substitution="%description"/>
+<variable tagname="title" substitution="%product-name"/>
+<variable tagname="subtitle" substitution="%subtitle"/>
+<variable tagname="title" substitution="%jsproduct-name" escape="js"/>
+
+<variable tagname="road" substitution="%road"/>
+<variable tagname="cap" substitution="%cap"/>
+<variable tagname="orari" substitution="%orari"/>
+<inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
+<inline tagname="variants" substitution="%options" preload="options-template.xml"/>
+<variable tagname="subtitle" substitution="%subtitle"/>
+<variable tagname="variants/price" substitution="%price"/>
+<variable tagname="images/url" substitution="%mainimageurl"/>
+
+<switch js="true" value="#ROWIDX#%6" substitution="%main-class">
+    <match value="5">thumb-container</match>
+    <match value="3">thumb-container</match>
+    <match value="4">thumb-container</match>
+    <match value="1">thumb-container</match>
+    <match value="2">thumb-container</match>
+    <match value="0">thumb-container</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%add-class">
+    <match value="5">add</match>
+    <match value="3">add</match>
+    <match value="4">add</match>
+    <match value="1">add</match>
+    <match value="2">add</match>
+    <match value="0">add</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%share-class">
+    <match value="5">share</match>
+    <match value="3">share</match>
+    <match value="4">share</match>
+    <match value="1">share</match>
+    <match value="2">share</match>
+    <match value="0">share</match>
+</switch>
+<switch js="true" value="#ROWIDX#%6" substitution="%desc-class">
+    <match value="5">description</match>
+    <match value="3">description</match>
+    <match value="4">description</match>
+    <match value="1">description</match>
+    <match value="2">description</match>
+    <match value="0">description</match>
+</switch>
+<!--<onload>console.log(#ROWIDX#)</onload>-->
+<inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
+<variable tagname="variants/price" substitution="%price"/>
+<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class transition-3 zero-thumb" style="overflow:hidden"><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
+             style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%id')" class="thumb-element"><div 
+                 class="product-header"> <div 
+                 class="city">%city</div><div 
+                 class="product-discount" style="width:33%;">33%</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
+                 class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
+                 id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
+                 class="%desc-class" onclick="openProduct(event,this,'%id')"><b>%product-name</b><br/><br/></div><div 
+                class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange">%price</b><br/>%subtitle</div></div></div></div><textarea 
+                 id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
+					  
+<div class="product-info-main"><div id="left-column-pro"><div id="main-image-container"><div id="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
+id="main-desc-container" class="height200 transition-1"><div onclick="openDesc()" 
+id="layer-desc"> </div><div 
+id="main-desc-pro"><div 
+id="descrizione"><b>%subtitle</b></div><div 
+id="descrizione-target">%description</div></div></div><div 
+id="main-ship-container" style="display:none"> <div 
+id="main-ship-pro"><div 
+id="spedizione"><b>Spedizione</b></div><div 
+id="spedizione-target">Il coupon verrà inviato via email ad effettuato acquisto.</div></div></div><div 
+id="main-comm-container"><div 
+id="main-comm-pro"><div 
+class="circle-commento" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTDx926xFZ2lumWsZO8UvqaR4iBFFdQY1HvEkhhNpqpEr5VrQSh0Q')"> </div><div 
+class="commento"><span style="font-weight:bold">Enrique Gonzales</span><br/>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua!</div><div 
+class="circle-commento" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRS4OH57xUCcsMIJAZjNdz4Z68f-aKm6e7oc2qpKJ84alLV-pbQ')"> </div><div 
+class="commento">Giulia Brambilla<br/>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua!</div><div 
+class="circle-commento" id="commenter" style="background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRS4OH57xUCcsMIJAZjNdz4Z68f-aKm6e7oc2qpKJ84alLV-pbQ')"> </div><textarea 
+class="commento" placeholder="Scrivi un commento..." style="resize:none"> </textarea></div></div></div><div 
+id="right-column-pro"><div 
+id="main-info-container"><div 
+id="main-info-pro"><div 
+id="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target" style="font-size:5vh;font-weight:bold">€ %price</span></div><div id="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
+id="main-add-container"> <div 
+id="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
+id="main-social-container"><div 
+id="main-social-pro"><div 
+class="social-element soc1" id="pdf"><i class="fa fa-file-pdf-o"> </i></div><div 
+class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
+class="social-element soc2" id="text-fav">Preferiti</div><div 
+class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
+class="social-element soc2" id="text-reg">Regala</div><div 
+class="social-element soc1" id="facebook"><i class="fa fa-facebook-square"> </i></div><div 
+class="social-element soc1" id="google"><i class="fa fa-google-plus-square"> </i></div><div 
+class="social-element soc1" id="twitter"><i class="fa fa-twitter-square"> </i></div><div 
+class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"> </i></div></div></div><div 
+id="main-photo-container"><div 
+id="main-photo-pro"><img 
+id="logo-vendor" src="../img/logo-black.png" /><div 
+id="nome-vendor">Altro da<br/><b>Scarpa di aladino</b> (%city)</div><div 
+id="layer-other-from-vendor"> </div><div 
+id="other-from-vendor-cont"><div 
+class="other-vendor" style="background-image:url('../home/img/bici.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/bici.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/bicibianca.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/scarpa.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div><div 
+class="other-vendor" style="background-image:url('../home/img/focaccia.jpg')"> </div></div><div 
+id="scroll-other-photos"><a href="#" id="scrolldiv"><img id="next-photo" src="../img/next.png" /></a></div></div></div><div 
+id="main-merchant-container"><div 
+id="main-merchant-pro"><div 
+id="nome-merchant"><b>La scarpa di Aladino</b></div><div 
+id="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
+id="orario-merchant">Orari negozio: <b> %orari</b></div><div 
+id="indirizzo-merchant">Indirizzo: <b> %road, %cap, %city</b></div><div 
+id="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div>					  
+
+					  
+					  </html></rowtype>
+                 <onloadall>doItProducts()</onloadall></document>
