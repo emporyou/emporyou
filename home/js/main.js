@@ -30,21 +30,11 @@ function addProduct(productName,XMLid,PRDid){
     }
 	rendercart();
 }
-function openProduct(event,elm,idd){closeCart();
-    //if(set==1){openMap();}
-    productOpened=1;
+function openProduct(event,elm,idd){
+	 document.body.classList.remove('Bmode');
+	 document.body.classList.remove('Cmode');
+	 document.body.classList.add('Pmode');
     ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
-    //if(set==1){openMap()}
-    //var elm=document.getElementById('openProd');
-if(event.srcElement==elm){
-    gClass('products-main')[0].style.display="none";
-    gClass('emporyoum-bar')[0].style.top="13%";
-    gClass('emporyoum-bar')[0].style.width="25%";
-    //document.getElementById('basket-container').style.display="none";
-    gClass('products-page-main')[0].classList.remove('hidden');
-    gClass('products-page-main')[0].style.top=('60px');
-    
-}
 }
 function closeProduct(){
     productOpened=0;
@@ -62,7 +52,8 @@ function toggleMap(){
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
 	document.body.classList.toggle('map-isin');
 }
-function openMap(){/*TO REMOVE*/
+function openMap(){toggleMap()}
+/*function openMap(){
     if(productOpened==0){
     if(set==0){
     gClass('google-map')[0].classList.remove('transformed');
@@ -83,7 +74,7 @@ function openMap(){/*TO REMOVE*/
             gClass('emporyoum-bar')[0].style.left="";
     gClass('emporyoum-bar')[0].style.width="100%";set=0;
     }  
-}}
+}}*/
 function openCart(){
    if(openCart==1){closeCart()}else{
     //scrollTo(document.body, 0, 200);
