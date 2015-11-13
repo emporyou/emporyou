@@ -16,8 +16,8 @@
 /*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
 #google-map-container{position:absolute;display:flex;background-color:transparent;height:40%;
 						/*hidden mode*/width:0%;left:-0.5%;top:-32%;justify-content: flex-start;}
-#product-main-container{position:absolute;min-width:740px;width:100%;height:100%;background-color: transparent;
-						/*hidden mode*/z-index:0;top:110%;}
+#product-main-container{min-width:740px;height:100%;background-color: transparent;
+						/*hidden mode*/z-index:0;margin-top:110%;}
 #product-page-target{position:relative;/*hidden mode*/opacity:0;z-index:0;}
 #checkout-main-container{display:none}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:-25%;height: 100%; background-color: transparent;}
@@ -25,8 +25,8 @@
 body.Pmode #product-page-target{top:0px;opacity:1;z-index:1;}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
-body.Bmode #product-main-container{top:19%;z-index:1;}
-body.Bmode.map-isin #product-main-container{top:55%;}
+body.Bmode #product-main-container{margin-top:6.3%;z-index:1;}
+body.Bmode.map-isin #product-main-container{top:26.3%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
