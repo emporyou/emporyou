@@ -311,9 +311,9 @@ function calc(){
 function displayunicode(e){
 var unicode=e.keyCode? e.keyCode : e.charCode
 if (unicode >= 48 && unicode <= 57){
-    alert('number')
+    calc()
 }
 else{
 }
-    alert('nonnumber')
+    
 }
