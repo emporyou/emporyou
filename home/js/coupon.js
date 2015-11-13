@@ -257,9 +257,9 @@ function handleFileSelecto(evt) {
 function removeThis(n) {
     n.parentNode.removeChild(n);
 }
-var count=0;
+var countDetail=0;var countOption=0;
 function addOption(v,allowChange, hideX,isMain){
-count++;
+
 var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','option'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
@@ -272,18 +272,18 @@ var TRI=ooo.ins(OC,'div',['class','tri25']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0,00€');
     ooo.ins(FLD,'div',['class','divider-voucher']);
-
+countOption++;
 
 }
 
 function addDetail(v){
-count++;
+
 var FLD=ooo.ins('details-voucher-container','fieldset',['class','nuovoDettaglio'],false,v);
 var TRI=ooo.ins(FLD,'div',['class','tri100']);
 	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','key','key_'+count]);
 	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','value','value_'+count]);
     ooo.ins(FLD,'div',['class','divider-voucher']);
-
+countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
 }
