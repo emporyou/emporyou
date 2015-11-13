@@ -18,15 +18,15 @@
 						/*hidden mode*/width:0%;left:-0.5%;top:-32%;justify-content: flex-start;}
 #product-main-container{min-width:740px;height:100%;width:100%;background-color: transparent;
 						/*hidden mode*/z-index:0;margin-top:6.3%;}
-#product-page-target{/*hidden mode*/opacity:0;margin-top:-300%;height:100%;z-index:0;}
+#product-page-target{/*hidden mode*/opacity:0;margin-top:-110%;height:100%;z-index:0;}
 #checkout-main-container{display:none}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:-25%;height: 100%; background-color: transparent;}
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{opacity:1;z-index:1;margin-top:0%;height:auto;}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
 body.Bmode #categories-container{left: 3.5%;}
-body.Bmode #product-main-container{margin-top:6.3%;z-index:1;display:block}
-body.Bmode.map-isin #product-main-container{margin-top:26.3%;}
+body.Bmode #product-main-container{margin-top:107.3%;z-index:1;display:block}
+body.Bmode.map-isin #product-main-container{margin-top:6.3%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
