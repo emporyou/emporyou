@@ -196,7 +196,7 @@ function handleFileSelect(evt) {
             return function (e) {
                 // Render thumbnail.
                 document.getElementById('files').style.backgroundImage="url('"+e.target.result+"')";
-                var span = document.createElement('span');
+                //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
                 
