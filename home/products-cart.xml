@@ -17,8 +17,8 @@
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <variable tagname="variants/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
-<variable tagname="variants/url" substitution="%imageurl"/>
-<html><div class="image-cart" style="background-image:url('%imageurl');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../home/img/less.png"/><img id="plus-cart" src="../home/img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> %title<br/>%subtitle</div></html></rowtype>
+<variable tagname="images/url" substitution="%mainimageurl"/>
+<html><div class="image-cart" style="background-image:url('%mainimageurl');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img id="less-cart" src="../img/less.png"/><img id="plus-cart" src="../img/more.png"/></div><div class="info-image-cart" style="display:none"><div class="circle-cart">1</div> %product-name<br/>%subtitle</div></html></rowtype>
 <beforeall><![CDATA[<div id="products-cart-info">Oggetti nel carrello<br/>Sub totale<br/>Spedizione<br/>Tasse<br/>Totale<br/></div><div id="products-cart-info-number">0<br/>€0.00<br/>€0.00<br/>€0.00<br/>€0.00</div><div class="checkout-button" onclick="openCheckout()" id="checkout-top">CHECKOUT NOW</div>]]></beforeall>
 <afterall><![CDATA[<div id="checkout-bottom" onclick="openCheckout()" class="checkout-button">CHECKOUT NOW</div>]]></afterall>
 <casezero>:( <br/> Il tuo carrello è vuoto! (sfigato)</casezero>
