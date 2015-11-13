@@ -4,7 +4,9 @@
 <variable tagname="name" substitution="%name"/>
 <variable tagname="id" substitution="%id"/>
 <html><option value="%id">%name</option></html>
-<beforeall><![CDATA[<select id="category-target" name="category">]]></beforeall>
+<beforeall><![CDATA[<select id="category-target" name="category"><option value="invalid">select category...</option>]]></beforeall>
 <afterall><![CDATA[</select>]]></afterall>
 </rowtype>
 </document>
+
+

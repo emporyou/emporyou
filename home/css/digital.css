@@ -1,25 +1,38 @@
 /*CONVENZIONI ALWAYS*/
 /*.ln = line - usare per elementi che a livello di layout del parent rappresentano una linea*/
-/*.l = label - usare per elementi che a livello di layout contencono delle label*/
+/*.lb = label - usare per elementi che a livello di layout contencono delle label*/
 /*.v = value - usare per elementi che a livello di layout contengono dei dati*/
 /*.g = group - usare per suddividere in gruppi all'interno di un parent*/
 /*.n1,.n2,.. - usare per definire sotto varanti di una classe*/
 /*CONVENZIONI PER QUESTO FILE*/
-/*.li = line - usare per elementi che a livello di layout del parent rappresentano una linea*/
 
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------MASTER LAYOUT*/
-
 .fontlogo{font-family:arial;font-size:48px;line-height:50px;color:#eee;}
 .fontlogo b{font-size:48px;line-height:50px;color:#eee}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
+/*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
+#google-map-container{position:absolute;display:flex;background-color:transparent;height:40%;
+						/*hidden mode*/width:0%;left:-0.5%;top:-32%;justify-content: flex-start;}
+#product-main-container{position:absolute;min-width:740px;width:100%;height:100%;background-color: transparent;
+						/*hidden mode*/z-index:0;top:110%;}
+#product-page-target{position:relative;/*hidden mode*/opacity:0;z-index:0;}
+#checkout-main-container{display:none}
+/*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
+body.Pmode #product-page-target{top:60px;opacity:1;z-index:1;}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
+body.Pmode #product-main-container{top:25%;z-index:1;}
+body.Bmode .map-isin #google-map-container{justify-content:center;top:13%;width:100%}
+/*---------------------------------------------------------------------------CHECKOUT MODE*/
+body.Cmode #checkout-main-container{display:block;}
 
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
 .transition-1{-webkit-transition: all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition:all 0.3s ease;transition:all 0.3s ease;}
+.transition-2{-webkit-transition: all 400ms cubic-bezier(1,.01,.58,1);-moz-transition: all 400ms cubic-bezier(1,.01,.58,1);-o-transition: all 400ms cubic-bezier(1,.01,.58,1);transition: all 400ms cubic-bezier(1,.01,.58,1);}
+.transition-3{-webkit-transition: all 0.4s ease-out;-moz-transition:all 0.4s ease-out;-ms-transition: all 0.4s ease-out;-o-transition:all 0.4s ease-out;transition:all 0.4s ease-out;}
 
 
