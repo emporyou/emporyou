@@ -4,7 +4,7 @@ body{min-width:840px !important;
     overflow-x:hidden;
 }
 .header{
-    background-color:#c43b42;
+    background-color:#c43b42; 
     height:50px;
     position:fixed;
     top:0;
@@ -183,8 +183,8 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     color:#f7f7f7;
     font-family:'Open sans';
     margin-top:4px;
-     border-top:10px solid #0c2d4d;
- border-bottom:10px solid #0c2d4d;
+     border-top:10px solid #c43b42;
+ border-bottom:10px solid #c43b42;
  /* Don't set the left border */
  border-right:10px solid transparent; /* Right one transparent */
  width:75px; /* Increase Width */
@@ -225,7 +225,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     margin-left:0 auto;
     margin-right:0 auto;
     background-color:#fff;
-    color:#0c2d4d;
+    color:#c43b42;
     font-family:'Open sans';
     text-align:center;
     line-height:50px;
@@ -235,7 +235,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 .cat-cont:hover{
     cursor:pointer;
     color:white;
-    background-color:#0c2d4d;
+    background-color:#c43b42;
 }
 .cat-searchbar{
     height:25px;
@@ -243,7 +243,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     margin-left:0 auto;
     margin-right:0 auto;
     background-color:transparent;
-    color:#0c2d4d;
+    color:#c43b42;
     font-family:'Open sans';
     text-align:center;
     line-height:50px;
@@ -255,7 +255,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 }
 .categories-container .cat-cont.selected{
     color:white;
-    background-color:#0c2d4d;
+    background-color:#c43b42;
 }
 .search{
     height:0;
@@ -263,7 +263,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     margin-left:0 auto;
     margin-right:0 auto;
     background-color:#eeeeee;
-    color:#0c2d4d;
+    color:#c43b42;
     font-family:'Open sans';
     text-align:center;
     line-height:50px;
