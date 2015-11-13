@@ -20,7 +20,7 @@ function myInit() {
         //document.getElementById('list').insertBefore(span, null);
         document.getElementById('files').style.backgroundImage="url('"+initialjdata.image[0].url+"')";
         for (i = 0; i < initialjdata.variants.length; i++) {
-            addOption(document.getElementId('add-option-voucher'),true, i == 0,i == 0);
+            addOption(document.getElementById('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
                 document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
