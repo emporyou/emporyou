@@ -10,9 +10,9 @@ function myInit() {
         //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
-        document.getElementById('product-title').value = initialjdata.title;
-        document.getElementById('product-descrizione').value = initialjdata.description;
-        document.getElementById('product-altreinfo').value = initialjdata.pageTitle;
+        document.getElementById('title-textarea').value = initialjdata.title;
+        document.getElementById('description-textarea').value = initialjdata.description;
+        document.getElementById('subtitle-textarea').value = initialjdata.pageTitle;
         var span = document.createElement('span');
         span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
@@ -254,31 +254,31 @@ function handleFileSelecto(evt) {
 function removeThis(n) {
     n.parentNode.removeChild(n);
 }
-
+var count=0;
 function addOption(v,allowChange, hideX,isMain){
-
+count++;
 var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','option'],false,v);
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
-	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option']);
+	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+count]);
 	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")']);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
 	ooo.ins(TRI,'textarea',['class','value-opt-voucher inv-text','placeholder','Valore..','name','valore']);
 	ooo.ins(TRI,'textarea',['class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
-	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price'],'0,00€');
+	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','optionName_'+count],'0,00€');
     ooo.ins(FLD,'div',['class','divider-voucher']);
 
 
 }
 
 function newDetail(v){
-
+count++;
 var FLD=ooo.ins('details-voucher-container','fieldset',['class','nuovoDettaglio'],false,v);
 var TRI=ooo.ins(FLD,'div',['class','tri100']);
-	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','key']);
-	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','value']);
+	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','key','key_'+count]);
+	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','value','value_'+count]);
     ooo.ins(FLD,'div',['class','divider-voucher']);
 
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
