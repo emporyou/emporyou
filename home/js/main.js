@@ -61,8 +61,8 @@ function toggleMap(){
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
 	document.body.classList.toggle('map-isin');
-}/*
-function openMap(){
+}
+function openMap(){/*TO REMOVE*/
     if(productOpened==0){
     if(set==0){
     gClass('google-map')[0].classList.remove('transformed');
@@ -83,7 +83,7 @@ function openMap(){
             gClass('emporyoum-bar')[0].style.left="";
     gClass('emporyoum-bar')[0].style.width="100%";set=0;
     }  
-}}*/
+}}
 function openCart(){
    if(openCart==1){closeCart()}else{
     //scrollTo(document.body, 0, 200);
