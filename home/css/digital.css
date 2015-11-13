@@ -23,7 +23,7 @@
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode #product-page-target{top:60px;opacity:1;z-index:1;}
 /*-------------------------------------------------------------------------PRODUCT BROWSER*/
-body.Pmode #product-main-container{top:25%;z-index:1;}
+body.Bmode #product-main-container{top:25%;z-index:1;}
 body.Bmode .map-isin #google-map-container{justify-content:center;top:13%;width:100%}
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
