@@ -45,6 +45,7 @@ window.ismaploadedonce=false;function toggleMap(){
 function openMap(){toggleMap()}
 //--------------------------------------------------------------------------- CART
 function openCart(){rendercart();document.body.classList.add('cart-isin');}
+function toggleCart(){if(document.body.classList.toggle('cart-isin')){rendercart();}}
 function closeCart(){document.body.classList.remove('cart-isin');}
 //--------------------------------------------------------------------------- 
 function scrollTo(element, to, duration) {
