@@ -60,7 +60,7 @@
 <!--<onload>console.log(#ROWIDX#)</onload>-->
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
-<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class transition-3 zero-thumb" ><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
+<html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class zero-thumb" ><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
              style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%id')" class="thumb-element"><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
