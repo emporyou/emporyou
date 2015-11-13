@@ -28,10 +28,11 @@ body.Bmode #categories-container{left: 3.5%;}
 body.Bmode #product-main-container{margin-top:116.3%;z-index:1;display:block}
 body.Bmode.map-isin #product-main-container{margin-top:136.3%;}
 body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
-body.Bmode .zero-thumb.selected {display:block}
+body.Bmode 
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
-
+body.Cmode .zero-thumb{display:none}
+body.Cmode .zero-thumb.selected {display:block}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/

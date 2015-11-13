@@ -34,7 +34,8 @@ function openProduct(event,elm,idd){
 	 document.body.classList.remove('Bmode');
 	 document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');
-    ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
+	 elm.parentElement.parentElement.classList.add('selected');
+    //ooo.render('product-page-target','product-page-template.xml','http://emporyou.com/api/get?id='+idd);
 }
 function closeProduct(){
     productOpened=0;
