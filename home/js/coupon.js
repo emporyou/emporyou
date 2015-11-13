@@ -6,7 +6,7 @@ function myInit() {
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
     if(initialjdata){
 	 if (!initialjdata.variants) {
-        addOption(document.getElementById('options-voucher-container'),true, false,true);
+        addOption(document.getElementById('add-option-voucher'),true, false,true);
         //TODO//document.getElementsByClassName('fileso')[0].addEventListener('change', handleFileSelecto, false);
     }
     if (initialjdata.fromreaction) {
@@ -17,7 +17,7 @@ function myInit() {
         span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         document.getElementById('list').insertBefore(span, null);
         for (i = 0; i < initialjdata.variants.length; i++) {
-            addOption(document.getElementId('options-voucher-container'),true, i == 0,i == 0);
+            addOption(document.getElementId('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
                 document.getElementById('image_0').style.backgroundImage = "url('" + initialjdata.image[0].url + "')"
             }
@@ -44,7 +44,7 @@ function myInit() {
             }
         }
     }
-}else{addOption(document.getElementId('options-voucher-container'),true, false,true);}}
+}else{addOption(document.getElementId('add-option-voucher'),true, false,true);}}
 
 function clearContents(element) {
     element.value = '';
