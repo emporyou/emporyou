@@ -449,3 +449,7 @@ input[type=date]::-webkit-inner-spin-button {
 textarea {
     
 }
+
+body {
+    background-color:#d6d6d6 !important;
+}
