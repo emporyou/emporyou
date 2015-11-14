@@ -57,17 +57,17 @@ passport.serializeUser(function(user,cb){cb(null,user);});passport.deserializeUs
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){profile.googleId=profile.id;profile.id=false;User.findOrCreate(profile,function(err,user){return done(err,user);});}));
 app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}));
-app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- F A C E B O O K
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
   function(accessToken,refreshToken,profile,done){profile.provider='facebook';User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/facebook',passport.authenticate('facebook'));
-app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- T W I T T E R
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
   function(token,tokenSecret,profile,done){profile.provider='twitter';User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
-app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //-----------------------------------------------
 /*passport.use(new ShopifyStrategy({clientID:SHOPIFY_CLIENT_ID,clientSecret:SHOPIFY_CLIENT_SECRET,callbackURL:HOST+"/auth/shopify/callback",shop: SHOPIFY_SHOP_SLUG},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({shopifyId:profile.id},function(err,user){return done(err,user);});}));
@@ -147,9 +147,9 @@ app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
 //---------------------------------------------------------------------------------------------------
 app.use(function(req,res,next){
-	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/user')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/user')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
