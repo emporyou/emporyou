@@ -21,7 +21,6 @@
 <variable tagname="orari" substitution="%orari"/>
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants|_id" substitution="%options" preload="options-template.xml"/>
-<variable tagname="subtitle" substitution="%subtitle"/>
 <variable tagname="variants/price" substitution="%price"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
 
