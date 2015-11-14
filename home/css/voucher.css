@@ -438,4 +438,6 @@ width: 100%;
 }
 #myLocalDate {
     margin-bottom:20px;
+    margin-left:20px;
+    border:1px solid black;
 }
