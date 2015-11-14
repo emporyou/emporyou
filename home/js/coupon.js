@@ -336,7 +336,7 @@ function formcheck() {window.ccc=0;
   var ff = document.getElementsByClassName('campo');
   
 for(var ii=0;ii<ff.length;ii++){
-    if (!ff[ii].value&&ff[ii].value!='invalid'&&ff[ii].value!='select category...'){
+    if (!ff[ii].value||ff[ii].value=='invalid'){
             ccc++}
    }; 
   setTimeout('if(ccc==0){sendCoupon()}',1000)
