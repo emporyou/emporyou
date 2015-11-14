@@ -1,7 +1,9 @@
 function myInit() {
     window.countDetail=0;window.countOption=0;
+    var d=new Date;
+    var dd=d.toLocaleDateString()
     document.getElementById("myLocalDate").valueAsDate=new Date();
-    document.getElementById("myLocalDate").setAttribute('min',document.getElementById("myLocalDate").valueAsDate);
+    document.getElementById("myLocalDate").setAttribute('min',dd);
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
