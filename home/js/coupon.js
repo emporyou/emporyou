@@ -53,11 +53,9 @@ function myInit() {
         }
     }
 }else{addOption(document.getElementId('add-option-voucher'),true, false,true);}}
-
 function clearContents(element) {
     element.value = '';
 }
-
 function oldDetail() {
     var det = document.createElement('fieldset');
     var del = document.createElement('div');
@@ -83,7 +81,6 @@ function oldDetail() {
     nDetail++;
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
-
 function oldOption(allowChange, hideX,isMain) {
     count++;
     var opt = document.createElement('fieldset');
@@ -188,10 +185,8 @@ function sendCoupon(preview,detailsview) {
 	 }else{
 		 document.getElementById('send-target').value = jsondata;
 			document.getElementById('send-form').submit();
-	 }
-    
+	 } 
 }
-
 function handleFileSelect(evt) {
     count++;
     var files = evt.target.files; // FileList object
@@ -227,7 +222,6 @@ function handleFileSelect(evt) {
 
     }
 }
-
 function handleFileSelecto(evt) {
     var files = evt.target.files; // FileList object
 
@@ -258,11 +252,9 @@ function handleFileSelecto(evt) {
 
     }
 }
-
 function removeThis(n) {
     n.parentNode.removeChild(n);
 }
-
 function addOption(v,allowChange, hideX,isMain){
 
 var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','option'],false,v);
@@ -280,7 +272,6 @@ var TRI=ooo.ins(OC,'div',['class','tri33']);
     ooo.ins(FLD,'div',['class','divider-voucher']);
 
 }
-
 function addDetail(v){
  
 var FLD=ooo.ins('divider-target-detail','fieldset',['class','nuovoDettaglio'],false,true);
@@ -292,7 +283,6 @@ countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
 }
-
 function calc(){
     var valbas=document.getElementById('valore-base').value;
     var discount=document.getElementById('discount-textarea').value;
@@ -315,33 +305,24 @@ function calc(){
 function displayunicode(e){
 var unicode=e.keyCode? e.keyCode : e.charCode
 if (unicode >= 48 && unicode <= 57){
-    if(document.getElementById('discount-textarea').value>99){document.getElementById('discount-textarea').value=99};calc()
-}
-else{
-}
-    
-}
+    if(document.getElementById('discount-textarea').value>99){document.getElementById('discount-textarea').value=99};calc()}
+else{}}
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear();
-
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
+        return [year, month, day].join('-');
 }
 function formcheck() {window.ccc=0;
-  var ff = document.getElementsByClassName('campo');
-  
-for(var ii=0;ii<ff.length;ii++){
-    if (!ff[ii].value||ff[ii].value=='invalid'){
-            ccc++;$("html, body").animate({
-            scrollTop: 0
-        }, 600);if (!ff[ii].value||ff[ii].value=='invalid'){
+var ff = document.getElementsByClassName('campo');
+for(var ii=0;ii<ff.length;ii++){/*Cycling fields*/
+    if (!ff[ii].value||ff[ii].value=='invalid'){/*Checking fields*/
+            ccc++;$("html, body").animate({scrollTop: 0}, 600);/*Scroll up on fail*/
+        if (!ff[ii].value||ff[ii].value=='invalid'){
             //ff[i].style.backgroundColor="red"
-        };if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}
-   }; 
-  setTimeout('if(ccc==0){sendCoupon()}',1000)
+        };if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}}; 
+  setTimeout('if(ccc==0){sendCoupon()}',1000);/*Send form on success*/
 }
