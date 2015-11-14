@@ -333,12 +333,11 @@ function formatDate(date) {
     return [year, month, day].join('-');
 }
 function formcheck() {window.ccc=0;
-  var fields = $(".campo")
-        .find("select, textarea, input").serializeArray();
+  var ff = document.getElementsByClassName('campo');
   
-  $.each(fields, function(i, field) {
-    if (!field.value&&field.value!='invalid'){
+for(var ii=0;ii<ff.length;ii++){
+    if (!ff[ii].value&&ff[ii].value!='invalid'){
             ccc++}
-   }); 
+   }; 
   setTimeout('alert(ccc);if(ccc==0){sendCoupon()}',1000)
 }
