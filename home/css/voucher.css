@@ -32,6 +32,7 @@
     position:relative;
     border-bottom:8px solid #f6f6f6;
     border-right:8px solid #f6f6f6;
+        float: right;
 }
 
 .inv-text {
