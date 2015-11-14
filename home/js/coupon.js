@@ -337,7 +337,7 @@ function formcheck() {window.ccc=0;
         .find("select, textarea, input").serializeArray();
   
   $.each(fields, function(i, field) {
-    if (!field.value%%field.value!='invalid'){
+    if (!field.value&&field.value!='invalid'){
             ccc++}
    }); 
   setTimeout('if(ccc==0){sendCoupon()}',1000)
