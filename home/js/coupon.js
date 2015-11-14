@@ -1,7 +1,6 @@
 function myInit() {
     window.countDetail=0;window.countOption=0;
-    var d=new Date();console.log(d);
-    document.getElementById("myLocalDate").defaultValue = d;
+    document.getElementById("myLocalDate").valueAsDate=new Date()
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
