@@ -340,7 +340,7 @@ for(var ii=0;ii<ff.length;ii++){
             ccc++;$("html, body").animate({
             scrollTop: 0
         }, 600);if (!ff[ii].value||ff[ii].value=='invalid'){
-            ff[i].style.backgroundColor="red"
+            //ff[i].style.backgroundColor="red"
         };if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}
    }; 
   setTimeout('if(ccc==0){sendCoupon()}',1000)
