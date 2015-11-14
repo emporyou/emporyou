@@ -5,6 +5,6 @@
 <variable tagname="option" substitution="%name"/>
 <variable tagname="price" substitution="%price"/>
 <variable tagname="image" substitution="%image"/>
-<html><button value="%name" onclick="document.getElementById('price-target-pro%id').innerHTML='€ '+%price;document.getElementById('main-image-pro').style.backgroundImage='url(\'%image\')'">%name</button></html>
+<html><button value="%name" onclick="document.getElementById('price-target-pro%id').innerHTML='€ '+%price;document.getElementById('main-image-pro%id').style.backgroundImage='url(\'%image\')'">%name</button></html>
 </rowtype>
 </document>
