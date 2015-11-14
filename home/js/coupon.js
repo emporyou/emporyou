@@ -268,7 +268,7 @@ var TRI=ooo.ins(OC,'div',['class','tri39']);
 	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption]);
 	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
-	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onscroll','calc()']);
+	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()']);
     countOption++;
 	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
