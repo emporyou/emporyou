@@ -149,6 +149,7 @@ app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 app.use(function(req,res,next){
 	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/user')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
