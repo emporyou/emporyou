@@ -146,9 +146,6 @@ function oldOption(allowChange, hideX,isMain) {
 }
 /*function validationerror(messages){alert(messages);}*/
 function sendCoupon(preview,detailsview) {
-    for(){
-        
-    }
     var invalid=[];
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
 	 /*
