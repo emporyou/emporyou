@@ -268,12 +268,12 @@ var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','optio
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
-	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption]);
+	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption,'required']);
 	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
-	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()']);
+	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()','required']);
     countOption++;
-	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity']);
+	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity','required']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
