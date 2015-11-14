@@ -19,7 +19,7 @@
 #categories-container{position:fixed;width: 20%;top: 13.2%;left: 3.5%;height: 100%; background-color: transparent;
 						/*hidden mode*/transform:translateX(-120%);}
 #product-main-container{min-width:740px;height:100%;width:100%;background-color: transparent;
-						/*hidden mode*/z-index:0;margin-top:10%;}
+						/*hidden mode*/z-index:0;margin-top:6.5%;}
 #checkout-main-container{display:none}
 #basket-container{transform:scaleY(1);}
 /*----------------------------------------------------------------------------------------*/
