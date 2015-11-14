@@ -441,3 +441,7 @@ width: 100%;
     margin-left:20px;
     border:1px solid black;
 }
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
