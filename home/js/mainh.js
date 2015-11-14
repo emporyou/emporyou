@@ -32,7 +32,7 @@ getcartXML=function(){
 			pxml='<doc>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></doc>';
 			pxmlD=ooo.parsexml(pxml);
 			var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement));console.log(ddd);
-			window.cartTotalSub+=pnum*parseFloat(ddd);
+			window.cartTotalSub+=pnum*parseFloat(ddd.replace('<![CDATA[','').replace(']]>',''));
 			cartXML+=pxml;}
 		cartXML+='</response>';
 		return cartXML;
