@@ -31,7 +31,8 @@ getcartXML=function(){
 			window.cartTotalItems+=pnum;
 			pxml='<doc>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></doc>';
 			pxmlD=ooo.parsexml(pxml);
-			window.cartTotalSub+=pnum*parseFloat(ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement)));
+			var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement))console.log(ddd);
+			window.cartTotalSub+=pnum*parseFloat(ddd);
 			cartXML+=pxml;}
 		cartXML+='</response>';
 		return cartXML;
