@@ -340,5 +340,5 @@ function formcheck() {window.ccc=0;
     if (!field.value&&field.value!='invalid'){
             ccc++}
    }); 
-  setTimeout('if(ccc==0){sendCoupon()}',1000)
+  setTimeout('alert(ccc);if(ccc==0){sendCoupon()}',1000)
 }
