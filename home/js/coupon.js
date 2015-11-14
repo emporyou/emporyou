@@ -145,7 +145,11 @@ function oldOption(allowChange, hideX,isMain) {
     document.getElementById('option-cont').insertBefore(opt, document.getElementById('option-cont').firstChild);
 }
 /*function validationerror(messages){alert(messages);}*/
-function sendCoupon(preview,detailsview) {var invalid=[];
+function sendCoupon(preview,detailsview) {
+    for(){
+        
+    }
+    var invalid=[];
     var myJSON = ooo.form2JSON(document.getElementById('coupon-form'));
 	 /*
 	 if(!myJSON.variants){invalid.push('E\' necessario specificare almeno una opzione!')}
@@ -268,12 +272,12 @@ var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','optio
 var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
-	ooo.ins(TRI,'textarea',['class','opt-name inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption,'required']);
+	ooo.ins(TRI,'textarea',['class','opt-name campo inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption,'required']);
 	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
-	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()','required']);
+	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher campo inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()','required']);
     countOption++;
-	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher inv-text','placeholder','Quantità..','name','quantity','required']);
+	ooo.ins(TRI,'input',['type','number','min','0','step','1','class','qta-opt-voucher campo inv-text','placeholder','Quantità..','name','quantity','required']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
@@ -285,8 +289,8 @@ function addDetail(v){
 var FLD=ooo.ins('divider-target-detail','fieldset',['class','nuovoDettaglio'],false,true);
     ooo.ins(FLD,'div',['class','divider-voucher']);
 var TRI=ooo.ins(FLD,'div',['class','tri100']);
-	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher inv-text','placeholder','Dettaglio..','name','key','id','key_'+countDetail]);
-	ooo.ins(TRI,'textarea',['class','value-det-voucher inv-text','placeholder','Attributo..','name','value','id','value_'+countDetail]);
+	ooo.ins(TRI,'textarea',['class','dettaglio-det-voucher campo inv-text','placeholder','Dettaglio..','name','key','id','key_'+countDetail]);
+	ooo.ins(TRI,'textarea',['class','value-det-voucher campo inv-text','placeholder','Attributo..','name','value','id','value_'+countDetail]);
 countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
@@ -330,4 +334,14 @@ function formatDate(date) {
     if (day.length < 2) day = '0' + day;
 
     return [year, month, day].join('-');
+}
+function formcheck() {window.ccc=0;
+  var fields = $(".campo")
+        .find("select, textarea, input").serializeArray();
+  
+  $.each(fields, function(i, field) {
+    if (!field.value%%field.value!='invalid'){
+            ccc++}
+   }); 
+  setTimeout('if(ccc==0){sendCoupon()}',1000)
 }

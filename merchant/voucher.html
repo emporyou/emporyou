@@ -52,10 +52,10 @@
         <div id="voucher-container-main">
             <div id="voucher-header-container">
                 <div id="title-subtitle">
-                    <textarea class="inv-text" placeholder="Titolo" name="title" id="title-textarea" required></textarea>
-                    <textarea class="inv-text" placeholder="Sottotitolo" name="subtitle" id="subtitle-textarea" required></textarea>
+                    <textarea class="inv-text campo" placeholder="Titolo" name="title" id="title-textarea" required></textarea>
+                    <textarea class="inv-text campo" placeholder="Sottotitolo" name="subtitle" id="subtitle-textarea" required></textarea>
                 </div><div id="discount-cont">
-                    <input type="number" min="0" max="99" step="1" class="inv-text" onwheel="calc()" onkeyup="displayunicode(event)" placeholder="% di Sconto" name="discount" id="discount-textarea" required/>
+                    <input type="number" min="0" max="99" step="1" class="inv-text campo" onwheel="calc()" onkeyup="displayunicode(event)" placeholder="% di Sconto" name="discount" id="discount-textarea" required/>
                 </div>
             </div>
             <div id="voucher-basic-container" class="closed-v">
@@ -68,13 +68,13 @@
                 id="value-price-desc">
                     <div id="val-qt-price">
                        <div id="val-qt">
-                        <div id="val-vaucher" class="pad-val-qt-price">Valore (€)<br/><input onscroll="calc()" onkeyup="displayunicode(event)" type="number" min="0" step="0.10" class="inv-text" id="valore-base" name="valore-base" placeholder="Valore base.." style="font-size:3vh;color:orange;"/></div>
-                        <div id="qt-vaucher" class="pad-val-qt-price"><input type="number" min="0" step="1" class="inv-text"  id="qta-base" name="qta-base" style="font-size:17px;color:orange;display:inline-block;height:55px;width:80%;text-align:left" placeholder="Quantità.." name="qta" required/></div>
+                        <div id="val-vaucher" class="pad-val-qt-price">Valore (€)<br/><input onscroll="calc()" onkeyup="displayunicode(event)" type="number" min="0" step="0.10" class="inv-text campo" id="valore-base" name="valore-base" placeholder="Valore base.." style="font-size:3vh;color:orange;"/></div>
+                        <div id="qt-vaucher" class="pad-val-qt-price"><input type="number" min="0" step="1" class="inv-text campo"  id="qta-base" name="qta-base" style="font-size:17px;color:orange;display:inline-block;height:55px;width:80%;text-align:left" placeholder="Quantità.." name="qta" required/></div>
                        </div>
                         <div id="price-vaucher" class="pad-val-qt-price">Prezzo finale (€)<br/><textarea class="inv-text"  id="price-base" name="price-base" style="font-size:4vh;color:orange;" readonly required>30.00</textarea></div>
                     </div>
                     <div id="desc-container">
-                        <textarea class="inv-text" placeholder="Descrizione" name="description" id="description-textarea" required></textarea>
+                        <textarea class="inv-text campo" placeholder="Descrizione" name="description" id="description-textarea" required></textarea>
                     </div>
                 </div>
             </div><div id="options-and-details">
@@ -88,7 +88,7 @@
             <div class="divider-voucher" id="divider-target-detail"></div>
             <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="addDetail(this.previousSibling.previousSibling)">+</div>
         </fieldset>
-            </div>Inserisci la data di inizio della campagna<input type="date" id="myLocalDate" name="datetime" required/><button id="manda-voucher" onclick="sendCoupon()">INSERISCI VOUCHER</button></div>
+            </div>Inserisci la data di inizio della campagna<input type="date" id="myLocalDate" name="datetime" required/><button id="manda-voucher" onclick="formcheck()">INSERISCI VOUCHER</button></div>
         <input type="hidden" value="Milano" name="city"/>
         <input type="hidden" name="road" value="Via Trenno 33"/>
         <input type="hidden" name="cap" value="20151"/>
@@ -97,7 +97,7 @@
         <input type="hidden" name="orari" value="aperto da Lunedì a Sabato h 09:00-20:00"/>
     </form>
     <form id="send-form" style="display:none" action="http://emporyou.com/api/newdeal?k=12&p=12" method="post" enctype="multipart/form-data">
-        <textarea id="send-target" name="jdata"></textarea>
+        <textarea id="send-target" name="jdata" value="z"></textarea>
     </form>
 </body>
 </html>
