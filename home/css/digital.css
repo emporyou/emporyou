@@ -14,8 +14,8 @@
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
-#google-map-container{position:absolute;display:flex;background-color:transparent;height:40%;
-						/*hidden mode*/width:0%;left:-0.5%;top:-40%;justify-content: flex-start;}
+#google-map-container{position:absolute;width:100%;display:flex;background-color:transparent;height:40%;
+						/*hidden mode*/left:-0.5%;top:-40%;justify-content: flex-start;}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left:-20.2%;height: 100%; background-color: transparent;}
 #product-main-container{min-width:740px;height:100%;width:100%;background-color: transparent;
 						/*hidden mode*/z-index:0;margin-top:10%;}
