@@ -84,9 +84,6 @@ emptyCart=function(){
 ensureMapIsOpened=function(){if(!document.body.classList.contains('map-isin')){toggleMap()}};
 ensureMapIsClosed=function(){if(document.body.classList.contains('map-isin')){toggleMap()}};
 doItProducts=function(){
-
-
-
 $(function() {
     $(".thumb-product").hover(function(e) {
         var el_pos = $(this).offset();
