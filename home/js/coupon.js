@@ -1,9 +1,8 @@
 function myInit() {
     window.countDetail=0;window.countOption=0;
     var d=new Date;
-    var dd=d.toLocaleDateString()
-    document.getElementById("myLocalDate").valueAsDate=new Date();
-    document.getElementById("myLocalDate").setAttribute('min',dd);
+    document.getElementById("myLocalDate").valueAsDate=d;
+    document.getElementById("myLocalDate").setAttribute('min',formatDate(d));
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
@@ -320,4 +319,15 @@ if (unicode >= 48 && unicode <= 57){
 else{
 }
     
+}
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
 }
