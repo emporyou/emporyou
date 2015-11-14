@@ -7,12 +7,6 @@ rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
 	else{
 	var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
-window.cartTotalItems=0;
-window.cartTotalSub=0;
-window.cartTotalTotal=0;
-window.cartTotalTax=0;
-window.cartTotalShipment=0;
-	
 		var cartXML=getcartXML();
 		server_syncart(cartXML);
 		window.cartTotalTax=(cartTotalSub/100)*22;
