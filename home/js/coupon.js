@@ -337,7 +337,9 @@ function formcheck() {window.ccc=0;
   
 for(var ii=0;ii<ff.length;ii++){
     if (!ff[ii].value||ff[ii].value=='invalid'){
-            ccc++;if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}
+            ccc++;$("html, body").animate({
+            scrollTop: 0
+        }, 600);if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}
    }; 
   setTimeout('if(ccc==0){sendCoupon()}',1000)
 }
