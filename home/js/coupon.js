@@ -339,5 +339,5 @@ for(var ii=0;ii<ff.length;ii++){
     if (!ff[ii].value&&ff[ii].value!='invalid'){
             ccc++}
    }; 
-  setTimeout('alert(ccc);if(ccc==0){sendCoupon()}',1000)
+  setTimeout('if(ccc==0){sendCoupon()}',1000)
 }
