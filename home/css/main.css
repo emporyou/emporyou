@@ -443,6 +443,7 @@ input {
 	padding: 0;
 	-webkit-appearance: none;
 }
+input[type=radio]{-webkit-appearance:radio !important}
 
 input[type="search"] {
     -webkit-appearance: textfield;
