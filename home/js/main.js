@@ -13,10 +13,7 @@ window.ismaploadedonce=false;function toggleMap(){
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
 	document.body.classList.toggle('map-isin');}
 function openMap(){toggleMap()}
-//--------------------------------------------------------------------------- CART
-function openCart(){rendercart();document.body.classList.add('cart-isin');}
-function toggleCart(){if(document.body.classList.toggle('cart-isin')){rendercart();}}
-function closeCart(){document.body.classList.remove('cart-isin');}
+
 //--------------------------------------------------------------------------- 
 function scrollTo(element, to, duration) {
     if (duration < 0) return;

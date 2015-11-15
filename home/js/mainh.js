@@ -28,46 +28,38 @@ window.cartTotalShipment=0;
 		window.cartTotalTotal=Math.round(window.cartTotalTotal*100)/100;		
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-cart.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender(document.getElementById('products-cart-target'),ttt.documentElement,fff.documentElement,'normal');
-
 }	};
-getcartXML=function(){
-		var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
-		var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
-		for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
-			window.cartTotalItems+=pnum;
-			pxml='<doc>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></doc>';
-			pxmlD=ooo.parsexml(pxml);
-			var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement));console.log(ddd);
-			window.cartTotalSub+=pnum*parseFloat(ddd.replace('<![CDATA[','').replace(']]>',''));
-			cartXML+=pxml;}
-		cartXML+='</response>';
-		return cartXML;
-};
+getcartXML=function(){var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
+	var cartXML='<response>';var pxml='';var pxmlD=null;var pnum=0;
+	for(var c=0;c<cartdata.length;c++){pnum=parseInt(cartdata[c].className.replace('a',''));
+		window.cartTotalItems+=pnum;
+		pxml='<doc>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></doc>';
+		pxmlD=ooo.parsexml(pxml);
+		var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement));console.log(ddd);
+		window.cartTotalSub+=pnum*parseFloat(ddd.replace('<![CDATA[','').replace(']]>',''));
+		cartXML+=pxml;}cartXML+='</response>';return cartXML;};
 addProduct=function(productName,XMLid,PRDid){
    var elm=document.getElementById(PRDid);
    if(elm){var qt=parseInt(elm.className.replace('a',''));qt++;elm.className='a'+qt;}
 	else{elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
 	server_syncart();rendercart();};
-removeProduct=function(PRDid){
-	var elm=document.getElementById(PRDid);
-   if(elm){
-      var qt=parseInt(elm.className.replace('a',''));qt--;
-		if(qt>0){elm.className='a'+qt;}
-		else{elm.parentNode.removeChild(elm);};
-		server_syncart();rendercart();
-}};
+removeProduct=function(PRDid){var elm=document.getElementById(PRDid);if(elm){
+   var qt=parseInt(elm.className.replace('a',''));qt--;
+	if(qt>0){elm.className='a'+qt;}else{elm.parentNode.removeChild(elm);};server_syncart();rendercart();}};
 updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
 emptyCart=function(){ooo.clearchilds('cart-data');server_syncart();rendercart();}
-
+openCart=function(){rendercart();document.body.classList.add('cart-isin');};
+toggleCart=function(){if(document.body.classList.toggle('cart-isin')){rendercart();}};
+closeCart=function(){document.body.classList.remove('cart-isin');};
 //---------------------------------------------------------------------- MAP
 ensureMapIsOpened=function(){if(!document.body.classList.contains('map-isin')){toggleMap()}};
 ensureMapIsClosed=function(){if(document.body.classList.contains('map-isin')){toggleMap()}};
 //---------------------------------------------------------------------- FANTASMINO
 doItProducts=function(){$(function(){$(".thumb-product").hover(function(e) {
-      var el_pos = $(this).offset();
-      var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
-		var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
-		var fly=jQuery(e.currentTarget).find('.product-bar');
+   var el_pos = $(this).offset();
+   var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
+	var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
+	var fly=jQuery(e.currentTarget).find('.product-bar');
 	fly=jQuery(fly).get(0);fly.classList.add(startC);
 	setTimeout(function(){fly.style.display='block';fly.classList.add("product-bar-in")},35);	
 	setTimeout(function(){fly.classList.remove(startC)},50);
@@ -97,7 +89,7 @@ closestEdge=function(x,y,w,h) {
 distMetric=function(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff)+(yDiff*yDiff);}
 //---------
 function openCheckout(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Pmode');
-	 document.body.classList.add('Cmode');}
+	 document.body.classList.add('Cmode');closeCart()}
 function closeCheckout(event,elm,idd){document.body.classList.remove('Cmode');document.body.classList.remove('Pmode');
 	 document.body.classList.add('Bmode');}
 //---------------------------------------------------------------------- UPDATE SEARCH
