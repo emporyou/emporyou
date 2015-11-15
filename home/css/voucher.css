@@ -474,7 +474,7 @@ body {
 #files:hover{cursor:pointer;}
 .fileso:hover{cursor:pointer;}
 .fileso{
-    width: 100%;
+    width: 90px;
     height: 100%;
     position: absolute;
     /* display: none; */
