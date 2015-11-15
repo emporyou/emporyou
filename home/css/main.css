@@ -357,7 +357,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: rgba(12, 45, 63, 0.21);
 }
 
-#rangevalue{color:black;font-family:'Open sans'}
+.rangevalue{color:black;font-family:'Open sans'}
 
 
 label {position:relative}
