@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<title></title>
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+<!-- //////////////////////////BOOTSTRAP -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
+<!-- //////////////////////////FONT AWESOME -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../home/css/main.css">
+<link rel="stylesheet" type="text/css" href="../home/css/transaction.css">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<script src="../js/userpage.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/mainh.js"></script>
+<script src="../js/metaschema.js"></script>
+<!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
+<!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta charset="utf-8"/>
+<script>
+myappinit=function(){
+
+}
+</script>
+<script>
+    function checkLogin(){
+        setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
+    }
+    function chooseStart(){console.log(ch+' is ch');
+    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click()}
+                           fillAddress();//TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
+    }
+    function fillAddress(){
+        ooo.render('form-target','address.xml','http://emporyou.com/session');
+    }
+</script>
+</head>
+<body onload="myappinit();">
+<div class="header">
+    <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../home/img/logo-text.png"/></div></div>
+<div class="message">
+    <div class="result-transaction">LA TRANSAZIONE È<br/> <span style="color:#c43b42">FALLITA! 😩</span></div>
+    <input type="button" class="choice-left choice" onclick="window.location.href='http://emporyou.com'" value="CONTINUA LO SHOPPING"/><input type="button" class="choice-right choice" style="background-color:#c43b42;color:white;" value="RIPROVA"/>
+</div>
+
+</body></html>
