@@ -451,10 +451,10 @@ mapstyles=[
 function updateProductList(){
 	var ee=ooo.sel("//*[contains(@class,'category')]",document);
 	var rel=false;if(ee.length>0){
-		rel=ooo.ixml(ee[0],true);
+		rel=ee[0].firstChild.value;
 		if(ee.length>1){
 			for(var e=1;e<ee.length;e++){
-				rel+=','+ooo.ixml(ee[e],true);
+				rel+=','+ee[e].firstChild.value;
 }	}	}
 	var geo=false;
 	var price=false;
