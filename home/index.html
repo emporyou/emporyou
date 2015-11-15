@@ -174,7 +174,8 @@ initMap=function() {
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
 				console.log(latLng.lat()+','+latLng.lng());
-          //$("#city-input").val(latLng.lat()+','+latLng.lng());
+				window.gmap.setCenter(latLng);
+          $("#city-input").val(latLng.lat()+','+latLng.lng());
           //$("#city-input").trigger("geocode");
   });  
   window.gmap=$("#city-input").geocomplete('map');
