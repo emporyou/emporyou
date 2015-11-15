@@ -282,6 +282,9 @@ var TRI=ooo.ins(OC,'div',['class','tri25']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
+    ooo.ins(document.getElementById('optImg_'+countOption),'input',['type','file','class','fileso']);
+    ooo.ins(document.getElementById('optImg_'+countOption),'input',['type','hidden','value',count,'name','v_id']);
+    ooo.ins(document.getElementById('optImg_'+countOption),'output',['id','listo'])
 
 }
 function addDetail(v){
