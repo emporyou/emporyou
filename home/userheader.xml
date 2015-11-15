@@ -5,4 +5,4 @@
 <variable tagname="name/givenName" substitution="%name"/>
 <variable tagname="email" substitution="%email"/>
 <variable tagname="language" substitution="%language" convert="sessionlang"/>
-<html><div class="user-full-name">%name %lastname</div></html></rowtype></document>
+<html><div class="user-full-name">Ciao, <span style="font-weight:bold">%name %lastname</span></div></html></rowtype></document>
