@@ -109,6 +109,7 @@ ul {
 .info-image-cart {
     font-family: 'josefin sans';
     margin-top:5px;
+        width: 155px;
 }
 
 .hidden-info {
