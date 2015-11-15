@@ -223,7 +223,7 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 .search:hover{background-color:transparent;color:white;cursor:pointer;}
 .text-logo{
     position:absolute;
-    margin:0 auto;
+    margin:-2px auto;
     background-color:transparent;
     height:100%;
     left:49%;
