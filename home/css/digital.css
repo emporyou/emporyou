@@ -16,7 +16,7 @@
 /*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
 #google-map-container{position:absolute;margin-top:95px;width:64%;display:flex;
 								left:24.5%;justify-content: flex-start;background-color:transparent;height:40%;
-						/*hidden mode*/translateY(-120%)}
+						/*hidden mode*/transform:translateY(-120%)}
 #google-map-container .google-map{overflow: hidden;height: 99%; width: 100%; background-color: rgb(229, 227, 223);}
 #categories-container{position:fixed;width: 20%;top:90px;left: 3.5%;height: 100%; background-color: transparent;
 						/*hidden mode*/transform:translateX(-120%);}
