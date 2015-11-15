@@ -18,7 +18,7 @@
 <variable tagname="variants/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<html><div class="image-cart" style="background-image:url('%mainimageurl');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img
+<html><div class="image-cart" style="background-image:url('%mainimageurl');"><img
 	id="less-cart" src="../img/less.png" onclick="removeProduct('%id')" /><img
 	id="plus-cart" src="../img/more.png" onclick="addProduct('%jsproduct-name',false,'%id')" /></div><div class="info-image-cart"><div class="circle-cart">%cart-qt</div> %product-name<br/>%subtitle</div></html>
 <casezero>:( <br/> Il tuo carrello è vuoto! (sfigato)</casezero></rowtype>
