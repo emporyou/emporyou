@@ -102,8 +102,8 @@ function updateProductList(){
 				rel+=','+ee[e].firstChild.value;
 }	}	}
 	var price=false;
-	var pmin=parseInt(document.getElementById('jfind-min'));
-	var pmax=parseInt(document.getElementById('jfind-max'));
+	var pmin=parseInt(document.getElementById('jfind-min').value);
+	var pmax=parseInt(document.getElementById('jfind-max').value);
 	if((pmin>0)||(pmax<1000)){
 		price='{variants:{"$elemMatch":{price:{$gt:'+pmin+',$lt:'+pmax+'}}}}';
 	}
