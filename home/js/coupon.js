@@ -274,7 +274,7 @@ var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
 	ooo.ins(TRI,'textarea',['class','opt-name campo inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption,'required']);
-	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../img/up-icon.jpg")','id','optImg_'+countOption]);
+	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../img/up-icon.png")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
 	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher campo inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()','required']);
     countOption++;
