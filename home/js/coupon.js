@@ -215,10 +215,10 @@ function handleFileSelect(evt) {
                 rr.addEventListener('change', handleFileSelect, false);
                 ooo.move(evt.target, 'send-form');
             };
-        })(f);
+        })(files);
 
         // Read in the image file as a data URL.
-        reader.readAsDataURL(f);
+        reader.readAsDataURL(files);
 
     }
 function handleFileSelecto(evt) {
