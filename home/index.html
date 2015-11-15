@@ -115,7 +115,7 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 window.deferredhandler=false;
 setdeferredupdate=function(){
 	if(deferredhandler){clearTimeout(deferredhandler)}
-	deferredhandler=setTimeout(function(){updateProductList()},500)
+	deferredhandler=setTimeout(function(){updateProductList()},250)
 };
 window.ISptloaded=false;
 doinitialrender=function(){
