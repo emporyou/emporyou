@@ -8,7 +8,7 @@ server_syncart=function(){
 	var i=ooo.ins(f,'textarea',['name','xdata'],'<html>'+xml+'</html>');setTimeout(function(){f.submit();},100);
 };
 server_syncartget=function(){
-	ooo.render('cart-data','html.xml','../syncart',false,false,function(){rendercart()});
+	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});
 };
 rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
@@ -20,7 +20,7 @@ window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
 		var cartXML=getcartXML();
-		server_syncart();
+		//server_syncart();
 		window.cartTotalTax=(cartTotalSub/100)*22;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
 		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
