@@ -472,8 +472,8 @@ body {
     opacity:0;
 }
 #files:hover{cursor:pointer;}
-#fileso:hover{cursor:pointer;}
-#fileso{
+.fileso:hover{cursor:pointer;}
+.fileso{
     width: 100%;
     height: 100%;
     position: absolute;
