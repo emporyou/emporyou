@@ -69,8 +69,8 @@
                 class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange">%price</b><br/>%subtitle</div></div></div><textarea 
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 					  
-<div class="product-info-main"><input type="button" onclick="closeProduct(this)" value="CHIUDI PAGINA PRODOTTO" style="position: absolute;
-    z-index: 1;padding:1%;border-radius:4px;box-sizing:border-box;color:white;background-color:#c43b42" onmouseover="cursor:pointer;opacity:0.8"/><div id="#UNIQUEID#-#ROWIDX#-left-column-pro" class="left-column-pro"><div id="#UNIQUEID#-#ROWIDX#-main-image-container" class="main-image-container"><div id="main-image-pro%id" class="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
+<div class="product-info-main"><input type="button" onclick="closeProduct(this)" class="button-chiudi-pagina" value="CHIUDI PAGINA PRODOTTO" style="position: absolute;
+    z-index: 1;padding:1%;border-radius:4px;box-sizing:border-box;color:white;background-color:#c43b42"/><div id="#UNIQUEID#-#ROWIDX#-left-column-pro" class="left-column-pro"><div id="#UNIQUEID#-#ROWIDX#-main-image-container" class="main-image-container"><div id="main-image-pro%id" class="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-desc-container" class="main-desc-container height200 transition-1"><div onclick="openDesc()" 
 id="#UNIQUEID#-#ROWIDX#-layer-desc" class="layer-desc"> </div><div 
 id="#UNIQUEID#-#ROWIDX#-main-desc-pro" class="main-desc-pro" ><div 

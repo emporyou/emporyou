@@ -534,3 +534,4 @@ perspective-origin: 50% 50%;
     background-size: cover;
     background-image: url('../img/logo-text-sx.png');
 }
+.button-chiudi-pagina{cursor:pointer;opacity:0.8}
