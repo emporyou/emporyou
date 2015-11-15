@@ -20,7 +20,7 @@
 <variable tagname="images/url" substitution="%mainimageurl"/>
 <html><div class="image-cart" style="background-image:url('%mainimageurl');" onmouseover="this.nextSibling.style.display=''" onmouseleave="this.nextSibling.style.display='none'"><img
 	id="less-cart" src="../img/less.png" onclick="removeProduct('%id')" /><img
-	id="plus-cart" src="../img/more.png" onclick="addProduct('%id')" /></div><div class="info-image-cart" style="display:none"><div class="circle-cart">%cart-qt</div> %product-name<br/>%subtitle</div></html>
+	id="plus-cart" src="../img/more.png" onclick="addProduct('%jsproduct-name',false,'%id')" /></div><div class="info-image-cart" style="display:none"><div class="circle-cart">%cart-qt</div> %product-name<br/>%subtitle</div></html>
 <casezero>:( <br/> Il tuo carrello è vuoto! (sfigato)</casezero></rowtype>
 <beforeall><![CDATA[<div id="chiudi-cart" onclick="closeCart()">x</div><div id="products-cart-info">Oggetti nel carrello<br/>Sub totale<br/>Spedizione<br/>Tasse<br/>Totale<br/></div><div id="products-cart-info-number">%total-items<br/>%total-sub<br/>%total-tax<br/>%total-shipment<br/>%total-total</div><div class="checkout-button" onclick="openCheckout()" id="checkout-top">CHECKOUT NOW</div>]]></beforeall>
 <afterall><![CDATA[<div id="checkout-bottom" onclick="openCheckout()" class="checkout-button">CHECKOUT NOW</div>]]></afterall>

@@ -52,6 +52,7 @@ removeProduct=function(PRDid){
       var qt=parseInt(elm.className.replace('a',''));qt--;
 		if(qt>0){elm.className='a'+qt;}
 		else{elm.parentNode.removeChild(elm);};
+		server_syncart();
 		rendercart();
 }};
 updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
