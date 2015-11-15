@@ -101,11 +101,20 @@ function updateProductList(){
 			for(var e=1;e<ee.length;e++){
 				rel+=','+ee[e].firstChild.value;
 }	}	}
-	var geo=false;
 	var price=false;
+	var pmin=parseInt(document.getElementById('jfind-min'));
+	var pmax=parseInt(document.getElementById('jfind-max'));
+	if((pmin>0)||(pmax<1000)){
+		price='{variants:{"$elemMatch":{price:{$gt:'+pmin+',$lt:'+pmax+'}}}}';
+	}
+	var geo=false;
+	
 	var pattern=false;
+	
 	var url='http://emporyou.com/api/get/?';
 	if(rel){url+='rel='+rel+'&'}
+	if(price){url+='jfind='+encodeUriComponent(price)+'&'}
+	console.log(url);
 	ooo.render('thumb-wrap','products-template-uni.xml',url);
 }
 
