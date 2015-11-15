@@ -211,12 +211,8 @@ function handleFileSelect(evt) {
                 imgNew.src=e.target.result;
                 imgNew.id="imgNew";
                 document.getElementById('image-target').appendChild(imgNew);
-                if(document.getElementById('imgNew').width>document.getElementById('imgNew').height){
-                    var styleImg="height:100%"
-                }else{
-                    var styleImg="width:100%"
-                }
-                 imgNew.setAttribute('style','position:absolute;top:0;left:0;'+styleImg);
+                document.getElementById('image-target').setAttribute('style','background-color:#ccc;overflow:hidden')
+                imgNew.setAttribute('style','width:100%');
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
