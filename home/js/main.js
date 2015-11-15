@@ -1,16 +1,6 @@
 var cartPosition=450;var total=0;var set=0;var cartOpened=0;var productOpened=0;
 var gClass=function(v){return document.getElementsByClassName(v);}
-function addProduct(productName,XMLid,PRDid){
-   var elm=document.getElementById(PRDid);
-    if(elm){
-        var qt=parseInt(elm.className.replace('a',''));qt++;
-        elm.className='a'+qt;
-    }else{
-    elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
-    total++;
-	 server_syncart();
- 	rendercart();
-}
+
 //--------------------------------------------------------------------------- PRODUCT PAGE
 function openProduct(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}

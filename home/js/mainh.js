@@ -7,11 +7,8 @@ server_syncart=function(){
 	f=ooo.ins(document.body,'form',['id','cart-sync-form','style','display:none','enctype','multipart/form-data','method','post','target','post-responses','action','http://emporyou.com/syncart']);
 	var i=ooo.ins(f,'textarea',['name','xdata'],'<html>'+xml+'</html>');setTimeout(function(){f.submit();},100);
 };
-server_syncartget=function(){
-	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});
-};
 rendercart=function(){
-		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
+	if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
 	else{
 	var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
 window.cartTotalItems=0;
@@ -46,14 +43,18 @@ getcartXML=function(){
 		cartXML+='</response>';
 		return cartXML;
 };
+addProduct=function(productName,XMLid,PRDid){
+   var elm=document.getElementById(PRDid);
+   if(elm){var qt=parseInt(elm.className.replace('a',''));qt++;elm.className='a'+qt;}
+	else{elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
+	server_syncart();rendercart();};
 removeProduct=function(PRDid){
 	var elm=document.getElementById(PRDid);
-    if(elm){
+   if(elm){
       var qt=parseInt(elm.className.replace('a',''));qt--;
 		if(qt>0){elm.className='a'+qt;}
 		else{elm.parentNode.removeChild(elm);};
-		server_syncart();
-		rendercart();
+		server_syncart();rendercart();
 }};
 updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
 /*updateCartFlag=function(){

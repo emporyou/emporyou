@@ -42,12 +42,11 @@
     </script>
 <script>
 myappinit=function(){
-	
-    ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
-    ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
-	doinitialrender();	
-	server_syncartget();
+	ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
+   ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
+	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});	
 	checkMobile();
+	doinitialrender();
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
