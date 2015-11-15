@@ -68,7 +68,13 @@ slider.noUiSlider.on('update', function( values, handle ) {
 		document.getElementById('jfind-max').value = Math.round(value);
 	}
 });
+document.getElementById('jfind-min').addEventListener('change', function(){
+	slider.noUiSlider.set([this.value, null]);
+});
 
+document.getElementById('jfind-max').addEventListener('change', function(){
+	slider.noUiSlider.set([null, this.value]);
+});
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
