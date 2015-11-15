@@ -42,9 +42,11 @@
     </script>
 <script>
 myappinit=function(){
+	
     ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
     ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
 	doinitialrender();	
+	server_syncartget();
 	checkMobile();
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
