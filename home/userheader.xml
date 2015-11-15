@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<rowtype tagname="//item">
+<variable tagname="name/familyName" substitution="%lastname"/>
+<variable tagname="name/givenName" substitution="%name"/>
+<variable tagname="email" substitution="%email"/>
+<variable tagname="language" substitution="%language" convert="sessionlang"/>
+<html><div class="user-full-name">%name %lastname</div></html></rowtype></document>
