@@ -174,8 +174,8 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <input type="range" min="0" max="1000" value="0" step="1" id="minn"  onchange="rangevalueMIN.value=value;checkRange(this.nextSibling,document.getElementById('maxx').nextSibling,false);" /><output id="rangevalueMIN" class="rangevalue">0</output>
-      <input type="range" min="0" max="1000" value="1000" step="1" id="maxx" onchange="rangevalueMAX.value=value;checkRange(this.nextSibling,document.getElementById('minn').nextSibling,true);" /><output id="rangevalueMAX" class="rangevalue">1000</output>
+           <input type="range" min="0" max="1000" value="0" step="1" id="minn"  onchange="rangevalueMIN.value=value;checkRange(this.nextSibling,document.getElementById('maxx').nextSibling,false);rangevalueMIN.value=value;" /><output id="rangevalueMIN" class="rangevalue">0</output>
+      <input type="range" min="0" max="1000" value="1000" step="1" id="maxx" onchange="rangevalueMAX.value=value;checkRange(this.nextSibling,document.getElementById('minn').nextSibling,true);rangevalueMAX.value=value;" /><output id="rangevalueMAX" class="rangevalue">1000</output>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">

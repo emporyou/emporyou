@@ -102,10 +102,11 @@ function closeCheckout(){
     document.getElementById('checkout-main-container').setAttribute('style','display:none');
     defaultPage();    closeCart();
 }
+
 function checkRange(xx,yy,cc){
-    if(cc){console.log('hai mosso la barra maggiore');
-        if(xx.value<=yy.value){xx.value=yy.value;console.log('major done')}
-    }else{console.log('hai mosso la barra minore and '+xx.value+' è il valore della barra attuale e l altro è '+yy.value);
-        if(xx.value>=yy.value){xx.value=yy.value;console.log('minor done')}
+    if(cc){
+        if(xx.value<=yy.value){xx.previousSibling.value=yy.previousSibling.value}
+    }else{
+        if(xx.value>=yy.value){xx.previousSibling.value=yy.previousSibling.value}
     }
 }
