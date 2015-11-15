@@ -449,7 +449,7 @@ mapstyles=[
 ];
 
 function updateProductList(){
-	var ee=ooo.sel("//*[contains(@class,'category')]");
+	var ee=ooo.sel("//*[contains(@class,'category')]",document);
 	var rel=false;if(ee.length>0){
 		rel=ooo.ixml(ee[0],true);
 		if(ee.length>1){
