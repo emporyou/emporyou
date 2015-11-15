@@ -126,8 +126,7 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 	}	}	}	}
 	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
 	if(Q.category){
-		Q.rel=[{key:ObjectID(Q.category),name:CATEGORIES[Q.category]}];delete Q.category;}
-	
+		Q.rel=[{key:ObjectID(Q.category),n:CATEGORIES[Q.category],p:XR,r:''}];delete Q.category;}	
 	req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
 	MXS.add(req,res,next);})});
 
