@@ -103,7 +103,6 @@ function closeCheckout(){
     defaultPage();    closeCart();
 }
 function checkRange(xx,yy,cc){
-    setTimeout(
     if(cc){console.log('hai mosso la barra maggiore');
         if(xx.value<=yy.value){xx.value=yy.value}
     }else{console.log('hai mosso la barra minore and '+xx.value+' è il valore della barra attuale');
