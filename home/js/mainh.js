@@ -20,6 +20,9 @@ window.cartTotalTotal=0;
 window.cartTotalTax=0;
 window.cartTotalShipment=0;
 		var cartXML=getcartXML();
+		var d='none';if(window.cartTotalItems>0){d=''}
+		ooo.$$('bought-container').style.display=d;
+		ooo.$$('flag-text').innnerHTML=window.cartTotalItems;
 		//server_syncart();
 		window.cartTotalTax=(cartTotalSub/100)*22;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
@@ -52,7 +55,8 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		else{elm.parentNode.removeChild(elm);};
 		rendercart();
 }};
-updateCartFlag=function(){
+updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
+/*updateCartFlag=function(){
 	if(total==1){
         var element = document.createElement("div");
         var name = document.createElement("div");
@@ -65,14 +69,13 @@ updateCartFlag=function(){
                           document.getElementsByClassName('qt-items')[0].innerHTML=total.toString()};
     if(cartPosition!=0){
     document.getElementById('basket').style.top='-'+cartPosition+'px';
-    }/*else{
-        document.getElementById('else').style.display='block'
-    }*/
+    }
  if(cartPosition!=450){
     document.getElementById('basket').style.top='-400px';
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
-};
+};*/
+
 emptyCart=function(){ooo.clearchilds('cart-data');renderCart();}
 
 //---------------------------------------------------------------------- MAP
