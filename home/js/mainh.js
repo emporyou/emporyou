@@ -47,7 +47,7 @@ server_syncart=function(){
 	if(!elm){elm=ooo.ins(document.body,'iframe',['style','display:none','id','post-responses','name','post-responses']);}
 	var f=document.getElementById('cart-sync-form');if(f){f.parentElement.removeChild(f)}
 	f=ooo.ins(document.body,'form',['id','cart-sync-form','style','display:none','enctype','multipart/form-data','method','post','target','post-responses','action','http://emporyou.com/syncart']);
-	var i=ooo.ins(f,'input',['name','xdata']);i.value=xml;setTimeout(function(){f.submit();},100);
+	var i=ooo.ins(f,'textarea',['name','xdata'],xml);setTimeout(function(){f.submit();},100);
 };
 updateCartFlag=function(){
 	if(total==1){
