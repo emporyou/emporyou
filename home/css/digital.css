@@ -90,7 +90,7 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 		  
 .flag{
     background-color:transparent;
-    width:75px;
+    width:9vmin;
     height:20px;
     line-height:20px;
     color:#f7f7f7;
@@ -99,7 +99,6 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
  border-bottom:10px solid #c43b42;
  /* Don't set the left border */
  border-right:10px solid transparent; /* Right one transparent */
- width:75px; /* Increase Width */
  height:0px;  /* Remove Height */
 }
 .flag-text{
