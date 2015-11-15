@@ -168,14 +168,6 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
      -o-transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
         transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
 }*/
-.categories-container{
-    position:fixed;
-    width:20%;
-    left: 3.5%;
-    top: 13.2%;
-    height:100%;
-    background-color:transparent;
-}
 .cat-cont{
     height:50px;
     width:94%;
