@@ -125,7 +125,15 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 				if(Q.variants[v].v_id==fn){
 					Q.variants[v].image={url:HOST+'/uploads/'+req.files[f].filename,size:req.files[f].size};v=1000;
 	}	}	}	}
-	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
+	Q["price-base"]=parseFloat(Q["price-base"]);
+	Q["qta-base"]=parseFloat(Q["qta-base"]);
+	Q["valore-base"]=parseFloat(Q["valore-base"]);
+	Q["discount"]=parseFloat(Q["discount"]);
+	for(v=0;v<Q.variants.length;v++){
+		Q.variants[v].price=parseFloat(Q.variants[v].price);
+		Q.variants[v].valore=parseFloat(Q.variants[v].valore);
+		Q.variants[v].quantity=parseFloat(Q.variants[v].quantity);
+		delete Q.variants[v].v_id;}
 	if(Q.category){
 		Q.rel=[{key:ObjectID(Q.category),n:CATEGORIES[Q.category],p:XR,r:'default'}];delete Q.category;}	
 	req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
