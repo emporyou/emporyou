@@ -15,7 +15,8 @@
 /*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
 #google-map-container{position:absolute;width:64%;display:flex;background-color:transparent;height:40%;
-						/*hidden mode*/left:-0.5%;top:-40%;justify-content: flex-start;}
+						/*hidden mode*/left:25%;top:-40%;justify-content: flex-start;}
+#google-map-container .google-map{overflow: hidden;height: 99%; width: 100%; background-color: rgb(229, 227, 223);}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left: 3.5%;height: 100%; background-color: transparent;
 						/*hidden mode*/transform:translateX(-120%);}
 #product-main-container{min-width:740px;height:100%;width:100%;background-color: transparent;
@@ -111,12 +112,4 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 }
 .flag-text:hover{
     cursor:pointer;opacity:0.7;
-}
-
-/*-------------------GOOGLE MAP------------------*/
-.google-map{position: absolute;
-    overflow: hidden;
-    height: 99%;
-    width: 100%;
-    background-color: rgb(229, 227, 223);
 }
