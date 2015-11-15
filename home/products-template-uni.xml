@@ -69,7 +69,7 @@
                 class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange">%price</b><br/>%subtitle</div></div></div><textarea 
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 					  
-<div class="product-info-main"><div id="#UNIQUEID#-#ROWIDX#-left-column-pro" class="left-column-pro"><div id="#UNIQUEID#-#ROWIDX#-main-image-container" class="main-image-container"><div id="main-image-pro%id" class="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
+<div class="product-info-main"><input type="button" onclick="closeProduct(this)" value="CHIUDI PAGINA PRODOTTO"/><div id="#UNIQUEID#-#ROWIDX#-left-column-pro" class="left-column-pro"><div id="#UNIQUEID#-#ROWIDX#-main-image-container" class="main-image-container"><div id="main-image-pro%id" class="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-desc-container" class="main-desc-container height200 transition-1"><div onclick="openDesc()" 
 id="#UNIQUEID#-#ROWIDX#-layer-desc" class="layer-desc"> </div><div 
 id="#UNIQUEID#-#ROWIDX#-main-desc-pro" class="main-desc-pro" ><div 
@@ -90,7 +90,7 @@ class="commento" placeholder="Scrivi un commento..." style="resize:none"> </text
 id="#UNIQUEID#-#ROWIDX#-right-column-pro" class="right-column-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
-id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name<input type="button" onclick="closeProduct(this)" value="CHIUDI PAGINA PRODOTTO"/></span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
+id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
