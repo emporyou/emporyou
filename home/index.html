@@ -174,7 +174,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <input type="range" min="0" max="1000" value="0" step="1" id="minn"  onchange="setTimeout(\'checkRange(this,document.getElementById('maxx'),false)\',200);rangevalueMIN.value=value;" />
+           <input type="range" min="0" max="1000" value="0" step="1" id="minn"  onchange="setTimeout('checkRange(this,document.getElementById(\'maxx\'),false)',200);rangevalueMIN.value=value;" />
 <output id="rangevalueMIN" class="rangevalue">0</output>
       <input type="range" min="0" max="1000" value="1000" step="1" id="maxx" onchange="setTimeout('checkRange(this,document.getElementById(\'minn\'),false)',200);rangevalueMAX.value=value;" />
 <output id="rangevalueMAX" class="rangevalue">1000</output>
