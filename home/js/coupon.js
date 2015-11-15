@@ -216,6 +216,7 @@ function handleFileSelect(evt) {
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
+                evt.target.setAttribute("style","display:none")
                 
                 //document.getElementById('list').insertBefore(span, null);
                 var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
