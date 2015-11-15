@@ -137,7 +137,6 @@ app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------Cartoleria
 app.post(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
-	console.log('post');
 	var c='';var f=true;
 	try{c=req.body.xdata;if(c){if(c!=''){f=false;req.session.cart=c;}}}
 	catch(ex){f=true}
@@ -146,9 +145,7 @@ app.post(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
-	console.log('get');
 	var c=req.session.cart||"<response>-</response>";
-
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
