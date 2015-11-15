@@ -51,7 +51,7 @@ myappinit=function(){
 	doinitialrender();
     var slider = document.getElementById('slider-search');
 
-var html5Slider=noUiSlider.create(slider, {
+noUiSlider.create(slider, {
 	start: [0, 1000],
 	connect: true,
 	range: {
@@ -60,7 +60,7 @@ var html5Slider=noUiSlider.create(slider, {
 	}
 });
 
-html5Slider.noUiSlider.on('update', function( values, handle ) {
+slider.noUiSlider.on('update', function( values, handle ) {
 
 	var value = values[handle];
 
