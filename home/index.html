@@ -52,11 +52,11 @@ myappinit=function(){
     var slider = document.getElementById('slider-search');
 
 noUiSlider.create(slider, {
-	start: [0, 1000],
+	start: [0, 250],
 	connect: true,
 	range: {
 		'min': 0,
-		'max': 2000
+		'max': 500
 	}
 });
 
@@ -203,7 +203,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <div id="slider-search"></div><input value="0" type="hidden" id="jfind-min"/><input value="2000" type="hidden" id="jfind-max"/>
+           <div id="slider-search"></div><input value="0" type="hidden" id="jfind-min"/><input value="500" type="hidden" id="jfind-max"/>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">
