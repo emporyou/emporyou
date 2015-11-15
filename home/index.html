@@ -59,6 +59,18 @@ noUiSlider.create(slider, {
 		'max': 2000
 	}
 });
+
+html5Slider.noUiSlider.on('update', function( values, handle ) {
+
+	var value = values[handle];
+
+	if ( handle ) {
+		document.getElementById('jfind-min').value = value;
+	} else {
+		document.getElementById('jfind-max').value = Math.round(value);
+	}
+});
+
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -186,7 +198,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <div id="slider-search"></div>
+           <div id="slider-search"></div><input value="0" type="hidden" id="jfind-min"/><input value="2000" type="hidden" id="jfind-max"/>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">

@@ -214,18 +214,18 @@ buffer			A Buffer of the entire file	MemoryStorage
 /*
 TODO EMPORYOU:
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
+H		VARIANTE GIUSTA IN CARRELLO
+
 H 		Ricerca per prezzo MAX e MIN funzionanti
 
 H 		Transazione e back 
-G     [PAGINA PAGAMENTO FASULLA + PAGINE BACK]
-
-H		VARIANTE GIUSTA IN CARRELLO
 H 		Dispatch email
 
 H+G 	Admin e merchant views ###############################################
 
-G 		Template email per cliente merchant e admin
 H+G	+Autocompilamento da magento
+G     [PAGINA PAGAMENTO FASULLA + PAGINE BACK]
+G 		Template email per cliente merchant e admin
 G     aggiungere MIN MAX in home
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
