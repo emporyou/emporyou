@@ -1,4 +1,15 @@
 //--------------------------------------------------------------------------- CART
+server_syncart=function(){
+	var xml=document.getElementById('cart-data').innerHTML;
+	var elm=document.getElementById('post-responses');
+	if(!elm){elm=ooo.ins(document.body,'iframe',['style','display:none','id','post-responses','name','post-responses']);}
+	var f=document.getElementById('cart-sync-form');if(f){f.parentElement.removeChild(f)}
+	f=ooo.ins(document.body,'form',['id','cart-sync-form','style','display:none','enctype','multipart/form-data','method','post','target','post-responses','action','http://emporyou.com/syncart']);
+	var i=ooo.ins(f,'textarea',['name','xdata'],'<html>'+xml+'</html>');setTimeout(function(){f.submit();},100);
+};
+server_syncartget=function(){
+	ooo.render('cart-data','html.xml','/api/syncart',false,false,function(){rendercart()});
+};
 rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
 	else{
@@ -41,14 +52,6 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		else{elm.parentNode.removeChild(elm);};
 		rendercart();
 }};
-server_syncart=function(){
-	var xml=document.getElementById('cart-data').innerHTML;
-	var elm=document.getElementById('post-responses');
-	if(!elm){elm=ooo.ins(document.body,'iframe',['style','display:none','id','post-responses','name','post-responses']);}
-	var f=document.getElementById('cart-sync-form');if(f){f.parentElement.removeChild(f)}
-	f=ooo.ins(document.body,'form',['id','cart-sync-form','style','display:none','enctype','multipart/form-data','method','post','target','post-responses','action','http://emporyou.com/syncart']);
-	var i=ooo.ins(f,'textarea',['name','xdata'],xml);setTimeout(function(){f.submit();},100);
-};
 updateCartFlag=function(){
 	if(total==1){
         var element = document.createElement("div");
@@ -71,6 +74,7 @@ updateCartFlag=function(){
     }
 };
 emptyCart=function(){ooo.clearchilds('cart-data');renderCart();}
+
 //---------------------------------------------------------------------- MAP
 ensureMapIsOpened=function(){if(!document.body.classList.contains('map-isin')){toggleMap()}};
 ensureMapIsClosed=function(){if(document.body.classList.contains('map-isin')){toggleMap()}};
