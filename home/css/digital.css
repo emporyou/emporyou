@@ -55,8 +55,10 @@ body.Cmode #checkout-main-container{display:block;}
 
 #bought-container{position: fixed;
     width: 9vmin;
-    top: 50px;
+	 top: 100px;
     right: 6%;
+    padding-left: 4.5vmin;
+    box-sizing: border-box;
     transform: translateY(-74.9%);
     transform-origin: top;
     transition-delay: 250ms;}
