@@ -106,7 +106,7 @@ document.getElementById('jfind-max').addEventListener('change', function(){
 var deferredhandler=false;
 function setdeferredupdate=function(){
 	if(deferredhandler){clearTimeout(deferredhandler)}
-	deferredhandler=setTimeout(function(){},500)
+	deferredhandler=setTimeout(function(){updateProductList()},500)
 };
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
