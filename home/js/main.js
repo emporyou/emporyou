@@ -103,9 +103,9 @@ function closeCheckout(){
     defaultPage();    closeCart();
 }
 function checkRange(xx,yy,cc){
-    if(cc){
+    if(cc){console.log('hai mosso la barra maggiore');
         if(xx.value<yy.value){xx.value=yy.value}
-    }else{
+    }else{console.log('hai mosso la barra minore');
         if(xx.value>yy.value){xx.value=yy.value}
     }
 }
