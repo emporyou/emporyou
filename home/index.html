@@ -61,9 +61,7 @@ noUiSlider.create(slider, {
 });
 
 slider.noUiSlider.on('update', function( values, handle ) {
-
 	var value = values[handle];
-
 	if ( handle ) {
 		document.getElementById('jfind-min').value = value;
 	} else {
@@ -131,10 +129,10 @@ initMap=function() {
 	mapOptions:mapOpts,
 	markerOptions:{draggable: true}
   });
-  $("#city-input").bind("geocode:dragged", function(event, latLng){
-          $("#city-input").val(latLng.lat()+','+latLng.lng());
-          $("#city-input").trigger("geocode");
-   });  
+  //$("#city-input").bind("geocode:dragged", function(event, latLng){
+  //        $("#city-input").val(latLng.lat()+','+latLng.lng());
+  //        $("#city-input").trigger("geocode");
+  //});  
   window.gmap=$("#city-input").geocomplete('map');
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
