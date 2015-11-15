@@ -463,3 +463,8 @@ body {
     padding-bottom: 34%;
     height: 0;
 }
+
+#files {
+    opacity:0;
+}
+#files:hover{cursor:pointer;}

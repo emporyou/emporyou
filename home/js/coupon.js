@@ -205,15 +205,15 @@ function handleFileSelect(evt) {
         reader.onload = (function (theFile) {
             return function (e) {
                 // Render thumbnail.
-                document.getElementById('files').setAttribute("style","url('"+e.target.result+"')");console.log(e.target.result)
+                document.getElementById('image-target').setAttribute("style","url('"+e.target.result+"')");console.log(e.target.result)
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
                 
                 //document.getElementById('list').insertBefore(span, null);
-                //var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
-                //rr.addEventListener('change', handleFileSelect, false);
-                //ooo.move(evt.target, 'send-form');
+                var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
+                rr.addEventListener('change', handleFileSelect, false);
+                ooo.move(evt.target, 'send-form');
             };
         })(f);
 
