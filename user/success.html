@@ -48,7 +48,15 @@ myappinit=function(){
 </head>
 <body onload="myappinit();">
 <div class="header">
-    <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div></div>
+   <div class="logo-text-sx"></div>
+    <div id="profile-button" onclick="window.location.href='../user/profile.html'">Accedi</div>
+   <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div>
+    <div class="logo-container"><!--<img
+        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div><div 
+        id="header-items-container">
+            <div class="item-container" ><img class="map-icon" onclick="toggleMap();checkMobile()" src="../img/map-icon.png"/>
+            </div>
+        </div></div>
 <div class="message">
     <div class="result-transaction">LA TRANSAZIONE HA AVUTO<br/> <span style="color:green">SUCCESSO! ☺</span></div>
     <input type="button" class="choice-left choice" onclick="window.location.href='http://emporyou.com'" value="CONTINUA LO SHOPPING"/><input type="button" class="choice-right choice" style="background-color:green;color:white;" value="CONDIVIDI IL TUO ACQUISTO"/>
