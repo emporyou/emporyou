@@ -282,7 +282,8 @@ var TRI=ooo.ins(OC,'div',['class','tri25']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
-    ooo.ins(OPTIMG,'input',['type','file','class','fileso']);
+    var IMGINP=ooo.ins(OPTIMG,'input',['type','file','class','fileso']);
+    IMGINP.addEventListener('change', handleFileSelecto, false);
     ooo.ins(OPTIMG,'input',['type','hidden','value',count,'name','v_id']);
     ooo.ins(OPTIMG,'output',['id','listo'])
 
