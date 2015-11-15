@@ -457,3 +457,9 @@ textarea {
 body {
     background-color:#e6e6e6 !important;
 }
+
+#image-target {
+        width: 34%;
+    padding-bottom: 34%;
+    height: 0;
+}
