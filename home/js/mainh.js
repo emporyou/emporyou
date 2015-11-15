@@ -1,8 +1,4 @@
-updateproducts=function(){
-	
-	
-};
-
+//--------------------------------------------------------------------------- CART
 rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}
 	else{
@@ -78,54 +74,59 @@ updateCartFlag=function(){
     setTimeout("document.getElementById('basket').style.top='-425px';",100);
     }
 };
-emptyCart=function(){
-    ooo.clearchilds('products-cart-data');renderCart();
-}
+emptyCart=function(){ooo.clearchilds('cart-data');renderCart();}
+//---------------------------------------------------------------------- MAP
 ensureMapIsOpened=function(){if(!document.body.classList.contains('map-isin')){toggleMap()}};
 ensureMapIsClosed=function(){if(document.body.classList.contains('map-isin')){toggleMap()}};
-doItProducts=function(){
-$(function() {
-    $(".thumb-product").hover(function(e) {
-        var el_pos = $(this).offset();
-        var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
+//---------------------------------------------------------------------- FANTASMINO
+doItProducts=function(){$(function(){$(".thumb-product").hover(function(e) {
+      var el_pos = $(this).offset();
+      var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
 		var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
 		var fly=jQuery(e.currentTarget).find('.product-bar');
-	fly=jQuery(fly).get(0);
-	fly.classList.add(startC);
+	fly=jQuery(fly).get(0);fly.classList.add(startC);
 	setTimeout(function(){fly.style.display='block';fly.classList.add("product-bar-in")},35);	
 	setTimeout(function(){fly.classList.remove(startC)},50);
-    }, function(e) {
-        var el_pos = $(this).offset();
-        var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
+    },function(e) {
+      var el_pos = $(this).offset();
+      var edge = closestEdge(e.pageX - el_pos.left, e.pageY - el_pos.top, $(this).width(), $(this).height());
 		var startC='bar-n';if(edge=='right'){startC='bar-e';}else if(edge=='bottom'){startC='bar-s';}else if(edge=='left'){startC='bar-w';}	
         var fly=jQuery(e.currentTarget).find('.product-bar');
-	fly=jQuery(fly).get(0);
-	fly.classList.add(startC);
+	fly=jQuery(fly).get(0);fly.classList.add(startC);
 	setTimeout(function(){fly.classList.remove("product-bar-in")},25);
 	setTimeout(function(){fly.style.display='none';fly.classList.remove(startC)},350);
-    });
-});
+});});};
+closestEdge=function(x,y,w,h) {
+   var topEdgeDist=distMetric(x,y,w/2,0);var bottomEdgeDist=distMetric(x,y,w/2,h);
+   var leftEdgeDist=distMetric(x,y,0,h/2);var rightEdgeDist = distMetric(x,y,w,h/2);
+   var min=Math.min(topEdgeDist,bottomEdgeDist,leftEdgeDist,rightEdgeDist);
+   switch (min) {
+      case leftEdgeDist:
+         return "left";
+      case rightEdgeDist:
+         return "right";
+      case topEdgeDist:
+         return "top";
+      case bottomEdgeDist:
+         return "bottom";
+}}; 
+distMetric=function(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff)+(yDiff*yDiff);}
+//---------------------------------------------------------------------- FANTASMINO
+function updateProductList(){
+	var ee=ooo.sel("//*[(contains(@class,'category'))and(contains(@class,'select'))]",document);
+	var rel=false;if(ee.length>0){
+		rel=ee[0].firstChild.value;
+		if(ee.length>1){
+			for(var e=1;e<ee.length;e++){
+				rel+=','+ee[e].firstChild.value;
+}	}	}
+	var geo=false;
+	var price=false;
+	var pattern=false;
+	var url='http://emporyou.com/api/get/?';
+	if(rel){url+='rel='+rel+'&'}
+	ooo.render('thumb-wrap','products-template-uni.xml',url);
 }
-function closestEdge(x,y,w,h) {
-        var topEdgeDist = distMetric(x,y,w/2,0);
-        var bottomEdgeDist = distMetric(x,y,w/2,h);
-        var leftEdgeDist = distMetric(x,y,0,h/2);
-        var rightEdgeDist = distMetric(x,y,w,h/2);
-    
-        var min = Math.min(topEdgeDist,bottomEdgeDist,leftEdgeDist,rightEdgeDist);
-        switch (min) {
-            case leftEdgeDist:
-                return "left";
-            case rightEdgeDist:
-                return "right";
-            case topEdgeDist:
-                return "top";
-            case bottomEdgeDist:
-                return "bottom";
-        }
-}
-    
-function distMetric(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff)+(yDiff*yDiff);}
 
 
 
@@ -448,18 +449,3 @@ mapstyles=[
 //{name:'',value:,
 ];
 
-function updateProductList(){
-	var ee=ooo.sel("//*[(contains(@class,'category'))and(contains(@class,'select'))]",document);
-	var rel=false;if(ee.length>0){
-		rel=ee[0].firstChild.value;
-		if(ee.length>1){
-			for(var e=1;e<ee.length;e++){
-				rel+=','+ee[e].firstChild.value;
-}	}	}
-	var geo=false;
-	var price=false;
-	var pattern=false;
-	var url='http://emporyou.com/api/get/?';
-	if(rel){url+='rel='+rel+'&'}
-	ooo.render('thumb-wrap','products-template-uni.xml',url);
-}
