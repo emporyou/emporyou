@@ -103,11 +103,6 @@ document.getElementById('jfind-min').addEventListener('change', function(){
 document.getElementById('jfind-max').addEventListener('change', function(){
 	slider.noUiSlider.set([null, this.value]);setdeferredupdate();
 });
-var deferredhandler=false;
-setdeferredupdate=function(){
-	if(deferredhandler){clearTimeout(deferredhandler)}
-	deferredhandler=setTimeout(function(){updateProductList()},500)
-};
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -116,6 +111,12 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 	map: "#google-map"
 });*/
 }
+
+window.deferredhandler=false;
+setdeferredupdate=function(){
+	if(deferredhandler){clearTimeout(deferredhandler)}
+	deferredhandler=setTimeout(function(){updateProductList()},500)
+};
 window.ISptloaded=false;
 doinitialrender=function(){
 	if(window.initialjdata){
