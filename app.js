@@ -139,6 +139,7 @@ app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	var c='';
 	try{
 		c=req.body.xdata;	
+		req.session.cart=c;
 		}catch(ex){
 		c=req.session.cart||"<response>-</response>";
 	}
