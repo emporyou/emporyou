@@ -205,7 +205,7 @@ function handleFileSelect(evt) {
         reader.onload = (function (theFile) {
             return function (e) {
                 // Render thumbnail.
-                document.getElementById('files').style.backgroundImage="url('"+e.target.result+"')";
+                document.getElementById('files').setAttribute("style","url('"+e.target.result+"')");
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
