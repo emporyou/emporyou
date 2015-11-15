@@ -119,11 +119,11 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 	if(!req.files){res.jend(req,res,'error','files are mandatory');}
 	if(!Q.images){Q.images=new Array();}
 	for(var f=0;f<req.files.length;f++){var v;
-		if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:req.files[f].filename,size:req.files[f].size};}
+		if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:HOST+req.files[f].filename,size:req.files[f].size};}
 		else{var fn=req.files[f].fieldname.replace('varimg_','');
 			for(v=0;v<Q.variants.length;v++){
 				if(Q.variants[v].v_id==fn){
-					Q.variants[v].image={url:req.files[f].filename,size:req.files[f].size};v=1000;
+					Q.variants[v].image={url:HOST+'uploads/'req.files[f].filename,size:req.files[f].size};v=1000;
 	}	}	}	}
 	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
 	if(Q.category){
@@ -215,12 +215,16 @@ buffer			A Buffer of the entire file	MemoryStorage
 TODO EMPORYOU:
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
 H 		Ricerca per prezzo MAX e MIN funzionanti
-H 		Transazione e back [PAGINA PAGAMENTO FASULLA]
+
+H 		Transazione e back 
+G     [PAGINA PAGAMENTO FASULLA]PAGIINE BACK
+
 H		VARIANTE GIUSTA IN CARRELLO
 H 		Dispatch email
 
-G 		Template email per cliente merchant e admin
 H+G 	Admin e merchant views ###############################################
+
+G 		Template email per cliente merchant e admin
 H+G	+Autocompilamento da magento
 G     aggiungere MIN MAX in home
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
