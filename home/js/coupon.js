@@ -22,7 +22,12 @@ function myInit() {
         //var span = document.createElement('span');
         //span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         //document.getElementById('list').insertBefore(span, null);
-        document.getElementById('files').style.backgroundImage="url('"+initialjdata.image[0].url+"')";
+        var imgNew=document.createElement('img');
+                imgNew.src=initialjdata.image[0].url;
+                imgNew.id="imgNew";
+                document.getElementById('image-target').appendChild(imgNew);
+                document.getElementById('image-target').setAttribute('style','background-color:#ccc;overflow:hidden')
+                imgNew.setAttribute('style','width:100%');
         for (i = 0; i < initialjdata.variants.length; i++) {
             addOption(document.getElementById('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
