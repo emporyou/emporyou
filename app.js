@@ -125,9 +125,12 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 					Q.variants[v].image={url:req.files[f].filename,size:req.files[f].size};v=1000;
 	}	}	}	}
 	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
-	if(Q.category){Q.rel=[{key:ObjectID(Q.category)}];delete Q.category;}
+	if(Q.category){
+		Q.rel=[{key:ObjectID(Q.category),name:CATEGORIES[Q.category]}];delete Q.category;}
+	
 	req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
 	MXS.add(req,res,next);})});
+
 app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
@@ -175,6 +178,15 @@ metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109')
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------- SERVER LISTEN BOOTSTRAP
 //---------------------------------------------------------------------------------------------------
+var CATEGORIES={'000000000000000000000101':'Casa',
+					'000000000000000000000102':'Tempo libero',
+					'000000000000000000000103':'Moda',
+					'000000000000000000000104':'Mangiare e Bere',
+					'000000000000000000000105':'Elettronica',
+					'000000000000000000000106':'Bellezza',
+					'000000000000000000000107':'Cartoleria',
+					'000000000000000000000108':'Salute',
+					'000000000000000000000109':'Animali'};
 app.all(/^(?!\/api).*$/,metaschema.urltorecord);
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
