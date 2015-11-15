@@ -216,7 +216,7 @@ function handleFileSelect(evt) {
                 }else{
                     var styleImg="width:100%"
                 }
-                 imgNew.setAttribute('style','position:absolute;top:0;left:0;'+styleImg+')';
+                 imgNew.setAttribute('style','position:absolute;top:0;left:0;'+styleImg);
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
