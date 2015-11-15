@@ -221,7 +221,6 @@ function handleFileSelect(evt) {
         reader.readAsDataURL(f);
 
     }
-}
 function handleFileSelecto(evt) {
     var files = evt.target.files; // FileList object
 
