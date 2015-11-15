@@ -166,7 +166,7 @@
 
 #description-textarea {
     line-height:15px;
-    height:99%;
+    height:89px;
     font-size:2vh;
     padding:5%;
     width:60%;
@@ -346,10 +346,10 @@
 .dettaglio-det-voucher {
     width:100%;
     background-color:white;
-    height:45px;
+    height:40px;
     top:0;
     box-sizing: border-box;
-    line-height:45px;
+    line-height:40px;
     text-align:center;
     font-family: 'josefin sans';
     font-size:20px;
