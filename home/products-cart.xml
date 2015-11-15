@@ -6,7 +6,7 @@
 <constantjavascript substitution="%total-shipment">cartTotalShipment</constantjavascript>
 <constantjavascript substitution="%total-total">cartTotalTotal</constantjavascript>
 <rowtype tagname="//doc">
-<variable tagname="variants/qta" substitution="%cart-qt"/>
+<variable tagname="cart_qt" substitution="%cart-qt"/>
 <variable tagname="lat" substitution="%lat"/>
 <variable tagname="lon" substitution="%lon"/>
 <variable tagname="city" substitution="%city"/>
