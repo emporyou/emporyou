@@ -285,7 +285,7 @@
 .value-opt-voucher {
     width: 100%;
     background-color: white;
-    height: 47px;
+    height: 46px;
     top: 0;
     /* float: right; */
     box-sizing: border-box;
@@ -314,7 +314,7 @@
 
 .tri25 {
         width: 25%;
-    margin: 5px 8px;
+    margin: 0px 8px;
     display: inline-block;
     position: relative;
     float: right;
