@@ -102,3 +102,10 @@ function closeCheckout(){
     document.getElementById('checkout-main-container').setAttribute('style','display:none');
     defaultPage();    closeCart();
 }
+function checkRange(xx,yy,cc){
+    if(cc){
+        if(xx.value<yy.value){xx.value=yy.value}
+    }else{
+        if(xx.value>yy.value){xx.value=yy.value}
+    }
+}
