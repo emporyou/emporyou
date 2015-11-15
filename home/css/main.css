@@ -509,11 +509,9 @@ perspective-origin: 50% 50%;
     cursor:pointer;   
 }
 .bottone-opzione{
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    /* width: auto; */
-    padding: 5px;
+        height: 25px;
+    line-height: 12px;
+    font-family: 'josefin sans';
     display: inline-block;
     margin-bottom: 5px;
     background-color: #dddddd;
