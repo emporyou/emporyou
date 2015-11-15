@@ -5,6 +5,7 @@ function stepCheckout(elm){
         document.getElementsByClassName('left-square')[i].classList.add('closed');
         document.getElementsByClassName('single-container')[i].setAttribute('style','display:none');
     }
+    elm.classList.remove('closed')
     elm.classList.add('open');
     document.getElementsByClassName('menu-opened')[0].classList.add('menu-closed');
     document.getElementsByClassName('menu-opened')[0].classList.remove('menu-opened');
