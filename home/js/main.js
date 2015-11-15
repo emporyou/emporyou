@@ -80,28 +80,6 @@ function clean(elm){
         }
     }}
 }
-//---------------------------------------------------------------------------------- CHECKOUT
-function openCheckout(){
-		
-    //defaultPage();
-	 //checkLogin();
-    //gClass('emporyoum-bar')[0].style.display="none";
-    //gClass('google-map-container')[0].style.display="none";
-    //gClass('products-main')[0].style.display="none";
-    //document.getElementById('basket-container').style.display="none";
-    //document.getElementById('products-cart-target').style.display="none";
-    //document.getElementById('checkout-main-container').setAttribute('style','');
-    
-}
-function closeCheckout(){
-    gClass('emporyoum-bar')[0].style.display="";
-    gClass('google-map-container')[0].style.display="";
-    gClass('products-main')[0].style.display="";
-    document.getElementById('products-cart-target').style.display="";
-    document.getElementById('basket-container').style.display="";
-    document.getElementById('checkout-main-container').setAttribute('style','display:none');
-    defaultPage();    closeCart();
-}
 
 function checkRange(xx,yy,cc){
     if(cc){

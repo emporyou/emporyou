@@ -95,7 +95,12 @@ closestEdge=function(x,y,w,h) {
          return "bottom";
 }}; 
 distMetric=function(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff)+(yDiff*yDiff);}
-//---------------------------------------------------------------------- FANTASMINO
+//---------
+function openCheckout(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Pmode');
+	 document.body.classList.add('Cmode');}
+function closeCheckout(event,elm,idd){document.body.classList.remove('Cmode');document.body.classList.remove('Pmode');
+	 document.body.classList.add('Bmode');}
+//---------------------------------------------------------------------- UPDATE SEARCH
 function updateProductList(){
 	var ee=ooo.sel("//*[(contains(@class,'category'))and(contains(@class,'select'))]",document);
 	var rel=false;if(ee.length>0){
@@ -114,7 +119,7 @@ function updateProductList(){
 
 
 
-
+//---------------------------------------------------------------------- MAP STYLERS
 
 //window.overridestyleidx=-1;
 window.overridestyleidx=0;
