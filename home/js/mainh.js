@@ -46,7 +46,7 @@ getcartXML=function(){
 		cartXML+='</response>';
 		return cartXML;
 };
-removeProduct=function(NONUSED2,NONUSED1,PRDid){
+removeProduct=function(PRDid){
 	var elm=document.getElementById(PRDid);
     if(elm){
       var qt=parseInt(elm.className.replace('a',''));qt--;
