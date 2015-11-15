@@ -20,11 +20,13 @@
 <link rel="stylesheet" type="text/css" href="css/product-page.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <link rel="stylesheet" type="text/css" href="css/checkout.css">
+<link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="js/checkout.js"></script>
 <script src="js/main.js"></script>
 <script src="js/mainh.js"></script>
+<script src="js/nouislider.min.js"></script>
 <script src="js/metaschema.js"></script>
 <!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
 <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
@@ -47,6 +49,16 @@ myappinit=function(){
 	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});	
 	checkMobile();
 	doinitialrender();
+    var slider = document.getElementById('slider-search');
+
+noUiSlider.create(slider, {
+	start: [0, 1000],
+	connect: true,
+	range: {
+		'min': 0,
+		'max': 2000
+	}
+});
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -174,8 +186,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <input type="range" min="0" max="1000" value="0" step="1" id="minn"  onmouseup="rangevalueMIN.value=value;checkRange(this.nextSibling,document.getElementById('maxx').nextSibling,false);rangevalueMIN.value=value;" /><output id="rangevalueMIN" class="rangevalue">0</output>
-      <input type="range" min="0" max="1000" value="1000" step="1" id="maxx" onmouseup="rangevalueMAX.value=value;checkRange(this.nextSibling,document.getElementById('minn').nextSibling,true);rangevalueMAX.value=value;" /><output id="rangevalueMAX" class="rangevalue">1000</output>
+           <div id="slider-search"></div>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">
