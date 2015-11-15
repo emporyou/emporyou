@@ -8,28 +8,8 @@ function addProduct(productName,XMLid,PRDid){
     }else{
     elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
     total++;
-    if(total==1){
-        var element = document.createElement("div");
-        var name = document.createElement("div");
-    name.appendChild(document.createTextNode(total.toString()));
-    name.className='flag-text';
-    element.className='flag';
-        element.appendChild(name);
-    document.getElementById('bought-container').appendChild(element);
-    cartPosition-=25;}else{gClass('flag-text')[0].innerHTML=total.toString();
-                          };
-    /*if(cartPosition!=0){
-    document.getElementById('basket').style.top='-'+cartPosition+'px';
-    }*/
-	 /*else{
-        document.getElementById('else').style.display='block'
-    }*/
 	 server_syncart();
- /*if(cartPosition!=450){
-    document.getElementById('basket').style.top='-400px';
-    setTimeout("document.getElementById('basket').style.top='-425px';",100);
-    }*/
-	rendercart();
+ 	rendercart();
 }
 //--------------------------------------------------------------------------- PRODUCT PAGE
 function openProduct(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
