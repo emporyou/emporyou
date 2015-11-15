@@ -40,6 +40,7 @@ body.Bmode .zero-thumb {overflow:hidden}
 /*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------CHECKOUT MODE*/
 body.Cmode #checkout-main-container{display:block;}
+body.Cmode #product-main-container{display:none;}
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------LAYOUT INDEPENTEND CART*/
 #products-cart-target{position:fixed;top:0;right:-17px;z-index:900;overflow-y: scroll;
