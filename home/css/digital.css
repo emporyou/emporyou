@@ -53,7 +53,13 @@ body.Cmode #checkout-main-container{display:block;}
     transform: translateY(-74.9%);
     transform-origin: top;transition-delay:250ms}
 
-#bought-container{position:fixed;margin-top:65px;width:20%;}
+#bought-container{position: fixed;
+    width: 9vmin;
+    top: 50px;
+    right: 6%;
+    transform: translateY(-74.9%);
+    transform-origin: top;
+    transition-delay: 250ms;}
 #rope{position:fixed;width:9vmin;right:6%;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
 body.cart-isin #basket{transform:translateY(-99.9%);transition-delay:0ms;z-index:1001}
 body.cart-isin #basket-container{transform:scaleY(0);}
@@ -82,13 +88,11 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 		  
 .flag{
     background-color:transparent;
-    margin-left:25px;
     width:75px;
     height:20px;
     line-height:20px;
     color:#f7f7f7;
     font-family:'Open sans';
-    margin-top:4px;
      border-top:10px solid #c43b42;
  border-bottom:10px solid #c43b42;
  /* Don't set the left border */
