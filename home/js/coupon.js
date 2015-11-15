@@ -211,9 +211,9 @@ function handleFileSelect(evt) {
                 evt.target.id = "mainImage_" + count;
                 
                 //document.getElementById('list').insertBefore(span, null);
-                var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
-                rr.addEventListener('change', handleFileSelect, false);
-                ooo.move(evt.target, 'send-form');
+                //var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
+                //rr.addEventListener('change', handleFileSelect, false);
+                //ooo.move(evt.target, 'send-form');
             };
         })(f);
 

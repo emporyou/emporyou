@@ -162,8 +162,9 @@ textarea{
 }
 
 #image-target {
-    width:22%;
-    height:80%;
+    width: 34%;
+    padding-bottom: 34%;
+    height: 0;
     background-color:rgba(255,255,255,0.2);
     position:absolute;
     top:10%;
