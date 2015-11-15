@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-<!--prova-->
 <rowtype tagname="//item">
 <variable tagname="name/familyName" substitution="%lastname"/>
 <variable tagname="name/givenName" substitution="%name"/>
