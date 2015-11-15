@@ -113,7 +113,7 @@ function updateProductList(){
 	
 	var url='http://emporyou.com/api/get/?';
 	if(rel){url+='rel='+rel+'&'}
-	if(price){url+='jfind='+encodeUriComponent(price)+'&'}
+	if(price){url+='jfind='+encodeURIComponent(price)+'&'}
 	console.log(url);
 	ooo.render('thumb-wrap','products-template-uni.xml',url);
 }
