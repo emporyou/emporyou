@@ -2,6 +2,7 @@ var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');var upload = multer({ dest: 'uploads/' });
@@ -16,7 +17,7 @@ var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
 
-
+app.use(cookieParser());
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
