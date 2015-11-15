@@ -461,6 +461,5 @@ function updateProductList(){
 	var pattern=false;
 	var url='http://emporyou.com/api/get/?';
 	if(rel){url+='rel='+rel+'&'}
-	console.log(url);
 	ooo.render('thumb-wrap','products-template-uni.xml',url);
 }
