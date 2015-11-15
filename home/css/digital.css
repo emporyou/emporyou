@@ -14,7 +14,7 @@
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*---------------------------------------------MAIN LAYOUT : STANDARD PROPS + HIDDEN PROPS*/
-#google-map-container{position:absolute;width:100%;display:flex;background-color:transparent;height:40%;
+#google-map-container{position:absolute;width:64%;display:flex;background-color:transparent;height:40%;
 						/*hidden mode*/left:-0.5%;top:-40%;justify-content: flex-start;}
 #categories-container{position:fixed;width: 20%;top: 13.2%;left: 3.5%;height: 100%; background-color: transparent;
 						/*hidden mode*/transform:translateX(-120%);}
@@ -34,7 +34,7 @@ body.Pmode .zero-thumb .product-info-main{position:absolute;width:100%;top:-35%;
 body.Bmode #categories-container{transform:translateX(0%);}
 body.Bmode,body.Pmode #product-main-container{margin-top:6.3%;z-index:1;display:block}
 body.Bmode.map-isin #product-main-container{margin-top:26.3%;}
-body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;width:100%}
+body.Bmode.map-isin #google-map-container{justify-content:center;top:13%;}
 body.Bmode .zero-thumb .product-info-main{display:none}
 body.Bmode .zero-thumb {overflow:hidden}
 /*----------------------------------------------------------------------------------------*/
@@ -111,4 +111,12 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 }
 .flag-text:hover{
     cursor:pointer;opacity:0.7;
+}
+
+/*-------------------GOOGLE MAP------------------*/
+.google-map{position: absolute;
+    overflow: hidden;
+    height: 99%;
+    width: 100%;
+    background-color: rgb(229, 227, 223);
 }
