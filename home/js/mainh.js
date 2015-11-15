@@ -105,7 +105,7 @@ function updateProductList(){
 	var pmin=parseInt(document.getElementById('jfind-min').value);
 	var pmax=parseInt(document.getElementById('jfind-max').value);
 	if((pmin>0)||(pmax<1000)){
-		price='{variants:{"$elemMatch":{price:{$gt:'+pmin+',$lt:'+pmax+'}}}}';
+		price='{"variants":{"$elemMatch":{"price":{"$gt":'+pmin+',"$lt":'+pmax+'}}}}';
 	}
 	var geo=false;
 	
