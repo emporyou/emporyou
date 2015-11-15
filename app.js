@@ -136,12 +136,16 @@ app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------Cartoleria
-app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+app.post(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	var c='';var f=true;
 	try{c=req.body.xdata;if(c){if(c!=''){f=false;req.session.cart=c;}}}
 	catch(ex){f=true}
 	if(f){c=req.session.cart||"<response>-</response>";}
 	res.set('Content-Type', 'text/xml;');
+	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
+});
+app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+	c=req.session.cart||"<response>-</response>";res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 //---------------------------------------------------------------------------------------------------
