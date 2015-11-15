@@ -41,8 +41,8 @@ removeProduct=function(NONUSED2,NONUSED1,PRDid){
 		else{elm.parentNode.removeChild(elm);};
 		rendercart();
 }};
-server_syncart=function(xml){
-	var cartdata=ooo.sel("//div[@id='cart-data']/textarea",document);
+server_syncart=function(){
+	var xml=document.getElementById('cart-data').innerHTML;
 	var elm=document.getElementById('post-responses');
 	if(!elm){elm=ooo.ins(document.body,'iframe',['style','display:none','id','post-responses','name','post-responses']);}
 	var f=document.getElementById('cart-sync-form');if(f){f.parentElement.removeChild(f)}
