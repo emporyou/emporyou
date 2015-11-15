@@ -1,8 +1,8 @@
 function myInit() {
     window.countDetail=0;window.countOption=0;
     var d=new Date;
-    document.getElementById("myLocalDate").valueAsDate=d;
-    document.getElementById("myLocalDate").setAttribute('min',formatDate(d));
+    document.getElementsByClassName("myLocalDate")[0].valueAsDate=d;
+    document.getElementsByClassName("myLocalDate")[0].setAttribute('min',formatDate(d));
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
