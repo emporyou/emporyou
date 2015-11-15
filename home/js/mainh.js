@@ -8,7 +8,7 @@ server_syncart=function(){
 	var i=ooo.ins(f,'textarea',['name','xdata'],'<html>'+xml+'</html>');setTimeout(function(){f.submit();},100);
 };
 server_syncartget=function(){
-	ooo.render('cart-data','html.xml','/syncart',false,false,function(){rendercart()});
+	ooo.render('cart-data','html.xml','../syncart',false,false,function(){rendercart()});
 };
 rendercart=function(){
 		if(!window.cartemplatepreloaded){ooo.preload('products-cart.xml',function(){window.cartemplatepreloaded=true;setTimeout('rendercart();',250)})}

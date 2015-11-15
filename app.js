@@ -145,7 +145,8 @@ app.post(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
-	c=req.session.cart||"<response>-</response>";res.set('Content-Type', 'text/xml;');
+	var c=req.session.cart||"<response>-</response>";
+	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 //---------------------------------------------------------------------------------------------------
