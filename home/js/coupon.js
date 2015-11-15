@@ -191,13 +191,13 @@ function handleFileSelect(evt) {
     count++;
     var files = evt.target.files; // FileList object
 
-    /*// Loop through the FileList and render image files as thumbnails.
+    // Loop through the FileList and render image files as thumbnails.
     for (var i = 0, f; f = files[i]; i++) {
 
         // Only process image files.
         if (!f.type.match('image.*')) {
             continue;
-        }*/
+        }
 
         var reader = new FileReader();
 
@@ -215,12 +215,12 @@ function handleFileSelect(evt) {
                 rr.addEventListener('change', handleFileSelect, false);
                 ooo.move(evt.target, 'send-form');
             };
-        })(files);
+        })(f);
 
         // Read in the image file as a data URL.
-        reader.readAsDataURL(files);
+        reader.readAsDataURL(f);
 
-    }
+    }}
 function handleFileSelecto(evt) {
     var files = evt.target.files; // FileList object
 
