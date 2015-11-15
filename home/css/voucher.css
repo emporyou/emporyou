@@ -440,7 +440,7 @@
     height:24%;
     margin:1%;
 }
-#myLocalDate {
+.myLocalDate {
     margin-bottom:20px;
     margin-left:20px;
     border:1px solid black;
