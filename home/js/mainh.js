@@ -57,7 +57,7 @@ removeProduct=function(PRDid){
 		server_syncart();rendercart();
 }};
 updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
-emptyCart=function(){ooo.clearchilds('cart-data');renderCart();}
+emptyCart=function(){ooo.clearchilds('cart-data');server_syncart();rendercart();}
 
 //---------------------------------------------------------------------- MAP
 ensureMapIsOpened=function(){if(!document.body.classList.contains('map-isin')){toggleMap()}};
