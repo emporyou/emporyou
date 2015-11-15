@@ -91,16 +91,16 @@ noUiSlider.create(slider, {
 slider.noUiSlider.on('update', function( values, handle ) {
 	var value = values[handle];
 	if ( handle ) {
-		document.getElementById('jfind-min').value = Math.round(value);setdeferredupdate();
-	} else {
 		document.getElementById('jfind-max').value = Math.round(value);setdeferredupdate();
+	} else {
+		document.getElementById('jfind-min').value = Math.round(value);setdeferredupdate();
 	}
 });
-document.getElementById('jfind-min').addEventListener('change', function(){
+document.getElementById('jfind-max').addEventListener('change', function(){
 	slider.noUiSlider.set([this.value, null]);setdeferredupdate();
 });
 
-document.getElementById('jfind-max').addEventListener('change', function(){
+document.getElementById('jfind-min').addEventListener('change', function(){
 	slider.noUiSlider.set([null, this.value]);setdeferredupdate();
 });
 	//setTimeout('initMap()',500);
