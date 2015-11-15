@@ -525,10 +525,11 @@ perspective-origin: 50% 50%;
 }
 
 .logo-text-sx {
-    height:35px;
-    top:12.5px;
-    left:12.5px;
-    position:absolute;
-    background-size:cover;
-    background-image:url('../img/logo-text-sx.png')
+    height: 35px;
+    width: 115px;
+    top: 6.5px;
+    left: 20.5px;
+    position: absolute;
+    background-size: cover;
+    background-image: url('../img/logo-text-sx.png');
 }
