@@ -69,7 +69,7 @@ myappinit=function(){
 	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});	
 	checkMobile();
 	doinitialrender();
-    var slider = document.getElementById('slider-search');
+   var slider = document.getElementById('slider-search');
 
 noUiSlider.create(slider, {
 	start: [ 0, 250 ],
@@ -131,7 +131,9 @@ doinitialrender=function(){
 		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template-uni.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
 	}}}
-	else{ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');}
+	else{
+		//ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');
+	}
 };
 
 </script>
