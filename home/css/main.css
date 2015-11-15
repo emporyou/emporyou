@@ -549,3 +549,6 @@ perspective-origin: 50% 50%;
     color: white;
     font-family: 'josefin sans';
 }
+#profile-button:hover{
+    cursor:pointer;   
+}
