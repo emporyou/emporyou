@@ -217,7 +217,7 @@ H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
 H 		Ricerca per prezzo MAX e MIN funzionanti
 
 H 		Transazione e back 
-G     [PAGINA PAGAMENTO FASULLA]PAGIINE BACK
+G     [PAGINA PAGAMENTO FASULLA + PAGINE BACK]
 
 H		VARIANTE GIUSTA IN CARRELLO
 H 		Dispatch email
