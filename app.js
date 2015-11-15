@@ -136,13 +136,10 @@ app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------Cartoleria
 app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
-	var c='';
-	try{
-		c=req.body.xdata;	
-		req.session.cart=c;
-		}catch(ex){
-		c=req.session.cart||"<response>-</response>";
-	}
+	var c='';var f=true;
+	try{c=req.body.xdata;if(c){if(c!=''){f=false;req.session.cart=c;}}}
+	catch(ex){f=true}
+	if(f){c=req.session.cart||"<response>-</response>";}
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
