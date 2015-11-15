@@ -73,12 +73,20 @@ myappinit=function(){
 	doinitialrender();
     var slider = document.getElementById('slider-search');
 
-noUiSlider.create(slider, {
-	start: [0, 250],
+noUiSlider.create(snapSlider, {
+	start: [ 0, 250 ],
+	snap: true,
 	connect: true,
 	range: {
 		'min': 0,
-		'max': 500
+		'10%': 20,
+		'20%': 50,
+		'30%': 100,
+		'40%': 150,
+		'50%': 200,
+        '60%': 500,
+        '70%': 750,
+		'max': 1000
 	}
 });
 
@@ -225,7 +233,7 @@ initMap=function() {
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <div id="slider-search"></div><input value="0" type="number" id="jfind-min"/><input value="500" type="number" id="jfind-max"/>
+           <div id="slider-search"></div><input value="0" type="number" id="jfind-min"/><input value="250" type="number" id="jfind-max"/>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">
