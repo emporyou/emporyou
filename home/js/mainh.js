@@ -448,4 +448,19 @@ mapstyles=[
 //{name:'',value:,
 ];
 
-
+function updateProductList(){
+	var ee=ooo.sel("//*[contains(@class,'category')]");
+	var rel=false;if(ee.length>0){
+		rel=ooo.ixml(ee[0],true);
+		if(ee.length>1){
+			for(var e=1;e<ee.length;e++){
+				rel+=','+ooo.ixml(ee[e],true);
+}	}	}
+	var geo=false;
+	var price=false;
+	var pattern=false;
+	var url='http://emporyou.com/api/get/?';
+	if(rel){url+='rel='+rel+'&'}
+	console.log(url);
+	ooo.render('thumb-wrap','products-template-uni.xml',url);
+}

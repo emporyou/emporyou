@@ -3,7 +3,7 @@
 <rowtype tagname="//doc">
 <variable tagname="name" substitution="%name"/>
 <variable tagname="id" substitution="%id"/>
-<html><div class="category transition-1 gen-temp" onclick="this.classList.toggle('select')">%name</div>
+<html><div class="category transition-1 gen-temp" onclick="this.classList.toggle('select');updateProductList();">%name</div>
 </html>
 </rowtype>
 </document>
