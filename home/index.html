@@ -63,7 +63,7 @@ noUiSlider.create(slider, {
 slider.noUiSlider.on('update', function( values, handle ) {
 	var value = values[handle];
 	if ( handle ) {
-		document.getElementById('jfind-min').value = value;
+		document.getElementById('jfind-min').value = Math.round(value);
 	} else {
 		document.getElementById('jfind-max').value = Math.round(value);
 	}
