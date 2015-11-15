@@ -104,7 +104,7 @@ document.getElementById('jfind-max').addEventListener('change', function(){
 	slider.noUiSlider.set([null, this.value]);
 });
 var deferredhandler=false;
-function setdeferredupdate=function(){
+setdeferredupdate=function(){
 	if(deferredhandler){clearTimeout(deferredhandler)}
 	deferredhandler=setTimeout(function(){updateProductList()},500)
 };
