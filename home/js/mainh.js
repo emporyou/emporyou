@@ -57,26 +57,6 @@ removeProduct=function(PRDid){
 		server_syncart();rendercart();
 }};
 updateCartFlag=function(){console.log('remove all calls to updateCartFlag')}
-/*updateCartFlag=function(){
-	if(total==1){
-        var element = document.createElement("div");
-        var name = document.createElement("div");
-    name.appendChild(document.createTextNode(total.toString()));
-    name.className='flag-text';
-    element.className='flag';
-        element.appendChild(name);
-    document.getElementById('bought-container').appendChild(element);
-    cartPosition-=25;}else{document.getElementsByClassName('flag-text')[0].innerHTML=total.toString();
-                          document.getElementsByClassName('qt-items')[0].innerHTML=total.toString()};
-    if(cartPosition!=0){
-    document.getElementById('basket').style.top='-'+cartPosition+'px';
-    }
- if(cartPosition!=450){
-    document.getElementById('basket').style.top='-400px';
-    setTimeout("document.getElementById('basket').style.top='-425px';",100);
-    }
-};*/
-
 emptyCart=function(){ooo.clearchilds('cart-data');renderCart();}
 
 //---------------------------------------------------------------------- MAP
