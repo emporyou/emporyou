@@ -11,7 +11,13 @@ function checkMobile(){console.log('remove all calls to checkmobile')}
 window.ismaploadedonce=false;function toggleMap(){
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
-	document.body.classList.toggle('map-isin');}
+	document.body.classList.toggle('map-isin');
+	if(document.body.classList.contains('map-isin')){
+	document.getElementById('jfind-lat').value='';
+	document.getElementById('jfind-lng').value='';
+	updateProductList()
+	}
+	}
 function openMap(){toggleMap()}
 
 //--------------------------------------------------------------------------- 
