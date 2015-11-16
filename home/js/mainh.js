@@ -118,24 +118,23 @@ function updateProductList(){
 			for(var e=1;e<ee.length;e++){
 				rel+=','+ee[e].firstChild.value;
 }	}	}
-	var price=false;
+	var price=false;var jfind={};
 	var pmin=parseInt(document.getElementById('jfind-min').value);
 	var pmax=parseInt(document.getElementById('jfind-max').value);
 	if((pmin>0)||(pmax<1000)){
-		price='{"variants":{"$elemMatch":{"price":{"$gt":'+pmin+',"$lt":'+pmax+'}}}}';
+		jfind.variants={"$elemMatch":{"price":{"$gt":pmin,"$lt":pmax}}}};
 	}
 	var geo=false;
-	
-	var pattern=false;
-	
 	var lat=document.getElementById('jfind-lat').value;
 	var lng=document.getElementById('jfind-lng').value;
-	var H={"geo":{"$near":{"$geometry":{"type":"Point","coordinates":[lat,lng]},"$maxDistance":20,"$minDistance":0}}};
-	
-	
+	if(lat){if(lng){if(lat!=''){if(lng!=''){geo=true}}}}
+	if(geo){
+		jfind.geo={"$near":{"$geometry":{"type":"Point","coordinates":[lat,lng]},"$maxDistance":1000,"$minDistance":0}};
+	}	
+	var pattern=false;
 	var url='http://emporyou.com/api/get/?';
 	if(rel){url+='rel='+rel+'&'}
-	if(price){url+='jfind='+encodeURIComponent(price)+'&'}
+	if(price||geo){url+='jfind='+encodeURIComponent(JSON.stringify(jfind))+'&'}
 	console.log(url);
 	ooo.render('thumb-wrap','products-template-uni.xml',url);
 }
