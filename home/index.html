@@ -175,15 +175,16 @@ initMap=function() {
   })
   .bind("geocode:result", function(event, result){
     console.log(result);
-	 
 		ooo.$$("jfind-lat").value=result.geometry.location.lat();
       ooo.$$("jfind-lng").value=result.geometry.location.lng();
+		updateProductList()
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
 		//console.log(latLng.lat()+','+latLng.lng());
 		ooo.$$("jfind-lat").value=latLng.lat();
       ooo.$$("jfind-lng").value=latLng.lng();
 		window.gmap.setCenter(latLng);
+		updateProductList()
       //$("#city-input").val(latLng.lat()+','+latLng.lng());
 		//$("#city-input").trigger("geocode");
   });

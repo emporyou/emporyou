@@ -88,8 +88,25 @@ closestEdge=function(x,y,w,h) {
 }}; 
 distMetric=function(x,y,x2,y2){var xDiff=x-x2;var yDiff=y-y2;return (xDiff*xDiff)+(yDiff*yDiff);}
 //---------
-function openCheckout(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Pmode');
-	 document.body.classList.add('Cmode');closeCart()}
+window.cartREVemplatepreloaded
+function openCheckout(event,elm,idd){
+	if(!window.cartREVemplatepreloaded){ooo.preload('cart-review.xml',function(){window.cartREVemplatepreloaded=true;setTimeout('openCheckout();',250)})}
+	 document.body.classList.remove('Bmode');document.body.classList.remove('Pmode');
+	 document.body.classList.add('Cmode');closeCart();
+	 
+	 var cartXML=getcartXML();
+		var d='none';if(window.cartTotalItems>0){d=''}
+		ooo.$$('bought-container').style.display=d;
+		ooo.$$('flag-text').innerHTML=window.cartTotalItems;
+		window.cartTotalTax=(cartTotalSub/100)*22;
+		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
+		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
+		window.cartTotalShipment=Math.round(window.cartTotalShipment*100)/100;
+		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;	
+		window.cartTotalTotal=Math.round(window.cartTotalTotal*100)/100;		
+		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('cart-review.xml').documentElement.innerHTML+'</tmpdoc>');
+		ooo.syncrender(document.getElementById('review-target'),ttt.documentElement,fff.documentElement,'normal');
+	 }
 function closeCheckout(event,elm,idd){document.body.classList.remove('Cmode');document.body.classList.remove('Pmode');
 	 document.body.classList.add('Bmode');}
 //---------------------------------------------------------------------- UPDATE SEARCH
@@ -111,7 +128,9 @@ function updateProductList(){
 	
 	var pattern=false;
 	
-	var H={"geo":{"$near":{"$geometry":{"type":"Point","coordinates":[45.4679,9.1825]},"$maxDistance":20,"$minDistance":0}}};
+	var lat=document.getElementById('jfind-lat').value;
+	var lng=document.getElementById('jfind-lng').value;
+	var H={"geo":{"$near":{"$geometry":{"type":"Point","coordinates":[lat,lng]},"$maxDistance":20,"$minDistance":0}}};
 	
 	
 	var url='http://emporyou.com/api/get/?';
