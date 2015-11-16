@@ -125,8 +125,8 @@ function updateProductList(){
 		jfind.variants={"$elemMatch":{"price":{"$gt":pmin,"$lt":pmax}}};
 	}
 	var geo=false;
-	var lat=document.getElementById('jfind-lat').value;
-	var lng=document.getElementById('jfind-lng').value;
+	var lat=parseFloat(document.getElementById('jfind-lat').value);
+	var lng=parseFloat(document.getElementById('jfind-lng').value);
 	if(lat){if(lng){if(lat!=''){if(lng!=''){geo=true}}}}
 	if(geo){
 		jfind.geo={"$near":{"$geometry":{"type":"Point","coordinates":[lat,lng]},"$maxDistance":1000,"$minDistance":0}};
