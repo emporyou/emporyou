@@ -147,7 +147,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     font-family:'open sans';
 }
 .product-discount{
-    background-color:#f69393;
+    background-color:#c43b42;
     height:2px;
     position:absolute;
     top:0;
@@ -157,7 +157,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     color:black;
     font-family:'open sans';
     font-size:2vh;
-    border-left: 2px solid #e87c7c;
+    /*border-left: 2px solid #e87c7c;*/
     max-width:220px;
     -webkit-transition: all 250ms ease-out;
 -moz-transition: all 250ms ease-out;
