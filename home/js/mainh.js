@@ -122,7 +122,7 @@ function updateProductList(){
 	var pmin=parseInt(document.getElementById('jfind-min').value);
 	var pmax=parseInt(document.getElementById('jfind-max').value);
 	if((pmin>0)||(pmax<1000)){
-		jfind.variants={"$elemMatch":{"price":{"$gt":pmin,"$lt":pmax}}}};
+		jfind.variants={"$elemMatch":{"price":{"$gt":pmin,"$lt":pmax}}};
 	}
 	var geo=false;
 	var lat=document.getElementById('jfind-lat').value;
