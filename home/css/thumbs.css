@@ -148,13 +148,13 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 }
 .product-discount{
     background-color:#f69393;
-    height:20px;
+    height:2px;
     position:absolute;
     top:0;
     right:0;
     text-align:center;
     line-height:20px;
-    color:#fbe268;
+    color:black;
     font-family:'open sans';
     font-size:2vh;
     border-left: 2px solid #e87c7c;
