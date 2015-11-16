@@ -169,18 +169,17 @@ initMap=function() {
   $("#city-input").geocomplete({
 	location:'Milano',
 	map:"#main-google-map",
-	details:'#georesults',
+	details:document.getElementById('georesults'),
 	mapOptions:mapOpts,
 	markerOptions:{draggable: true}
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
-				//console.log(latLng.lat()+','+latLng.lng());
-				ooo.$$("jfind-lat").value=latLng.lat();
-            ooo.$$("jfind-lng").value=latLng.lng();
-				window.gmap.setCenter(latLng);
-          //$("#city-input").val(latLng.lat()+','+latLng.lng());
-			 
-          //$("#city-input").trigger("geocode");
+		//console.log(latLng.lat()+','+latLng.lng());
+		ooo.$$("jfind-lat").value=latLng.lat();
+      ooo.$$("jfind-lng").value=latLng.lng();
+		window.gmap.setCenter(latLng);
+      //$("#city-input").val(latLng.lat()+','+latLng.lng());
+		//$("#city-input").trigger("geocode");
   });  
   window.gmap=$("#city-input").geocomplete('map');
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
