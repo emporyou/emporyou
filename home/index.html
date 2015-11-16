@@ -142,12 +142,12 @@ doinitialrender=function(){
         setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
     }
     function chooseStart(){console.log(ch+' is ch');
-    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click()}
-                           fillAddress();//TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
+    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click();ooo.render('form-target','address.xml','http://emporyou.com/session');}
+                        fillAddress();   //TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
     }
     function fillAddress(){
         ooo.render('profile-button','usrheader.xml','http://emporyou.com/session'); 
-        ooo.render('form-target','address.xml','http://emporyou.com/session');
+        
     }
 </script>
 <script>
