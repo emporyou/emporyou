@@ -18,9 +18,7 @@
 <variable tagname="variants/price" substitution="%price" pickup="csv:-"/>
 <variable tagname="subtitle" substitution="%subtitle"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<html><div class="image-checkout"><img
-	id="less-cart" src="../img/less.png" onclick="removeProduct('%id')" /><img
-	id="plus-cart" src="../img/more.png" onclick="addProduct('%jsproduct-name',false,'%id')" /></div><div class="info-image-review"><div class="circle-cart">%cart-qt</div> %product-name<br/>%subtitle</div></html>
+<html><div class="image-checkout"></div><div class="info-image-review"><div class="circle-cart">%cart-qt</div> %product-name </div></html>
     <casezero><span style="font-family:'josefin sans';font-weight:bold"> Il tuo carrello è vuoto! 😩</span></casezero></rowtype>
 <beforeall><![CDATA[<div id="products-checkout-info">Oggetti nel carrello<br/>Sub totale<br/>Spedizione<br/>Tasse<br/>Totale<br/></div><div id="products-checkout-info-number">%total-items<br/>%total-sub<br/>%total-tax<br/>%total-shipment<br/>%total-total</div>]]></beforeall>
 </document>
