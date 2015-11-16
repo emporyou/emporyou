@@ -105,7 +105,7 @@ function openCheckout(event,elm,idd){
 		window.cartTotalTotal=window.cartTotalTax+window.cartTotalSub+window.cartTotalShipment;	
 		window.cartTotalTotal=Math.round(window.cartTotalTotal*100)/100;		
 		var fff=ooo.parsexml(cartXML);var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('cart-review.xml').documentElement.innerHTML+'</tmpdoc>');
-		ooo.syncrender(document.getElementById('review-target'),ttt.documentElement,fff.documentElement,'normal');
+		ooo.syncrender(document.getElementById('checkout-target'),ttt.documentElement,fff.documentElement,'normal');
 	 }
 function closeCheckout(event,elm,idd){document.body.classList.remove('Cmode');document.body.classList.remove('Pmode');
 	 document.body.classList.add('Bmode');}
