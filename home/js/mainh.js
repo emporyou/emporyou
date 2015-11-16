@@ -111,6 +111,9 @@ function updateProductList(){
 	
 	var pattern=false;
 	
+	var H={"geo":{"$near":{"$geometry":{"type":"Point","coordinates":[45.4679,9.1825]},"$maxDistance":20,"$minDistance":0}}};
+	
+	
 	var url='http://emporyou.com/api/get/?';
 	if(rel){url+='rel='+rel+'&'}
 	if(price){url+='jfind='+encodeURIComponent(price)+'&'}
