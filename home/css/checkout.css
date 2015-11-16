@@ -326,4 +326,9 @@ a {
 .info-image-review{
     font-family: 'josefin sans';
     display: inline-block;
+    float:left;
+}
+#checkout-target{
+    padding:1%;
+    width:88% !important;
 }
