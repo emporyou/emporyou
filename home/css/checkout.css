@@ -323,3 +323,7 @@ a {
     font-family: 'josefin sans';
     letter-spacing: normal;
 }
+.info-image-review{
+    font-family: 'josefin sans';
+    display: inline-block;
+}
