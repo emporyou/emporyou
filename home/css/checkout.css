@@ -305,3 +305,21 @@ a {
 .closed {
     height:20%;
 }
+#products-checkout-info-number {
+    width: 8%;
+    background-color: #f6f6f6;
+    display: inline-block;
+    background-color: #ccc;
+    color: black;
+    /* border-radius: 5px; */
+    font-family: 'josefin sans';
+    letter-spacing: normal;
+}
+#products-checkout-info {
+    /* margin-top: 55px; */
+    width: 18%;
+    display: inline-block;
+    /* background-color: #fff; */
+    font-family: 'josefin sans';
+    letter-spacing: normal;
+}
