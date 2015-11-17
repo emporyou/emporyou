@@ -143,6 +143,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     height:20px;
     top:0;
     left:0;
+    z-index:1000;
     font-family:'open sans';
 }
 .product-discount{
@@ -177,10 +178,9 @@ transition: all 250ms ease-out;
     font-family:'open sans';
     font-size:2vh;
 }
-/*.thumb-element:hover .product-bar{
-    height:100%;
-    opacity:0.8;
-}*/
+thumb-element:hover{
+    transform:scale(1.1)
+}
 .bar-n{
     background-color:#333333;
     position:absolute;

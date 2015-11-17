@@ -60,10 +60,10 @@
 <!--<onload>console.log(#ROWIDX#)</onload>-->
 <inline tagname="metafields" substitution="%product-infos" preload="metafields-template.xml"/>
 <html><div id="tc-#UNIQUEID#-#ROWIDX#" class="%main-class zero-thumb" ><div class="thumb-dummy"> </div><div class="thumb-product" style="overflow:hidden"><div 
-             style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%id')" class="thumb-element"><div 
                  class="product-header"> <div 
                  class="city">%city</div><div 
-                 class="product-discount" style="width:%discount%;">%discount %</div></div></div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
+                 class="product-discount" style="width:%discount%;">%discount %</div></div><div 
+             style="background-image: url('%imageurl');" onclick="openProduct(event,this,'%id')" class="thumb-element"> </div><div class="product-bar transition-1" onclick="openProduct(event,this,'%id')" style="display:none"><div 
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
                  class="%desc-class" onclick="openProduct(event,this,'%id')"><b>%product-name</b><br/><br/></div><div 
