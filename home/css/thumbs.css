@@ -64,7 +64,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border: 8px solid #f6f6f6;
+    margin: 8px;
 }
 .thumb-element {
     position: absolute;
@@ -178,8 +178,10 @@ transition: all 250ms ease-out;
     font-family:'open sans';
     font-size:2vh;
 }
-.thumb-container:hover{
-    transform:scale(1.025)
+.thumb-product:hover{
+    -webkit-box-shadow: 2px 2px 9px 0px rgba(50, 50, 50, 0.48);
+-moz-box-shadow:    2px 2px 9px 0px rgba(50, 50, 50, 0.48);
+box-shadow:         2px 2px 9px 0px rgba(50, 50, 50, 0.48);
 }
 .bar-n{
     background-color:#333333;
