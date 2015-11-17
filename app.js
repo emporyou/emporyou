@@ -275,7 +275,9 @@ VISTE ADMIN
 
 
 
-
+https://apps-apis.google.com/a/feeds/emailsettings/2.0/18montenapoleone.it/m.brambilla@18montenapoleone.it/signature
+https://apps-apis.google.com/a/feeds/emailsettings/2.0/
+https://www.googleapis.com/auth/gmail.readonly
 
 
 

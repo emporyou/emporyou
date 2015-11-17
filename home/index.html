@@ -192,6 +192,23 @@ initMap=function() {
   window.gmap=$("#city-input").geocomplete('map');
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
+  
+  // Construct the circle for each value in citymap.
+  // Note: We scale the area of the circle based on the population.
+  /*for (var city in citymap) {
+    // Add the circle for this city to the map.
+    var cityCircle = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35,
+      map: map,
+      center: citymap[city].center,
+      radius: Math.sqrt(citymap[city].population) * 100
+    });
+  }*/
+  
 };</script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()" class="Bmode">
@@ -209,7 +226,7 @@ initMap=function() {
 <!-- ------------------------------------------------------------------------------ BASKET -->
 <img id="basket" src="../img/basket.png" onclick="toggleCart()" class="transition-S"/>
 <img id="rope" src="../img/rope.png" onclick="toggleCart()" class="transition-S"/>
-<div id="bought-container" style="display:none"><div class="flag"><div id="flag-text" class="flag-text">1</div></div></div>
+<div id="bought-container" style="display:none"><a class="flag" href="#" onclick="javascript:toggleCart();return false;"><div id="flag-text" class="flag-text">1</div></a></div>
 <!-- ---------------------------------------------------------------- GOOGLE MAP CONTAINER -->
 <div id="google-map-container" class="google-map-container transition-3"><div id="main-google-map" class="google-map"></div></div>
 <!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
