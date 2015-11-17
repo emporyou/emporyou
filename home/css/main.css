@@ -497,12 +497,13 @@ transform-origin: 0% 0%;
 perspective: 200;
 perspective-origin: 50% 50%;
 }
-
+#basket:hover{-webkit-filter:brightness(1.1);filter:brightness(1.1)}
 #profile-button {
     position: absolute;
     top: 0;
     right: 0;
-    height: 50px;
+    height: 46px;
+    top: 4px;
     padding: 14px;
     background-color: transparent;
     box-sizing: border-box;
