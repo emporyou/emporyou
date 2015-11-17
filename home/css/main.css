@@ -66,14 +66,14 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     height:100%;
 }
 .item-container{
-    -webkit-flex: 1 0 auto;
-	flex: 1 0 auto;
-    line-height:30px;
-    font-size:2vh;
-        margin: -2px 8px;
-    color:white;
-    font-family:'open sans';
-    height:100%;
+        line-height: 30px;
+    font-size: 2vh;
+    margin: -2px 8px;
+    color: white;
+    font-family: 'open sans';
+    height: 100%;
+    width: 22px;
+    margin-left: -93%;
 }
 .item-container:hover{
     cursor:pointer;opacity:0.7;
