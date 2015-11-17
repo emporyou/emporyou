@@ -122,7 +122,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     filter:grayscale(0) !important;
     z-index:399;
     bottom:0;
-    border-radius:4px 4px 4px 4px;
+    border-radius:0px 0px 4px 4px;
 }
 .product-bar:hover{cursor:pointer}
 .product-bar:hover .product-discount{}
