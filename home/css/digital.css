@@ -66,7 +66,7 @@ body.Cmode #product-main-container,body.Cmode #basket,body.Cmode #basket-contain
     transform-origin: top;
     transition-delay: 250ms;}
 #rope{position:fixed;width:9vmin;right:6%;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
-body.cart-isin #basket{transform:translateY(-99.9%);transition-delay:0ms;z-index:1001;}
+body.cart-isin #basket{transform: translateY(-90.05%) scale(0.9);transition-delay:0ms;z-index:1001;}
 body.cart-isin #basket-container{transform:scaleY(0);}
 body.cart-isin #profile-button {right:17%}
 body.cart-isin #rope{transform:translateY(0) scaleY(0);transition-delay:0ms}
