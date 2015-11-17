@@ -179,9 +179,9 @@ transition: all 250ms ease-out;
     font-size:2vh;
 }
 .thumb-product:hover{
-    -webkit-box-shadow: 2px 2px 9px 0px rgba(50, 50, 50, 0.48);
--moz-box-shadow:    2px 2px 9px 0px rgba(50, 50, 50, 0.48);
-box-shadow:         2px 2px 9px 0px rgba(50, 50, 50, 0.48);
+    -webkit-box-shadow: 2px 2px 9px 0px rgba(50, 50, 50, 0.28);
+-moz-box-shadow:    2px 2px 9px 0px rgba(50, 50, 50, 0.28);
+box-shadow:         2px 2px 9px 0px rgba(50, 50, 50, 0.28);
 }
 .bar-n{
     background-color:#333333;
