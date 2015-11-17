@@ -8,7 +8,7 @@ function openProduct(event,elm,idd){
     window.scroll(0,0);
     document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
-function closeProduct(elm){window.scroll(lastScroll,0);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
+function closeProduct(elm){window.scroll(0,lastScroll);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
 function checkMobile(){console.log('remove all calls to checkmobile')}
 //--------------------------------------------------------------------------- MAP
