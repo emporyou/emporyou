@@ -178,7 +178,7 @@ transition: all 250ms ease-out;
     font-family:'open sans';
     font-size:2vh;
 }
-.thumb-element:hover{
+.thumb-container:hover{
     transform:scale(1.025)
 }
 .bar-n{
