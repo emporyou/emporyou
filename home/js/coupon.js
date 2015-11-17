@@ -1,8 +1,8 @@
 function myInit() {
     window.countDetail=0;window.countOption=0;
     var d=new Date;
-    document.getElementById("myLocalDate").valueAsDate=d;
-    document.getElementById("myLocalDate").setAttribute('min',formatDate(d));
+    document.getElementsByClassName("myLocalDate")[0].valueAsDate=d;
+    document.getElementsByClassName("myLocalDate")[0].setAttribute('min',formatDate(d));
     window.nDetail = 0;
     window.count = 0;
     window.nOption = 0;
@@ -22,7 +22,12 @@ function myInit() {
         //var span = document.createElement('span');
         //span.innerHTML = '<img class="thumb main-image" id="main-image-created" src="' + initialjdata.image[0].url + '" title="mainImage"/>';
         //document.getElementById('list').insertBefore(span, null);
-        document.getElementById('files').style.backgroundImage="url('"+initialjdata.image[0].url+"')";
+        var imgNew=document.createElement('img');
+                imgNew.src=initialjdata.image[0].url;
+                imgNew.id="imgNew";
+                document.getElementById('image-target').appendChild(imgNew);
+                document.getElementById('image-target').setAttribute('style','background-color:#ccc;overflow:hidden')
+                imgNew.setAttribute('style','width:100%');
         for (i = 0; i < initialjdata.variants.length; i++) {
             addOption(document.getElementById('add-option-voucher'),true, i == 0,i == 0);
             if (i == 0) {
@@ -53,11 +58,9 @@ function myInit() {
         }
     }
 }else{addOption(document.getElementId('add-option-voucher'),true, false,true);}}
-
 function clearContents(element) {
     element.value = '';
 }
-
 function oldDetail() {
     var det = document.createElement('fieldset');
     var del = document.createElement('div');
@@ -83,7 +86,6 @@ function oldDetail() {
     nDetail++;
     document.getElementById('details-cont').insertBefore(det, document.getElementById('details-cont').firstChild);
 }
-
 function oldOption(allowChange, hideX,isMain) {
     count++;
     var opt = document.createElement('fieldset');
@@ -188,12 +190,11 @@ function sendCoupon(preview,detailsview) {
 	 }else{
 		 document.getElementById('send-target').value = jsondata;
 			document.getElementById('send-form').submit();
-	 }
-    
+	 } 
 }
-
 function handleFileSelect(evt) {
     count++;
+    if(document.getElementById('imgNew')){removeThis(document.getElementById('imgNew'))};
     var files = evt.target.files; // FileList object
 
     // Loop through the FileList and render image files as thumbnails.
@@ -210,10 +211,17 @@ function handleFileSelect(evt) {
         reader.onload = (function (theFile) {
             return function (e) {
                 // Render thumbnail.
-                document.getElementById('files').style.backgroundImage="url('"+e.target.result+"')";
+                //document.getElementById('image-target').setAttribute("style","url('"+e.target.result+"')");console.log(e.target.result);
+                var imgNew=document.createElement('img');
+                imgNew.src=e.target.result;
+                imgNew.id="imgNew";
+                document.getElementById('image-target').appendChild(imgNew);
+                document.getElementById('image-target').setAttribute('style','background-color:#ccc;overflow:hidden')
+                imgNew.setAttribute('style','width:100%');
                 //var span = document.createElement('span');
                 evt.target.name = "mainImage_" + count;
                 evt.target.id = "mainImage_" + count;
+                evt.target.setAttribute("style","display:none")
                 
                 //document.getElementById('list').insertBefore(span, null);
                 var rr = ooo.ins('image-target', 'input', ['type', 'file', 'id', 'files']);
@@ -225,9 +233,7 @@ function handleFileSelect(evt) {
         // Read in the image file as a data URL.
         reader.readAsDataURL(f);
 
-    }
-}
-
+    }}
 function handleFileSelecto(evt) {
     var files = evt.target.files; // FileList object
 
@@ -246,7 +252,7 @@ function handleFileSelecto(evt) {
             return function (e) {
                 // Render thumbnail.
                 var imgCont = evt.target.parentElement;
-                imgCont.style.backgroundImage = "url('" + e.target.result + "')";
+                imgCont.setAttribute("style","background-image:url('" + e.target.result + "')");
                 evt.target.name = "varimg_" + evt.target.previousSibling.value;
                 evt.target.id = "varimg_" + evt.target.previousSibling.value;
                 ooo.move(evt.target, 'send-form');
@@ -258,11 +264,9 @@ function handleFileSelecto(evt) {
 
     }
 }
-
 function removeThis(n) {
     n.parentNode.removeChild(n);
 }
-
 function addOption(v,allowChange, hideX,isMain){
 
 var FLD=ooo.ins(v.parentElement,'fieldset',['class','nuovaOpzione','name','option'],false,v);
@@ -270,7 +274,7 @@ var OC=ooo.ins(FLD,'div',['class','voucher-option-container']);
    if(!hideX){ooo.ins(FLD,'div',['class','ics-voucher','onclick','removeThis(this.parentElement.parentElement.nextSibling);removeThis(this.parentElement);'],'x');}
 var TRI=ooo.ins(OC,'div',['class','tri39']);
 	ooo.ins(TRI,'textarea',['class','opt-name campo inv-text','placeholder','Nome opzione..','name','option','id','optionName_'+countOption,'required']);
-	ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../home/img/coperta.jpg")','id','optImg_'+countOption]);
+	var OPTIMG=ooo.ins(TRI,'div',['class','opt-img','style','background-image:url("../img/up-icon.png")','id','optImg_'+countOption]);
 var TRI=ooo.ins(OC,'div',['class','tri25']);
 	ooo.ins(TRI,'input',['type','number','class','value-opt-voucher campo inv-text','placeholder','Valore..','name','valore','id','priceName_'+countOption,'min','0','step','0.10','onkeyup','displayunicode(event)','onwheel','calc()','required']);
     countOption++;
@@ -278,9 +282,12 @@ var TRI=ooo.ins(OC,'div',['class','tri25']);
 var TRI=ooo.ins(OC,'div',['class','tri33']);
 	ooo.ins(TRI,'textarea',['class','prezzo-finale-opzione inv-text','readonly','readonly','name','price','id','priceFinal_'+countOption],'0.00');
     ooo.ins(FLD,'div',['class','divider-voucher']);
+    var IMGINP=ooo.ins(OPTIMG,'input',['type','file','class','fileso']);
+    IMGINP.addEventListener('change', handleFileSelecto, false);
+    ooo.ins(OPTIMG,'input',['type','hidden','value',count,'name','v_id']);
+    ooo.ins(OPTIMG,'output',['id','listo'])
 
 }
-
 function addDetail(v){
  
 var FLD=ooo.ins('divider-target-detail','fieldset',['class','nuovoDettaglio'],false,true);
@@ -292,7 +299,6 @@ countDetail++;
 /*<fieldset class="nuovoDettaglio"><div class="divider-voucher"></div><div class="tri100"><textarea class="dettaglio-det-voucher inv-text" placeholder="Dettaglio.."></textarea><textarea class="value-det-voucher inv-text" placeholder="Attributo.."></textarea>
          </div></fieldset><div class="divider-voucher"></div>*/
 }
-
 function calc(){
     var valbas=document.getElementById('valore-base').value;
     var discount=document.getElementById('discount-textarea').value;
@@ -315,29 +321,24 @@ function calc(){
 function displayunicode(e){
 var unicode=e.keyCode? e.keyCode : e.charCode
 if (unicode >= 48 && unicode <= 57){
-    if(document.getElementById('discount-textarea').value>99){document.getElementById('discount-textarea').value=99};calc()
-}
-else{
-}
-    
-}
+    if(document.getElementById('discount-textarea').value>99){document.getElementById('discount-textarea').value=99};calc()}
+else{}}
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear();
-
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
+        return [year, month, day].join('-');
 }
 function formcheck() {window.ccc=0;
-  var ff = document.getElementsByClassName('campo');
-  
-for(var ii=0;ii<ff.length;ii++){
-    if (!ff[ii].value||ff[ii].value=='invalid'){
-            ccc++;if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}
-   }; 
-  setTimeout('if(ccc==0){sendCoupon()}',1000)
+var ff = document.getElementsByClassName('campo');
+for(var ii=0;ii<ff.length;ii++){/*Cycling fields*/
+    if (!ff[ii].value||ff[ii].value=='invalid'){/*Checking fields*/
+            ccc++;$("html, body").animate({scrollTop: 0}, 600);/*Scroll up on fail*/
+        if (!ff[ii].value||ff[ii].value=='invalid'){
+            //ff[i].style.backgroundColor="red"
+        };if(ff[ii].value=='invalid'){alert('seleziona una categoria!')}}}; 
+  setTimeout('if(ccc==0){sendCoupon()}',1000);/*Send form on success*/
 }

@@ -2,6 +2,7 @@ var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');var upload = multer({ dest: 'uploads/' });
@@ -16,7 +17,7 @@ var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
 
-
+app.use(cookieParser());
 app.use(session({saveUninitialized:false,resave:false,secret:'logic is red',store:new MongoStore({url: MONGOURL })}));
 var HOST='http://emporyou.com';
 //var HOST='http://localhost:1024';
@@ -57,17 +58,17 @@ passport.serializeUser(function(user,cb){cb(null,user);});passport.deserializeUs
 passport.use(new GoogleStrategy({clientID:GOOGLE_CLIENT_ID,clientSecret:GOOGLE_CLIENT_SECRET,callbackURL:HOST+"/auth/google/callback"},
   function(accessToken,refreshToken,profile,done){profile.googleId=profile.id;profile.id=false;User.findOrCreate(profile,function(err,user){return done(err,user);});}));
 app.get('/auth/google',passport.authenticate('google',{scope:GOOGLE_API_SCOPE}));
-app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- F A C E B O O K
 passport.use(new FacebookStrategy({clientID:FACEBOOK_APP_ID,clientSecret:FACEBOOK_APP_SECRET,callbackURL:HOST+"/auth/facebook/callback",enableProof:false},
   function(accessToken,refreshToken,profile,done){profile.provider='facebook';User.findOrCreate({facebookId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/facebook',passport.authenticate('facebook'));
-app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/facebook/callback',passport.authenticate('facebook',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req, res) {/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //---------------------------------------------------------------------------------------------------- T W I T T E R
 passport.use(new TwitterStrategy({consumerKey:TWITTER_CONSUMER_KEY,consumerSecret:TWITTER_CONSUMER_SECRET,callbackURL:HOST+"/auth/twitter/callback"},
   function(token,tokenSecret,profile,done){profile.provider='twitter';User.findOrCreate({twitterId:profile.id},function(err,user){return done(err,user);});}));
 app.get('/auth/twitter',passport.authenticate('twitter'));
-app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/home.html';res.redirect(r);});
+app.get('/auth/twitter/callback',passport.authenticate('twitter',{failureRedirect:HOST+'/login.html?failed=failed'}),function(req,res){/*Successful*/var r=req.session.afterlogin||'/';res.redirect(r);});
 //-----------------------------------------------
 /*passport.use(new ShopifyStrategy({clientID:SHOPIFY_CLIENT_ID,clientSecret:SHOPIFY_CLIENT_SECRET,callbackURL:HOST+"/auth/shopify/callback",shop: SHOPIFY_SHOP_SLUG},
   function(accessToken,refreshToken,profile,done){User.findOrCreate({shopifyId:profile.id},function(err,user){return done(err,user);});}));
@@ -118,28 +119,41 @@ app.all(/^\/api\/newdeal\/?.*/,upload.any(),function(req,res,next){
 	if(!req.files){res.jend(req,res,'error','files are mandatory');}
 	if(!Q.images){Q.images=new Array();}
 	for(var f=0;f<req.files.length;f++){var v;
-		if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:req.files[f].filename,size:req.files[f].size};}
+		if(req.files[f].fieldname.indexOf('main')>-1){Q.images[Q.images.length]={url:HOST+'/uploads/'+req.files[f].filename,size:req.files[f].size};}
 		else{var fn=req.files[f].fieldname.replace('varimg_','');
 			for(v=0;v<Q.variants.length;v++){
 				if(Q.variants[v].v_id==fn){
-					Q.variants[v].image={url:req.files[f].filename,size:req.files[f].size};v=1000;
+					Q.variants[v].image={url:HOST+'/uploads/'+req.files[f].filename,size:req.files[f].size};v=1000;
 	}	}	}	}
-	for(v=0;v<Q.variants.length;v++){delete Q.variants[v].v_id;}
-	if(Q.category){Q.rel=[{key:ObjectID(Q.category)}];delete Q.category;}
+	Q["price-base"]=parseFloat(Q["price-base"]);
+	Q["qta-base"]=parseFloat(Q["qta-base"]);
+	Q["valore-base"]=parseFloat(Q["valore-base"]);
+	Q["discount"]=parseFloat(Q["discount"]);
+	for(v=0;v<Q.variants.length;v++){
+		Q.variants[v].price=parseFloat(Q.variants[v].price);
+		Q.variants[v].valore=parseFloat(Q.variants[v].valore);
+		Q.variants[v].quantity=parseFloat(Q.variants[v].quantity);
+		delete Q.variants[v].v_id;}
+	if(Q.category){
+		Q.rel=[{key:ObjectID(Q.category),n:CATEGORIES[Q.category],p:XR,r:'default'}];delete Q.category;}	
 	req.query[MXS.CONFIG.dataParameter]=JSON.stringify(Q);
 	MXS.add(req,res,next);})});
+
 app.all(/^\/api\/del\/?.*/,upload.any(),metaschema.del);
 app.all(/^\/api\/link\/?.*/,upload.any(),metaschema.link);
 app.all(/^\/api\/unlink\/?.*/,upload.any(),metaschema.unlink);
 app.all(/^\/api\/reset\/?.*/,upload.any(),metaschema.reset);
 //---------------Cartoleria
-app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
-	var c='';
-	try{
-		c=req.body.xdata;	
-		}catch(ex){
-		c=req.session.cart||"<response>-</response>";
-	}
+app.post(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+	var c='';var f=true;
+	try{c=req.body.xdata;if(c){if(c!=''){f=false;req.session.cart=c;}}}
+	catch(ex){f=true}
+	if(f){c=req.session.cart||"<response>-</response>";}
+	res.set('Content-Type', 'text/xml;');
+	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
+});
+app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
+	var c=req.session.cart||"<response>-</response>";
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
@@ -147,8 +161,9 @@ app.all(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
 //---------------------------------------------------------------------------------------------------
 app.use(function(req,res,next){
-	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
-		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+	        if(req.originalUrl.indexOf('/admin')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
+		else if(req.originalUrl.indexOf('/user')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
@@ -174,6 +189,15 @@ metaschema.addbaserecord(new Metaschema.Doc(ObjectID('000000000000000000000109')
 //---------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------- SERVER LISTEN BOOTSTRAP
 //---------------------------------------------------------------------------------------------------
+var CATEGORIES={'000000000000000000000101':'Casa',
+					'000000000000000000000102':'Tempo libero',
+					'000000000000000000000103':'Moda',
+					'000000000000000000000104':'Mangiare e Bere',
+					'000000000000000000000105':'Elettronica',
+					'000000000000000000000106':'Bellezza',
+					'000000000000000000000107':'Cartoleria',
+					'000000000000000000000108':'Salute',
+					'000000000000000000000109':'Animali'};
 app.all(/^(?!\/api).*$/,metaschema.urltorecord);
 if(process.argv[2]){PORT=process.argv[2];};
 var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
@@ -198,17 +222,19 @@ buffer			A Buffer of the entire file	MemoryStorage
 /*
 TODO EMPORYOU:
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
-H 		Ricerca per prezzo MAG e MIN e per categoria funzionanti
+H		VARIANTE GIUSTA IN CARRELLO
 
-H 		Transazione e back
+H 		Ricerca per prezzo MAX e MIN funzionanti
+
+H 		Transazione e back 
 H 		Dispatch email
-H+G 	Admin e merchant views 
+
+H+G 	Admin e merchant views ###############################################
 
 H+G	+Autocompilamento da magento
-
-G     aggiungere MIN MAX in home
-
+G     [PAGINA PAGAMENTO FASULLA + PAGINE BACK]
 G 		Template email per cliente merchant e admin
+G     aggiungere MIN MAX in home
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
 */
@@ -249,7 +275,9 @@ VISTE ADMIN
 
 
 
-
+https://apps-apis.google.com/a/feeds/emailsettings/2.0/18montenapoleone.it/m.brambilla@18montenapoleone.it/signature
+https://apps-apis.google.com/a/feeds/emailsettings/2.0/
+https://www.googleapis.com/auth/gmail.readonly
 
 
 

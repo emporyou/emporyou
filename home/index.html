@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-<title></title>
+<title>Emporyou marketplace</title>
+<!--
+            `:+syhdddddhys+:.            
+        -odmmhs+/:::::/+shmmdo:`        
+     `+dmdo:`             `-odmd+`      
+   `+dmy:                     :ymd+`    
+  .ymd:                         :dmy.   
+ .hmy```````````````             `ymd.  
+ ymh` /dddddddddddd+              `hmy  
+:mm:  `------------.               -mm: 
+omd                                 dms 
+smd                                 dmy 
+omm`                               `mmo 
+.mm+               :++++++++++++.  /mm- 
+ omm-              /yyyyyyyyyyyy- -dmo  
+ `smd:                           :dms`  
+   +mms.                       .omm+`   
+    .smds-                   -odms-     
+      -odmho:.`         `.:ohmdo-       
+        `-oydmdhyssossyhdmdyo:`         
+            `.:/+ossso+/:.`             
+                                        
+    -+:o/`   `:          :        s`    
+o/o+sooy+s/o:-s:s/s-yso .d-osy-yo`d`oso 
++/+:/::+-o:o:-o:/`s.o/.  s:/+/`/o-s-s/o -->
 <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="Your Website Title" />
 <meta property="og:description"   content="Your description" />
 <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-<!-- //////////////////////////BOOTSTRAP -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> -->
-<!-- //////////////////////////FONT AWESOME -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -20,11 +40,13 @@
 <link rel="stylesheet" type="text/css" href="css/product-page.css">
 <link rel="stylesheet" type="text/css" href="css/info-prod.css">
 <link rel="stylesheet" type="text/css" href="css/checkout.css">
+<link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
 <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="js/checkout.js"></script>
 <script src="js/main.js"></script>
 <script src="js/mainh.js"></script>
+<script src="js/nouislider.min.js"></script>
 <script src="js/metaschema.js"></script>
 <!--<script type="text/javascript" src="https://cdn.rawgit.com/metaschema/browser/master/metaschema.js"></script>-->
 <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>-->
@@ -42,10 +64,45 @@
     </script>
 <script>
 myappinit=function(){
-    ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
-    ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
-	doinitialrender();	
+	ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
+   ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
+	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});	
 	checkMobile();
+	doinitialrender();
+   var slider = document.getElementById('slider-search');
+
+noUiSlider.create(slider, {
+	start: [ 0, 250 ],
+	snap: true,
+	connect: true,
+	range: {
+		'min': 0,
+		'10%': 20,
+		'20%': 50,
+		'30%': 100,
+		'40%': 150,
+		'50%': 200,
+        '60%': 500,
+        '70%': 750,
+		'max': 1000
+	}
+});
+
+slider.noUiSlider.on('update', function( values, handle ) {
+	var value = values[handle];
+	if ( handle ) {
+		document.getElementById('jfind-max').value = Math.round(value);setdeferredupdate();
+	} else {
+		document.getElementById('jfind-min').value = Math.round(value);setdeferredupdate();
+	}
+});
+document.getElementById('jfind-max').addEventListener('change', function(){
+	slider.noUiSlider.set([this.value, null]);setdeferredupdate();
+});
+
+document.getElementById('jfind-min').addEventListener('change', function(){
+	slider.noUiSlider.set([null, this.value]);setdeferredupdate();
+});
 	//setTimeout('initMap()',500);
   // Option 1: Call on element.
   /*
@@ -54,6 +111,12 @@ $.fn.geocomplete("input"); // Option 2: Pass element as argument.
 	map: "#google-map"
 });*/
 }
+
+window.deferredhandler=false;
+setdeferredupdate=function(){
+	if(deferredhandler){clearTimeout(deferredhandler)}
+	deferredhandler=setTimeout(function(){updateProductList()},250)
+};
 window.ISptloaded=false;
 doinitialrender=function(){
 	if(window.initialjdata){
@@ -68,7 +131,9 @@ doinitialrender=function(){
 		var ttt=ooo.parsexml('<tmpdoc>'+ooo.preloaded('products-template-uni.xml').documentElement.innerHTML+'</tmpdoc>');
 		ooo.syncrender('thumb-wrap',ttt.documentElement,window.initialjdata);
 	}}}
-	else{ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');}
+	else{
+		//ooo.render('thumb-wrap','products-template-uni.xml','http://emporyou.com/api/get?k=12&');
+	}
 };
 
 </script>
@@ -77,11 +142,13 @@ doinitialrender=function(){
         setTimeout("window.ch=document.getElementById('check-login').innerHTML;chooseStart()",500)
     }
     function chooseStart(){console.log(ch+' is ch');
-    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click()}
-                           fillAddress();//TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTOD//////funzione data prodotti da carrello a checkout
+    if(ch=='guest'){document.getElementById('pre-notlogged').click()}else{document.getElementById('next-logged').click();ooo.render('profile-button','usrheader.xml','http://emporyou.com/session'); }
+                        fillAddress();  
     }
     function fillAddress(){
         ooo.render('form-target','address.xml','http://emporyou.com/session');
+        
+        
     }
 </script>
 <script>
@@ -103,57 +170,59 @@ initMap=function() {
   $("#city-input").geocomplete({
 	location:'Milano',
 	map:"#main-google-map",
+	//details:'.georesults',
 	mapOptions:mapOpts,
 	markerOptions:{draggable: true}
+  })
+  .bind("geocode:result", function(event, result){
+    console.log(result);
+		ooo.$$("jfind-lat").value=result.geometry.location.lat();
+      ooo.$$("jfind-lng").value=result.geometry.location.lng();
+		updateProductList()
   });
   $("#city-input").bind("geocode:dragged", function(event, latLng){
-          $("#city-input").val(latLng.lat()+','+latLng.lng());
-          $("#city-input").trigger("geocode");
-   });  
+		//console.log(latLng.lat()+','+latLng.lng());
+		ooo.$$("jfind-lat").value=latLng.lat();
+      ooo.$$("jfind-lng").value=latLng.lng();
+		window.gmap.setCenter(latLng);
+		updateProductList()
+      //$("#city-input").val(latLng.lat()+','+latLng.lng());
+		//$("#city-input").trigger("geocode");
+  });
   window.gmap=$("#city-input").geocomplete('map');
   window.gmap.mapTypes.set(customMapTypeId, customMapType);
   window.gmap.setMapTypeId(customMapTypeId);
+  
+  // Construct the circle for each value in citymap.
+  // Note: We scale the area of the circle based on the population.
+  /*for (var city in citymap) {
+    // Add the circle for this city to the map.
+    var cityCircle = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35,
+      map: map,
+      center: citymap[city].center,
+      radius: Math.sqrt(citymap[city].population) * 100
+    });
+  }*/
+  
 };</script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()" class="Bmode">
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '898201326937821',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=898201326937821";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
-
 <!-- ---------------------------------------------------------------------------- MAIN BAR -->
 <div class="header">
+   <div class="logo-text-sx"></div>
+    <div id="profile-button" onclick="window.location.href='../user/profile.html'">Accedi</div>
    <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div>
     <div class="logo-container"><!--<img
-        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div><div 
-        id="header-items-container">
-            <div class="item-container" ><img class="map-icon" onclick="toggleMap();checkMobile()" src="../img/map-icon.png"/></div>
-        </div></div>
+        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div></div>
 <!-- ------------------------------------------------------------------------------ BASKET -->
 <img id="basket" src="../img/basket.png" onclick="toggleCart()" class="transition-S"/>
 <img id="rope" src="../img/rope.png" onclick="toggleCart()" class="transition-S"/>
-<div id="bought-container"></div>
+<div id="bought-container" style="display:none"><a class="flag" href="#" onclick="javascript:toggleCart();return false;"><div id="flag-text" class="flag-text">1</div></a></div>
 <!-- ---------------------------------------------------------------- GOOGLE MAP CONTAINER -->
 <div id="google-map-container" class="google-map-container transition-3"><div id="main-google-map" class="google-map"></div></div>
 <!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
@@ -167,13 +236,13 @@ initMap=function() {
           </div>
       </div>
        <div class="cat-cont transition-1" id="cat-city" onclick="ensureMapIsOpened();openCat(this)">Città</div>
-       <div id="city-search" class="search transition-1">
-           <input type="text" id="city-input" placeholder="città,zona o indirizzo..." style="    font-size: 2.7vh;padding: 1vh;width: 90%;"/>
+       <div id="city-search" class="search transition-1"><form id="georesults" class="georesults">
+           <input type="text" name="formatted_address" id="city-input" placeholder="città,zona o indirizzo..." style="    font-size: 2.7vh;padding: 1vh;width: 90%;"/>
+			  <input id="jfind-lat" name="lat" type="hidden" value=""><input id="jfind-lng" name="lng" type="hidden" value=""></form>
        </div>
        <div class="cat-cont transition-1" id="cat-price"  onclick="openCat(this)">Fascia di prezzo</div>
        <div id="price-search" class="search transition-1">
-           <input type="range" min="10" max="1000" value="10" step="10" onchange="rangevalue.value=value" />
-<output id="rangevalue">10</output>
+           <div id="slider-search"></div><input value="0" min="0" type="number" id="jfind-min"/><input value="250" min="0" type="number" id="jfind-max"/>
        </div>
        <div class="cat-cont transition-1" id="cat-category"  onclick="openCat(this)">Categoria</div>
        <div id="cat-search" class="search transition-1">
@@ -197,7 +266,7 @@ initMap=function() {
     <div class="products-container"><div id="thumb-wrap"> </div></div>
 </div>
 <!-- ---------------------------------------------------------------------- CHECKOUT START -->
-<div id="checkout-main-container" style="display:none">
+<div id="checkout-main-container">
     <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
     <div class="menu-opened transition-1">
         <div class="left-square open transition-1" id="checkout-login">
@@ -265,7 +334,7 @@ initMap=function() {
         <div class="left-square closed transition-1"  id="checkout-review">
             <div class="single-container" id="single-review"  style="display:none">
                 <div class="single-header">Review your order</div>
-                <div class="single-content"></div>
+                <div class="single-content" id="checkout-target"></div>
                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=120;progressBar('next',now)">
                     <img src="img/next.png" class="next-image image-button transition-1"/>
                 </div>
@@ -280,6 +349,7 @@ initMap=function() {
                 <div class="single-header">Complete and pay</div>
                 <div class="single-content">
                     <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
+                    <button onclick="window.location.href='../user/success.html'">Simula transazione riuscita</button><button onclick="window.location.href='../user/failed.html'">Simula transazione fallita</button>
                 </div>
                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('pre',now)">
                     <img src="img/next.png" class="pre-image image-button transition-1"/>

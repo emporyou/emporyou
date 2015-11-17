@@ -1,52 +1,29 @@
 var cartPosition=450;var total=0;var set=0;var cartOpened=0;var productOpened=0;
 var gClass=function(v){return document.getElementsByClassName(v);}
-function addProduct(productName,XMLid,PRDid){
-   var elm=document.getElementById(PRDid);
-    if(elm){
-        var qt=parseInt(elm.className.replace('a',''));qt++;
-        elm.className='a'+qt;
-    }else{
-    elm=ooo.ins(document.getElementById('cart-data'),'textarea',['id',PRDid,'class','a1'],document.getElementById(XMLid).value);}
-    total++;
-    if(total==1){
-        var element = document.createElement("div");
-        var name = document.createElement("div");
-    name.appendChild(document.createTextNode(total.toString()));
-    name.className='flag-text';
-    element.className='flag';
-        element.appendChild(name);
-    document.getElementById('bought-container').appendChild(element);
-    cartPosition-=25;}else{gClass('flag-text')[0].innerHTML=total.toString();
-                          };
-    /*if(cartPosition!=0){
-    document.getElementById('basket').style.top='-'+cartPosition+'px';
-    }*/
-	 /*else{
-        document.getElementById('else').style.display='block'
-    }*/
-	 server_syncart();
- /*if(cartPosition!=450){
-    document.getElementById('basket').style.top='-400px';
-    setTimeout("document.getElementById('basket').style.top='-425px';",100);
-    }*/
-	rendercart();
-}
+
 //--------------------------------------------------------------------------- PRODUCT PAGE
-function openProduct(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
+var lastScroll=0;
+function openProduct(event,elm,idd){
+    lastScroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    window.scroll(0,0);
+    document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
-function closeProduct(elm){document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
+function closeProduct(elm){window.scroll(0,lastScroll);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
 function checkMobile(){console.log('remove all calls to checkmobile')}
 //--------------------------------------------------------------------------- MAP
 window.ismaploadedonce=false;function toggleMap(){
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
-	document.body.classList.toggle('map-isin');}
+	document.body.classList.toggle('map-isin');
+	if(!document.body.classList.contains('map-isin')){
+	document.getElementById('jfind-lat').value='';
+	document.getElementById('jfind-lng').value='';
+	updateProductList()
+	}
+	}
 function openMap(){toggleMap()}
-//--------------------------------------------------------------------------- CART
-function openCart(){rendercart();document.body.classList.add('cart-isin');}
-function toggleCart(){if(document.body.classList.toggle('cart-isin')){rendercart();}}
-function closeCart(){document.body.classList.remove('cart-isin');}
+
 //--------------------------------------------------------------------------- 
 function scrollTo(element, to, duration) {
     if (duration < 0) return;
@@ -84,15 +61,15 @@ function shareDialog(elm){
 function openCat(e){
     for(i=0;i<10;i++){
         if(gClass('search')[i]){
-            gClass('cat-cont')[i].style.height="50px";
-            gClass('cat-cont')[i].style.lineHeight="50px";
+            //gClass('cat-cont')[i].style.height="50px";
+            //gClass('cat-cont')[i].style.lineHeight="50px";
             gClass('search')[i].style.height="0";
             gClass('search')[i].style.display="none";
             gClass('cat-cont')[i].classList.remove('selected');
         }
     }
-    e.style.height="40px";
-    e.style.lineHeight="40px";
+    //e.style.height="40px";
+    //e.style.lineHeight="40px";
     e.classList.add('selected');
     var n = e.nextSibling;
     while(n && n.nodeType != 1) {
@@ -110,25 +87,11 @@ function clean(elm){
         }
     }}
 }
-//---------------------------------------------------------------------------------- CHECKOUT
-function openCheckout(){
-		
-    //defaultPage();
-	 //checkLogin();
-    //gClass('emporyoum-bar')[0].style.display="none";
-    //gClass('google-map-container')[0].style.display="none";
-    //gClass('products-main')[0].style.display="none";
-    //document.getElementById('basket-container').style.display="none";
-    //document.getElementById('products-cart-target').style.display="none";
-    //document.getElementById('checkout-main-container').setAttribute('style','');
-    
-}
-function closeCheckout(){
-    gClass('emporyoum-bar')[0].style.display="";
-    gClass('google-map-container')[0].style.display="";
-    gClass('products-main')[0].style.display="";
-    document.getElementById('products-cart-target').style.display="";
-    document.getElementById('basket-container').style.display="";
-    document.getElementById('checkout-main-container').setAttribute('style','display:none');
-    defaultPage();    closeCart();
+
+function checkRange(xx,yy,cc){
+    if(cc){
+        if(xx.value<=yy.value){xx.previousSibling.value=yy.previousSibling.value}
+    }else{
+        if(xx.value>=yy.value){xx.previousSibling.value=yy.previousSibling.value}
+    }
 }

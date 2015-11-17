@@ -12,7 +12,7 @@
     line-height:15px;
     font-weight:400;
 }
-#main-image-container {
+.main-image-container {
     position:relative;
     width:100%;
     height:0;
@@ -20,7 +20,7 @@
     background-color:transparent;
 }
 
-#main-image-pro {
+.main-image-pro {
     position:absolute;
     background-color:transparent;
     width:95%;
@@ -33,12 +33,12 @@
     background-size:cover;
 }
 
-#left-column-pro {
+.left-column-pro {
     width:60%;
     background-color:#f6f6f6;
 }
 
-#main-desc-container {
+.main-desc-container {
     position:relative;
     width:100%;
     background-color:#f6f6f6;
@@ -46,7 +46,7 @@
     overflow:hidden;
 }
 
-#main-desc-pro {
+.main-desc-pro {
     background-color:white;
     width:95%;
     height:95%;
@@ -61,7 +61,7 @@
     
 }
 
-#main-ship-container {
+.main-ship-container {
     position:relative;
     width:100%;
     height:0;
@@ -71,7 +71,7 @@
     margin-bottom:1%
 }
 
-#main-ship-pro {
+.main-ship-pro {
     position:absolute;
     background-color:white;
     width:95%;
@@ -86,7 +86,7 @@
     box-sizing: border-box
 }
 
-#main-comm-container {
+.main-comm-container {
     position:relative;
     width:100%;
     height:0;
@@ -94,7 +94,7 @@
     margin-bottom:1%
 }
 
-#main-comm-pro {
+.main-comm-pro {
     background-color:white;
     width:95%;
     margin:1.9%;
@@ -107,7 +107,7 @@
     border-right:1px solid #dfe0e4  ;
 }
 
-#right-column-pro {
+.right-column-pro {
     width:40%;
     background-color:#f6f6f6;
     position:absolute;
@@ -115,14 +115,14 @@
     top:0;
 }
 
-#main-info-container {
+.main-info-container {
     position:relative;
     width:100%;
     height:40%;
     background-color:#f6f6f6;
 }
 
-#main-info-pro {
+.main-info-pro {
     background-color:white;
     width:95%;
     margin:1.9%;
@@ -136,7 +136,7 @@
     border-right:1px solid #dfe0e4  ;
 }
 
-#main-add-container {
+.main-add-container {
     position:relative;
     width:100%;
     height:0;
@@ -145,7 +145,7 @@
     margin-bottom:2.2%
 }
 
-#main-add-pro {
+.main-add-pro {
     position:absolute;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffae1f+0,ff901e+100 */
 background: rgb(255,174,31); /* Old browsers */
@@ -168,18 +168,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     border-left:1px solid #555  ;
     border-right:1px solid #555  ;
 }
-#main-add-pro:before {
+.main-add-pro:before {
     content:'';
     display:inline-block;
     height:100%;
     vertical-align:middle;
 }
-#main-add-pro:hover{
+.main-add-pro:hover{
     cursor:pointer;
     opacity:0.90;
 }
 
-#main-social-container {
+.main-social-container {
     position:relative;
     width:100%;
     height:0;
@@ -188,7 +188,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     margin-bottom:2.2%
 }
 
-#main-social-pro {
+.main-social-pro {
     background-color:white;
     width:95%;
     margin:1.9%;
@@ -202,7 +202,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     border-right:1px solid #dfe0e4  ;
 }
 
-#main-photo-container {
+.main-photo-container {
     position:relative;
     width:100%;
     background-color:#f6f6f6;
@@ -210,7 +210,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     box-sizing: border-box;
 }
 
-#main-photo-pro {
+.main-photo-pro {
     background-color:white;
     width:95%;
     margin:1.9%;
@@ -224,7 +224,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     padding:10px;
 }
 
-#main-merchant-container {
+.main-merchant-container {
     position:relative;
     width:100%;
     background-color:#f6f6f6;
@@ -232,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     box-sizing: border-box;
 }
 
-#main-merchant-pro {
+.main-merchant-pro {
     background-color:white;
     width:95%;
     padding:10px;
@@ -246,20 +246,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
     border-right:1px solid #dfe0e4  ;
 }
 
-#main-img {
+.main-img {
     height:100%;
 }
 
-#descrizione {
+.descrizione {
     padding:6px;
     font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
 }
 
-#descrizione-target {
+.descrizione-target {
     padding:6px;
 }
 
-#layer-desc {
+.layer-desc {
    width:95%;
     height:95%;
     margin:1.9%;
@@ -272,13 +272,13 @@ background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
 }
-#layer-desc:hover{cursor:pointer}
+.layer-desc:hover{cursor:pointer}
 
-#spedizione {
+.spedizione {
     padding:6px;
 }
 
-#spedizione-target {
+.spedizione-target {
     padding:6px;
 }
 
@@ -306,13 +306,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     background-size:cover;
 }
 
-#info-pro-text {
+.info-pro-text {
     width:100%;
     height:50%;
     background-color:transparent;
 }
 
-#info-pro-opt {
+.info-pro-opt {
     width:100%;
     height:50%;
     background-color:transparent;
@@ -342,18 +342,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     height:200px;
 }
 
-#probod {
+.probod {
     background-color:#f6f6f6;
     color: #333;
     min-width:0 !important;
 }
 
-#logo-vendor {
+.logo-vendor {
     height:50px;
     display:inline-block;
 }
 
-#nome-vendor {
+.nome-vendor {
     height:40px;
     line-height:15px;
     padding:6px;
@@ -368,7 +368,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     background-size:cover;
 }
 
-#other-from-vendor-cont {
+.other-from-vendor-cont {
     text-align:center;
     overflow-x:hidden;
     white-space: nowrap;
@@ -376,37 +376,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     display:inline-block;
 }
 
-#scroll-other-photos {
+.scroll-other-photos {
     display:inline-block;
     width:17%;
 }
 
-#next-photo {
+.next-photo {
     width:100%;
     opacity:0.5;
 }
-#next-photo:hover{cursor:pointer;opacity:0.3;}
+.next-photo:hover{cursor:pointer;opacity:0.3;}
 
-#nome-merchant {
+.nome-merchant {
     color:black;
     font-size:3vmin;
     margin-bottom:10px;
     margin-top:10px;
 }
 
-#desc-merchant {
+.desc-merchant {
     margin-bottom:10px;
 }
 
-#orario-merchant {
+.orario-merchant {
     margin-bottom:10px;
 }
 
-#indirizzo-merchant {
+.indirizzo-merchant {
     margin-bottom:20px;
 }
 
-#mappa-merchant {
+.mappa-merchant {
     width:100%;
     height:400px;
     background-color:#ccc

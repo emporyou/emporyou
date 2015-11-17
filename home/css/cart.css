@@ -54,7 +54,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 }
 .image-cart:hover{
     width:95%;
-    padding-bottom:95%;
+    padding-bottom:60%;
     cursor:pointer;
     display:block;
 }
@@ -109,6 +109,7 @@ ul {
 .info-image-cart {
     font-family: 'josefin sans';
     margin-top:5px;
+        width: 155px;
 }
 
 .hidden-info {

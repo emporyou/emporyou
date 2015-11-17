@@ -70,16 +70,21 @@ myappinit=function(){
 </head>
 <body onload="myappinit();">
 <!--ooo.render('thumb-wrap','products-template.xml','http://emporyou.com/get_product')-->
-<div class="header-admin">
-   <div class="fontlogo text-logo"><img class="logo-text" src="../../img/logo-text.png"/></div>
-</div>
+<div class="header">
+   <div class="logo-text-sx"></div>
+   <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div>
+    <div class="logo-container"><!--<img
+        class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div><div 
+        id="header-items-container">
+        </div></div>
 <div id="main-dash-container">
     <div id="dash-menu">
         <div class="dash-button title transition-1">DASHBOARD</div>
         <a href="orders.html"><div class="dash-button  transition-1">ordini</div></a>
         <div class="dash-button  transition-1">prodotti</div>
         <div class="dash-button  transition-1">clienti</div>
-        <a href="../../index.html"><div class="dash-button  transition-1">sito web</div></a>
+        <a href="../index.html"><div class="dash-button  transition-1">sito web</div></a>
+        <a href="voucher.html"><div class="dash-button  transition-1">crea voucher</div></a>
         <div class="dash-button  transition-1">fornitori</div>
     </div>
     <div id="left-dash-container">

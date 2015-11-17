@@ -1,0 +1,132 @@
+
+.user-page-main-container {
+    position:absolute;
+    width:55%;
+    background-color:transparent;
+    left:22.5%;
+    top:100px;
+}
+
+.user-page-head-profile {
+    position:relative;
+    width:100%;
+    margin:5px;
+}
+
+.profile-image-user-page {
+    position:relative;
+    width:70%;
+    padding-bottom:70%;
+    height:0;
+    margin-left:15%;
+    border-radius:200px;
+    background-size:cover;
+    border:1px solid #ccc;
+}
+
+.il-tuo-emporyou-container {
+    position:relative;
+    width:30%;
+    padding-bottom:30%;
+    height:0;
+    background-color:#ccc;
+    text-align:center;
+}
+
+.logo-emporyou-user {
+    width:80%
+}
+
+.il-tuo-emporyou {
+    font-family: 'josefin sans';
+    font-size:4vh;
+    font-weight:bold;
+}
+
+.step-container {
+    width:90%;
+    position:relative;
+    padding:3%;
+    margin:5px;
+    background-color:rgb(245,221,123);
+    font-family:'josefin sans';
+    font-weight:bold;
+    font-size:3vh
+}
+.step-container:hover{
+    cursor:pointer;
+    opacity:0.8
+}
+
+.voucher-tumb {
+    position:relative;
+    display:inline-block;
+    width:10%;
+    padding-bottom:10%;
+    height:0;
+    border-radius:4px;
+    background-size:cover;
+    margin-right:10px;
+}
+
+.info-step-cont {
+    margin-left:5%;
+    margin-top:5%;
+}
+#opened.step-container:hover{
+    cursor:default !important;
+    opacity:1 !important;
+}
+textarea {
+    height:20px;
+    font-size:20px;
+    line-height:20px;
+    background-color:rgba(255,255,255,0.3);
+    border-radius:4px;
+    white-space: nowrap;
+    overflow:    scroll;
+    overflow-y:  hidden;
+    overflow-x:  scroll;
+    overflow:    -moz-scrollbars-horizontal;
+}
+
+.info-utente {
+    display:inline-block;
+    margin:1%;
+}
+
+.info-applica {
+    display:inline-block;
+    margin:1%;
+    background-color: #19bba9;
+    padding:1%;
+    opacity:0.8;
+    color:white;
+}
+.info-applica:hover{
+    cursor:pointer;
+    opacity:1
+}
+
+.upgrade-container {
+    width:96%;
+    position:relative;
+    margin:15px 5px 5px 5px;
+    background-color:transparent;
+    font-family:'josefin sans';
+    font-weight:bold;
+    font-size:3vh;
+    text-align:right;
+}
+
+.button-merchant {
+    padding:4%;
+    background-color:rgb(27,186,154);
+    color:white;
+    font-weight:bold;
+    font-size:4vh;
+}
+.button-merchant:hover{
+    cursor:pointer;
+    opacity:0.8;
+}

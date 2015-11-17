@@ -59,8 +59,8 @@
                 </div>
             </div>
             <div id="voucher-basic-container" class="closed-v">
-               <div id="image-target">
-                    <input type="file" style="background-image:url('../img/up-icon.png'); background-color:#ccc;" id="files"/>
+               <div id="image-target" style="background-image:url('../img/up-icon.png');" >
+                    <input type="file" id="files"/>
                     <output id="list"></output>
                 </div>
                 <!--<div id="voucher-basic-image-cont" style="background-image:url('../img/coperta.jpg')"></div>-->
@@ -88,7 +88,7 @@
             <div class="divider-voucher" id="divider-target-detail"></div>
             <div id="add-det-text">Aggiungi dettaglio</div><div id="add-det-but" onclick="addDetail(this.previousSibling.previousSibling)">+</div>
         </fieldset>
-            </div>Inserisci la data di inizio della campagna<input type="date" id="myLocalDate" name="datetime" required/><button id="manda-voucher" onclick="formcheck()">INSERISCI VOUCHER</button></div>
+            </div>Data di inizio campagna<input type="date" class="myLocalDate" name="inizioCampagna" required/> Data di fine campagna<input type="date" class="myLocalDate" name="fineCampagna" min="2015-11-15" required><br/><button id="manda-voucher" onclick="formcheck()">INSERISCI VOUCHER</button></div>
         <input type="hidden" value="Milano" name="city"/>
         <input type="hidden" name="road" value="Via Trenno 33"/>
         <input type="hidden" name="cap" value="20151"/>

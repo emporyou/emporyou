@@ -3,13 +3,13 @@
     position: absolute;
     top: 100px;
     left: 10%;
-    background-color: rgb(246, 246, 246);
+    background-color: #e6e6e6
 }
 
 #voucher-header-container {
     width: 100%;
     position: relative;
-    background-color: rgb(246, 246, 246);
+    background-color: #e6e6e6;
 }
 
 #title-subtitle {
@@ -19,8 +19,8 @@
     box-sizing: border-box;
     background-color: white;
     position:relative;
-    border-bottom:8px solid #f6f6f6;
-    border-right:8px solid #f6f6f6;
+    border-bottom:8px solid #e6e6e6;
+    border-right:8px solid #e6e6e6;
 }
 
 #discount-cont {
@@ -30,8 +30,9 @@
     box-sizing: border-box;
     background-color: white;
     position:relative;
-    border-bottom:8px solid #f6f6f6;
-    border-right:8px solid #f6f6f6;
+    border-bottom:8px solid #e6e6e6;
+    border-right:8px solid #e6e6e6;
+        float: right;
 }
 
 .inv-text {
@@ -44,8 +45,8 @@
 
 #discount-textarea {
     width: 65%;
-    height:122px;
-    line-height:122px;
+        height: 126px;
+    line-height: 126px;
     font-size:6vh;
     color: black;
     text-align: right;
@@ -93,19 +94,19 @@
 #voucher-basic-container {
     width: 100%;
     position: relative;
-    background-color: #f6f6f6;
+    background-color: #e6e6e6;
     
 }
 
 #files {
     width:34%;
     height:0;
-    padding-bottom:35%;
+    padding-bottom:34%;
     display:inline-block;
     position:relative;
     background-size:cover;
-    border-bottom:8px solid #f6f6f6;
-    border-right:8px solid #f6f6f6;
+    border-bottom:8px solid #e6e6e6;
+    border-right:8px solid #e6e6e6;
 }
 
 
@@ -159,13 +160,13 @@
     box-sizing: border-box;
     padding:11%;
     font-family: 'josefin sans';
-    border-bottom:8px solid #f6f6f6;
-    border-right:8px solid #f6f6f6;
+    border-bottom:8px solid #e6e6e6;
+    border-right:8px solid #e6e6e6;
 }
 
 #description-textarea {
     line-height:15px;
-    height:99%;
+    height:89px;
     font-size:2vh;
     padding:5%;
     width:60%;
@@ -175,8 +176,8 @@
 
 
 #desc-container {
-    border-right:8px solid #f6f6f6;
-    border-bottom:8px solid #f6f6f6;
+    border-right:8px solid #e6e6e6;
+    border-bottom:8px solid #e6e6e6;
     box-sizing: border-box;
     background-color:transparent;
 
@@ -224,8 +225,8 @@
 .voucher-option-container {
     width: 100%;
     position: relative;
-    background-color: #f6f6f6;
-    border-bottom:8px solid #f6f6f6
+    background-color: #e6e6e6;
+    border-bottom:8px solid #e6e6e6
 }
 
 .tri39 {
@@ -255,7 +256,7 @@
 }
 
 .opt-img {
-    width:30%;
+    width:90px;
     height:90px;
     display:inline-block;
     line-height:90px;
@@ -269,25 +270,26 @@
 }
 
 .qta-opt-voucher {
-width: 100%;
+    width: 100%;
     background-color: white;
     height: 44px;
     bottom: 0;
     box-sizing: border-box;
-    /* line-height: 17px; */
-    padding: 0;
+    line-height: 44px;
+    padding: 0px;
     text-align: center;
     font-family: 'josefin sans';
     font-size: 20px;
 }
 
 .value-opt-voucher {
-        width: 100%;
+    width: 100%;
     background-color: white;
-    height: 71px;
-    /* top: 0; */
+    height: 46px;
+    top: 0;
+    /* float: right; */
     box-sizing: border-box;
-    line-height: 71px;
+    line-height: 44px;
     text-align: center;
     font-family: 'josefin sans';
     font-size: 20px;
@@ -299,10 +301,10 @@ width: 100%;
     width:100%;
     display:inline-block;
     background-color:white;
-    height:95px;
+    height:90px;
     padding:30px;
     color:orange;
-    border-left:8px solid #f6f6f6;
+    border-left:8px solid #e6e6e6;
     box-sizing: border-box;
     line-height:30px;
     text-align:center;
@@ -311,9 +313,11 @@ width: 100%;
 }
 
 .tri25 {
-    width:25%;
-    display:inline-block;
-    position:relative;
+        width: 25%;
+    margin: 0px 8px;
+    display: inline-block;
+    position: relative;
+    float: right;
     box-sizing: border-box;
 }
 
@@ -328,7 +332,7 @@ width: 100%;
     top:0;
     right:0;
     box-sizing: border-box;
-    border-right:8px solid #f6f6f6;
+    border-right:8px solid #e6e6e6;
 }
 
 #options-and-details {
@@ -342,10 +346,10 @@ width: 100%;
 .dettaglio-det-voucher {
     width:100%;
     background-color:white;
-    height:45px;
+    height:40px;
     top:0;
     box-sizing: border-box;
-    line-height:45px;
+    line-height:40px;
     text-align:center;
     font-family: 'josefin sans';
     font-size:20px;
@@ -436,7 +440,7 @@ width: 100%;
     height:24%;
     margin:1%;
 }
-#myLocalDate {
+.myLocalDate {
     margin-bottom:20px;
     margin-left:20px;
     border:1px solid black;
@@ -444,4 +448,38 @@ width: 100%;
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
+}
+
+textarea {
+    
+}
+
+body {
+    background-color:#e6e6e6 !important;
+}
+
+#image-target {
+        width: 34%;
+    padding-bottom: 34%;
+    height: 0;
+    background-size:cover;
+}
+
+#files {
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+}
+#files:hover{cursor:pointer;}
+.fileso:hover{cursor:pointer;}
+.fileso{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    /* display: none; */
+    top: 0;
+    right: 23px;
+    opacity: 0;
+
 }
