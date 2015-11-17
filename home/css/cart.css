@@ -147,4 +147,13 @@ ul {
     background-color:transparent;
     border:1px solid rgba(100,0,0,0.3);
     border-radius:4px;
+    color:black;
+}
+.svuota-cart:hover{
+    cursor:pointer;
+    color:white;
+    background-color:#c43b42;
+}
+#chiudi-cart:hover{
+    cursor:pointer;
 }
