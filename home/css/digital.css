@@ -91,7 +91,12 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
         transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); /* custom */}
 		  
 		  
-		  
+.hhhfilter{
+	-webkit-filter: contrast(0.9) grayscale(0.1) hue-rotate(330deg) saturate(0.9) sepia(0.2);	
+}
+
+
+
 .flag{display: block;
     background-color:transparent;
     width:9vmin;
