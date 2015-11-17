@@ -9,14 +9,15 @@
     text-decoration: none;
 }
 .thumb-container {
-    display: inline-block;
+       display: inline-block;
     position: relative;
     width: 33%;
     float: left;
     height: 0;
+    border: 1px solid #f6f6f6;
     padding-bottom: 22%;
-    min-width:146px;
-    min-height:100px;
+    min-width: 146px;
+    min-height: 100px;
 }
 .thumb-container-2 {
     display: inline-block;
@@ -58,12 +59,13 @@
     padding-top: 66%;
 }
 .thumb-product{
-    position: absolute;
+       position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    border: 8px solid #f6f6f6;
+    /* border: 8px solid #f6f6f6; */
+    border: 1px solid #ccc;
 }
 .thumb-element {
     position: absolute;
