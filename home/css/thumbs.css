@@ -150,6 +150,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
 .product-discount{
     background-color:#c43b42;
     height:1px;
+    border-bottom:1px solid rgba(150,0,0,0.3);
     position:absolute;
     top:0;
     right:0;
