@@ -92,7 +92,7 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 		  
 		  
 		  
-.flag{
+.flag{display: block;
     background-color:transparent;
     width:9vmin;
     height:20px;
