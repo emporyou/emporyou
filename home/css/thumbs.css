@@ -91,8 +91,8 @@ transition: all 250ms ease-out;
 }
 .thumb-element:hover{
     cursor:pointer;
-    -webkit-filter: grayscale(0.2);
-  filter: grayscale(0.2);
+    -webkit-filter: grayscale(0.4);
+  filter: grayscale(0.4);
 }
 .thumb-element:hover .product-discount{
     background-color:transparent;color:black
