@@ -2,9 +2,13 @@ var cartPosition=450;var total=0;var set=0;var cartOpened=0;var productOpened=0;
 var gClass=function(v){return document.getElementsByClassName(v);}
 
 //--------------------------------------------------------------------------- PRODUCT PAGE
-function openProduct(event,elm,idd){document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
+var lastScroll=0;
+function openProduct(event,elm,idd){
+    lastScroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    window.scrollBy(0,0);
+    document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
-function closeProduct(elm){document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
+function closeProduct(elm){window.scrollBy(lastScroll,0);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
 function checkMobile(){console.log('remove all calls to checkmobile')}
 //--------------------------------------------------------------------------- MAP
