@@ -173,17 +173,17 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
         transition: all 400ms cubic-bezier(.56,.57,.54,1.24); 
 }*/
 .cat-cont{
-    height:50px;
-    width:94%;
-    margin-left:0 auto;
-    margin-right:0 auto;
-    background-color:#fff;
-    color:#c43b42;
-    font-family:'Open sans';
-    text-align:center;
-    line-height:50px;
-    border-radius:4px 4px 4px 4px;
-    margin-bottom:15px;
+    height: 40px;
+    width: 88%;
+    background-color: #fff;
+    color: #c43b42;
+    font-family: 'Open sans';
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid;
+    border-radius: 4px 4px 4px 4px;
+    margin-bottom: 15px;
+    margin-left: 2%;
 }
 .cat-cont:hover{
     cursor:pointer;
