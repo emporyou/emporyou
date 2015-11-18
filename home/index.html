@@ -212,7 +212,7 @@ initMap=function() {
   
 };</script>
 </head>
-<body onload="myappinit();" onresize="checkMobile()" onclick="if(!document.body.classList.toggle('cart-isin')){rendercart();}" class="Bmode">
+<body onload="myappinit();" onresize="checkMobile()" class="Bmode">
 <!-- ---------------------------------------------------------------------------- MAIN BAR -->
 <div class="header">
 <div class="language-select">IT ▼</div>
@@ -265,7 +265,7 @@ initMap=function() {
        </div>
    </div>
 <!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
-<div id="product-main-container" onclick="stopPropagation()" class="products-main transition-3">
+<div id="product-main-container" class="products-main transition-3">
     <div class="products-container"><div id="thumb-wrap"> </div></div>
 </div>
 <!-- ---------------------------------------------------------------------- CHECKOUT START -->
@@ -365,7 +365,7 @@ initMap=function() {
     <div id="quit-checkout" onclick="closeCheckout()">BACK</div>
 </div>
 <!-- ------------------------------------------------------------------- CART TARGET START -->
-<div id="products-cart-target" onclick="stopPropagation()" class="transition-3"> </div>
+<div id="products-cart-target" class="transition-3"> </div>
 <!-- ----------------------------------------------------------------- HIDDEN STUFF START -->
 <div id="check-login" style="display:none"></div>
 <div id="cart-data" style="display:none"></div>
