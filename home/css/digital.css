@@ -106,7 +106,7 @@ body.vertical .thumb-product {margin:2vmin}
 body.vertical .thumb-container {width: 42vw;height: 50vw;
     min-width:0px;
     min-height:0px;
-    float: left;padding-bottom: 22%; */
+    float: left;padding-bottom: 0%; */
 }
 
 body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;left:10%;
