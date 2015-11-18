@@ -8,17 +8,6 @@
     opacity: 0.6;
     text-decoration: none;
 }
-.thumb-container {
-       display: inline-block;
-    position: relative;
-    width: 32%;
-    float: left;
-    height: 0;
-    border: 1px solid #f6f6f6;
-    padding-bottom: 22%;
-    min-width: 146px;
-    min-height: 100px;
-}
 .thumb-container-2 {
     display: inline-block;
     position: relative;
