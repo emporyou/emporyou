@@ -501,7 +501,7 @@ perspective-origin: 50% 50%;
 #profile-button {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 190px;
     height: 46px;
     top: 4px;
     padding: 14px;
