@@ -16,7 +16,7 @@ function checkMobile(){
 	if(w<h){document.body.classList.add('vertical')}else{document.body.classList.remove('vertical')}
 }
 //--------------------------------------------------------------------------- MAP
-window.ismaploadedonce=false;function toggleMap(){
+window.ismaploadedonce=false;function toggleMap(){window.mapLoaded=1;
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
 	ooo.ins(document.getElementsByTagName('head')[0],'script',['type','text/javascript','src','https://maps.googleapis.com/maps/api/js?fg=0&libraries=places&callback=doloadmaponce']);}
 	document.body.classList.toggle('map-isin');
@@ -62,7 +62,7 @@ function shareDialog(elm){
             elm.src = "../img/diamond.png";
         }
 }
-function openCat(e){if(e.id=="cat-city"){toggleMap()}else{ensureMapIsOpened()};
+function openCat(e){if(e.id=="cat-city"){toggleMap()}else if(mapLoaded==1){toggleMap();mapLoaded=0};
 	var srcs=gClass('search');
 	var cats=gClass('cat-cont');
     for(i=0;i<10;i++){
