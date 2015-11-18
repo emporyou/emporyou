@@ -103,7 +103,7 @@ body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;text-align:center}
 body.vertical .thumb-element {width: 42vw;height: 42vw;}
 body.vertical .thumb-product {margin:2vmin}
-body.vertical .thumb-container {width: 42vw;height: 21vw;
+body.vertical .thumb-container {width: 42vw;height: 50vw;
     min-width:0px;
     min-height:0px;
     float: left;padding-bottom: 22%; */
