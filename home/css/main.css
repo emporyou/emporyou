@@ -497,9 +497,9 @@ perspective-origin: 50% 50%;
 #profile-button {
     position: absolute;
     top: 0;
-    right: 14%;
+    right: 5%;
     height: 46px;
-    top: 4px;
+    top: 1px;
     padding: 14px;
     background-color: transparent;
     box-sizing: border-box;
