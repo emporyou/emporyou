@@ -82,11 +82,12 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
 body.vertical #categories-container {transform: translateX(-120%);}
 body.vertical.cat-isin #categories-container {transform: translateX(0%);}
-body.vertical #product-main-container {width: 100%;text-align: center;}
+body.vertical #product-main-container {width: 100%;text-align: center;min-width:0px;}
 body.vertical #thumb-wrap{width: 100%;}
 body.vertical .products-container{display:inline-block;width: 70%;}
 body.vertical #basket {}
 body.vertical .-b.menu{display:block}
+/*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
