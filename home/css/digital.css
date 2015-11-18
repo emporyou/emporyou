@@ -106,7 +106,7 @@ body.vertical .thumb-element {width: 28vw;height: 28vw;}
 body.vertical .thumb-container {width: 28vw;height: 14vw;
     min-width:0px;
     min-height:0px;
-    float: left;height: 0;
+    float: left;
     border: 1px solid #f6f6f6;
 }
 /*body   /* min-width: 840px !important; */
