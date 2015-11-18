@@ -103,7 +103,7 @@ body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;}
 body.vertical .thumb-element {width: 28vw;height: 28vw;}
-body.vertical .thumb-container {width: 28vw;height: 28vw;
+body.vertical .thumb-container {width: 28vw;height: 14vw;
 
     min-width:0px;
     min-height:0px;
