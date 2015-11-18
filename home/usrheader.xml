@@ -3,6 +3,8 @@
 <rowtype tagname="//item">
 <variable tagname="name/familyName" substitution="%lastname"/>
 <variable tagname="name/givenName" substitution="%name"/>
+<variable tagname="name/givenName" substitution="%name"/>
+<variable tagname="_json/image/url" substitution="%image"/>
 <variable tagname="email" substitution="%email"/>
 <variable tagname="language" substitution="%language" convert="sessionlang"/>
-<html><div class="user-full-name">Ciao, <span style="font-weight:bold">%name %lastname</span></div></html></rowtype></document>
+<html><div class="user-full-name">Ciao, <span style="font-weight:bold">%name %lastname</span></div><div style="background-image:url('%image');background-size:cover;border-radius:200px;height:30px;margin-top:10px"> </div></html></rowtype></document>
