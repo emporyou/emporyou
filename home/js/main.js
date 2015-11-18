@@ -66,7 +66,7 @@ function openCat(e){
 	var srcs=gClass('search');
 	var cats=gClass('cat-cont');
     for(i=0;i<10;i++){
-        if(srcs[i]){
+        if(srcs[i]){ 
             if(!e.isSameNode(cats[i])){cats[i].classList.remove('selected');
                 if(e.id="cat-city"){toggleMap()};
 				srcs[i].style.height="0";srcs[i].style.display="none";}
