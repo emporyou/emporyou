@@ -10,7 +10,11 @@ function openProduct(event,elm,idd){
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
 function closeProduct(elm){window.scroll(0,lastScroll);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
-function checkMobile(){console.log('remove all calls to checkmobile')}
+function checkMobile(){
+	var w = window.innerWidth;
+   var h = window.innerHeight;
+	if(w<h){document.body.classList.add('vertical')}else{document.body.classList.remove('vertical')}
+}
 //--------------------------------------------------------------------------- MAP
 window.ismaploadedonce=false;function toggleMap(){
 	if(!window.ismaploadedonce){window.doloadmaponce=function(){setTimeout(initMap,500);}
