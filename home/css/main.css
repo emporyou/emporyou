@@ -554,3 +554,12 @@ perspective-origin: 50% 50%;
 .language-select:hover{
     cursor:pointer;
 }
+.hamburger{
+        height: 35px;
+    width: 91px;
+    top: 12.5px;
+    font-size: 22px;
+    color: white;
+    left: 5%;
+    position: absolute;
+}
