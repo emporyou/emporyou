@@ -97,7 +97,7 @@ body.vertical #product-main-container {width: 100%;text-align: center;min-width:
 body.vertical.map-isin #product-main-container {width: 100%;margin-top:56vh}
 body.vertical #thumb-wrap{width: 100%;}  
   /*  */
-body.vertical .products-container{display:inline-block;width:90%;}
+body.vertical .products-container{display:inline-block;width:87.5%;}
 body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;text-align:center}
