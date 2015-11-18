@@ -99,6 +99,7 @@ body.vertical #thumb-wrap{width: 100%;}
 body.vertical .logo-text-sx{display:none}
 body.vertical .hamburger{display:none}
 body.vertical .usr-image{display:none}
+body.vertical .language-select{display:none}
   /*  */
 body.vertical .products-container{display:inline-block;width:100%;}
 body.vertical #basket {}
