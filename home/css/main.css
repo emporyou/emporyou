@@ -537,3 +537,11 @@ perspective-origin: 50% 50%;
     background-image: url('../img/logo-text-sx.png');
 }
 .button-chiudi-pagina{cursor:pointer;opacity:0.8}
+.usr-image{
+        background-size: cover;
+    border-radius: 200px;
+    height: 30px;
+    width: 30px;
+    margin-top: -25px;
+    margin-left: -32px;
+}
