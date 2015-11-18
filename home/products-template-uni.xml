@@ -67,7 +67,7 @@
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
                  class="%desc-class" onclick="openProduct(event,this,'%id')"><b>%product-name</b><br/><br/></div><div 
-                class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange">%price</b><br/>%subtitle</div></div></div><textarea 
+                class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange;font-size:3vh">%price</b><br/>%subtitle</div></div></div><textarea 
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 					  
 <div class="product-info-main"><input type="button" onclick="closeProduct(this)" class="button-chiudi-pagina" value="CHIUDI PAGINA PRODOTTO" style="position: absolute;

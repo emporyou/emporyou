@@ -147,12 +147,7 @@
 
 .main-add-pro {
     position:absolute;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffae1f+0,ff901e+100 */
-background: rgb(255,174,31); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(255,174,31,1) 0%, rgba(255,144,30,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(255,174,31,1) 0%,rgba(255,144,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(255,174,31,1) 0%,rgba(255,144,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', endColorstr='#ff901e',GradientType=0 ); /* IE6-9 */
+    background-color: rgb(27, 186, 154);
     color:white;
     text-align: center;
     vertical-align: middle;
@@ -177,6 +172,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae1f', end
 .main-add-pro:hover{
     cursor:pointer;
     opacity:0.90;
+    background: rgb(27, 186, 154); /* Old browsers */
+    background: -moz-linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+    background: -webkit-linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+    background: linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', endColorstr='#40f1f7',GradientType=0 ); /* IE6-9 */
 }
 
 .main-social-container {

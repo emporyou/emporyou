@@ -557,9 +557,12 @@ perspective-origin: 50% 50%;
 .hamburger{
         height: 35px;
     width: 91px;
-    top: 12.5px;
+    top: 14.5px;
     font-size: 22px;
     color: white;
     left: 2%;
     position: absolute;
+}
+.hamburger:hover{
+    cursor:pointer;
 }
