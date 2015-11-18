@@ -134,8 +134,18 @@ ul {
 }
 #chiudi-cart{
         position: absolute;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    text-align: center;
+    font-size: 2vh;
+    border-radius: 2px;
+    padding-right: 6px;
+    line-height: 20px;
+    padding-left: 5px;
+    box-sizing: border-box;
     top: 60px;
-    color: #666;
+    color: #C43B42;
     font-weight: bold;
     background-color: transparent;
     font-family: 'open sans';
@@ -153,5 +163,7 @@ ul {
     background-color:#c43b42;
 }
 #chiudi-cart:hover{
-    cursor:pointer;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #C43B42;
 }
