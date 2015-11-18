@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<html>
 <head>
 <title>Emporyou marketplace</title>
+<meta charset="utf-8"/>
 <!--
             `:+syhdddddhys+:.            
         -odmmhs+/:::::/+shmmdo:`        
@@ -10,7 +11,7 @@
   .ymd:                         :dmy.   
  .hmy```````````````             `ymd.  
  ymh` /dddddddddddd+              `hmy  
-:mm:  `------------.               -mm: 
+:mm:  `+-+-+-+-++-+.               -mm: 
 omd                                 dms 
 smd                                 dmy 
 omm`                               `mmo 
@@ -26,11 +27,6 @@ omm`                               `mmo
     -+:o/`   `:          :        s`    
 o/o+sooy+s/o:-s:s/s-yso .d-osy-yo`d`oso 
 +/+:/::+-o:o:-o:/`s.o/.  s:/+/`/o-s-s/o -->
-<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-<meta property="og:type"          content="website" />
-<meta property="og:title"         content="Your Website Title" />
-<meta property="og:description"   content="Your description" />
-<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -55,7 +51,6 @@ o/o+sooy+s/o:-s:s/s-yso .d-osy-yo`d`oso
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta charset="utf-8"/>
     <script>
 			window.initialjdata={};
         try{var ttt=replace_jdata;initialjdata.doc=[ttt]}
@@ -213,22 +208,22 @@ initMap=function() {
 };</script>
 </head>
 <body onload="myappinit();" onresize="checkMobile()" class="Bmode">
-<!-- ---------------------------------------------------------------------------- MAIN BAR -->
+<!-- MAIN BAR -->
 <div class="header">
 <div class="language-select">IT ▼</div>
 	<button onclick="document.body.classList.toggle('cat-isin');"><i class="-b menu fa fa-bars"></i></button>
    <div class="logo-text-sx"></div>
     <div id="profile-button" onclick="window.location.href='../user/profile.html'">Accedi</div>
-   <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png"/></div>
+   <div class="fontlogo text-logo"><img class="logo-text" onclick="window.location.href='http://emporyou.com'" src="../img/logo-text.png" alt="logo"/></div>
     <div class="logo-container"><!--<img
         class="logo" src="../img/logo-white.png" onclick="defaultPage();setTimeout('defaultPage()',200)"/>--></div></div>
-<!-- ------------------------------------------------------------------------------ BASKET -->
-<img id="basket" src="../img/basket.png" onclick="toggleCart()" class="transition-S"/>
-<img id="rope" src="../img/rope.png" onclick="toggleCart()" class="transition-S"/>
+<!-- BASKET -->
+<img id="basket" src="../img/basket.png" onclick="toggleCart()" class="transition-S" alt="basket"/>
+<img id="rope" src="../img/rope.png" onclick="toggleCart()" class="transition-S" alt="rope"/>
 <div id="bought-container" style="display:none"><a class="flag" href="#" onclick="javascript:toggleCart();return false;"><div id="flag-text" class="flag-text">1</div></a></div>
-<!-- ---------------------------------------------------------------- GOOGLE MAP CONTAINER -->
+<!-- GOOGLE MAP CONTAINER -->
 <div id="google-map-container" class="google-map-container transition-3"><div id="main-google-map" class="google-map"></div></div>
-<!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
+<!-- PRODUCT THUMBS TARGET -->
 <div id="categories-container" class="categories-container transition-3">
       <div class="cat-searchbar transition-1" id="cat-searchbar">
           <div id="search">
@@ -264,11 +259,11 @@ initMap=function() {
 </label>
        </div>
    </div>
-<!-- --------------------------------------------------------------- PRODUCT THUMBS TARGET -->
+<!-- PRODUCT THUMBS TARGET -->
 <div id="product-main-container" class="products-main transition-3">
     <div class="products-container"><div id="thumb-wrap"> </div></div>
 </div>
-<!-- ---------------------------------------------------------------------- CHECKOUT START -->
+<!-- CHECKOUT START -->
 <div id="checkout-main-container">
     <div id="checkout-progress-container"><div id="progress-bar" class="uno transition-1"></div><div class="step" id="step-login">Login</div><div class="step" id="step-address">Address</div><div class="step" id="step-shipping">Shipping</div><div class="step" id="step-review">Review</div><div class="step" id="step-complete">Complete</div></div>
     <div class="menu-opened transition-1">
@@ -286,7 +281,7 @@ initMap=function() {
                     </div>
                 </div>
                 <div class="next transition-1" id="next-logged" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('next',now)">
-                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                    <img src="img/next.png" class="next-image image-button transition-1" alt="next"/>
                 </div>
             </div>
             <div class="circle-step">1</div>            
@@ -297,20 +292,20 @@ initMap=function() {
                 <div class="single-content">
                     <form id="form-target">
                         <textarea class="text-address" placeholder="Country.." id="country-textarea"></textarea>
-                        <textarea class="text-address" placeholder="Full Name.." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="Address.." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="ZIP code..." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="City.." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="Region.." id="country-textaera"></textarea>
-                        <textarea class="text-address" placeholder="Phone" id="country-textaera"></textarea>
+                        <textarea class="text-address" placeholder="Full Name.." id="fullname-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="add1-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Address.." id="add2-textarea"></textarea>
+                        <textarea class="text-address" placeholder="ZIP code..." id="zip-textarea"></textarea>
+                        <textarea class="text-address" placeholder="City.." id="city-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Region.." id="region-textarea"></textarea>
+                        <textarea class="text-address" placeholder="Phone" id="phone-textarea"></textarea>
                     </form>
                 </div>
                  <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('next',now)">
-                     <img src="img/next.png" class="next-image image-button transition-1"/>
+                     <img src="img/next.png" class="next-image image-button transition-1" alt="next"/>
                  </div>
                  <div class="pre transition-1" id="pre-notlogged" onclick="stepCheckout(document.getElementById('checkout-login'));var now=20;progressBar('pre',now)">
-                     <img src="img/next.png" class="pre-image image-button transition-1"/>
+                     <img src="img/next.png" class="pre-image image-button transition-1" alt="pre"/>
                  </div>
             </div>
             <div class="circle-step">2</div>
@@ -324,10 +319,10 @@ initMap=function() {
                        <div class="shipping-option">Priority</div>
                 </div>
                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('next',now)">
-                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                    <img src="img/next.png" class="next-image image-button transition-1" alt="next"/>
                 </div>
                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-address'));var now=40;progressBar('pre',now)">
-                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                    <img src="img/next.png" class="pre-image image-button transition-1" alt="pre"/>
                 </div>
             </div>
             <div class="circle-step">3</div>
@@ -339,10 +334,10 @@ initMap=function() {
                 <div class="single-header">Review your order</div>
                 <div class="single-content" id="checkout-target"></div>
                 <div class="next transition-1" onclick="stepCheckout(document.getElementById('checkout-complete'));var now=120;progressBar('next',now)">
-                    <img src="img/next.png" class="next-image image-button transition-1"/>
+                    <img src="img/next.png" class="next-image image-button transition-1" alt="next"/>
                 </div>
                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-shipping'));var now=60;progressBar('pre',now)">
-                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                    <img src="img/next.png" class="pre-image image-button transition-1" alt="pre"/>
                 </div>
             </div>
             <div class="circle-step">4</div>
@@ -351,11 +346,11 @@ initMap=function() {
             <div class="single-container" id="single-complete"  style="display:none">
                 <div class="single-header">Complete and pay</div>
                 <div class="single-content">
-                    <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;">
+                    <img id="paypal-button" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" style="margin-right:7px;" alt="paypal">
                     <button onclick="window.location.href='../user/success.html'">Simula transazione riuscita</button><button onclick="window.location.href='../user/failed.html'">Simula transazione fallita</button>
                 </div>
                 <div class="pre transition-1" onclick="stepCheckout(document.getElementById('checkout-review'));var now=80;progressBar('pre',now)">
-                    <img src="img/next.png" class="pre-image image-button transition-1"/>
+                    <img src="img/next.png" class="pre-image image-button transition-1" alt="pre"/>
                 </div>
             </div>
             <div class="circle-step">5</div>
@@ -364,9 +359,9 @@ initMap=function() {
     <div id="checkout-address-container"></div>
     <div id="quit-checkout" onclick="closeCheckout()">BACK</div>
 </div>
-<!-- ------------------------------------------------------------------- CART TARGET START -->
+<!-- CART TARGET START -->
 <div id="products-cart-target" class="transition-3"> </div>
-<!-- ----------------------------------------------------------------- HIDDEN STUFF START -->
+<!-- HIDDEN STUFF START -->
 <div id="check-login" style="display:none"></div>
 <div id="cart-data" style="display:none"></div>
 </body></html>

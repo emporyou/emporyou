@@ -33,7 +33,6 @@
     width: 32%;
     float: left;
     height: 0;
-    border: 1px solid #f6f6f6;
     padding-bottom: 22%;
     min-width: 146px;
     min-height: 100px;
@@ -69,7 +68,7 @@ body.Cmode #product-main-container,body.Cmode #basket,body.Cmode #basket-contain
     box-sizing: border-box;
     transform: translateY(-74.9%);transform-origin: top;transition-delay: 250ms;}
 #rope{position:fixed;width:9vmin;right:6%;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
-body.cart-isin #basket{transform: translateY(-90.05%) scale(0.9);transition-delay:0ms;z-index:1001;}
+body.cart-isin #basket{transform: translateY(-90.05%) scale(0.9);transition-delay:0ms}
 body.cart-isin #basket-container{transform:scaleY(0);}
 body.cart-isin #profile-button {}
 body.cart-isin #rope{transform:translateY(0) scaleY(0);transition-delay:0ms}
@@ -95,20 +94,27 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 body.vertical #categories-container {transform:translateX(-120%);top:50px;left:0%;z-index: 1002;background-color:rgba(0,0,0,0.95)}
 body.vertical.cat-isin #categories-container {transform: translateX(0%);rgba(0, 0, 0, 0.93);width:98%;height:96%;padding-left:5%;padding-top:4%;}
 body.vertical #product-main-container {width: 100%;text-align: center;min-width:0px;}
+body.vertical.map-isin #product-main-container {width: 100%;margin-top:56vh}
 body.vertical #thumb-wrap{width: 100%;}  
-body.vertical #google-map-container{min-width:0px;}  
   /*  */
 body.vertical .products-container{display:inline-block;width:90%;}
 body.vertical #basket {}
 body.vertical .-b.menu{display:block}
-body.vertical {min-width:0px;}
-body.vertical .thumb-element {width: 45vw;height: 45vw;}
-body.vertical .thumb-container {width: 40vw;height: 20vw;
+body.vertical {min-width:0px;text-align:center}
+body.vertical .thumb-element {width: 42vw;height: 42vw;}
+body.vertical .thumb-product {margin:2vmin}
+body.vertical .thumb-container {width: 42vw;height: 50vw;
     min-width:0px;
     min-height:0px;
-    float: left;
-    border: 1px solid #f6f6f6;
+    float: left;padding-bottom: 0%; */
 }
+
+body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;left:10%;
+						background-color:transparent;height:40%;}
+body.vertical  #google-map-container .google-map{
+	overflow: hidden;height: 99%; width: 100%; background-color: rgb(229, 227, 223);}
+
+
 /*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/

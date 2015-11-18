@@ -98,3 +98,10 @@ function checkRange(xx,yy,cc){
         if(xx.value>=yy.value){xx.previousSibling.value=yy.previousSibling.value}
     }
 }
+function stopPropagation(evt) {
+    if (typeof evt.stopPropagation != "undefined") {
+        evt.stopPropagation();
+    } else {
+        evt.cancelBubble = true;
+    }
+}
