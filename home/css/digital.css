@@ -103,9 +103,9 @@ body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;}
 
-body.vertical .thumb-container {width: 28vw;
+body.vertical .thumb-container {width: 28vw;height: 28vw;
     float: left;height: 0;
-    border: 1px solid #f6f6f6;padding-bottom: 22%;min-height: 100px;
+    border: 1px solid #f6f6f6;
 }
 /*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
