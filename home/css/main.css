@@ -548,6 +548,7 @@ perspective-origin: 50% 50%;
     height:50px;
     right:0;
     top:0;
-    line-height:50px;
+    font-size:3vh;
+    line-height:54px;
     color:white;
 }
