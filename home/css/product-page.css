@@ -1,17 +1,5 @@
 
-.product-info-main{
-    margin-top:100px;
-    z-index:500;
-    margin-left:13%;
-    width: 74%;
-    position:relative;
-    background-color:#f6f6f6;
-    font-family: 'josefin sans';
-    letter-spacing: 0px;
-    font-size:2.2vmin;
-    line-height:15px;
-    font-weight:400;
-}
+
 .main-image-container {
     position:relative;
     width:100%;
