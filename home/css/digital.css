@@ -136,7 +136,8 @@ body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-wi
 body.vertical  #google-map-container .google-map{
 	overflow: hidden;height: 99%; width: 100%; background-color: rgb(229, 227, 223);}
 
-body.vertical	.product-info-main{margin:0}
+body.Pmode.vertical #product-main-container {margin-top:10vh}
+body.Pmode.vertical .product-info-main{margin:0}
 
 /*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
