@@ -69,15 +69,18 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 }
 
 #checkout-bottom {
-    margin-top:70px;
+        /* margin-top: 70px; */
     text-align: center;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     padding: 4px;
-    width:95%;
-    color:white;
-    font-size:3vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 3vh;
     font-weight: bold;
-    background-color:#1bba9a;
+    background-color: #1bba9a;
     font-family: 'josefin sans';
 }
 
