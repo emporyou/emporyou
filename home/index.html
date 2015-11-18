@@ -67,7 +67,7 @@ myappinit=function(){
 	ooo.render('cat-search', 'category-template.xml', 'http://emporyou.com/api/get?k=50&output=xml', false, 'append')
    ooo.render('check-login','http://emporyou.com/checkout-template.xml','http://emporyou.com/session',false,checkLogin());
 	ooo.render('cart-data','html.xml','../syncart',false,false,function(){setTimeout(rendercart,100)});	
-	window.addEventListender('resize', checkMobile);
+	window.addEventListener('resize', checkMobile);
 	checkMobile();
 	doinitialrender();
    var slider = document.getElementById('slider-search');
