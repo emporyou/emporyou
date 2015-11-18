@@ -96,9 +96,9 @@ body.vertical.cat-isin #categories-container {transform: translateX(0%);rgba(0, 
 body.vertical #product-main-container {width: 100%;margin-left: 0%;text-align: center;min-width:0px;}
 body.vertical.map-isin #product-main-container {width: 100%; margin-left: 0%;margin-top:56vh}
 body.vertical #thumb-wrap{width: 100%;}  
-body.vertical.logo-text{display:none}
+body.vertical.logo-text-sx{display:none}
 body.vertical.hamburger{display:none}
-body.vertical #profile-button{display:none}
+body.vertical.usr-image{display:none}
   /*  */
 body.vertical .products-container{display:inline-block;width:100%;}
 body.vertical #basket {}
