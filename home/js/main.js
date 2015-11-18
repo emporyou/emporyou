@@ -62,7 +62,7 @@ function shareDialog(elm){
             elm.src = "../img/diamond.png";
         }
 }
-function openCat(e){if(e.id=="cat-city"){toggleMap()};
+function openCat(e){if(e.id=="cat-city"){toggleMap()}else{ensureMapIsOpened()};
 	var srcs=gClass('search');
 	var cats=gClass('cat-cont');
     for(i=0;i<10;i++){
