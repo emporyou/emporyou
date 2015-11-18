@@ -25,6 +25,7 @@
 #checkout-main-container{display:none}
 #basket-container{transform:scaleY(1);}
 #basket{cursor:pointer}
+.-b.menu{display:none}
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------PRODUCT PAGE MODE*/
 body.Pmode .zero-thumb{display:none}
@@ -51,26 +52,37 @@ body.Cmode #product-main-container,body.Cmode #basket,body.Cmode #basket-contain
 	 -webkit-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09); -moz-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 	 /*hidden*/transform: translateX(100%);}
 #basket-container{position:fixed;z-index:4000000000001;top:0;right:5%;cursor:pointer;height:100%;width:50px;background-color:transparent;}
-#basket{position:fixed;width:9vmin;top: 50px;
-    right: 6%;
-    transform: translateY(-74.9%);
-    transform-origin: top;transition-delay:250ms}
-
-#bought-container{position: fixed;
-    width: 9vmin;
-	 top: 100px;
-    right: 6%;
-    padding-left: 4.5vmin;
+#basket{position:fixed;width:9vmin;top:50px;right:6%;transform:translateY(-74.9%);transform-origin: top;transition-delay:250ms}
+#bought-container{position:fixed;width: 9vmin;top: 100px;right: 6%;padding-left: 4.5vmin;
     box-sizing: border-box;
-    transform: translateY(-74.9%);
-    transform-origin: top;
-    transition-delay: 250ms;}
+    transform: translateY(-74.9%);transform-origin: top;transition-delay: 250ms;}
 #rope{position:fixed;width:9vmin;right:6%;height:100%;top:50px;transform:translateY(0%) scaleY(0.23);transition-delay:250ms;z-index:0;transform-origin:top}
 body.cart-isin #basket{transform: translateY(-90.05%) scale(0.9);transition-delay:0ms;z-index:1001;}
 body.cart-isin #basket-container{transform:scaleY(0);}
 body.cart-isin #profile-button {right:17%}
 body.cart-isin #rope{transform:translateY(0) scaleY(0);transition-delay:0ms}
 body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);transition-delay:250ms}
+.flag{display: block;
+    background-color:transparent;
+    width:9vmin;
+    height:20px;
+    line-height:20px;
+    color:#f7f7f7;
+    font-family:'Open sans';
+     border-top:10px solid #c43b42;
+ border-bottom:10px solid #c43b42;
+ /* Don't set the left border */
+ border-right:10px solid transparent; /* Right one transparent */
+ height:0px;  /* Remove Height */
+}
+.flag-text{top:-10px;left:3px;position:relative;color:white;text-align:center;}
+.flag-text:hover{cursor:pointer;opacity:0.7;}
+/*----------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
+body.vertical #categories-container {}
+body.vertical #basket {}
+
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
@@ -90,33 +102,4 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
      -o-transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); 
         transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); /* custom */}
 		  
-		  
-.hhhfilter{
-	-webkit-filter: contrast(0.9) grayscale(0.1) hue-rotate(330deg) saturate(0.9) sepia(0.2);	
-}
 
-
-
-.flag{display: block;
-    background-color:transparent;
-    width:9vmin;
-    height:20px;
-    line-height:20px;
-    color:#f7f7f7;
-    font-family:'Open sans';
-     border-top:10px solid #c43b42;
- border-bottom:10px solid #c43b42;
- /* Don't set the left border */
- border-right:10px solid transparent; /* Right one transparent */
- height:0px;  /* Remove Height */
-}
-.flag-text{
-    top:-10px;
-    left:3px;
-    position:relative;
-    color:white;
-    text-align:center;
-}
-.flag-text:hover{
-    cursor:pointer;opacity:0.7;
-}
