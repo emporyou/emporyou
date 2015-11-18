@@ -108,7 +108,7 @@ body.vertical .thumb-container {width: 42vw;height: 50vw;
     min-height:0px;
     float: left;padding-bottom: 0%; */
 }
-
+body.vertical .thumb-dummy { padding-top:0%; }
 body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;left:10%;
 						background-color:transparent;height:40%;}
 body.vertical  #google-map-container .google-map{
