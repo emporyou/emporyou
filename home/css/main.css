@@ -542,3 +542,12 @@ perspective-origin: 50% 50%;
     margin-top: -26px;
     margin-left: -49px;
 }
+.language-select {
+    position:absolute;
+    font-family:'open sans';
+    height:50px;
+    right:0;
+    top:0;
+    line-height:50px;
+    color:white;
+}
