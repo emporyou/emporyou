@@ -12,6 +12,9 @@
     width:100%;
     margin:5px;
 }
+.logo-text{
+    margin-top: 15px !important;
+}
 
 .profile-image-user-page {
     position:relative;

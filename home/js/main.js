@@ -59,24 +59,23 @@ function shareDialog(elm){
         }
 }
 function openCat(e){
+	var srcs=gClass('search');
+	var cats=gClass('cat-cont');
     for(i=0;i<10;i++){
-        if(gClass('search')[i]){
-            //gClass('cat-cont')[i].style.height="50px";
-            //gClass('cat-cont')[i].style.lineHeight="50px";
-            gClass('search')[i].style.height="0";
-            gClass('search')[i].style.display="none";
-            gClass('cat-cont')[i].classList.remove('selected');
+        if(srcs[i]){
+            if(!e.isSameNode(cats[i])){cats[i].classList.remove('selected');
+				srcs[i].style.height="0";srcs[i].style.display="none";}
+				else{e.classList.toggle('selected');
+					if(e.classList.contains('selected')){
+						srcs[i].style.height="auto";
+						srcs[i].style.display="block";
+					}else{
+						srcs[i].style.height="0";
+						srcs[i].style.display="none";
+					}
+				}
         }
     }
-    //e.style.height="40px";
-    //e.style.lineHeight="40px";
-    e.classList.add('selected');
-    var n = e.nextSibling;
-    while(n && n.nodeType != 1) {
-    n = n.nextSibling
-}
-    n.style.height="auto";
-    n.style.display="block";
 }
 function clean(elm){
     for(i=0;i<30;i++){if(elm.value!='all'&&elm.value!='recents'){

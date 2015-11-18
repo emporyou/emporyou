@@ -137,9 +137,23 @@ ul {
 #chiudi-cart{
         position: absolute;
     top: 60px;
-    width: 10%;
-    height: 0;
     color: #666;
+    font-weight: bold;
+    background-color: transparent;
     font-family: 'open sans';
-    font-size: 2.5vh;
+    border: none;
+}
+.svuota-cart{
+    background-color:transparent;
+    border:1px solid rgba(100,0,0,0.3);
+    border-radius:4px;
+    color:black;
+}
+.svuota-cart:hover{
+    cursor:pointer;
+    color:white;
+    background-color:#c43b42;
+}
+#chiudi-cart:hover{
+    cursor:pointer;
 }
