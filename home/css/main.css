@@ -563,3 +563,6 @@ perspective-origin: 50% 50%;
     left: 2%;
     position: absolute;
 }
+.hamburger:hover{
+    cursor:pointer;
+}
