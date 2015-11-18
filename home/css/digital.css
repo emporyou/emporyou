@@ -33,7 +33,6 @@
     width: 32%;
     float: left;
     height: 0;
-    border: 1px solid #f6f6f6;
     padding-bottom: 22%;
     min-width: 146px;
     min-height: 100px;
@@ -103,11 +102,11 @@ body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;text-align:center}
 body.vertical .thumb-element {width: 42vw;height: 42vw;}
+body.vertical .thumb-product {margin:2vmin}
 body.vertical .thumb-container {width: 42vw;height: 21vw;
     min-width:0px;
     min-height:0px;
-    float: left;
-    border: 1px solid #f6f6f6;
+    float: left;padding-bottom: 22%; */
 }
 
 body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;left:10%;
