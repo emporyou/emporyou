@@ -62,13 +62,12 @@ function shareDialog(elm){
             elm.src = "../img/diamond.png";
         }
 }
-function openCat(e){
+function openCat(e){if(e.id="cat-city"){toggleMap()};
 	var srcs=gClass('search');
 	var cats=gClass('cat-cont');
     for(i=0;i<10;i++){
         if(srcs[i]){ 
             if(!e.isSameNode(cats[i])){cats[i].classList.remove('selected');
-                if(e.id="cat-city"){toggleMap()};
 				srcs[i].style.height="0";srcs[i].style.display="none";}
 				else{e.classList.toggle('selected');
 					if(e.classList.contains('selected')){
