@@ -110,7 +110,7 @@ body.vertical .thumb-container {width: 40vw;height: 20vw;
     border: 1px solid #f6f6f6;
 }
 
-body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;
+body.vertical  #google-map-container{width:80%;display:inline-block;top:0;min-width:0px;left:10%;
 						background-color:transparent;height:40%;}
 body.vertical  #google-map-container .google-map{
 	overflow: hidden;height: 99%; width: 100%; background-color: rgb(229, 227, 223);}
