@@ -178,20 +178,7 @@
     background: linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', endColorstr='#40f1f7',GradientType=0 ); /* IE6-9 */
 }
-.main-add-pro.pressed{
-    animation-name: pressing-button;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-}
-@keyframes pressing-button {
-    from {
-        background-color:rgb(196, 59, 66);
-    }
-    to {
-        background-color:rgb(27, 186, 154);
-    }
-}
+
 .main-social-container {
     position:relative;
     width:100%;

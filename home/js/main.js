@@ -105,7 +105,3 @@ function stopPropagation(evt) {
         evt.cancelBubble = true;
     }
 }
-function pressing(e){
-    e.classList.add('pressed');
-    setTimeout('e.classList.remove("pressed")',500)
-}
