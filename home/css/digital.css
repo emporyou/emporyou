@@ -82,7 +82,7 @@ body.cart-isin #products-cart-target{display:block;right:-17px;transform: transl
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
 body.vertical #categories-container {}
 body.vertical #basket {}
-
+body.vertical .-b.menu{display:block}
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------TRANSITION TIMING FUNCTIONS*/
