@@ -101,6 +101,16 @@ body.vertical .hamburger{display:none}
 body.vertical .usr-image{display:none}
 body.vertical .language-select{display:none}
 body.vertical #basket{position: absolute;width: 30px;top: 0;left: 10%;z-index: 1001;-webkit-filter: brightness() hue-rotate);transform: translateY(-89.9%);}
+body.vertical #bought-container{    position: absolute;
+    width: 9vmin;
+    top: 32px;
+    left: 15%;
+    z-index: 1001;
+    padding-left: 4.5vmin;
+    box-sizing: border-box;
+    transform: translateY(-74.9%);
+    transform-origin: top;
+    transition-delay: 250ms;}
 body.vertical #rope{display:none}
   /*  */
 body.vertical .products-container{display:inline-block;width:100%;}
