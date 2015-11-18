@@ -3,9 +3,6 @@ body{
     margin:0;
     overflow-x:hidden;
 }
-body,html{
-    min-width:840px;
-}
 .header{
     background-color:#c43b42; 
     height:50px;
