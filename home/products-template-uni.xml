@@ -142,8 +142,4 @@ id="#UNIQUEID#-#ROWIDX#-nome-merchant" class="nome-merchant"><b>La scarpa di Ala
 id="#UNIQUEID#-#ROWIDX#-desc-merchant" class="desc-merchant">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse</div><div 
 id="#UNIQUEID#-#ROWIDX#-orario-merchant" class="orario-merchant">Orari negozio: <b> %orari</b></div><div 
 id="#UNIQUEID#-#ROWIDX#-indirizzo-merchant" class="indirizzo-merchant">Indirizzo: <b> %road, %cap, %city</b></div><div 
-id="#UNIQUEID#-#ROWIDX#-mappa-merchant" class="mappa-merchant"> MAPPA MERCHANT</div></div></div></div></div>					  
-
-					  
-					  </div></html></rowtype>
-                 <onloadall>doItProducts()</onloadall></document>
+id="#UNIQUEID#-#ROWIDX#-mappa-merchant" class="mappa-merchant"><img class="map-img" src="../img/map.png" alt="mappa merchant"/></div></div></div></div></div></div></html></rowtype><onloadall>doItProducts()</onloadall></document>
