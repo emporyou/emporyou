@@ -24,7 +24,7 @@
 <variable tagname="variants/price" substitution="%price"/>
 <variable tagname="valore-base" substitution="%valore"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<javascript substitution="%risparmio">%valore-%price</javascript>
+<onload>document.getElementById('risparmio-target%id').innerHTML='€'+(%valore-%price)</onload>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
     <match value="5">thumb-container</match>
     <match value="3">thumb-container</match>
