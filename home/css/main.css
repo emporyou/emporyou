@@ -593,11 +593,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 }
 .detbot{
     display:inline-block;
-    width:30%;
-    font-weight: bold;
+    width:32%;  
     text-align:center;
-    opacity:0.7;
+    font-size:1.8vh;
 }
 .numero-det{
-    opacity:1
+    font-weight: bold;
 }
