@@ -37,7 +37,7 @@ class="commento" placeholder="Scrivi un commento..." style="resize:none"> </text
 id="right-column-pro"><div 
 id="main-info-container"><div 
 id="main-info-pro"><div 
-id="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target" style="font-size:5vh;font-weight:bold">€ %price</span></div><div id="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
+id="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target" style="font-size:5vh;font-weight:bold">€ %price</span></div><div id="info-pro-opt"><br/>%options <br/><br/>%details</div></div></div><div 
 id="main-add-container"> <div 
 id="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="main-social-container"><div 
