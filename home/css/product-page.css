@@ -398,6 +398,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     width:100%;
     background-color:#ccc
 }
+.map-img{
+    width:100%;
+}
 
 
 
