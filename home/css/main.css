@@ -510,7 +510,6 @@ perspective-origin: 50% 50%;
     cursor:pointer;   
 }
 .bottone-opzione{
-        height: 25px;
     line-height: 12px;
     font-family: 'josefin sans';
     display: inline-block;
