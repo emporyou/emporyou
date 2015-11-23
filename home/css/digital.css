@@ -131,14 +131,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', end
 
 
 }
-body.vertical .thumb-element {    width: 75.2vw;
+body.vertical .thumb-element {    width: 90.2vw;
     /* height: 75vw; */
     border: 0.6vw solid white;
     margin-top: 20px;
     margin-top: 20px;}
 body.vertical .thumb-product {margin:2vmin}
-body.vertical .thumb-container {width: 80vw;
-    height: 80vw;    float: none;
+body.vertical .thumb-container {width: 95vw;
+    height: 95vw;    float: none;
     min-width:0px;
     min-height:0px;padding-bottom: 0%; */
 }
