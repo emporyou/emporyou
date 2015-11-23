@@ -101,7 +101,7 @@ class="commento" placeholder="Scrivi un commento..." style="resize:none"> </text
 id="#UNIQUEID#-#ROWIDX#-right-column-pro" class="right-column-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
-id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vmin">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vmin;font-weight:bold">€ %price</span></div><div
+id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:3vmin">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vmin;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><br/><br/><div 
 class="detbot">Valore:<br/><div class="numero-det striked" id="valore-target%id">€ %valore</div></div><div 
 class="detbot" style="color:#c43b42">Sconto<br/><div class="numero-det" style="color:#c43b42;font-size:3vmin" id="discount-target%id">%discount %</div></div><div 
