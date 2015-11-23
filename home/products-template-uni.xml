@@ -103,22 +103,22 @@ id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><br/><br/><div 
-class="detbot">Valore:<br/><div class="numero-det" id="valore-target%id">€ %valore</div></div><div 
+class="detbot">Valore:<br/><div class="numero-det striked" id="valore-target%id">€ %valore</div></div><div 
 class="detbot">Sconto<br/><div class="numero-det" id="discount-target%id">%discount %</div></div><div 
 class="detbot">Risparmio<br/><div class="numero-det" id="risparmio-target%id"> </div></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-pro" class="main-social-pro"><div 
-class="social-element soc1" id="pdf"><i class="fa fa-file-pdf-o"> </i></div><div 
 class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
-class="social-element soc2" id="text-fav">Preferiti</div><div 
+class="social-element soc2" id="text-fav">PREFERITI</div><div 
 class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
-class="social-element soc2" id="text-reg">Regala</div><div 
+class="social-element soc2" id="text-reg">REGALA</div><div 
 class="social-element soc1" id="facebook"><i class="fa fa-facebook-square"> </i></div><div 
 class="social-element soc1" id="google"><i class="fa fa-google-plus-square"> </i></div><div 
 class="social-element soc1" id="twitter"><i class="fa fa-twitter-square"> </i></div><div 
-class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"> </i></div></div></div><div 
+class="social-element soc1" id="tumblr"><i class="fa fa-tumblr-square"> </i></div><div 
+class="social-element soc1" id="pdf"><i class="fa fa-file-pdf-o"> </i></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-container" class="main-photo-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-pro" class="main-photo-pro"><img 
 id="#UNIQUEID#-#ROWIDX#-logo-vendor" class="logo-vendor" src="../img/logo-black.png" /><div 

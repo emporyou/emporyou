@@ -600,3 +600,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 .numero-det{
     font-weight: bold;
 }
+.striked{
+        text-decoration: line-through;
+}
