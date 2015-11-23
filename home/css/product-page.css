@@ -311,17 +311,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .social-element {
-    display:inline-block;
-    color:#666;
-    font-size:2.5vmin;
-    height:100%;
+    display: inline-block;
+    color: #666;
+    font-size: 2vmin;
+    height: 100%;
 }
 
 .soc1 {
-    width:7%;
+    width:9%;
     text-align:right;
 }
-.soc1:hover{cursor:pointer;color:black;}
+.soc1:hover{cursor:pointer;color:black;transform:scale(1.1)}
 
 .soc2 {
     width:17%
