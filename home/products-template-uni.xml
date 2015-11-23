@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
 <constantjavascript substitution="zwzwzwzwzw">g_discount=function(p){console.log(p);p=parseFloat(p);return Math.floor(((p/3)+p)*100)/100};</constantjavascript>
+<constantjavascript substitution="rgergerg">risparmio=function(s){var ss=s.split(',');var valb=ss[0].parseFloat();prib=ss[1].parseFloat();var risp=valb-prib;return risp};</constantjavascript>
 <rowtype tagname="//doc[_k='000000000000000000000012']">
 <!--
 
@@ -16,15 +17,15 @@
 <variable tagname="subtitle" substitution="%subtitle"/>
 <variable tagname="discount" substitution="%discount"/>
 <variable tagname="title" substitution="%jsproduct-name" escape="js"/>
-
 <variable tagname="road" substitution="%road"/>
 <variable tagname="cap" substitution="%cap"/>
 <variable tagname="orari" substitution="%orari"/>
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants|_id" substitution="%options" preload="options-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
+<variable tagname="variants/valore-base" substitution="%valore"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-
+<variable tagname="variants/valore-base|variants/price" pickup="csv" convert="risparmio" substitution="%risparmio"/>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
     <match value="5">thumb-container</match>
     <match value="3">thumb-container</match>
@@ -102,7 +103,10 @@ id="#UNIQUEID#-#ROWIDX#-right-column-pro" class="right-column-pro"><div
 id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
-id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div></div></div><div 
+id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><div 
+class="detbot" id="product-target-det%id">Valore:<br/>%valore</div><div 
+class="detbot">Sconto<br/>%discount</div><div 
+class="detbot" id="risparmio-target%id">Risparmio<br/>%risparmio</div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 

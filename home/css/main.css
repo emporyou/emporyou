@@ -591,3 +591,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 .hamburger:hover{
     cursor:pointer;
 }
+.detbot{
+    display:inline-block;
+    width:20%;
+    text-align:center;
+}
