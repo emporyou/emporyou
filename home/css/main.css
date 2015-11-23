@@ -596,4 +596,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
     width:30%;
     font-weight: bold;
     text-align:center;
+    opacity:0.7;
+}
+.numero-det{
+    opacity:1
 }
