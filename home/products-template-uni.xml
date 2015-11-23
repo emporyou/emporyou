@@ -103,7 +103,7 @@ id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><br/><br/><div 
-class="detbot">Valore:<br/><div id="product-target-det%id">€ %valore</div></div><div 
+class="detbot">Valore:<br/><div id="valore-target%id">€ %valore</div></div><div 
 class="detbot">Sconto<br/>%discount %</div><div 
 class="detbot">Risparmio<br/><div id="risparmio-target%id"> </div></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
