@@ -9,7 +9,7 @@
     vertical-align:middle;
     line-height:30px;
     font-family:'Open sans';
-    font-size:1.5vh;
+    font-size:1.5vmin;
     display:none;
 }
 .share{
@@ -23,7 +23,7 @@
     vertical-align:middle;
     line-height:30px;
     font-family:'Open sans';
-    font-size:1.5vh;
+    font-size:1.5vmin;
     display:none;
 }
 .fb-share-button{
@@ -45,7 +45,7 @@
     vertical-align:middle;
     line-height:30px;
     font-family:'Open sans';
-    font-size:1.5vh;
+    font-size:1.5vmin;
 }
 .share-2{
     position:absolute;
@@ -58,7 +58,7 @@
     vertical-align:middle;
     line-height:30px;
     font-family:'Open sans';
-    font-size:1.5vh;
+    font-size:1.5vmin;
 }
 .price{
         width: 100%;
@@ -71,7 +71,7 @@
     vertical-align: middle;
     line-height: 100%;
     font-family: 'Open sans';
-    font-size: 2vh;
+    font-size: 2vmin;
     text-align: center;
     margin-top: 0%;
 }
@@ -85,7 +85,7 @@
     line-height: 100%;
     color: white;
     font-family: 'Open sans';
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 .price-2{
     width:50%;
@@ -96,7 +96,7 @@
     vertical-align:middle;
     line-height:15px;
     font-family:'Open sans';
-    font-size:2.5vh;
+    font-size:2.5vmin;
 }
 .description-2{
     left:0;
@@ -108,7 +108,7 @@
     vertical-align:middle;
     line-height:100%;
     font-family:'Open sans';
-    font-size:4vh;
+    font-size:4vmin;
 }
 .share-button{
     width:80%;
