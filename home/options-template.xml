@@ -10,7 +10,7 @@
 this.classList.toggle('select');
 document.getElementById('price-target-pro%id').innerHTML='€ '+%price;
 document.getElementById('valore-target%id').innerHTML='€ '+%valore;
-var risp=(%valore-%price);
+var valu=%valore;var pri=%price;var risp=valu-pri;
 document.getElementById('risparmio-target%id').innerHTML='€ '+(risp.toFixed(2));
 document.getElementById('main-image-pro%id').style.backgroundImage='url(\'%image\')'
 ">%name</button></html>
