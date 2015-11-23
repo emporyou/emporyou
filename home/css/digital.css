@@ -126,7 +126,8 @@ body.vertical .thumb-element {    width: 38vw;
     height: 38vw;
     margin-top: 20px;}
 body.vertical .thumb-product {margin:2vmin}
-body.vertical .thumb-container {width: 42vw;height: 46vw;    float: none;
+body.vertical .thumb-container {width: 80vw;
+    height: 80vw;    float: none;
     min-width:0px;
     min-height:0px;padding-bottom: 0%; */
 }
