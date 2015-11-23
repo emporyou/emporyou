@@ -111,7 +111,7 @@ id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-pro" class="main-social-pro"><div 
 class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
-class="social-element soc2" id="text-fav">Preferiti</div><div 
+class="social-element soc2" id="text-fav">Preferiti</div><br/><div 
 class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
 class="social-element soc2" id="text-reg">Regala</div><br/><div 
 class="social-element soc1" id="facebook"><i class="fa fa-facebook-square"> </i></div><div 
