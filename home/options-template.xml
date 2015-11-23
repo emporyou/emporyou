@@ -5,7 +5,7 @@
 <variable tagname="option" substitution="%name"/>
 <variable tagname="price" substitution="%price"/>
 <variable tagname="image" substitution="%image"/>
-<variable tagname="valore-base" substitution="%valore"/>
+<variable tagname="valore" substitution="%valore"/>
 <html><button value="%name" class="bottone-opzione" onclick="
 this.classList.toggle('select');
 document.getElementById('price-target-pro%id').innerHTML='€ '+%price;
