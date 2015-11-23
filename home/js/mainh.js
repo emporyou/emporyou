@@ -35,7 +35,7 @@ getcartXML=function(){var cartdata=ooo.sel("//div[@id='cart-data']/textarea",doc
 		window.cartTotalItems+=pnum;
 		pxml='<doc>'+cartdata[c].value+'<cart_qt>'+cartdata[c].className.replace('a','')+'</cart_qt></doc>';
 		pxmlD=ooo.parsexml(pxml);
-		var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement));console.log(ddd);
+		var ddd=ooo.ixml(ooo.selone('//variants/price',pxmlD.documentElement));
 		window.cartTotalSub+=pnum*parseFloat(ddd.replace('<![CDATA[','').replace(']]>',''));
 		cartXML+=pxml;}cartXML+='</response>';return cartXML;};
 addProduct=function(productName,XMLid,PRDid){
