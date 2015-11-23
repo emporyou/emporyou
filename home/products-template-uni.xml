@@ -23,7 +23,7 @@
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants|_id" substitution="%options" preload="options-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
-<variable tagname="variants/valore-base" substitution="%valore"/>
+<variable tagname="valore-base" substitution="%valore"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
 <variable tagname="variants/valore-base|variants/price" pickup="csv" convert="risparmio" substitution="%risparmio"/>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
