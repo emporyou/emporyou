@@ -24,7 +24,7 @@
 <variable tagname="variants/price" substitution="%price"/>
 <variable tagname="valore-base" substitution="%valore"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<onload>document.getElementById('risparmio-target%id').innerHTML='€'+(%valore-%price)</onload>
+<onload>var eee=%valore-%price;document.getElementById('risparmio-target%id').innerHTML='€ '+(eee.toFixed(2))</onload>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
     <match value="5">thumb-container</match>
     <match value="3">thumb-container</match>
@@ -103,8 +103,8 @@ id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><div 
-class="detbot" id="product-target-det%id">Valore:<br/>%valore</div><div 
-class="detbot">Sconto<br/>%discount</div><div 
+class="detbot" id="product-target-det%id">Valore:<br/>€ %valore</div><div 
+class="detbot">Sconto<br/>%discount %</div><div 
 class="detbot" id="risparmio-target%id">Risparmio<br/>%risparmio</div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
