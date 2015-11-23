@@ -102,7 +102,7 @@ id="#UNIQUEID#-#ROWIDX#-right-column-pro" class="right-column-pro"><div
 id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
-id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/>Dettagli:<br/>%details</div></div></div><div 
+id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 
