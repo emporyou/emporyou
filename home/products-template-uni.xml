@@ -67,7 +67,7 @@
                  class="%add-class" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><img class="add-button" src="../img/add.png"/></div><div class="%share-class"><img id="shb" class="share-button" onclick="shareDialog(this)" src="../img/share.png"/><div 
                  id="fbb-#UNIQUEID#-#ROWIDX#" class="fb-share-button" data-href="https://emporyou.com/%product-name" data-layout="icon"> </div></div><div 
                  class="%desc-class" onclick="openProduct(event,this,'%id')"><b>%product-name</b><br/><br/></div><div 
-                class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange;font-size:3vh">%price</b><br/>%subtitle</div></div></div><textarea 
+                class="price" onclick="openProduct(event,this,'%id')">€<b style="color:orange;font-size:3vmin">%price</b><br/>%subtitle</div></div></div><textarea 
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 					  
 <div class="product-info-main"><input type="button" onclick="closeProduct(this)" class="button-chiudi-pagina" value="X" style="position: absolute;
@@ -101,10 +101,10 @@ class="commento" placeholder="Scrivi un commento..." style="resize:none"> </text
 id="#UNIQUEID#-#ROWIDX#-right-column-pro" class="right-column-pro"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-container" class="main-info-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-info-pro" class="main-info-pro"><div 
-id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vh">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vh;font-weight:bold">€ %price</span></div><div
+id="#UNIQUEID#-#ROWIDX#-info-pro-text" class="info-pro-text"><span style="font-size:4vmin">%product-name</span><br/><br/><span id="price-target-pro%id" class="price-target-pro" style="font-size:5vmin;font-weight:bold">€ %price</span></div><div
 id="#UNIQUEID#-#ROWIDX#-info-pro-opt" class="info-pro-opt"><br/>%options <br/><br/>%details</div><br/><br/><div 
 class="detbot">Valore:<br/><div class="numero-det striked" id="valore-target%id">€ %valore</div></div><div 
-class="detbot" style="color:#c43b42">Sconto<br/><div class="numero-det" style="color:#c43b42;font-size:3vh" id="discount-target%id">%discount %</div></div><div 
+class="detbot" style="color:#c43b42">Sconto<br/><div class="numero-det" style="color:#c43b42;font-size:3vmin" id="discount-target%id">%discount %</div></div><div 
 class="detbot">Risparmio<br/><div class="numero-det" id="risparmio-target%id"> </div></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div 
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
