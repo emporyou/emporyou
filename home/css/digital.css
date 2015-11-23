@@ -122,8 +122,10 @@ body.vertical .products-container{display:inline-block;width:100%;}
 body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;text-align:center}
-body.vertical .thumb-element {    width: 76vw;
-    height: 76vw;
+body.vertical .thumb-element {    width: 75.2vw;
+    /* height: 75vw; */
+    border: 0.6vw solid white;
+    margin-top: 20px;
     margin-top: 20px;}
 body.vertical .thumb-product {margin:2vmin}
 body.vertical .thumb-container {width: 80vw;

@@ -61,9 +61,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 4px 4px 4px 4px;
--moz-border-radius: 4px 4px 4px 4px;
--webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+-moz-border-radius: 0px 0px 4px 4px;
+-webkit-border-radius: 0px 0px 4px 4px;
     background: no-repeat 50% 50%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
