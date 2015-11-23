@@ -23,13 +23,13 @@
 
 .left-column-pro {
     width:60%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
 }
 
 .main-desc-container {
     position:relative;
     width:100%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:1%;
     overflow:hidden;
 }
@@ -55,7 +55,7 @@
     height:0;
     padding-bottom:25%;
     box-sizing: border-box;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:1%
 }
 
@@ -78,7 +78,7 @@
     position:relative;
     width:100%;
     height:0;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:1%
 }
 
@@ -97,7 +97,7 @@
 
 .right-column-pro {
     width:40%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     position:absolute;
     right:0;
     top:0;
@@ -107,7 +107,7 @@
     position:relative;
     width:100%;
     height:40%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
 }
 
 .main-info-pro {
@@ -129,7 +129,7 @@
     width:100%;
     height:0;
     padding-bottom:21%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:2.2%
 }
 
@@ -172,7 +172,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', end
     width:100%;
     height:0;
     padding-bottom:21%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:2.2%
 }
 
@@ -193,7 +193,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', end
 .main-photo-container {
     position:relative;
     width:100%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:1%;
     box-sizing: border-box;
 }
@@ -215,7 +215,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', end
 .main-merchant-container {
     position:relative;
     width:100%;
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     margin-bottom:1%;
     box-sizing: border-box;
 }
@@ -331,7 +331,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .probod {
-    background-color:#f6f6f6;
+    background-color:#e6e6e6;
     color: #333;
     min-width:0 !important;
 }
