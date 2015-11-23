@@ -122,12 +122,13 @@ body.vertical .products-container{display:inline-block;width:100%;}
 body.vertical #basket {}
 body.vertical .-b.menu{display:block}
 body.vertical {min-width:0px;text-align:center;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f6f6+0,c4c4c4+26,b7b7b7+42,b7b7b7+56,c4c4c4+74,f6f6f6+100 */
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f6f6+0,e5e5e5+27,dbdbdb+42,dbdbdb+57,e5e5e5+75,f6f6f6+100 */
 background: rgb(246,246,246); /* Old browsers */
-background: -moz-linear-gradient(left,  rgba(246,246,246,1) 0%, rgba(196,196,196,1) 26%, rgba(183,183,183,1) 42%, rgba(183,183,183,1) 56%, rgba(196,196,196,1) 74%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  rgba(246,246,246,1) 0%,rgba(196,196,196,1) 26%,rgba(183,183,183,1) 42%,rgba(183,183,183,1) 56%,rgba(196,196,196,1) 74%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  rgba(246,246,246,1) 0%,rgba(196,196,196,1) 26%,rgba(183,183,183,1) 42%,rgba(183,183,183,1) 56%,rgba(196,196,196,1) 74%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: -moz-linear-gradient(left,  rgba(246,246,246,1) 0%, rgba(229,229,229,1) 27%, rgba(219,219,219,1) 42%, rgba(219,219,219,1) 57%, rgba(229,229,229,1) 75%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(246,246,246,1) 0%,rgba(229,229,229,1) 27%,rgba(219,219,219,1) 42%,rgba(219,219,219,1) 57%,rgba(229,229,229,1) 75%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(246,246,246,1) 0%,rgba(229,229,229,1) 27%,rgba(219,219,219,1) 42%,rgba(219,219,219,1) 57%,rgba(229,229,229,1) 75%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#f6f6f6',GradientType=1 ); /* IE6-9 */
+
 
 
 }
