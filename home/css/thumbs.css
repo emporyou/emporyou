@@ -148,7 +148,7 @@ box-shadow:         5px 5px 21px 0px rgba(50, 50, 50, 0.08);}
     line-height:20px;
     color:black;
     font-family:'open sans';
-    font-size:2min;
+    font-size:2vmin;
     /*border-left: 2px solid #e87c7c;*/
     max-width:220px;
     -webkit-transition: all 250ms ease-out;
