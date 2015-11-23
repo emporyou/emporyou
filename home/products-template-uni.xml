@@ -110,9 +110,9 @@ id="#UNIQUEID#-#ROWIDX#-main-add-container" class="main-add-container"> <div
 id="#UNIQUEID#-#ROWIDX#-main-add-pro" class="main-add-pro" onclick="addProduct('%jsproduct-name','#UNIQUEID#-#ROWIDX#','%id')"><b>aggiungi al carrello</b></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-pro" class="main-social-pro"><div 
-class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
+class="social-element soc2" id="favorite"><i class="fa fa-heart"> </i></div><div 
 class="social-element soc2" id="text-fav">Preferiti</div><br/><div 
-class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
+class="social-element soc2" id="regala"><i class="fa fa-gift"> </i></div><div 
 class="social-element soc2" id="text-reg">Regala</div><br/><div 
 class="social-element soc1" id="facebook"><i class="fa fa-facebook-square"> </i></div><div 
 class="social-element soc1" id="google"><i class="fa fa-google-plus-square"> </i></div><div 
