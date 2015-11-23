@@ -7,7 +7,7 @@
 <variable tagname="image" substitution="%image"/>
 <variable tagname="valore-base" substitution="%valore"/>
 <constantjavascript substitution="rgergerg">risparmio=function(s){var ss=s.split('!');var valb=ss[0].parseFloat();prib=ss[1].parseFloat();var risp=valb-prib;return risp};</constantjavascript>
-<variable tagname="valore-base|price" convert="risparmio" substitution="%risparmio"/>
+<variable tagname="valore-base|price" convert="risparmio" pickup="csv" substitution="%risparmio"/>
 <html><button value="%name" class="bottone-opzione" onclick="this.classList.toggle('select');document.getElementById('price-target-pro%id').innerHTML='€ '+%price;document.getElementById('price-target-det%id').innerHTML='€ '+%valore;document.getElementById('risparmio-target%id').innerHTML='€ '+%risparmio;document.getElementById('main-image-pro%id').style.backgroundImage='url(\'%image\')'">%name</button></html>
 </rowtype>
 </document>

@@ -25,7 +25,7 @@
 <variable tagname="variants/price" substitution="%price"/>
 <variable tagname="valore-base" substitution="%valore"/>
 <variable tagname="images/url" substitution="%mainimageurl"/>
-<variable tagname="valore-base|variants/price" convert="risparmio" substitution="%risparmio"/>
+<variable tagname="valore-base|variants/price" convert="risparmio" pickup="csv" substitution="%risparmio"/>
 <switch js="true" value="#ROWIDX#%6" substitution="%main-class">
     <match value="5">thumb-container</match>
     <match value="3">thumb-container</match>
