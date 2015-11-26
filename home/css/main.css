@@ -550,12 +550,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 .logo-text-sx {
     height: 35px;
     width: 91px;
-    top: 11.5px;
+    top: 16.5px;
     left: 5%;
     position: absolute;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url('../img/logo-text-sx.png');
+    background-image: url('../img/logo-emporyou.png');
 }
 .button-chiudi-pagina{cursor:pointer;opacity:0.8}
 .usr-image{
