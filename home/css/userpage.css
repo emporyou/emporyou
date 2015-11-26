@@ -1,4 +1,3 @@
-
 .user-page-main-container {
     position:absolute;
     width:55%;
@@ -6,130 +5,83 @@
     left:22.5%;
     top:100px;
 }
+.logo-text {
+    margin-top:15px
+}
 
-.user-page-head-profile {
-    position:relative;
+.user-page-head {
     width:100%;
-    margin:5px;
-}
-.logo-text{
-    margin-top: 15px !important;
-}
-
-.profile-image-user-page {
-    position:relative;
-    width:70%;
-    padding-bottom:70%;
-    height:0;
-    margin-left:15%;
-    border-radius:200px;
-    background-size:cover;
-    border:1px solid #ccc;
-}
-
-.il-tuo-emporyou-container {
-    position:relative;
-    width:30%;
-    padding-bottom:30%;
-    height:0;
-    background-color:#ccc;
-    text-align:center;
+    background-color:red;
 }
 
 .logo-emporyou-user {
-    width:80%
+    width:150px;
 }
 
 .il-tuo-emporyou {
-    font-family: 'josefin sans';
-    font-size:4vh;
-    font-weight:bold;
-}
-
-.step-container {
-    width:90%;
-    position:relative;
-    padding:3%;
-    margin:5px;
-    background-color:rgb(245,221,123);
+    background:linear-gradient(to bottom,#666,white);
+    height:100px;
+    color:white;
     font-family:'josefin sans';
-    font-weight:bold;
-    font-size:3vh
-}
-.step-container:hover{
-    cursor:pointer;
-    opacity:0.8
+    font-size:5vmin;
+    padding:30px;
 }
 
-.voucher-tumb {
-    position:relative;
-    display:inline-block;
-    width:10%;
-    padding-bottom:10%;
-    height:0;
-    border-radius:4px;
+.profile-image-user-page {
+    position:absolute;
+    width:150px;
+    height:150px;
     background-size:cover;
-    margin-right:10px;
+    border-radius:200px;
+    top:95px;
+    left:30px
 }
 
-.info-step-cont {
-    margin-left:5%;
-    margin-top:5%;
-}
-#opened.step-container:hover{
-    cursor:default !important;
-    opacity:1 !important;
-}
-textarea {
-    height:20px;
-    font-size:20px;
-    line-height:20px;
-    background-color:rgba(255,255,255,0.3);
-    border-radius:4px;
-    white-space: nowrap;
-    overflow:    scroll;
-    overflow-y:  hidden;
-    overflow-x:  scroll;
-    overflow:    -moz-scrollbars-horizontal;
-}
-
-.info-utente {
-    display:inline-block;
-    margin:1%;
-}
-
-.info-applica {
-    display:inline-block;
-    margin:1%;
-    background-color: #19bba9;
-    padding:1%;
-    opacity:0.8;
-    color:white;
-}
-.info-applica:hover{
-    cursor:pointer;
-    opacity:1
-}
-
-.upgrade-container {
-    width:96%;
-    position:relative;
-    margin:15px 5px 5px 5px;
+.user-page-body {
+    margin-top:100px;
     background-color:transparent;
-    font-family:'josefin sans';
-    font-weight:bold;
-    font-size:3vh;
-    text-align:right;
+    position:relative;
 }
 
-.button-merchant {
-    padding:4%;
-    background-color:rgb(27,186,154);
-    color:white;
+.user-page-field {
+    padding:3%;
+    font-size:3vmin;
+    font-family:'josefin sans';
+    color:black;
     font-weight:bold;
-    font-size:4vh;
+    background-color:#f6f6f6;
+    border-top:1px solid #f6f6f6;
+    border-left:1px solid #e6e6e6;
+    border-right:1px solid #e6e6e6;
+    border-bottom:1px solid #d6d6d6;
+    margin-bottom:5px;
 }
-.button-merchant:hover{
+.user-page-field:hover{
     cursor:pointer;
-    opacity:0.8;
+    background-color:white;
+}
+
+.content-target-user {
+    width:80%;
+    height:100%;
+    position:absolute;
+    background-color:white;
+    right:0;
+    top:0;
+    padding:5%;
+    box-sizing: border-box;
+    font-family: 'josefin sans';
+}
+
+.hidden {
+    display:none;
+}
+
+.user-name {
+    position:Absolute;
+    font-size:40px;
+    color:white;
+    font-family: 'josefin sans';
+    top:20px;
+    right:20px;
 }
