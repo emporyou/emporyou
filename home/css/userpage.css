@@ -20,12 +20,13 @@
 }
 
 .il-tuo-emporyou {
-    background:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
+    background:linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(0,0,0,0));
     height:100px;
     color:white;
     font-family:'josefin sans';
     font-size:5vmin;
-    padding:30px;
+    padding:20px;
+    height:140px;
     border:4px solid white;
     border-radius:2px;
 }
@@ -137,7 +138,7 @@
 }
 
 .il-tuo-emporyou-container {
-    background-image:url('http://www.cambiacopertina.it/wp-content/uploads/2592-angolo-di-natura.jpg');
-    background-size:cover;
-    filter:blur(0.1);
+    background-image:url('https://s-media-cache-ak0.pinimg.com/originals/fb/67/c5/fb67c5f5c0b3964dd3f986fb4f0d891c.gif');
+    background-repeat:repeat;
+    filter:grayscale(1);
 }
