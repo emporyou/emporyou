@@ -142,3 +142,13 @@
     background-size:100%;
     filter:grayscale(1);
 }
+
+.upgrade-container {
+        color: white;
+    background-color: #C43B42;
+    padding: 4%;
+    font-size: 3vmin;
+    font-family: 'josefin sans';
+    margin: 10px;
+    float: right;
+}
