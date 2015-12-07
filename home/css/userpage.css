@@ -151,11 +151,11 @@
 
 .il-tuo-emporyou-container {
     background-image:url('http://gdj.gdj.netdna-cdn.com/wp-content/uploads/2014/05/003+background+pattern+designs.jpg');
-    background-size:100%;
+        background-size: 40%;
     transition:all 100ms ease;
 }
 .il-tuo-emporyou-container:hover{
-    -webkit-filter:sepia(0.2);
+    -webkit-filter:grayscale(0.2);
 }
 
 .button-merchant {
