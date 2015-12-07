@@ -30,6 +30,9 @@
     border:4px solid white;
     border-radius:2px;
 }
+.il-tuo-emporyou:hover{
+    cursor:pointer;
+}
 
 .profile-image-user-page {
     position:absolute;
@@ -39,7 +42,14 @@
     border-radius:200px;
     border:4px solid white;
     top:104px;
-    left:30px
+    left:30px;
+    transition:all 200ms ease;
+    box-sizing: border-box;
+}
+.profile-image-user-page:hover{
+    cursor:pointer;
+    transform:scale(1.05);
+    border:19px solid white;
 }
 
 .user-page-body {
@@ -54,7 +64,7 @@
     font-family:'josefin sans';
     color:black;
     font-weight:bold;
-    background-color:#f6f6f6;
+    background-color:#ebebeb;
     border-top:1px solid #f6f6f6;
     border-left:1px solid #e6e6e6;
     border-right:1px solid #e6e6e6;
@@ -68,7 +78,7 @@
 }
 
 .content-target-user {
-    height:100%;
+    min-height:100%;
     position:absolute;
     background-color:white;
     left:20%;
@@ -81,8 +91,8 @@
     border-radius:0px 4px 4px 0px
 }
 .selectedfield{
-    background-color:white;
-    border-bottom:2px solid #ccc;
+    background-color:white !important;
+    border-bottom:2px solid #ccc !important;
 }
 
 .hidden {
@@ -107,12 +117,14 @@
     flex-grow:1;
     padding:2%;
     width:100%;
+    color:#999;
     border-bottom:2px solid #eee;
 }
 .new-data-user:hover{
     cursor:pointer;
-    border-bottom:2px solid #ccc;
+    border-bottom:2px solid #ddd;
     background-color:#eee;
+    color:black;
 }
 
 .col-fle {
@@ -138,17 +150,76 @@
 }
 
 .il-tuo-emporyou-container {
-    background-image:url('http://i.imgur.com/dTRvKZv.gif');
+    background-image:url('http://gdj.gdj.netdna-cdn.com/wp-content/uploads/2014/05/003+background+pattern+designs.jpg');
     background-size:100%;
-    filter:grayscale(1);
+    transition:all 100ms ease;
+}
+.il-tuo-emporyou-container:hover{
+    -webkit-filter:sepia(0.2);
 }
 
 .button-merchant {
         color: white;
     background-color: #C43B42;
     padding: 4%;
-    font-size: 3vmin;
+    font-size: 5vmin;
     font-family: 'josefin sans';
     margin: 10px;
-    float: right;
+    float: left;
+}
+.button-merchant:hover{
+    cursor:pointer;
+    opacity:0.8;
+}
+
+.area-comm {
+    background-color:#e6e6e6;
+    float:right;
+    height:4vmin;
+    width:50%;
+}
+
+.upgrade-container {
+    line-height:6vmin
+}
+
+.fa-pencil {
+    float:right;
+    display:none;
+}
+.new-data-user:hover>i{display:block !important;}
+
+.con-data {
+    position:absolute;
+    width:0%;
+    display:none;
+    min-height:100%;
+    background-color:#ebebeb;
+    top:0;
+    right:-25%;
+    line-height:8vmin;
+    padding:4vmin;
+    padding-top:12vmin;
+    transition:all 500ms ease;
+}
+
+.button-data {
+    background-color:#3b429c;
+    color:white;
+    padding:1vmin;
+    border-radius:4px;
+    margin:3vmin;
+    width:80%;
+    font-weight: bold;
+}
+
+.area-data {
+    float:right;
+    width:50%;
+    border-radius:1vmin;
+}
+.selecteddata{
+    background-color:#ebebeb !important;
+    border-bottom:2px solid #ddd !important;
+    color:black !important;
 }
