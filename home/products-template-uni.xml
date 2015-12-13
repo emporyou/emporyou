@@ -104,7 +104,7 @@ id="#UNIQUEID#-#ROWIDX#-main-social-pro" class="main-social-pro"><div
 class="social-element soc1" id="share"><i class="fa fa-file-pdf-o"> </i></div><div 
 class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
 class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
-class="social-element soc1" id="pdf"><i class="fa fa-share-alt"> </i></div></div></div><div 
+class="social-element soc1" id="pdf"><i class="fa fa-share"> </i></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-container" class="main-photo-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-pro" class="main-photo-pro"><img 
 id="#UNIQUEID#-#ROWIDX#-logo-vendor" class="logo-vendor" src="../img/logo-black.png" /><div 
