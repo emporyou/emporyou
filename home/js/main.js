@@ -4,7 +4,7 @@ var gClass=function(v){return document.getElementsByClassName(v);}
 //--------------------------------------------------------------------------- PRODUCT PAGE
 window.lastScroll=0;
 function openProduct(event,elm,idd){
-    window.lastScroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    window.lastScroll = document.body.scrollTop();
     window.scroll(0,0);
     document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
