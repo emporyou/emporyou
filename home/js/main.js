@@ -2,14 +2,14 @@ var cartPosition=450;var total=0;var set=0;var cartOpened=0;var productOpened=0;
 var gClass=function(v){return document.getElementsByClassName(v);}
 
 //--------------------------------------------------------------------------- PRODUCT PAGE
-window.lastScroll=0;
+var lastScroll=0;
 function openProduct(event,elm,idd){
-    window.lastScroll = document.body.scrollTop;
+    window.lastScroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     window.scroll(0,0);
     document.body.classList.remove('Bmode');document.body.classList.remove('Cmode');
 	 document.body.classList.add('Pmode');elm.parentElement.parentElement.classList.add('selected');}
-function closeProduct(elm){window.scroll(0,lastScroll);document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
-	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');}
+function closeProduct(elm){document.body.classList.remove('Pmode');document.body.classList.remove('Cmode');
+	 document.body.classList.add('Bmode');jQuery('.zero-thumb.selected').removeClass('selected');window.scroll(0,lastScroll);}
 function checkMobile(){
 	var w = window.innerWidth;
    var h = window.innerHeight;
