@@ -123,8 +123,12 @@ body.vertical #bought-container{    position: fixed;width: 9vmin;top: 32px;left:
 body.vertical #rope{display:none}
   /*  */
 body.vertical .products-container{display:inline-block;width:100%;}
-body.vertical #basket {}
-body.vertical .-b.menu{display:block}
+body.vertical #basket {-webkit-filter: brightness(10);}
+body.vertical .-b.menu{display:block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;}
 body.vertical {min-width:0px;text-align:center;
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f6f6+0,e5e5e5+27,dbdbdb+42,dbdbdb+57,e5e5e5+75,f6f6f6+100 */
 background: rgb(246,246,246); /* Old browsers */
