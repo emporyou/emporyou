@@ -59,7 +59,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     margin-top:20px;
     text-align: center;
     border-radius: 0px;
-    padding: 4px;
+    padding: 8px;
     width:140%;
     margin-left:-20%;
     color:white;
@@ -159,10 +159,10 @@ ul {
         text-align: center;
     border-radius: 0px;
     border: 0px 0px 1px 0px solid white;
-    border-bottom: 1px solid rgba(255,255,255 0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
     /* border: 0px; */
     border-top: none;
-    padding: 4px;
+    padding: 8px;
     width: 140%;
     /* border: none; */
     margin-left: -20%;
