@@ -1,10 +1,10 @@
 var descOpened=false;
-function openDesc(){
+function openDesc(eid){
     if(descOpened==false){
-        document.getElementById('main-desc-container').classList.remove('height200');descOpened=true;
-        document.getElementById('layer-desc').style.opacity='0'
+        eid.parentElement.classList.remove('height200');descOpened=true;
+        eid.style.display='none'
     }else{
-        document.getElementById('main-desc-container').classList.add('height200');descOpened=false;
-        document.getElementById('layer-desc').style.opacity='1'
+        eid.parentElement.classList.add('height200');descOpened=false;
+        eid.style.display='block'
     }
 }

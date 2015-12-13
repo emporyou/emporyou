@@ -72,7 +72,7 @@
                  id="#UNIQUEID#-#ROWIDX#" style="display:none">#INNERXML#</textarea>
 					  
 <div class="product-info-main"><div type="button" onclick="closeProduct(this)" class="button-chiudi-pagina" style="position: absolute;     z-index: 0;     padding: 1%;     left: 0;     top: 2.25vmin;     left: -5.6vmin;     width: 6.95vmin;     border-radius: 4px 0px 0px 4px;     box-sizing: border-box;     color: #c43b42;     background-color: #transparent;"><i class="fa fa-arrow-left fa-2x"> </i></div><div id="#UNIQUEID#-#ROWIDX#-left-column-pro" class="left-column-pro"><div id="#UNIQUEID#-#ROWIDX#-main-image-container" class="main-image-container"><div id="main-image-pro%id" class="main-image-pro" style="background-image:url('%mainimageurl')"> </div></div><div 
-id="#UNIQUEID#-#ROWIDX#-main-desc-container" class="main-desc-container height200 transition-1"><div onclick="openDesc()" 
+id="#UNIQUEID#-#ROWIDX#-main-desc-container" class="main-desc-container height200 transition-1"><div onclick="openDesc(this)" 
 id="#UNIQUEID#-#ROWIDX#-layer-desc" class="layer-desc"> </div><div class="altre-immagini">%thumbs</div><div 
 id="#UNIQUEID#-#ROWIDX#-main-desc-pro" class="main-desc-pro" ><div 
 id="#UNIQUEID#-#ROWIDX#-descrizione" class="descrizione" ><b>%subtitle</b></div><div 
