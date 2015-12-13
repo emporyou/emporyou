@@ -192,4 +192,5 @@ ul {
 .scrolling-cart{
     overflow-y:scroll;
     position:absolute;
+    left:2%;
 }
