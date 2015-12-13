@@ -190,7 +190,7 @@ ul {
     margin: 0;
 }
 .scrolling-cart{
-    position:absolute;
+    position:relative;
     left:2%;
     overflow-y: auto;/*changed from scroll*/;
     overflow-x:hidden;
