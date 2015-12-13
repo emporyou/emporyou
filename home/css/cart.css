@@ -33,6 +33,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     display:inline-block;
     font-family:'josefin sans';
     letter-spacing: normal;
+    font-weight: bold;
 }
 
 .image-cart {
