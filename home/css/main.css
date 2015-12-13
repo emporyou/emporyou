@@ -257,13 +257,13 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     color:white;
 }
 .category.select{
-    -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  font-family: 'Open sans';
-  color: black;
-  background: #9e9eff !important;
-  text-decoration: none;
+       -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    /* border-radius: 0px; */
+    font-family: 'Open sans';
+    color: white;
+    background: #4D4D4D !important;
+    text-decoration: none;
 }
 input[type=range] {
   -webkit-appearance: none;
