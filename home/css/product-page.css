@@ -27,11 +27,14 @@
 }
 
 .main-desc-container {
-    position:relative;
-    width:100%;
-    background-color:#e6e6e6;
-    margin-bottom:1%;
-    overflow:hidden;
+        position: relative;
+    width: 95%;
+    left: 2%;
+    margin-top: -2%;
+    background-color: white;
+    margin-bottom: 1%;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .main-desc-pro {
