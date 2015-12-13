@@ -188,7 +188,6 @@ ul {
     background-color: #C43B42;
 }
 .dot-cart{
-    display: inline-block; */
     border-bottom: 1px dotted rgba(255,255,255,0.5);
     /* width: auto; */
     margin: 0;
