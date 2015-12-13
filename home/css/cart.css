@@ -192,3 +192,6 @@ ul {
     /* width: auto; */
     margin: 0;
 }
+.scrolling-cart{
+    overflow-y:scroll;
+}
