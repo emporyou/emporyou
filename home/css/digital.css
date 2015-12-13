@@ -85,7 +85,7 @@ body.cart-isin #basket{transform: translateY(-90.05%) scale(0.9);transition-dela
 body.cart-isin #basket-container{transform:scaleY(0);}
 body.cart-isin #profile-button {}
 body.cart-isin #rope{transform:translateY(0) scaleY(0);transition-delay:0ms}
-body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);transition-delay:250ms;overflow-x: hidden;    color: #f2f2f2;}
+body.cart-isin #products-cart-target{display:block;right:-17px;transform: translateX(0%);transition-delay:250ms;overflow-x: hidden;    color: #f2f2f2;min-width: 17%;}
 .flag{display: block;
     background-color:transparent;
     width:9vmin;
