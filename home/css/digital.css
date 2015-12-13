@@ -72,7 +72,7 @@ body.Cmode #product-main-container,body.Cmode #basket,body.Cmode #basket-contain
 /*-----------------------------------------------------------------LAYOUT INDEPENTEND CART*/
 #products-cart-target{position:fixed;top:0;right:-17px;z-index:900;overflow-y: hidden;
     height: 100%;padding:30px;font-size: 2vh;background-color: #c43b42;
-    box-sizing: border-box;border-left: 1px solid #ccc;
+    box-sizing: border-box;border-left: 2px solid #862727;
 	 -webkit-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09); -moz-box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);box-shadow: -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 	 /*hidden*/transform: translateX(100%);}
 #basket-container{position:fixed;z-index:4000000000001;top:0;right:5%;cursor:pointer;height:100%;width:50px;background-color:transparent;}
