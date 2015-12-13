@@ -16,7 +16,7 @@ background: transparent;
 
 ::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, 0.2);
-	border: solid #fff;
+	border: solid #e6e6e6;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -34,7 +34,7 @@ background: transparent;
 }
 
 ::-webkit-scrollbar-track-piece {
-	background-color: #fff;
+	background-color: #e6e6e6;
 }
 
 ::-webkit-scrollbar-corner {
