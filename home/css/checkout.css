@@ -318,6 +318,7 @@ a {
 #products-checkout-info {
     /* margin-top: 55px; */
     width: 18%;
+        margin: 15px;
     display: inline-block;
     /* background-color: #fff; */
     font-family: 'josefin sans';
@@ -327,6 +328,7 @@ a {
     font-family: 'josefin sans';
     display: inline-block;
     float:left;
+        margin: 15px;
 }
 #checkout-target{
     padding:1%;
