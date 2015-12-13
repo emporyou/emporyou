@@ -158,9 +158,13 @@ ul {
 .svuota-cart{
         text-align: center;
     border-radius: 0px;
+    border: 0px 0px 1px 0px solid white;
+    border-bottom: 1px solid rgba(255,255,255 0.3);
+    /* border: 0px; */
+    border-top: none;
     padding: 4px;
     width: 140%;
-    border: none;
+    /* border: none; */
     margin-left: -20%;
     color: white;
     font-weight: bold;
