@@ -166,7 +166,39 @@
     background: linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', endColorstr='#40f1f7',GradientType=0 ); /* IE6-9 */
 }
-
+.main-pre-pro {
+    position:absolute;
+    background-color: rgb(27, 186, 154);
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    font-size:3vmin;
+    width:95%;
+    height:95%;
+    margin:1.9%;
+    margin-top:1.3%;
+    border-radius:6px;
+    box-sizing: border-box;
+    border-top:1px solid #555  ;
+    border-bottom:1px solid #555 ;
+    border-left:1px solid #555  ;
+    border-right:1px solid #555  ;
+}
+.main-pre-pro:before {
+    content:'';
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.main-pre-pro:hover{
+    cursor:pointer;
+    opacity:0.90;
+    background: rgb(27, 186, 154); /* Old browsers */
+    background: -moz-linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+    background: -webkit-linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+    background: linear-gradient(to bottom, rgb(35, 222, 188) 0%,rgb(27, 186, 154) 34%,rgb(27, 186, 154) 63%,rgb(38, 171, 134) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83c430', endColorstr='#40f1f7',GradientType=0 ); /* IE6-9 */
+}
 .main-social-container {
     position: relative;
     width: 100%;
