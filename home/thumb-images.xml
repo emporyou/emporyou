@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
+<constant tagname="_id" substitution="%id">
 <rowtype tagname="//variants">
 <variable tagname="image" substitution="%otherurl"/>
-<html><div class="mini-image" style="background-image:url('%otherurl');background-size:cover;"> </div></html>
+<html><div class="mini-image" style="background-image:url('%otherurl');background-size:cover;" onclick="document.getElementById('main-image-pro%id').style.backgroundImage='url(\'%otherurl\')'"> </div></html>
 </rowtype>
 </document>
