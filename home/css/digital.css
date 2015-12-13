@@ -181,5 +181,25 @@ body.Pmode.vertical .product-info-main{margin:0   ; top: 0;
    -moz-transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); 
      -o-transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); 
         transition-timing-function: cubic-bezier(0.295, -0.600, 0.320, 1.000); /* custom */}
+.flag.check{
+    display: block;
+    background-color: transparent;
+    width: 13vmin;
+    height: 20px;
+    line-height: 20px;
+    color: #f7f7f7;
+    font-family: 'Open sans';
+    border-top: 20px solid #c43b42;
+    border-bottom: 20px solid #c43b42;
+    border-right: 10px solid transparent;
+    height: 0px;
+}
+.flag-text.check{
+    top: -20px;
+    left: 3px;
+    position: relative;
+    color: white;
+    text-align: center;
+}
 		  
 

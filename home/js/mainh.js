@@ -19,7 +19,7 @@ window.cartTotalShipment=0;
 		var cartXML=getcartXML();
 		var d='none';if(window.cartTotalItems>0){d=''}
 		ooo.$$('bought-container').style.display=d;
-		ooo.$$('flag-text').innerHTML=window.cartTotalItems;
+		ooo.$$('flag-text').innerHTML=window.cartTotalItems+'<div class="flagcheck">Checkout</div>';
 		window.cartTotalTax=(cartTotalSub/100)*22;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
 		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
