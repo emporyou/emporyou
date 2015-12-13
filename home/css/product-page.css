@@ -323,7 +323,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .social-element {
     display: inline-block;
     color: #666;
-    font-size: 6vmin;
+    font-size: 5vmin;
     /* float: left; */
     margin: 1vmin;
     height: 100%;
