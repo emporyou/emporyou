@@ -190,11 +190,11 @@ ul {
     margin: 0;
 }
 .scrolling-cart{
-    position:relative;
-    left:2%;
-    overflow-y: auto;/*changed from scroll*/;
-    overflow-x:hidden;
-    width: 100%;
-    height:0;
-    white-space: nowrap;/*using nowrap*/
+    position: relative;
+    left: 2%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 116%;
+    height: 52vmin;
+    white-space: nowrap;
 }
