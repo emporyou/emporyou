@@ -102,9 +102,9 @@ id="#UNIQUEID#-#ROWIDX#-main-pre-pro" class="main-pre-pro" onclick="prenotaProdu
 id="#UNIQUEID#-#ROWIDX#-main-social-container" class="main-social-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-social-pro" class="main-social-pro"><div 
 class="social-element soc1" id="share"><i class="fa fa-file-pdf-o"> </i></div><div 
-class="social-element soc1" id="regala"><i class="fa fa-gift"> </i></div><div 
-class="social-element soc1" id="favorite"><i class="fa fa-heart"> </i></div><div 
-class="social-element soc1" id="pdf"><span aria-hidden="true" data-icon="&#xe900;" class="icon-shareiconicomoon"> </span></div></div></div><div 
+class="social-element soc1" id="regala"><span aria-hidden="true" data-icon="&#xe901;" class="icon-gifticonicomoon"> </span></div><div 
+class="social-element soc1" id="favorite"><span aria-hidden="true" data-icon="&#xe900;" class="icon-cuoreiconicomoon"> </span></div><div 
+class="social-element soc1" id="pdf"><span aria-hidden="true" data-icon="&#xe902;" class="icon-shareiconicomoon"> </span></div></div></div><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-container" class="main-photo-container"><div 
 id="#UNIQUEID#-#ROWIDX#-main-photo-pro" class="main-photo-pro"><img 
 id="#UNIQUEID#-#ROWIDX#-logo-vendor" class="logo-vendor" src="../img/logo-black.png" /><div 
