@@ -21,9 +21,11 @@
     background-size:cover;
 }
 .altre-immagini{
-    width:30%;
-    display:inline-block;
-    vertical-align:top;
+        width: 28%;
+    display: inline-block;
+    margin-top: 4%;
+    margin-left: 2%;
+    vertical-align: top;
 }
 .mini-image{
         width: 40%;
