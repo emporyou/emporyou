@@ -20,7 +20,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 }*/
 #products-cart-info {
     margin-top:55px;
-    width:60%;
+    width:75%;
     display:inline-block;
     background-color:#C43B42;
     font-family:'josefin sans';
@@ -28,7 +28,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 }
 
 #products-cart-info-number {
-    width:40%;
+    width:25%;
     background-color:#c43b42;
     display:inline-block;
     font-family:'josefin sans';
