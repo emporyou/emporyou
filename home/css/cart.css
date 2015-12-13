@@ -192,7 +192,7 @@ ul {
 .scrolling-cart{
     position:absolute;
     left:2%;
-    overflow-x: auto;/*changed from scroll*/
+    overflow-y: auto;/*changed from scroll*/
     width: 100%;
     white-space: nowrap;/*using nowrap*/
 }
