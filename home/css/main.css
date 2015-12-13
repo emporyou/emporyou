@@ -459,7 +459,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 #search input[type="submit"] {
-	background: #1bba9a;
+	background: #c43b42;
 	color: #fff;
 	font-weight: bold;
     width:30%;

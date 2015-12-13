@@ -22,16 +22,15 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     margin-top:55px;
     width:60%;
     display:inline-block;
-    background-color:#fff;
+    background-color:#C43B42;
     font-family:'josefin sans';
     letter-spacing: normal;
 }
 
 #products-cart-info-number {
     width:40%;
-    background-color:#f6f6f6;
+    background-color:#c43b42;
     display:inline-block;
-    background-color:#fff;
     font-family:'josefin sans';
     letter-spacing: normal;
 }
@@ -64,7 +63,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     width:95%;
     color:white;
     font-weight: bold;
-    background-color:#1bba9a;
+    background-color:#EF7707;
     font-family: 'josefin sans';
 }
 
@@ -81,7 +80,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     color: white;
     font-size: 3vh;
     font-weight: bold;
-    background-color: #1bba9a;
+    background-color: #EF7707;
     font-family: 'josefin sans';
 }
 
@@ -156,7 +155,7 @@ ul {
     border: none;
 }
 .svuota-cart{
-    background-color:transparent;
+    background-color:#fff;
     border:1px solid rgba(100,0,0,0.3);
     border-radius:2px;
     color:#C43B42;
