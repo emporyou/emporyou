@@ -72,6 +72,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 
 #checkout-bottom {
         /* margin-top: 70px; */
+    bottom:0;
     text-align: center;
     /* border-radius: 4px; */
     padding: 0px;
@@ -92,10 +93,6 @@ ul {
     list-style-type: none;
 }
 
-#main-stroll {
-    overflow:scroll;
-    height:100%;
-}
 
 .circle-cart {
     height: 25px;
