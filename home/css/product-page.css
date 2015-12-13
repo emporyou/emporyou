@@ -23,12 +23,15 @@
 .altre-immagini{
     width:33%;
     display:inline-block;
+    vertical-align:top;
 }
 .mini-image{
     width:10%;
     height:0;
     padding-bottom:10%;
     display:inline-block;
+    vertical-align:top;
+    margin:10px;
 }
 .left-column-pro {
     width:60%;
