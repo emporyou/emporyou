@@ -66,6 +66,7 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
     font-weight: bold;
     background-color:#EF7707;
     font-family: 'josefin sans';
+    box-sizing: border-box;
 }
 
 #checkout-bottom {
@@ -170,10 +171,12 @@ ul {
     font-weight: bold;
     background-color: #c43b42;
     font-family: 'josefin sans';
+    box-sizing: border-box;
 }
 .svuota-cart:hover{
     cursor:pointer;
     color:white;
+    border:none;
     background-color:rgba(0,0,0,0.2);
 }
 #chiudi-cart:hover{
