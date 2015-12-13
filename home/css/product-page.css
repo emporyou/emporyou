@@ -28,9 +28,9 @@
 
 .main-desc-container {
         position: relative;
-    width: 95%;
+    width: 94.9%;
     left: 2%;
-    margin-top: -2%;
+    margin-top: -3%;
     background-color: white;
     margin-bottom: 1%;
     border-radius: 4px;
@@ -45,10 +45,6 @@
     padding:10px;
     border-radius:3px;
     box-sizing: border-box;
-    border-top:1px solid #e5e6e9  ;
-    border-bottom:1px solid #d0d1d5 ;
-    border-left:1px solid #dfe0e4  ;
-    border-right:1px solid #dfe0e4  ;
     
 }
 
