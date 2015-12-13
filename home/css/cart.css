@@ -156,15 +156,15 @@ ul {
     border: none;
 }
 .svuota-cart{
-    margin-top:20px;
-    text-align: center;
+        text-align: center;
     border-radius: 0px;
     padding: 4px;
-    width:140%;
-    margin-left:-20%;
-    color:white;
+    width: 140%;
+    border: none;
+    margin-left: -20%;
+    color: white;
     font-weight: bold;
-    background-color:#EF7707;
+    background-color: rgba(0,0,0,0.2);
     font-family: 'josefin sans';
 }
 .svuota-cart:hover{
