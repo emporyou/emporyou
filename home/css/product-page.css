@@ -154,7 +154,7 @@
 }
 .main-add-pro:hover{
     cursor:pointer;
-    opacity:0.90;
+    background-color:#ce242c;
 }
 .main-pre-pro {
     background-color: #669940;
@@ -177,7 +177,7 @@
 }
 .main-pre-pro:hover{
     cursor:pointer;
-    opacity:0.90;
+    background-color:#77af41;
 }
 .main-social-container {
     width: 100%;
