@@ -19,7 +19,7 @@
 <variable tagname="road" substitution="%road"/>
 <variable tagname="cap" substitution="%cap"/>
 <variable tagname="orari" substitution="%orari"/>
-<inline tagname="variants" substitution="%thumbs" preload="thumb-images.xml"/>
+<inline tagname="variants|_id" substitution="%thumbs" preload="thumb-images.xml"/>
 <inline tagname="metafields" substitution="%details" preload="details-template.xml"/>
 <inline tagname="variants|_id" substitution="%options" preload="options-template.xml"/>
 <variable tagname="variants/price" substitution="%price"/>
