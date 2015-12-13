@@ -35,6 +35,7 @@
     vertical-align: top;
     margin: 5%;
 }
+.mini-image:hover{cursor:pointer;opacity:0.8;}
 .left-column-pro {
     width:60%;
     background-color:#e6e6e6;
