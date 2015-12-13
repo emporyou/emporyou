@@ -388,7 +388,7 @@ font-size:2vmin;
 
 .other-from-vendor-cont {
     text-align:center;
-    overflow-x:hidden;
+    overflow-y:hidden;
     white-space: nowrap;
     width:83%;
     display:inline-block;
