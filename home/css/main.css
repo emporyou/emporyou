@@ -606,3 +606,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 #slider-search {
     margin-top:15px
 }
+
+.spacer {
+    margin-bottom:200px;
+}
