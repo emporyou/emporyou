@@ -145,6 +145,10 @@
     margin-top:1.3%;
         border-radius: 0.4vmin;
     box-sizing: border-box;
+    border-top:1px solid #555  ;
+    border-bottom:1px solid #555 ;
+    border-left:1px solid #555  ;
+    border-right:1px solid #555  ;
 }
 .main-add-pro:before {
     content:'';
@@ -154,7 +158,7 @@
 }
 .main-add-pro:hover{
     cursor:pointer;
-    background-color:#ce242c;
+    opacity:0.90;
 }
 .main-pre-pro {
     background-color: #669940;
@@ -168,6 +172,10 @@
     margin-top:1.3%;
         border-radius: 0.4vmin;
     box-sizing: border-box;
+    border-top:1px solid #555  ;
+    border-bottom:1px solid #555 ;
+    border-left:1px solid #555  ;
+    border-right:1px solid #555  ;
 }
 .main-pre-pro:before {
     content:'';
@@ -177,7 +185,7 @@
 }
 .main-pre-pro:hover{
     cursor:pointer;
-    background-color:#77af41;
+    opacity:0.90;
 }
 .main-social-container {
     width: 100%;
