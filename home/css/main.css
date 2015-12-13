@@ -182,8 +182,8 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
     text-align: center;
     line-height: 40px;
     border: 1px solid rgba(150,0,0,0.2);
-    border-radius: 4px 4px 4px 4px;
-    margin-bottom: 15px;
+    border-radius: 1px 1px 1px 1px;
+    margin-bottom: 0px;
     margin-left: 2%;
 }
 .cat-cont:hover{
@@ -213,19 +213,20 @@ box-shadow:         0px 10px 30px 0px rgba(50, 50, 50, 0.29);
 }
 .search{
     height:0;
-    width:94%;
-    margin-left:0 auto;
+    width:88.8%;
+    margin-left:2%;
     margin-right:0 auto;
-    background-color:#eeeeee;
+    background-color:#c43b42;
     color:#c43b42;
     font-family:'Open sans';
     text-align:center;
     line-height:50px;
-    border-radius:4px 4px 4px 4px;
-    margin-bottom:15px;
+    border-radius:1px;
+    border-top:dashed 1px white;
+    margin-bottom:0px;
     display:none;
 }
-.search:hover{background-color:transparent;color:white;cursor:pointer;}
+.search:hover{cursor:pointer;}
 .text-logo{
     position:absolute;
     margin:-2px auto;
@@ -604,4 +605,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', end
 }
 .striked{
         text-decoration: line-through;
+}
+#slider-search {
+    margin-top:15px
 }

@@ -58,9 +58,10 @@ box-shadow:         -7px 0px 30px 0px rgba(50, 50, 50, 0.09);
 #checkout-top {
     margin-top:20px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 4px;
-    width:95%;
+    width:140%;
+    margin-left:-20%;
     color:white;
     font-weight: bold;
     background-color:#EF7707;
@@ -155,10 +156,16 @@ ul {
     border: none;
 }
 .svuota-cart{
-    background-color:#fff;
-    border:1px solid rgba(100,0,0,0.3);
-    border-radius:2px;
-    color:#C43B42;
+    margin-top:20px;
+    text-align: center;
+    border-radius: 0px;
+    padding: 4px;
+    width:140%;
+    margin-left:-20%;
+    color:white;
+    font-weight: bold;
+    background-color:#EF7707;
+    font-family: 'josefin sans';
 }
 .svuota-cart:hover{
     cursor:pointer;
