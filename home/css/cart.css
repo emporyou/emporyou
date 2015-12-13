@@ -97,16 +97,16 @@ ul {
 }
 
 .circle-cart {
-    height:30px;
-    width:30px;
-    background-color:#ccc;
-    border-radius:200px;
-    display:inline-block;
+    height: 25px;
+    width: 25px;
+    background-color: #6A313B;
+    border-radius: 200px;
+    display: inline-block;
     box-sizing: border-box;
-    color:white;
-    font-weight:bold;
-    padding-top:8px;
-    text-align:center;
+    color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
 }
 
 .info-image-cart {
