@@ -381,6 +381,7 @@ font-size:2vmin;
 .other-vendor {
     width:20%;
     height:0;
+    margin:3px;
     padding-bottom:20%;
     display:inline-block;
     background-size:cover;
