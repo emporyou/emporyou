@@ -20,6 +20,9 @@ window.cartTotalShipment=0;
 		var d='none';if(window.cartTotalItems>0){d=''}
 		ooo.$$('bought-container').style.display=d;
 		ooo.$$('flag-text').innerHTML=window.cartTotalItems+'<div class="flagcheck">Checkout</div>';
+        document.getElementsByClassName('flag')[0].classList.toggle('check');
+        document.getElementsByClassName('flag-text')[0].classList.toggle('check');
+        setTimeout("document.getElementsByClassName('flag')[0].classList.toggle('check');document.getElementsByClassName('flag-text')[0].classList.toggle('check');",3000)
 		window.cartTotalTax=(cartTotalSub/100)*22;
 		window.cartTotalTax=Math.round(window.cartTotalTax*100)/100;
 		window.cartTotalSub=Math.round(window.cartTotalSub*100)/100;
