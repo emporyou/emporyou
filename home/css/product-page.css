@@ -21,17 +21,17 @@
     background-size:cover;
 }
 .altre-immagini{
-    width:33%;
+    width:30%;
     display:inline-block;
     vertical-align:top;
 }
 .mini-image{
-    width:10%;
-    height:0;
-    padding-bottom:10%;
-    display:inline-block;
-    vertical-align:top;
-    margin:10px;
+        width: 40%;
+    height: 0;
+    padding-bottom: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5%;
 }
 .left-column-pro {
     width:60%;
