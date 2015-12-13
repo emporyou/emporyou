@@ -164,13 +164,13 @@ ul {
     margin-left: -20%;
     color: white;
     font-weight: bold;
-    background-color: rgba(0,0,0,0.2);
+    background-color: #c43b42;
     font-family: 'josefin sans';
 }
 .svuota-cart:hover{
     cursor:pointer;
     color:white;
-    background-color:#c43b42;
+    background-color:rgba(0,0,0,0.2);
 }
 #chiudi-cart:hover{
     cursor: pointer;
