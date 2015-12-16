@@ -167,6 +167,17 @@ app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
+	fs.readFile('client_secret.json', function processClientSecrets(err, content) {
+  if (err) {
+    console.log('Error loading client secret file: ' + err);
+    return;
+  }
+  // Authorize a client with the loaded credentials, then call the
+  // Gmail API.
+  authorize(JSON.parse(content), realsendmail);
+});
+});
+realsendmail=function(auth){
 	var dest='hideki.yamamoto@gmail.com';
   //CORPO
   email="TEST FROM EMPORYOU";
@@ -175,10 +186,10 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   //ENCODE
   var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
   var gmail = google.gmail('v1');
-  gmail.users.messages.send({'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
+  gmail.users.messages.send({auth: auth,'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
 	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ex:err}));	  
   });
-});
+};
 rtrim=function(v){var t=v.replace(/\s+$/g,'');return t;};
 function strtr(str,from,to){
   var fr = '',
