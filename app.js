@@ -176,7 +176,7 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
   var gmail = google.gmail('v1');
   gmail.users.messages.send({'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
-	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ok:'ok'}));	  
+	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ex:err}));	  
   });
 });
 rtrim=function(v){var t=v.replace(/\s+$/g,'');return t;};
