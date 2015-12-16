@@ -166,7 +166,7 @@ app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
-app.get(/^\/sendmail\/?.*/,upload.any(),function(req,res,next){if(!req.isAuthenticated()){
+app.all(/^\/sendmail\/?.*/,upload.any(),function(req,res,next){if(!req.isAuthenticated()){
 	req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}
   else{
 	fs.readFile('client_secret.json', function processClientSecrets(err, content) {
