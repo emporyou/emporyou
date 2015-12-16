@@ -19,6 +19,9 @@ var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
+var TOKEN_DIR = '.';
+var TOKEN_PATH = TOKEN_DIR + '/apitoken.json';
+
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
 
 app.use(cookieParser());
