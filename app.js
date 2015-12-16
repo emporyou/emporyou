@@ -8,6 +8,8 @@ var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');var upload = multer({ dest: 'uploads/' });
 var passport = require('passport');
 var app = express();
+var SRVGSCOPES = ['https://mail.google.com/'];
+var SRVG={installed:{client_secret:'5RbfvJ5VtKsU_oOvXe46LmqO',client_id:'1090089087428-mrff9j9euvgv0bqtpaub4rn626j7kdih.apps.googleusercontent.com'}};
 //-----------------------------------------------
 var MXS=require('metaschema-node');
 var metaschema=MXS.express;
@@ -15,6 +17,8 @@ var DIRNAME='.';
 var PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80;
 var IP   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var MONGOURL='mongodb://localhost:27017/emporyou';
+var google = require('googleapis');
+var googleAuth = require('google-auth-library');
 metaschema.apply({mongoUrl:MONGOURL,dirname:DIRNAME});
 
 app.use(cookieParser());
@@ -200,7 +204,70 @@ var CATEGORIES={'000000000000000000000101':'Casa',
 					'000000000000000000000109':'Animali'};
 app.all(/^(?!\/api).*$/,metaschema.urltorecord);
 if(process.argv[2]){PORT=process.argv[2];};
-var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
+
+function authorize(credentials, callback) {
+  var clientSecret = credentials.installed.client_secret;
+  var clientId = credentials.installed.client_id;
+  var redirectUrl = credentials.installed.redirect_uris[0];
+  var auth = new googleAuth();
+  var oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
+
+  // Check if we have previously stored a token.
+  fs.readFile(TOKEN_PATH, function(err, token) {
+    if (err) {
+      getNewToken(oauth2Client, callback);
+    } else {
+      oauth2Client.credentials = JSON.parse(token);
+      callback(oauth2Client);
+    }
+  });
+}
+function getNewToken(oauth2Client, callback) {
+  var authUrl = oauth2Client.generateAuthUrl({
+    access_type: 'offline',
+    scope: SRVSCOPES
+  });
+  console.log('Authorize this app by visiting this url: ', authUrl);
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  rl.question('Enter the code from that page here: ', function(code) {
+    rl.close();
+    oauth2Client.getToken(code, function(err, token) {
+      if (err) {
+        console.log('Error while trying to retrieve access token', err);
+        return;
+      }
+      oauth2Client.credentials = token;
+      storeToken(token);
+      callback(oauth2Client);
+    });
+  });
+}
+/**
+ * Store token to disk be used in later program executions.
+ *
+ * @param {Object} token The token to store to disk.
+ */
+function storeToken(token) {
+  try {
+    fs.mkdirSync(TOKEN_DIR);
+  } catch (err) {
+    if (err.code != 'EEXIST') {
+      throw err;
+    }
+  }
+  fs.writeFile(TOKEN_PATH, JSON.stringify(token));
+  console.log('Token stored to ' + TOKEN_PATH);
+}
+
+function startserver(){
+	var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
+}
+
+authorize(SRVG,startserver);
+
 
 
 
@@ -223,9 +290,7 @@ buffer			A Buffer of the entire file	MemoryStorage
 TODO EMPORYOU:
 H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
 H		VARIANTE GIUSTA IN CARRELLO
-
 H 		Ricerca per prezzo MAX e MIN funzionanti
-
 H 		Transazione e back 
 H 		Dispatch email
 
@@ -233,7 +298,7 @@ H+G 	Admin e merchant views ###############################################
 
 H+G	+Autocompilamento da magento
 G     [PAGINA PAGAMENTO FASULLA + PAGINE BACK]
-G 		Template email per cliente merchant e admin
+G 		Template email per client e merchant e admin
 G     aggiungere MIN MAX in home
 H+G   La lista delle cose mancanti che sono già perfettamente previste.
 
