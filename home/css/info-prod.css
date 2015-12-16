@@ -71,7 +71,7 @@
     vertical-align: middle;
     line-height: 100%;
     font-family: 'Open sans';
-    font-size: 1.5vmin;
+    font-size: 2vmin;
     text-align: center;
     margin-top: 0%;
 }
@@ -85,7 +85,7 @@
     line-height: 100%;
     color: white;
     font-family: 'Open sans';
-    font-size: 1.5vmin;
+    font-size: 2vmin;
 }
 .price-2{
     width:50%;
@@ -96,7 +96,7 @@
     vertical-align:middle;
     line-height:15px;
     font-family:'Open sans';
-    font-size:2vmin;
+    font-size:2.5vmin;
 }
 .description-2{
     left:0;
