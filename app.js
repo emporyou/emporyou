@@ -266,7 +266,16 @@ function startserver(){
 	var server=app.listen(PORT,function(){emporyou.updatemerchantchache();console.log('Example app listening ...');});
 }
 
-authorize(SRVG,startserver);
+// Load client secrets from a local file.
+fs.readFile('client_secret.json', function processClientSecrets(err, content) {
+  if (err) {
+    console.log('Error loading client secret file: ' + err);
+    return;
+  }
+  // Authorize a client with the loaded credentials, then call the
+  // Gmail API.
+  authorize(JSON.parse(content), startserver);
+});
 
 
 
