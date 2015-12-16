@@ -174,7 +174,8 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   email='From: me\n'+email;
   //ENCODE
   var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
-  var request = google.client.gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
+  var gmail = google.gmail('v1');
+  var request = gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
   request.execute(function(){
 	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ok:'ok'}));	  
   });
