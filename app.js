@@ -167,7 +167,7 @@ app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
 app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
-	var dest='gioele.cerati@gmail.com'
+	var dest='hideki.yamamoto@gmail.com';
   //CORPO
   email="TEST FROM EMPORYOU";
   email='To: '+dest+'\n'+email;
@@ -175,8 +175,7 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   //ENCODE
   var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
   var gmail = google.gmail('v1');
-  var request = gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
-  request.execute(function(){
+  gmail.users.messages.send({'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
 	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ok:'ok'}));	  
   });
 });
