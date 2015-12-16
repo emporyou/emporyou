@@ -178,9 +178,11 @@ app.all(/^\/sendmail\/?.*/,upload.any(),function(req,res,next){if(!req.isAuthent
   // Gmail API.
   authorize(JSON.parse(content), function(auth){
 	var dest=req.body.destination;
+	var subj=req.body.subject;
+	if(!subj){subj=''}if(subj==''){subj="Messaggio da Emporyou"}
   //CORPO
   email="\n"+req.body.content;
-  email='Subject: TEST\n'+email;
+  email='Subject: '+subj+'\n'+email;
   email='Reply-To: emporyou@gmail.com'+'\n'+email;
   email='To: '+dest+'\n'+email;
   email='From: emporyou@gmail.com\n'+email;
