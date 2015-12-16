@@ -2,6 +2,7 @@ var format=require('util').format;var endOfLine = require('os').EOL;
 var replaceStream = require('replacestream');var fs=require('fs'),path=require("path");
 var MongoClient = require('mongodb').MongoClient;var ObjectID = require('mongodb').ObjectID;
 var express = require('express');
+var btoa = require('btoa')
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
