@@ -8,7 +8,7 @@ var MongoStore = require('connect-mongo')(session);
 var multer = require('multer');var upload = multer({ dest: 'uploads/' });
 var passport = require('passport');
 var app = express();
-var SRVGSCOPES = ['https://mail.google.com/'];
+var SRVSCOPES = ['https://mail.google.com/'];
 var SRVG={installed:{client_secret:'5RbfvJ5VtKsU_oOvXe46LmqO',client_id:'1090089087428-mrff9j9euvgv0bqtpaub4rn626j7kdih.apps.googleusercontent.com'}};
 //-----------------------------------------------
 var MXS=require('metaschema-node');
