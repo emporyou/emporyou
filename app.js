@@ -183,7 +183,7 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   email='Reply-To: emporyou@gmail.com'+'\n'+email;
   email='From: emporyou@gmail.com\n'+email;
   //ENCODE
-  var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
+  var base64EncodedEmail=new Buffer(email).toString('base64');
   var gmail = google.gmail('v1');
   gmail.users.messages.send({auth: auth,'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
 	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ex:err}));	  
