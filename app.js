@@ -174,9 +174,10 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   email='From: me\n'+email;
   //ENCODE
   var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
-  var request = gapi.client.gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
-  request.execute(draftested);
-	
+  var request = google.client.gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
+  request.execute(function(){
+	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ok:'ok'}));	  
+  });
 });
 rtrim=function(v){var t=v.replace(/\s+$/g,'');return t;};
 function strtr(str,from,to){
