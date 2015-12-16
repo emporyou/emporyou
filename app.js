@@ -174,10 +174,7 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   }
   // Authorize a client with the loaded credentials, then call the
   // Gmail API.
-  authorize(JSON.parse(content), realsendmail);
-});
-});
-realsendmail=function(auth){
+  authorize(JSON.parse(content), function(auth){
 	var dest='hideki.yamamoto@gmail.com';
   //CORPO
   email="TEST FROM EMPORYOU";
@@ -189,7 +186,9 @@ realsendmail=function(auth){
   gmail.users.messages.send({auth: auth,'userId':'emporyou@gmail.com','resource':{'raw':base64EncodedEmail}},function(err,resp){
 	  res.set('Content-Type', 'application/json; charset=utf-8');res.end(JSON.stringify({ex:err}));	  
   });
-};
+});
+});
+});
 rtrim=function(v){var t=v.replace(/\s+$/g,'');return t;};
 function strtr(str,from,to){
   var fr = '',
