@@ -165,6 +165,60 @@ app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
+app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
+	var dest='gioele.cerati@gmail.com'
+  //CORPO
+  email="TEST FROM EMPORYOU";
+  email='To: '+dest+'\n'+email;
+  email='From: me\n'+email;
+  //ENCODE
+  var base64EncodedEmail=rtrim(strtr(btoa(email),'+/','-_'));
+  var request = gapi.client.gmail.users.messages.send({'userId':'me','resource':{'raw':base64EncodedEmail}});
+  request.execute(draftested);
+	
+});
+rtrim=function(v){var t=v.replace(/\s+$/g,'');return t;};
+function strtr(str,from,to){
+  var fr = '',
+    i = 0,
+    j = 0,
+    lenStr = 0,
+    lenFrom = 0,
+    tmpStrictForIn = false,
+    fromTypeStr = '',
+    toTypeStr = '',
+    istr = '';
+  var tmpFrom=[];var tmpTo=[];var ret='';var match=false;
+  // Received replace_pairs?
+  // Convert to normal from->to chars
+  if (typeof from === 'object') {
+    tmpStrictForIn = this.ini_set('phpjs.strictForIn', false); // Not thread-safe; temporarily set to true
+    from = this.krsort(from);
+    this.ini_set('phpjs.strictForIn', tmpStrictForIn);
+    for (fr in from) {
+      if (from.hasOwnProperty(fr)) {
+        tmpFrom.push(fr);
+        tmpTo.push(from[fr]);
+    } }
+    from=tmpFrom;to=tmpTo;}
+  // Walk through subject and replace chars when needed
+  lenStr=str.length;lenFrom=from.length;
+  fromTypeStr = typeof from === 'string';
+  toTypeStr = typeof to === 'string';
+  for(i=0;i<lenStr;i++){match=false;
+    if(fromTypeStr){istr=str.charAt(i);
+      for (j = 0; j< lenFrom; j++) {
+        if (istr == from.charAt(j)) {
+          match = true;
+          break;
+    } } }
+	else{for(j=0;j<lenFrom;j++){if(str.substr(i,from[j].length)==from[j]){match=true;i=(i+from[j].length)-1;break;}}}
+    if(match){ret+=toTypeStr ? to.charAt(j):to[j];}
+	else{ret+=str.charAt(i);}
+  }  return ret;
+}
+
+
 //---------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
 //---------------------------------------------------------------------------------------------------
