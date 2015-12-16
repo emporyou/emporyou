@@ -166,7 +166,9 @@ app.get(/^\/syncart\/?.*/,upload.any(),function(req,res,next){
 	res.set('Content-Type', 'text/xml;');
 	return res.end('<?xml version="1.0" encoding="UTF-8"?>'+c);
 });
-app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
+app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){if(!req.isAuthenticated()){
+	req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}
+  else{
 	fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   if (err) {
     console.log('Error loading client secret file: ' + err);
@@ -175,9 +177,9 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   // Authorize a client with the loaded credentials, then call the
   // Gmail API.
   authorize(JSON.parse(content), function(auth){
-	var dest='gioele.cerati@gmail.com';
+	var dest=req.body.destination;
   //CORPO
-  email="\nTEST FROM EMPORYOU";
+  email="\n"+req.body.content;
   email='Subject: TEST\n'+email;
   email='Reply-To: emporyou@gmail.com'+'\n'+email;
   email='To: '+dest+'\n'+email;
@@ -191,7 +193,7 @@ app.get(/^\/testmail\/?.*/,upload.any(),function(req,res,next){
   });
 });
 });
-});
+}});
 //---------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------- STATIC FILES SERVER CONFIGURATION
 //---------------------------------------------------------------------------------------------------
@@ -333,7 +335,6 @@ H 		Associazione MERCHANT->LOGIN in modo che geo sia associato ai prodotti
 H		VARIANTE GIUSTA IN CARRELLO
 H 		Ricerca per prezzo MAX e MIN funzionanti
 H 		Transazione e back 
-H 		Dispatch email
 
 H+G 	Admin e merchant views ###############################################
 
@@ -377,17 +378,6 @@ trans back KO
 
 7
 VISTE ADMIN
-
-
-
-
-https://apps-apis.google.com/a/feeds/emailsettings/2.0/18montenapoleone.it/m.brambilla@18montenapoleone.it/signature
-https://apps-apis.google.com/a/feeds/emailsettings/2.0/
-https://www.googleapis.com/auth/gmail.readonly
-
-
-
-
 
 
 */
