@@ -227,6 +227,7 @@ app.use(function(req,res,next){
 		else if(req.originalUrl.indexOf('/merchant')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/user')==0){if(!req.isAuthenticated()){req.session.afterlogin=req.originalUrl;res.redirect('../login.html')}else{express.static('./')(req,res,next)}}
 		else if(req.originalUrl.indexOf('/uploads')==0){express.static('./')(req,res,next)}
+		else if(req.originalUrl.indexOf('/unsafe')==0){express.static('../')(req,res,next)}
 		   else{express.static('./home')(req,res,next)}}
 );
 //---------------------------------------------------------------------------------------------------
