@@ -23,9 +23,12 @@ npm install passport-amazon
 npm install replacestream
 npm install btoa
 npm install connect-mongo
+npm install multer
+npm install googleapis
+npm install google-auth-library
 npm chache clean -f
 npm install -g n
-s stable
+n stable
 
 yum install -y mongodb
 yum install -y mongodb-server
