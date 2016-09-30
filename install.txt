@@ -58,7 +58,6 @@ echo ---- reaction add react:reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
 meteor run --port 3010 > started1.txt &
 cd ../..
-sleep 120s
 echo --------------- CLONING FRONTEND ------------------------------
 git clone https://github.com/emporyou/emporyou.git
 echo  -------------- SETUP REBOOT SCRIPT ---------------------------
