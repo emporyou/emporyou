@@ -42,10 +42,10 @@ firewall-cmd --zone=public --add-port=3010/tcp --permanent
 firewall-cmd --zone=public --add-port=3020/tcp --permanent
 firewall-cmd --zone=public --add-port=3030/tcp --permanent
 firewall-cmd --reload
-/etc/init.d/iptables save
+
+echo --------------- CLONING 1st ------------------------------------
 mkdir react001
 cd react001
-echo --------------- CLONING 1st ------------------------------------
 npm install -g reaction-cli
 reaction init > started1A.txt
 cd reaction
