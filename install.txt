@@ -42,7 +42,7 @@ git clone https://github.com/emporyou/reaction2emporyou.git
 cd ..
 reaction add reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
-reaction run > started1.txt &
+reaction run --port 3010> started1.txt &
 cd ../..
 sleep 2m
 echo --------------- CLONING FRONTEND ------------------------------
