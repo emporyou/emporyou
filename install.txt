@@ -27,8 +27,15 @@ echo ---------- SETUP MONGOD AUTOSTART ----------
 chkconfig mongod on
 echo -------------- SETUP FIREWALL --------------
 iptables -I INPUT 4 -p tcp -m tcp --dport 80 -j ACCEPT
+firewall-cmd --zone=public --add-port=80/tcp --permanent
 iptables -I INPUT 4 -p tcp -m tcp --dport 27017 -j ACCEPT
+firewall-cmd --zone=public --add-port=27017/tcp --permanent
 iptables -I INPUT 4 -p tcp --match multiport --dports 3000:4000 -j ACCEPT
+firewall-cmd --zone=public --add-port=3000/tcp --permanent
+firewall-cmd --zone=public --add-port=3010/tcp --permanent
+firewall-cmd --zone=public --add-port=3020/tcp --permanent
+firewall-cmd --zone=public --add-port=3030/tcp --permanent
+firewall-cmd --reload
 /etc/init.d/iptables save
 mkdir react001
 cd react001
