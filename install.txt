@@ -68,8 +68,7 @@ echo  --------------- STARTING FRONTEND ----------------------------
 cd emporyou
 echo  ----- node app.js &
 cd /root
-while ! grep "EMAIL/LOGIN:" react001/reaction/started1.txt
-do sleep 10; done
+while ! grep "EMAIL/LOGIN:" react001/reaction/started1.txt; do sleep 10s; done
 echo  --------------- GREP CREDENTIALS -----------------------------
 echo CREDENTIALS 1
 grep "EMAIL/LOGIN:" react001/reaction/started1.txt
