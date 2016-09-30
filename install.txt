@@ -50,7 +50,7 @@ mkdir react001
 cd react001
 echo --------------- CLONING 1st ------------------------------------
 npm install -g reaction-cli
-reaction init
+reaction init > started1A.txt
 cd reaction
 cd packages
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
