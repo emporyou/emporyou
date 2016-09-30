@@ -60,7 +60,7 @@ reaction add reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
 reaction --port 3010 > started1.txt &
 cd ../..
-sleep 2m
+sleep 30s
 echo --------------- CLONING FRONTEND ------------------------------
 git clone https://github.com/emporyou/emporyou.git
 echo  -------------- SETUP REBOOT SCRIPT ---------------------------
