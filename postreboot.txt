@@ -4,7 +4,7 @@ PATH=$PATH:/root/.meteor
 export PATH
 echo STARTING MERCHANT 1 AND WAITING 40 sec-------------------------------------
 cd /root/react001/reaction
-su root -c "meteor run --port 3010 &"
+su root -c "reaction --port 3010 &"
 sleep 40s
 echo STARTING FRONTEND --------------------------------------
 cd /root/emporyou
