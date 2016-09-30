@@ -5,7 +5,7 @@ yum install -y nodejs
 yum install -y npm
 yum install -y git
 yum install -y ImageMagick
-curl https://install.meteor.com | /bin/sh
+echo -------- NO MORE curl https://install.meteor.com | /bin/sh
 npm install express
 npm install mongodb
 npm install mongo-fast-join
