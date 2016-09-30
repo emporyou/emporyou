@@ -71,7 +71,6 @@ cd /root
 while ! grep "EMAIL/LOGIN:" react001/reaction/started1.txt; do sleep 10s; done
 echo  --------------- GREP CREDENTIALS -----------------------------
 echo CREDENTIALS 1
-grep "EMAIL/LOGIN:" react001/reaction/started1.txt
 grep "PASSWORD:" react001/reaction/started1.txt
 echo REBOOTING in 10sec press CTRL+C to abort
 sleep 10s
