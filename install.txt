@@ -33,17 +33,16 @@ iptables -I INPUT 4 -p tcp --match multiport --dports 3000:4000 -j ACCEPT
 mkdir react001
 cd react001
 echo --------------- CLONING 1st ------------------------------------
-git clone -b development https://github.com/reactioncommerce/reaction
-cd reaction && git checkout master
-echo --------------CLONING REACTION-CORE DEVELOPMENT----------------
+npm install -g reaction-cli
+reaction init
+cd reaction
 cd packages
-git clone -b development https://github.com/reactioncommerce/reaction-core.git
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
 git clone https://github.com/emporyou/reaction2emporyou.git
 cd ..
-meteor add reactioncommerce:reaction2emporyou
+reaction add reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
-meteor run --port 3010 > started1.txt &
+reaction run > started1.txt &
 cd ../..
 sleep 2m
 echo --------------- CLONING FRONTEND ------------------------------
