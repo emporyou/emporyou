@@ -49,10 +49,10 @@ cd react001
 npm install -g reaction-cli
 reaction init
 cd reaction
-cd packages
+echo ---- cd packages
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
-git clone https://github.com/emporyou/reaction2emporyou.git
-cd ..
+echo ---- git clone https://github.com/emporyou/reaction2emporyou.git
+echo ---- cd ..
 echo ---- reaction add react
 echo ---- reaction add react:reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
