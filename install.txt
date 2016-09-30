@@ -54,7 +54,7 @@ echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
 echo ---- git clone https://github.com/emporyou/reaction2emporyou.git
 echo ---- cd ..
 echo ---- reaction add react
-echo ---- reaction add react:reaction2emporyou
+echo ---- reaction add reactioncommerce:reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
 meteor run --port 3010 > started1.txt &
 cd ../..
