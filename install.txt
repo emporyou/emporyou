@@ -47,17 +47,18 @@ echo --------------- CLONING 1st ------------------------------------
 mkdir react001
 cd react001
 npm install -g reaction-cli
-reaction init > started1A.txt
+reaction init
 cd reaction
 cd packages
 echo --------------VALIDATE EMPORYOU.COM TO LOAD JS ---------------
 git clone https://github.com/emporyou/reaction2emporyou.git
 cd ..
-reaction add reaction2emporyou
+echo ---- reaction add react
+echo ---- reaction add react:reaction2emporyou
 echo -------------- STARTING 1st ------------- AND WAITING 2 MINUTES
-reaction --port 3010 > started1.txt &
+meteor run --port 3010 > started1.txt &
 cd ../..
-sleep 40s
+sleep 120s
 echo --------------- CLONING FRONTEND ------------------------------
 git clone https://github.com/emporyou/emporyou.git
 echo  -------------- SETUP REBOOT SCRIPT ---------------------------
