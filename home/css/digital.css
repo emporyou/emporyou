@@ -161,7 +161,17 @@ body.Pmode.vertical #product-main-container {margin-top:10vh  ;  width: 90%;
     margin-left: 5%;}
 body.Pmode.vertical .product-info-main{margin:0   ; top: 0;
     left: 0;}
-
+/*PRODUCT PAGE*/
+body.Pmode.vertical .left-column-pro{
+    width:100%
+}
+body.Pmode.vertical .right-column-pro{
+    width:100%;
+    position:relative;
+}
+body.Pmode.vertical .main-desc-container{
+    height:100px;
+}
 /*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
