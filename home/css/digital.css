@@ -189,6 +189,13 @@ body.Pmode.vertical .login-button-checkout{
     border:none;
     left:25%;
 }
+body.Pmode.vertical #checkout-progress-container{
+    display:none;
+}
+body.Pmode.vertical .menu-opened{
+    left:1%;
+    width:99vw;
+}
 /*body   /* min-width: 840px !important; */
 /*----------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
