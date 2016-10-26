@@ -173,26 +173,26 @@ body.Pmode.vertical .main-desc-container{
     height:100px;
 }
 /*CHECKOUT PAGE*/
-body.Pmode.vertical .circle-step{
+body.Cmode.vertical .circle-step{
     display:none;
 }
-body.Pmode.vertical .single-container{
+body.Cmode.vertical .single-container{
     width:92vw;
 }
-body.Pmode.vertical .left-square{
+body.Cmode.vertical .left-square{
     width:93vw;
 }
-body.Pmode.vertical #button-social-container{
+body.Cmode.vertical #button-social-container{
     display:none;
 }
-body.Pmode.vertical .login-button-checkout{
+body.Cmode.vertical .login-button-checkout{
     border:none;
     left:25%;
 }
-body.Pmode.vertical #checkout-progress-container{
+body.Cmode.vertical #checkout-progress-container{
     display:none;
 }
-body.Pmode.vertical .menu-opened{
+body.Cmode.vertical .menu-opened{
     left:1%;
     width:99vw;
 }
